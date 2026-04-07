@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" fill="none">
+  <!-- Outer circle -->
+  <circle cx="100" cy="100" r="96" stroke="currentColor" stroke-width="3"/>
+  <!-- Inner circle -->
+  <circle cx="100" cy="100" r="82" stroke="currentColor" stroke-width="2.5"/>
+  <!-- Head -->
+  <circle cx="100" cy="38" r="10" stroke="currentColor" stroke-width="3" fill="none"/>
+  <!-- Neck + Body -->
+  <line x1="100" y1="48" x2="100" y2="120" stroke="currentColor" stroke-width="3"/>
+  <!-- Left arm - curved arc touching inner circle -->
+  <path d="M100 68 Q60 55 30 80" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Right arm - curved arc touching inner circle -->
+  <path d="M100 68 Q140 55 170 80" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Left leg -->
+  <line x1="100" y1="120" x2="72" y2="182" stroke="currentColor" stroke-width="3"/>
+  <!-- Right leg -->
+  <line x1="100" y1="120" x2="128" y2="182" stroke="currentColor" stroke-width="3"/>
+  <!-- Left inner leg line (triangle gap) -->
+  <line x1="100" y1="120" x2="88" y2="182" stroke="currentColor" stroke-width="2"/>
+  <!-- Right inner leg line (triangle gap) -->
+  <line x1="100" y1="120" x2="112" y2="182" stroke="currentColor" stroke-width="2"/>
+  <!-- Text -->
+  <text x="100" y="225" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="22" font-weight="500" letter-spacing="8" fill="currentColor">VITRUVIAN</text>
+</svg>
