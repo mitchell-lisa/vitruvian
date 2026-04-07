@@ -439,13 +439,12 @@ nav {
   margin-top: 16px;
 }
 
-.schedule-params span {
-  font-size: 12px;
-  color: #777;
-  background: rgba(255,255,255,0.05);
-  padding: 4px 10px;
-  border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.06);
+.schedule-quote {
+  font-style: italic;
+  color: #4ade80;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 12px 0;
 }
 
 /* === PROBLEMS LIST === */
@@ -565,6 +564,55 @@ nav {
   font-size: 15px;
   color: #999;
   line-height: 1.65;
+}
+
+.skeptic-item-wide {
+  grid-column: 1 / -1;
+}
+
+/* === PURCHASE TRIGGERS === */
+.buy-list {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.buy-item {
+  display: flex;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  align-items: flex-start;
+}
+
+.buy-item:last-child {
+  border-bottom: none;
+}
+
+.buy-num {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.buy-body h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.buy-body p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.5;
 }
 
 /* === 8. PROTOCOL STEPS — 3x2 grid === */
