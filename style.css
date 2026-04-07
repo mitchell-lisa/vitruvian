@@ -59,83 +59,44 @@ nav {
   justify-content: center;
 }
 
-.hero-logo {
-  width: 200px;
-  height: 200px;
-  object-fit: contain;
-  position: relative;
-  z-index: 2;
-  transition: transform 0.4s ease;
-}
-
-/* Animated rotating rings */
-.hero-ring {
-  position: absolute;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.hero-ring-1 {
-  width: 240px;
-  height: 240px;
-  border: 2.5px solid rgba(10, 10, 10, 0.2);
-  animation: spin-slow 20s linear infinite;
-  border-top-color: transparent;
-}
-
-.hero-ring-2 {
+.hero-logo-svg {
   width: 280px;
   height: 280px;
-  border: 1.5px solid rgba(10, 10, 10, 0.1);
-  animation: spin-reverse 30s linear infinite;
-  border-bottom-color: transparent;
-  border-left-color: transparent;
 }
 
-.hero-ring-3 {
-  width: 320px;
-  height: 320px;
-  border: 1px solid rgba(10, 10, 10, 0.06);
-  animation: spin-slow 40s linear infinite;
-  border-right-color: transparent;
+/* Animate the circles inside the logo */
+.logo-ring {
+  transform-origin: 150px 140px;
+  transition: stroke 0.4s ease;
 }
 
-/* Hover interactions */
-.hero-logo-wrap:hover .hero-logo {
-  transform: scale(1.08);
+.logo-ring-outer {
+  animation: ring-spin 25s linear infinite;
 }
 
-.hero-logo-wrap:hover .hero-ring-1 {
+.logo-ring-inner {
+  animation: ring-spin-reverse 18s linear infinite;
+}
+
+/* Hover speeds up */
+.hero-logo-wrap:hover .logo-ring-outer {
   animation-duration: 8s;
-  border-color: rgba(10, 10, 10, 0.35);
-  border-top-color: transparent;
-}
-.hero-logo-wrap:hover .hero-ring-2 {
-  animation-duration: 12s;
-  border-color: rgba(10, 10, 10, 0.2);
-  border-bottom-color: transparent;
-  border-left-color: transparent;
-}
-.hero-logo-wrap:hover .hero-ring-3 {
-  animation-duration: 16s;
-  border-color: rgba(10, 10, 10, 0.1);
-  border-right-color: transparent;
+  stroke: #444;
 }
 
-.hero-ring {
-  transition: border-color 0.6s ease;
+.hero-logo-wrap:hover .logo-ring-inner {
+  animation-duration: 6s;
+  stroke: #444;
 }
 
-@keyframes spin-slow {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
+@keyframes ring-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-@keyframes spin-reverse {
-  from { transform: translate(-50%, -50%) rotate(360deg); }
-  to { transform: translate(-50%, -50%) rotate(0deg); }
+@keyframes ring-spin-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
 }
 
 .tag {
@@ -548,10 +509,7 @@ footer { padding: 40px 0; border-top: 1px solid #ddd; }
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
   .hero-logo-wrap { width: 240px; height: 240px; }
-  .hero-logo { width: 150px; height: 150px; }
-  .hero-ring-1 { width: 180px; height: 180px; }
-  .hero-ring-2 { width: 210px; height: 210px; }
-  .hero-ring-3 { width: 240px; height: 240px; }
+  .hero-logo-svg { width: 220px; height: 220px; }
   .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 24px; }
   .two-col { grid-template-columns: 1fr; gap: 24px; }
   .steps { grid-template-columns: 1fr 1fr; }
@@ -569,8 +527,5 @@ footer { padding: 40px 0; border-top: 1px solid #ddd; }
   .steps { grid-template-columns: 1fr; }
   .hero-stats { grid-template-columns: repeat(2, 1fr); }
   .hero-logo-wrap { width: 200px; height: 200px; margin-bottom: 32px; }
-  .hero-logo { width: 120px; height: 120px; }
-  .hero-ring-1 { width: 150px; height: 150px; }
-  .hero-ring-2 { width: 175px; height: 175px; }
-  .hero-ring-3 { width: 200px; height: 200px; }
+  .hero-logo-svg { width: 180px; height: 180px; }
 }
