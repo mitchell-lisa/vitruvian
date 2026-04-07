@@ -390,6 +390,183 @@ nav {
   line-height: 1.65;
 }
 
+/* === SCHEDULE GRID === */
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.schedule-block {
+  padding: 28px 24px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+}
+
+.schedule-block-highlight {
+  grid-column: 1 / -1;
+  border-color: rgba(74,222,128,0.2);
+  background: rgba(74,222,128,0.03);
+}
+
+.schedule-time {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #4ade80;
+  margin-bottom: 12px;
+}
+
+.schedule-block h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fafafa;
+  margin-bottom: 10px;
+}
+
+.schedule-block p {
+  font-size: 15px;
+  color: #999;
+  line-height: 1.65;
+}
+
+.schedule-params {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.schedule-params span {
+  font-size: 12px;
+  color: #777;
+  background: rgba(255,255,255,0.05);
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* === PROBLEMS LIST === */
+.problems-list {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.problem-item {
+  display: flex;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  align-items: flex-start;
+}
+
+.problem-item:last-child {
+  border-bottom: none;
+}
+
+.problem-num {
+  flex-shrink: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.06);
+  line-height: 1;
+  width: 44px;
+  text-align: right;
+}
+
+.problem-body h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fafafa;
+  margin-bottom: 8px;
+}
+
+.problem-body p {
+  font-size: 15px;
+  color: #999;
+  line-height: 1.65;
+}
+
+/* === WHO BENEFITS === */
+.benefit-tiers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.benefit-tier {
+  padding: 28px 24px;
+  background: rgba(0,0,0,0.02);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 10px;
+}
+
+.benefit-priority {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 3px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.benefit-priority.high {
+  color: #4ade80;
+  background: rgba(74,222,128,0.08);
+  border: 1px solid rgba(74,222,128,0.15);
+}
+
+.benefit-priority.med {
+  color: #facc15;
+  background: rgba(250,204,21,0.08);
+  border: 1px solid rgba(250,204,21,0.15);
+}
+
+.benefit-tier h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.benefit-tier p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.65;
+}
+
+/* === SKEPTICISM === */
+.skepticism-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.skeptic-item {
+  padding: 28px 24px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+}
+
+.skeptic-item h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fafafa;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.skeptic-item p {
+  font-size: 15px;
+  color: #999;
+  line-height: 1.65;
+}
+
 /* === 8. PROTOCOL STEPS — 3x2 grid === */
 /* Section subtitle */
 .section-sub {
@@ -1497,6 +1674,22 @@ footer {
   }
 
   .not-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-block-highlight {
+    grid-column: auto;
+  }
+
+  .benefit-tiers {
+    grid-template-columns: 1fr;
+  }
+
+  .skepticism-grid {
     grid-template-columns: 1fr;
   }
 
