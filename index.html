@@ -28,7 +28,7 @@
         <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="Vitruvian" class="hero-logo-img">
       </div>
       <h1>The first mobility platform<br>that measures what it does.</h1>
-      <p class="subtitle">Instrumented assisted-stretch for elite performance staffs. Quantifies ROM, detects asymmetry, applies controlled tension inside sport-specific protocols — and gives your staff data they've never had.</p>
+      <p class="subtitle">Cable-driven assisted stretch with inline force sensing, depth-camera joint tracking, and bilateral ROM comparison. Measures joint angle, cable tension, end-range hold time, compensation events, and session-to-session change — on every rep, for every athlete.</p>
       <div class="hero-ctas">
         <a href="#waitlist" class="btn btn-primary">Request a Demo</a>
         <a href="#demo" class="btn btn-secondary">See the Protocol</a>
@@ -36,19 +36,19 @@
       <div class="hero-metrics">
         <div class="metric-card">
           <span class="metric-num">±2°</span>
-          <span class="metric-label">ROM Accuracy</span>
+          <span class="metric-label">Joint Angle Tracking</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-num">100Hz</span>
+          <span class="metric-label">Cable Force Monitoring</span>
         </div>
         <div class="metric-card">
           <span class="metric-num">L/R</span>
-          <span class="metric-label">Asymmetry Detection</span>
+          <span class="metric-label">Side-to-Side Asymmetry</span>
         </div>
         <div class="metric-card">
-          <span class="metric-num">PNF</span>
-          <span class="metric-label">Progressive Protocol Logic</span>
-        </div>
-        <div class="metric-card">
-          <span class="metric-num">AMS</span>
-          <span class="metric-label">Dashboard Integration</span>
+          <span class="metric-num">12pt</span>
+          <span class="metric-label">Compensation Detection</span>
         </div>
       </div>
     </div>
@@ -58,15 +58,15 @@
   <section class="section" id="what">
     <div class="container">
       <p class="section-tag">Platform Overview</p>
-      <h2>Standardized stretch delivery. Quantified outcomes.</h2>
+      <h2>Nine measurable variables. Every session.</h2>
       <div class="two-col">
         <div class="col">
-          <p>Vitruvian is a cable-assisted mobility platform that delivers repeatable stretch protocols at controlled loads, measures joint ROM to within 2 degrees, and flags bilateral asymmetries automatically.</p>
-          <p>A depth camera tracks compensation in real time. Load cells measure tissue tolerance at 100Hz. Every session generates objective data that syncs to your athlete management system.</p>
+          <p>Vitruvian tracks joint angle via depth camera and cable geometry. An inline load cell samples cable tension at 100Hz. The system logs peak ROM at standardized force, end-range hold duration, bilateral asymmetry ratio, and compensation events — pelvic rotation, trunk lateral flexion, knee bend — in real time.</p>
+          <p>Every stretch produces a tolerance threshold (the force at which the athlete's ROM stops increasing), a progressive tension ramp profile, and a pain/discomfort response flag if the athlete taps out or the system detects guarding behavior.</p>
         </div>
         <div class="col">
-          <p>Vitruvian does not replace your therapists. It extends what they can do — running the same protocol on 20 athletes in a morning with zero variability, zero fatigue, and complete documentation.</p>
-          <p>Your staff still supervises. They just stop being the bottleneck.</p>
+          <p>Session-to-session ROM change is tracked as a rolling 4-week and 8-week trend — separating acute stretch response from chronic tissue adaptation. Side-to-side asymmetry is compared at matched force thresholds, not estimated by eye.</p>
+          <p>Your staff supervises. The machine handles the measurement, the consistency, and the documentation. Twenty athletes, same protocol, zero variability.</p>
         </div>
       </div>
     </div>
@@ -147,8 +147,8 @@
   <section class="section" id="session-flow">
     <div class="container">
       <p class="section-tag">The Session</p>
-      <h2>Eight steps. Context-aware from the first.</h2>
-      <p class="section-sub">Every session adapts to the athlete, the schedule, and the goal. The system doesn't just stretch — it assesses, recommends, monitors, and decides.</p>
+      <h2>Eight steps. Every variable tracked from the first.</h2>
+      <p class="section-sub">Identify the athlete. Select the mode. Assess baseline ROM. Recommend a protocol. Execute under force control. Monitor tissue response. Advance or regress based on measured thresholds. Summarize for the coach.</p>
       <div class="session-steps">
         <div class="session-step">
           <div class="step-num">01</div>
@@ -182,28 +182,28 @@
           <div class="step-num">05</div>
           <div class="step-body">
             <h3>Assisted Stretch Execution</h3>
-            <p>Cable tension ramps to target. PID loop maintains constant force. Depth camera confirms no compensation. Contract-relax cycles cued when the mode calls for PNF. Every rep is measured.</p>
+            <p>Progressive tension ramp from slack to target force. PID loop holds cable load within ±0.2 lb. Depth camera logs joint angle at 30fps. Load cell logs tension at 100Hz. Compensation events flagged per rep. Contract-relax cycles cued when protocol calls for PNF.</p>
           </div>
         </div>
         <div class="session-step">
           <div class="step-num">06</div>
           <div class="step-body">
             <h3>Response Monitoring</h3>
-            <p>Real-time tissue response tracking. Is ROM increasing under load? Is the athlete tolerating the force? Is compensation creeping in? The system watches what a busy therapist can't.</p>
+            <p>Six variables tracked continuously: joint angle change under load, cable force stability, end-range hold time, compensation events (pelvis, trunk, knee), tolerance threshold approach, and pain/discomfort response. All logged at the rep level.</p>
           </div>
         </div>
         <div class="session-step">
           <div class="step-num">07</div>
           <div class="step-body">
             <h3>Stop / Progress / Regress</h3>
-            <p>If tissue responds well, the system advances — more range, more hold time, another PNF cycle. If tolerance drops or compensation increases, it backs off. If a safety threshold is hit, it stops. No human delay.</p>
+            <p>ROM still increasing at current force? Progress — advance tension 0.5 lb, extend hold. Tolerance threshold reached with no further ROM gain? Hold steady. Compensation count exceeds 2 in a set? Reduce force 15%. Pain response or E-stop? Immediate unload. Logic runs every 100ms.</p>
           </div>
         </div>
         <div class="session-step">
           <div class="step-num">08</div>
           <div class="step-body">
             <h3>Session Summary</h3>
-            <p>Pre/post ROM delta. Bilateral comparison. Compensation events logged. Trend analysis vs. last 4 and 8 sessions. Coach-facing report pushed to dashboard and AMS. Athlete sees a simplified readout on screen.</p>
+            <p>Pre/post ROM delta per muscle group. Bilateral asymmetry change. Total compensation events by type. Tolerance threshold vs. previous session. End-range hold time trend. 4-week and 8-week ROM rolling averages. Coach report pushed to dashboard and AMS. Athlete sees ROM change and asymmetry status on screen.</p>
           </div>
         </div>
       </div>
@@ -710,31 +710,43 @@
   <section class="section section-dark" id="measures">
     <div class="container">
       <p class="section-tag">What It Measures</p>
-      <h2>Every session generates objective data.</h2>
+      <h2>Nine variables. Measured, not estimated.</h2>
       <div class="advantages">
         <div class="advantage">
-          <h3>Joint Angle (ROM)</h3>
-          <p>Depth camera + cable geometry measure peak passive range of motion at standardized force thresholds. Comparable across sessions and athletes.</p>
+          <h3>Joint Angle Tracking</h3>
+          <p>Peak passive ROM at standardized force thresholds via depth camera + cable geometry. Accurate to ±2°. Comparable across sessions, testers, and athletes.</p>
         </div>
         <div class="advantage">
-          <h3>Bilateral Asymmetry</h3>
-          <p>Left vs. right comparison on every stretch. Flags imbalances exceeding clinical thresholds. Tracks resolution over time.</p>
+          <h3>Cable Force Monitoring</h3>
+          <p>Inline load cell at 100Hz. Logs progressive tension ramp, peak force at end-range, and force variability during hold. Indicates tissue stiffness, not just range.</p>
         </div>
         <div class="advantage">
-          <h3>Force at End-Range</h3>
-          <p>Inline load cell measures cable tension at peak ROM. Indicates tissue stiffness and stretch tolerance — not just flexibility.</p>
+          <h3>Side-to-Side Asymmetry</h3>
+          <p>Left vs. right comparison at matched force thresholds. Flags differences exceeding 10%. Tracks asymmetry resolution across sessions — documented, not eyeballed.</p>
         </div>
         <div class="advantage">
-          <h3>Hold Tolerance</h3>
-          <p>Duration the athlete maintains end-range without retreating. A neuromuscular metric — measures relaxation response, not just joint range.</p>
+          <h3>End-Range Hold Time</h3>
+          <p>Duration the athlete sustains peak ROM without retreating. A neuromuscular tolerance metric — measures relaxation response and stretch acceptance under constant load.</p>
         </div>
         <div class="advantage">
           <h3>Compensation Detection</h3>
-          <p>Depth camera identifies pelvic rotation, trunk lateral flexion, and knee bend during SLR. Flags compromised stretch quality in real time.</p>
+          <p>12-point skeletal tracking identifies pelvic rotation, trunk lateral flexion, and knee bend during stretch. Compensation events logged with timestamp, type, and magnitude.</p>
         </div>
         <div class="advantage">
-          <h3>Session-over-Session Trend</h3>
-          <p>Rolling 4-week and 8-week ROM averages. Separates acute stretch response from chronic flexibility change. Evidence, not anecdote.</p>
+          <h3>Tolerance Threshold</h3>
+          <p>The force at which ROM stops increasing — the athlete's neuromuscular limit for that session. Tracked longitudinally. A rising threshold means the tissue is adapting.</p>
+        </div>
+        <div class="advantage">
+          <h3>Pain / Discomfort Response</h3>
+          <p>Athlete tap-out, verbal cue, or system-detected guarding behavior (sudden force spike + ROM reversal). Logged per rep. Used to auto-regress protocol intensity.</p>
+        </div>
+        <div class="advantage">
+          <h3>Progressive Tension Ramp</h3>
+          <p>The force-time curve from slack to end-range. Characterizes how the tissue takes up load. A steep ramp with early plateau suggests stiffness; a gradual ramp suggests compliance.</p>
+        </div>
+        <div class="advantage">
+          <h3>Session-to-Session ROM Change</h3>
+          <p>Rolling 4-week and 8-week averages at matched force. Separates acute stretch response from chronic tissue adaptation. The number that tells you if the program is working.</p>
         </div>
       </div>
     </div>
