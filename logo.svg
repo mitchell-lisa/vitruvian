@@ -1,22 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
   <!-- Outer circle -->
-  <circle cx="100" cy="100" r="95" stroke="currentColor" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="96" stroke="currentColor" stroke-width="2.8"/>
   <!-- Inner circle -->
-  <circle cx="100" cy="100" r="80" stroke="currentColor" stroke-width="2"/>
-  <!-- Head -->
-  <circle cx="100" cy="40" r="9" stroke="currentColor" stroke-width="2.5" fill="none"/>
-  <!-- Neck to torso -->
-  <path d="M100 49 L100 115" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-  <!-- Left arm - smooth curve arching out to touch inner circle -->
-  <path d="M100 70 C85 62 55 58 28 78" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-  <!-- Right arm - smooth curve arching out to touch inner circle -->
-  <path d="M100 70 C115 62 145 58 172 78" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <circle cx="100" cy="100" r="84" stroke="currentColor" stroke-width="2.2"/>
+  <!-- Head - small open circle near top of inner circle -->
+  <circle cx="100" cy="28" r="8" stroke="currentColor" stroke-width="2.5" fill="none"/>
+  <!-- Body center line - neck down to hip -->
+  <line x1="100" y1="36" x2="100" y2="118" stroke="currentColor" stroke-width="2.5"/>
+  <!-- Left arm - wide arc sweeping out and down along the inner circle -->
+  <path d="M100 56 C80 48 42 52 24 88" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Right arm - wide arc sweeping out and down along the inner circle -->
+  <path d="M100 56 C120 48 158 52 176 88" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
   <!-- Left outer leg -->
-  <path d="M100 115 L75 178" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="100" y1="118" x2="68" y2="180" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
   <!-- Right outer leg -->
-  <path d="M100 115 L125 178" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-  <!-- Left inner leg (creates triangle gap) -->
-  <path d="M100 130 L90 178" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-  <!-- Right inner leg (creates triangle gap) -->
-  <path d="M100 130 L110 178" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <line x1="100" y1="118" x2="132" y2="180" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Left inner leg (triangle gap) -->
+  <line x1="100" y1="118" x2="86" y2="180" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- Right inner leg (triangle gap) -->
+  <line x1="100" y1="118" x2="114" y2="180" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
 </svg>
