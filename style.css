@@ -390,6 +390,72 @@ nav {
   line-height: 1.65;
 }
 
+/* === MACHINE BREAKDOWN === */
+.machine-breakdown {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.machine-col {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.machine-component h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.machine-component p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.65;
+}
+
+.safety-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.safety-list li {
+  font-size: 14px;
+  color: #666;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  padding-left: 16px;
+  position: relative;
+}
+
+.safety-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ef4444;
+}
+
+.machine-summary {
+  margin-top: 40px;
+  padding: 24px 28px;
+  background: rgba(0,0,0,0.02);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 10px;
+}
+
+.machine-summary p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.65;
+}
+
 /* === SCHEDULE GRID === */
 .schedule-grid {
   display: grid;
@@ -1723,6 +1789,11 @@ footer {
 
   .not-grid {
     grid-template-columns: 1fr;
+  }
+
+  .machine-breakdown {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 
   .schedule-grid {

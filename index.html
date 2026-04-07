@@ -97,6 +97,71 @@
     </div>
   </section>
 
+  <!-- THE MACHINE -->
+  <section class="section" id="machine">
+    <div class="container">
+      <p class="section-tag">The Machine</p>
+      <h2>What it physically is.</h2>
+
+      <div class="machine-breakdown">
+        <div class="machine-col">
+          <div class="machine-component">
+            <h3>Frame</h3>
+            <p>Open-front aluminum frame. 7 ft tall, 5 ft wide, 4 ft deep. The athlete walks in, lies on the bench, and is visible to staff at all times. No enclosure. No moving parts near the body except the cable.</p>
+          </div>
+
+          <div class="machine-component">
+            <h3>Bench</h3>
+            <p>Padded, adjustable bench with pelvis stabilization brace and contralateral leg anchor. Positions the athlete for supine, side-lying, or prone protocols. The stabilization is what makes the ROM measurement valid — without it, the athlete compensates and the data is useless.</p>
+          </div>
+
+          <div class="machine-component">
+            <h3>Cable System</h3>
+            <p>Single Dyneema cable (200 lb rating). Routes from a motorized spool through a top-mounted pulley to the attachment point. Quick-release carabiner at the cuff. The cable applies tension — the athlete's body weight and gravity do the rest. No robotic arms. No actuated joints.</p>
+          </div>
+
+          <div class="machine-component">
+            <h3>Motor + Drive</h3>
+            <p>200W brushless DC motor. 20:1 planetary gearbox for smooth, high-torque, low-speed output. ODrive field-oriented controller. Backdriveable — if the athlete pushes against the cable, the motor yields. This is a compliance system, not a positioning system.</p>
+          </div>
+        </div>
+
+        <div class="machine-col">
+          <div class="machine-component">
+            <h3>Force Sensing</h3>
+            <p>Inline load cell on the cable. 100Hz sampling. Measures tension to ±0.1 lb. This is the variable that controls the stretch — the PID loop targets a force, not a position. The cable doesn't pull the leg to an angle; it maintains a load and lets the tissue respond.</p>
+          </div>
+
+          <div class="machine-component">
+            <h3>Joint Tracking</h3>
+            <p>Intel RealSense depth camera mounted on the top crossbeam. Tracks 12 skeletal landmarks at 30fps. Calculates joint angle from hip, knee, and ankle positions. Detects pelvic rotation, trunk shift, and knee bend in real time. Accurate to ±2° in validated testing.</p>
+          </div>
+
+          <div class="machine-component">
+            <h3>Touchscreen</h3>
+            <p>15" display at standing height. Shows protocol queue, live ROM and force readout, compensation alerts, and session summary. Staff-facing interface — not designed for the athlete to operate mid-stretch.</p>
+          </div>
+
+          <div class="machine-component">
+            <h3>Safety System</h3>
+            <p>Five independent layers. Any one can halt the machine:</p>
+            <ul class="safety-list">
+              <li>Software force cap — 30 lb maximum</li>
+              <li>PID compliance loop — limits ramp rate</li>
+              <li>Mechanical slip clutch — 35 lb hard cutoff</li>
+              <li>Mushroom E-stop on frame — instant power cut</li>
+              <li>Quick-release carabiner — athlete disconnects in &lt;1 second</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-summary">
+        <p>Total component cost for a single station: motor, gearbox, spool, pulley, load cell, depth camera, controller, frame, bench, touchscreen. No exotic parts. No custom silicon. Every component is commercially available and field-replaceable.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- WHY IT MATTERS -->
   <section class="section" id="value">
     <div class="container">
