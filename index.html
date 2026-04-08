@@ -395,26 +395,74 @@
     </div>
   </section>
 
-  <!-- WHAT PEOPLE WILL QUESTION -->
-  <section class="section section-dark" id="skepticism">
+  <!-- FAQ -->
+  <section class="section section-dark" id="faq">
     <div class="container">
-      <p class="section-tag">What People Will Question</p>
-      <h2>Keep this. It builds trust.</h2>
-      <div class="skepticism-grid">
-        <div class="skeptic-item">
-          <h3>Does the ROM measurement hold up?</h3>
+      <p class="section-tag">FAQ</p>
+      <h2>Questions you should ask before buying.</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>Does the ROM measurement actually hold up?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>We claim ±2°. You should demand the validation data: test-retest reliability, comparison to experienced clinical goniometry, performance across skin tones, clothing types, and sweat conditions. If the depth camera loses tracking, the system flags the rep as invalid rather than reporting a bad number.</p>
+          </div>
         </div>
-        <div class="skeptic-item">
-          <h3>Will staff actually use it daily?</h3>
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>Will staff actually use it daily?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Technology fails when it adds steps to the workflow. Vitruvian is designed for badge-in, select protocol, stretch, done. No calibration. No dedicated technician. If it takes more than 60 seconds to set up, it won't survive a 6am pre-practice schedule — and we know that.</p>
+          </div>
         </div>
-        <div class="skeptic-item">
-          <h3>Is it safe post-injury?</h3>
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>Is it safe for post-injury athletes?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Five independent safety layers: software force cap (30 lb), PID compliance loop, mechanical slip clutch (35 lb), mushroom E-stop, quick-release cuff. Medical staff sets hard force ceilings and ROM limits for return-to-play athletes. Any single layer can halt the machine independently.</p>
+          </div>
         </div>
-        <div class="skeptic-item">
-          <h3>What happens if it breaks?</h3>
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>What happens if it breaks in-season?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>In-season downtime is not acceptable. The service model includes a loaner unit for any repair exceeding 48 hours. Common failure modes — cable wear, sensor drift — are staff-serviceable with on-site replacement parts. No waiting for a factory technician.</p>
+          </div>
         </div>
-        <div class="skeptic-item skeptic-item-wide">
-          <h3>Is this solving a real problem or adding tech?</h3>
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>Is this solving a real problem or just adding technology?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>The honest test: if you gave your staff an extra hour per day instead, would they produce the same outcomes manually? If the answer is yes, you don't need the machine. If the answer is no — because the measurement consistency and throughput are genuinely impossible by hand — then it's worth it.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>How does this integrate with our existing AMS?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Session data exports to Smartabase, Kitman Labs, Catapult, or custom systems via API. No manual entry. The session report pushes automatically after each athlete completes their protocol. Your data stays in your system.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>What does a trial look like?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>6 weeks in your training room. Real athletes, real schedules. We don't expect anyone to buy from a website. We expect them to buy after the data speaks for itself — or it doesn't.</p>
+          </div>
         </div>
       </div>
     </div>

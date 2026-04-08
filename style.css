@@ -625,36 +625,69 @@ nav {
   line-height: 1.65;
 }
 
-/* === SKEPTICISM === */
-.skepticism-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+/* === FAQ ACCORDION === */
+.faq-list {
+  max-width: 720px;
+  margin: 0 auto;
 }
 
-.skeptic-item {
-  padding: 28px 24px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 10px;
+.faq-item {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
-.skeptic-item h3 {
-  font-size: 16px;
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-q {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  background: none;
+  border: none;
+  color: #e8e8e8;
+  font-size: 17px;
   font-weight: 600;
-  color: #fafafa;
-  margin-bottom: 10px;
-  font-style: italic;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s;
+  gap: 16px;
 }
 
-.skeptic-item p {
+.faq-q:hover {
+  color: #fff;
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  color: #666;
+  transition: transform 0.3s ease, color 0.2s;
+}
+
+.faq-item.open .faq-icon {
+  transform: rotate(180deg);
+  color: #e0e0e0;
+}
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 0 0 0;
+}
+
+.faq-item.open .faq-a {
+  max-height: 300px;
+  padding: 0 0 24px 0;
+}
+
+.faq-a p {
   font-size: 15px;
-  color: #999;
+  color: #888;
   line-height: 1.65;
-}
-
-.skeptic-item-wide {
-  grid-column: 1 / -1;
 }
 
 /* === PURCHASE TRIGGERS === */
@@ -1804,10 +1837,6 @@ footer {
   }
 
   .benefit-tiers {
-    grid-template-columns: 1fr;
-  }
-
-  .skepticism-grid {
     grid-template-columns: 1fr;
   }
 
