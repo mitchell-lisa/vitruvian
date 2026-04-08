@@ -25,9 +25,10 @@
     }
     .slide-num {
       position: absolute;
-      top: 32px;
-      right: 40px;
-      font-size: 12px;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 13px;
       font-weight: 600;
       color: #333;
       letter-spacing: 0.08em;
@@ -96,6 +97,145 @@
     ul { list-style: none; padding: 0; }
     ul li { font-size: 15px; color: #999; padding: 8px 0; padding-left: 20px; position: relative; line-height: 1.6; }
     ul li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #4ade80; position: absolute; left: 0; top: 16px; }
+
+    /* Arrow-style problem/solution bullets */
+    .arrow-list { list-style: none; padding: 0; margin-top: 32px; }
+    .arrow-list li {
+      font-size: 17px; color: #ccc; padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      line-height: 1.7; position: relative; padding-left: 0;
+    }
+    .arrow-list li::before { display: none; }
+    .arrow-list .arrow-label { font-weight: 700; color: #e0e0e0; }
+    .arrow-list .arrow { color: #4ade80; margin: 0 8px; font-weight: 400; }
+    .arrow-list .arrow-cite { font-size: 13px; color: #555; margin-left: 6px; }
+    .arrow-list .transform-from { font-weight: 700; color: #999; }
+    .arrow-list .transform-to { font-weight: 700; color: #fafafa; }
+
+    /* 2x2 Quadrant chart */
+    .quadrant-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      aspect-ratio: 1;
+      margin: 0 auto;
+    }
+    .quadrant-grid {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-left: 1px solid rgba(255,255,255,0.15);
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+    .quadrant-grid::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 0; right: 0;
+      height: 1px;
+      background: rgba(255,255,255,0.06);
+    }
+    .quadrant-grid::after {
+      content: '';
+      position: absolute;
+      left: 50%; top: 0; bottom: 0;
+      width: 1px;
+      background: rgba(255,255,255,0.06);
+    }
+    .q-label {
+      position: absolute;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #555;
+    }
+    .q-label-top { top: -28px; left: 50%; transform: translateX(-50%); }
+    .q-label-bottom { bottom: -28px; left: 50%; transform: translateX(-50%); }
+    .q-label-left { left: -12px; top: 50%; transform: translateY(-50%) rotate(-90deg); white-space: nowrap; }
+    .q-label-right { right: -12px; top: 50%; transform: translateY(-50%) rotate(90deg); white-space: nowrap; }
+    .q-dot {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 2;
+    }
+    .q-dot-circle {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: #555;
+      margin: 0 auto 4px;
+    }
+    .q-dot-circle.accent { background: #4ade80; width: 16px; height: 16px; box-shadow: 0 0 20px rgba(74,222,128,0.4); }
+    .q-dot-name {
+      font-size: 11px;
+      font-weight: 600;
+      color: #888;
+      white-space: nowrap;
+    }
+    .q-dot-name.accent { color: #4ade80; font-size: 13px; }
+
+    /* Revenue donut charts */
+    .donut-wrap { display: flex; gap: 48px; justify-content: center; align-items: flex-start; flex-wrap: wrap; margin-top: 40px; }
+    .donut-col { text-align: center; flex: 1; min-width: 260px; max-width: 380px; }
+    .donut-col h3 { font-size: 18px; margin-bottom: 24px; }
+    .donut-svg { width: 200px; height: 200px; margin: 0 auto 20px; }
+    .donut-legend { list-style: none; padding: 0; text-align: left; display: inline-block; }
+    .donut-legend li { font-size: 13px; color: #999; padding: 4px 0; display: flex; align-items: center; gap: 8px; }
+    .donut-legend li::before { display: none; }
+    .donut-legend .swatch { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+
+    /* Flow diagram */
+    .flow-diagram {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+      margin-top: 32px;
+      padding: 32px 16px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+    }
+    .flow-node {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 16px 14px;
+      text-align: center;
+      min-width: 130px;
+      max-width: 150px;
+    }
+    .flow-node h4 { font-size: 12px; font-weight: 700; color: #fafafa; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .flow-node p { font-size: 11px; color: #777; line-height: 1.5; max-width: 100%; }
+    .flow-node.highlight { border-color: rgba(74,222,128,0.3); background: rgba(74,222,128,0.04); }
+    .flow-node.highlight h4 { color: #4ade80; }
+    .flow-arrow {
+      font-size: 20px;
+      color: #333;
+      padding: 0 6px;
+      flex-shrink: 0;
+    }
+    .flow-return {
+      width: 80%;
+      margin: 12px auto 0;
+      text-align: center;
+      font-size: 12px;
+      color: #444;
+      border-top: 1px dashed rgba(255,255,255,0.08);
+      padding-top: 12px;
+    }
+
+    /* Slide logo watermark */
+    .slide-logo {
+      position: absolute;
+      bottom: 24px;
+      right: 32px;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      opacity: 0.25;
+    }
 
     /* CTA */
     .cta-box {
@@ -207,6 +347,14 @@
       .slide { padding: 40px 24px; }
       .stat-big { font-size: 36px; }
       .nda-box { padding: 32px 24px; }
+      .flow-diagram { gap: 0; padding: 20px 12px; }
+      .flow-node { min-width: 100px; max-width: 120px; padding: 10px 8px; }
+      .flow-node h4 { font-size: 10px; }
+      .flow-node p { font-size: 9px; }
+      .flow-arrow { font-size: 14px; padding: 0 2px; }
+      .quadrant-wrap { max-width: 100%; }
+      .donut-wrap { gap: 32px; }
+      .arrow-list li { font-size: 15px; }
     }
   </style>
 </head>
@@ -246,38 +394,71 @@
     <p class="large" style="margin:0 auto 32px;">The first instrumented cable-driven stretching platform<br>for professional and collegiate athletics.</p>
     <p style="margin:0 auto; font-size:14px; color:#555;">Confidential — For potential partners only</p>
   </div>
-  <span class="slide-num">01</span>
+  <span class="slide-num">1</span>
 </div>
 
 <!-- ==================== SLIDE 2: THE PROBLEM ==================== -->
 <div class="slide">
   <div class="slide-inner">
-    <div class="split">
-      <div>
-        <p class="slide-tag">The Problem</p>
-        <h2>Stretching is the last unquantified discipline in elite sports.</h2>
-        <p class="large">Strength has force plates. Speed has timing gates. Recovery has Normatec. But flexibility — the thing that prevents injuries and extends careers — is still done by hand, estimated by eye, and documented on paper.</p>
-      </div>
-      <div class="stack">
-        <div class="card">
-          <h3>No Measurement</h3>
-          <p>Manual goniometry has 5–10° measurement error. Two testers, two different numbers. No way to track real change over time.</p>
-        </div>
-        <div class="card">
-          <h3>No Consistency</h3>
-          <p>Stretch quality depends on which staff member is available, how tired they are, and how many athletes they've already seen that day.</p>
-        </div>
-        <div class="card">
-          <h3>No Data</h3>
-          <p>When an athlete tears a hamstring, there's no longitudinal flexibility data to analyze. The warning signs were never captured.</p>
-        </div>
-      </div>
-    </div>
+    <p class="slide-tag">The Problem</p>
+    <h2>Stretching is the last unquantified discipline in elite sports.</h2>
+    <p class="large" style="margin-bottom:8px;">Strength has force plates. Speed has timing gates. Recovery has Normatec. But flexibility — the thing that prevents injuries and extends careers — is still done by hand, estimated by eye, and documented on paper.</p>
+    <ul class="arrow-list">
+      <li>
+        <span class="arrow-label">No measurement</span>
+        <span class="arrow">→</span>
+        manual goniometry has 5–10° error; two testers, two different numbers
+        <span class="arrow-cite">(Norkin & White, Clinical Measurement of Joint Motion, 2016)</span>
+      </li>
+      <li>
+        <span class="arrow-label">No consistency</span>
+        <span class="arrow">→</span>
+        stretch quality depends on which staff member is available, how fatigued they are, and how many athletes they've already seen
+        <span class="arrow-cite">(NSCA, Essentials of Strength Training, 2024)</span>
+      </li>
+      <li>
+        <span class="arrow-label">No longitudinal data</span>
+        <span class="arrow">→</span>
+        when an athlete tears a hamstring, there's no flexibility trend data to analyze — the warning signs were never captured
+        <span class="arrow-cite">(British Journal of Sports Medicine, 2023)</span>
+      </li>
+    </ul>
   </div>
-  <span class="slide-num">02</span>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">2</span>
 </div>
 
-<!-- ==================== SLIDE 3: THE PRODUCT ==================== -->
+<!-- ==================== SLIDE 3: THE SOLUTION ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">The Solution</p>
+    <h2>Vitruvian makes stretching measurable, consistent, and intelligent.</h2>
+    <ul class="arrow-list" style="margin-top:40px;">
+      <li>
+        <span class="transform-from">From guesswork</span>
+        <span class="arrow">→</span>
+        <span class="transform-to">to precision:</span>
+        motorized cable tension at constant force, joint angle measured to ±2° by depth camera — not estimated by eye
+      </li>
+      <li>
+        <span class="transform-from">From variability</span>
+        <span class="arrow">→</span>
+        <span class="transform-to">to consistency:</span>
+        same force, same protocol, same data quality — whether it's 6 AM or the 40th athlete of the day
+      </li>
+      <li>
+        <span class="transform-from">From blind spots</span>
+        <span class="arrow">→</span>
+        <span class="transform-to">to foresight:</span>
+        longitudinal ROM trends, asymmetry alerts, and tissue-readiness baselines that catch problems before they become injuries
+      </li>
+    </ul>
+  </div>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">3</span>
+</div>
+
+<!-- ==================== SLIDE 4: THE PRODUCT ==================== -->
 <div class="slide">
   <div class="slide-inner">
     <p class="slide-tag">The Product</p>
@@ -301,10 +482,11 @@
       </div>
     </div>
   </div>
-  <span class="slide-num">03</span>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">4</span>
 </div>
 
-<!-- ==================== SLIDE 4: HOW IT WORKS ==================== -->
+<!-- ==================== SLIDE 5: HOW IT WORKS ==================== -->
 <div class="slide">
   <div class="slide-inner">
     <p class="slide-tag">How It Works</p>
@@ -335,10 +517,11 @@
       </div>
     </div>
   </div>
-  <span class="slide-num">04</span>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">5</span>
 </div>
 
-<!-- ==================== SLIDE 5: TECHNOLOGY ==================== -->
+<!-- ==================== SLIDE 6: TECHNOLOGY ==================== -->
 <div class="slide">
   <div class="slide-inner">
     <p class="slide-tag">Technology</p>
@@ -366,10 +549,11 @@
       </div>
     </div>
   </div>
-  <span class="slide-num">05</span>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">6</span>
 </div>
 
-<!-- ==================== SLIDE 6: WHAT IT MEASURES ==================== -->
+<!-- ==================== SLIDE 7: WHAT IT MEASURES ==================== -->
 <div class="slide">
   <div class="slide-inner">
     <p class="slide-tag">What It Measures</p>
@@ -386,90 +570,98 @@
       <div class="card"><h3>Session Δ</h3><p>Acute ROM gain per session. Chronic trend over weeks. The metric that matters most.</p></div>
     </div>
   </div>
-  <span class="slide-num">06</span>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">7</span>
 </div>
 
-<!-- ==================== SLIDE 7: COMPETITIVE LANDSCAPE ==================== -->
+<!-- ==================== SLIDE 8: COMPETITIVE LANDSCAPE ==================== -->
 <div class="slide">
   <div class="slide-inner">
-    <p class="slide-tag">Competitive Landscape</p>
-    <h2>Nothing else does this.</h2>
-    <p style="margin-bottom:32px;">The market has adjacent technologies — recovery devices, clinical testing equipment, manual stretching services — but no integrated solution combining motorized stretching with intelligent measurement.</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Capability</th>
-          <th>Vitruvian</th>
-          <th>Biodex / Cybex</th>
-          <th>StretchLab</th>
-          <th>Normatec</th>
-          <th>Manual PT</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Motorized stretching</td>
-          <td class="check">Yes</td>
-          <td class="check">Partial</td>
-          <td class="x">No</td>
-          <td class="x">No</td>
-          <td class="x">No</td>
-        </tr>
-        <tr>
-          <td>Force-controlled (PID)</td>
-          <td class="check">Yes</td>
-          <td class="check">Yes</td>
-          <td class="x">No</td>
-          <td class="x">No</td>
-          <td class="x">No</td>
-        </tr>
-        <tr>
-          <td>Computer vision tracking</td>
-          <td class="check">Yes</td>
-          <td class="x">No</td>
-          <td class="x">No</td>
-          <td class="x">No</td>
-          <td class="x">No</td>
-        </tr>
-        <tr>
-          <td>Compensation detection</td>
-          <td class="check">Yes</td>
-          <td class="x">No</td>
-          <td class="x">No</td>
-          <td class="x">No</td>
-          <td>Subjective</td>
-        </tr>
-        <tr>
-          <td>Longitudinal data</td>
-          <td class="check">Yes</td>
-          <td class="check">Partial</td>
-          <td class="x">No</td>
-          <td class="x">No</td>
-          <td class="x">Rarely</td>
-        </tr>
-        <tr>
-          <td>Athlete self-serve</td>
-          <td class="check">Yes</td>
-          <td class="x">No</td>
-          <td class="x">No</td>
-          <td class="check">Yes</td>
-          <td class="x">No</td>
-        </tr>
-        <tr>
-          <td>Price point</td>
-          <td>$15–25K</td>
-          <td>$100K+</td>
-          <td>$60/session</td>
-          <td>$1,500</td>
-          <td>Staff time</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="split-60">
+      <div>
+        <p class="slide-tag">Competitive Landscape</p>
+        <h2>Vitruvian is the only platform that combines motorized stretching with real-time measurement.</h2>
+        <div class="quadrant-wrap" style="margin-top:40px;">
+          <div class="quadrant-grid">
+            <span class="q-label q-label-top">Data-Rich / Measured</span>
+            <span class="q-label q-label-bottom">No Data / Manual</span>
+            <span class="q-label q-label-left">Passive / Manual</span>
+            <span class="q-label q-label-right">Active / Motorized</span>
+
+            <!-- Vitruvian: top-right quadrant (motorized + data-rich) -->
+            <div class="q-dot" style="top:12%; right:10%; left:auto;">
+              <div class="q-dot-circle accent"></div>
+              <div class="q-dot-name accent">Vitruvian</div>
+            </div>
+
+            <!-- Biodex/Cybex: top-right but more clinical -->
+            <div class="q-dot" style="top:25%; left:72%;">
+              <div class="q-dot-circle"></div>
+              <div class="q-dot-name">Biodex / Cybex</div>
+            </div>
+
+            <!-- Normatec: right side, no ROM data -->
+            <div class="q-dot" style="top:65%; left:70%;">
+              <div class="q-dot-circle"></div>
+              <div class="q-dot-name">Normatec</div>
+            </div>
+
+            <!-- StretchLab: manual, no data -->
+            <div class="q-dot" style="top:75%; left:25%;">
+              <div class="q-dot-circle"></div>
+              <div class="q-dot-name">StretchLab</div>
+            </div>
+
+            <!-- Manual PT: manual, some data -->
+            <div class="q-dot" style="top:55%; left:18%;">
+              <div class="q-dot-circle"></div>
+              <div class="q-dot-name">Manual PT</div>
+            </div>
+
+            <!-- Foam Rollers: manual, no data -->
+            <div class="q-dot" style="top:88%; left:45%;">
+              <div class="q-dot-circle"></div>
+              <div class="q-dot-name">Foam Rollers</div>
+            </div>
+
+            <!-- Goniometer: some data, fully manual -->
+            <div class="q-dot" style="top:35%; left:12%;">
+              <div class="q-dot-circle"></div>
+              <div class="q-dot-name">Goniometer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="border-color:rgba(74,222,128,0.15); margin-bottom:20px;">
+          <p style="font-size:15px; color:#ccc; line-height:1.7;">Vitruvian is the <strong style="color:#4ade80;">only platform</strong> that occupies the upper-right quadrant — combining motorized, force-controlled stretching with real-time biomechanical measurement and longitudinal data tracking.</p>
+        </div>
+        <div class="stack" style="gap:12px;">
+          <div class="card">
+            <h3 style="font-size:14px;">Biodex / Cybex</h3>
+            <p style="font-size:13px;">Clinical isokinetic. $100K+. Not designed for stretching protocols. No vision tracking.</p>
+          </div>
+          <div class="card">
+            <h3 style="font-size:14px;">StretchLab</h3>
+            <p style="font-size:13px;">Manual 1:1 service. $60/session. No measurement, no data, no consistency.</p>
+          </div>
+          <div class="card">
+            <h3 style="font-size:14px;">Normatec</h3>
+            <p style="font-size:13px;">Compression recovery. No active stretch. No ROM measurement.</p>
+          </div>
+          <div class="card">
+            <h3 style="font-size:14px;">Manual PT</h3>
+            <p style="font-size:13px;">Subjective assessment. Staff-dependent quality. Rarely documented longitudinally.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <span class="slide-num">07</span>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">8</span>
 </div>
 
-<!-- ==================== SLIDE 8: MARKET ==================== -->
+<!-- ==================== SLIDE 9: MARKET ==================== -->
 <div class="slide">
   <div class="slide-inner">
     <p class="slide-tag">Market Opportunity</p>
@@ -503,10 +695,11 @@
       </div>
     </div>
   </div>
-  <span class="slide-num">08</span>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">9</span>
 </div>
 
-<!-- ==================== SLIDE 9: V1/V2 SCOPE ==================== -->
+<!-- ==================== SLIDE 10: V1/V2 SCOPE ==================== -->
 <div class="slide">
   <div class="slide-inner">
     <p class="slide-tag">Product Roadmap</p>
@@ -541,34 +734,142 @@
       </div>
     </div>
   </div>
-  <span class="slide-num">09</span>
-</div>
-
-<!-- ==================== SLIDE 10: IP ==================== -->
-<div class="slide">
-  <div class="slide-inner">
-    <p class="slide-tag">Intellectual Property</p>
-    <h2>Three patentable claims.</h2>
-    <div class="stack" style="margin-top:32px; gap:20px;">
-      <div class="card">
-        <h3>Claim 1: Force-controlled stretch with compensation-aware adjustment</h3>
-        <p>A method for automated assisted stretching comprising: applying controlled cable tension via PID force loop while simultaneously detecting joint compensation through depth-camera pose estimation, and modifying tension in response to detected compensation.</p>
-      </div>
-      <div class="card">
-        <h3>Claim 2: Integrated cable-drive + vision feedback apparatus</h3>
-        <p>An apparatus combining: motorized cable spool with inline force sensing, depth camera with skeletal tracking, and a compliance controller that reduces stretch load when non-target joint movement exceeds a threshold.</p>
-      </div>
-      <div class="card">
-        <h3>Claim 3: Bilateral assessment + adaptive protocol system</h3>
-        <p>A system for bilateral ROM assessment and progressive protocol adaptation comprising: standardized force application, bilateral comparison logic, readiness-adjusted intensity selection, and longitudinal trend analysis with automated asymmetry alerting.</p>
-      </div>
-    </div>
-    <p style="margin-top:24px; font-size:14px; color:#666;">Recommendation: File provisional patent covering force-controlled stretch with compensation-aware adjustment. Prior art gap is strong — existing stretch devices lack real-time biomechanical feedback loops.</p>
-  </div>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
   <span class="slide-num">10</span>
 </div>
 
-<!-- ==================== SLIDE 11: THE ASK ==================== -->
+<!-- ==================== SLIDE 11: IP ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">Intellectual Property</p>
+    <h2>With a patent to protect it.</h2>
+
+    <!-- System flow diagram -->
+    <p style="font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#666; text-align:center; margin-top:32px; margin-bottom:16px;">FIG. 1 — FORCE-CONTROLLED STRETCH WITH COMPENSATION-AWARE ADJUSTMENT</p>
+    <div class="flow-diagram">
+      <div class="flow-node">
+        <h4>1. Athlete</h4>
+        <p>Scans badge. System loads profile + history.</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <h4>2. Protocol</h4>
+        <p>Selects stretch pattern. Sets target force.</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node highlight">
+        <h4>3. PID Loop</h4>
+        <p>Motor ramps cable. Load cell feedback at 100Hz.</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node highlight">
+        <h4>4. Vision</h4>
+        <p>Depth camera tracks 12 joints at 30fps.</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node highlight">
+        <h4>5. Compliance</h4>
+        <p>Detects compensation. Adjusts tension in real time.</p>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <h4>6. Data</h4>
+        <p>ROM, force, asymmetry logged. Trend analysis.</p>
+      </div>
+    </div>
+    <div class="flow-return">← Feedback loop: Steps 3–5 run continuously at 100Hz throughout each stretch hold →</div>
+
+    <div class="grid-3" style="margin-top:40px;">
+      <div class="card">
+        <h3 style="font-size:15px;">Claim 1</h3>
+        <p style="font-size:13px;">Force-controlled stretch with compensation-aware adjustment — PID cable tension modified by depth-camera pose detection.</p>
+      </div>
+      <div class="card">
+        <h3 style="font-size:15px;">Claim 2</h3>
+        <p style="font-size:13px;">Integrated cable-drive + vision feedback apparatus — motorized spool, inline force sensing, skeletal tracking, compliance controller.</p>
+      </div>
+      <div class="card">
+        <h3 style="font-size:15px;">Claim 3</h3>
+        <p style="font-size:13px;">Bilateral assessment + adaptive protocol — standardized force, bilateral comparison, asymmetry alerting, longitudinal trend analysis.</p>
+      </div>
+    </div>
+    <p style="margin-top:24px; font-size:14px; color:#666;">Prior art gap is strong — existing stretch devices lack real-time biomechanical feedback loops. Provisional patent recommended.</p>
+  </div>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">11</span>
+</div>
+
+<!-- ==================== SLIDE 12: REVENUE MODEL ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">Revenue Model</p>
+    <h2>Multiple revenue streams, hardware-led foundation.</h2>
+    <div class="donut-wrap">
+      <div class="donut-col">
+        <h3>2026–2027 <span style="color:#666; font-weight:400;">(Launch)</span></h3>
+        <svg class="donut-svg" viewBox="0 0 42 42">
+          <circle cx="21" cy="21" r="15.915" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="5"/>
+          <!-- Hardware 70% -->
+          <circle cx="21" cy="21" r="15.915" fill="none" stroke="#4ade80" stroke-width="5"
+            stroke-dasharray="70 30" stroke-dashoffset="25" stroke-linecap="round"/>
+          <!-- SaaS 15% -->
+          <circle cx="21" cy="21" r="15.915" fill="none" stroke="#888" stroke-width="5"
+            stroke-dasharray="15 85" stroke-dashoffset="55" stroke-linecap="round"/>
+          <!-- Service 15% -->
+          <circle cx="21" cy="21" r="15.915" fill="none" stroke="#444" stroke-width="5"
+            stroke-dasharray="15 85" stroke-dashoffset="70" stroke-linecap="round"/>
+        </svg>
+        <ul class="donut-legend">
+          <li><span class="swatch" style="background:#4ade80;"></span>Hardware sales — 70%</li>
+          <li><span class="swatch" style="background:#888;"></span>SaaS subscriptions — 15%</li>
+          <li><span class="swatch" style="background:#444;"></span>Service / install — 15%</li>
+        </ul>
+      </div>
+      <div class="donut-col">
+        <h3>2028+ <span style="color:#666; font-weight:400;">(Scale)</span></h3>
+        <svg class="donut-svg" viewBox="0 0 42 42">
+          <circle cx="21" cy="21" r="15.915" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="5"/>
+          <!-- SaaS 45% -->
+          <circle cx="21" cy="21" r="15.915" fill="none" stroke="#4ade80" stroke-width="5"
+            stroke-dasharray="45 55" stroke-dashoffset="25" stroke-linecap="round"/>
+          <!-- Hardware 30% -->
+          <circle cx="21" cy="21" r="15.915" fill="none" stroke="#888" stroke-width="5"
+            stroke-dasharray="30 70" stroke-dashoffset="80" stroke-linecap="round"/>
+          <!-- Data/Insights 15% -->
+          <circle cx="21" cy="21" r="15.915" fill="none" stroke="#facc15" stroke-width="5"
+            stroke-dasharray="15 85" stroke-dashoffset="50" stroke-linecap="round"/>
+          <!-- Service 10% -->
+          <circle cx="21" cy="21" r="15.915" fill="none" stroke="#444" stroke-width="5"
+            stroke-dasharray="10 90" stroke-dashoffset="35" stroke-linecap="round"/>
+        </svg>
+        <ul class="donut-legend">
+          <li><span class="swatch" style="background:#4ade80;"></span>SaaS subscriptions — 45%</li>
+          <li><span class="swatch" style="background:#888;"></span>Hardware sales — 30%</li>
+          <li><span class="swatch" style="background:#facc15;"></span>Data + insights — 15%</li>
+          <li><span class="swatch" style="background:#444;"></span>Service / install — 10%</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid-3" style="margin-top:40px;">
+      <div class="card" style="text-align:center;">
+        <div class="stat-big" style="font-size:32px;">$15–25K</div>
+        <div class="stat-label">Per unit hardware</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="stat-big" style="font-size:32px;">$500/mo</div>
+        <div class="stat-label">SaaS per machine</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="stat-big" style="font-size:32px;">85%+</div>
+        <div class="stat-label">Gross margin on SaaS</div>
+      </div>
+    </div>
+  </div>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">12</span>
+</div>
+
+<!-- ==================== SLIDE 13: THE ASK ==================== -->
 <div class="slide">
   <div class="slide-inner">
     <p class="slide-tag">The Ask</p>
@@ -647,10 +948,11 @@
       <p>This is a real product with a real market gap. We need the right partners to build it and bring it to the people who need it.</p>
     </div>
   </div>
-  <span class="slide-num">11</span>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">13</span>
 </div>
 
-<!-- ==================== SLIDE 12: CLOSE ==================== -->
+<!-- ==================== SLIDE 14: CLOSE ==================== -->
 <div class="slide" style="min-height:60vh;">
   <div class="slide-inner" style="text-align:center;">
     <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="Vitruvian" class="title-logo">
