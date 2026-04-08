@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vitruvian — Partner Pitch Deck</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #0a0c10; color: #e0e0e0; }
+
+    /* Slide system */
+    .slide {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 40px;
+      position: relative;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .slide-inner {
+      max-width: 1100px;
+      width: 100%;
+    }
+    .slide-num {
+      position: absolute;
+      top: 32px;
+      right: 40px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #333;
+      letter-spacing: 0.08em;
+    }
+    .slide-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #4ade80;
+      margin-bottom: 16px;
+    }
+    h1 { font-size: clamp(36px, 5vw, 64px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; color: #fafafa; margin-bottom: 24px; }
+    h2 { font-size: clamp(28px, 4vw, 48px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; color: #fafafa; margin-bottom: 20px; }
+    h3 { font-size: 20px; font-weight: 700; color: #e8e8e8; margin-bottom: 8px; }
+    p { font-size: 17px; line-height: 1.7; color: #999; max-width: 680px; }
+    p.large { font-size: 20px; line-height: 1.65; }
+    .accent { color: #4ade80; }
+    .warn { color: #facc15; }
+    .danger { color: #ef4444; }
+
+    /* Layout helpers */
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .split-60 { display: grid; grid-template-columns: 3fr 2fr; gap: 48px; align-items: center; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .stack { display: flex; flex-direction: column; gap: 16px; }
+
+    /* Cards */
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 28px 24px;
+    }
+    .card h3 { font-size: 17px; margin-bottom: 6px; }
+    .card p { font-size: 14px; line-height: 1.6; color: #888; }
+
+    /* Stats */
+    .stat-big { font-size: 48px; font-weight: 800; color: #4ade80; letter-spacing: -0.03em; line-height: 1; }
+    .stat-label { font-size: 13px; color: #666; margin-top: 6px; font-weight: 500; }
+
+    /* Images */
+    .img-wrap {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .img-wrap img { width: 100%; height: auto; display: block; }
+
+    /* Table */
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th { text-align: left; padding: 12px 16px; font-weight: 600; color: #888; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    td { padding: 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.04); color: #ccc; }
+    td:first-child { font-weight: 600; color: #e0e0e0; }
+    .check { color: #4ade80; font-weight: 700; }
+    .x { color: #444; }
+
+    /* Title slide logo */
+    .title-logo { width: 80px; height: 80px; margin-bottom: 24px; border-radius: 16px; }
+
+    /* Divider */
+    .divider { height: 1px; background: rgba(255,255,255,0.06); margin: 32px 0; }
+
+    /* Bullet list */
+    ul { list-style: none; padding: 0; }
+    ul li { font-size: 15px; color: #999; padding: 8px 0; padding-left: 20px; position: relative; line-height: 1.6; }
+    ul li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #4ade80; position: absolute; left: 0; top: 16px; }
+
+    /* CTA */
+    .cta-box {
+      background: rgba(74,222,128,0.06);
+      border: 1px solid rgba(74,222,128,0.15);
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+      margin-top: 32px;
+    }
+    .cta-box h3 { font-size: 22px; color: #fafafa; margin-bottom: 8px; }
+    .cta-box p { margin: 0 auto; font-size: 15px; }
+
+    /* Print */
+    @media print {
+      .slide { min-height: auto; page-break-after: always; padding: 40px; }
+      body { background: #fff; color: #222; }
+      .card { border-color: #ddd; }
+      h1, h2, h3 { color: #111; }
+      p { color: #555; }
+    }
+
+    @media (max-width: 768px) {
+      .split, .split-60, .grid-3 { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .slide { padding: 40px 24px; }
+      .stat-big { font-size: 36px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<div class="slide">
+  <div class="slide-inner" style="text-align:center;">
+    <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="Vitruvian" class="title-logo">
+    <h1>VITRUVIAN</h1>
+    <p class="large" style="margin:0 auto 32px;">The first instrumented cable-driven stretching platform<br>for professional and collegiate athletics.</p>
+    <p style="margin:0 auto; font-size:14px; color:#555;">Confidential — For potential partners only</p>
+  </div>
+  <span class="slide-num">01</span>
+</div>
+
+<!-- ==================== SLIDE 2: THE PROBLEM ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <div class="split">
+      <div>
+        <p class="slide-tag">The Problem</p>
+        <h2>Stretching is the last unquantified discipline in elite sports.</h2>
+        <p class="large">Strength has force plates. Speed has timing gates. Recovery has Normatec. But flexibility — the thing that prevents injuries and extends careers — is still done by hand, estimated by eye, and documented on paper.</p>
+      </div>
+      <div class="stack">
+        <div class="card">
+          <h3>No Measurement</h3>
+          <p>Manual goniometry has 5–10° measurement error. Two testers, two different numbers. No way to track real change over time.</p>
+        </div>
+        <div class="card">
+          <h3>No Consistency</h3>
+          <p>Stretch quality depends on which staff member is available, how tired they are, and how many athletes they've already seen that day.</p>
+        </div>
+        <div class="card">
+          <h3>No Data</h3>
+          <p>When an athlete tears a hamstring, there's no longitudinal flexibility data to analyze. The warning signs were never captured.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="slide-num">02</span>
+</div>
+
+<!-- ==================== SLIDE 3: THE PRODUCT ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">The Product</p>
+    <h2>Controlled tension. Measured range. Data on every rep.</h2>
+    <div class="split" style="margin-top:32px;">
+      <div class="img-wrap">
+        <img src="images/hero-v2.png" alt="Vitruvian stretching platform">
+      </div>
+      <div class="stack">
+        <p>Vitruvian is a single-station platform that applies precise, motorized cable tension to stretch an athlete's muscles while simultaneously measuring range of motion, force response, and movement quality — all in real time.</p>
+        <div class="divider"></div>
+        <div>
+          <h3>One machine replaces:</h3>
+          <ul>
+            <li>Manual assisted stretching (1:1 staff time)</li>
+            <li>Goniometer ROM assessments</li>
+            <li>Subjective flexibility documentation</li>
+            <li>Inconsistent stretch protocols</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="slide-num">03</span>
+</div>
+
+<!-- ==================== SLIDE 4: HOW IT WORKS ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">How It Works</p>
+    <h2>Eight minutes. Nine variables. Zero guesswork.</h2>
+    <div class="split" style="margin-top:32px;">
+      <div class="img-wrap">
+        <img src="images/hero-inuse.png" alt="Athlete on Vitruvian during hamstring stretch">
+      </div>
+      <div>
+        <div class="stack" style="gap:20px;">
+          <div class="card">
+            <h3>1. Badge in</h3>
+            <p>Athlete scans ID. System loads their profile, history, and today's training context.</p>
+          </div>
+          <div class="card">
+            <h3>2. Baseline screen</h3>
+            <p>Standardized passive stretch at 8 lb each side. Bilateral ROM comparison in 60 seconds.</p>
+          </div>
+          <div class="card">
+            <h3>3. Stretch protocol</h3>
+            <p>Motor ramps cable tension. PID loop maintains constant force. Camera tracks compensation. Data logs every second.</p>
+          </div>
+          <div class="card">
+            <h3>4. Session report</h3>
+            <p>ROM gain, asymmetry change, tolerance trend. Exportable. Comparable. Actionable.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="slide-num">04</span>
+</div>
+
+<!-- ==================== SLIDE 5: TECHNOLOGY ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">Technology</p>
+    <h2>Five systems. One closed loop.</h2>
+    <div class="grid-2" style="margin-top:32px;">
+      <div class="card" style="text-align:center;">
+        <div class="img-wrap" style="margin-bottom:16px;"><img src="images/detail-drive.png" alt="Motor assembly"></div>
+        <h3>Cable Drive</h3>
+        <p>200W BLDC motor, 20:1 planetary gearbox, Dyneema cable. ODrive FOC controller at 100Hz. Force-compliant, backdriveable.</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="img-wrap" style="margin-bottom:16px;"><img src="images/detail-sensor.png" alt="Depth camera"></div>
+        <h3>Depth Camera</h3>
+        <p>Intel RealSense D435. 12-point skeletal tracking at 30fps. Measures joint angles to ±2°. Detects compensation in real time.</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="img-wrap" style="margin-bottom:16px;"><img src="images/detail-ui.png" alt="Touchscreen interface"></div>
+        <h3>Live Interface</h3>
+        <p>15" touchscreen. Real-time force graph, ROM tracking, bilateral comparison. Dark UI designed for staff and athlete visibility.</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="img-wrap" style="margin-bottom:16px;"><img src="images/detail-attachment.png" alt="Ankle cuff"></div>
+        <h3>Quick-Release Cuff</h3>
+        <p>Padded neoprene. Carabiner quick-release. 5-layer safety: software cap, PID compliance, slip clutch, E-stop, quick-release.</p>
+      </div>
+    </div>
+  </div>
+  <span class="slide-num">05</span>
+</div>
+
+<!-- ==================== SLIDE 6: WHAT IT MEASURES ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">What It Measures</p>
+    <h2>Nine variables. Measured, not estimated.</h2>
+    <div class="grid-3" style="margin-top:32px;">
+      <div class="card"><h3>Joint Angle</h3><p>Peak passive ROM at standardized force. ±2° accuracy. Comparable across sessions.</p></div>
+      <div class="card"><h3>Cable Force</h3><p>Inline load cell at 100Hz. Logs tension ramp, peak force, and variability during hold.</p></div>
+      <div class="card"><h3>Asymmetry</h3><p>Left vs. right at matched force. Flags differences &gt;10%. Tracks resolution over time.</p></div>
+      <div class="card"><h3>Hold Time</h3><p>Duration at end-range without retreating. A neuromuscular tolerance metric.</p></div>
+      <div class="card"><h3>Compensation</h3><p>Camera detects pelvic rotation, knee bend, trunk shift. Quantified, not eyeballed.</p></div>
+      <div class="card"><h3>Tolerance Threshold</h3><p>The force level where the athlete first reports discomfort or resists. Tracked over weeks.</p></div>
+      <div class="card"><h3>Pain Response</h3><p>Binary flag per rep. Correlated with force and ROM to build a tissue-response profile.</p></div>
+      <div class="card"><h3>Tension Ramp</h3><p>Rate of force acceptance during initial stretch. Indicates tissue readiness and stiffness.</p></div>
+      <div class="card"><h3>Session Δ</h3><p>Acute ROM gain per session. Chronic trend over weeks. The metric that matters most.</p></div>
+    </div>
+  </div>
+  <span class="slide-num">06</span>
+</div>
+
+<!-- ==================== SLIDE 7: COMPETITIVE LANDSCAPE ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">Competitive Landscape</p>
+    <h2>Nothing else does this.</h2>
+    <p style="margin-bottom:32px;">The market has adjacent technologies — recovery devices, clinical testing equipment, manual stretching services — but no integrated solution combining motorized stretching with intelligent measurement.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Capability</th>
+          <th>Vitruvian</th>
+          <th>Biodex / Cybex</th>
+          <th>StretchLab</th>
+          <th>Normatec</th>
+          <th>Manual PT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Motorized stretching</td>
+          <td class="check">Yes</td>
+          <td class="check">Partial</td>
+          <td class="x">No</td>
+          <td class="x">No</td>
+          <td class="x">No</td>
+        </tr>
+        <tr>
+          <td>Force-controlled (PID)</td>
+          <td class="check">Yes</td>
+          <td class="check">Yes</td>
+          <td class="x">No</td>
+          <td class="x">No</td>
+          <td class="x">No</td>
+        </tr>
+        <tr>
+          <td>Computer vision tracking</td>
+          <td class="check">Yes</td>
+          <td class="x">No</td>
+          <td class="x">No</td>
+          <td class="x">No</td>
+          <td class="x">No</td>
+        </tr>
+        <tr>
+          <td>Compensation detection</td>
+          <td class="check">Yes</td>
+          <td class="x">No</td>
+          <td class="x">No</td>
+          <td class="x">No</td>
+          <td>Subjective</td>
+        </tr>
+        <tr>
+          <td>Longitudinal data</td>
+          <td class="check">Yes</td>
+          <td class="check">Partial</td>
+          <td class="x">No</td>
+          <td class="x">No</td>
+          <td class="x">Rarely</td>
+        </tr>
+        <tr>
+          <td>Athlete self-serve</td>
+          <td class="check">Yes</td>
+          <td class="x">No</td>
+          <td class="x">No</td>
+          <td class="check">Yes</td>
+          <td class="x">No</td>
+        </tr>
+        <tr>
+          <td>Price point</td>
+          <td>$15–25K</td>
+          <td>$100K+</td>
+          <td>$60/session</td>
+          <td>$1,500</td>
+          <td>Staff time</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <span class="slide-num">07</span>
+</div>
+
+<!-- ==================== SLIDE 8: MARKET ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">Market Opportunity</p>
+    <h2>Who buys this.</h2>
+    <div class="grid-3" style="margin-top:32px;">
+      <div class="card" style="text-align:center;">
+        <div class="stat-big">123</div>
+        <div class="stat-label">NFL, NBA, NHL, MLS teams</div>
+        <p style="margin-top:12px;">Every franchise has a performance staff, training room budget, and injury prevention mandate.</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="stat-big">350+</div>
+        <div class="stat-label">D1 athletic programs</div>
+        <p style="margin-top:12px;">Collegiate training rooms with 200+ athletes per staff. Consistency and documentation matter.</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="stat-big">50+</div>
+        <div class="stat-label">Olympic training centers</div>
+        <p style="margin-top:12px;">National governing bodies, Olympic committees, and elite training centers worldwide.</p>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="split" style="margin-top:24px;">
+      <div>
+        <h3>Initial market: ~500 facilities</h3>
+        <p>At $20K per unit, that's a $10M addressable market in pro + D1 alone. Multi-unit orders likely (2–4 per facility).</p>
+      </div>
+      <div>
+        <h3>Expansion: PT clinics, sports medicine</h3>
+        <p>10,000+ outpatient physical therapy clinics in the US. Return-to-play documentation and objective ROM tracking are regulatory advantages.</p>
+      </div>
+    </div>
+  </div>
+  <span class="slide-num">08</span>
+</div>
+
+<!-- ==================== SLIDE 9: V1/V2 SCOPE ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">Product Roadmap</p>
+    <h2>Honest scope. No overclaiming.</h2>
+    <div class="split" style="margin-top:32px;">
+      <div>
+        <div class="card" style="border-color:rgba(74,222,128,0.2);">
+          <p class="slide-tag" style="margin-bottom:12px;">V1 — Launch</p>
+          <h3>Four stretch patterns</h3>
+          <ul>
+            <li>Hamstring SLR (straight-leg raise)</li>
+            <li>Adductor abduction</li>
+            <li>Hip flexor extension</li>
+            <li>PNF contract-relax overlay</li>
+          </ul>
+          <div class="divider"></div>
+          <p style="font-size:13px;">Same motor, same cable, same pulley for all four. The athlete changes position — the machine stays simple.</p>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="border-color:rgba(255,255,255,0.08);">
+          <p class="slide-tag" style="color:#888; margin-bottom:12px;">V2 — Year 2</p>
+          <h3>Three additional patterns</h3>
+          <ul>
+            <li>Hip internal / external rotation</li>
+            <li>Ankle dorsiflexion</li>
+            <li>Thoracic rotation</li>
+          </ul>
+          <div class="divider"></div>
+          <p style="font-size:13px;">Requires adjustable pulley position on frame (sliding track). Same motor and cable system. Software update + hardware bracket.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="slide-num">09</span>
+</div>
+
+<!-- ==================== SLIDE 10: IP ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">Intellectual Property</p>
+    <h2>Three patentable claims.</h2>
+    <div class="stack" style="margin-top:32px; gap:20px;">
+      <div class="card">
+        <h3>Claim 1: Force-controlled stretch with compensation-aware adjustment</h3>
+        <p>A method for automated assisted stretching comprising: applying controlled cable tension via PID force loop while simultaneously detecting joint compensation through depth-camera pose estimation, and modifying tension in response to detected compensation.</p>
+      </div>
+      <div class="card">
+        <h3>Claim 2: Integrated cable-drive + vision feedback apparatus</h3>
+        <p>An apparatus combining: motorized cable spool with inline force sensing, depth camera with skeletal tracking, and a compliance controller that reduces stretch load when non-target joint movement exceeds a threshold.</p>
+      </div>
+      <div class="card">
+        <h3>Claim 3: Bilateral assessment + adaptive protocol system</h3>
+        <p>A system for bilateral ROM assessment and progressive protocol adaptation comprising: standardized force application, bilateral comparison logic, readiness-adjusted intensity selection, and longitudinal trend analysis with automated asymmetry alerting.</p>
+      </div>
+    </div>
+    <p style="margin-top:24px; font-size:14px; color:#666;">Recommendation: File provisional patent covering force-controlled stretch with compensation-aware adjustment. Prior art gap is strong — existing stretch devices lack real-time biomechanical feedback loops.</p>
+  </div>
+  <span class="slide-num">10</span>
+</div>
+
+<!-- ==================== SLIDE 11: THE ASK ==================== -->
+<div class="slide">
+  <div class="slide-inner" style="text-align:center;">
+    <p class="slide-tag">The Ask</p>
+    <h2>We're looking for beta partners.</h2>
+    <p class="large" style="margin:0 auto 40px;">Vitruvian is in prototype development. We're seeking 3–5 professional or collegiate training rooms to co-develop the first production unit.</p>
+    <div class="grid-3" style="margin-top:32px;">
+      <div class="card" style="text-align:center;">
+        <h3>What you provide</h3>
+        <ul>
+          <li>Training room floor space</li>
+          <li>Athletes willing to test</li>
+          <li>Staff feedback on protocols</li>
+          <li>Real-world validation data</li>
+        </ul>
+      </div>
+      <div class="card" style="text-align:center;">
+        <h3>What you get</h3>
+        <ul>
+          <li>First access to the platform</li>
+          <li>Preferred pricing at launch</li>
+          <li>Input on feature development</li>
+          <li>Co-authorship on validation studies</li>
+        </ul>
+      </div>
+      <div class="card" style="text-align:center;">
+        <h3>Timeline</h3>
+        <ul>
+          <li>Q3 2026: Prototype in-facility</li>
+          <li>Q4 2026: Beta testing phase</li>
+          <li>Q1 2027: Validation study</li>
+          <li>Q2 2027: Production orders</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cta-box">
+      <h3>Ready to talk?</h3>
+      <p>If you run a collegiate, professional, or Olympic training room — let's talk.</p>
+    </div>
+  </div>
+  <span class="slide-num">11</span>
+</div>
+
+<!-- ==================== SLIDE 12: CLOSE ==================== -->
+<div class="slide" style="min-height:60vh;">
+  <div class="slide-inner" style="text-align:center;">
+    <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="Vitruvian" class="title-logo">
+    <h2>VITRUVIAN</h2>
+    <p style="margin:0 auto 8px; font-size:17px; color:#888;">Controlled tension. Measured range. Data on every rep.</p>
+    <p style="margin:0 auto; font-size:14px; color:#555;">Confidential — 2026</p>
+  </div>
+</div>
+
+</body>
+</html>

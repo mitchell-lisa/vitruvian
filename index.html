@@ -506,499 +506,219 @@
     </div>
   </section>
 
-  <!-- DUAL DEMO SECTION -->
+
+  <!-- IMMERSIVE DEMO -->
   <section class="section" id="demo">
     <div class="container">
-      <p class="section-tag">Interactive Demos</p>
-      <h2>See the platform from every angle.</h2>
+      <p class="section-tag">The Platform</p>
+      <h2>See it from every angle.</h2>
 
-      <!-- Demo Tabs -->
-      <div class="demo-tabs">
-        <button class="demo-tab active" data-demo="mechanical">The Machine — Engineering &amp; IP</button>
-        <button class="demo-tab" data-demo="therapy">The Therapy — Clinical Benefits</button>
+      <!-- View Selector Tabs -->
+      <div class="view-tabs">
+        <button class="view-tab active" data-view="side">The Machine</button>
+        <button class="view-tab" data-view="front">In Action</button>
+        <button class="view-tab" data-view="detail">Components</button>
+        <button class="view-tab" data-view="session">Live Session</button>
       </div>
 
-      <!-- ======== DEMO 1: MECHANICAL ======== -->
-      <div class="demo-content active" id="demo-mechanical">
-        <p class="demo-intro">Explore the mechanical systems, cable routing, sensor array, and patentable innovations that make Vitruvian possible.</p>
-        <div class="demo-wrap">
-          <div class="machine-visual">
-            <svg viewBox="0 0 600 480" xmlns="http://www.w3.org/2000/svg" class="machine-svg" id="mechSvg">
-              <!-- === FRAME === -->
-              <!-- Main vertical uprights -->
-              <rect x="50" y="30" width="14" height="380" rx="3" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
-              <rect x="440" y="30" width="14" height="380" rx="3" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
-              <!-- Top crossbeam -->
-              <rect x="50" y="30" width="404" height="14" rx="3" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
-              <!-- Base rails -->
-              <rect x="40" y="395" width="180" height="10" rx="2" fill="#222" stroke="#333" stroke-width="1"/>
-              <rect x="290" y="395" width="180" height="10" rx="2" fill="#222" stroke="#333" stroke-width="1"/>
-              <!-- Cross bracing (dashed) -->
-              <line x1="64" y1="44" x2="64" y2="395" stroke="#2a2a2a" stroke-width="1" stroke-dasharray="6 4"/>
-              <line x1="447" y1="44" x2="447" y2="395" stroke="#2a2a2a" stroke-width="1" stroke-dasharray="6 4"/>
+      <div class="demo-immersive">
 
-              <!-- === BENCH === -->
-              <rect x="110" y="280" width="290" height="14" rx="4" fill="#2a2a2a" stroke="#444" stroke-width="1"/>
-              <!-- Bench padding -->
-              <rect x="115" y="276" width="280" height="6" rx="3" fill="#333" opacity="0.7"/>
-              <!-- Bench legs -->
-              <rect x="135" y="294" width="10" height="105" rx="2" fill="#333"/>
-              <rect x="360" y="294" width="10" height="105" rx="2" fill="#333"/>
-              <!-- Pelvis stabilization pad -->
-              <rect id="mech-pelvis-pad" x="230" y="258" width="40" height="22" rx="4" fill="#444" stroke="#555" stroke-width="1"/>
-              <text x="250" y="252" fill="#666" font-size="6" text-anchor="middle" font-family="Inter">PELVIS BRACE</text>
+      <!-- ======== THE MACHINE ======== -->
+      <div class="view-panel active" id="view-side">
+        <div class="demo-img-wrap">
+          <img src="images/hero-v2.png" alt="Vitruvian stretching station — goalpost aluminum frame with padded bench, single cable, motor assembly, depth camera, and touchscreen" loading="lazy">
+        </div>
+        <div class="demo-img-caption">
+          <div class="caption-specs">
+            <span>7 ft aluminum frame</span>
+            <span>Single cable drive</span>
+            <span>Flat treatment bench</span>
+            <span>Depth camera</span>
+            <span>15" touchscreen</span>
+            <span>E-stop</span>
+          </div>
+        </div>
+      </div>
 
-              <!-- === MOTOR ASSEMBLY (top right) === -->
-              <g id="mech-motor-assembly">
-                <!-- Motor housing -->
-                <rect id="mech-motor" x="420" y="50" width="55" height="40" rx="5" fill="#2a2a2a" stroke="#555" stroke-width="1.5"/>
-                <!-- Motor shaft indicator -->
-                <circle cx="448" cy="70" r="8" fill="#1a1a1a" stroke="#666" stroke-width="1.5"/>
-                <circle cx="448" cy="70" r="3" fill="#444"/>
-                <!-- Heat sink fins -->
-                <line x1="422" y1="55" x2="422" y2="85" stroke="#444" stroke-width="0.5"/>
-                <line x1="426" y1="55" x2="426" y2="85" stroke="#444" stroke-width="0.5"/>
-                <line x1="470" y1="55" x2="470" y2="85" stroke="#444" stroke-width="0.5"/>
-                <line x1="474" y1="55" x2="474" y2="85" stroke="#444" stroke-width="0.5"/>
-                <text x="448" y="48" fill="#888" font-size="6" text-anchor="middle" font-family="Inter" font-weight="600">BLDC MOTOR</text>
-                <text x="448" y="100" fill="#666" font-size="5" text-anchor="middle" font-family="Inter">200W / 24V</text>
-              </g>
+      <!-- ======== IN ACTION ======== -->
+      <div class="view-panel" id="view-front">
+        <div class="demo-img-wrap">
+          <img src="images/hero-inuse.png" alt="Professional athlete during a cable-assisted hamstring stretch — leg raised by motorized cable, touchscreen displaying live ROM and force data" loading="lazy">
+        </div>
+        <div class="demo-img-caption">
+          <div class="caption-specs">
+            <span>Supine straight-leg raise</span>
+            <span>Cable-controlled 40° elevation</span>
+            <span>Live force + ROM readout</span>
+            <span>PID-maintained constant tension</span>
+          </div>
+        </div>
+      </div>
 
-              <!-- === PLANETARY GEARBOX === -->
-              <g id="mech-gearbox">
-                <rect x="420" y="108" width="55" height="25" rx="4" fill="#333" stroke="#555" stroke-width="1"/>
-                <circle cx="448" cy="120" r="7" fill="#2a2a2a" stroke="#666" stroke-width="1"/>
-                <text x="448" y="142" fill="#666" font-size="5" text-anchor="middle" font-family="Inter">20:1 GEARBOX</text>
-              </g>
+      <!-- ======== COMPONENTS ======== -->
+      <div class="view-panel" id="view-detail">
+        <div class="detail-grid">
+          <div class="detail-panel">
+            <span class="detail-label">Drive System</span>
+            <div class="demo-img-wrap detail-img">
+              <img src="images/detail-drive.png" alt="BLDC motor with planetary gearbox and cable spool assembly" loading="lazy">
+            </div>
+            <span class="detail-value">200W BLDC + 20:1 Planetary Gearbox</span>
+            <p>Brushless DC motor through a planetary gearbox for smooth, high-torque, backdriveable cable control. ODrive FOC controller at 100Hz.</p>
+          </div>
+          <div class="detail-panel">
+            <span class="detail-label">Depth Camera</span>
+            <div class="demo-img-wrap detail-img">
+              <img src="images/detail-sensor.png" alt="Intel RealSense depth camera with IR emitters and RGB sensor" loading="lazy">
+            </div>
+            <span class="detail-value">Intel RealSense D435</span>
+            <p>Structured-light depth camera for 12-point skeletal tracking at 30fps. Detects compensation, measures ROM to ±2°.</p>
+          </div>
+          <div class="detail-panel">
+            <span class="detail-label">Touchscreen Interface</span>
+            <div class="demo-img-wrap detail-img">
+              <img src="images/detail-ui.png" alt="Live stretching session interface showing force, ROM, and progress data" loading="lazy">
+            </div>
+            <span class="detail-value">15" Live Session Display</span>
+            <p>Real-time force graph, joint angle tracking, bilateral comparison, and session progress. Dark UI with green accent data.</p>
+          </div>
+          <div class="detail-panel">
+            <span class="detail-label">Ankle Cuff</span>
+            <div class="demo-img-wrap detail-img">
+              <img src="images/detail-attachment.png" alt="Padded neoprene ankle cuff with carabiner quick-release" loading="lazy">
+            </div>
+            <span class="detail-value">Quick-Release Attachment</span>
+            <p>Padded neoprene cuff with carabiner quick-release. Athlete can disconnect instantly. Rated to 200 lb.</p>
+          </div>
+        </div>
+      </div>
 
-              <!-- === CABLE SPOOL === -->
-              <g id="mech-spool">
-                <rect x="430" y="150" width="35" height="20" rx="3" fill="#2a2a2a" stroke="#555" stroke-width="1"/>
-                <circle cx="448" cy="160" r="6" fill="#1a1a1a" stroke="#666" stroke-width="1.5"/>
-                <text x="448" y="180" fill="#666" font-size="5" text-anchor="middle" font-family="Inter">CABLE SPOOL</text>
-              </g>
-
-              <!-- === PULLEY AT TOP === -->
-              <circle id="mech-pulley" cx="447" cy="37" r="7" fill="#333" stroke="#666" stroke-width="1.5"/>
-              <text x="447" y="22" fill="#666" font-size="5" text-anchor="middle" font-family="Inter">PULLEY</text>
-
-              <!-- === CABLE ROUTING === -->
-              <!-- Spool to pulley (vertical) -->
-              <line x1="448" y1="150" x2="448" y2="44" stroke="#888" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.5"/>
-              <!-- Pulley to ankle (diagonal) — the active cable -->
-              <line id="mech-cable" x1="447" y1="44" x2="350" y2="268" stroke="#888" stroke-width="2" class="cable" opacity="0.4"/>
-
-              <!-- === INLINE LOAD CELL === -->
-              <g id="mech-loadcell">
-                <rect x="390" y="140" width="24" height="14" rx="3" fill="none" stroke="#666" stroke-width="1.5"/>
-                <line x1="394" y1="147" x2="410" y2="147" stroke="#888" stroke-width="0.8"/>
-                <text x="402" y="162" fill="#666" font-size="5" text-anchor="middle" font-family="Inter">LOAD CELL</text>
-                <text x="402" y="170" fill="#555" font-size="4.5" text-anchor="middle" font-family="Inter">100Hz sampling</text>
-              </g>
-
-              <!-- === ROTARY ENCODER === -->
-              <g id="mech-encoder">
-                <circle cx="465" cy="160" r="5" fill="none" stroke="#666" stroke-width="1"/>
-                <text x="485" y="157" fill="#666" font-size="5" font-family="Inter">ENCODER</text>
-                <text x="485" y="165" fill="#555" font-size="4.5" font-family="Inter">Position tracking</text>
-              </g>
-
-              <!-- === DEPTH CAMERA === -->
-              <g id="mech-camera">
-                <rect x="220" y="32" width="40" height="16" rx="3" fill="#222" stroke="#555" stroke-width="1"/>
-                <circle cx="240" cy="40" r="5" fill="#111" stroke="#4ade80" stroke-width="1.5" class="camera-lens"/>
-                <circle cx="252" cy="40" r="3" fill="#111" stroke="#666" stroke-width="1"/>
-                <text x="240" y="22" fill="#888" font-size="6" text-anchor="middle" font-family="Inter" font-weight="600">DEPTH CAMERA</text>
-              </g>
-
-              <!-- === TOUCHSCREEN === -->
-              <g id="mech-screen">
-                <rect x="520" y="140" width="55" height="80" rx="5" fill="#111" stroke="#444" stroke-width="1.5"/>
-                <rect x="525" y="148" width="45" height="60" rx="3" fill="#0f172a"/>
-                <text x="548" y="170" fill="#4ade80" font-size="6" text-anchor="middle" font-family="Inter" id="mech-screen-1">READY</text>
-                <text x="548" y="182" fill="#888" font-size="5" text-anchor="middle" font-family="Inter" id="mech-screen-2"></text>
-                <text x="548" y="194" fill="#888" font-size="5" text-anchor="middle" font-family="Inter" id="mech-screen-3"></text>
-                <text x="548" y="232" fill="#666" font-size="5" text-anchor="middle" font-family="Inter">15" TOUCHSCREEN</text>
-              </g>
-
-              <!-- === E-STOP === -->
-              <circle cx="64" cy="200" r="12" fill="#dc2626" stroke="#991b1b" stroke-width="2"/>
-              <text x="64" y="204" fill="#fff" font-size="6" text-anchor="middle" font-weight="700" font-family="Inter">E</text>
-              <text x="64" y="222" fill="#888" font-size="5" text-anchor="middle" font-family="Inter">E-STOP</text>
-
-              <!-- === SLIP CLUTCH (on cable) === -->
-              <g id="mech-clutch">
-                <rect x="405" y="108" width="12" height="10" rx="2" fill="none" stroke="#ef4444" stroke-width="1" stroke-dasharray="2 1"/>
-                <text x="400" y="106" fill="#ef4444" font-size="4.5" text-anchor="end" font-family="Inter">SLIP CLUTCH</text>
-                <text x="400" y="113" fill="#888" font-size="4" text-anchor="end" font-family="Inter">35 lb limit</text>
-              </g>
-
-              <!-- === QUICK-RELEASE CUFF === -->
-              <g id="mech-cuff-detail">
-                <circle id="mech-cuff" cx="350" cy="268" r="8" fill="none" stroke="#666" stroke-width="1.5" class="cuff"/>
-                <text x="350" y="260" fill="#666" font-size="5" text-anchor="middle" font-family="Inter">QUICK-RELEASE</text>
-                <text x="350" y="255" fill="#555" font-size="4.5" text-anchor="middle" font-family="Inter">ANKLE CUFF</text>
-              </g>
-
-              <!-- === REALISTIC HUMAN FIGURE (Supine) === -->
-              <g id="mech-person">
-                <!-- Head (oval) -->
-                <ellipse cx="130" cy="262" rx="14" ry="16" fill="#d4a574" stroke="#b8926a" stroke-width="1"/>
-                <!-- Neck -->
-                <rect x="140" y="256" width="12" height="8" rx="2" fill="#d4a574"/>
-                <!-- Torso -->
-                <path d="M148,256 L148,264 C148,264 175,268 210,268 L210,264 C210,260 195,256 175,254 L165,254 C155,254 150,255 148,256 Z" fill="#3b5998" stroke="#2d4a7c" stroke-width="0.8"/>
-                <!-- Chest/torso body shape -->
-                <path d="M152,268 L152,274 L210,274 L210,268 Z" fill="#3b5998" stroke="#2d4a7c" stroke-width="0.5"/>
-                <!-- Hips -->
-                <ellipse cx="215" cy="271" rx="18" ry="8" fill="#2d3748" stroke="#4a5568" stroke-width="0.5"/>
-                <!-- Right leg (on bench, stationary) -->
-                <path d="M228,268 C240,268 280,270 330,274 L330,278 C280,276 240,274 228,274 Z" fill="#d4a574" stroke="#b8926a" stroke-width="0.5"/>
-                <!-- Right foot -->
-                <path d="M330,274 L340,272 L342,278 L330,278 Z" fill="#d4a574" stroke="#b8926a" stroke-width="0.5"/>
-                <!-- Left leg (being raised) -->
-                <path id="mech-leg-shape" d="M228,264 C235,260 260,258 345,262 L347,268 C260,264 235,266 228,270 Z" fill="#d4a574" stroke="#b8926a" stroke-width="0.5"/>
-                <!-- Left foot with cuff -->
-                <path id="mech-foot" d="M345,262 L355,258 L357,264 L347,268 Z" fill="#d4a574" stroke="#b8926a" stroke-width="0.5"/>
-                <!-- Arms at sides -->
-                <path d="M155,264 L155,276 L160,276 L160,264 Z" fill="#d4a574" stroke="#b8926a" stroke-width="0.3" opacity="0.8"/>
-                <path d="M185,264 L185,276 L190,276 L190,264 Z" fill="#d4a574" stroke="#b8926a" stroke-width="0.3" opacity="0.8"/>
-              </g>
-
-              <!-- === COMPONENT HIGHLIGHT OVERLAYS === -->
-              <g id="mech-highlights" opacity="0">
-                <!-- Motor highlight ring -->
-                <rect id="hl-motor" x="415" y="45" width="65" height="50" rx="8" fill="none" stroke="#4ade80" stroke-width="2" stroke-dasharray="4 2" opacity="0"/>
-                <!-- Cable system highlight -->
-                <rect id="hl-cable" x="425" y="145" width="45" height="40" rx="6" fill="none" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4 2" opacity="0"/>
-                <!-- Safety highlight -->
-                <rect id="hl-safety" x="395" y="100" width="90" height="30" rx="6" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="4 2" opacity="0"/>
-                <!-- Sensor highlight -->
-                <rect id="hl-sensors" x="215" y="28" width="50" height="24" rx="6" fill="none" stroke="#facc15" stroke-width="2" stroke-dasharray="4 2" opacity="0"/>
-              </g>
-
-              <!-- Frame dimension labels -->
-              <text x="255" y="430" fill="#555" font-size="7" text-anchor="middle" font-family="Inter">7 ft (H) x 5 ft (W) x 4 ft (D) — Open-Front Aluminum Frame</text>
-              <text x="255" y="445" fill="#444" font-size="6" text-anchor="middle" font-family="Inter">Single-cable station with integrated bench and stabilization</text>
-            </svg>
+      <!-- ======== LIVE SESSION ======== -->
+      <div class="view-panel" id="view-session">
+        <div class="session-layout">
+          <div class="demo-img-wrap session-img">
+            <img src="images/hero-inuse.png" alt="Athlete mid-stretch during live session" loading="lazy">
+            <div class="session-img-overlay">
+              <div class="session-live-badge">LIVE SESSION</div>
+            </div>
           </div>
 
-          <div class="demo-panel">
-            <div class="demo-steps-indicator">
-              <div class="demo-step-dot active" data-demo-target="mechanical" data-step="0"></div>
-              <div class="demo-step-line"></div>
-              <div class="demo-step-dot" data-demo-target="mechanical" data-step="1"></div>
-              <div class="demo-step-line"></div>
-              <div class="demo-step-dot" data-demo-target="mechanical" data-step="2"></div>
-              <div class="demo-step-line"></div>
-              <div class="demo-step-dot" data-demo-target="mechanical" data-step="3"></div>
-              <div class="demo-step-line"></div>
-              <div class="demo-step-dot" data-demo-target="mechanical" data-step="4"></div>
-              <div class="demo-step-line"></div>
-              <div class="demo-step-dot" data-demo-target="mechanical" data-step="5"></div>
+          <div class="session-panel">
+            <!-- Step dots -->
+            <div class="session-dots">
+              <div class="session-dot active current" data-step="0"></div>
+              <div class="session-dot" data-step="1"></div>
+              <div class="session-dot" data-step="2"></div>
+              <div class="session-dot" data-step="3"></div>
+              <div class="session-dot" data-step="4"></div>
+              <div class="session-dot" data-step="5"></div>
+              <div class="session-dot" data-step="6"></div>
+              <div class="session-dot" data-step="7"></div>
             </div>
 
-            <div class="demo-step-content active" id="mechStep0">
-              <div class="demo-step-badge">Overview</div>
-              <h3>The Complete System</h3>
-              <p>A single-station platform with integrated bench. One BLDC motor drives a cable through a pulley system to an ankle cuff. Every component is instrumented.</p>
-              <div class="demo-data-grid">
-                <div class="demo-datum"><span class="datum-label">Motor</span><span class="datum-val">200W BLDC, 24V</span></div>
-                <div class="demo-datum"><span class="datum-label">Gearbox</span><span class="datum-val">20:1 Planetary</span></div>
-                <div class="demo-datum"><span class="datum-label">Force Sensing</span><span class="datum-val">Inline Load Cell, 100Hz</span></div>
+            <!-- Step 0: Badge In -->
+            <div class="session-step-content active" id="sStep0">
+              <h3>Badge In</h3>
+              <p>Athlete scans their ID. System loads profile, injury history, and previous session data.</p>
+              <div class="live-data-grid">
+                <div class="data-card"><span class="data-label">Athlete</span><span class="data-value">#23 Williams</span></div>
+                <div class="data-card"><span class="data-label">Sessions</span><span class="data-value">14</span></div>
+                <div class="data-card"><span class="data-label">Status</span><span class="data-value" style="color:#4ade80">Active</span></div>
               </div>
             </div>
 
-            <div class="demo-step-content" id="mechStep1">
-              <div class="demo-step-badge">Drive System</div>
-              <h3>Motor → Gearbox → Spool</h3>
-              <p>A brushless DC motor feeds through a 20:1 planetary gearbox for smooth, high-torque, low-speed output. The cable spool winds Dyneema line with a rotary encoder tracking position to 0.1° resolution.</p>
-              <div class="demo-data-grid">
-                <div class="demo-datum"><span class="datum-label">Torque</span><span class="datum-val">Continuous, backdriveable</span></div>
-                <div class="demo-datum"><span class="datum-label">Cable</span><span class="datum-val">Dyneema, 200lb rating</span></div>
-                <div class="demo-datum"><span class="datum-label">Control</span><span class="datum-val">ODrive FOC controller</span></div>
+            <!-- Step 1: Mode Select -->
+            <div class="session-step-content" id="sStep1">
+              <h3>Mode Select</h3>
+              <p>Staff selects protocol based on training context. Post-game recovery — intensity ceiling auto-adjusted.</p>
+              <div class="live-data-grid">
+                <div class="data-card"><span class="data-label">Context</span><span class="data-value">Post-Game</span></div>
+                <div class="data-card"><span class="data-label">Protocol</span><span class="data-value">Recovery</span></div>
+                <div class="data-card"><span class="data-label">Intensity</span><span class="data-value" style="color:#facc15">Reduced</span></div>
               </div>
             </div>
 
-            <div class="demo-step-content" id="mechStep2">
-              <div class="demo-step-badge">Sensing</div>
-              <h3>Force + Vision + Position</h3>
-              <p>An inline load cell measures cable tension at 100Hz. A depth camera (Intel RealSense) tracks 12 joint landmarks for ROM calculation and compensation detection. The rotary encoder provides cable position feedback for the PID loop.</p>
-              <div class="demo-data-grid">
-                <div class="demo-datum"><span class="datum-label">Load Cell</span><span class="datum-val">±0.1 lb accuracy</span></div>
-                <div class="demo-datum"><span class="datum-label">Depth Camera</span><span class="datum-val">30fps pose tracking</span></div>
-                <div class="demo-datum"><span class="datum-label">ROM Accuracy</span><span class="datum-val">±2° validated</span></div>
+            <!-- Step 2: Baseline Screen -->
+            <div class="session-step-content" id="sStep2">
+              <h3>Baseline Screen</h3>
+              <p>Standardized passive SLR at 8 lb each side. Objective bilateral comparison.</p>
+              <div class="live-data-grid">
+                <div class="data-card"><span class="data-label">L Ham</span><span class="data-value" style="color:#4ade80">74°</span></div>
+                <div class="data-card"><span class="data-label">R Ham</span><span class="data-value" style="color:#facc15">68°</span></div>
+                <div class="data-card"><span class="data-label">Asymmetry</span><span class="data-value" style="color:#ef4444">8.1%</span></div>
               </div>
             </div>
 
-            <div class="demo-step-content" id="mechStep3">
-              <div class="demo-step-badge">Safety</div>
-              <h3>5-Layer Defense System</h3>
-              <p>Software force cap at 30 lb. PID compliance loop limits ramp rate. Mechanical slip clutch at 35 lb. Mushroom E-stop on frame. Quick-release carabiner on every cuff. Any single layer can halt the machine independently.</p>
-              <div class="demo-data-grid">
-                <div class="demo-datum"><span class="datum-label">Software Cap</span><span class="datum-val" style="color:#ef4444">30 lb max</span></div>
-                <div class="demo-datum"><span class="datum-label">Slip Clutch</span><span class="datum-val" style="color:#ef4444">35 lb mechanical</span></div>
-                <div class="demo-datum"><span class="datum-label">E-Stop</span><span class="datum-val" style="color:#ef4444">Instant power cut</span></div>
+            <!-- Step 3: Protocol Set -->
+            <div class="session-step-content" id="sStep3">
+              <h3>Protocol Set</h3>
+              <p>R Hamstring SLR with PNF overlay. 3 sets, 30s hold, 8 lb peak.</p>
+              <div class="live-data-grid">
+                <div class="data-card"><span class="data-label">Target</span><span class="data-value">R Hamstring</span></div>
+                <div class="data-card"><span class="data-label">Sets</span><span class="data-value">3 × 30s</span></div>
+                <div class="data-card"><span class="data-label">Peak Force</span><span class="data-value">8.0 lb</span></div>
               </div>
             </div>
 
-            <div class="demo-step-content" id="mechStep4">
-              <div class="demo-step-badge">In Action</div>
-              <h3>Watch the Stretch Execute</h3>
-              <p>Motor engages. Cable tension ramps from 0 to 8 lb over 8 seconds. The leg rises as the PID loop maintains constant force. Load cell feeds back 100 times per second. Camera confirms no pelvic compensation.</p>
-              <div class="demo-data-grid">
-                <div class="demo-datum"><span class="datum-label">Force</span><span class="datum-val" id="mech-live-force" style="color:#4ade80">0.0 lb</span></div>
-                <div class="demo-datum"><span class="datum-label">ROM</span><span class="datum-val" id="mech-live-rom" style="color:#facc15">0°</span></div>
-                <div class="demo-datum"><span class="datum-label">Spool Position</span><span class="datum-val" id="mech-live-spool">0 rev</span></div>
+            <!-- Step 4: Stretch Execute -->
+            <div class="session-step-content" id="sStep4">
+              <h3>Stretch Execute</h3>
+              <p>Cable tension ramps. PID loop maintains constant force as tissue yields.</p>
+              <div class="live-data-grid">
+                <div class="data-card"><span class="data-label">Force</span><span class="data-value" id="s-force" style="color:#4ade80">0.0 lb</span></div>
+                <div class="data-card"><span class="data-label">ROM</span><span class="data-value" id="s-rom" style="color:#facc15">0°</span></div>
+                <div class="data-card"><span class="data-label">Hold</span><span class="data-value" id="s-hold">0s</span></div>
               </div>
-              <div class="force-gauge">
-                <div class="gauge-label">Cable Tension (PID Target: 8.0 lb)</div>
-                <div class="gauge-track"><div class="gauge-fill" id="mechGaugeForce" style="width:0%"></div><div class="gauge-limit" style="left:100%"></div></div>
+              <div class="session-gauge">
+                <div class="gauge-label">Cable Tension</div>
+                <div class="gauge-track"><div class="gauge-fill" id="s-gauge-fill"></div></div>
                 <div class="gauge-scale"><span>0 lb</span><span>4 lb</span><span>8 lb</span></div>
               </div>
             </div>
 
-            <div class="demo-step-content" id="mechStep5">
-              <div class="demo-step-badge">IP / Patent</div>
-              <h3>Patentable Innovation</h3>
-              <p>The novel combination of real-time force-controlled cable stretching with simultaneous depth-camera compensation detection has no prior art in the stretch/mobility device space. Key claims below.</p>
-              <div class="patent-claims">
-                <div class="patent-claim">
-                  <span class="claim-num">Claim 1</span>
-                  <p>A method for automated assisted stretching comprising: applying controlled cable tension via PID force loop while simultaneously detecting joint compensation through depth-camera pose estimation, and modifying tension in response to detected compensation.</p>
-                </div>
-                <div class="patent-claim">
-                  <span class="claim-num">Claim 2</span>
-                  <p>An apparatus combining: motorized cable spool with inline force sensing, depth camera with skeletal tracking, and a compliance controller that reduces stretch load when non-target joint movement exceeds a threshold.</p>
-                </div>
-                <div class="patent-claim">
-                  <span class="claim-num">Claim 3</span>
-                  <p>A system for bilateral ROM assessment and progressive protocol adaptation comprising: standardized force application, bilateral comparison logic, readiness-adjusted intensity selection, and longitudinal trend analysis with automated asymmetry alerting.</p>
-                </div>
+            <!-- Step 5: Response Monitor -->
+            <div class="session-step-content" id="sStep5">
+              <h3>Response Monitor</h3>
+              <p>Compensation detection active. Force variability tracked. Tissue tolerance assessed.</p>
+              <div class="live-data-grid">
+                <div class="data-card"><span class="data-label">Force</span><span class="data-value" style="color:#4ade80"><span class="pulse-indicator"></span>8.2 lb</span></div>
+                <div class="data-card"><span class="data-label">ROM</span><span class="data-value" style="color:#facc15"><span class="pulse-indicator warning"></span>42°</span></div>
+                <div class="data-card"><span class="data-label">Pelvis</span><span class="data-value" style="color:#4ade80"><span class="pulse-indicator"></span>Stable</span></div>
               </div>
-              <div class="flag-alert" style="background:rgba(59,130,246,0.08); border-color:rgba(59,130,246,0.2); color:#3b82f6;">Recommendation: File provisional patent covering force-controlled stretch with compensation-aware adjustment. Estimated prior art gap is strong — existing stretch devices lack real-time biomechanical feedback loops.</div>
             </div>
 
-            <div class="demo-nav">
-              <button class="btn btn-secondary demo-btn" id="mechPrev" disabled>Back</button>
-              <button class="btn btn-primary demo-btn" id="mechNext">Start Tour</button>
+            <!-- Step 6: Progress / Regress -->
+            <div class="session-step-content" id="sStep6">
+              <h3>Progress / Regress</h3>
+              <p>System recommends: advance to PNF contract-relax for sets 2–3.</p>
+              <div class="live-data-grid">
+                <div class="data-card"><span class="data-label">Decision</span><span class="data-value" style="color:#4ade80">Progress</span></div>
+                <div class="data-card"><span class="data-label">Next</span><span class="data-value">PNF Overlay</span></div>
+                <div class="data-card"><span class="data-label">Expected</span><span class="data-value">+2.5°</span></div>
+              </div>
+            </div>
+
+            <!-- Step 7: Session Summary -->
+            <div class="session-step-content" id="sStep7">
+              <h3>Session Summary</h3>
+              <p>Full session logged. Bilateral comparison updated. Trend analysis ready for staff review.</p>
+              <div class="live-data-grid">
+                <div class="data-card"><span class="data-label">ROM Gain</span><span class="data-value" style="color:#4ade80">+5° acute</span></div>
+                <div class="data-card"><span class="data-label">Asymmetry</span><span class="data-value" style="color:#4ade80">8.1% → 3.2%</span></div>
+                <div class="data-card"><span class="data-label">Duration</span><span class="data-value">8m 42s</span></div>
+              </div>
+            </div>
+
+            <!-- Session navigation -->
+            <div class="session-nav">
+              <button class="btn btn-secondary" id="sPrev" disabled>Back</button>
+              <button class="btn btn-primary" id="sNext">Start Session</button>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- ======== DEMO 2: THERAPY ======== -->
-      <div class="demo-content" id="demo-therapy">
-        <p class="demo-intro">Walk through a clinical hamstring protocol. See how Vitruvian delivers measurable therapeutic outcomes.</p>
-        <div class="demo-wrap">
-          <div class="machine-visual">
-            <svg viewBox="0 0 600 480" xmlns="http://www.w3.org/2000/svg" class="machine-svg" id="therapySvg">
-              <!-- Simplified machine frame (background) -->
-              <rect x="50" y="30" width="14" height="380" rx="3" fill="#1a1a1a" opacity="0.3"/>
-              <rect x="440" y="30" width="14" height="380" rx="3" fill="#1a1a1a" opacity="0.3"/>
-              <rect x="50" y="30" width="404" height="14" rx="3" fill="#1a1a1a" opacity="0.3"/>
-
-              <!-- Bench -->
-              <rect x="110" y="280" width="290" height="14" rx="4" fill="#2a2a2a" stroke="#444" stroke-width="1"/>
-              <rect x="115" y="276" width="280" height="6" rx="3" fill="#333" opacity="0.7"/>
-
-              <!-- Cable (subtle) -->
-              <line id="therapy-cable" x1="447" y1="44" x2="350" y2="268" stroke="#4ade80" stroke-width="2" opacity="0.3"/>
-
-              <!-- === REALISTIC HUMAN FIGURE (Therapy view — with muscle groups) === -->
-              <g id="therapy-person">
-                <!-- Head -->
-                <ellipse cx="130" cy="262" rx="14" ry="16" fill="#d4a574" stroke="#b8926a" stroke-width="1"/>
-                <!-- Neck -->
-                <rect x="140" y="256" width="12" height="8" rx="2" fill="#d4a574"/>
-                <!-- Torso (athletic shirt) -->
-                <path d="M148,256 L148,264 C148,264 175,268 210,268 L210,264 C210,260 195,256 175,254 L165,254 C155,254 150,255 148,256 Z" fill="#1e3a5f" stroke="#2d4a7c" stroke-width="0.8"/>
-                <path d="M152,268 L152,274 L210,274 L210,268 Z" fill="#1e3a5f" stroke="#2d4a7c" stroke-width="0.5"/>
-                <!-- Hips -->
-                <ellipse cx="215" cy="271" rx="18" ry="8" fill="#1a1a2e" stroke="#333" stroke-width="0.5"/>
-
-                <!-- Right leg (stationary) -->
-                <path d="M228,268 C240,268 280,270 330,274 L330,278 C280,276 240,274 228,274 Z" fill="#d4a574" stroke="#b8926a" stroke-width="0.5"/>
-                <path d="M330,274 L340,272 L342,278 L330,278 Z" fill="#d4a574"/>
-
-                <!-- LEFT LEG (being raised) — with HAMSTRING HIGHLIGHT -->
-                <!-- Hamstring muscle group overlay -->
-                <path id="therapy-hamstring" d="M228,264 C235,260 260,258 345,262 L347,268 C260,264 235,266 228,270 Z" fill="#d4a574" stroke="#b8926a" stroke-width="0.5"/>
-                <!-- Hamstring highlight (red/warm overlay showing stretch) -->
-                <path id="therapy-muscle-hl" d="M235,265 C245,262 275,260 340,263 L340,267 C275,264 245,266 235,269 Z" fill="rgba(239,68,68,0.0)" class="muscle-highlight"/>
-
-                <!-- Left foot with cuff -->
-                <path id="therapy-foot" d="M345,262 L355,258 L357,264 L347,268 Z" fill="#d4a574"/>
-                <!-- Ankle cuff -->
-                <circle id="therapy-cuff" cx="350" cy="268" r="8" fill="none" stroke="#666" stroke-width="1.5"/>
-
-                <!-- Arms -->
-                <path d="M155,264 L155,276 L160,276 L160,264 Z" fill="#d4a574" opacity="0.8"/>
-                <path d="M185,264 L185,276 L190,276 L190,264 Z" fill="#d4a574" opacity="0.8"/>
-              </g>
-
-              <!-- === THERAPEUTIC OVERLAYS === -->
-              <!-- ROM Arc visualization -->
-              <g id="therapy-rom-arc" opacity="0">
-                <path id="therapy-arc-path" d="" stroke="#facc15" stroke-width="2" fill="rgba(250,204,21,0.05)"/>
-                <text id="therapy-rom-text" x="300" y="230" fill="#facc15" font-size="16" font-weight="700" font-family="Inter" text-anchor="middle"></text>
-                <text id="therapy-rom-label" x="300" y="245" fill="#facc15" font-size="8" font-family="Inter" text-anchor="middle">RANGE OF MOTION</text>
-              </g>
-
-              <!-- Force vector arrow -->
-              <g id="therapy-force-arrow" opacity="0">
-                <line id="therapy-force-line" x1="350" y1="268" x2="380" y2="200" stroke="#4ade80" stroke-width="2.5" marker-end="url(#arrowhead)"/>
-                <text id="therapy-force-text" x="390" y="195" fill="#4ade80" font-size="10" font-weight="600" font-family="Inter"></text>
-              </g>
-
-              <!-- Compensation detection zone -->
-              <g id="therapy-comp-zone" opacity="0">
-                <rect x="210" y="248" width="50" height="30" rx="4" fill="none" stroke="#4ade80" stroke-width="1.5" stroke-dasharray="3 2"/>
-                <text x="235" y="245" fill="#4ade80" font-size="6" text-anchor="middle" font-family="Inter">PELVIS STABLE</text>
-              </g>
-
-              <!-- Arrow marker definition -->
-              <defs>
-                <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-                  <polygon points="0 0, 8 3, 0 6" fill="#4ade80"/>
-                </marker>
-              </defs>
-
-              <!-- Benefit callout boxes -->
-              <g id="therapy-callouts" opacity="0">
-                <rect x="30" y="340" width="140" height="50" rx="6" fill="rgba(74,222,128,0.08)" stroke="rgba(74,222,128,0.2)" stroke-width="1"/>
-                <text x="100" y="358" fill="#4ade80" font-size="7" font-weight="600" text-anchor="middle" font-family="Inter">TISSUE RESPONSE</text>
-                <text x="100" y="370" fill="#888" font-size="5.5" text-anchor="middle" font-family="Inter">Golgi tendon organ activation</text>
-                <text x="100" y="380" fill="#888" font-size="5.5" text-anchor="middle" font-family="Inter">→ autogenic inhibition → ROM gain</text>
-              </g>
-
-              <!-- Labels -->
-              <text x="260" y="430" fill="#555" font-size="7" text-anchor="middle" font-family="Inter">Supine Straight-Leg Raise — R Hamstring Protocol</text>
-              <text x="260" y="445" fill="#444" font-size="6" text-anchor="middle" font-family="Inter">Progressive static stretch with PNF contract-relax option</text>
-            </svg>
-          </div>
-
-          <div class="demo-panel">
-            <div class="demo-steps-indicator">
-              <div class="demo-step-dot active" data-demo-target="therapy" data-step="0"></div>
-              <div class="demo-step-line"></div>
-              <div class="demo-step-dot" data-demo-target="therapy" data-step="1"></div>
-              <div class="demo-step-line"></div>
-              <div class="demo-step-dot" data-demo-target="therapy" data-step="2"></div>
-              <div class="demo-step-line"></div>
-              <div class="demo-step-dot" data-demo-target="therapy" data-step="3"></div>
-              <div class="demo-step-line"></div>
-              <div class="demo-step-dot" data-demo-target="therapy" data-step="4"></div>
-              <div class="demo-step-line"></div>
-              <div class="demo-step-dot" data-demo-target="therapy" data-step="5"></div>
-            </div>
-
-            <div class="demo-step-content active" id="therapyStep0">
-              <div class="demo-step-badge" style="background:#1e3a5f">Clinical Context</div>
-              <h3>Why Assisted Stretching Works</h3>
-              <p>Research consistently shows that stretching effects depend on method, duration, and timing. Static and PNF-style protocols are most appropriate for flexibility development and recovery. Vitruvian applies these methods with precision a human cannot match.</p>
-              <div class="demo-data-grid">
-                <div class="demo-datum"><span class="datum-label">Method</span><span class="datum-val">Progressive static + PNF</span></div>
-                <div class="demo-datum"><span class="datum-label">Evidence Base</span><span class="datum-val">Systematic reviews support</span></div>
-                <div class="demo-datum"><span class="datum-label">Key Advantage</span><span class="datum-val">Controlled, repeatable load</span></div>
-              </div>
-            </div>
-
-            <div class="demo-step-content" id="therapyStep1">
-              <div class="demo-step-badge" style="background:#1e3a5f">Assessment</div>
-              <h3>Baseline Tissue State</h3>
-              <p>Before any stretch, the machine performs a standardized passive SLR at 8 lb. This gives an objective baseline — not a goniometer estimate, not a therapist's best guess. Both sides are tested for bilateral comparison.</p>
-              <div class="demo-data-grid">
-                <div class="demo-datum"><span class="datum-label">L Hamstring</span><span class="datum-val" style="color:#4ade80">74°</span></div>
-                <div class="demo-datum"><span class="datum-label">R Hamstring</span><span class="datum-val" style="color:#facc15">68°</span></div>
-                <div class="demo-datum"><span class="datum-label">Clinical Significance</span><span class="datum-val" style="color:#ef4444">8.1% asymmetry</span></div>
-              </div>
-              <div class="flag-alert">An 8% bilateral difference is clinically relevant. Manual goniometry has 5-10° measurement error — making this asymmetry invisible without instrumented assessment.</div>
-            </div>
-
-            <div class="demo-step-content" id="therapyStep2">
-              <div class="demo-step-badge" style="background:#1e3a5f">Stretch Phase</div>
-              <h3>Progressive Tension Application</h3>
-              <p>Cable tension ramps from 0 to target over 8 seconds — mimicking how an experienced PT would gradually take up slack. The PID loop maintains constant force regardless of the athlete's micro-movements. The tissue undergoes viscoelastic creep under sustained load.</p>
-              <div class="demo-data-grid">
-                <div class="demo-datum"><span class="datum-label">Force</span><span class="datum-val" id="therapy-live-force" style="color:#4ade80">0.0 lb</span></div>
-                <div class="demo-datum"><span class="datum-label">ROM</span><span class="datum-val" id="therapy-live-rom" style="color:#facc15">68°</span></div>
-                <div class="demo-datum"><span class="datum-label">Hold</span><span class="datum-val" id="therapy-live-hold">0s / 30s</span></div>
-              </div>
-              <div class="force-gauge">
-                <div class="gauge-label">Tissue Stretch Response</div>
-                <div class="gauge-track"><div class="gauge-fill" id="therapyGaugeForce" style="width:0%"></div></div>
-                <div class="gauge-scale"><span>Slack</span><span>Tension onset</span><span>End-range</span></div>
-              </div>
-            </div>
-
-            <div class="demo-step-content" id="therapyStep3">
-              <div class="demo-step-badge" style="background:#1e3a5f">PNF Phase</div>
-              <h3>Contract-Relax for Greater Gains</h3>
-              <p>After the static hold, the machine cues a 5-second isometric contraction: "Push your leg into the cable." The load cell detects the force spike, confirming engagement quality. Then: "Relax." The cable advances 2-3° beyond the previous end-range. This exploits post-isometric relaxation — a well-documented neuromuscular response.</p>
-              <div class="demo-data-grid">
-                <div class="demo-datum"><span class="datum-label">Contraction</span><span class="datum-val">5s isometric detected</span></div>
-                <div class="demo-datum"><span class="datum-label">Post-Relax Gain</span><span class="datum-val" style="color:#4ade80">+2.8° advance</span></div>
-                <div class="demo-datum"><span class="datum-label">Cycles</span><span class="datum-val">3 per muscle group</span></div>
-              </div>
-            </div>
-
-            <div class="demo-step-content" id="therapyStep4">
-              <div class="demo-step-badge" style="background:#1e3a5f">Outcomes</div>
-              <h3>Acute vs. Chronic Gains</h3>
-              <p>Today's session produced a 5° acute ROM gain — typical for a single session. But the real value is the trend. Over 8 sessions (4 weeks), this athlete's R hamstring ROM has improved from 64° to 73°. That's a 14% chronic improvement — documented, not estimated.</p>
-              <div class="demo-data-grid">
-                <div class="demo-datum"><span class="datum-label">Today's Gain</span><span class="datum-val" style="color:#4ade80">+5° acute</span></div>
-                <div class="demo-datum"><span class="datum-label">4-Week Trend</span><span class="datum-val" style="color:#4ade80">+9° chronic</span></div>
-                <div class="demo-datum"><span class="datum-label">Asymmetry</span><span class="datum-val" style="color:#4ade80">8.1% → 1.4%</span></div>
-              </div>
-              <div class="session-chart">
-                <div class="chart-title">R Hamstring ROM — 8 Session Trend</div>
-                <div class="chart-bars">
-                  <div class="chart-bar-wrap"><div class="chart-bar" style="height:42%"></div><span>64°</span></div>
-                  <div class="chart-bar-wrap"><div class="chart-bar" style="height:48%"></div><span>66°</span></div>
-                  <div class="chart-bar-wrap"><div class="chart-bar" style="height:52%"></div><span>67°</span></div>
-                  <div class="chart-bar-wrap"><div class="chart-bar" style="height:56%"></div><span>68°</span></div>
-                  <div class="chart-bar-wrap"><div class="chart-bar" style="height:60%"></div><span>69°</span></div>
-                  <div class="chart-bar-wrap"><div class="chart-bar" style="height:65%"></div><span>70°</span></div>
-                  <div class="chart-bar-wrap"><div class="chart-bar" style="height:72%"></div><span>71°</span></div>
-                  <div class="chart-bar-wrap"><div class="chart-bar" style="height:82%"></div><span class="chart-bar-current">73°</span></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="demo-step-content" id="therapyStep5">
-              <div class="demo-step-badge" style="background:#1e3a5f">Who Benefits</div>
-              <h3>Clinical Use Cases</h3>
-              <p>Vitruvian isn't just for performance. It's a clinical tool for any scenario where objective, progressive, documented stretching matters.</p>
-              <div class="use-cases">
-                <div class="use-case">
-                  <h4>Post-Training Recovery</h4>
-                  <p>Standardized cool-down protocols. Every athlete gets the same quality stretch regardless of which staff member is available.</p>
-                </div>
-                <div class="use-case">
-                  <h4>Return-to-Play</h4>
-                  <p>Objective ROM comparison: involved vs. uninvolved limb. Documented progress for medical clearance. Threshold-based criteria, not subjective assessment.</p>
-                </div>
-                <div class="use-case">
-                  <h4>Injury Prevention</h4>
-                  <p>Weekly bilateral ROM screens catch developing asymmetries before they become injuries. Automated alerts when an athlete's flexibility regresses.</p>
-                </div>
-                <div class="use-case">
-                  <h4>Dedicated Flexibility Development</h4>
-                  <p>Progressive overload for flexibility — the same principle used in strength training. Measured, progressive, tracked over months.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="demo-nav">
-              <button class="btn btn-secondary demo-btn" id="therapyPrev" disabled>Back</button>
-              <button class="btn btn-primary demo-btn" id="therapyNext">Start Walkthrough</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      </div><!-- .demo-immersive -->
     </div>
   </section>
   <!-- WHAT IT MEASURES -->
@@ -1311,209 +1031,13 @@
       btn.disabled = true;
     }
 
-    // === TAB SWITCHING ===
-    document.querySelectorAll('.demo-tab').forEach(function(tab) {
-      tab.addEventListener('click', function() {
-        document.querySelectorAll('.demo-tab').forEach(function(t) { t.classList.remove('active'); });
-        document.querySelectorAll('.demo-content').forEach(function(c) { c.classList.remove('active'); });
-        tab.classList.add('active');
-        document.getElementById('demo-' + tab.dataset.demo).classList.add('active');
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(function(q) {
+      q.addEventListener('click', function() {
+        this.parentElement.classList.toggle('open');
       });
     });
-
-    // === MECHANICAL DEMO ===
-    (function() {
-      var step = 0, total = 6, anim = null;
-      var prev = document.getElementById('mechPrev');
-      var next = document.getElementById('mechNext');
-      var dots = document.querySelectorAll('[data-demo-target="mechanical"]');
-      var cable = document.getElementById('mech-cable');
-      var cuff = document.getElementById('mech-cuff');
-      var motor = document.getElementById('mech-motor');
-      var screen1 = document.getElementById('mech-screen-1');
-      var screen2 = document.getElementById('mech-screen-2');
-      var screen3 = document.getElementById('mech-screen-3');
-      var highlights = document.getElementById('mech-highlights');
-
-      function show(s) {
-        for (var i = 0; i < total; i++) {
-          var el = document.getElementById('mechStep' + i);
-          if (el) el.classList.toggle('active', i === s);
-        }
-        dots.forEach(function(d, i) {
-          d.classList.toggle('active', i <= s);
-          d.classList.toggle('current', i === s);
-        });
-        prev.disabled = s === 0;
-        next.textContent = s === 0 ? 'Start Tour' : s === total - 1 ? 'Reset' : 'Next';
-        if (anim) { clearInterval(anim); anim = null; }
-        applyMech(s);
-      }
-
-      function applyMech(s) {
-        cable.style.opacity = '0.4'; cable.style.stroke = '#888'; cable.style.strokeWidth = '2';
-        cuff.style.stroke = '#666'; cuff.style.fill = 'none';
-        motor.style.fill = '#2a2a2a';
-        // Reset highlights
-        document.querySelectorAll('#mech-highlights rect').forEach(function(r) { r.style.opacity = '0'; });
-        highlights.style.opacity = '1';
-        screen1.textContent = 'READY'; screen2.textContent = ''; screen3.textContent = '';
-
-        if (s === 1) {
-          document.getElementById('hl-motor').style.opacity = '1';
-          screen1.textContent = 'DRIVE'; screen1.style.fill = '#4ade80';
-          screen2.textContent = 'Motor → Gearbox';
-          motor.style.fill = '#1a5c2e';
-        }
-        if (s === 2) {
-          document.getElementById('hl-sensors').style.opacity = '1';
-          screen1.textContent = 'SENSORS'; screen1.style.fill = '#facc15';
-          screen2.textContent = 'Force + Vision';
-        }
-        if (s === 3) {
-          document.getElementById('hl-safety').style.opacity = '1';
-          screen1.textContent = 'SAFETY'; screen1.style.fill = '#ef4444';
-          screen2.textContent = '5-layer defense';
-        }
-        if (s === 4) {
-          cable.style.stroke = '#4ade80'; cable.style.strokeWidth = '2.5'; cable.style.opacity = '1';
-          cuff.style.stroke = '#4ade80'; cuff.style.fill = 'rgba(74,222,128,0.15)';
-          motor.style.fill = '#1a5c2e';
-          screen1.textContent = 'ACTIVE'; screen1.style.fill = '#4ade80';
-
-          var tick = 0, maxT = 200;
-          anim = setInterval(function() {
-            tick++;
-            var p = Math.min(tick / maxT, 1);
-            var force = (8.0 * p).toFixed(1);
-            var rom = Math.floor(55 * p);
-            var spool = (p * 3.2).toFixed(1);
-            document.getElementById('mech-live-force').textContent = force + ' lb';
-            document.getElementById('mech-live-rom').textContent = rom + '\u00B0';
-            document.getElementById('mech-live-spool').textContent = spool + ' rev';
-            document.getElementById('mechGaugeForce').style.width = (p * 100) + '%';
-            screen2.textContent = force + ' lb';
-            screen3.textContent = rom + '\u00B0';
-
-            // Animate cable endpoint (leg raising)
-            var angle = p * 50 * Math.PI / 180;
-            var cx = 250 + 100 * Math.cos(0.05 - angle);
-            var cy = 268 - 100 * Math.sin(angle);
-            cable.setAttribute('x2', String(cx));
-            cable.setAttribute('y2', String(cy));
-            cuff.setAttribute('cx', String(cx));
-            cuff.setAttribute('cy', String(cy));
-
-            if (tick >= maxT) { clearInterval(anim); anim = null; }
-          }, 80);
-        }
-        if (s === 5) {
-          screen1.textContent = 'PATENT'; screen1.style.fill = '#3b82f6';
-          screen2.textContent = 'IP Analysis';
-        }
-      }
-
-      next.addEventListener('click', function() { step = step === total - 1 ? 0 : step + 1; show(step); });
-      prev.addEventListener('click', function() { if (step > 0) { step--; show(step); } });
-      dots.forEach(function(d) { d.addEventListener('click', function() { step = +d.dataset.step; show(step); }); });
-      show(0);
-    })();
-
-    // === THERAPY DEMO ===
-    (function() {
-      var step = 0, total = 6, anim = null;
-      var prev = document.getElementById('therapyPrev');
-      var next = document.getElementById('therapyNext');
-      var dots = document.querySelectorAll('[data-demo-target="therapy"]');
-      var cable = document.getElementById('therapy-cable');
-      var cuff = document.getElementById('therapy-cuff');
-      var muscleHl = document.getElementById('therapy-muscle-hl');
-      var romArc = document.getElementById('therapy-rom-arc');
-      var forceArrow = document.getElementById('therapy-force-arrow');
-      var compZone = document.getElementById('therapy-comp-zone');
-      var callouts = document.getElementById('therapy-callouts');
-
-      function show(s) {
-        for (var i = 0; i < total; i++) {
-          var el = document.getElementById('therapyStep' + i);
-          if (el) el.classList.toggle('active', i === s);
-        }
-        dots.forEach(function(d, i) {
-          d.classList.toggle('active', i <= s);
-          d.classList.toggle('current', i === s);
-        });
-        prev.disabled = s === 0;
-        next.textContent = s === 0 ? 'Start Walkthrough' : s === total - 1 ? 'Reset' : 'Next';
-        if (anim) { clearInterval(anim); anim = null; }
-        applyTherapy(s);
-      }
-
-      function applyTherapy(s) {
-        cable.style.opacity = '0.3'; cable.style.stroke = '#4ade80';
-        cuff.style.stroke = '#666'; cuff.style.fill = 'none';
-        muscleHl.style.fill = 'rgba(239,68,68,0.0)';
-        romArc.style.opacity = '0';
-        forceArrow.style.opacity = '0';
-        compZone.style.opacity = '0';
-        callouts.style.opacity = '0';
-
-        if (s === 0) {
-          callouts.style.opacity = '1';
-        }
-        if (s === 1) {
-          cable.style.opacity = '0.5';
-          cuff.style.stroke = '#facc15'; cuff.style.fill = 'rgba(250,204,21,0.1)';
-          muscleHl.style.fill = 'rgba(250,204,21,0.15)';
-          romArc.style.opacity = '1';
-          document.getElementById('therapy-rom-text').textContent = '68\u00B0';
-        }
-        if (s === 2) {
-          cable.style.stroke = '#4ade80'; cable.style.opacity = '1';
-          cuff.style.stroke = '#4ade80'; cuff.style.fill = 'rgba(74,222,128,0.15)';
-          muscleHl.style.fill = 'rgba(239,68,68,0.2)';
-          forceArrow.style.opacity = '1';
-          compZone.style.opacity = '1';
-          romArc.style.opacity = '1';
-
-          var tick = 0, maxT = 300;
-          anim = setInterval(function() {
-            tick++;
-            var p = Math.min(tick / maxT, 1);
-            var force = (8.2 * p).toFixed(1);
-            var rom = (68 + 5 * p).toFixed(1);
-            var holdSec = Math.floor(30 * p);
-            document.getElementById('therapy-live-force').textContent = force + ' lb';
-            document.getElementById('therapy-live-rom').textContent = rom + '\u00B0';
-            document.getElementById('therapy-live-hold').textContent = holdSec + 's / 30s';
-            document.getElementById('therapyGaugeForce').style.width = (p * 100) + '%';
-            document.getElementById('therapy-rom-text').textContent = rom + '\u00B0';
-            document.getElementById('therapy-force-text').textContent = force + ' lb';
-
-            muscleHl.style.fill = 'rgba(239,68,68,' + (0.1 + p * 0.25) + ')';
-
-            if (tick >= maxT) { clearInterval(anim); anim = null; }
-          }, 100);
-        }
-        if (s === 3) {
-          cable.style.opacity = '0.8'; cable.style.stroke = '#4ade80';
-          cuff.style.stroke = '#4ade80';
-          muscleHl.style.fill = 'rgba(74,222,128,0.2)';
-          romArc.style.opacity = '1';
-          document.getElementById('therapy-rom-text').textContent = '73\u00B0';
-        }
-        if (s >= 4) {
-          muscleHl.style.fill = 'rgba(74,222,128,0.15)';
-          romArc.style.opacity = '1';
-          document.getElementById('therapy-rom-text').textContent = '73\u00B0';
-          cable.style.opacity = '0.3';
-        }
-      }
-
-      next.addEventListener('click', function() { step = step === total - 1 ? 0 : step + 1; show(step); });
-      prev.addEventListener('click', function() { if (step > 0) { step--; show(step); } });
-      dots.forEach(function(d) { d.addEventListener('click', function() { step = +d.dataset.step; show(step); }); });
-      show(0);
-    })();
   </script>
+  <script src="demo-immersive.js"></script>
 </body>
 </html>
