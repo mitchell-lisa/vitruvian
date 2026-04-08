@@ -94,6 +94,25 @@ nav {
   border-radius: 8px;
 }
 
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: #888;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  letter-spacing: 0.01em;
+}
+
+.nav-link:hover {
+  color: #e0e0e0;
+}
+
 .nav-cta {
   font-size: 13px;
   font-weight: 500;
