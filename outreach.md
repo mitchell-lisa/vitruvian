@@ -115,6 +115,32 @@
 
 ---
 
+## 6. Vince Papale &mdash; Eagles alum, "Invincible"
+
+**Channel:** email via his speaking/contact page, or a warm intro if you have one. He's 79, very public, very reachable for a good story.
+**Ask:** 20 min call. Not a pilot &mdash; he's a **story amplifier** and **Eagles alumni bridge**. If it resonates: (1) intro to current or former Eagles performance staff / Pederson side-door, (2) willingness to say something public when we launch.
+**Attachment:** `briefs/coach-brief.html` printed to PDF. Keep it short, he gets pitched constantly.
+
+---
+
+> Subject: Philly kid, new thing, 20 minutes if you'll spare it
+>
+> Mr. Papale &mdash;
+>
+> I grew up on your story the way every kid from [town/region] did, so I'll keep this short because I know you get a hundred of these a month.
+>
+> I'm building a piece of equipment for pro and college performance staffs &mdash; a cable-driven stretching machine that measures every rep: range of motion, force, left-vs-right asymmetry, whether the athlete is compensating. Soft-tissue injuries in football have doubled over twenty years and nobody on a staff actually measures the thing that predicts them. That's what we're fixing.
+>
+> I'm not asking you to pilot anything. What I'm asking is 20 minutes to walk you through a 1-page brief and get your read on the story &mdash; specifically whether it resonates with the Eagles alumni world and the performance people you still know. If it does, a single sentence from you to the right person saves me a cold call that would never land.
+>
+> Brief attached. Website at [domain]. I'm at [number] / [calendly link] whenever makes sense &mdash; no rush, no pressure, and if it's not for you, I'll take the no on the chin.
+>
+> Thanks for reading this far.
+>
+> &mdash; [your name]
+
+---
+
 # After You Send
 
 Track responses in a simple sheet. Suggested columns:
@@ -131,5 +157,6 @@ Don't follow up sooner than 7 days. If no reply at 14 days, send a one-line nudg
 - **Jordan yes** → NFL pilot site (Houston or Miami) + UMiami S&C credibility.
 - **Rieger yes** → cross-sport credibility (hoops) + pro basketball intro.
 - **Knobloch yes** → PLL/lacrosse pilot site + multi-sport story.
+- **Papale yes** → Eagles alumni side-door to Pederson + a quotable public voice when we launch. Not a pilot &mdash; a narrative and network asset.
 
-A single yes from any of them is worth more than a cold-pitched buyer call. Five for five gets you to a multi-sport, multi-league validation story before you've sold a unit.
+A single yes from any of them is worth more than a cold-pitched buyer call. Six for six gets you a multi-sport, multi-league validation story *and* a Philly-football story arc before you've sold a unit.
