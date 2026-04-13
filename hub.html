@@ -3,263 +3,104 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vitruvian &mdash; Library</title>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background: #f3f3f3;
-    color: #111;
-    line-height: 1.5;
-    padding: 0;
-  }
-  .topbar {
-    background: #111;
-    color: #fff;
-    padding: 14px 28px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
-  .topbar a { color: #fff; text-decoration: none; font-size: 10pt; letter-spacing: 0.08em; text-transform: uppercase; }
-  .topbar a:hover { opacity: 0.7; }
-  .brand { font-size: 15pt; font-weight: 800; letter-spacing: -0.01em; }
-  .topbar .right { display: flex; gap: 22px; }
-
-  .wrap {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 40px 28px 80px;
-  }
-
-  header.page-header {
-    border-bottom: 3px solid #111;
-    padding-bottom: 18px;
-    margin-bottom: 28px;
-  }
-  .doc-tag {
-    font-size: 9pt;
-    text-transform: uppercase;
-    letter-spacing: 0.20em;
-    color: #555;
-    margin-bottom: 10px;
-  }
-  h1 {
-    font-size: 32pt;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 10px;
-    letter-spacing: -0.02em;
-  }
-  .lede {
-    font-size: 12pt;
-    color: #333;
-    max-width: 640px;
-  }
-
-  section.cat {
-    margin-top: 40px;
-  }
-  h2 {
-    font-size: 11pt;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    margin-bottom: 14px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #111;
-  }
-  .cat-desc {
-    font-size: 10.5pt;
-    color: #555;
-    margin: -8px 0 16px;
-    max-width: 640px;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 16px;
-  }
-
-  a.card {
-    display: block;
-    background: #fff;
-    padding: 18px 20px;
-    text-decoration: none;
-    color: #111;
-    border: 1px solid #ddd;
-    transition: border-color 0.15s, transform 0.15s;
-    position: relative;
-  }
-  a.card:hover {
-    border-color: #111;
-    transform: translateY(-1px);
-  }
-  a.card .title {
-    font-size: 11.5pt;
-    font-weight: 700;
-    margin-bottom: 4px;
-    letter-spacing: -0.005em;
-  }
-  a.card .path {
-    font-family: 'SF Mono', Menlo, Consolas, monospace;
-    font-size: 8.5pt;
-    color: #888;
-    margin-bottom: 8px;
-  }
-  a.card .desc {
-    font-size: 10pt;
-    color: #444;
-    line-height: 1.4;
-  }
-  a.card .tag {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    font-size: 7.5pt;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #666;
-    background: #f3f3f3;
-    padding: 2px 6px;
-    border: 1px solid #ddd;
-  }
-  a.card.private { background: #fafafa; border-style: dashed; }
-  a.card.private .tag { background: #111; color: #fff; border-color: #111; }
-
-  footer.page-footer {
-    margin-top: 60px;
-    padding-top: 20px;
-    border-top: 1px solid #ccc;
-    font-size: 9pt;
-    color: #888;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  @media (max-width: 600px) {
-    h1 { font-size: 24pt; }
-    .topbar { padding: 12px 18px; }
-    .topbar .right { gap: 14px; }
-    .topbar .right a:nth-child(n+4) { display: none; }
-  }
-</style>
+<title>Vitruvian — Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ui.css">
 </head>
 <body>
 
-<div class="topbar">
-  <a href="index.html" class="brand">VITRUVIAN</a>
-  <div class="right">
-    <a href="index.html">Home</a>
-    <a href="pitch.html">Deck</a>
-    <a href="briefs/">Briefs</a>
-    <a href="patent.html">Patent</a>
-    <a href="feedback.html">Pilot</a>
+<nav class="ui-nav">
+  <div class="ui-nav-inner">
+    <a href="index.html" class="ui-logo">
+      <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="">
+      <span>VITRUVIAN</span>
+    </a>
+    <div class="ui-nav-links">
+      <a href="index.html" class="ui-nav-link">Home</a>
+      <a href="hub.html" class="ui-nav-link active">Library</a>
+      <a href="pitch.html" class="ui-nav-link">Deck</a>
+      <a href="feedback.html" class="ui-nav-cta">Pilot</a>
+    </div>
   </div>
-</div>
+</nav>
 
-<div class="wrap">
+<main class="ui-page">
 
-  <header class="page-header">
-    <div class="doc-tag">Library &middot; Everything in one place</div>
-    <h1>The Vitruvian project, organized.</h1>
-    <p class="lede">
-      Every document, page, and figure in the project &mdash; grouped by who it's for.
-      This is the page to share when someone says <em>"send me everything."</em>
-    </p>
-  </header>
+  <div class="ui-eyebrow">Library</div>
+  <h1 class="ui-h1">Everything, one place.</h1>
+  <p class="ui-sub">Every document in the project, grouped by who it's for.</p>
 
-  <section class="cat">
-    <h2>01 &middot; Public Site</h2>
-    <p class="cat-desc">The marketing surface &mdash; what anyone lands on without context.</p>
-    <div class="grid">
-      <a class="card" href="index.html">
-        <div class="title">Home</div>
-        <div class="path">/index.html</div>
-        <div class="desc">Hero, protocol, metrics, demo, athletes &amp; coaches section, FAQ, waitlist.</div>
-      </a>
-      <a class="card" href="pitch.html">
-        <div class="title">Partner Deck</div>
-        <div class="path">/pitch.html</div>
-        <div class="desc">Long-form pitch for partners, investors, and performance orgs evaluating the platform.</div>
-      </a>
-    </div>
-  </section>
+  <h2 class="ui-h2">Public</h2>
+  <div class="ui-grid">
+    <a class="ui-card" href="index.html">
+      <div class="ui-card-title">Home</div>
+      <div class="ui-card-path">/</div>
+      <div class="ui-card-desc">Main site.</div>
+    </a>
+    <a class="ui-card" href="pitch.html">
+      <div class="ui-card-title">Deck</div>
+      <div class="ui-card-path">/pitch</div>
+      <div class="ui-card-desc">Partner pitch.</div>
+    </a>
+  </div>
 
-  <section class="cat">
-    <h2>02 &middot; For Athletes &amp; Coaches</h2>
-    <p class="cat-desc">1-page briefs in the two voices &mdash; print to PDF and attach to outreach.</p>
-    <div class="grid">
-      <a class="card" href="briefs/athlete-brief.html">
-        <span class="tag">Print-ready</span>
-        <div class="title">Athlete Brief</div>
-        <div class="path">/briefs/athlete-brief.html</div>
-        <div class="desc">1-page, athlete voice. What it does in plain English, what it measures, time per session, ask for 20 min of honest reaction.</div>
-      </a>
-      <a class="card" href="briefs/coach-brief.html">
-        <span class="tag">Print-ready</span>
-        <div class="title">Coach &amp; Performance Brief</div>
-        <div class="path">/briefs/coach-brief.html</div>
-        <div class="desc">1-page, head-of-performance voice. Problem stats, platform spec, workflow fit, 6-week pilot table, ask for 30 min + no-cost pilot.</div>
-      </a>
-      <a class="card" href="feedback.html">
-        <div class="title">Pilot Conversation Form</div>
-        <div class="path">/feedback.html</div>
-        <div class="desc">8-question intake. Name, role, sport, current workflow, pain point, pilot interest, contact preference.</div>
-      </a>
-      <a class="card" href="briefs/">
-        <div class="title">Briefs Index</div>
-        <div class="path">/briefs/</div>
-        <div class="desc">Folder view with both briefs side-by-side.</div>
-      </a>
-    </div>
-  </section>
+  <h2 class="ui-h2">Athletes &amp; Coaches</h2>
+  <div class="ui-grid">
+    <a class="ui-card" href="briefs/athlete-brief.html">
+      <span class="ui-card-tag">PDF</span>
+      <div class="ui-card-title">Athlete Brief</div>
+      <div class="ui-card-path">/briefs/athlete</div>
+      <div class="ui-card-desc">1 page. Plain English.</div>
+    </a>
+    <a class="ui-card" href="briefs/coach-brief.html">
+      <span class="ui-card-tag">PDF</span>
+      <div class="ui-card-title">Coach Brief</div>
+      <div class="ui-card-path">/briefs/coach</div>
+      <div class="ui-card-desc">1 page. Performance staff.</div>
+    </a>
+    <a class="ui-card" href="feedback.html">
+      <div class="ui-card-title">Pilot Form</div>
+      <div class="ui-card-path">/feedback</div>
+      <div class="ui-card-desc">8 questions.</div>
+    </a>
+  </div>
 
-  <section class="cat">
-    <h2>03 &middot; Technology &amp; IP</h2>
-    <p class="cat-desc">The provisional patent package &mdash; filable and referenceable.</p>
-    <div class="grid">
-      <a class="card" href="patent.html">
-        <span class="tag">USPTO</span>
-        <div class="title">Provisional Patent</div>
-        <div class="path">/patent.html</div>
-        <div class="desc">Full 35 U.S.C. &sect; 111(b) provisional: cover sheet, specification, 11 figures, 21 claims, abstract, declaration.</div>
-      </a>
-      <a class="card" href="drawings.html">
-        <span class="tag">37 CFR 1.84</span>
-        <div class="title">USPTO Drawings</div>
-        <div class="path">/drawings.html</div>
-        <div class="desc">One figure per page, compliant with USPTO drawing standards. Print-to-PDF for filing.</div>
-      </a>
-      <a class="card" href="figures/">
-        <div class="title">Figure Gallery</div>
-        <div class="path">/figures/</div>
-        <div class="desc">All 11 standalone SVG patent figures &mdash; viewable, downloadable, W3C-valid.</div>
-      </a>
-    </div>
-  </section>
+  <h2 class="ui-h2">Patent &amp; IP</h2>
+  <div class="ui-grid">
+    <a class="ui-card" href="patent.html">
+      <span class="ui-card-tag">USPTO</span>
+      <div class="ui-card-title">Provisional</div>
+      <div class="ui-card-path">/patent</div>
+      <div class="ui-card-desc">Full filing.</div>
+    </a>
+    <a class="ui-card" href="drawings.html">
+      <div class="ui-card-title">Drawings</div>
+      <div class="ui-card-path">/drawings</div>
+      <div class="ui-card-desc">One figure per page.</div>
+    </a>
+    <a class="ui-card" href="figures/">
+      <div class="ui-card-title">Figures</div>
+      <div class="ui-card-path">/figures</div>
+      <div class="ui-card-desc">11 SVGs.</div>
+    </a>
+  </div>
 
-  <section class="cat">
-    <h2>04 &middot; Product Design</h2>
-    <p class="cat-desc">Internal design docs &mdash; the thinking behind every system decision.</p>
-    <div class="grid">
-      <a class="card" href="docs/">
-        <div class="title">Design Docs Index</div>
-        <div class="path">/docs/</div>
-        <div class="desc">Nine markdown specs covering product definition, MVP, mechanical, sensor/AI, UX, build plan, scope cuts, differentiation, redesign.</div>
-      </a>
-    </div>
-  </section>
+  <h2 class="ui-h2">Design Docs</h2>
+  <div class="ui-grid">
+    <a class="ui-card" href="docs/">
+      <div class="ui-card-title">All 9 Docs</div>
+      <div class="ui-card-path">/docs</div>
+      <div class="ui-card-desc">Product thinking.</div>
+    </a>
+  </div>
 
-  <footer class="page-footer">
-    <div>vitruvian &middot; library v1.0</div>
-    <div><a href="index.html" style="color:#888;">&larr; back to site</a></div>
-  </footer>
+</main>
 
-</div>
+<footer class="ui-footer">
+  <span>Vitruvian · Library</span>
+  <a href="index.html">&larr; Home</a>
+</footer>
 
 </body>
 </html>

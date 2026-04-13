@@ -3,138 +3,133 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vitruvian &mdash; Patent Figures</title>
+<title>Vitruvian — Figures</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../ui.css">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #f3f3f3; color: #111; line-height: 1.5; }
-  .topbar { background: #111; color: #fff; padding: 14px 28px; display: flex; justify-content: space-between; align-items: center; }
-  .topbar a { color: #fff; text-decoration: none; font-size: 10pt; letter-spacing: 0.08em; text-transform: uppercase; }
-  .topbar a:hover { opacity: 0.7; }
-  .brand { font-size: 15pt; font-weight: 800; }
-  .topbar .right { display: flex; gap: 22px; }
-  .wrap { max-width: 1200px; margin: 0 auto; padding: 40px 28px 80px; }
-  header { border-bottom: 3px solid #111; padding-bottom: 18px; margin-bottom: 28px; }
-  .doc-tag { font-size: 9pt; text-transform: uppercase; letter-spacing: 0.20em; color: #555; margin-bottom: 10px; }
-  h1 { font-size: 28pt; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 10px; }
-  .lede { font-size: 11.5pt; color: #333; max-width: 720px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
-  .fig { background: #fff; border: 1px solid #ddd; padding: 16px; display: flex; flex-direction: column; }
-  .fig:hover { border-color: #111; }
-  .fig-thumb { aspect-ratio: 4 / 3; background: #fafafa; border: 1px solid #eee; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; overflow: hidden; }
+  .fig-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+  .fig { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 4px; padding: 14px; transition: border-color 0.15s, background 0.15s; }
+  .fig:hover { border-color: var(--rule-bright); background: var(--bg-elev); }
+  .fig-thumb { aspect-ratio: 4/3; background: #fff; border-radius: 2px; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 10px; }
   .fig-thumb object { width: 100%; height: 100%; pointer-events: none; }
-  .fig-num { font-size: 9pt; text-transform: uppercase; letter-spacing: 0.12em; color: #666; margin-bottom: 4px; }
-  .fig-title { font-size: 11pt; font-weight: 700; margin-bottom: 10px; line-height: 1.3; }
-  .fig-links { margin-top: auto; display: flex; gap: 10px; font-size: 9.5pt; font-weight: 600; }
-  .fig-links a { color: #111; text-decoration: none; border-bottom: 1px solid #111; padding-bottom: 1px; }
-  .fig-links a:hover { color: #666; border-color: #666; }
+  .fig-num { font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-dim); margin-bottom: 2px; }
+  .fig-title { font-size: 13px; font-weight: 500; color: var(--ink-bright); line-height: 1.35; margin-bottom: 10px; }
+  .fig-links { display: flex; gap: 14px; font-size: 11px; }
+  .fig-links a { color: var(--ink-dim); }
+  .fig-links a:hover { color: var(--ink-bright); }
 </style>
 </head>
 <body>
 
-<div class="topbar">
-  <a href="../index.html" class="brand">VITRUVIAN</a>
-  <div class="right">
-    <a href="../index.html">Home</a>
-    <a href="../hub.html">Library</a>
-    <a href="../patent.html">Patent</a>
-    <a href="../drawings.html">Drawings</a>
+<nav class="ui-nav">
+  <div class="ui-nav-inner">
+    <a href="../index.html" class="ui-logo">
+      <img src="../03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="">
+      <span>VITRUVIAN</span>
+    </a>
+    <div class="ui-nav-links">
+      <a href="../index.html" class="ui-nav-link">Home</a>
+      <a href="../hub.html" class="ui-nav-link">Library</a>
+      <a href="../patent.html" class="ui-nav-link">Patent</a>
+      <a href="../feedback.html" class="ui-nav-cta">Pilot</a>
+    </div>
   </div>
-</div>
+</nav>
 
-<div class="wrap">
-  <header>
-    <div class="doc-tag">Patent Figures</div>
-    <h1>All 11 figures, standalone.</h1>
-    <p class="lede">
-      Each figure is a W3C-valid SVG, extracted from the provisional patent.
-      Click any figure to open the standalone file; right-click to download.
-      See <a href="../patent.html" style="color:#111;">/patent.html</a> for the
-      full specification and <a href="../drawings.html" style="color:#111;">/drawings.html</a>
-      for the USPTO-compliant drawings sheet.
-    </p>
-  </header>
+<main class="ui-page ui-wide">
 
-  <div class="grid">
+  <div class="ui-eyebrow">Patent Figures</div>
+  <h1 class="ui-h1">11 figures.</h1>
+  <p class="ui-sub">Click to open. Right-click to download.</p>
+
+  <div class="fig-grid" style="margin-top:32px;">
 
     <div class="fig">
       <a href="FIG-01.svg"><div class="fig-thumb"><object data="FIG-01.svg" type="image/svg+xml"></object></div></a>
       <div class="fig-num">FIG. 1</div>
-      <div class="fig-title">System overview &mdash; cable, motor, platform, sensor stack</div>
-      <div class="fig-links"><a href="FIG-01.svg">Open SVG</a><a href="FIG-01.svg" download>Download</a></div>
+      <div class="fig-title">System overview</div>
+      <div class="fig-links"><a href="FIG-01.svg">Open</a><a href="FIG-01.svg" download>Download</a></div>
     </div>
 
     <div class="fig">
       <a href="FIG-02.svg"><div class="fig-thumb"><object data="FIG-02.svg" type="image/svg+xml"></object></div></a>
       <div class="fig-num">FIG. 2</div>
-      <div class="fig-title">Closed-loop control architecture</div>
-      <div class="fig-links"><a href="FIG-02.svg">Open SVG</a><a href="FIG-02.svg" download>Download</a></div>
+      <div class="fig-title">Control loop</div>
+      <div class="fig-links"><a href="FIG-02.svg">Open</a><a href="FIG-02.svg" download>Download</a></div>
     </div>
 
     <div class="fig">
       <a href="FIG-03.svg"><div class="fig-thumb"><object data="FIG-03.svg" type="image/svg+xml"></object></div></a>
       <div class="fig-num">FIG. 3</div>
-      <div class="fig-title">Hamstring stretch geometry and cuff attachment</div>
-      <div class="fig-links"><a href="FIG-03.svg">Open SVG</a><a href="FIG-03.svg" download>Download</a></div>
+      <div class="fig-title">Hamstring stretch</div>
+      <div class="fig-links"><a href="FIG-03.svg">Open</a><a href="FIG-03.svg" download>Download</a></div>
     </div>
 
     <div class="fig">
       <a href="FIG-04.svg"><div class="fig-thumb"><object data="FIG-04.svg" type="image/svg+xml"></object></div></a>
       <div class="fig-num">FIG. 4</div>
-      <div class="fig-title">Depth-camera joint tracking and compensation detection</div>
-      <div class="fig-links"><a href="FIG-04.svg">Open SVG</a><a href="FIG-04.svg" download>Download</a></div>
+      <div class="fig-title">Joint tracking</div>
+      <div class="fig-links"><a href="FIG-04.svg">Open</a><a href="FIG-04.svg" download>Download</a></div>
     </div>
 
     <div class="fig">
       <a href="FIG-05.svg"><div class="fig-thumb"><object data="FIG-05.svg" type="image/svg+xml"></object></div></a>
       <div class="fig-num">FIG. 5</div>
-      <div class="fig-title">Five-layer safety cascade (software, PID, slip clutch, E-stop, quick-release)</div>
-      <div class="fig-links"><a href="FIG-05.svg">Open SVG</a><a href="FIG-05.svg" download>Download</a></div>
+      <div class="fig-title">Safety cascade</div>
+      <div class="fig-links"><a href="FIG-05.svg">Open</a><a href="FIG-05.svg" download>Download</a></div>
     </div>
 
     <div class="fig">
       <a href="FIG-06.svg"><div class="fig-thumb"><object data="FIG-06.svg" type="image/svg+xml"></object></div></a>
       <div class="fig-num">FIG. 6</div>
-      <div class="fig-title">Force-versus-angle session curve with compensation yield</div>
-      <div class="fig-links"><a href="FIG-06.svg">Open SVG</a><a href="FIG-06.svg" download>Download</a></div>
+      <div class="fig-title">Force vs. angle</div>
+      <div class="fig-links"><a href="FIG-06.svg">Open</a><a href="FIG-06.svg" download>Download</a></div>
     </div>
 
     <div class="fig">
       <a href="FIG-07.svg"><div class="fig-thumb"><object data="FIG-07.svg" type="image/svg+xml"></object></div></a>
       <div class="fig-num">FIG. 7</div>
-      <div class="fig-title">Bilateral asymmetry and longitudinal trend visualization</div>
-      <div class="fig-links"><a href="FIG-07.svg">Open SVG</a><a href="FIG-07.svg" download>Download</a></div>
+      <div class="fig-title">Asymmetry + trend</div>
+      <div class="fig-links"><a href="FIG-07.svg">Open</a><a href="FIG-07.svg" download>Download</a></div>
     </div>
 
     <div class="fig">
       <a href="FIG-08.svg"><div class="fig-thumb"><object data="FIG-08.svg" type="image/svg+xml"></object></div></a>
       <div class="fig-num">FIG. 8</div>
-      <div class="fig-title">Cuff and quick-release attachment detail</div>
-      <div class="fig-links"><a href="FIG-08.svg">Open SVG</a><a href="FIG-08.svg" download>Download</a></div>
+      <div class="fig-title">Cuff detail</div>
+      <div class="fig-links"><a href="FIG-08.svg">Open</a><a href="FIG-08.svg" download>Download</a></div>
     </div>
 
     <div class="fig">
       <a href="FIG-09.svg"><div class="fig-thumb"><object data="FIG-09.svg" type="image/svg+xml"></object></div></a>
       <div class="fig-num">FIG. 9</div>
-      <div class="fig-title">Athlete check-in and session flow (RFID to report)</div>
-      <div class="fig-links"><a href="FIG-09.svg">Open SVG</a><a href="FIG-09.svg" download>Download</a></div>
+      <div class="fig-title">Session flow</div>
+      <div class="fig-links"><a href="FIG-09.svg">Open</a><a href="FIG-09.svg" download>Download</a></div>
     </div>
 
     <div class="fig">
       <a href="FIG-10.svg"><div class="fig-thumb"><object data="FIG-10.svg" type="image/svg+xml"></object></div></a>
       <div class="fig-num">FIG. 10</div>
-      <div class="fig-title">Composite injury-risk score computation</div>
-      <div class="fig-links"><a href="FIG-10.svg">Open SVG</a><a href="FIG-10.svg" download>Download</a></div>
+      <div class="fig-title">Risk score</div>
+      <div class="fig-links"><a href="FIG-10.svg">Open</a><a href="FIG-10.svg" download>Download</a></div>
     </div>
 
     <div class="fig">
       <a href="FIG-11.svg"><div class="fig-thumb"><object data="FIG-11.svg" type="image/svg+xml"></object></div></a>
       <div class="fig-num">FIG. 11</div>
-      <div class="fig-title">AMS export and data-model schema</div>
-      <div class="fig-links"><a href="FIG-11.svg">Open SVG</a><a href="FIG-11.svg" download>Download</a></div>
+      <div class="fig-title">Data export</div>
+      <div class="fig-links"><a href="FIG-11.svg">Open</a><a href="FIG-11.svg" download>Download</a></div>
     </div>
 
   </div>
-</div>
+
+</main>
+
+<footer class="ui-footer">
+  <span>Vitruvian · Figures</span>
+  <a href="../hub.html">Library</a>
+</footer>
 
 </body>
 </html>

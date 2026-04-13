@@ -3,71 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vitruvian &mdash; Design Doc</title>
+<title>Vitruvian — Doc</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../ui.css">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #f3f3f3; color: #111; line-height: 1.6; }
-  .topbar { background: #111; color: #fff; padding: 14px 28px; display: flex; justify-content: space-between; align-items: center; }
-  .topbar a { color: #fff; text-decoration: none; font-size: 10pt; letter-spacing: 0.08em; text-transform: uppercase; }
-  .topbar a:hover { opacity: 0.7; }
-  .brand { font-size: 15pt; font-weight: 800; }
-  .topbar .right { display: flex; gap: 22px; }
-
-  .wrap { max-width: 760px; margin: 0 auto; padding: 40px 28px 80px; }
-  .meta { font-size: 9pt; text-transform: uppercase; letter-spacing: 0.16em; color: #777; margin-bottom: 10px; }
-  .path { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 9pt; color: #999; margin-bottom: 30px; }
-
-  .doc { background: #fff; padding: 48px 56px; border: 1px solid #ddd; }
-  .doc h1 { font-size: 26pt; font-weight: 700; line-height: 1.15; margin: 0 0 18px; letter-spacing: -0.02em; border-bottom: 2px solid #111; padding-bottom: 14px; }
-  .doc h2 { font-size: 17pt; font-weight: 700; margin: 32px 0 12px; letter-spacing: -0.01em; }
-  .doc h3 { font-size: 13pt; font-weight: 700; margin: 24px 0 8px; }
-  .doc h4 { font-size: 11pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #555; margin: 20px 0 8px; }
-  .doc p { font-size: 11pt; margin-bottom: 14px; color: #222; }
-  .doc ul, .doc ol { margin: 0 0 14px 24px; font-size: 11pt; }
-  .doc li { margin-bottom: 6px; }
-  .doc strong { color: #111; }
-  .doc em { color: #333; }
-  .doc a { color: #111; border-bottom: 1px solid #111; text-decoration: none; }
-  .doc a:hover { color: #555; border-color: #555; }
-  .doc code { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 9.5pt; background: #f3f3f3; padding: 2px 6px; border: 1px solid #e5e5e5; }
-  .doc pre { background: #111; color: #f3f3f3; padding: 16px 20px; overflow-x: auto; margin: 14px 0; font-size: 9.5pt; line-height: 1.5; }
-  .doc pre code { background: transparent; border: none; padding: 0; color: inherit; font-size: inherit; }
-  .doc blockquote { border-left: 3px solid #111; padding: 4px 0 4px 18px; margin: 16px 0; color: #555; font-style: italic; }
-  .doc table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 10.5pt; }
-  .doc th, .doc td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; vertical-align: top; }
-  .doc th { background: #f3f3f3; font-weight: 700; }
-  .doc hr { border: none; border-top: 1px solid #ddd; margin: 28px 0; }
-  .doc img { max-width: 100%; height: auto; }
-
-  .loading { color: #888; font-style: italic; }
-  .error { color: #b00020; padding: 20px; background: #fff; border: 1px solid #b00020; }
-
-  .foot-nav { margin-top: 24px; display: flex; justify-content: space-between; font-size: 10pt; }
-  .foot-nav a { color: #555; text-decoration: none; }
-  .foot-nav a:hover { color: #111; }
+  .doc { font-size: 15px; line-height: 1.7; color: var(--ink); }
+  .doc h1 { font-size: 32px; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink-bright); margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--rule); }
+  .doc h2 { font-size: 20px; font-weight: 600; color: var(--ink-bright); margin: 36px 0 12px; }
+  .doc h3 { font-size: 15px; font-weight: 600; color: var(--ink-bright); margin: 24px 0 8px; }
+  .doc h4 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.10em; color: var(--ink-dim); font-weight: 600; margin: 20px 0 6px; }
+  .doc p { margin-bottom: 14px; }
+  .doc ul, .doc ol { margin: 0 0 14px 22px; }
+  .doc li { margin-bottom: 4px; }
+  .doc strong { color: var(--ink-bright); }
+  .doc em { color: var(--ink); font-style: italic; }
+  .doc a { color: var(--ink-bright); border-bottom: 1px solid var(--rule-bright); }
+  .doc a:hover { border-color: var(--ink-bright); }
+  .doc code { font-family: 'SF Mono', Menlo, monospace; font-size: 13px; background: var(--bg-card); padding: 2px 6px; border-radius: 3px; color: var(--ink-bright); }
+  .doc pre { background: #000; padding: 16px; overflow-x: auto; margin: 14px 0; font-size: 13px; border-radius: 4px; border: 1px solid var(--rule); }
+  .doc pre code { background: transparent; padding: 0; }
+  .doc blockquote { border-left: 2px solid var(--rule-bright); padding-left: 18px; margin: 16px 0; color: var(--ink-dim); }
+  .doc table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+  .doc th, .doc td { border: 1px solid var(--rule); padding: 8px 12px; text-align: left; }
+  .doc th { background: var(--bg-card); font-weight: 600; color: var(--ink-bright); }
+  .doc hr { border: none; border-top: 1px solid var(--rule); margin: 28px 0; }
+  .loading { color: var(--ink-dim); font-style: italic; }
+  .error { color: var(--danger); padding: 20px; background: var(--bg-card); border: 1px solid var(--danger); border-radius: 4px; }
+  .foot-nav { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; font-size: 12px; }
+  .foot-nav a { color: var(--ink-dim); }
+  .foot-nav a:hover { color: var(--ink-bright); }
 </style>
 </head>
 <body>
 
-<div class="topbar">
-  <a href="../index.html" class="brand">VITRUVIAN</a>
-  <div class="right">
-    <a href="../index.html">Home</a>
-    <a href="../hub.html">Library</a>
-    <a href="index.html">All Docs</a>
-    <a href="../patent.html">Patent</a>
+<nav class="ui-nav">
+  <div class="ui-nav-inner">
+    <a href="../index.html" class="ui-logo">
+      <img src="../03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="">
+      <span>VITRUVIAN</span>
+    </a>
+    <div class="ui-nav-links">
+      <a href="../index.html" class="ui-nav-link">Home</a>
+      <a href="../hub.html" class="ui-nav-link">Library</a>
+      <a href="index.html" class="ui-nav-link">Docs</a>
+      <a href="../patent.html" class="ui-nav-link">Patent</a>
+    </div>
   </div>
-</div>
+</nav>
 
-<div class="wrap">
-  <div class="meta" id="meta">Design Doc</div>
-  <div class="path" id="path"></div>
-  <div class="doc" id="doc"><p class="loading">Loading&hellip;</p></div>
+<main class="ui-page ui-narrow">
+  <div class="doc" id="doc"><p class="loading">Loading…</p></div>
   <div class="foot-nav">
-    <a href="index.html">&larr; all design docs</a>
-    <a id="raw-link" href="#">view raw .md &rarr;</a>
+    <a href="index.html">&larr; all docs</a>
+    <a id="raw-link" href="#">raw .md &rarr;</a>
   </div>
-</div>
+</main>
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
@@ -75,34 +66,25 @@
   var params = new URLSearchParams(location.search);
   var doc = params.get('doc');
   var el = document.getElementById('doc');
-  var meta = document.getElementById('meta');
-  var pathEl = document.getElementById('path');
   var rawLink = document.getElementById('raw-link');
 
   if (!doc || !/^[A-Za-z0-9_\-]+\.md$/.test(doc)) {
-    el.innerHTML = '<div class="error">No document specified. <a href="index.html">Back to the docs index</a>.</div>';
+    el.innerHTML = '<div class="error">No doc specified. <a href="index.html">Back to docs</a>.</div>';
     return;
   }
 
-  pathEl.textContent = 'docs/' + doc;
   rawLink.href = doc;
 
   fetch(doc)
-    .then(function(r) {
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      return r.text();
-    })
+    .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
     .then(function(md) {
       marked.setOptions({ breaks: false, gfm: true });
       el.innerHTML = marked.parse(md);
-      var firstH1 = el.querySelector('h1');
-      if (firstH1) {
-        document.title = 'Vitruvian — ' + firstH1.textContent;
-        meta.textContent = firstH1.textContent;
-      }
+      var h1 = el.querySelector('h1');
+      if (h1) document.title = 'Vitruvian — ' + h1.textContent;
     })
     .catch(function(err) {
-      el.innerHTML = '<div class="error">Could not load <code>' + doc + '</code>: ' + err.message + '<br><br>If you\'re viewing this over <code>file://</code>, some browsers block <code>fetch</code> of local files. Try a local server: <code>python3 -m http.server</code></div>';
+      el.innerHTML = '<div class="error">Couldn\'t load <code>' + doc + '</code>: ' + err.message + '</div>';
     });
 })();
 </script>
