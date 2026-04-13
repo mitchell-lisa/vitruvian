@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 520 340" xmlns="http://www.w3.org/2000/svg">
+  <title>FIG. 2 — Apparatus Side-Elevation Schematic</title>
+      <rect x="40" y="60" width="16" height="220" rx="3" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <rect x="40" y="270" width="400" height="12" rx="3" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <rect x="100" y="220" width="320" height="14" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <line x1="100" y1="234" x2="120" y2="270" stroke="#000" stroke-width="1"/>
+      <line x1="400" y1="234" x2="380" y2="270" stroke="#000" stroke-width="1"/>
+      <rect x="20" y="60" width="56" height="44" rx="6" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="48" y="86" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">BLDC</text>
+      <rect x="24" y="108" width="48" height="28" rx="4" fill="#ffffff" stroke="#000" stroke-width="1"/>
+      <text x="48" y="126" text-anchor="middle" fill="#000" font-size="8" font-weight="600" font-family="Times,serif">20:1</text>
+      <circle cx="48" cy="156" r="14" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <circle cx="48" cy="156" r="4" fill="#000"/>
+      <path d="M62,156 Q120,156 160,195 Q180,210 240,210" fill="none" stroke="#000" stroke-width="1.5" stroke-dasharray="6,3"/>
+      <rect x="140" y="188" width="36" height="14" rx="3" fill="#ffffff" stroke="#000" stroke-width="1"/>
+      <text x="158" y="198" text-anchor="middle" fill="#000" font-size="7" font-weight="600" font-family="Times,serif">LOAD</text>
+      <path d="M240,203 Q250,195 260,203 L260,217 Q250,225 240,217 Z" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <line x1="260" y1="210" x2="380" y2="140" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+      <line x1="380" y1="140" x2="420" y2="210" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="380" cy="140" r="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <line x1="270" y1="210" x2="420" y2="210" stroke="#000" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+      <rect x="22" y="178" width="48" height="24" rx="5" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <circle cx="36" cy="190" r="5" fill="#ffffff" stroke="#000" stroke-width="1"/>
+      <circle cx="58" cy="190" r="3" fill="#ffffff" stroke="#000" stroke-width="1"/>
+      <path d="M70,190 L380,120 L420,220 Z" fill="none" stroke="#000" stroke-width="0.5" stroke-dasharray="4,4"/>
+      <path d="M355,160 A30,30 0 0,1 380,140" fill="none" stroke="#000" stroke-width="1.5"/>
+      <text x="345" y="155" fill="#000" font-size="11" font-weight="600" font-family="Times,serif">θ</text>
+      <rect x="440" y="100" width="50" height="70" rx="4" fill="#ffffff" stroke="#000" stroke-width="1"/>
+      <rect x="444" y="106" width="42" height="50" rx="2" fill="#ffffff" stroke="#000" stroke-width="0.5"/>
+      <line x1="440" y1="170" x2="440" y2="270" stroke="#000" stroke-width="1"/>
+      <circle cx="465" cy="180" r="8" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="465" y="183" text-anchor="middle" fill="#000" font-size="6" font-weight="700" font-family="Times,serif">E</text>
+      <text x="48" y="54" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">10</text>
+      <text x="48" y="146" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">14</text>
+      <text x="158" y="184" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">16</text>
+      <text x="250" y="196" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">18</text>
+      <text x="46" y="212" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">20</text>
+      <text x="465" y="96" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">22</text>
+      <text x="465" y="200" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">24</text>
+      <text x="48" y="105" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">12</text>
+      <text x="210" y="275" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">26</text>
+    </svg>

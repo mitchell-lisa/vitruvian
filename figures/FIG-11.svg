@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg">
+  <title>FIG. 11 — Vision-Based Compensation Detection and Force Reduction</title>
+      <defs>
+        <marker id="arr11" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0,0 L10,5 L0,10 z" fill="#000"/>
+        </marker>
+      </defs>
+      <rect x="20" y="30" width="140" height="50" rx="6" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="90" y="50" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">DEPTH CAMERA</text>
+      <text x="90" y="66" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">skeleton (42) @30fps</text>
+      <rect x="20" y="120" width="140" height="50" rx="6" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="90" y="140" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">DISPLACEMENT</text>
+      <text x="90" y="156" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">d<tspan font-size="7" baseline-shift="sub">comp</tspan>(t): pelvis, hip, lumbar</text>
+      <text x="90" y="110" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">220</text>
+      <rect x="20" y="210" width="140" height="50" rx="6" fill="#ffffff" stroke="#000" stroke-width="1.2" stroke-dasharray="4,3"/>
+      <text x="90" y="230" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">sEMG (opt.)</text>
+      <text x="90" y="246" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">co-activation V6</text>
+      <rect x="230" y="90" width="180" height="110" rx="8" fill="#ffffff" stroke="#000" stroke-width="2"/>
+      <text x="320" y="120" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">SIGNAL GENERATOR</text>
+      <text x="320" y="142" text-anchor="middle" fill="#000" font-size="10" font-style="italic" font-family="Times,serif">c(t) = √∑ w<tspan font-size="7" baseline-shift="sub">i</tspan> (d<tspan font-size="7" baseline-shift="sub">i</tspan>−d<tspan font-size="7" baseline-shift="sub">i,0</tspan>)²</text>
+      <text x="320" y="162" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">LPF 5 Hz, dead-band c<tspan font-size="7" baseline-shift="sub">0</tspan></text>
+      <text x="320" y="182" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">222</text>
+      <rect x="460" y="110" width="160" height="70" rx="8" fill="#ffffff" stroke="#000" stroke-width="2"/>
+      <text x="540" y="134" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">FORCE REDUCTION</text>
+      <text x="540" y="150" text-anchor="middle" fill="#000" font-size="10" font-style="italic" font-family="Times,serif">g(c) → F<tspan font-size="7" baseline-shift="sub">*</tspan></text>
+      <text x="540" y="164" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">dead-band + saturating</text>
+      <text x="540" y="182" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">224</text>
+      <line x1="160" y1="55" x2="230" y2="110" stroke="#000" stroke-width="1.2" marker-end="url(#arr11)"/>
+      <line x1="160" y1="145" x2="230" y2="145" stroke="#000" stroke-width="1.2" marker-end="url(#arr11)"/>
+      <line x1="160" y1="235" x2="230" y2="180" stroke="#000" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arr11)"/>
+      <line x1="410" y1="145" x2="460" y2="145" stroke="#000" stroke-width="1.5" marker-end="url(#arr11)"/>
+      <line x1="540" y1="180" x2="540" y2="225" stroke="#000" stroke-width="1.2" marker-end="url(#arr11)"/>
+      <text x="540" y="245" text-anchor="middle" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">to adaptive set-point</text>
+      <text x="540" y="258" text-anchor="middle" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">of FIG. 10</text>
+    </svg>
