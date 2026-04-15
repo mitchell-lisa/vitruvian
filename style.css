@@ -113,6 +113,11 @@ nav {
   color: #e0e0e0;
 }
 
+.nav-link.active {
+  color: #fafafa;
+  font-weight: 600;
+}
+
 .nav-cta {
   font-size: 13px;
   font-weight: 500;

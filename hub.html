@@ -6,8 +6,10 @@
 <title>Vitruvian — Data Room</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="ui.css">
 <style>
+  main.ui-page { padding-top: 110px; }
   .dr-section { margin-top: 48px; }
   .dr-section:first-of-type { margin-top: 32px; }
   .dr-section-header { display:flex; align-items:baseline; justify-content:space-between; border-bottom:1px solid var(--rule); padding-bottom:10px; margin-bottom:16px; }
@@ -31,17 +33,19 @@
 </head>
 <body>
 
-<nav class="ui-nav">
-  <div class="ui-nav-inner">
-    <a href="index.html" class="ui-logo">
-      <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="">
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo">
+      <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="Vitruvian" width="36" height="36">
       <span>VITRUVIAN</span>
-    </a>
-    <div class="ui-nav-links">
-      <a href="index.html" class="ui-nav-link">Home</a>
-      <a href="pitch.html" class="ui-nav-link">Deck</a>
-      <a href="hub.html" class="ui-nav-link active">Data Room</a>
-      <a href="feedback.html" class="ui-nav-cta">Contact</a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="pitch.html" class="nav-link">Deck</a>
+      <a href="product.html" class="nav-link">Product</a>
+      <a href="hub.html" class="nav-link active">Data Room</a>
+      <a href="feedback.html" class="nav-cta">Contact</a>
     </div>
   </div>
 </nav>
@@ -276,9 +280,15 @@
 
 </main>
 
-<footer class="ui-footer">
-  <span>Vitruvian · Data Room</span>
-  <a href="index.html">&larr; Home</a>
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-logo">
+      <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="Vitruvian" width="28" height="28">
+      <span>VITRUVIAN</span>
+    </div>
+    <p class="copyright">2026 Vitruvian. Actuarial infrastructure for musculoskeletal injury risk.</p>
+  </div>
 </footer>
 
 </body>
