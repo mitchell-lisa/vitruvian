@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vitruvian — Coach &amp; Performance Brief</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #f3f3f3;
+    color: #111;
+    line-height: 1.5;
+  }
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0.25in auto;
+    padding: 0.6in 0.7in;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    position: relative;
+  }
+  header.brief-header {
+    border-bottom: 3px solid #111;
+    padding-bottom: 14px;
+    margin-bottom: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .brand { font-size: 22pt; font-weight: 800; letter-spacing: -0.02em; }
+  .doc-tag {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #555;
+  }
+  h1 {
+    font-size: 17pt;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    max-width: 6.5in;
+  }
+  .lede {
+    font-size: 11pt;
+    color: #333;
+    margin-bottom: 18px;
+    max-width: 6.7in;
+  }
+
+  h2 {
+    font-size: 11pt;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    margin: 18px 0 8px;
+    border-bottom: 1px solid #111;
+    padding-bottom: 4px;
+  }
+
+  .problem-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin: 12px 0 18px;
+  }
+  .stat {
+    border: 1px solid #ddd;
+    padding: 10px 8px;
+    text-align: center;
+  }
+  .stat .num {
+    font-size: 18pt;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat .lbl {
+    font-size: 8pt;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.3;
+  }
+  .stat .src {
+    font-size: 7pt;
+    color: #888;
+    margin-top: 4px;
+  }
+
+  .twocol {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 12px;
+  }
+
+  ul.tight {
+    font-size: 10pt;
+    padding-left: 16px;
+    line-height: 1.45;
+  }
+  ul.tight li { margin-bottom: 4px; }
+  p { font-size: 10.5pt; line-height: 1.5; }
+
+  .pilot {
+    border: 2px solid #111;
+    padding: 14px 16px;
+    margin: 16px 0 12px;
+  }
+  .pilot h2 { border: none; padding: 0; margin: 0 0 8px; }
+  .pilot table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10pt;
+  }
+  .pilot th, .pilot td {
+    text-align: left;
+    padding: 5px 8px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .pilot th { font-weight: 700; color: #555; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  .ask {
+    background: #111;
+    color: #fff;
+    padding: 12px 16px;
+    margin: 14px 0 10px;
+    font-size: 10.5pt;
+  }
+  .ask strong { letter-spacing: 0.06em; }
+
+  footer.brief-footer {
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    font-size: 8.5pt;
+    color: #777;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; }
+    @page { size: 8.5in 11in; margin: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="brief-header">
+    <div class="brand">VITRUVIAN</div>
+    <div class="doc-tag">Coach &amp; Performance Brief &middot; v1.0</div>
+  </header>
+
+  <h1>The first stretching modality that actually generates roster-grade data &mdash; bilateral, longitudinal, exportable.</h1>
+  <p class="lede">
+    Heads of performance are asked every week to keep players available. They have peak velocity from GPS, force plates for jump testing, HRV from straps, and barbell velocity from VBT. They have <em>no objective measurement</em> of soft-tissue extensibility, asymmetry, or stretch tolerance. Vitruvian is a force-controlled cable-driven stretching apparatus that closes that gap and produces a per-session quantitative record exportable to your existing AMS.
+  </p>
+
+  <h2>The Problem We're Solving</h2>
+  <div class="problem-stats">
+    <div class="stat"><div class="num">24%</div><div class="lbl">of all UEFA injuries are hamstring strains</div><div class="src">UEFA Elite Club Injury Study, 21yr</div></div>
+    <div class="stat"><div class="num">2,101</div><div class="lbl">NFL hamstring injuries logged in 12-yr review</div><div class="src">AJSM, 2024</div></div>
+    <div class="stat"><div class="num">£266M</div><div class="lbl">EPL wages paid to sidelined players, 23-24</div><div class="src">Howden FC Injury Index</div></div>
+    <div class="stat"><div class="num">5&ndash;10&deg;</div><div class="lbl">manual goniometry inter-rater error</div><div class="src">peer-reviewed clinical reliability studies</div></div>
+  </div>
+
+  <p>Strain rates have <em>increased</em> over two decades despite advances in S&amp;C. The standard workflow &mdash; manual goniometer + therapist palpation + paper notes &mdash; is the same it was in 1985. Compensatory motion (pelvic rotation, contralateral flexion) is judged by eye and routinely missed. Bilateral asymmetry &mdash; the single best documented hamstring re-injury predictor &mdash; is rarely measured at all.</p>
+
+  <h2>What Vitruvian Is</h2>
+  <div class="twocol">
+    <div>
+      <ul class="tight">
+        <li>Cable-driven, motor-controlled stretching platform</li>
+        <li>Inline load cell, 100 Hz force feedback</li>
+        <li>Depth camera + skeletal tracking, joint angle &plusmn;2&deg;</li>
+        <li>Real-time compensation detection &mdash; force yields automatically when athlete recruits secondary segments</li>
+        <li>7 stretch patterns on one platform</li>
+        <li>Five-layer independent safety cascade (software cap, PID compliance, slip clutch, hardwired E-stop, manual quick-release)</li>
+      </ul>
+    </div>
+    <div>
+      <ul class="tight">
+        <li>Per-session record: ROM at reference force, end-range stiffness, L/R asymmetry, compensation index, session-over-session trend</li>
+        <li>Composite injury-risk score per athlete</li>
+        <li>RFID badge-in &mdash; athlete touches, machine retrieves history</li>
+        <li>Bilateral baseline + assisted stretch + report in &lt;8 minutes</li>
+        <li>API export to Smartabase, Kitman Labs, Catapult Vector</li>
+        <li>Provisional patent filed on the closed-loop compensation method</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Where It Fits in Your Daily Workflow</h2>
+  <p>Pre-practice: 5-min bilateral mobility check on flagged players before they touch the field. Recovery: assisted stretch with prescribed force after high-load sessions. Return-to-play: objective re-baselining vs. pre-injury record. The athlete operates the unit themselves after the first guided session &mdash; this is not a service that requires a human in the loop.</p>
+
+  <div class="pilot">
+    <h2>What a 6-Week Pilot Looks Like</h2>
+    <table>
+      <tr><th style="width:25%;">Week</th><th style="width:50%;">Activity</th><th>Output</th></tr>
+      <tr><td>0</td><td>Install + staff training (half day)</td><td>Unit live in your facility</td></tr>
+      <tr><td>1&ndash;2</td><td>Bilateral baseline of full roster</td><td>Asymmetry map, top-N risk list</td></tr>
+      <tr><td>3&ndash;5</td><td>Athletes self-serve daily, flagged players prescribed</td><td>Daily delta, intervention triggers</td></tr>
+      <tr><td>6</td><td>Review session with your medical/perf team</td><td>Report: who improved, who didn't, ROI estimate</td></tr>
+    </table>
+  </div>
+
+  <div class="ask">
+    <strong>WHAT I'M ASKING:</strong> 30 minutes of your time on a call to walk you through the protocol and the data model. If you see what I see, I'd like to put a unit in your facility for a 6-week no-cost pilot &mdash; you keep the data, no obligation to purchase. Your read on whether this clears the bar for an NFL/college performance staff is worth more to me right now than the pilot itself.
+  </div>
+
+  <footer class="brief-footer">
+    <div>vitruvian &middot; [domain].com &middot; built for performance teams who measure everything</div>
+    <div>Confidential &mdash; please don't forward without checking</div>
+  </footer>
+
+</div>
+</body>
+</html>

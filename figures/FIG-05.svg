@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg">
+  <title>FIG. 5 — Sensor Array and Data Paths</title>
+      <defs>
+        <marker id="arr5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0,0 L10,5 L0,10 z" fill="#000"/>
+        </marker>
+      </defs>
+      <rect x="20" y="30" width="100" height="40" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="70" y="54" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">LOAD CELL</text>
+      <text x="70" y="24" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">16</text>
+      <rect x="140" y="30" width="80" height="40" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="180" y="50" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">24-bit</text>
+      <text x="180" y="62" text-anchor="middle" fill="#000" font-size="8" font-weight="600" font-family="Times,serif">ADC 100Hz</text>
+      <text x="180" y="24" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">40</text>
+      <rect x="20" y="90" width="100" height="40" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="70" y="108" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">DEPTH CAM</text>
+      <text x="70" y="122" text-anchor="middle" fill="#000" font-size="8" font-weight="600" font-family="Times,serif">D435 30fps</text>
+      <text x="70" y="84" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">20</text>
+      <rect x="140" y="90" width="80" height="40" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="180" y="108" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">VISION</text>
+      <text x="180" y="122" text-anchor="middle" fill="#000" font-size="8" font-weight="600" font-family="Times,serif">SKELETON</text>
+      <text x="180" y="84" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">42</text>
+      <rect x="20" y="150" width="100" height="40" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="70" y="168" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">MOTOR ENC</text>
+      <text x="70" y="182" text-anchor="middle" fill="#000" font-size="8" font-weight="600" font-family="Times,serif">4,000 CPR</text>
+      <text x="70" y="144" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">44</text>
+      <rect x="20" y="210" width="100" height="40" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="70" y="228" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">DRUM ENC</text>
+      <text x="70" y="242" text-anchor="middle" fill="#000" font-size="8" font-weight="600" font-family="Times,serif">post-clutch</text>
+      <text x="70" y="204" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">46</text>
+      <rect x="20" y="255" width="100" height="34" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.2" stroke-dasharray="4,3"/>
+      <text x="70" y="272" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">sEMG (opt.)</text>
+      <text x="70" y="284" text-anchor="middle" fill="#000" font-size="8" font-weight="600" font-family="Times,serif">1 kHz</text>
+      <text x="134" y="268" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">48</text>
+      <rect x="280" y="90" width="150" height="100" rx="8" fill="#ffffff" stroke="#000" stroke-width="2"/>
+      <text x="355" y="130" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">TIME-SYNC</text>
+      <text x="355" y="148" text-anchor="middle" fill="#000" font-size="10" font-weight="600" font-family="Times,serif">DATA BUS</text>
+      <text x="355" y="166" text-anchor="middle" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">1 ms precision</text>
+      <rect x="480" y="90" width="140" height="100" rx="8" fill="#ffffff" stroke="#000" stroke-width="2"/>
+      <text x="550" y="128" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">MEASUREMENT</text>
+      <text x="550" y="146" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">PIPELINE</text>
+      <text x="550" y="164" text-anchor="middle" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">(FIG. 8)</text>
+      <line x1="120" y1="50" x2="140" y2="50" stroke="#000" stroke-width="1.2" marker-end="url(#arr5)"/>
+      <line x1="120" y1="110" x2="140" y2="110" stroke="#000" stroke-width="1.2" marker-end="url(#arr5)"/>
+      <line x1="220" y1="50" x2="280" y2="110" stroke="#000" stroke-width="1.2" marker-end="url(#arr5)"/>
+      <line x1="220" y1="110" x2="280" y2="130" stroke="#000" stroke-width="1.2" marker-end="url(#arr5)"/>
+      <line x1="120" y1="170" x2="280" y2="150" stroke="#000" stroke-width="1.2" marker-end="url(#arr5)"/>
+      <line x1="120" y1="230" x2="280" y2="170" stroke="#000" stroke-width="1.2" marker-end="url(#arr5)"/>
+      <line x1="120" y1="270" x2="280" y2="185" stroke="#000" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arr5)"/>
+      <line x1="430" y1="140" x2="480" y2="140" stroke="#000" stroke-width="1.5" marker-end="url(#arr5)"/>
+    </svg>

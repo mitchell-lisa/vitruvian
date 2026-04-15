@@ -1,0 +1,2153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vitruvian — Actuarial infrastructure for musculoskeletal injury risk</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #0a0c10; color: #e0e0e0; }
+
+    /* Slide system */
+    .slide {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 40px;
+      position: relative;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .slide-inner {
+      max-width: 1100px;
+      width: 100%;
+    }
+    .slide-num {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 13px;
+      font-weight: 600;
+      color: #333;
+      letter-spacing: 0.08em;
+    }
+    .slide-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #4ade80;
+      margin-bottom: 16px;
+    }
+    h1 { font-size: clamp(36px, 5vw, 64px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; color: #fafafa; margin-bottom: 24px; }
+    h2 { font-size: clamp(28px, 4vw, 48px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; color: #fafafa; margin-bottom: 20px; }
+    h3 { font-size: 20px; font-weight: 700; color: #e8e8e8; margin-bottom: 8px; }
+    p { font-size: 17px; line-height: 1.7; color: #999; max-width: 680px; }
+    p.large { font-size: 20px; line-height: 1.65; }
+    .accent { color: #4ade80; }
+    .warn { color: #facc15; }
+    .danger { color: #ef4444; }
+
+    /* Layout helpers */
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .split-60 { display: grid; grid-template-columns: 3fr 2fr; gap: 48px; align-items: center; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .stack { display: flex; flex-direction: column; gap: 16px; }
+
+    /* Cards */
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 28px 24px;
+    }
+    .card h3 { font-size: 17px; margin-bottom: 6px; }
+    .card p { font-size: 14px; line-height: 1.6; color: #888; }
+
+    /* Stats */
+    .stat-big { font-size: 48px; font-weight: 800; color: #4ade80; letter-spacing: -0.03em; line-height: 1; }
+    .stat-label { font-size: 13px; color: #666; margin-top: 6px; font-weight: 500; }
+
+    /* Images */
+    .img-wrap {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .img-wrap img { width: 100%; height: auto; display: block; }
+
+    /* Table */
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th { text-align: left; padding: 12px 16px; font-weight: 600; color: #888; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    td { padding: 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.04); color: #ccc; }
+    td:first-child { font-weight: 600; color: #e0e0e0; }
+    .check { color: #4ade80; font-weight: 700; }
+    .x { color: #444; }
+
+    /* Title slide logo */
+    .title-logo { width: 80px; height: 80px; margin-bottom: 24px; border-radius: 16px; }
+
+    /* Divider */
+    .divider { height: 1px; background: rgba(255,255,255,0.06); margin: 32px 0; }
+
+    /* Bullet list */
+    ul { list-style: none; padding: 0; }
+    ul li { font-size: 15px; color: #999; padding: 8px 0; padding-left: 20px; position: relative; line-height: 1.6; }
+    ul li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #4ade80; position: absolute; left: 0; top: 16px; }
+
+    /* Arrow-style problem/solution bullets */
+    .arrow-list { list-style: none; padding: 0; margin-top: 32px; }
+    .arrow-list li {
+      font-size: 17px; color: #ccc; padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      line-height: 1.7; position: relative; padding-left: 0;
+    }
+    .arrow-list li::before { display: none; }
+    .arrow-list .arrow-label { font-weight: 700; color: #e0e0e0; }
+    .arrow-list .arrow { color: #4ade80; margin: 0 8px; font-weight: 400; }
+    .arrow-list .arrow-cite { font-size: 13px; color: #555; margin-left: 6px; }
+    .arrow-list .transform-from { font-weight: 700; color: #999; }
+    .arrow-list .transform-to { font-weight: 700; color: #fafafa; }
+
+    /* 2x2 Quadrant chart */
+    .quadrant-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      aspect-ratio: 1;
+      margin: 0 auto;
+    }
+    .quadrant-grid {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-left: 1px solid rgba(255,255,255,0.15);
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+    .quadrant-grid::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 0; right: 0;
+      height: 1px;
+      background: rgba(255,255,255,0.06);
+    }
+    .quadrant-grid::after {
+      content: '';
+      position: absolute;
+      left: 50%; top: 0; bottom: 0;
+      width: 1px;
+      background: rgba(255,255,255,0.06);
+    }
+    .q-label {
+      position: absolute;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #555;
+    }
+    .q-label-top { top: -28px; left: 50%; transform: translateX(-50%); }
+    .q-label-bottom { bottom: -28px; left: 50%; transform: translateX(-50%); }
+    .q-label-left { left: -12px; top: 50%; transform: translateY(-50%) rotate(-90deg); white-space: nowrap; }
+    .q-label-right { right: -12px; top: 50%; transform: translateY(-50%) rotate(90deg); white-space: nowrap; }
+    .q-dot {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 2;
+    }
+    .q-dot-circle {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: #555;
+      margin: 0 auto 4px;
+    }
+    .q-dot-circle.accent { background: #4ade80; width: 16px; height: 16px; box-shadow: 0 0 20px rgba(74,222,128,0.4); }
+    .q-dot-name {
+      font-size: 11px;
+      font-weight: 600;
+      color: #888;
+      white-space: nowrap;
+    }
+    .q-dot-name.accent { color: #4ade80; font-size: 13px; }
+
+    /* Revenue donut charts */
+    .donut-wrap { display: flex; gap: 48px; justify-content: center; align-items: flex-start; flex-wrap: wrap; margin-top: 40px; }
+    .donut-col { text-align: center; flex: 1; min-width: 260px; max-width: 380px; }
+    .donut-col h3 { font-size: 18px; margin-bottom: 24px; }
+    .donut-svg { width: 200px; height: 200px; margin: 0 auto 20px; }
+    .donut-legend { list-style: none; padding: 0; text-align: left; display: inline-block; }
+    .donut-legend li { font-size: 13px; color: #999; padding: 4px 0; display: flex; align-items: center; gap: 8px; }
+    .donut-legend li::before { display: none; }
+    .donut-legend .swatch { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+
+    /* Flow diagram */
+    .flow-diagram {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+      margin-top: 32px;
+      padding: 32px 16px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+    }
+    .flow-node {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 16px 14px;
+      text-align: center;
+      min-width: 130px;
+      max-width: 150px;
+    }
+    .flow-node h4 { font-size: 12px; font-weight: 700; color: #fafafa; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .flow-node p { font-size: 11px; color: #777; line-height: 1.5; max-width: 100%; }
+    .flow-node.highlight { border-color: rgba(74,222,128,0.3); background: rgba(74,222,128,0.04); }
+    .flow-node.highlight h4 { color: #4ade80; }
+    .flow-arrow {
+      font-size: 20px;
+      color: #333;
+      padding: 0 6px;
+      flex-shrink: 0;
+    }
+    .flow-return {
+      width: 80%;
+      margin: 12px auto 0;
+      text-align: center;
+      font-size: 12px;
+      color: #444;
+      border-top: 1px dashed rgba(255,255,255,0.08);
+      padding-top: 12px;
+    }
+
+    /* Flywheel */
+    .flywheel-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-top: 40px; }
+    .flywheel-wrap { position: relative; width: 100%; max-width: 360px; margin: 0 auto; }
+    .flywheel-svg { width: 100%; height: auto; }
+    .flywheel-chains { display: flex; flex-direction: column; gap: 16px; }
+    .flywheel-chain {
+      font-size: 15px; color: #ccc; line-height: 1.7;
+    }
+    .flywheel-chain strong { color: #e0e0e0; }
+    .flywheel-chain .arrow { color: #4ade80; margin: 0 4px; }
+    .flywheel-booster {
+      margin-top: 8px; padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 15px; color: #ccc;
+    }
+    .flywheel-booster strong { color: #facc15; }
+
+    /* Bar chart */
+    .bar-chart-wrap { display: flex; align-items: flex-end; gap: 24px; justify-content: center; height: 220px; margin-top: 20px; }
+    .bar-group { display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1; max-width: 80px; }
+    .bar-stack { width: 100%; display: flex; flex-direction: column; justify-content: flex-end; height: 200px; }
+    .bar-seg {
+      width: 100%;
+      border-radius: 3px 3px 0 0;
+      min-height: 2px;
+    }
+    .bar-seg + .bar-seg { border-radius: 0; }
+    .bar-seg:last-child { border-radius: 0 0 3px 3px; }
+    .bar-seg:first-child { border-radius: 3px 3px 0 0; }
+    .bar-label { font-size: 12px; color: #888; font-weight: 600; }
+    .bar-value { font-size: 11px; color: #ccc; font-weight: 700; }
+    .bar-chart-axis {
+      display: flex; justify-content: center; gap: 24px;
+      margin-top: 12px;
+    }
+    .bar-chart-legend {
+      display: flex; gap: 20px; justify-content: center; margin-top: 16px;
+    }
+    .bar-chart-legend span { font-size: 12px; color: #888; display: flex; align-items: center; gap: 6px; }
+    .bar-chart-legend .swatch { width: 12px; height: 12px; border-radius: 3px; }
+
+    /* Capital allocation pie (reuse donut styles) */
+    .capital-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-top: 32px; }
+    .capital-summary {
+      font-size: 16px; font-style: italic; color: #999; text-align: center;
+      margin-top: 32px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.7;
+    }
+
+    /* Capital allocation detail */
+    .capital-detail { margin-top: 32px; }
+    .capital-category { margin-bottom: 2px; }
+    .capital-category-header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 8px;
+    }
+    .capital-category-header h3 { font-size: 14px; margin: 0; }
+    .capital-category-header .cat-amount { font-size: 14px; font-weight: 700; color: #4ade80; }
+    .capital-category-header .cat-pct { font-size: 12px; color: #666; margin-left: 6px; }
+    .capital-line {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 5px 16px;
+      font-size: 12px;
+    }
+    .capital-line .line-desc { color: #777; }
+    .capital-line .line-cost { color: #aaa; font-weight: 600; white-space: nowrap; margin-left: 12px; }
+    .capital-total {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px;
+      margin-top: 8px;
+      background: rgba(74,222,128,0.06);
+      border: 1px solid rgba(74,222,128,0.15);
+      border-radius: 8px;
+      font-size: 17px; font-weight: 700; color: #fafafa;
+    }
+    .capital-total .total-amount { color: #4ade80; font-size: 20px; }
+
+    /* Patent figure diagrams */
+    .patent-fig {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 24px 16px 12px;
+      margin-top: 24px;
+    }
+    .patent-fig svg { width: 100%; height: auto; display: block; }
+    .fig-title {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: #555; text-align: center;
+      margin-bottom: 16px;
+    }
+    .fig-caption {
+      font-size: 11px; color: #555; text-align: center; margin-top: 10px; line-height: 1.6;
+    }
+
+    /* Slide logo watermark */
+    .slide-logo {
+      position: absolute;
+      bottom: 24px;
+      right: 32px;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      opacity: 0.25;
+    }
+
+    /* CTA */
+    .cta-box {
+      background: rgba(74,222,128,0.06);
+      border: 1px solid rgba(74,222,128,0.15);
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+      margin-top: 32px;
+    }
+    .cta-box h3 { font-size: 22px; color: #fafafa; margin-bottom: 8px; }
+    .cta-box p { margin: 0 auto; font-size: 15px; }
+
+    /* NDA Gate */
+    .nda-gate {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: #0a0c10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.5s ease;
+    }
+    .nda-gate.dismissed {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .nda-box {
+      max-width: 560px;
+      width: 100%;
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .nda-box img {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      margin-bottom: 24px;
+    }
+    .nda-box h2 {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+    .nda-box p {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+    .nda-text {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 24px;
+      text-align: left;
+      font-size: 13px;
+      line-height: 1.75;
+      color: #888;
+      max-height: 220px;
+      overflow-y: auto;
+      margin-bottom: 24px;
+    }
+    .nda-text strong { color: #ccc; }
+    .nda-check {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      cursor: pointer;
+    }
+    .nda-check input { width: 18px; height: 18px; accent-color: #4ade80; cursor: pointer; }
+    .nda-check label { font-size: 14px; color: #ccc; cursor: pointer; user-select: none; }
+    .nda-btn {
+      display: inline-block;
+      padding: 14px 40px;
+      font-size: 15px;
+      font-weight: 700;
+      font-family: inherit;
+      background: #4ade80;
+      color: #0a0c10;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      opacity: 0.3;
+      pointer-events: none;
+      transition: all 0.2s ease;
+    }
+    .nda-btn.enabled {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .nda-btn.enabled:hover {
+      background: #22c55e;
+    }
+
+    /* Print */
+    @media print {
+      .nda-gate { display: none !important; }
+      .slide { min-height: auto; page-break-after: always; padding: 40px; }
+      body { background: #fff; color: #222; }
+      .card { border-color: #ddd; }
+      h1, h2, h3 { color: #111; }
+      p { color: #555; }
+    }
+
+    @media (max-width: 768px) {
+      .split, .split-60, .grid-3 { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .slide { padding: 40px 24px; }
+      .stat-big { font-size: 36px; }
+      .nda-box { padding: 32px 24px; }
+      .flow-diagram { gap: 0; padding: 20px 12px; }
+      .flow-node { min-width: 100px; max-width: 120px; padding: 10px 8px; }
+      .flow-node h4 { font-size: 10px; }
+      .flow-node p { font-size: 9px; }
+      .flow-arrow { font-size: 14px; padding: 0 2px; }
+      .quadrant-wrap { max-width: 100%; }
+      .donut-wrap { gap: 32px; }
+      .arrow-list li { font-size: 15px; }
+      .flywheel-layout { grid-template-columns: 1fr; }
+      .capital-layout { grid-template-columns: 1fr; }
+      .capital-detail > div { grid-template-columns: 1fr !important; }
+      .bar-chart-wrap { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ==================== NDA GATE ==================== -->
+<div class="nda-gate" id="ndaGate">
+  <div class="nda-box">
+    <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="Vitruvian">
+    <h2>Confidential Material</h2>
+    <p style="font-size:15px; color:#888;">This document contains proprietary information about Vitruvian, including product design, technical specifications, intellectual property, and business strategy. Please review and accept the terms below before proceeding.</p>
+    <div class="nda-text">
+      <strong>Non-Disclosure Agreement</strong><br><br>
+      By accessing this document, you ("Recipient") agree to the following terms:<br><br>
+      <strong>1. Confidentiality.</strong> All information contained in this document — including but not limited to product designs, technical specifications, engineering details, patent claims, market analysis, pricing, and business strategy — is confidential and proprietary to Vitruvian ("Disclosing Party").<br><br>
+      <strong>2. Non-Disclosure.</strong> Recipient agrees not to disclose, publish, or disseminate any confidential information to any third party without prior written consent from the Disclosing Party.<br><br>
+      <strong>3. Non-Use.</strong> Recipient agrees not to use any confidential information for any purpose other than evaluating a potential business relationship with Vitruvian.<br><br>
+      <strong>4. No Copies.</strong> Recipient shall not copy, reproduce, or distribute this document or any portion thereof without written permission.<br><br>
+      <strong>5. Return of Materials.</strong> Upon request, Recipient shall return or destroy all copies of confidential materials.<br><br>
+      <strong>6. Duration.</strong> This agreement remains in effect for a period of two (2) years from the date of acceptance.<br><br>
+      <strong>7. No License.</strong> Nothing in this document grants any license or rights to any intellectual property owned by Vitruvian.<br><br>
+      This NDA is governed by the laws of the State of Delaware. By checking the box below, you acknowledge that you have read, understand, and agree to be bound by these terms.
+    </div>
+    <div class="nda-check">
+      <input type="checkbox" id="ndaCheckbox">
+      <label for="ndaCheckbox">I have read and agree to the Non-Disclosure Agreement</label>
+    </div>
+    <button class="nda-btn" id="ndaBtn">View Pitch Deck</button>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 1: TITLE ==================== -->
+<div class="slide">
+  <div class="slide-inner" style="text-align:center;">
+    <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="Vitruvian" class="title-logo">
+    <h1>VITRUVIAN</h1>
+    <p class="large" style="margin:0 auto 16px;">Actuarial infrastructure for<br>musculoskeletal injury risk.</p>
+    <p style="margin:0 auto 32px; font-size:16px; color:#888;">The hardware is the data layer. The data is the business.</p>
+    <p style="margin:0 auto; font-size:14px; color:#555;">Confidential — For potential partners only</p>
+  </div>
+  <span class="slide-num">1</span>
+</div>
+
+<!-- ==================== SLIDE 2: THE PROBLEM ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">The Problem</p>
+    <h2>Soft-tissue injuries are the #1 cause of lost games in elite sports — and they're getting worse.</h2>
+    <p class="large" style="margin-bottom:8px;">Strength has force plates. Speed has timing gates. Recovery has Normatec. But flexibility and joint mobility — the biggest levers for injury prevention — are still estimated by eye and documented on paper.</p>
+    <ul class="arrow-list">
+      <li>
+        <span class="arrow-label">No measurement</span>
+        <span class="arrow">→</span>
+        manual goniometry has 5–10° error; tight hamstrings, hip asymmetries, and ankle restrictions go undetected until an athlete pulls up
+        <span class="arrow-cite">(Norkin & White, <em>Measurement of Joint Motion: A Guide to Goniometry</em>, 5th ed. 2016)</span>
+      </li>
+      <li>
+        <span class="arrow-label">No consistency</span>
+        <span class="arrow">→</span>
+        no standardized force, no protocol control — 30% of hamstring and adductor injuries re-occur despite modern S&C
+        <span class="arrow-cite">(Ekstrand et al., <em>Br J Sports Med</em> 2023)</span>
+      </li>
+      <li>
+        <span class="arrow-label">No longitudinal data</span>
+        <span class="arrow">→</span>
+        when an athlete tears a muscle, there's no flexibility trend data to analyze — the warning signs were never captured
+      </li>
+    </ul>
+
+    <div class="cta-box" style="margin-top:32px; text-align:left;">
+      <p style="font-size:15px; color:#ccc; margin:0 0 12px;"><strong style="color:#4ade80;">The full scope — every muscle group Vitruvian addresses:</strong></p>
+
+      <p style="font-size:13px; color:#aaa; margin:0 0 8px; line-height:1.6;">&bull; <strong style="color:#e0e0e0;">Muscle strains are the largest single injury category</strong> in elite football: hamstrings 42%, adductors 25%, quadriceps 19%, calves 14%. Re-injury rates: adductors 29%, hamstrings 30%. <span style="color:#555; font-size:11px;">(Eirale et al., epidemiological review, <em>Br J Sports Med</em>)</span></p>
+
+      <p style="font-size:13px; color:#aaa; margin:0 0 8px; line-height:1.6;">&bull; <strong style="color:#e0e0e0;">25% of NFL players suffer a lower-extremity strain every season</strong> — 33% re-injury rate. <span style="color:#555; font-size:11px;">(Jenkins et al., 12-year review of 2,101 NFL hamstring injuries, <em>Orthop J Sports Med</em> 2024)</span></p>
+
+      <p style="font-size:13px; color:#aaa; margin:0 0 8px; line-height:1.6;">&bull; <strong style="color:#e0e0e0;">21% of professional footballers suffer a groin/adductor injury every season</strong>; 68% are adductor-related. <span style="color:#555; font-size:11px;">(Werner et al., 17-club 606-player UEFA prospective study, <em>Br J Sports Med</em>)</span></p>
+
+      <p style="font-size:13px; color:#aaa; margin:0 0 8px; line-height:1.6;">&bull; <strong style="color:#e0e0e0;">Restricted hip internal rotation and ankle dorsiflexion are independent risk factors for ACL injury</strong> — 83% of studies in a 2,819-athlete systematic review confirmed the link. <span style="color:#555; font-size:11px;">(Belkhelladi, Cierson & Martineau, <em>Orthop J Sports Med</em> 2025)</span></p>
+
+      <p style="font-size:13px; color:#aaa; margin:0 0 8px; line-height:1.6;">&bull; <strong style="color:#e0e0e0;">Hamstring injuries have DOUBLED from 12% to 24% of all injuries</strong> in men's professional football over 21 years — training injuries rising 6.7% annually despite modern training science. <span style="color:#555; font-size:11px;">(Ekstrand et al., UEFA Elite Club Injury Study, <em>Br J Sports Med</em> 2023)</span></p>
+
+      <p style="font-size:13px; color:#aaa; margin:0; line-height:1.6;">&bull; <strong style="color:#e0e0e0;">Economic impact:</strong> top LaLiga clubs lose <strong style="color:#e0e0e0;">€7M+ annually</strong> to muscle injuries; Premier League teams spent <strong style="color:#e0e0e0;">£266M total</strong> on sidelined players' wages in 2023/24 — <strong style="color:#e0e0e0;">£83M on hamstrings alone</strong>. <span style="color:#555; font-size:11px;">(Melcón-Ballesteros et al., <em>PLOS One</em> 2024; Premier Injuries Ltd. 2024)</span></p>
+    </div>
+  </div>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">2</span>
+</div>
+
+<!-- ==================== SLIDE 3: THE SOLUTION ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">The Solution</p>
+    <h2>Keep athletes on the field. Extend their careers. Sharpen their edge.</h2>
+    <p class="large" style="margin-bottom:8px;">Vitruvian is a single-station platform that perfects an athlete's ability to compete — applying precise motorized cable tension while measuring range of motion, force response, and movement quality in real time.</p>
+    <ul class="arrow-list" style="margin-top:40px;">
+      <li>
+        <span class="transform-from">From guesswork</span>
+        <span class="arrow">→</span>
+        <span class="transform-to">to precision:</span>
+        motorized cable tension at constant force, joint angle measured to ±2° by depth camera
+      </li>
+      <li>
+        <span class="transform-from">From reactive care</span>
+        <span class="arrow">→</span>
+        <span class="transform-to">to proactive prevention:</span>
+        longitudinal ROM trends and asymmetry alerts catch problems weeks before they become injuries
+      </li>
+      <li>
+        <span class="transform-from">From missed games</span>
+        <span class="arrow">→</span>
+        <span class="transform-to">to more starts:</span>
+        athletes recover faster, move better, and stay on the field — the metric that matters most
+      </li>
+    </ul>
+  </div>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">3</span>
+</div>
+
+<!-- ==================== SLIDE 4: THE PRODUCT ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">The Product</p>
+    <h2>Controlled tension. Measured range. Data on every rep.</h2>
+    <div class="split" style="margin-top:32px;">
+      <div class="patent-fig">
+        <p class="fig-title">FIG. 2 — Apparatus Side-View Schematic</p>
+        <svg viewBox="0 0 520 340" xmlns="http://www.w3.org/2000/svg" style="max-width:520px; margin:0 auto;">
+          <!-- Frame / upright -->
+          <rect x="40" y="60" width="16" height="220" rx="3" fill="none" stroke="#666" stroke-width="1.5"/>
+          <rect x="40" y="270" width="400" height="12" rx="3" fill="none" stroke="#666" stroke-width="1.5"/>
+          <!-- Bench surface -->
+          <rect x="100" y="220" width="320" height="14" rx="4" fill="none" stroke="#888" stroke-width="1.5"/>
+          <line x1="100" y1="234" x2="120" y2="270" stroke="#666" stroke-width="1"/>
+          <line x1="400" y1="234" x2="380" y2="270" stroke="#666" stroke-width="1"/>
+          <!-- Motor housing at top of upright -->
+          <rect x="20" y="60" width="56" height="44" rx="6" fill="rgba(74,222,128,0.08)" stroke="#4ade80" stroke-width="1.5"/>
+          <text x="48" y="86" text-anchor="middle" fill="#4ade80" font-size="9" font-weight="700" font-family="Inter,sans-serif">BLDC</text>
+          <!-- Gearbox -->
+          <rect x="24" y="108" width="48" height="28" rx="4" fill="rgba(74,222,128,0.05)" stroke="#4ade80" stroke-width="1"/>
+          <text x="48" y="126" text-anchor="middle" fill="#4ade80" font-size="8" font-weight="600" font-family="Inter,sans-serif">20:1</text>
+          <!-- Spool -->
+          <circle cx="48" cy="156" r="14" fill="none" stroke="#888" stroke-width="1.5"/>
+          <circle cx="48" cy="156" r="4" fill="#888"/>
+          <!-- Cable from spool to athlete -->
+          <path d="M62,156 Q120,156 160,195 Q180,210 240,210" fill="none" stroke="#facc15" stroke-width="1.5" stroke-dasharray="6,3"/>
+          <!-- Inline load cell on cable -->
+          <rect x="140" y="188" width="36" height="14" rx="3" fill="rgba(250,204,21,0.1)" stroke="#facc15" stroke-width="1"/>
+          <text x="158" y="198" text-anchor="middle" fill="#facc15" font-size="7" font-weight="600" font-family="Inter,sans-serif">LOAD</text>
+          <!-- Cuff at end of cable -->
+          <path d="M240,203 Q250,195 260,203 L260,217 Q250,225 240,217 Z" fill="rgba(255,255,255,0.05)" stroke="#ccc" stroke-width="1.5"/>
+          <!-- Athlete leg (simplified) -->
+          <line x1="260" y1="210" x2="380" y2="140" stroke="#e0e0e0" stroke-width="3" stroke-linecap="round"/>
+          <line x1="380" y1="140" x2="420" y2="210" stroke="#e0e0e0" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="380" cy="140" r="4" fill="none" stroke="#e0e0e0" stroke-width="1.5"/>
+          <!-- Athlete torso on bench -->
+          <line x1="270" y1="210" x2="420" y2="210" stroke="#e0e0e0" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+          <!-- Depth camera mounted on frame -->
+          <rect x="22" y="178" width="48" height="24" rx="5" fill="rgba(59,130,246,0.1)" stroke="#3b82f6" stroke-width="1.5"/>
+          <circle cx="36" cy="190" r="5" fill="none" stroke="#3b82f6" stroke-width="1"/>
+          <circle cx="58" cy="190" r="3" fill="none" stroke="#3b82f6" stroke-width="1"/>
+          <!-- Camera FOV cone -->
+          <path d="M70,190 L380,120 L420,220 Z" fill="rgba(59,130,246,0.03)" stroke="rgba(59,130,246,0.15)" stroke-width="0.5" stroke-dasharray="4,4"/>
+          <!-- Joint angle arc -->
+          <path d="M355,160 A30,30 0 0,1 380,140" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+          <text x="345" y="155" fill="#4ade80" font-size="9" font-weight="600" font-family="Inter,sans-serif">θ</text>
+          <!-- Touchscreen -->
+          <rect x="440" y="100" width="50" height="70" rx="4" fill="rgba(255,255,255,0.03)" stroke="#888" stroke-width="1"/>
+          <rect x="444" y="106" width="42" height="50" rx="2" fill="rgba(74,222,128,0.04)" stroke="rgba(74,222,128,0.2)" stroke-width="0.5"/>
+          <line x1="440" y1="170" x2="440" y2="270" stroke="#666" stroke-width="1"/>
+          <!-- E-stop button -->
+          <circle cx="465" cy="180" r="8" fill="rgba(239,68,68,0.15)" stroke="#ef4444" stroke-width="1.5"/>
+          <text x="465" y="183" text-anchor="middle" fill="#ef4444" font-size="6" font-weight="700" font-family="Inter,sans-serif">E</text>
+          <!-- Reference number labels -->
+          <text x="48" y="54" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="700" font-family="Inter,sans-serif">10</text>
+          <text x="48" y="146" text-anchor="middle" fill="#ccc" font-size="10" font-weight="700" font-family="Inter,sans-serif">14</text>
+          <text x="158" y="184" text-anchor="middle" fill="#facc15" font-size="10" font-weight="700" font-family="Inter,sans-serif">16</text>
+          <text x="250" y="196" text-anchor="middle" fill="#ccc" font-size="10" font-weight="700" font-family="Inter,sans-serif">18</text>
+          <text x="46" y="212" text-anchor="middle" fill="#3b82f6" font-size="10" font-weight="700" font-family="Inter,sans-serif">20</text>
+          <text x="465" y="96" text-anchor="middle" fill="#888" font-size="10" font-weight="700" font-family="Inter,sans-serif">22</text>
+          <text x="465" y="200" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="700" font-family="Inter,sans-serif">24</text>
+          <text x="48" y="105" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="700" font-family="Inter,sans-serif">12</text>
+          <text x="210" y="275" text-anchor="middle" fill="#666" font-size="10" font-weight="700" font-family="Inter,sans-serif">26</text>
+        </svg>
+        <p class="fig-caption">
+          <span style="color:#4ade80;">10</span> BLDC motor &nbsp;
+          <span style="color:#4ade80;">12</span> Planetary gearbox &nbsp;
+          <span style="color:#ccc;">14</span> Cable spool &nbsp;
+          <span style="color:#facc15;">16</span> Inline load cell &nbsp;
+          <span style="color:#ccc;">18</span> Quick-release cuff &nbsp;
+          <span style="color:#3b82f6;">20</span> Depth camera &nbsp;
+          <span style="color:#888;">22</span> Touchscreen &nbsp;
+          <span style="color:#ef4444;">24</span> E-stop &nbsp;
+          <span style="color:#666;">26</span> Frame + bench
+        </p>
+      </div>
+      <div class="stack">
+        <p>Vitruvian is a single-station platform that applies precise, motorized cable tension to stretch an athlete's muscles while simultaneously measuring range of motion, force response, and movement quality — all in real time.</p>
+        <div class="divider"></div>
+        <div>
+          <h3>One station delivers:</h3>
+          <ul>
+            <li>Standardized assisted stretching — every athlete, every session</li>
+            <li>Precise joint-angle measurement (±2° accuracy)</li>
+            <li>Objective, exportable flexibility documentation</li>
+            <li>Protocol consistency across the entire roster</li>
+            <li>Longitudinal data that identifies injury risk early</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">4</span>
+</div>
+
+<!-- ==================== SLIDE 5: HOW IT WORKS ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">How It Works</p>
+    <h2>Eight minutes. Nine variables. Zero guesswork.</h2>
+    <!-- FIG. 3 — Session method flow -->
+    <div class="patent-fig" style="margin-top:32px;">
+      <p class="fig-title">FIG. 3 — Stretch Session Method (Bilateral Assessment Protocol)</p>
+      <svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg" style="max-width:900px; margin:0 auto;">
+        <!-- Step 1: Badge In -->
+        <rect x="10" y="40" width="120" height="80" rx="8" fill="rgba(255,255,255,0.03)" stroke="#666" stroke-width="1.2"/>
+        <text x="70" y="32" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="700" font-family="Inter,sans-serif">STEP 100</text>
+        <text x="70" y="66" text-anchor="middle" fill="#e0e0e0" font-size="11" font-weight="700" font-family="Inter,sans-serif">BADGE IN</text>
+        <text x="70" y="82" text-anchor="middle" fill="#777" font-size="8" font-family="Inter,sans-serif">Load athlete profile</text>
+        <text x="70" y="94" text-anchor="middle" fill="#777" font-size="8" font-family="Inter,sans-serif">+ session history</text>
+        <text x="70" y="106" text-anchor="middle" fill="#777" font-size="8" font-family="Inter,sans-serif">+ training context</text>
+        <!-- Arrow -->
+        <path d="M134,80 L158,80" stroke="#4ade80" stroke-width="1.5" marker-end="url(#arrowG)"/>
+
+        <!-- Step 2: Baseline L -->
+        <rect x="162" y="20" width="120" height="60" rx="8" fill="rgba(59,130,246,0.05)" stroke="#3b82f6" stroke-width="1.2"/>
+        <text x="222" y="12" text-anchor="middle" fill="#3b82f6" font-size="10" font-weight="700" font-family="Inter,sans-serif">STEP 102a</text>
+        <text x="222" y="44" text-anchor="middle" fill="#e0e0e0" font-size="10" font-weight="700" font-family="Inter,sans-serif">BASELINE — L</text>
+        <text x="222" y="58" text-anchor="middle" fill="#777" font-size="8" font-family="Inter,sans-serif">Passive stretch @ 8 lb</text>
+        <text x="222" y="70" text-anchor="middle" fill="#777" font-size="8" font-family="Inter,sans-serif">Measure peak ROM (θ_L)</text>
+        <!-- Step 2b: Baseline R -->
+        <rect x="162" y="100" width="120" height="60" rx="8" fill="rgba(250,204,21,0.05)" stroke="#facc15" stroke-width="1.2"/>
+        <text x="222" y="92" text-anchor="middle" fill="#facc15" font-size="10" font-weight="700" font-family="Inter,sans-serif">STEP 102b</text>
+        <text x="222" y="124" text-anchor="middle" fill="#e0e0e0" font-size="10" font-weight="700" font-family="Inter,sans-serif">BASELINE — R</text>
+        <text x="222" y="138" text-anchor="middle" fill="#777" font-size="8" font-family="Inter,sans-serif">Passive stretch @ 8 lb</text>
+        <text x="222" y="150" text-anchor="middle" fill="#777" font-size="8" font-family="Inter,sans-serif">Measure peak ROM (θ_R)</text>
+        <!-- Arrow to comparison -->
+        <path d="M286,50 L310,80" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4,3"/>
+        <path d="M286,130 L310,100" stroke="#facc15" stroke-width="1" stroke-dasharray="4,3"/>
+
+        <!-- Step 3: Bilateral Comparison -->
+        <rect x="314" y="55" width="130" height="70" rx="8" fill="rgba(74,222,128,0.06)" stroke="#4ade80" stroke-width="1.5"/>
+        <text x="379" y="47" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="700" font-family="Inter,sans-serif">STEP 104</text>
+        <text x="379" y="78" text-anchor="middle" fill="#e0e0e0" font-size="10" font-weight="700" font-family="Inter,sans-serif">ASYMMETRY CALC</text>
+        <text x="379" y="94" text-anchor="middle" fill="#4ade80" font-size="9" font-weight="600" font-family="Inter,sans-serif">Δ = |θ_L − θ_R|</text>
+        <text x="379" y="110" text-anchor="middle" fill="#777" font-size="8" font-family="Inter,sans-serif">Flag if Δ > 10°</text>
+        <!-- Arrow -->
+        <path d="M448,90 L472,90" stroke="#4ade80" stroke-width="1.5" marker-end="url(#arrowG)"/>
+
+        <!-- Step 4: Stretch Protocol -->
+        <rect x="476" y="30" width="130" height="120" rx="8" fill="rgba(74,222,128,0.04)" stroke="#4ade80" stroke-width="1.5"/>
+        <text x="541" y="22" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="700" font-family="Inter,sans-serif">STEP 106</text>
+        <text x="541" y="52" text-anchor="middle" fill="#e0e0e0" font-size="10" font-weight="700" font-family="Inter,sans-serif">STRETCH PROTOCOL</text>
+        <text x="541" y="70" text-anchor="middle" fill="#777" font-size="8" font-family="Inter,sans-serif">Motor ramps cable</text>
+        <text x="541" y="82" text-anchor="middle" fill="#777" font-size="8" font-family="Inter,sans-serif">PID @ 100Hz (FIG. 10)</text>
+        <text x="541" y="94" text-anchor="middle" fill="#777" font-size="8" font-family="Inter,sans-serif">Vision tracks joints</text>
+        <text x="541" y="106" text-anchor="middle" fill="#777" font-size="8" font-family="Inter,sans-serif">Compensation detect</text>
+        <text x="541" y="118" text-anchor="middle" fill="#777" font-size="8" font-family="Inter,sans-serif">(FIG. 11)</text>
+        <!-- Real-time loop arrow inside -->
+        <path d="M490,130 Q490,140 541,140 Q592,140 592,130" fill="none" stroke="#4ade80" stroke-width="0.8" stroke-dasharray="3,2"/>
+        <text x="541" y="148" text-anchor="middle" fill="#4ade80" font-size="7" font-family="Inter,sans-serif">100Hz closed loop</text>
+        <!-- Arrow -->
+        <path d="M610,90 L634,90" stroke="#4ade80" stroke-width="1.5" marker-end="url(#arrowG)"/>
+
+        <!-- Step 5: Data Logging -->
+        <rect x="638" y="45" width="120" height="90" rx="8" fill="rgba(255,255,255,0.03)" stroke="#888" stroke-width="1.2"/>
+        <text x="698" y="37" text-anchor="middle" fill="#888" font-size="10" font-weight="700" font-family="Inter,sans-serif">STEP 108</text>
+        <text x="698" y="68" text-anchor="middle" fill="#e0e0e0" font-size="10" font-weight="700" font-family="Inter,sans-serif">DATA LOG</text>
+        <text x="698" y="84" text-anchor="middle" fill="#777" font-size="8" font-family="Inter,sans-serif">ROM, force, asymmetry</text>
+        <text x="698" y="96" text-anchor="middle" fill="#777" font-size="8" font-family="Inter,sans-serif">compensation flags</text>
+        <text x="698" y="108" text-anchor="middle" fill="#777" font-size="8" font-family="Inter,sans-serif">tolerance threshold</text>
+        <text x="698" y="120" text-anchor="middle" fill="#777" font-size="8" font-family="Inter,sans-serif">pain response binary</text>
+        <!-- Arrow -->
+        <path d="M762,90 L786,90" stroke="#4ade80" stroke-width="1.5" marker-end="url(#arrowG)"/>
+
+        <!-- Step 6: Report -->
+        <rect x="790" y="50" width="100" height="80" rx="8" fill="rgba(255,255,255,0.03)" stroke="#666" stroke-width="1.2"/>
+        <text x="840" y="42" text-anchor="middle" fill="#666" font-size="10" font-weight="700" font-family="Inter,sans-serif">STEP 110</text>
+        <text x="840" y="74" text-anchor="middle" fill="#e0e0e0" font-size="10" font-weight="700" font-family="Inter,sans-serif">REPORT</text>
+        <text x="840" y="90" text-anchor="middle" fill="#777" font-size="8" font-family="Inter,sans-serif">Session Δ ROM</text>
+        <text x="840" y="102" text-anchor="middle" fill="#777" font-size="8" font-family="Inter,sans-serif">Asymmetry trend</text>
+        <text x="840" y="114" text-anchor="middle" fill="#777" font-size="8" font-family="Inter,sans-serif">Risk score update</text>
+
+        <!-- Longitudinal feedback: report feeds back to next session -->
+        <path d="M840,134 L840,210 L70,210 L70,124" fill="none" stroke="#555" stroke-width="1" stroke-dasharray="6,3"/>
+        <text x="450" y="228" text-anchor="middle" fill="#555" font-size="9" font-weight="600" font-family="Inter,sans-serif">STEP 112 — Longitudinal data feeds next session's baseline targets and protocol parameters</text>
+        <polygon points="70,124 65,134 75,134" fill="#555"/>
+
+        <!-- Arrow marker -->
+        <defs>
+          <marker id="arrowG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#4ade80"/></marker>
+        </defs>
+      </svg>
+      <p class="fig-caption">Method claim: Steps 100–112 define the complete bilateral assessment and adaptive stretching protocol with longitudinal feedback loop.</p>
+    </div>
+  </div>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">5</span>
+</div>
+
+<!-- ==================== SLIDE 6: TECHNOLOGY ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">Technology</p>
+    <h2>Five systems. One closed loop.</h2>
+    <div class="grid-2" style="margin-top:32px;">
+      <!-- FIG. 4 — Cable Drive Assembly -->
+      <div class="card" style="text-align:center;">
+        <div class="patent-fig" style="margin:0 0 16px; padding:16px 8px 8px;">
+          <p class="fig-title" style="margin-bottom:10px;">FIG. 4 — Cable Drive Assembly</p>
+          <svg viewBox="0 0 340 160" xmlns="http://www.w3.org/2000/svg">
+            <!-- Motor -->
+            <rect x="10" y="40" width="60" height="50" rx="6" fill="rgba(74,222,128,0.08)" stroke="#4ade80" stroke-width="1.2"/>
+            <text x="40" y="62" text-anchor="middle" fill="#4ade80" font-size="8" font-weight="700" font-family="Inter,sans-serif">BLDC</text>
+            <text x="40" y="74" text-anchor="middle" fill="#4ade80" font-size="7" font-family="Inter,sans-serif">200W</text>
+            <text x="40" y="34" text-anchor="middle" fill="#4ade80" font-size="9" font-weight="700" font-family="Inter,sans-serif">30</text>
+            <!-- Shaft -->
+            <line x1="70" y1="65" x2="90" y2="65" stroke="#888" stroke-width="3"/>
+            <!-- Gearbox -->
+            <rect x="90" y="44" width="50" height="42" rx="4" fill="rgba(255,255,255,0.03)" stroke="#888" stroke-width="1.2"/>
+            <text x="115" y="62" text-anchor="middle" fill="#ccc" font-size="8" font-weight="700" font-family="Inter,sans-serif">20:1</text>
+            <text x="115" y="74" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">PLANETARY</text>
+            <text x="115" y="38" text-anchor="middle" fill="#ccc" font-size="9" font-weight="700" font-family="Inter,sans-serif">32</text>
+            <!-- Output shaft -->
+            <line x1="140" y1="65" x2="155" y2="65" stroke="#888" stroke-width="3"/>
+            <!-- Spool -->
+            <circle cx="175" cy="65" r="20" fill="none" stroke="#facc15" stroke-width="1.5"/>
+            <circle cx="175" cy="65" r="6" fill="#facc15" opacity="0.3"/>
+            <text x="175" y="68" text-anchor="middle" fill="#facc15" font-size="7" font-weight="700" font-family="Inter,sans-serif">⊕</text>
+            <text x="175" y="38" text-anchor="middle" fill="#facc15" font-size="9" font-weight="700" font-family="Inter,sans-serif">34</text>
+            <!-- Slip clutch -->
+            <rect x="198" y="56" width="28" height="18" rx="3" fill="rgba(239,68,68,0.08)" stroke="#ef4444" stroke-width="1"/>
+            <text x="212" y="69" text-anchor="middle" fill="#ef4444" font-size="6" font-weight="600" font-family="Inter,sans-serif">CLUTCH</text>
+            <text x="212" y="50" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="700" font-family="Inter,sans-serif">36</text>
+            <!-- Cable -->
+            <line x1="226" y1="65" x2="330" y2="65" stroke="#facc15" stroke-width="1.5" stroke-dasharray="6,3"/>
+            <text x="278" y="58" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">DYNEEMA CABLE</text>
+            <text x="278" y="80" text-anchor="middle" fill="#facc15" font-size="9" font-weight="700" font-family="Inter,sans-serif">38</text>
+            <!-- ODrive controller below -->
+            <rect x="20" y="110" width="70" height="30" rx="4" fill="rgba(74,222,128,0.05)" stroke="#4ade80" stroke-width="1" stroke-dasharray="4,2"/>
+            <text x="55" y="128" text-anchor="middle" fill="#4ade80" font-size="7" font-weight="600" font-family="Inter,sans-serif">ODrive FOC</text>
+            <text x="55" y="138" text-anchor="middle" fill="#777" font-size="6" font-family="Inter,sans-serif">100Hz PWM</text>
+            <path d="M55,110 L55,96 L40,90" fill="none" stroke="#4ade80" stroke-width="0.8" stroke-dasharray="3,2"/>
+          </svg>
+        </div>
+        <h3>Cable Drive</h3>
+        <p>200W BLDC motor, 20:1 planetary gearbox, Dyneema cable. ODrive FOC controller at 100Hz. Force-compliant, backdriveable.</p>
+      </div>
+
+      <!-- FIG. 5 — Sensor Array Configuration -->
+      <div class="card" style="text-align:center;">
+        <div class="patent-fig" style="margin:0 0 16px; padding:16px 8px 8px;">
+          <p class="fig-title" style="margin-bottom:10px;">FIG. 5 — Sensor Array & Data Paths</p>
+          <svg viewBox="0 0 340 160" xmlns="http://www.w3.org/2000/svg">
+            <!-- Depth camera -->
+            <rect x="20" y="15" width="70" height="35" rx="6" fill="rgba(59,130,246,0.08)" stroke="#3b82f6" stroke-width="1.2"/>
+            <circle cx="42" cy="32" r="8" fill="none" stroke="#3b82f6" stroke-width="1"/>
+            <circle cx="72" cy="32" r="5" fill="none" stroke="#3b82f6" stroke-width="1"/>
+            <text x="55" y="8" text-anchor="middle" fill="#3b82f6" font-size="9" font-weight="700" font-family="Inter,sans-serif">40</text>
+            <text x="55" y="60" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">RealSense D435</text>
+            <!-- Load cell -->
+            <rect x="20" y="80" width="70" height="30" rx="5" fill="rgba(250,204,21,0.08)" stroke="#facc15" stroke-width="1.2"/>
+            <text x="55" y="99" text-anchor="middle" fill="#facc15" font-size="8" font-weight="700" font-family="Inter,sans-serif">LOAD CELL</text>
+            <text x="55" y="74" text-anchor="middle" fill="#facc15" font-size="9" font-weight="700" font-family="Inter,sans-serif">42</text>
+            <text x="55" y="120" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Inline, 100Hz</text>
+            <!-- Jetson compute -->
+            <rect x="140" y="30" width="80" height="50" rx="6" fill="rgba(74,222,128,0.06)" stroke="#4ade80" stroke-width="1.5"/>
+            <text x="180" y="52" text-anchor="middle" fill="#4ade80" font-size="8" font-weight="700" font-family="Inter,sans-serif">JETSON</text>
+            <text x="180" y="66" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">EDGE COMPUTE</text>
+            <text x="180" y="22" text-anchor="middle" fill="#4ade80" font-size="9" font-weight="700" font-family="Inter,sans-serif">44</text>
+            <!-- Data paths -->
+            <path d="M94,32 L136,48" stroke="#3b82f6" stroke-width="1" marker-end="url(#arrowB)"/>
+            <text x="112" y="34" fill="#3b82f6" font-size="6" font-family="Inter,sans-serif">30fps depth</text>
+            <path d="M94,95 L136,65" stroke="#facc15" stroke-width="1" marker-end="url(#arrowY)"/>
+            <text x="112" y="88" fill="#facc15" font-size="6" font-family="Inter,sans-serif">100Hz force</text>
+            <!-- Output to UI -->
+            <path d="M224,55 L260,55" stroke="#4ade80" stroke-width="1" marker-end="url(#arrowG2)"/>
+            <!-- Touchscreen -->
+            <rect x="264" y="25" width="60" height="60" rx="6" fill="rgba(255,255,255,0.03)" stroke="#888" stroke-width="1.2"/>
+            <rect x="270" y="31" width="48" height="36" rx="3" fill="rgba(74,222,128,0.04)" stroke="rgba(74,222,128,0.15)" stroke-width="0.5"/>
+            <text x="294" y="82" text-anchor="middle" fill="#888" font-size="7" font-family="Inter,sans-serif">15" TOUCH</text>
+            <text x="294" y="18" text-anchor="middle" fill="#888" font-size="9" font-weight="700" font-family="Inter,sans-serif">46</text>
+            <!-- Cloud path -->
+            <path d="M180,84 L180,120 L280,120" stroke="#555" stroke-width="0.8" stroke-dasharray="4,3"/>
+            <rect x="280" y="110" width="50" height="24" rx="4" fill="rgba(255,255,255,0.02)" stroke="#555" stroke-width="0.8"/>
+            <text x="305" y="126" text-anchor="middle" fill="#555" font-size="7" font-weight="600" font-family="Inter,sans-serif">CLOUD</text>
+            <text x="305" y="106" text-anchor="middle" fill="#555" font-size="9" font-weight="700" font-family="Inter,sans-serif">48</text>
+            <!-- Markers -->
+            <defs>
+              <marker id="arrowB" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5" fill="#3b82f6"/></marker>
+              <marker id="arrowY" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5" fill="#facc15"/></marker>
+              <marker id="arrowG2" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5" fill="#4ade80"/></marker>
+            </defs>
+          </svg>
+        </div>
+        <h3>Depth Camera + Sensors</h3>
+        <p>Intel RealSense D435. 12-point skeletal tracking at 30fps. Inline load cell at 100Hz. Edge compute on Jetson module.</p>
+      </div>
+
+      <!-- FIG. 6 — Control Interface Architecture -->
+      <div class="card" style="text-align:center;">
+        <div class="patent-fig" style="margin:0 0 16px; padding:16px 8px 8px;">
+          <p class="fig-title" style="margin-bottom:10px;">FIG. 6 — Control Interface Architecture</p>
+          <svg viewBox="0 0 340 160" xmlns="http://www.w3.org/2000/svg">
+            <!-- Staff layer -->
+            <rect x="10" y="10" width="320" height="40" rx="6" fill="rgba(255,255,255,0.02)" stroke="#666" stroke-width="0.8"/>
+            <text x="170" y="34" text-anchor="middle" fill="#888" font-size="8" font-weight="600" font-family="Inter,sans-serif">STAFF / OPERATOR LAYER</text>
+            <!-- Touchscreen UI block -->
+            <rect x="30" y="65" width="90" height="40" rx="5" fill="rgba(74,222,128,0.05)" stroke="#4ade80" stroke-width="1.2"/>
+            <text x="75" y="82" text-anchor="middle" fill="#4ade80" font-size="8" font-weight="700" font-family="Inter,sans-serif">SESSION UI</text>
+            <text x="75" y="96" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Protocol select</text>
+            <text x="75" y="58" text-anchor="middle" fill="#4ade80" font-size="9" font-weight="700" font-family="Inter,sans-serif">50</text>
+            <path d="M75,50 L75,61" stroke="#666" stroke-width="0.8"/>
+            <!-- Real-time display -->
+            <rect x="135" y="65" width="80" height="40" rx="5" fill="rgba(59,130,246,0.05)" stroke="#3b82f6" stroke-width="1.2"/>
+            <text x="175" y="82" text-anchor="middle" fill="#3b82f6" font-size="8" font-weight="700" font-family="Inter,sans-serif">LIVE DISPLAY</text>
+            <text x="175" y="96" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Force + ROM</text>
+            <text x="175" y="58" text-anchor="middle" fill="#3b82f6" font-size="9" font-weight="700" font-family="Inter,sans-serif">52</text>
+            <path d="M175,50 L175,61" stroke="#666" stroke-width="0.8"/>
+            <!-- History/trends -->
+            <rect x="230" y="65" width="90" height="40" rx="5" fill="rgba(250,204,21,0.05)" stroke="#facc15" stroke-width="1.2"/>
+            <text x="275" y="82" text-anchor="middle" fill="#facc15" font-size="8" font-weight="700" font-family="Inter,sans-serif">TREND VIEW</text>
+            <text x="275" y="96" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Longitudinal Δ</text>
+            <text x="275" y="58" text-anchor="middle" fill="#facc15" font-size="9" font-weight="700" font-family="Inter,sans-serif">54</text>
+            <path d="M275,50 L275,61" stroke="#666" stroke-width="0.8"/>
+            <!-- Data bus -->
+            <rect x="10" y="120" width="320" height="28" rx="4" fill="rgba(74,222,128,0.03)" stroke="#4ade80" stroke-width="0.8" stroke-dasharray="4,3"/>
+            <text x="170" y="138" text-anchor="middle" fill="#4ade80" font-size="8" font-weight="600" font-family="Inter,sans-serif">LOCAL DATA BUS — Sensor fusion @ 100Hz → UI update @ 30Hz → Cloud sync @ session end</text>
+            <path d="M75,109 L75,118" stroke="#4ade80" stroke-width="0.8"/>
+            <path d="M175,109 L175,118" stroke="#3b82f6" stroke-width="0.8"/>
+            <path d="M275,109 L275,118" stroke="#facc15" stroke-width="0.8"/>
+          </svg>
+        </div>
+        <h3>Live Interface</h3>
+        <p>15" touchscreen. Real-time force graph, ROM tracking, bilateral comparison. Longitudinal trend view with export.</p>
+      </div>
+
+      <!-- FIG. 7 — Five-Layer Safety System -->
+      <div class="card" style="text-align:center;">
+        <div class="patent-fig" style="margin:0 0 16px; padding:16px 8px 8px;">
+          <p class="fig-title" style="margin-bottom:10px;">FIG. 7 — Five-Layer Safety Cascade</p>
+          <svg viewBox="0 0 340 160" xmlns="http://www.w3.org/2000/svg">
+            <!-- Layer 1: Software -->
+            <rect x="10" y="8" width="320" height="24" rx="4" fill="rgba(74,222,128,0.06)" stroke="#4ade80" stroke-width="1"/>
+            <text x="28" y="24" fill="#4ade80" font-size="8" font-weight="700" font-family="Inter,sans-serif">L1</text>
+            <text x="170" y="24" text-anchor="middle" fill="#ccc" font-size="8" font-weight="600" font-family="Inter,sans-serif">SOFTWARE FORCE CAP — max tension limit, cannot be overridden by protocol</text>
+            <!-- Layer 2: PID -->
+            <rect x="30" y="36" width="280" height="24" rx="4" fill="rgba(74,222,128,0.05)" stroke="#4ade80" stroke-width="0.8"/>
+            <text x="48" y="52" fill="#4ade80" font-size="8" font-weight="700" font-family="Inter,sans-serif">L2</text>
+            <text x="170" y="52" text-anchor="middle" fill="#ccc" font-size="8" font-weight="600" font-family="Inter,sans-serif">PID COMPLIANCE — force setpoint tracking, auto-reduce on overshoot</text>
+            <!-- Layer 3: Slip clutch -->
+            <rect x="50" y="64" width="240" height="24" rx="4" fill="rgba(250,204,21,0.06)" stroke="#facc15" stroke-width="0.8"/>
+            <text x="68" y="80" fill="#facc15" font-size="8" font-weight="700" font-family="Inter,sans-serif">L3</text>
+            <text x="170" y="80" text-anchor="middle" fill="#ccc" font-size="8" font-weight="600" font-family="Inter,sans-serif">SLIP CLUTCH — mechanical torque limit, cable slips at threshold</text>
+            <!-- Layer 4: E-stop -->
+            <rect x="70" y="92" width="200" height="24" rx="4" fill="rgba(239,68,68,0.08)" stroke="#ef4444" stroke-width="0.8"/>
+            <text x="88" y="108" fill="#ef4444" font-size="8" font-weight="700" font-family="Inter,sans-serif">L4</text>
+            <text x="170" y="108" text-anchor="middle" fill="#ccc" font-size="8" font-weight="600" font-family="Inter,sans-serif">E-STOP — hardwired motor kill, staff or athlete accessible</text>
+            <!-- Layer 5: Quick-release -->
+            <rect x="90" y="120" width="160" height="24" rx="4" fill="rgba(239,68,68,0.12)" stroke="#ef4444" stroke-width="1"/>
+            <text x="108" y="136" fill="#ef4444" font-size="8" font-weight="700" font-family="Inter,sans-serif">L5</text>
+            <text x="170" y="136" text-anchor="middle" fill="#ccc" font-size="8" font-weight="600" font-family="Inter,sans-serif">QUICK-RELEASE CUFF — instant mechanical disconnect</text>
+            <!-- Response time annotations -->
+            <text x="335" y="24" text-anchor="end" fill="#555" font-size="7" font-family="Inter,sans-serif">&lt;10ms</text>
+            <text x="315" y="52" text-anchor="end" fill="#555" font-size="7" font-family="Inter,sans-serif">&lt;10ms</text>
+            <text x="295" y="80" text-anchor="end" fill="#555" font-size="7" font-family="Inter,sans-serif">passive</text>
+            <text x="275" y="108" text-anchor="end" fill="#555" font-size="7" font-family="Inter,sans-serif">&lt;50ms</text>
+            <text x="255" y="136" text-anchor="end" fill="#555" font-size="7" font-family="Inter,sans-serif">instant</text>
+            <!-- Label -->
+            <text x="170" y="156" text-anchor="middle" fill="#555" font-size="7" font-style="italic" font-family="Inter,sans-serif">Each layer operates independently — any single layer can halt the stretch</text>
+          </svg>
+        </div>
+        <h3>Five-Layer Safety</h3>
+        <p>Software cap → PID compliance → slip clutch → E-stop → quick-release. Each layer is independent and fail-safe.</p>
+      </div>
+    </div>
+  </div>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">6</span>
+</div>
+
+<!-- ==================== SLIDE 7: WHAT IT MEASURES ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">What It Measures</p>
+    <h2>Nine variables. Measured, not estimated.</h2>
+
+    <!-- FIG. 8 — Measurement Extraction Pipeline -->
+    <div class="patent-fig" style="margin-top:24px; margin-bottom:32px;">
+      <p class="fig-title">FIG. 8 — Measurement Extraction Pipeline (Raw Sensor → Derived Variables)</p>
+      <svg viewBox="0 0 940 200" xmlns="http://www.w3.org/2000/svg" style="max-width:940px; margin:0 auto;">
+        <!-- INPUT: Depth Camera -->
+        <rect x="10" y="10" width="100" height="50" rx="6" fill="rgba(59,130,246,0.08)" stroke="#3b82f6" stroke-width="1.2"/>
+        <text x="60" y="32" text-anchor="middle" fill="#3b82f6" font-size="9" font-weight="700" font-family="Inter,sans-serif">DEPTH CAMERA</text>
+        <text x="60" y="46" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">640×480 @ 30fps</text>
+        <!-- INPUT: Load Cell -->
+        <rect x="10" y="75" width="100" height="50" rx="6" fill="rgba(250,204,21,0.08)" stroke="#facc15" stroke-width="1.2"/>
+        <text x="60" y="97" text-anchor="middle" fill="#facc15" font-size="9" font-weight="700" font-family="Inter,sans-serif">LOAD CELL</text>
+        <text x="60" y="111" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">100Hz analog</text>
+        <!-- INPUT: Motor Encoder -->
+        <rect x="10" y="140" width="100" height="50" rx="6" fill="rgba(74,222,128,0.06)" stroke="#4ade80" stroke-width="1.2"/>
+        <text x="60" y="162" text-anchor="middle" fill="#4ade80" font-size="9" font-weight="700" font-family="Inter,sans-serif">MOTOR ENC</text>
+        <text x="60" y="176" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Position + velocity</text>
+
+        <!-- PROCESSING: Skeleton -->
+        <path d="M114,35 L150,55" stroke="#3b82f6" stroke-width="1" marker-end="url(#aB8)"/>
+        <rect x="154" y="30" width="110" height="55" rx="6" fill="rgba(59,130,246,0.05)" stroke="#3b82f6" stroke-width="1"/>
+        <text x="209" y="50" text-anchor="middle" fill="#3b82f6" font-size="8" font-weight="700" font-family="Inter,sans-serif">POSE ESTIMATION</text>
+        <text x="209" y="64" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">12-joint skeleton</text>
+        <text x="209" y="76" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">3D coordinates</text>
+
+        <!-- PROCESSING: Force -->
+        <path d="M114,100 L150,110" stroke="#facc15" stroke-width="1" marker-end="url(#aY8)"/>
+        <rect x="154" y="95" width="110" height="45" rx="6" fill="rgba(250,204,21,0.05)" stroke="#facc15" stroke-width="1"/>
+        <text x="209" y="115" text-anchor="middle" fill="#facc15" font-size="8" font-weight="700" font-family="Inter,sans-serif">FORCE PROCESSING</text>
+        <text x="209" y="129" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Filtered, calibrated</text>
+
+        <!-- PROCESSING: Cable position -->
+        <path d="M114,165 L150,155" stroke="#4ade80" stroke-width="1" marker-end="url(#aG8)"/>
+        <rect x="154" y="148" width="110" height="35" rx="6" fill="rgba(74,222,128,0.04)" stroke="#4ade80" stroke-width="1"/>
+        <text x="209" y="169" text-anchor="middle" fill="#4ade80" font-size="8" font-weight="700" font-family="Inter,sans-serif">CABLE LENGTH</text>
+
+        <!-- FUSION -->
+        <path d="M268,58 L306,80" stroke="#888" stroke-width="1"/>
+        <path d="M268,117 L306,100" stroke="#888" stroke-width="1"/>
+        <path d="M268,165 L306,115" stroke="#888" stroke-width="1"/>
+        <rect x="310" y="55" width="90" height="80" rx="8" fill="rgba(74,222,128,0.08)" stroke="#4ade80" stroke-width="1.5"/>
+        <text x="355" y="78" text-anchor="middle" fill="#4ade80" font-size="9" font-weight="700" font-family="Inter,sans-serif">SENSOR</text>
+        <text x="355" y="92" text-anchor="middle" fill="#4ade80" font-size="9" font-weight="700" font-family="Inter,sans-serif">FUSION</text>
+        <text x="355" y="110" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">100Hz sync</text>
+        <text x="355" y="48" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="700" font-family="Inter,sans-serif">60</text>
+
+        <!-- DERIVED VARIABLES (the 9) -->
+        <path d="M404,95 L430,95" stroke="#4ade80" stroke-width="1.5" marker-end="url(#aG8)"/>
+
+        <!-- 9 output boxes in 3 columns -->
+        <!-- Col 1 -->
+        <rect x="436" y="8" width="150" height="24" rx="4" fill="rgba(74,222,128,0.04)" stroke="rgba(74,222,128,0.2)" stroke-width="0.8"/>
+        <text x="441" y="24" fill="#4ade80" font-size="8" font-weight="700" font-family="Inter,sans-serif">V1</text>
+        <text x="462" y="24" fill="#ccc" font-size="8" font-weight="600" font-family="Inter,sans-serif">Joint Angle (θ peak)</text>
+
+        <rect x="436" y="38" width="150" height="24" rx="4" fill="rgba(74,222,128,0.04)" stroke="rgba(74,222,128,0.2)" stroke-width="0.8"/>
+        <text x="441" y="54" fill="#4ade80" font-size="8" font-weight="700" font-family="Inter,sans-serif">V2</text>
+        <text x="462" y="54" fill="#ccc" font-size="8" font-weight="600" font-family="Inter,sans-serif">Cable Force (F peak, σ)</text>
+
+        <rect x="436" y="68" width="150" height="24" rx="4" fill="rgba(74,222,128,0.04)" stroke="rgba(74,222,128,0.2)" stroke-width="0.8"/>
+        <text x="441" y="84" fill="#4ade80" font-size="8" font-weight="700" font-family="Inter,sans-serif">V3</text>
+        <text x="462" y="84" fill="#ccc" font-size="8" font-weight="600" font-family="Inter,sans-serif">Bilateral Asymmetry (Δ)</text>
+
+        <!-- Col 2 -->
+        <rect x="436" y="98" width="150" height="24" rx="4" fill="rgba(250,204,21,0.04)" stroke="rgba(250,204,21,0.2)" stroke-width="0.8"/>
+        <text x="441" y="114" fill="#facc15" font-size="8" font-weight="700" font-family="Inter,sans-serif">V4</text>
+        <text x="462" y="114" fill="#ccc" font-size="8" font-weight="600" font-family="Inter,sans-serif">Hold Time (t @ end-range)</text>
+
+        <rect x="436" y="128" width="150" height="24" rx="4" fill="rgba(250,204,21,0.04)" stroke="rgba(250,204,21,0.2)" stroke-width="0.8"/>
+        <text x="441" y="144" fill="#facc15" font-size="8" font-weight="700" font-family="Inter,sans-serif">V5</text>
+        <text x="462" y="144" fill="#ccc" font-size="8" font-weight="600" font-family="Inter,sans-serif">Compensation Flags</text>
+
+        <rect x="436" y="158" width="150" height="24" rx="4" fill="rgba(250,204,21,0.04)" stroke="rgba(250,204,21,0.2)" stroke-width="0.8"/>
+        <text x="441" y="174" fill="#facc15" font-size="8" font-weight="700" font-family="Inter,sans-serif">V6</text>
+        <text x="462" y="174" fill="#ccc" font-size="8" font-weight="600" font-family="Inter,sans-serif">Tolerance Threshold</text>
+
+        <!-- Col 3 — right side -->
+        <rect x="600" y="8" width="150" height="24" rx="4" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+        <text x="605" y="24" fill="#888" font-size="8" font-weight="700" font-family="Inter,sans-serif">V7</text>
+        <text x="626" y="24" fill="#ccc" font-size="8" font-weight="600" font-family="Inter,sans-serif">Pain Response (binary)</text>
+
+        <rect x="600" y="38" width="150" height="24" rx="4" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+        <text x="605" y="54" fill="#888" font-size="8" font-weight="700" font-family="Inter,sans-serif">V8</text>
+        <text x="626" y="54" fill="#ccc" font-size="8" font-weight="600" font-family="Inter,sans-serif">Tension Ramp Rate</text>
+
+        <rect x="600" y="68" width="150" height="24" rx="4" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
+        <text x="605" y="84" fill="#888" font-size="8" font-weight="700" font-family="Inter,sans-serif">V9</text>
+        <text x="626" y="84" fill="#ccc" font-size="8" font-weight="600" font-family="Inter,sans-serif">Session Δ (acute + chronic)</text>
+
+        <!-- Longitudinal output -->
+        <path d="M675,98 L675,130 L820,130" stroke="#4ade80" stroke-width="1" stroke-dasharray="4,3"/>
+        <rect x="780" y="110" width="150" height="50" rx="8" fill="rgba(74,222,128,0.06)" stroke="#4ade80" stroke-width="1.2"/>
+        <text x="855" y="132" text-anchor="middle" fill="#4ade80" font-size="9" font-weight="700" font-family="Inter,sans-serif">RISK SCORE</text>
+        <text x="855" y="146" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Longitudinal trend</text>
+        <text x="855" y="156" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">analysis → injury prediction</text>
+        <text x="855" y="104" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="700" font-family="Inter,sans-serif">62</text>
+
+        <defs>
+          <marker id="aB8" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5" fill="#3b82f6"/></marker>
+          <marker id="aY8" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5" fill="#facc15"/></marker>
+          <marker id="aG8" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5" fill="#4ade80"/></marker>
+        </defs>
+      </svg>
+      <p class="fig-caption">Apparatus claim: Three independent sensor inputs (40, 42, encoder) are fused at element 60 to derive nine biomechanical variables (V1–V9), fed to longitudinal risk scoring engine (62).</p>
+    </div>
+
+    <div class="grid-3" style="margin-top:0;">
+      <div class="card"><h3>Joint Angle</h3><p>Peak passive ROM at standardized force. ±2° accuracy. Comparable across sessions.</p></div>
+      <div class="card"><h3>Cable Force</h3><p>Inline load cell at 100Hz. Logs tension ramp, peak force, and variability during hold.</p></div>
+      <div class="card"><h3>Asymmetry</h3><p>Left vs. right at matched force. Flags differences &gt;10%. Tracks resolution over time.</p></div>
+      <div class="card"><h3>Hold Time</h3><p>Duration at end-range without retreating. A neuromuscular tolerance metric.</p></div>
+      <div class="card"><h3>Compensation</h3><p>Camera detects pelvic rotation, knee bend, trunk shift. Quantified, not eyeballed.</p></div>
+      <div class="card"><h3>Tolerance Threshold</h3><p>The force level where the athlete first reports discomfort or resists. Tracked over weeks.</p></div>
+      <div class="card"><h3>Pain Response</h3><p>Binary flag per rep. Correlated with force and ROM to build a tissue-response profile.</p></div>
+      <div class="card"><h3>Tension Ramp</h3><p>Rate of force acceptance during initial stretch. Indicates tissue readiness and stiffness.</p></div>
+      <div class="card"><h3>Session Δ</h3><p>Acute ROM gain per session. Chronic trend over weeks. The metric that matters most.</p></div>
+    </div>
+  </div>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">7</span>
+</div>
+
+<!-- ==================== SLIDE 8: COMPETITIVE LANDSCAPE ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <div class="split-60">
+      <div>
+        <p class="slide-tag">Competitive Landscape</p>
+        <h2>Vitruvian is the only platform that combines motorized stretching with real-time measurement.</h2>
+        <div class="quadrant-wrap" style="margin-top:40px;">
+          <div class="quadrant-grid">
+            <span class="q-label q-label-top">Data-Rich / Measured</span>
+            <span class="q-label q-label-bottom">No Data / Manual</span>
+            <span class="q-label q-label-left">Passive / Manual</span>
+            <span class="q-label q-label-right">Active / Motorized</span>
+
+            <!-- Vitruvian: top-right quadrant (motorized + data-rich) -->
+            <div class="q-dot" style="top:12%; right:10%; left:auto;">
+              <div class="q-dot-circle accent"></div>
+              <div class="q-dot-name accent">Vitruvian</div>
+            </div>
+
+            <!-- Biodex/Cybex: top-right but more clinical -->
+            <div class="q-dot" style="top:25%; left:72%;">
+              <div class="q-dot-circle"></div>
+              <div class="q-dot-name">Biodex / Cybex</div>
+            </div>
+
+            <!-- Normatec: right side, no ROM data -->
+            <div class="q-dot" style="top:65%; left:70%;">
+              <div class="q-dot-circle"></div>
+              <div class="q-dot-name">Normatec</div>
+            </div>
+
+            <!-- StretchLab: manual, no data -->
+            <div class="q-dot" style="top:75%; left:25%;">
+              <div class="q-dot-circle"></div>
+              <div class="q-dot-name">StretchLab</div>
+            </div>
+
+            <!-- Manual PT: manual, some data -->
+            <div class="q-dot" style="top:55%; left:18%;">
+              <div class="q-dot-circle"></div>
+              <div class="q-dot-name">Manual PT</div>
+            </div>
+
+            <!-- Foam Rollers: manual, no data -->
+            <div class="q-dot" style="top:88%; left:45%;">
+              <div class="q-dot-circle"></div>
+              <div class="q-dot-name">Foam Rollers</div>
+            </div>
+
+            <!-- Goniometer: some data, fully manual -->
+            <div class="q-dot" style="top:35%; left:12%;">
+              <div class="q-dot-circle"></div>
+              <div class="q-dot-name">Goniometer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="border-color:rgba(74,222,128,0.15); margin-bottom:20px;">
+          <p style="font-size:15px; color:#ccc; line-height:1.7;">Vitruvian is the <strong style="color:#4ade80;">only platform</strong> that occupies the upper-right quadrant — combining motorized, force-controlled stretching with real-time biomechanical measurement and longitudinal data tracking.</p>
+        </div>
+        <div class="stack" style="gap:12px;">
+          <div class="card">
+            <h3 style="font-size:14px;">Biodex / Cybex</h3>
+            <p style="font-size:13px;">Clinical isokinetic. $100K+. Not designed for stretching protocols. No vision tracking.</p>
+          </div>
+          <div class="card">
+            <h3 style="font-size:14px;">StretchLab</h3>
+            <p style="font-size:13px;">Manual 1:1 service. $60/session. No measurement, no data, no consistency.</p>
+          </div>
+          <div class="card">
+            <h3 style="font-size:14px;">Normatec</h3>
+            <p style="font-size:13px;">Compression recovery. No active stretch. No ROM measurement.</p>
+          </div>
+          <div class="card">
+            <h3 style="font-size:14px;">Manual PT</h3>
+            <p style="font-size:13px;">Subjective assessment. No force control, no objective measurement. Rarely documented longitudinally.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">8</span>
+</div>
+
+<!-- ==================== SLIDE 9: MARKET ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">Market Opportunity</p>
+    <h2>Four buyers. One data asset.</h2>
+    <p class="large" style="margin-bottom:32px;">Stretching is the wedge. The product is a measurement + risk-pricing layer. Four independent buyers monetize the same underlying corpus.</p>
+    <div class="grid-2" style="margin-top:8px; gap:16px;">
+      <div class="card" style="border-color:rgba(74,222,128,0.2);">
+        <p class="slide-tag" style="margin-bottom:8px;">Buyer 1 · Hardware lease</p>
+        <h3 style="font-size:20px;">Teams — pro + collegiate</h3>
+        <p style="font-size:14px; margin-top:8px;">~800 addressable programs in NA + EU. Target $60K/yr/station. Every franchise has a training-room budget and an injury-prevention mandate.</p>
+      </div>
+      <div class="card" style="border-color:rgba(74,222,128,0.2);">
+        <p class="slide-tag" style="margin-bottom:8px;">Buyer 2 · Data licensing</p>
+        <h3 style="font-size:20px;">Insurers — WC + disability</h3>
+        <p style="font-size:14px; margin-top:8px;">$70B+ US market. MSK is ~40% of claims. Carriers buy aggregated risk signals, not hardware. Target: $250K–$1M per carrier / yr.</p>
+      </div>
+      <div class="card" style="border-color:rgba(250,204,21,0.2);">
+        <p class="slide-tag" style="color:#facc15; margin-bottom:8px;">Buyer 3 · Enterprise</p>
+        <h3 style="font-size:20px;">Leagues + PAs</h3>
+        <p style="font-size:14px; margin-top:8px;">Roster-level availability models. Standardized injury reporting aligned to CBAs. Long sales cycle — large check.</p>
+      </div>
+      <div class="card" style="border-color:rgba(250,204,21,0.2);">
+        <p class="slide-tag" style="color:#facc15; margin-bottom:8px;">Buyer 4 · Strategic exit</p>
+        <h3 style="font-size:20px;">Hyperice · Catapult · Nike</h3>
+        <p style="font-size:14px; margin-top:8px;">Patent + data corpus are the asset. Acquisition-optimized. Adjacent distribution already owns the consumer surface.</p>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="split" style="margin-top:16px;">
+      <div>
+        <h3>+ 5th pathway · DoD — non-dilutive</h3>
+        <p>~800K MSK injuries/yr across active-duty — 100× pro sport. AFWERX + SOFWERX + DIU are parallel rails, not a pivot. <a href="docs/view.html?doc=19-military-gtm.md" style="color:#4ade80;">See Doc 19 →</a></p>
+      </div>
+      <div>
+        <h3>Hardware is the wedge</h3>
+        <p>Lease-only model. Every install compounds the data corpus. Physical switching cost protects the moat once deployed.</p>
+      </div>
+    </div>
+  </div>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">9</span>
+</div>
+
+<!-- ==================== SLIDE 9B: MILITARY / DoD PATHWAY ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">Military / DoD Pathway</p>
+    <h2>100× the injury volume. Non-dilutive capital. Parallel track.</h2>
+    <p class="large" style="margin-bottom:24px;">MSK injury is the #1 cause of lost duty days across every service branch. ~800K/yr active-duty MSK injuries; $3.7B annual cost. We pursue this in parallel to commercial — funded by the government, not the seed.</p>
+
+    <div class="grid-2" style="margin-top:24px; gap:16px;">
+      <div class="card" style="border-color:rgba(74,222,128,0.2);">
+        <p class="slide-tag" style="margin-bottom:8px;">Pathway 1 · 90-day yes</p>
+        <h3 style="font-size:18px;">AFWERX · Air Force SBIR</h3>
+        <p style="font-size:13px; margin-top:8px;">Open Topic quarterly. $75K Phase I (3 mo) → $1.7M Phase II (9 mo) → $15M STRATFI. Target sponsor: PJ / combat controller / pilot training units.</p>
+      </div>
+      <div class="card" style="border-color:rgba(74,222,128,0.2);">
+        <p class="slide-tag" style="margin-bottom:8px;">Pathway 2 · Best-paying pilot</p>
+        <h3 style="font-size:18px;">SOFWERX · USSOCOM</h3>
+        <p style="font-size:13px; margin-top:8px;">Tier-1 operators = closest analog to pro athletes. CRADA + funded pilot via Tech Experimentation event. $250K–$3M, 90–180 days.</p>
+      </div>
+      <div class="card" style="border-color:rgba(250,204,21,0.2);">
+        <p class="slide-tag" style="color:#facc15; margin-bottom:8px;">Pathway 3 · Biggest check</p>
+        <h3 style="font-size:18px;">DIU · Prototype OTA</h3>
+        <p style="font-size:13px; margin-top:8px;">Dual-use commercial-first. $1–20M prototype awards. Unlocked after first commercial pilot revenue. Target: Year 2.</p>
+      </div>
+      <div class="card" style="border-color:rgba(250,204,21,0.2);">
+        <p class="slide-tag" style="color:#facc15; margin-bottom:8px;">Pathway 4 · Validation</p>
+        <h3 style="font-size:18px;">DHA · CHAMP clinical</h3>
+        <p style="font-size:13px; margin-top:8px;">Peer-reviewed ROM/asymmetry → MSK injury prediction paper. Unlocks insurance licensing narrative. 6–24 mo, $500K–$10M R&D.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="split" style="margin-top:16px;">
+      <div>
+        <h3>Product delta: minimal</h3>
+        <p>Same hardware. Protocol library + unit-aggregated dashboards + IL-4 gov cloud path. ~2 person-weeks of integration per pathway.</p>
+      </div>
+      <div>
+        <h3>What it does for the seed</h3>
+        <p>"$3M + $500K non-dilutive Phase I" = smarter capital + diversified buyer + de-risked insurance narrative. Full plan in <a href="docs/view.html?doc=19-military-gtm.md" style="color:#4ade80;">Doc 19</a>.</p>
+      </div>
+    </div>
+  </div>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">9b</span>
+</div>
+
+<!-- ==================== SLIDE 10: V1/V2 SCOPE ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">Product Roadmap</p>
+    <h2>Honest scope. No overclaiming. PNF at V1.5.</h2>
+
+    <!-- FIG. 9 — Multi-Pattern Reconfigurable Platform -->
+    <div class="patent-fig" style="margin-top:24px; margin-bottom:32px;">
+      <p class="fig-title">FIG. 9 — Multi-Pattern Reconfigurable Platform (Single Frame, Seven Patterns)</p>
+      <svg viewBox="0 0 920 300" xmlns="http://www.w3.org/2000/svg" style="max-width:920px; margin:0 auto;">
+        <!-- Central frame schematic -->
+        <rect x="380" y="20" width="160" height="260" rx="8" fill="rgba(255,255,255,0.02)" stroke="#666" stroke-width="1.5"/>
+        <text x="460" y="45" text-anchor="middle" fill="#888" font-size="10" font-weight="700" font-family="Inter,sans-serif">SINGLE FRAME</text>
+        <!-- Motor -->
+        <rect x="420" y="55" width="80" height="26" rx="4" fill="rgba(74,222,128,0.06)" stroke="#4ade80" stroke-width="1"/>
+        <text x="460" y="72" text-anchor="middle" fill="#4ade80" font-size="8" font-weight="700" font-family="Inter,sans-serif">BLDC MOTOR (10)</text>
+        <!-- Spool -->
+        <circle cx="460" cy="108" r="14" fill="none" stroke="#facc15" stroke-width="1.2"/>
+        <circle cx="460" cy="108" r="4" fill="#facc15" opacity="0.3"/>
+        <text x="460" y="112" text-anchor="middle" fill="#facc15" font-size="7" font-weight="700" font-family="Inter,sans-serif">34</text>
+        <!-- V1: Fixed pulley point -->
+        <circle cx="430" cy="150" r="6" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+        <text x="430" y="153" text-anchor="middle" fill="#4ade80" font-size="6" font-weight="700" font-family="Inter,sans-serif">P1</text>
+        <text x="430" y="170" text-anchor="middle" fill="#4ade80" font-size="7" font-weight="600" font-family="Inter,sans-serif">V1 FIXED</text>
+        <!-- V2: Sliding track -->
+        <line x1="410" y1="195" x2="510" y2="195" stroke="#888" stroke-width="2" stroke-linecap="round"/>
+        <rect x="450" y="188" width="16" height="14" rx="3" fill="rgba(250,204,21,0.1)" stroke="#facc15" stroke-width="1"/>
+        <text x="458" y="198" text-anchor="middle" fill="#facc15" font-size="6" font-weight="700" font-family="Inter,sans-serif">P2</text>
+        <text x="460" y="220" text-anchor="middle" fill="#facc15" font-size="7" font-weight="600" font-family="Inter,sans-serif">V2 SLIDING</text>
+        <!-- Arrows showing P2 slides -->
+        <path d="M420,195 L410,195" stroke="#facc15" stroke-width="0.8" marker-end="url(#aY9)"/>
+        <path d="M500,195 L510,195" stroke="#facc15" stroke-width="0.8" marker-end="url(#aY9)"/>
+        <!-- Camera -->
+        <rect x="415" y="240" width="90" height="20" rx="4" fill="rgba(59,130,246,0.06)" stroke="#3b82f6" stroke-width="0.8"/>
+        <text x="460" y="254" text-anchor="middle" fill="#3b82f6" font-size="7" font-weight="700" font-family="Inter,sans-serif">DEPTH CAMERA (40)</text>
+
+        <!-- V1 PATTERNS — left side -->
+        <text x="180" y="16" text-anchor="middle" fill="#4ade80" font-size="11" font-weight="700" font-family="Inter,sans-serif">V1 — LAUNCH (4 Patterns)</text>
+
+        <!-- Pattern A: Hamstring SLR -->
+        <rect x="30" y="32" width="260" height="48" rx="6" fill="rgba(74,222,128,0.04)" stroke="#4ade80" stroke-width="0.8"/>
+        <text x="44" y="52" fill="#4ade80" font-size="9" font-weight="700" font-family="Inter,sans-serif">P-A</text>
+        <text x="70" y="52" fill="#e0e0e0" font-size="9" font-weight="600" font-family="Inter,sans-serif">Hamstring SLR</text>
+        <text x="70" y="68" fill="#777" font-size="7" font-family="Inter,sans-serif">Supine, leg elevated. Cable at ankle. Straight-leg raise to end-range.</text>
+        <!-- mini schematic -->
+        <line x1="230" y1="44" x2="260" y2="60" stroke="#e0e0e0" stroke-width="2" stroke-linecap="round"/>
+        <line x1="260" y1="60" x2="280" y2="44" stroke="#e0e0e0" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+        <path d="M250,48 A12,12 0 0,1 260,60" fill="none" stroke="#4ade80" stroke-width="1"/>
+
+        <!-- Pattern B: Adductor Abduction -->
+        <rect x="30" y="88" width="260" height="48" rx="6" fill="rgba(74,222,128,0.04)" stroke="#4ade80" stroke-width="0.8"/>
+        <text x="44" y="108" fill="#4ade80" font-size="9" font-weight="700" font-family="Inter,sans-serif">P-B</text>
+        <text x="70" y="108" fill="#e0e0e0" font-size="9" font-weight="600" font-family="Inter,sans-serif">Adductor Abduction</text>
+        <text x="70" y="124" fill="#777" font-size="7" font-family="Inter,sans-serif">Supine, leg lateral. Cable pulls outward. Measures abduction ROM.</text>
+        <line x1="245" y1="106" x2="280" y2="100" stroke="#e0e0e0" stroke-width="2" stroke-linecap="round"/>
+        <line x1="245" y1="106" x2="275" y2="120" stroke="#e0e0e0" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+
+        <!-- Pattern C: Hip Flexor Extension -->
+        <rect x="30" y="144" width="260" height="48" rx="6" fill="rgba(74,222,128,0.04)" stroke="#4ade80" stroke-width="0.8"/>
+        <text x="44" y="164" fill="#4ade80" font-size="9" font-weight="700" font-family="Inter,sans-serif">P-C</text>
+        <text x="70" y="164" fill="#e0e0e0" font-size="9" font-weight="600" font-family="Inter,sans-serif">Hip Flexor Extension</text>
+        <text x="70" y="180" fill="#777" font-size="7" font-family="Inter,sans-serif">Prone/side-lying. Cable pulls into extension. Stretches hip flexors.</text>
+        <line x1="250" y1="168" x2="280" y2="160" stroke="#e0e0e0" stroke-width="2" stroke-linecap="round"/>
+
+        <!-- Pattern D: PNF Overlay -->
+        <rect x="30" y="200" width="260" height="58" rx="6" fill="rgba(74,222,128,0.06)" stroke="#4ade80" stroke-width="1"/>
+        <text x="44" y="220" fill="#4ade80" font-size="9" font-weight="700" font-family="Inter,sans-serif">P-D</text>
+        <text x="70" y="220" fill="#e0e0e0" font-size="9" font-weight="600" font-family="Inter,sans-serif">PNF Contract-Relax</text>
+        <text x="70" y="236" fill="#777" font-size="7" font-family="Inter,sans-serif">Applied to any pattern. Athlete pushes against cable (isometric),</text>
+        <text x="70" y="248" fill="#777" font-size="7" font-family="Inter,sans-serif">motor holds, then advances to new end-range. Motor detects force reversal.</text>
+
+        <!-- Connection lines from V1 patterns to fixed pulley -->
+        <path d="M294,56 L424,150" stroke="#4ade80" stroke-width="0.6" stroke-dasharray="4,3" opacity="0.5"/>
+        <path d="M294,112 L424,150" stroke="#4ade80" stroke-width="0.6" stroke-dasharray="4,3" opacity="0.5"/>
+        <path d="M294,168 L424,150" stroke="#4ade80" stroke-width="0.6" stroke-dasharray="4,3" opacity="0.5"/>
+        <path d="M294,229 L424,150" stroke="#4ade80" stroke-width="0.6" stroke-dasharray="4,3" opacity="0.5"/>
+
+        <!-- V2 PATTERNS — right side -->
+        <text x="740" y="16" text-anchor="middle" fill="#facc15" font-size="11" font-weight="700" font-family="Inter,sans-serif">V2 — YEAR 2 (3 Patterns)</text>
+
+        <!-- Pattern E: Hip IR/ER -->
+        <rect x="630" y="32" width="260" height="48" rx="6" fill="rgba(250,204,21,0.04)" stroke="#facc15" stroke-width="0.8"/>
+        <text x="644" y="52" fill="#facc15" font-size="9" font-weight="700" font-family="Inter,sans-serif">P-E</text>
+        <text x="670" y="52" fill="#e0e0e0" font-size="9" font-weight="600" font-family="Inter,sans-serif">Hip Internal / External Rotation</text>
+        <text x="670" y="68" fill="#777" font-size="7" font-family="Inter,sans-serif">Seated, knee bent 90°. Cable at ankle. Rotational stretch. Requires P2 at 45°.</text>
+
+        <!-- Pattern F: Ankle DF -->
+        <rect x="630" y="88" width="260" height="48" rx="6" fill="rgba(250,204,21,0.04)" stroke="#facc15" stroke-width="0.8"/>
+        <text x="644" y="108" fill="#facc15" font-size="9" font-weight="700" font-family="Inter,sans-serif">P-F</text>
+        <text x="670" y="108" fill="#e0e0e0" font-size="9" font-weight="600" font-family="Inter,sans-serif">Ankle Dorsiflexion</text>
+        <text x="670" y="124" fill="#777" font-size="7" font-family="Inter,sans-serif">Seated, foot on plate. Cable at forefoot. Measures DF ROM. Requires P2 low.</text>
+
+        <!-- Pattern G: Thoracic Rotation -->
+        <rect x="630" y="144" width="260" height="48" rx="6" fill="rgba(250,204,21,0.04)" stroke="#facc15" stroke-width="0.8"/>
+        <text x="644" y="164" fill="#facc15" font-size="9" font-weight="700" font-family="Inter,sans-serif">P-G</text>
+        <text x="670" y="164" fill="#e0e0e0" font-size="9" font-weight="600" font-family="Inter,sans-serif">Thoracic Rotation</text>
+        <text x="670" y="180" fill="#777" font-size="7" font-family="Inter,sans-serif">Seated, cable at shoulder harness. Rotational stretch. Requires P2 high.</text>
+
+        <!-- Connection lines from V2 patterns to sliding pulley -->
+        <path d="M626,56 L476,195" stroke="#facc15" stroke-width="0.6" stroke-dasharray="4,3" opacity="0.5"/>
+        <path d="M626,112 L476,195" stroke="#facc15" stroke-width="0.6" stroke-dasharray="4,3" opacity="0.5"/>
+        <path d="M626,168 L476,195" stroke="#facc15" stroke-width="0.6" stroke-dasharray="4,3" opacity="0.5"/>
+
+        <!-- Key insight box -->
+        <rect x="630" y="210" width="260" height="68" rx="6" fill="rgba(255,255,255,0.02)" stroke="#555" stroke-width="0.8"/>
+        <text x="760" y="232" text-anchor="middle" fill="#888" font-size="8" font-weight="700" font-family="Inter,sans-serif">V1 → V2 UPGRADE PATH</text>
+        <text x="760" y="248" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Same motor (10), same cable (38), same spool (34)</text>
+        <text x="760" y="262" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Add: sliding track bracket + software update</text>
+        <text x="760" y="276" text-anchor="middle" fill="#facc15" font-size="7" font-weight="600" font-family="Inter,sans-serif">Hardware cost: ~$200 | Software: OTA update</text>
+
+        <defs>
+          <marker id="aY9" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5" fill="#facc15"/></marker>
+        </defs>
+      </svg>
+      <p class="fig-caption">Apparatus claim: A single motorized cable platform (elements 10, 34, 38) serves seven distinct stretch patterns through athlete repositioning (V1) and adjustable pulley position on a sliding track (V2), without changing the drive system.</p>
+    </div>
+
+    <div class="split" style="margin-top:0;">
+      <div>
+        <div class="card" style="border-color:rgba(74,222,128,0.2);">
+          <p class="slide-tag" style="margin-bottom:12px;">V1 — Launch</p>
+          <h3>Four stretch patterns</h3>
+          <ul>
+            <li>Hamstring SLR (straight-leg raise)</li>
+            <li>Adductor abduction</li>
+            <li>Hip flexor extension</li>
+            <li>PNF contract-relax overlay</li>
+          </ul>
+          <div class="divider"></div>
+          <p style="font-size:13px;">Same motor, same cable, same pulley for all four. The athlete changes position — the machine stays simple.</p>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="border-color:rgba(255,255,255,0.08);">
+          <p class="slide-tag" style="color:#888; margin-bottom:12px;">V2 — Year 2</p>
+          <h3>Three additional patterns</h3>
+          <ul>
+            <li>Hip internal / external rotation</li>
+            <li>Ankle dorsiflexion</li>
+            <li>Thoracic rotation</li>
+          </ul>
+          <div class="divider"></div>
+          <p style="font-size:13px;">Requires adjustable pulley position on frame (sliding track). Same motor and cable system. Software update + hardware bracket.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">10</span>
+</div>
+
+<!-- ==================== SLIDE 11: IP ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">Intellectual Property</p>
+    <h2>With a patent to protect it.</h2>
+
+    <!-- FIG. 1 — Enhanced System Block Diagram -->
+    <div class="patent-fig" style="margin-top:24px;">
+      <p class="fig-title">FIG. 1 — System Block Diagram (Force-Controlled Stretch with Compensation-Aware Adjustment)</p>
+      <svg viewBox="0 0 960 220" xmlns="http://www.w3.org/2000/svg" style="max-width:960px; margin:0 auto;">
+        <!-- Athlete Input -->
+        <rect x="10" y="60" width="100" height="60" rx="8" fill="rgba(255,255,255,0.03)" stroke="#666" stroke-width="1.2"/>
+        <text x="60" y="52" text-anchor="middle" fill="#666" font-size="9" font-weight="700" font-family="Inter,sans-serif">200</text>
+        <text x="60" y="84" text-anchor="middle" fill="#e0e0e0" font-size="9" font-weight="700" font-family="Inter,sans-serif">ATHLETE ID</text>
+        <text x="60" y="98" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Badge + profile</text>
+        <text x="60" y="110" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">+ session history</text>
+        <path d="M114,90 L140,90" stroke="#666" stroke-width="1.2" marker-end="url(#aG1)"/>
+
+        <!-- Protocol Engine -->
+        <rect x="144" y="50" width="110" height="80" rx="8" fill="rgba(255,255,255,0.03)" stroke="#888" stroke-width="1.2"/>
+        <text x="199" y="42" text-anchor="middle" fill="#888" font-size="9" font-weight="700" font-family="Inter,sans-serif">202</text>
+        <text x="199" y="74" text-anchor="middle" fill="#e0e0e0" font-size="9" font-weight="700" font-family="Inter,sans-serif">PROTOCOL</text>
+        <text x="199" y="88" text-anchor="middle" fill="#e0e0e0" font-size="9" font-weight="700" font-family="Inter,sans-serif">ENGINE</text>
+        <text x="199" y="104" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Pattern select</text>
+        <text x="199" y="116" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Force target (F_set)</text>
+        <path d="M258,90 L284,90" stroke="#888" stroke-width="1.2" marker-end="url(#aG1)"/>
+
+        <!-- PID Controller — highlighted (novel) -->
+        <rect x="288" y="35" width="130" height="110" rx="8" fill="rgba(74,222,128,0.08)" stroke="#4ade80" stroke-width="2"/>
+        <text x="353" y="27" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="700" font-family="Inter,sans-serif">204</text>
+        <text x="353" y="58" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="700" font-family="Inter,sans-serif">PID FORCE</text>
+        <text x="353" y="72" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="700" font-family="Inter,sans-serif">CONTROLLER</text>
+        <text x="353" y="92" text-anchor="middle" fill="#ccc" font-size="8" font-family="Inter,sans-serif">e(t) = F_set − F_meas</text>
+        <text x="353" y="106" text-anchor="middle" fill="#ccc" font-size="8" font-family="Inter,sans-serif">u(t) = Kp·e + Ki·∫e + Kd·ė</text>
+        <text x="353" y="120" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">→ Motor PWM command</text>
+        <text x="353" y="134" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">100Hz update rate</text>
+        <path d="M422,90 L448,90" stroke="#4ade80" stroke-width="1.5" marker-end="url(#aG1)"/>
+
+        <!-- Motor + Cable -->
+        <rect x="452" y="55" width="100" height="70" rx="8" fill="rgba(250,204,21,0.06)" stroke="#facc15" stroke-width="1.2"/>
+        <text x="502" y="47" text-anchor="middle" fill="#facc15" font-size="9" font-weight="700" font-family="Inter,sans-serif">206</text>
+        <text x="502" y="78" text-anchor="middle" fill="#e0e0e0" font-size="9" font-weight="700" font-family="Inter,sans-serif">CABLE DRIVE</text>
+        <text x="502" y="92" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">BLDC + gearbox</text>
+        <text x="502" y="104" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">+ spool + cable</text>
+        <text x="502" y="116" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">+ slip clutch</text>
+
+        <!-- Load cell feedback -->
+        <path d="M502,129 L502,170 L353,170 L353,149" stroke="#facc15" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#aY1)"/>
+        <text x="430" y="186" text-anchor="middle" fill="#facc15" font-size="8" font-weight="600" font-family="Inter,sans-serif">F_meas (load cell @ 100Hz)</text>
+
+        <!-- Force arrow to athlete -->
+        <path d="M556,90 L582,90" stroke="#facc15" stroke-width="1.2" marker-end="url(#aG1)"/>
+
+        <!-- Athlete body -->
+        <rect x="586" y="55" width="80" height="70" rx="8" fill="rgba(255,255,255,0.03)" stroke="#ccc" stroke-width="1.2"/>
+        <text x="626" y="47" text-anchor="middle" fill="#ccc" font-size="9" font-weight="700" font-family="Inter,sans-serif">208</text>
+        <text x="626" y="80" text-anchor="middle" fill="#e0e0e0" font-size="9" font-weight="700" font-family="Inter,sans-serif">ATHLETE</text>
+        <text x="626" y="96" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">On platform</text>
+        <text x="626" y="108" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Limb stretched</text>
+
+        <!-- Vision System — highlighted (novel) -->
+        <path d="M626,129 L626,158" stroke="#3b82f6" stroke-width="1" stroke-dasharray="3,2"/>
+        <text x="626" y="154" text-anchor="middle" fill="#3b82f6" font-size="7" font-family="Inter,sans-serif">observes</text>
+
+        <!-- Vision processing -->
+        <rect x="568" y="162" width="116" height="50" rx="8" fill="rgba(59,130,246,0.08)" stroke="#3b82f6" stroke-width="1.5"/>
+        <text x="626" y="155" text-anchor="middle" fill="#3b82f6" font-size="9" font-weight="700" font-family="Inter,sans-serif">210</text>
+        <text x="626" y="182" text-anchor="middle" fill="#3b82f6" font-size="9" font-weight="700" font-family="Inter,sans-serif">VISION SYSTEM</text>
+        <text x="626" y="196" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Skeleton + joint angles</text>
+        <text x="626" y="207" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">+ compensation detect</text>
+
+        <!-- Compensation feedback to PID — the KEY novel link -->
+        <path d="M564,187 L353,187 L353,149" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#aR1)"/>
+        <text x="460" y="200" text-anchor="middle" fill="#ef4444" font-size="8" font-weight="700" font-family="Inter,sans-serif">COMPENSATION SIGNAL → modifies F_set (NOVEL)</text>
+
+        <!-- Data Store -->
+        <path d="M670,90 L700,90" stroke="#888" stroke-width="1" marker-end="url(#aG1)"/>
+        <rect x="704" y="40" width="110" height="100" rx="8" fill="rgba(255,255,255,0.03)" stroke="#888" stroke-width="1.2"/>
+        <text x="759" y="32" text-anchor="middle" fill="#888" font-size="9" font-weight="700" font-family="Inter,sans-serif">212</text>
+        <text x="759" y="68" text-anchor="middle" fill="#e0e0e0" font-size="9" font-weight="700" font-family="Inter,sans-serif">DATA ENGINE</text>
+        <text x="759" y="84" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">9 variables / rep</text>
+        <text x="759" y="96" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Longitudinal trends</text>
+        <text x="759" y="108" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Asymmetry alerts</text>
+        <text x="759" y="120" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Injury risk score (62)</text>
+
+        <!-- Adaptive feedback from data to protocol -->
+        <path d="M759,144 L759,210 L199,210 L199,134" stroke="#555" stroke-width="1" stroke-dasharray="6,3"/>
+        <text x="480" y="208" text-anchor="middle" fill="#555" font-size="8" font-weight="600" font-family="Inter,sans-serif">214 — ADAPTIVE FEEDBACK: Historical data modifies next session's protocol parameters</text>
+        <polygon points="199,134 194,144 204,144" fill="#555"/>
+
+        <defs>
+          <marker id="aG1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#4ade80"/></marker>
+          <marker id="aY1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#facc15"/></marker>
+          <marker id="aR1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#ef4444"/></marker>
+        </defs>
+      </svg>
+      <p class="fig-caption">System claim: Elements 200–214 define the complete closed-loop system. The <span style="color:#ef4444;">red dashed path</span> (210 → 204) represents the novel compensation-aware force adjustment — vision-detected compensation modifies the PID setpoint in real time.</p>
+    </div>
+
+    <!-- FIG. 10 — PID Force-Compliance Control Loop Detail -->
+    <div class="patent-fig" style="margin-top:16px;">
+      <p class="fig-title">FIG. 10 — PID Force-Compliance Control Loop (Element 204 Detail)</p>
+      <svg viewBox="0 0 900 190" xmlns="http://www.w3.org/2000/svg" style="max-width:900px; margin:0 auto;">
+        <!-- Setpoint input -->
+        <text x="10" y="68" fill="#888" font-size="9" font-weight="700" font-family="Inter,sans-serif">F_set</text>
+        <text x="10" y="82" fill="#777" font-size="7" font-family="Inter,sans-serif">(from protocol)</text>
+        <path d="M50,72 L80,72" stroke="#888" stroke-width="1.2" marker-end="url(#aG10)"/>
+
+        <!-- Summing junction -->
+        <circle cx="95" cy="72" r="14" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+        <text x="95" y="76" text-anchor="middle" fill="#4ade80" font-size="12" font-weight="700" font-family="Inter,sans-serif">Σ</text>
+        <text x="84" y="62" fill="#4ade80" font-size="8" font-family="Inter,sans-serif">+</text>
+        <text x="84" y="88" fill="#ef4444" font-size="8" font-family="Inter,sans-serif">−</text>
+        <path d="M109,72 L140,72" stroke="#4ade80" stroke-width="1.2" marker-end="url(#aG10)"/>
+
+        <!-- Error signal -->
+        <text x="125" y="62" fill="#4ade80" font-size="8" font-weight="600" font-family="Inter,sans-serif">e(t)</text>
+
+        <!-- PID block -->
+        <rect x="144" y="42" width="140" height="60" rx="6" fill="rgba(74,222,128,0.08)" stroke="#4ade80" stroke-width="1.5"/>
+        <text x="214" y="64" text-anchor="middle" fill="#4ade80" font-size="10" font-weight="700" font-family="Inter,sans-serif">PID CONTROLLER</text>
+        <text x="214" y="80" text-anchor="middle" fill="#ccc" font-size="8" font-family="Inter,sans-serif">Kp=2.4  Ki=0.8  Kd=0.15</text>
+        <text x="214" y="92" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Anti-windup enabled</text>
+        <path d="M288,72 L318,72" stroke="#4ade80" stroke-width="1.2" marker-end="url(#aG10)"/>
+        <text x="303" y="62" fill="#ccc" font-size="8" font-weight="600" font-family="Inter,sans-serif">u(t)</text>
+
+        <!-- Safety clamp -->
+        <rect x="322" y="48" width="80" height="48" rx="6" fill="rgba(239,68,68,0.06)" stroke="#ef4444" stroke-width="1"/>
+        <text x="362" y="68" text-anchor="middle" fill="#ef4444" font-size="8" font-weight="700" font-family="Inter,sans-serif">FORCE CAP</text>
+        <text x="362" y="82" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">clamp(u, F_max)</text>
+        <path d="M406,72 L436,72" stroke="#ef4444" stroke-width="1.2" marker-end="url(#aG10)"/>
+
+        <!-- ODrive / Motor -->
+        <rect x="440" y="48" width="90" height="48" rx="6" fill="rgba(250,204,21,0.06)" stroke="#facc15" stroke-width="1.2"/>
+        <text x="485" y="68" text-anchor="middle" fill="#facc15" font-size="8" font-weight="700" font-family="Inter,sans-serif">MOTOR DRIVE</text>
+        <text x="485" y="82" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">ODrive FOC</text>
+        <path d="M534,72 L564,72" stroke="#facc15" stroke-width="1.2" marker-end="url(#aG10)"/>
+
+        <!-- Plant (cable + athlete) -->
+        <rect x="568" y="42" width="120" height="60" rx="6" fill="rgba(255,255,255,0.03)" stroke="#888" stroke-width="1.2"/>
+        <text x="628" y="64" text-anchor="middle" fill="#e0e0e0" font-size="9" font-weight="700" font-family="Inter,sans-serif">PLANT</text>
+        <text x="628" y="78" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Cable + limb + tissue</text>
+        <text x="628" y="90" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">viscoelastic response</text>
+
+        <!-- Load cell output -->
+        <path d="M692,72 L730,72" stroke="#888" stroke-width="1"/>
+        <text x="750" y="68" fill="#facc15" font-size="9" font-weight="700" font-family="Inter,sans-serif">F_meas</text>
+        <text x="750" y="82" fill="#777" font-size="7" font-family="Inter,sans-serif">(load cell)</text>
+
+        <!-- Feedback path -->
+        <path d="M750,90 L750,145 L95,145 L95,90" stroke="#facc15" stroke-width="1.2" stroke-dasharray="5,3"/>
+        <text x="420" y="160" text-anchor="middle" fill="#facc15" font-size="8" font-weight="600" font-family="Inter,sans-serif">FORCE FEEDBACK PATH — 100Hz sample rate, &lt;10ms loop latency</text>
+
+        <!-- Compensation modifier input (from vision) -->
+        <path d="M214,28 L214,38" stroke="#ef4444" stroke-width="1.5" marker-end="url(#aR10)"/>
+        <rect x="150" y="2" width="128" height="24" rx="4" fill="rgba(239,68,68,0.08)" stroke="#ef4444" stroke-width="1"/>
+        <text x="214" y="18" text-anchor="middle" fill="#ef4444" font-size="8" font-weight="700" font-family="Inter,sans-serif">COMP. SIGNAL (from 210)</text>
+        <text x="350" y="18" fill="#ef4444" font-size="7" font-family="Inter,sans-serif">Reduces F_set when compensation detected</text>
+
+        <defs>
+          <marker id="aG10" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#4ade80"/></marker>
+          <marker id="aR10" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#ef4444"/></marker>
+        </defs>
+      </svg>
+      <p class="fig-caption">Method claim: The PID controller (204) maintains force setpoint while the compensation signal from the vision system (210) dynamically modifies the target, creating a dual-feedback architecture unique to this apparatus.</p>
+    </div>
+
+    <!-- FIG. 11 — Compensation Detection & Adaptive Response -->
+    <div class="patent-fig" style="margin-top:16px;">
+      <p class="fig-title">FIG. 11 — Compensation Detection & Adaptive Force Response (Element 210 Detail)</p>
+      <svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg" style="max-width:900px; margin:0 auto;">
+        <!-- Depth frames input -->
+        <rect x="10" y="50" width="100" height="50" rx="6" fill="rgba(59,130,246,0.08)" stroke="#3b82f6" stroke-width="1.2"/>
+        <text x="60" y="72" text-anchor="middle" fill="#3b82f6" font-size="9" font-weight="700" font-family="Inter,sans-serif">DEPTH FRAMES</text>
+        <text x="60" y="88" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">640×480 @ 30fps</text>
+        <path d="M114,75 L144,75" stroke="#3b82f6" stroke-width="1.2" marker-end="url(#aB11)"/>
+
+        <!-- Pose estimation -->
+        <rect x="148" y="40" width="110" height="70" rx="6" fill="rgba(59,130,246,0.05)" stroke="#3b82f6" stroke-width="1"/>
+        <text x="203" y="32" text-anchor="middle" fill="#3b82f6" font-size="9" font-weight="700" font-family="Inter,sans-serif">220</text>
+        <text x="203" y="62" text-anchor="middle" fill="#e0e0e0" font-size="9" font-weight="700" font-family="Inter,sans-serif">POSE MODEL</text>
+        <text x="203" y="78" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">12-joint skeleton</text>
+        <text x="203" y="92" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">3D coordinates</text>
+        <text x="203" y="104" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">(hip, knee, ankle, pelvis...)</text>
+        <path d="M262,75 L292,75" stroke="#3b82f6" stroke-width="1" marker-end="url(#aB11)"/>
+
+        <!-- Joint angle calc -->
+        <rect x="296" y="45" width="100" height="60" rx="6" fill="rgba(74,222,128,0.05)" stroke="#4ade80" stroke-width="1"/>
+        <text x="346" y="37" text-anchor="middle" fill="#4ade80" font-size="9" font-weight="700" font-family="Inter,sans-serif">222</text>
+        <text x="346" y="68" text-anchor="middle" fill="#e0e0e0" font-size="9" font-weight="700" font-family="Inter,sans-serif">ANGLE CALC</text>
+        <text x="346" y="84" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">θ = arctan2(Δy, Δx)</text>
+        <text x="346" y="96" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">per joint pair</text>
+        <path d="M400,75 L430,75" stroke="#4ade80" stroke-width="1" marker-end="url(#aG11)"/>
+
+        <!-- Compensation classifier -->
+        <rect x="434" y="30" width="140" height="90" rx="8" fill="rgba(239,68,68,0.06)" stroke="#ef4444" stroke-width="1.5"/>
+        <text x="504" y="22" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="700" font-family="Inter,sans-serif">224</text>
+        <text x="504" y="52" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="700" font-family="Inter,sans-serif">COMPENSATION</text>
+        <text x="504" y="66" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="700" font-family="Inter,sans-serif">CLASSIFIER</text>
+        <text x="504" y="84" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Pelvic rotation > 5°?</text>
+        <text x="504" y="96" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Knee bend > 10°?</text>
+        <text x="504" y="108" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Trunk lateral shift > 3cm?</text>
+
+        <!-- Decision outputs -->
+        <!-- No compensation path -->
+        <path d="M578,55 L620,55" stroke="#4ade80" stroke-width="1.2" marker-end="url(#aG11)"/>
+        <rect x="624" y="38" width="120" height="34" rx="5" fill="rgba(74,222,128,0.05)" stroke="#4ade80" stroke-width="0.8"/>
+        <text x="684" y="58" text-anchor="middle" fill="#4ade80" font-size="8" font-weight="700" font-family="Inter,sans-serif">NO COMP → HOLD</text>
+        <text x="684" y="68" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Maintain F_set</text>
+
+        <!-- Compensation detected path -->
+        <path d="M578,100 L620,100" stroke="#ef4444" stroke-width="1.5" marker-end="url(#aR11)"/>
+        <rect x="624" y="80" width="120" height="50" rx="5" fill="rgba(239,68,68,0.08)" stroke="#ef4444" stroke-width="1.2"/>
+        <text x="684" y="100" text-anchor="middle" fill="#ef4444" font-size="8" font-weight="700" font-family="Inter,sans-serif">COMP DETECTED</text>
+        <text x="684" y="114" text-anchor="middle" fill="#ef4444" font-size="7" font-weight="600" font-family="Inter,sans-serif">F_set *= (1 − α·severity)</text>
+        <text x="684" y="126" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">α = 0.15 per threshold</text>
+
+        <!-- Output to PID -->
+        <path d="M748,105 L790,105" stroke="#ef4444" stroke-width="1.5" marker-end="url(#aR11)"/>
+        <rect x="794" y="80" width="96" height="50" rx="8" fill="rgba(74,222,128,0.06)" stroke="#4ade80" stroke-width="1.5"/>
+        <text x="842" y="100" text-anchor="middle" fill="#4ade80" font-size="8" font-weight="700" font-family="Inter,sans-serif">→ PID (204)</text>
+        <text x="842" y="114" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Modified F_set</text>
+        <text x="842" y="126" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">sent to motor</text>
+
+        <!-- Data logging branch -->
+        <path d="M504,124 L504,160 L750,160" stroke="#888" stroke-width="0.8" stroke-dasharray="4,3"/>
+        <rect x="754" y="148" width="130" height="30" rx="4" fill="rgba(255,255,255,0.02)" stroke="#555" stroke-width="0.8"/>
+        <text x="819" y="167" text-anchor="middle" fill="#555" font-size="7" font-weight="600" font-family="Inter,sans-serif">LOG: comp type, severity, timestamp</text>
+
+        <defs>
+          <marker id="aB11" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5" fill="#3b82f6"/></marker>
+          <marker id="aG11" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5" fill="#4ade80"/></marker>
+          <marker id="aR11" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5" fill="#ef4444"/></marker>
+        </defs>
+      </svg>
+      <p class="fig-caption">Method claim: The compensation classifier (224) analyzes pose data to detect pelvic rotation, knee bend, or trunk shift, then proportionally reduces force setpoint — the core novel mechanism that distinguishes Vitruvian from all existing stretch devices.</p>
+    </div>
+
+    <!-- Patent Claims -->
+    <div class="grid-3" style="margin-top:32px;">
+      <div class="card" style="border-color:rgba(74,222,128,0.2);">
+        <h3 style="font-size:15px; color:#4ade80;">Claim 1 — Method</h3>
+        <p style="font-size:13px;">A method for force-controlled stretching with compensation-aware adjustment, comprising: applying motorized cable tension via PID force control (204), detecting movement compensation via depth-camera pose estimation (210, 224), and dynamically modifying the force setpoint in response to detected compensation.</p>
+      </div>
+      <div class="card" style="border-color:rgba(59,130,246,0.2);">
+        <h3 style="font-size:15px; color:#3b82f6;">Claim 2 — Apparatus</h3>
+        <p style="font-size:13px;">An integrated cable-drive and vision feedback stretching apparatus comprising: a motorized spool (34) with inline force sensing (42), a depth camera (40) with skeletal tracking (220), a PID compliance controller (204), and a compensation classifier (224) that adjusts cable tension in real time.</p>
+      </div>
+      <div class="card" style="border-color:rgba(250,204,21,0.2);">
+        <h3 style="font-size:15px; color:#facc15;">Claim 3 — System</h3>
+        <p style="font-size:13px;">A bilateral assessment and adaptive protocol system comprising: standardized force application (F_set), bilateral ROM comparison (Δ = |θ_L − θ_R|), longitudinal trend analysis with injury risk scoring (62), and adaptive protocol modification (214) based on historical session data.</p>
+      </div>
+    </div>
+    <p style="margin-top:24px; font-size:14px; color:#666;">Figures 1–11 document the complete system. Prior art gap is strong — no existing device combines motorized cable stretching with real-time vision-based compensation detection and adaptive force modification.</p>
+  </div>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">11</span>
+</div>
+
+<!-- ==================== SLIDE 12: REVENUE MODEL ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">Revenue Model</p>
+    <h2>Multiple revenue streams, hardware-led foundation.</h2>
+    <div class="donut-wrap">
+      <div class="donut-col">
+        <h3>2026–2027 <span style="color:#666; font-weight:400;">(Launch)</span></h3>
+        <svg class="donut-svg" viewBox="0 0 42 42">
+          <circle cx="21" cy="21" r="15.915" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="5"/>
+          <!-- Hardware 70% -->
+          <circle cx="21" cy="21" r="15.915" fill="none" stroke="#4ade80" stroke-width="5"
+            stroke-dasharray="70 30" stroke-dashoffset="25" stroke-linecap="round"/>
+          <!-- SaaS 15% -->
+          <circle cx="21" cy="21" r="15.915" fill="none" stroke="#888" stroke-width="5"
+            stroke-dasharray="15 85" stroke-dashoffset="55" stroke-linecap="round"/>
+          <!-- Service 15% -->
+          <circle cx="21" cy="21" r="15.915" fill="none" stroke="#444" stroke-width="5"
+            stroke-dasharray="15 85" stroke-dashoffset="70" stroke-linecap="round"/>
+        </svg>
+        <ul class="donut-legend">
+          <li><span class="swatch" style="background:#4ade80;"></span>Hardware sales — 70%</li>
+          <li><span class="swatch" style="background:#888;"></span>SaaS subscriptions — 15%</li>
+          <li><span class="swatch" style="background:#444;"></span>Service / install — 15%</li>
+        </ul>
+      </div>
+      <div class="donut-col">
+        <h3>2028+ <span style="color:#666; font-weight:400;">(Scale)</span></h3>
+        <svg class="donut-svg" viewBox="0 0 42 42">
+          <circle cx="21" cy="21" r="15.915" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="5"/>
+          <!-- SaaS 45% -->
+          <circle cx="21" cy="21" r="15.915" fill="none" stroke="#4ade80" stroke-width="5"
+            stroke-dasharray="45 55" stroke-dashoffset="25" stroke-linecap="round"/>
+          <!-- Hardware 30% -->
+          <circle cx="21" cy="21" r="15.915" fill="none" stroke="#888" stroke-width="5"
+            stroke-dasharray="30 70" stroke-dashoffset="80" stroke-linecap="round"/>
+          <!-- Data/Insights 15% -->
+          <circle cx="21" cy="21" r="15.915" fill="none" stroke="#facc15" stroke-width="5"
+            stroke-dasharray="15 85" stroke-dashoffset="50" stroke-linecap="round"/>
+          <!-- Service 10% -->
+          <circle cx="21" cy="21" r="15.915" fill="none" stroke="#444" stroke-width="5"
+            stroke-dasharray="10 90" stroke-dashoffset="35" stroke-linecap="round"/>
+        </svg>
+        <ul class="donut-legend">
+          <li><span class="swatch" style="background:#4ade80;"></span>SaaS subscriptions — 45%</li>
+          <li><span class="swatch" style="background:#888;"></span>Hardware sales — 30%</li>
+          <li><span class="swatch" style="background:#facc15;"></span>Data + insights — 15%</li>
+          <li><span class="swatch" style="background:#444;"></span>Service / install — 10%</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid-3" style="margin-top:40px;">
+      <div class="card" style="text-align:center;">
+        <div class="stat-big" style="font-size:32px;">$15–25K</div>
+        <div class="stat-label">Per unit hardware</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="stat-big" style="font-size:32px;">$500/mo</div>
+        <div class="stat-label">SaaS per machine</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="stat-big" style="font-size:32px;">85%+</div>
+        <div class="stat-label">Gross margin on SaaS</div>
+      </div>
+    </div>
+  </div>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">12</span>
+</div>
+
+<!-- ==================== SLIDE 13: FLYWHEEL ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">Growth Engine</p>
+    <h2>Vitruvian Flywheel: Compounding data advantage.</h2>
+    <div class="flywheel-layout">
+      <div class="flywheel-wrap">
+        <svg class="flywheel-svg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <!-- Outer ring segments -->
+          <!-- Segment 1: Athletes (top-right) -->
+          <path d="M150,30 A120,120 0 0,1 253.9,90" fill="none" stroke="#4ade80" stroke-width="28" stroke-linecap="round"/>
+          <!-- Segment 2: Facilities (bottom-right to bottom-left) -->
+          <path d="M265,130 A120,120 0 0,1 100,265" fill="none" stroke="#888" stroke-width="28" stroke-linecap="round"/>
+          <!-- Segment 3: Data (top-left) -->
+          <path d="M60,235 A120,120 0 0,1 120,35" fill="none" stroke="#555" stroke-width="28" stroke-linecap="round"/>
+          <!-- Arrows -->
+          <polygon points="253,84 270,100 248,100" fill="#4ade80"/>
+          <polygon points="95,262 85,242 108,250" fill="#888"/>
+          <polygon points="124,35 114,55 135,50" fill="#555"/>
+          <!-- Center labels -->
+          <text x="150" y="155" text-anchor="middle" fill="#fafafa" font-size="14" font-weight="700" font-family="Inter, sans-serif">VITRUVIAN</text>
+        </svg>
+        <!-- Labels around the flywheel -->
+        <div style="position:absolute; top:-8px; right:-10px; font-size:14px; color:#4ade80; font-weight:600; text-align:center; line-height:1.4;">
+          Athletes <span style="color:#4ade80;">→</span> <em style="font-weight:400; color:#ccc;">Sessions, Data</em>
+        </div>
+        <div style="position:absolute; bottom:-8px; left:50%; transform:translateX(-50%); font-size:14px; color:#888; font-weight:600; text-align:center; line-height:1.4;">
+          Facilities <span style="color:#888;">→</span> <em style="font-weight:400; color:#ccc;">Adoption, Revenue</em>
+        </div>
+        <div style="position:absolute; top:40%; left:-20px; font-size:14px; color:#999; font-weight:600; text-align:center; line-height:1.4;">
+          Data <span style="color:#999;">→</span> <em style="font-weight:400; color:#ccc;">Insights,<br>Protocols</em>
+        </div>
+      </div>
+      <div class="flywheel-chains">
+        <div class="flywheel-chain">
+          <strong>Athletes:</strong> Sessions <span class="arrow">→</span> Data <span class="arrow">→</span> Better Protocols <span class="arrow">→</span> Better Outcomes <span class="arrow">→</span> Retention
+        </div>
+        <div class="flywheel-chain">
+          <strong>Facilities:</strong> Adoption <span class="arrow">→</span> Results <span class="arrow">→</span> Reputation <span class="arrow">→</span> Referrals <span class="arrow">→</span> More Facilities
+        </div>
+        <div class="flywheel-chain">
+          <strong>Data:</strong> Volume <span class="arrow">→</span> Accuracy <span class="arrow">→</span> Prediction <span class="arrow">→</span> Injury Prevention <span class="arrow">→</span> Value
+        </div>
+        <div class="flywheel-booster">
+          <strong>Booster:</strong> Every prevented injury is a case study that sells the next 10 machines.
+        </div>
+      </div>
+    </div>
+  </div>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">13</span>
+</div>
+
+<!-- ==================== SLIDE 13B: INTEGRATION LAYER ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">Integration Layer</p>
+    <h2>We are the measurement layer. Every performance-stack pipe is a distribution lever.</h2>
+    <p class="large" style="margin-bottom:24px;">We do not build our own AMS, programming app, or wearable. Every existing platform is a pipe we feed. That's how the hardware becomes infrastructure, not a sensor.</p>
+
+    <div class="grid-2" style="margin-top:16px; gap:20px;">
+      <div>
+        <p class="slide-tag" style="margin-bottom:8px;">Tier 1 · V1 must-haves</p>
+        <div class="card" style="padding:20px;">
+          <ul style="font-size:14px; line-height:1.7;">
+            <li><strong>Smartabase</strong> — #1 AMS in pro + elite college</li>
+            <li><strong>Kitman Labs</strong> — EPL, NFL, MLS footprint</li>
+            <li><strong>TeamBuildr</strong> — college S&C standard</li>
+            <li><strong>Train Heroic</strong> — tactical + CrossFit delivery app</li>
+            <li><strong>CSV + public REST API</strong> — universal fallback</li>
+          </ul>
+          <p style="font-size:12px; color:#888; margin-top:10px;">Pilot gate: "we use X" cannot be a reason we lose the deal.</p>
+        </div>
+      </div>
+      <div>
+        <p class="slide-tag" style="color:#facc15; margin-bottom:8px;">Tier 2 · 6-month unlock</p>
+        <div class="card" style="padding:20px;">
+          <ul style="font-size:14px; line-height:1.7;">
+            <li><strong>Catapult</strong> — workload-to-MSK risk correlation</li>
+            <li><strong>Polar Team Pro</strong> — collegiate workload</li>
+            <li><strong>Hudl / Teamworks</strong> — roster + schedule</li>
+            <li><strong>Epic / Cerner (HL7 FHIR)</strong> — medical + RTD</li>
+          </ul>
+          <p style="font-size:12px; color:#888; margin-top:10px;">Each unlocks a specific buyer category.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider" style="margin:24px 0;"></div>
+
+    <div class="grid-3" style="gap:16px;">
+      <div class="card" style="border-color:rgba(250,204,21,0.2);">
+        <h3 style="color:#facc15;">The insurance play</h3>
+        <p style="font-size:13px;">Carriers don't integrate with point tools. They license aggregated, anonymized risk signals via data-licensing APIs. Target: $250K–$1M / carrier / yr after Year 2. No claims-system integration needed — just signed BAAs and a data feed.</p>
+      </div>
+      <div class="card">
+        <h3>The rule</h3>
+        <p style="font-size:13px;">Never write bespoke code for one customer. Every integration is a reusable template. Every custom request gets redirected to the public REST API + webhook pattern. Cheap per customer, compounding over time.</p>
+      </div>
+      <div class="card">
+        <h3>Ownership</h3>
+        <p style="font-size:13px;">Data-rights clause in every lease contract. Teams get their data back into their AMS; we retain the de-identified corpus in perpetuity. This is the insurance-licensing precondition. Full plan: <a href="docs/view.html?doc=20-integration-roadmap.md" style="color:#4ade80;">Doc 20</a>.</p>
+      </div>
+    </div>
+  </div>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">13b</span>
+</div>
+
+<!-- ==================== SLIDE 14: CAPITAL REQUIREMENTS ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">Capital Requirements</p>
+    <h2>Raising $3M Seed — strategic-led preferred.</h2>
+    <p style="margin-bottom:8px; font-size:15px; color:#888;">30-month runway. 5–8 pilot stations deployed. Patent utility conversion. Path to Series A on $2–4M ARR + insurance LOI.</p>
+
+    <div class="capital-layout">
+      <!-- Left: Pie chart + legend -->
+      <div>
+        <svg class="donut-svg" viewBox="0 0 42 42" style="width:260px; height:260px; margin:0 auto; display:block;">
+          <circle cx="21" cy="21" r="15.915" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="5"/>
+          <!-- Hardware 40% -->
+          <circle cx="21" cy="21" r="15.915" fill="none" stroke="#4ade80" stroke-width="5"
+            stroke-dasharray="40 60" stroke-dashoffset="25" stroke-linecap="round"/>
+          <!-- Engineering 30% -->
+          <circle cx="21" cy="21" r="15.915" fill="none" stroke="#3b82f6" stroke-width="5"
+            stroke-dasharray="30 70" stroke-dashoffset="85" stroke-linecap="round"/>
+          <!-- GTM 15% -->
+          <circle cx="21" cy="21" r="15.915" fill="none" stroke="#a78bfa" stroke-width="5"
+            stroke-dasharray="15 85" stroke-dashoffset="55" stroke-linecap="round"/>
+          <!-- IP 10% -->
+          <circle cx="21" cy="21" r="15.915" fill="none" stroke="#facc15" stroke-width="5"
+            stroke-dasharray="10 90" stroke-dashoffset="40" stroke-linecap="round"/>
+          <!-- Reserve 5% -->
+          <circle cx="21" cy="21" r="15.915" fill="none" stroke="#444" stroke-width="5"
+            stroke-dasharray="5 95" stroke-dashoffset="30" stroke-linecap="round"/>
+        </svg>
+        <ul class="donut-legend" style="margin-top:20px;">
+          <li><span class="swatch" style="background:#4ade80;"></span>Hardware — prototype, pilot stations, tooling — 40% ($1.2M)</li>
+          <li><span class="swatch" style="background:#3b82f6;"></span>Engineering — firmware, CV/ML, full-stack — 30% ($900K)</li>
+          <li><span class="swatch" style="background:#a78bfa;"></span>GTM — pilot ops, clinical validation, partnerships — 15% ($450K)</li>
+          <li><span class="swatch" style="background:#facc15;"></span>IP — utility conversion, PCT, continuations — 10% ($300K)</li>
+          <li><span class="swatch" style="background:#444;"></span>Reserve — legal, ops, contingency — 5% ($150K)</li>
+        </ul>
+      </div>
+
+      <!-- Right: ARR projection bar chart -->
+      <div>
+        <p style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#666; margin-bottom:12px; text-align:center;">ARR Projection by Installed Units</p>
+        <div class="bar-chart-legend">
+          <span><span class="swatch" style="background:#666;"></span>Hardware</span>
+          <span><span class="swatch" style="background:#4ade80;"></span>SaaS ($6K/yr/unit)</span>
+        </div>
+        <div class="bar-chart-wrap">
+          <!-- 10 units -->
+          <div class="bar-group">
+            <div class="bar-value">$260K</div>
+            <div class="bar-stack">
+              <div style="flex-grow:0; height:4%;">
+                <div class="bar-seg" style="background:#4ade80; height:100%;"></div>
+              </div>
+              <div style="flex-grow:0; height:13%;">
+                <div class="bar-seg" style="background:#666; height:100%;"></div>
+              </div>
+            </div>
+            <div class="bar-label">10</div>
+          </div>
+          <!-- 25 units -->
+          <div class="bar-group">
+            <div class="bar-value">$650K</div>
+            <div class="bar-stack">
+              <div style="flex-grow:0; height:10%;">
+                <div class="bar-seg" style="background:#4ade80; height:100%;"></div>
+              </div>
+              <div style="flex-grow:0; height:32%;">
+                <div class="bar-seg" style="background:#666; height:100%;"></div>
+              </div>
+            </div>
+            <div class="bar-label">25</div>
+          </div>
+          <!-- 50 units -->
+          <div class="bar-group">
+            <div class="bar-value">$1.3M</div>
+            <div class="bar-stack">
+              <div style="flex-grow:0; height:20%;">
+                <div class="bar-seg" style="background:#4ade80; height:100%;"></div>
+              </div>
+              <div style="flex-grow:0; height:45%;">
+                <div class="bar-seg" style="background:#666; height:100%;"></div>
+              </div>
+            </div>
+            <div class="bar-label">50</div>
+          </div>
+          <!-- 100 units -->
+          <div class="bar-group">
+            <div class="bar-value">$2.6M</div>
+            <div class="bar-stack">
+              <div style="flex-grow:0; height:38%;">
+                <div class="bar-seg" style="background:#4ade80; height:100%;"></div>
+              </div>
+              <div style="flex-grow:0; height:62%;">
+                <div class="bar-seg" style="background:#666; height:100%;"></div>
+              </div>
+            </div>
+            <div class="bar-label">100</div>
+          </div>
+        </div>
+        <p style="font-size:11px; color:#555; text-align:center; margin-top:8px;">Active Units Installed</p>
+      </div>
+    </div>
+
+    <!-- Detailed line-item breakdown -->
+    <div class="capital-detail">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <!-- Hardware -->
+        <div class="capital-category">
+          <div class="capital-category-header">
+            <h3><span style="color:#4ade80;">&#9679;</span> Hardware</h3>
+            <span class="cat-amount">$1.2M</span>
+          </div>
+          <div class="capital-line"><span class="line-desc">Mechanical design, CAD, CNC + frame fabrication</span><span class="line-cost">$250K</span></div>
+          <div class="capital-line"><span class="line-desc">Motor, gearbox, controller — 8 pilot stations</span><span class="line-cost">$320K</span></div>
+          <div class="capital-line"><span class="line-desc">Depth camera, load cell, compute, touchscreen × 8</span><span class="line-cost">$180K</span></div>
+          <div class="capital-line"><span class="line-desc">Tooling, fixtures, small-run production setup</span><span class="line-cost">$200K</span></div>
+          <div class="capital-line"><span class="line-desc">Iteration (v1.5 + PNF firmware rev)</span><span class="line-cost">$150K</span></div>
+          <div class="capital-line"><span class="line-desc">Shop time, assembly, QA</span><span class="line-cost">$100K</span></div>
+        </div>
+
+        <!-- Engineering -->
+        <div class="capital-category">
+          <div class="capital-category-header">
+            <h3><span style="color:#3b82f6;">&#9679;</span> Engineering</h3>
+            <span class="cat-amount">$900K</span>
+          </div>
+          <div class="capital-line"><span class="line-desc">Firmware engineer — PID loop, PNF detection, safety</span><span class="line-cost">$220K</span></div>
+          <div class="capital-line"><span class="line-desc">CV/ML engineer — compensation detection, pose fusion</span><span class="line-cost">$260K</span></div>
+          <div class="capital-line"><span class="line-desc">Full-stack — API, AMS connectors, dashboards</span><span class="line-cost">$200K</span></div>
+          <div class="capital-line"><span class="line-desc">Mechanical / EE fractional</span><span class="line-cost">$150K</span></div>
+          <div class="capital-line"><span class="line-desc">Cloud infra, data pipeline, security</span><span class="line-cost">$70K</span></div>
+        </div>
+
+        <!-- GTM -->
+        <div class="capital-category">
+          <div class="capital-category-header">
+            <h3><span style="color:#a78bfa;">&#9679;</span> GTM</h3>
+            <span class="cat-amount">$450K</span>
+          </div>
+          <div class="capital-line"><span class="line-desc">Pilot operations — install, onboarding, support × 5–8 sites</span><span class="line-cost">$150K</span></div>
+          <div class="capital-line"><span class="line-desc">Clinical validation — peer-reviewed study, CHAMP / collegiate</span><span class="line-cost">$120K</span></div>
+          <div class="capital-line"><span class="line-desc">DoD SBIR consultant + travel (AFWERX / SOFWERX)</span><span class="line-cost">$60K</span></div>
+          <div class="capital-line"><span class="line-desc">Fractional VP Sales — 3-month engagement, then extend</span><span class="line-cost">$80K</span></div>
+          <div class="capital-line"><span class="line-desc">Case studies, media, conference booths</span><span class="line-cost">$40K</span></div>
+        </div>
+
+        <!-- IP -->
+        <div class="capital-category">
+          <div class="capital-category-header">
+            <h3><span style="color:#facc15;">&#9679;</span> IP</h3>
+            <span class="cat-amount">$300K</span>
+          </div>
+          <div class="capital-line"><span class="line-desc">Utility patent conversion (3 claims)</span><span class="line-cost">$45K</span></div>
+          <div class="capital-line"><span class="line-desc">PCT filing — international protection</span><span class="line-cost">$60K</span></div>
+          <div class="capital-line"><span class="line-desc">Continuations (method + apparatus + system)</span><span class="line-cost">$90K</span></div>
+          <div class="capital-line"><span class="line-desc">Data-rights counsel — contract template, per-deal review</span><span class="line-cost">$60K</span></div>
+          <div class="capital-line"><span class="line-desc">Trademark, prior art, IP strategy</span><span class="line-cost">$45K</span></div>
+        </div>
+
+        <!-- Reserve -->
+        <div class="capital-category" style="grid-column:1 / -1;">
+          <div class="capital-category-header">
+            <h3><span style="color:#444;">&#9679;</span> Reserve — legal, ops, contingency</h3>
+            <span class="cat-amount">$150K</span>
+          </div>
+          <div class="capital-line"><span class="line-desc">D&O, product liability, general liability insurance</span><span class="line-cost">$40K</span></div>
+          <div class="capital-line"><span class="line-desc">Corporate legal, employment, cap-table management</span><span class="line-cost">$35K</span></div>
+          <div class="capital-line"><span class="line-desc">Accounting, audit, ops overhead</span><span class="line-cost">$35K</span></div>
+          <div class="capital-line"><span class="line-desc">Contingency — component lead times, rework, rush orders</span><span class="line-cost">$40K</span></div>
+        </div>
+      </div>
+
+      <div class="capital-total">
+        <span>Total Raise</span>
+        <span class="total-amount">$3,000,000</span>
+      </div>
+    </div>
+
+    <p class="capital-summary">$3M seed gets Vitruvian through 5–8 pilot deployments, utility patent conversion, first insurance data-licensing LOI, and AFWERX Phase I submission <span style="color:#4ade80;">→</span> Series A at $2–4M ARR + corpus of 25K+ athlete-months.</p>
+  </div>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">14</span>
+</div>
+
+<!-- ==================== SLIDE 15: THE ASK ==================== -->
+<div class="slide">
+  <div class="slide-inner">
+    <p class="slide-tag">The Ask</p>
+    <h2>$3M seed — strategic-led. Three seats on the cap table.</h2>
+    <p class="large" style="margin-bottom:40px;">The thesis is defined. The IP is filed. The product is scoped. We are raising the smallest round that buys 30 months and the right partners on the cap table.</p>
+
+    <div class="grid-3" style="margin-top:32px; gap:16px;">
+      <div class="card" style="border-color:rgba(74,222,128,0.2);">
+        <p class="slide-tag" style="margin-bottom:12px;">Seat 1 · Anchor</p>
+        <h2 style="font-size:22px; margin-bottom:12px;">Strategic Investor</h2>
+        <p style="font-size:14px;">One strategic who brings distribution or a data-licensing pathway. Hyperice, Therabody, Catapult, Nike, a major insurance carrier, or a sports-specific fund with operator relationships.</p>
+        <div class="divider"></div>
+        <h3 style="font-size:14px;">Check size:</h3>
+        <ul>
+          <li>$1–1.5M lead</li>
+          <li>Distribution or data-licensing intent letter</li>
+          <li>Board observer seat</li>
+        </ul>
+      </div>
+
+      <div class="card" style="border-color:rgba(59,130,246,0.2);">
+        <p class="slide-tag" style="color:#3b82f6; margin-bottom:12px;">Seat 2 · Partner</p>
+        <h2 style="font-size:22px; margin-bottom:12px;">Sports-Specific Fund</h2>
+        <p style="font-size:14px;">A fund with explicit sports/health thesis and warm intros to pro + collegiate training rooms. Will lead or co-lead. Brings deal flow on future strategics.</p>
+        <div class="divider"></div>
+        <h3 style="font-size:14px;">Check size:</h3>
+        <ul>
+          <li>$500K–$1M</li>
+          <li>3–5 warm intros to flagship pilot programs</li>
+          <li>Governance seat or observer</li>
+        </ul>
+      </div>
+
+      <div class="card" style="border-color:rgba(250,204,21,0.2);">
+        <p class="slide-tag" style="color:#facc15; margin-bottom:12px;">Seat 3 · Signal</p>
+        <h2 style="font-size:22px; margin-bottom:12px;">Athlete / Operator Syndicate</h2>
+        <p style="font-size:14px;">Active and retired pro athletes + performance directors who take small positions and become public advocates. Signaling asset worth more than the check.</p>
+        <div class="divider"></div>
+        <h3 style="font-size:14px;">Check size:</h3>
+        <ul>
+          <li>$25K–$250K per participant</li>
+          <li>3–5 named advocates at close</li>
+          <li>No board seat</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider" style="margin:40px 0;"></div>
+
+    <div class="grid-3">
+      <div class="card" style="text-align:center;">
+        <h3>What's done</h3>
+        <ul>
+          <li>USPTO provisional filed</li>
+          <li>Full product scope + BOM</li>
+          <li>Data-rights contract template</li>
+          <li>Pilot conversations active</li>
+          <li>Design docs public (19)</li>
+        </ul>
+      </div>
+      <div class="card" style="text-align:center;">
+        <h3>What $3M delivers</h3>
+        <ul>
+          <li>5–8 pilot stations deployed</li>
+          <li>Utility patent + PCT</li>
+          <li>PNF at V1.5 — clinical parity</li>
+          <li>AFWERX Phase I submission</li>
+          <li>First insurance LOI</li>
+        </ul>
+      </div>
+      <div class="card" style="text-align:center;">
+        <h3>Milestones to Series A</h3>
+        <ul>
+          <li>$2–4M ARR</li>
+          <li>25K+ athlete-months in corpus</li>
+          <li>1 insurer data-licensing pilot</li>
+          <li>3+ AMS integrations live</li>
+          <li>DoD non-dilutive awarded</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <h3>If you are that anchor, that fund, or one of those athletes — let's talk.</h3>
+      <p>Direct: hello@vitruvian.example · Data room: <a href="hub.html" style="color:#4ade80;">hub.html</a> · Reply within 48 hours.</p>
+    </div>
+  </div>
+  <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="" class="slide-logo">
+  <span class="slide-num">15</span>
+</div>
+
+<!-- ==================== SLIDE 16: CLOSE ==================== -->
+<div class="slide" style="min-height:60vh;">
+  <div class="slide-inner" style="text-align:center;">
+    <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="Vitruvian" class="title-logo">
+    <h2>VITRUVIAN</h2>
+    <p style="margin:0 auto 8px; font-size:17px; color:#888;">Controlled tension. Measured range. Data on every rep.</p>
+    <p style="margin:0 auto; font-size:14px; color:#555;">Confidential — 2026</p>
+  </div>
+</div>
+
+<script>
+  (function() {
+    var gate = document.getElementById('ndaGate');
+    var checkbox = document.getElementById('ndaCheckbox');
+    var btn = document.getElementById('ndaBtn');
+
+    checkbox.addEventListener('change', function() {
+      btn.classList.toggle('enabled', checkbox.checked);
+    });
+
+    btn.addEventListener('click', function() {
+      if (!checkbox.checked) return;
+      gate.classList.add('dismissed');
+      document.body.style.overflow = '';
+      setTimeout(function() { gate.style.display = 'none'; }, 600);
+    });
+
+    // Prevent scrolling while NDA is showing
+    document.body.style.overflow = 'hidden';
+  })();
+</script>
+</body>
+</html>

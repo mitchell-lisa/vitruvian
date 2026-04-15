@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vitruvian — Data Room</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ui.css">
+<style>
+  .dr-section { margin-top: 48px; }
+  .dr-section:first-of-type { margin-top: 32px; }
+  .dr-section-header { display:flex; align-items:baseline; justify-content:space-between; border-bottom:1px solid var(--rule); padding-bottom:10px; margin-bottom:16px; }
+  .dr-section-header h2 { margin:0; font-size:18px; }
+  .dr-section-meta { font-size:12px; color:var(--ink-faint); font-family:'SF Mono',Menlo,monospace; }
+  .dr-list { list-style:none; margin:0; padding:0; }
+  .dr-list li { border-top:1px solid var(--rule); }
+  .dr-list li:first-child { border-top:none; }
+  .dr-list a { display:grid; grid-template-columns: 40px 1fr 120px 100px; gap:16px; padding:14px 8px; align-items:center; text-decoration:none; color:var(--ink); transition:background 0.1s; }
+  .dr-list a:hover { background:var(--bg-elev); }
+  .dr-idx { font-family:'SF Mono',Menlo,monospace; font-size:12px; color:var(--ink-faint); }
+  .dr-title { font-size:14px; font-weight:500; color:var(--ink-bright); }
+  .dr-desc { font-size:12px; color:var(--ink-dim); margin-top:2px; }
+  .dr-type { font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:var(--ink-dim); font-family:'SF Mono',Menlo,monospace; }
+  .dr-status { font-size:11px; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; }
+  .dr-status.live { color:#22c55e; }
+  .dr-status.draft { color:#eab308; }
+  .dr-status.filed { color:#22c55e; }
+  @media (max-width:760px){ .dr-list a { grid-template-columns: 32px 1fr; } .dr-type,.dr-status { display:none; } }
+</style>
+</head>
+<body>
+
+<nav class="ui-nav">
+  <div class="ui-nav-inner">
+    <a href="index.html" class="ui-logo">
+      <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="">
+      <span>VITRUVIAN</span>
+    </a>
+    <div class="ui-nav-links">
+      <a href="index.html" class="ui-nav-link">Home</a>
+      <a href="pitch.html" class="ui-nav-link">Deck</a>
+      <a href="hub.html" class="ui-nav-link active">Data Room</a>
+      <a href="feedback.html" class="ui-nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main class="ui-page">
+
+  <div class="ui-eyebrow">Data Room</div>
+  <h1 class="ui-h1">Diligence — everything, one place.</h1>
+  <p class="ui-sub">Partner + investor due diligence. Grouped by category. Update cadence: as work ships.</p>
+
+  <!-- 01 DECK & OVERVIEW -->
+  <div class="dr-section">
+    <div class="dr-section-header"><h2>01 · Deck &amp; Overview</h2><span class="dr-section-meta">/overview</span></div>
+    <ul class="dr-list">
+      <li><a href="pitch.html">
+        <span class="dr-idx">1.1</span>
+        <div><div class="dr-title">Partner Pitch Deck</div><div class="dr-desc">Full narrative deck — thesis, market, product, ask.</div></div>
+        <span class="dr-type">HTML Deck</span><span class="dr-status live">Live</span>
+      </a></li>
+      <li><a href="index.html">
+        <span class="dr-idx">1.2</span>
+        <div><div class="dr-title">Investor One-Pager</div><div class="dr-desc">Home page. Thesis, market, moat, ask.</div></div>
+        <span class="dr-type">HTML</span><span class="dr-status live">Live</span>
+      </a></li>
+    </ul>
+  </div>
+
+  <!-- 02 IP -->
+  <div class="dr-section">
+    <div class="dr-section-header"><h2>02 · Intellectual Property</h2><span class="dr-section-meta">/ip</span></div>
+    <ul class="dr-list">
+      <li><a href="patent.html">
+        <span class="dr-idx">2.1</span>
+        <div><div class="dr-title">USPTO Provisional Application</div><div class="dr-desc">Full filing. Vision-fused compensation detection under closed-loop force control.</div></div>
+        <span class="dr-type">Provisional</span><span class="dr-status filed">Filed</span>
+      </a></li>
+      <li><a href="drawings.html">
+        <span class="dr-idx">2.2</span>
+        <div><div class="dr-title">Patent Drawings</div><div class="dr-desc">11 figures, one per page.</div></div>
+        <span class="dr-type">Drawings</span><span class="dr-status filed">Filed</span>
+      </a></li>
+      <li><a href="figures/">
+        <span class="dr-idx">2.3</span>
+        <div><div class="dr-title">Patent Figures (SVG)</div><div class="dr-desc">Source figures, individually addressable.</div></div>
+        <span class="dr-type">SVG</span><span class="dr-status filed">Filed</span>
+      </a></li>
+    </ul>
+  </div>
+
+  <!-- 03 PRODUCT -->
+  <div class="dr-section">
+    <div class="dr-section-header"><h2>03 · Product &amp; Technical</h2><span class="dr-section-meta">/product</span></div>
+    <ul class="dr-list">
+      <li><a href="product.html">
+        <span class="dr-idx">3.1</span>
+        <div><div class="dr-title">Full Product Specification</div><div class="dr-desc">Hardware, sensing, session flow, integration, FAQ.</div></div>
+        <span class="dr-type">HTML</span><span class="dr-status live">Live</span>
+      </a></li>
+      <li><a href="docs/view.html?doc=01-product-definition.md">
+        <span class="dr-idx">3.2</span>
+        <div><div class="dr-title">Product Definition</div><div class="dr-desc">What it is. Who it's for.</div></div>
+        <span class="dr-type">Memo</span><span class="dr-status live">Live</span>
+      </a></li>
+      <li><a href="docs/view.html?doc=02-mvp-design.md">
+        <span class="dr-idx">3.3</span>
+        <div><div class="dr-title">MVP Design</div><div class="dr-desc">What ships v1.</div></div>
+        <span class="dr-type">Memo</span><span class="dr-status live">Live</span>
+      </a></li>
+      <li><a href="docs/view.html?doc=03-mechanical-system.md">
+        <span class="dr-idx">3.4</span>
+        <div><div class="dr-title">Mechanical System</div><div class="dr-desc">Cable, motor, frame.</div></div>
+        <span class="dr-type">Memo</span><span class="dr-status live">Live</span>
+      </a></li>
+      <li><a href="docs/view.html?doc=04-sensor-ai-system.md">
+        <span class="dr-idx">3.5</span>
+        <div><div class="dr-title">Sensors &amp; AI</div><div class="dr-desc">Load cell, depth camera, compensation.</div></div>
+        <span class="dr-type">Memo</span><span class="dr-status live">Live</span>
+      </a></li>
+      <li><a href="docs/view.html?doc=05-user-experience-flow.md">
+        <span class="dr-idx">3.6</span>
+        <div><div class="dr-title">User Flow</div><div class="dr-desc">Badge-in to report.</div></div>
+        <span class="dr-type">Memo</span><span class="dr-status live">Live</span>
+      </a></li>
+      <li><a href="docs/view.html?doc=06-prototype-build-plan.md">
+        <span class="dr-idx">3.7</span>
+        <div><div class="dr-title">Prototype Build Plan</div><div class="dr-desc">BOM. Order. Milestones.</div></div>
+        <span class="dr-type">Memo</span><span class="dr-status live">Live</span>
+      </a></li>
+      <li><a href="docs/view.html?doc=07-what-to-cut.md">
+        <span class="dr-idx">3.8</span>
+        <div><div class="dr-title">Scope Discipline</div><div class="dr-desc">What to cut from v1.</div></div>
+        <span class="dr-type">Memo</span><span class="dr-status live">Live</span>
+      </a></li>
+      <li><a href="docs/view.html?doc=08-what-makes-this-special.md">
+        <span class="dr-idx">3.9</span>
+        <div><div class="dr-title">What's Special</div><div class="dr-desc">Our technical edge.</div></div>
+        <span class="dr-type">Memo</span><span class="dr-status live">Live</span>
+      </a></li>
+      <li><a href="docs/view.html?doc=PRODUCT_REDESIGN.md">
+        <span class="dr-idx">3.10</span>
+        <div><div class="dr-title">Redesign Notes</div><div class="dr-desc">What changed and why.</div></div>
+        <span class="dr-type">Memo</span><span class="dr-status live">Live</span>
+      </a></li>
+    </ul>
+  </div>
+
+  <!-- 04 MARKET & STRATEGY -->
+  <div class="dr-section">
+    <div class="dr-section-header"><h2>04 · Market &amp; Strategy</h2><span class="dr-section-meta">/strategy</span></div>
+    <ul class="dr-list">
+      <li><a href="docs/view.html?doc=13-real-money-game.md">
+        <span class="dr-idx">4.1</span>
+        <div><div class="dr-title">The Real Money Game</div><div class="dr-desc">Who owns distribution. Where profit lives.</div></div>
+        <span class="dr-type">Memo</span><span class="dr-status live">Live</span>
+      </a></li>
+      <li><a href="docs/view.html?doc=11-wealth-blueprint.md">
+        <span class="dr-idx">4.2</span>
+        <div><div class="dr-title">Revenue Blueprint</div><div class="dr-desc">Phase-by-phase revenue roadmap.</div></div>
+        <span class="dr-type">Memo</span><span class="dr-status live">Live</span>
+      </a></li>
+      <li><a href="docs/view.html?doc=10-opportunity-filter.md">
+        <span class="dr-idx">4.3</span>
+        <div><div class="dr-title">Opportunity Filter</div><div class="dr-desc">Scale. Leverage. Defensibility.</div></div>
+        <span class="dr-type">Memo</span><span class="dr-status live">Live</span>
+      </a></li>
+      <li><a href="docs/view.html?doc=15-leverage-system.md">
+        <span class="dr-idx">4.4</span>
+        <div><div class="dr-title">Leverage System</div><div class="dr-desc">Capital. People. Tech. Media.</div></div>
+        <span class="dr-type">Memo</span><span class="dr-status live">Live</span>
+      </a></li>
+      <li><a href="docs/view.html?doc=16-unfair-advantage.md">
+        <span class="dr-idx">4.5</span>
+        <div><div class="dr-title">Unfair Advantage</div><div class="dr-desc">Skills. Distribution. Network. Positioning.</div></div>
+        <span class="dr-type">Memo</span><span class="dr-status live">Live</span>
+      </a></li>
+      <li><a href="docs/view.html?doc=17-future-projection.md">
+        <span class="dr-idx">4.6</span>
+        <div><div class="dr-title">3-Year Projection</div><div class="dr-desc">Default vs. power-path outcomes.</div></div>
+        <span class="dr-type">Memo</span><span class="dr-status live">Live</span>
+      </a></li>
+      <li><a href="docs/view.html?doc=09-billionaire-lens.md">
+        <span class="dr-idx">4.7</span>
+        <div><div class="dr-title">Strategic Lens</div><div class="dr-desc">Where we're thinking too small.</div></div>
+        <span class="dr-type">Memo</span><span class="dr-status live">Live</span>
+      </a></li>
+      <li><a href="docs/view.html?doc=12-wealth-psychology.md">
+        <span class="dr-idx">4.8</span>
+        <div><div class="dr-title">Founder Psychology</div><div class="dr-desc">Craftsman vs. founder trade-off.</div></div>
+        <span class="dr-type">Memo</span><span class="dr-status live">Live</span>
+      </a></li>
+      <li><a href="docs/view.html?doc=14-power-thinking.md">
+        <span class="dr-idx">4.9</span>
+        <div><div class="dr-title">Power Thinking</div><div class="dr-desc">Speed. Risk. Skew.</div></div>
+        <span class="dr-type">Memo</span><span class="dr-status live">Live</span>
+      </a></li>
+      <li><a href="docs/view.html?doc=18-elite-decision-model.md">
+        <span class="dr-idx">4.10</span>
+        <div><div class="dr-title">Decision Model</div><div class="dr-desc">Reversible vs. asymmetric decisions.</div></div>
+        <span class="dr-type">Memo</span><span class="dr-status live">Live</span>
+      </a></li>
+      <li><a href="docs/view.html?doc=19-military-gtm.md">
+        <span class="dr-idx">4.11</span>
+        <div><div class="dr-title">Military / DoD GTM</div><div class="dr-desc">AFWERX, SOFWERX, DIU, DHA pathways. Non-dilutive capital.</div></div>
+        <span class="dr-type">Memo</span><span class="dr-status live">Live</span>
+      </a></li>
+      <li><a href="docs/view.html?doc=20-integration-roadmap.md">
+        <span class="dr-idx">4.12</span>
+        <div><div class="dr-title">Integration Roadmap</div><div class="dr-desc">Smartabase, Kitman, TeamBuildr, Train Heroic, Catapult.</div></div>
+        <span class="dr-type">Memo</span><span class="dr-status live">Live</span>
+      </a></li>
+    </ul>
+  </div>
+
+  <!-- 05 PILOT & COMMERCIAL -->
+  <div class="dr-section">
+    <div class="dr-section-header"><h2>05 · Pilot &amp; Commercial</h2><span class="dr-section-meta">/commercial</span></div>
+    <ul class="dr-list">
+      <li><a href="feedback.html">
+        <span class="dr-idx">5.1</span>
+        <div><div class="dr-title">Partner Inquiry Form</div><div class="dr-desc">Investors, strategics, pilot partners, insurers.</div></div>
+        <span class="dr-type">Form</span><span class="dr-status live">Live</span>
+      </a></li>
+      <li><a href="briefs/coach-brief.html">
+        <span class="dr-idx">5.2</span>
+        <div><div class="dr-title">Pilot Program Brief (Performance Staff)</div><div class="dr-desc">Reference doc for pilot conversations with teams.</div></div>
+        <span class="dr-type">Brief</span><span class="dr-status live">Live</span>
+      </a></li>
+      <li><a href="briefs/athlete-brief.html">
+        <span class="dr-idx">5.3</span>
+        <div><div class="dr-title">Athlete-Facing Brief</div><div class="dr-desc">End-user framing for pilot participants.</div></div>
+        <span class="dr-type">Brief</span><span class="dr-status live">Live</span>
+      </a></li>
+    </ul>
+  </div>
+
+  <!-- 06 STATUS -->
+  <div class="dr-section">
+    <div class="dr-section-header"><h2>06 · Status Snapshot</h2><span class="dr-section-meta">/status</span></div>
+    <ul class="dr-list">
+      <li><a href="#" onclick="return false;" style="cursor:default;">
+        <span class="dr-idx">6.1</span>
+        <div><div class="dr-title">USPTO Provisional</div><div class="dr-desc">Filed. Utility conversion within provisional window.</div></div>
+        <span class="dr-type">IP</span><span class="dr-status filed">Filed</span>
+      </a></li>
+      <li><a href="#" onclick="return false;" style="cursor:default;">
+        <span class="dr-idx">6.2</span>
+        <div><div class="dr-title">Prototype Build</div><div class="dr-desc">BOM finalized. Fabrication Q2–Q3.</div></div>
+        <span class="dr-type">Hardware</span><span class="dr-status draft">In build</span>
+      </a></li>
+      <li><a href="#" onclick="return false;" style="cursor:default;">
+        <span class="dr-idx">6.3</span>
+        <div><div class="dr-title">Pilot Pipeline</div><div class="dr-desc">6-week lease pilots in conversation — collegiate + pro.</div></div>
+        <span class="dr-type">GTM</span><span class="dr-status draft">Active</span>
+      </a></li>
+      <li><a href="#" onclick="return false;" style="cursor:default;">
+        <span class="dr-idx">6.4</span>
+        <div><div class="dr-title">Seed Round</div><div class="dr-desc">$3M. Strategic-led preferred. 30-month runway.</div></div>
+        <span class="dr-type">Capital</span><span class="dr-status draft">Open</span>
+      </a></li>
+    </ul>
+  </div>
+
+</main>
+
+<footer class="ui-footer">
+  <span>Vitruvian · Data Room</span>
+  <a href="index.html">&larr; Home</a>
+</footer>
+
+</body>
+</html>

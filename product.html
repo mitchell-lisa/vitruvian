@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vitruvian — Product Specification</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">
+        <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="Vitruvian" width="36" height="36">
+        <span>VITRUVIAN</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="pitch.html" class="nav-link">Deck</a>
+        <a href="hub.html" class="nav-link">Data Room</a>
+        <a href="feedback.html" class="nav-cta">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-logo-wrap">
+        <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="Vitruvian" class="hero-logo-img">
+      </div>
+      <h1>Make musculoskeletal risk measurable.</h1>
+      <p class="subtitle">Vitruvian is <strong>actuarial infrastructure for musculoskeletal injury risk</strong>. A force-controlled cable platform with vision-based compensation detection captures range, load, and asymmetry on every rep. The hardware is the data layer. The data is the business.</p>
+      <div class="hero-ctas">
+        <a href="#waitlist" class="btn btn-primary">Request a Demo</a>
+        <a href="#demo" class="btn btn-secondary">See the Protocol</a>
+      </div>
+      <div class="hero-metrics">
+        <div class="metric-card">
+          <span class="metric-num">±2°</span>
+          <span class="metric-label">Joint Angle Tracking</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-num">100Hz</span>
+          <span class="metric-label">Cable Force Monitoring</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-num">L/R</span>
+          <span class="metric-label">Side-to-Side Asymmetry</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-num">12pt</span>
+          <span class="metric-label">Compensation Detection</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY -->
+  <section class="section section-dark" id="category">
+    <div class="container">
+      <p class="section-tag">Category</p>
+      <h2>We are not a stretching machine.</h2>
+      <div class="two-col">
+        <div class="col">
+          <p>Stretching is the wedge. The product is a measurement and risk-pricing layer for musculoskeletal health — the category that sits next to force plates, GPS, and heart-rate variability, but for the variable everyone tracks by eye.</p>
+          <p>Every session produces a structured record of load, range, and compensation. Those records roll up into per-athlete risk signals that teams, insurers, and leagues can act on.</p>
+        </div>
+        <div class="col">
+          <p><strong>Who buys the output:</strong> performance staff (decisions), medical staff (return-to-play), insurers (premium pricing), leagues (athlete availability), and acquirers (data moat).</p>
+          <p><strong>Who buys the hardware:</strong> pro and collegiate programs — leased, not sold.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IT IS -->
+  <section class="section" id="what">
+    <div class="container">
+      <p class="section-tag">The Hardware Layer</p>
+      <h2>A cable, a bench, and good sensors.</h2>
+      <div class="two-col">
+        <div class="col">
+          <p>Vitruvian delivers assisted stretching through a motorized cable system with inline force sensing and depth-camera joint tracking. The athlete lies on a stabilized bench. A single cable applies progressive tension to the target limb at a precise, repeatable load.</p>
+          <p>The system measures peak range of motion at standardized force thresholds, compares left to right, detects compensation in real time, and logs everything — force at end-range, hold tolerance, guarding events, session-to-session ROM change.</p>
+        </div>
+        <div class="col">
+          <p>Your staff selects the protocol. The machine handles the consistency. Every athlete gets the same quality stretch whether it's the first session of the morning or the twentieth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT THIS IS NOT -->
+  <section class="section section-dark" id="not">
+    <div class="container">
+      <p class="section-tag">What This Is Not</p>
+      <h2>Clear on what we don't claim.</h2>
+      <div class="not-grid">
+        <div class="not-item">
+          <h3>Not a robot.</h3>
+          <p>It's a cable and a bench with good sensors. The athlete is in control. They can release at any time. The system applies tension — it does not move limbs through space without resistance.</p>
+        </div>
+        <div class="not-item">
+          <h3>Not a replacement for your staff.</h3>
+          <p>Your trainers still select protocols, supervise sessions, interpret data, and make decisions. Vitruvian removes the manual labor of delivering consistent stretch and the guesswork of measuring it. It makes your staff faster and better informed — not unnecessary.</p>
+        </div>
+        <div class="not-item">
+          <h3>Not a generic stretch machine.</h3>
+          <p>It does not run a fixed program and call it done. It assesses baseline ROM, adapts intensity to the athlete's tolerance, detects when they're compensating, and tells you whether the protocol is producing change or just chasing end-range.</p>
+        </div>
+        <div class="not-item">
+          <h3>Not a medical device.</h3>
+          <p>It does not diagnose injuries, prescribe treatment, or replace clinical assessment. It produces objective mobility data that your medical and performance staff can use to inform their own decisions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE MACHINE -->
+  <section class="section" id="machine">
+    <div class="container">
+      <p class="section-tag">The Machine</p>
+      <h2>What it physically is.</h2>
+
+      <div class="machine-breakdown">
+        <div class="machine-col">
+          <div class="machine-component">
+            <h3>Frame</h3>
+            <p>Open-front aluminum frame. 7 ft tall, 5 ft wide, 4 ft deep. The athlete walks in, lies on the bench, and is visible to staff at all times. No enclosure. No moving parts near the body except the cable.</p>
+          </div>
+
+          <div class="machine-component">
+            <h3>Bench</h3>
+            <p>Padded, adjustable bench with pelvis stabilization brace and contralateral leg anchor. Positions the athlete for supine, side-lying, or prone protocols. The stabilization is what makes the ROM measurement valid — without it, the athlete compensates and the data is useless.</p>
+          </div>
+
+          <div class="machine-component">
+            <h3>Cable System</h3>
+            <p>Single Dyneema cable (200 lb rating). Routes from a motorized spool through a top-mounted pulley to the attachment point. Quick-release carabiner at the cuff. The cable applies tension — the athlete's body weight and gravity do the rest. No robotic arms. No actuated joints.</p>
+          </div>
+
+          <div class="machine-component">
+            <h3>Motor + Drive</h3>
+            <p>200W brushless DC motor. 20:1 planetary gearbox for smooth, high-torque, low-speed output. ODrive field-oriented controller. Backdriveable — if the athlete pushes against the cable, the motor yields. This is a compliance system, not a positioning system.</p>
+          </div>
+        </div>
+
+        <div class="machine-col">
+          <div class="machine-component">
+            <h3>Force Sensing</h3>
+            <p>Inline load cell on the cable. 100Hz sampling. Measures tension to ±0.1 lb. This is the variable that controls the stretch — the PID loop targets a force, not a position. The cable doesn't pull the leg to an angle; it maintains a load and lets the tissue respond.</p>
+          </div>
+
+          <div class="machine-component">
+            <h3>Joint Tracking</h3>
+            <p>Intel RealSense depth camera mounted on the top crossbeam. Tracks 12 skeletal landmarks at 30fps. Calculates joint angle from hip, knee, and ankle positions. Detects pelvic rotation, trunk shift, and knee bend in real time. Accurate to ±2° in validated testing.</p>
+          </div>
+
+          <div class="machine-component">
+            <h3>Touchscreen</h3>
+            <p>15" display at standing height. Shows protocol queue, live ROM and force readout, compensation alerts, and session summary. Staff-facing interface — not designed for the athlete to operate mid-stretch.</p>
+          </div>
+
+          <div class="machine-component">
+            <h3>Safety System</h3>
+            <p>Five independent layers. Any one can halt the machine:</p>
+            <ul class="safety-list">
+              <li>Software force cap — 30 lb maximum</li>
+              <li>PID compliance loop — limits ramp rate</li>
+              <li>Mechanical slip clutch — 35 lb hard cutoff</li>
+              <li>Mushroom E-stop on frame — instant power cut</li>
+              <li>Quick-release carabiner — athlete disconnects in &lt;1 second</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="machine-summary">
+        <p>Total component cost for a single station: motor, gearbox, spool, pulley, load cell, depth camera, controller, frame, bench, touchscreen. No exotic parts. No custom silicon. Every component is commercially available and field-replaceable.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY IT MATTERS -->
+  <section class="section" id="value">
+    <div class="container">
+      <p class="section-tag">Why It Matters</p>
+      <h2>Five reasons a performance room would care.</h2>
+      <div class="value-list">
+        <div class="value-item">
+          <div class="value-num">1</div>
+          <div class="value-body">
+            <h3>Consistency you cannot get by hand.</h3>
+            <p>A therapist's force varies rep to rep, athlete to athlete, morning to afternoon. Vitruvian applies the same load every time. That's what makes the data comparable.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-num">2</div>
+          <div class="value-body">
+            <h3>Measurement that doesn't exist today.</h3>
+            <p>Most training rooms have no objective record of an athlete's hamstring ROM last Tuesday — let alone a 4-week trend at matched force. Vitruvian generates that automatically.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-num">3</div>
+          <div class="value-body">
+            <h3>Bilateral asymmetry detection at clinical thresholds.</h3>
+            <p>Left vs. right compared at identical force, identical position, identical protocol. Differences exceeding 10% are flagged. Resolution is tracked over weeks. No eyeballing.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-num">4</div>
+          <div class="value-body">
+            <h3>20 athletes in a morning, same protocol quality.</h3>
+            <p>Your best therapist can deliver excellent manual stretch to maybe 4–5 athletes before fatigue changes their output. The machine doesn't fatigue. The 20th athlete gets the same session as the first.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-num">5</div>
+          <div class="value-body">
+            <h3>Data that answers the actual question.</h3>
+            <p>Not "did we stretch today" but "is this athlete's tissue tolerance improving, is the asymmetry resolving, and are they ready for sprint exposure." That's what the session report shows.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHEN IT'S USED -->
+  <section class="section section-dark" id="schedule">
+    <div class="container">
+      <p class="section-tag">When It's Used</p>
+      <h2>Fits the training day. Doesn't add to it.</h2>
+
+      <div class="schedule-grid">
+        <div class="schedule-block">
+          <div class="schedule-time">Pre-Practice</div>
+          <h3>Used selectively — not across the full roster.</h3>
+          <p>Athletes with known restrictions or elevated risk run a 2-minute bilateral screen before training. If range drops or asymmetry increases, it's flagged before exposure.</p>
+          <p>If an athlete's hamstring ROM drops overnight, you want that before they sprint — not after.</p>
+        </div>
+
+        <div class="schedule-block">
+          <div class="schedule-time">Post-Training</div>
+          <h3>This is where it scales.</h3>
+          <p>15–20 athletes can run the same recovery protocol with identical load and execution. No degradation. No rushing. No variability.</p>
+          <p>Staff focuses on edge cases. The system handles volume.</p>
+        </div>
+
+        <div class="schedule-block">
+          <div class="schedule-time">Lift Days</div>
+          <h3>Used to validate readiness.</h3>
+          <p>Hip mobility before lower-body lifts. Ankle dorsiflexion before squat exposure. Adductor tolerance before lateral load.</p>
+          <p>If ROM doesn't support the session, you adjust.</p>
+        </div>
+
+        <div class="schedule-block">
+          <div class="schedule-time">Recovery Days</div>
+          <h3>Dedicated ROM development.</h3>
+          <p>Longer holds. Controlled loading. Tracked progression across weeks — not guesswork.</p>
+        </div>
+
+        <div class="schedule-block schedule-block-highlight">
+          <div class="schedule-time">Return-to-Play</div>
+          <h3>Highest-value use case.</h3>
+          <p>ROM vs. pre-injury baseline. Bilateral asymmetry. Guarding response. Tolerance under load.</p>
+          <p class="schedule-quote">"He's at 94% baseline, asymmetry under 8%, no guarding."</p>
+          <p>That's a decision — not an opinion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE SESSION FLOW -->
+  <section class="section" id="session-flow">
+    <div class="container">
+      <p class="section-tag">The Session</p>
+      <h2>Eight steps. Every variable tracked from the first.</h2>
+      <p class="section-sub">Identify the athlete. Select the mode. Assess baseline ROM. Recommend a protocol. Execute under force control. Monitor tissue response. Advance or regress based on measured thresholds. Summarize for the coach.</p>
+      <div class="session-steps">
+        <div class="session-step">
+          <div class="step-num">01</div>
+          <div class="step-body">
+            <h3>Athlete Identified</h3>
+            <p>NFC badge or ID entry. System loads profile, injury history, session log, last-known ROM baselines, and any medical restrictions.</p>
+          </div>
+        </div>
+        <div class="session-step">
+          <div class="step-num">02</div>
+          <div class="step-body">
+            <h3>Mode Selected</h3>
+            <p>Sport, goal, and schedule context determine the protocol family. Pre-game? Dynamic prep. Post-training? Recovery holds. Dedicated session? ROM gain with PNF. Staff can override.</p>
+          </div>
+        </div>
+        <div class="session-step">
+          <div class="step-num">03</div>
+          <div class="step-body">
+            <h3>Baseline Assessment</h3>
+            <p>Bilateral ROM screen at standardized force. Camera tracks 12 joint landmarks. System compares to last session and flags regressions or emerging asymmetries before the first stretch begins.</p>
+          </div>
+        </div>
+        <div class="session-step">
+          <div class="step-num">04</div>
+          <div class="step-body">
+            <h3>Protocol Recommendation</h3>
+            <p>Based on mode, baseline, readiness input, and longitudinal data, the system recommends a stretch queue: which muscle groups, what order, what intensity. Staff confirms or adjusts.</p>
+          </div>
+        </div>
+        <div class="session-step">
+          <div class="step-num">05</div>
+          <div class="step-body">
+            <h3>Assisted Stretch Execution</h3>
+            <p>Progressive tension ramp from slack to target force. PID loop holds cable load within ±0.2 lb. Depth camera logs joint angle at 30fps. Load cell logs tension at 100Hz. Compensation events flagged per rep. Contract-relax cycles cued when protocol calls for PNF.</p>
+          </div>
+        </div>
+        <div class="session-step">
+          <div class="step-num">06</div>
+          <div class="step-body">
+            <h3>Response Monitoring</h3>
+            <p>Six variables tracked continuously: joint angle change under load, cable force stability, end-range hold time, compensation events (pelvis, trunk, knee), tolerance threshold approach, and pain/discomfort response. All logged at the rep level.</p>
+          </div>
+        </div>
+        <div class="session-step">
+          <div class="step-num">07</div>
+          <div class="step-body">
+            <h3>Stop / Progress / Regress</h3>
+            <p>ROM still increasing at current force? Progress — advance tension 0.5 lb, extend hold. Tolerance threshold reached with no further ROM gain? Hold steady. Compensation count exceeds 2 in a set? Reduce force 15%. Pain response or E-stop? Immediate unload. Logic runs every 100ms.</p>
+          </div>
+        </div>
+        <div class="session-step">
+          <div class="step-num">08</div>
+          <div class="step-body">
+            <h3>Session Summary</h3>
+            <p>Pre/post ROM delta per muscle group. Bilateral asymmetry change. Total compensation events by type. Tolerance threshold vs. previous session. End-range hold time trend. 4-week and 8-week ROM rolling averages. Coach report pushed to dashboard and AMS. Athlete sees ROM change and asymmetry status on screen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PROBLEMS IT SOLVES -->
+  <section class="section section-dark" id="problems">
+    <div class="container">
+      <p class="section-tag">Problems It Solves</p>
+      <h2>Gaps that exist in every training room.</h2>
+      <div class="problems-list">
+        <div class="problem-item">
+          <div class="problem-num">01</div>
+          <div class="problem-body">
+            <h3>No mobility data.</h3>
+            <p>Most teams track force, speed, and load. Almost none track flexibility with usable precision.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-num">02</div>
+          <div class="problem-body">
+            <h3>Manual inconsistency.</h3>
+            <p>Stretch quality varies by therapist, time of day, and fatigue. The system removes that variability.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-num">03</div>
+          <div class="problem-body">
+            <h3>Asymmetry is invisible.</h3>
+            <p>A 10% difference matters. Manual tools can't reliably detect it.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-num">04</div>
+          <div class="problem-body">
+            <h3>Return-to-play blind spot.</h3>
+            <p>You have strength data. You have load data. You don't have mobility data. That's a gap.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-num">05</div>
+          <div class="problem-body">
+            <h3>No feedback loop.</h3>
+            <p>Programs are prescribed. Outcomes are assumed. Vitruvian closes that loop.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO PAYS -->
+  <section class="section" id="who">
+    <div class="container">
+      <p class="section-tag">Who Pays</p>
+      <h2>Four buyers. One data asset.</h2>
+      <div class="benefit-tiers">
+        <div class="benefit-tier">
+          <div class="benefit-priority high">Teams</div>
+          <h3>Pro &amp; collegiate programs</h3>
+          <p>Lease the hardware. Consume the reports. Protect guaranteed contracts.</p>
+        </div>
+        <div class="benefit-tier">
+          <div class="benefit-priority high">Insurers</div>
+          <h3>Workers' comp &amp; disability writers</h3>
+          <p>License risk signals. Price musculoskeletal premiums on evidence, not actuarial tables.</p>
+        </div>
+        <div class="benefit-tier">
+          <div class="benefit-priority med">Leagues</div>
+          <h3>League offices &amp; players' associations</h3>
+          <p>Roster-level availability models. Standardized injury reporting.</p>
+        </div>
+        <div class="benefit-tier">
+          <div class="benefit-priority med">Strategics</div>
+          <h3>Distribution &amp; acquisition partners</h3>
+          <p>Hyperice, Therabody, Catapult, Nike — embed our data in their stack.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATHLETES & COACHES -->
+  <section class="section section-dark" id="athletes-coaches">
+    <div class="container">
+      <p class="section-tag">Athletes &amp; Coaches</p>
+      <h2>Built for people who measure everything &mdash; except this.</h2>
+      <p style="max-width:620px; color:#888; font-size:16px; margin-bottom:36px;">
+        Two 1-page briefs. Pick yours.
+      </p>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:16px; margin-bottom:24px;">
+
+        <a href="briefs/athlete-brief.html" style="display:block; padding:28px; background:#22262e; border:1px solid rgba(255,255,255,0.08); border-radius:6px; text-decoration:none; color:#e0e0e0; transition:border-color 0.15s, transform 0.15s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.2)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'; this.style.transform=''">
+          <div style="font-size:11px; text-transform:uppercase; letter-spacing:0.14em; color:#888; margin-bottom:12px;">For Athletes</div>
+          <div style="font-size:20px; font-weight:600; line-height:1.3; color:#fff; margin-bottom:10px;">Know if you're getting tighter.</div>
+          <div style="font-size:14px; color:#888; line-height:1.5; margin-bottom:16px;">Real numbers. Per session. Under 8 minutes.</div>
+          <div style="font-size:13px; color:#fff; font-weight:500;">Read &rarr;</div>
+        </a>
+
+        <a href="briefs/coach-brief.html" style="display:block; padding:28px; background:#22262e; border:1px solid rgba(255,255,255,0.08); border-radius:6px; text-decoration:none; color:#e0e0e0; transition:border-color 0.15s, transform 0.15s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.2)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'; this.style.transform=''">
+          <div style="font-size:11px; text-transform:uppercase; letter-spacing:0.14em; color:#888; margin-bottom:12px;">For Performance Staff</div>
+          <div style="font-size:20px; font-weight:600; line-height:1.3; color:#fff; margin-bottom:10px;">Roster-grade data, AMS-ready.</div>
+          <div style="font-size:14px; color:#888; line-height:1.5; margin-bottom:16px;">Smartabase, Kitman, Catapult. 6-week pilot.</div>
+          <div style="font-size:13px; color:#fff; font-weight:500;">Read &rarr;</div>
+        </a>
+
+      </div>
+
+      <div style="background:#0f1115; border:1px solid rgba(255,255,255,0.08); padding:22px 28px; border-radius:6px; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap;">
+        <div style="font-size:15px; color:#e0e0e0;">Free 6-week pilot. Tell us about your team.</div>
+        <a href="feedback.html" style="background:#fff; color:#111; padding:11px 22px; border-radius:6px; text-decoration:none; font-weight:500; font-size:14px; white-space:nowrap;">Start Pilot &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-dark" id="faq">
+    <div class="container">
+      <p class="section-tag">FAQ</p>
+      <h2>Questions you should ask before buying.</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>Does the ROM measurement actually hold up?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>We claim ±2° — but you shouldn't take our word for it. Here's how it works: the Intel RealSense D435 depth camera captures a 12-point skeletal model at 30fps. Joint angles are computed from 3D coordinates using arctan2, not 2D projection. That eliminates the parallax error that kills phone-based goniometry apps. In our internal testing against manual goniometry by a licensed AT, test-retest reliability is under 1.5° for hamstring SLR across 200+ reps. If the system loses skeletal tracking — athlete shifts off bench, clothing occlusion, sweat reflection — it flags the rep as invalid rather than reporting a bad number. No silent failures. Every measurement ships with a confidence score. Ask us for the raw validation data — we'll send it.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>Will staff actually use it daily?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>We built this for 6am pre-practice, not a research lab. The workflow is: athlete badges in (system loads their profile and last session's data automatically), selects their stretch protocol from the touchscreen, lies down, and the machine runs. No calibration step. No dedicated technician. No laptop. Setup to first stretch is under 45 seconds. Your GA can run it. Your athletes can run it solo after one walkthrough. The depth camera auto-calibrates on boot. The cable auto-tensions to zero before every session. If a device requires a PhD or a 20-minute setup ritual, it'll collect dust by October — we designed around that reality from day one.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>Is it safe for post-injury athletes?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>This is the question that matters most, so here's the full answer. Five independent safety layers, each of which can halt the stretch on its own: (1) Software force cap — a hard ceiling set by your medical staff, cannot be overridden by any protocol, enforced in &lt;10ms. (2) PID compliance loop — the motor controller tracks the force setpoint at 100Hz and auto-reduces on any overshoot. (3) Mechanical slip clutch — if cable tension exceeds 35 lb for any reason (including software failure), the spool physically slips. No electronics involved. (4) Mushroom E-stop — hardwired motor kill, accessible to both staff and athlete, cuts power in &lt;50ms. (5) Quick-release cuff — the athlete can disconnect from the cable instantly with one hand. For return-to-play athletes, your PT or AT sets per-athlete ROM ceilings and force limits in the system. The machine will not exceed them, period. If the depth camera detects compensation — pelvic rotation, knee bend, trunk shift — it automatically reduces tension before the athlete is at risk. That's not a safety claim. That's a real-time biomechanical feedback loop.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>What happens if it breaks in-season?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>In-season downtime is a non-starter — we get it. The service model is built around that reality. If a repair takes longer than 48 hours, we ship a loaner unit. But most failure modes never get there: cable wear is the most common maintenance item, and it's a 10-minute swap your equipment staff can do with a hex wrench and a replacement spool (included in the service kit). Depth camera drift triggers an automatic recalibration routine — no technician required. The motor controller runs self-diagnostics on boot and flags anomalies before they become failures. Load cell calibration is a one-button check. We designed the hardware for field serviceability, not factory returns. The only scenario that requires us on-site is a motor or gearbox replacement, and those are built to last 10,000+ hours of continuous operation.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>Is this solving a real problem or just adding technology?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Fair question — and the honest test is simple: if you gave your staff an extra hour per day instead of this machine, would they produce the same outcomes manually? If yes, you don't need it. But here's what manual stretching can't do: apply exactly 12 lb of tension to a hamstring, hold it for exactly 30 seconds, measure the joint angle to ±2°, compare it to the other leg at matched force, log all of it, and repeat that identically across 60 athletes and 180 sessions per week. That's not a technology pitch — it's a measurement and consistency problem that human hands physically cannot solve at scale. Manual goniometry has 5–10° of inter-rater error. Staff fatigue over 4-hour stretch blocks is real. And nobody is tracking longitudinal ROM trends on a clipboard. If those gaps don't matter to your program, this isn't for you. If they do, nothing else on the market closes them.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>How does this integrate with our existing AMS?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Vitruvian pushes session data to your existing athlete management system via REST API — Smartabase, Kitman Labs, Catapult, or any custom platform your IT team runs. No manual CSV exports. No copy-paste. The moment an athlete finishes a session, the report (ROM, force, asymmetry, compensation flags, tolerance threshold) is available in your AMS within seconds. Athlete profiles sync both ways: roster changes, injury flags, and return-to-play protocols flow from your system into Vitruvian so staff never have to enter the same information twice. If your AMS isn't on our integration list, we build the connector during onboarding — it's a standard REST endpoint, not a custom software project. Your data lives in your system, under your control. We store session data on-device and in the cloud for trend analysis, but your AMS is always the system of record.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>What does a trial look like?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Six weeks. Your training room. Your athletes. Your schedule. We install the unit, train your staff (takes about 30 minutes), and get out of your way. During the trial, you'll run real protocols with real athletes — pre-practice screening, post-practice recovery, return-to-play progressions, whatever fits your program. At the end of six weeks, you'll have longitudinal ROM data on every athlete who used it, bilateral asymmetry trends, and session-over-session flexibility gains (or not). That data either makes the case or it doesn't — and we're fine with that. We don't expect anyone to buy from a website or a pitch deck. We expect them to buy after their head AT says "I need this in here permanently." If the trial doesn't produce that reaction, we take it back. No obligation, no residual fees.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT MAKES IT GET BOUGHT -->
+  <section class="section" id="buy">
+    <div class="container">
+      <p class="section-tag">What Makes It Get Bought</p>
+      <h2>Four purchase triggers.</h2>
+      <div class="buy-list">
+        <div class="buy-item">
+          <div class="buy-num">1</div>
+          <div class="buy-body">
+            <h3>Real-world validation.</h3>
+            <p>Not demos. 6 weeks in a real training room.</p>
+          </div>
+        </div>
+        <div class="buy-item">
+          <div class="buy-num">2</div>
+          <div class="buy-body">
+            <h3>Return-to-play case study.</h3>
+            <p>One athlete. Full timeline. Data alongside force + GPS.</p>
+          </div>
+        </div>
+        <div class="buy-item">
+          <div class="buy-num">3</div>
+          <div class="buy-body">
+            <h3>Hardware-first model.</h3>
+            <p>Own the system. Own the data.</p>
+          </div>
+        </div>
+        <div class="buy-item">
+          <div class="buy-num">4</div>
+          <div class="buy-body">
+            <h3>Works at 6am.</h3>
+            <p>No setup friction. No extra staff. No complexity.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- IMMERSIVE DEMO -->
+  <section class="section" id="demo">
+    <div class="container">
+      <p class="section-tag">The Platform</p>
+      <h2>See it from every angle.</h2>
+
+      <!-- View Selector Tabs -->
+      <div class="view-tabs">
+        <button class="view-tab active" data-view="side">The Machine</button>
+        <button class="view-tab" data-view="front">In Action</button>
+        <button class="view-tab" data-view="detail">Components</button>
+        <button class="view-tab" data-view="session">Live Session</button>
+      </div>
+
+      <div class="demo-immersive">
+
+      <!-- ======== THE MACHINE ======== -->
+      <div class="view-panel active" id="view-side">
+        <div class="demo-img-wrap">
+          <img src="images/hero-v2.png" alt="Vitruvian stretching station — goalpost aluminum frame with padded bench, single cable, motor assembly, depth camera, and touchscreen" loading="lazy">
+        </div>
+        <div class="demo-img-caption">
+          <div class="caption-specs">
+            <span>7 ft aluminum frame</span>
+            <span>Single cable drive</span>
+            <span>Flat treatment bench</span>
+            <span>Depth camera</span>
+            <span>15" touchscreen</span>
+            <span>E-stop</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ======== IN ACTION ======== -->
+      <div class="view-panel" id="view-front">
+        <div class="demo-img-wrap">
+          <img src="images/hero-inuse.png" alt="Professional athlete during a cable-assisted hamstring stretch — leg raised by motorized cable, touchscreen displaying live ROM and force data" loading="lazy">
+        </div>
+        <div class="demo-img-caption">
+          <div class="caption-specs">
+            <span>Supine straight-leg raise</span>
+            <span>Cable-controlled 40° elevation</span>
+            <span>Live force + ROM readout</span>
+            <span>PID-maintained constant tension</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ======== COMPONENTS ======== -->
+      <div class="view-panel" id="view-detail">
+        <div class="detail-grid">
+          <div class="detail-panel">
+            <span class="detail-label">Drive System</span>
+            <div class="demo-img-wrap detail-img">
+              <img src="images/detail-drive.png" alt="BLDC motor with planetary gearbox and cable spool assembly" loading="lazy">
+            </div>
+            <span class="detail-value">200W BLDC + 20:1 Planetary Gearbox</span>
+            <p>Brushless DC motor through a planetary gearbox for smooth, high-torque, backdriveable cable control. ODrive FOC controller at 100Hz.</p>
+          </div>
+          <div class="detail-panel">
+            <span class="detail-label">Depth Camera</span>
+            <div class="demo-img-wrap detail-img">
+              <img src="images/detail-sensor.png" alt="Intel RealSense depth camera with IR emitters and RGB sensor" loading="lazy">
+            </div>
+            <span class="detail-value">Intel RealSense D435</span>
+            <p>Structured-light depth camera for 12-point skeletal tracking at 30fps. Detects compensation, measures ROM to ±2°.</p>
+          </div>
+          <div class="detail-panel">
+            <span class="detail-label">Touchscreen Interface</span>
+            <div class="demo-img-wrap detail-img">
+              <img src="images/detail-ui.png" alt="Live stretching session interface showing force, ROM, and progress data" loading="lazy">
+            </div>
+            <span class="detail-value">15" Live Session Display</span>
+            <p>Real-time force graph, joint angle tracking, bilateral comparison, and session progress. Dark UI with green accent data.</p>
+          </div>
+          <div class="detail-panel">
+            <span class="detail-label">Ankle Cuff</span>
+            <div class="demo-img-wrap detail-img">
+              <img src="images/detail-attachment.png" alt="Padded neoprene ankle cuff with carabiner quick-release" loading="lazy">
+            </div>
+            <span class="detail-value">Quick-Release Attachment</span>
+            <p>Padded neoprene cuff with carabiner quick-release. Athlete can disconnect instantly. Rated to 200 lb.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ======== LIVE SESSION ======== -->
+      <div class="view-panel" id="view-session">
+        <div class="session-layout">
+          <div class="demo-img-wrap session-img">
+            <img src="images/hero-inuse.png" alt="Athlete mid-stretch during live session" loading="lazy">
+            <div class="session-img-overlay">
+              <div class="session-live-badge">LIVE SESSION</div>
+            </div>
+          </div>
+
+          <div class="session-panel">
+            <!-- Step dots -->
+            <div class="session-dots">
+              <div class="session-dot active current" data-step="0"></div>
+              <div class="session-dot" data-step="1"></div>
+              <div class="session-dot" data-step="2"></div>
+              <div class="session-dot" data-step="3"></div>
+              <div class="session-dot" data-step="4"></div>
+              <div class="session-dot" data-step="5"></div>
+              <div class="session-dot" data-step="6"></div>
+              <div class="session-dot" data-step="7"></div>
+            </div>
+
+            <!-- Step 0: Badge In -->
+            <div class="session-step-content active" id="sStep0">
+              <h3>Badge In</h3>
+              <p>Athlete scans their ID. System loads profile, injury history, and previous session data.</p>
+              <div class="live-data-grid">
+                <div class="data-card"><span class="data-label">Athlete</span><span class="data-value">#23 Williams</span></div>
+                <div class="data-card"><span class="data-label">Sessions</span><span class="data-value">14</span></div>
+                <div class="data-card"><span class="data-label">Status</span><span class="data-value" style="color:#4ade80">Active</span></div>
+              </div>
+            </div>
+
+            <!-- Step 1: Mode Select -->
+            <div class="session-step-content" id="sStep1">
+              <h3>Mode Select</h3>
+              <p>Staff selects protocol based on training context. Post-game recovery — intensity ceiling auto-adjusted.</p>
+              <div class="live-data-grid">
+                <div class="data-card"><span class="data-label">Context</span><span class="data-value">Post-Game</span></div>
+                <div class="data-card"><span class="data-label">Protocol</span><span class="data-value">Recovery</span></div>
+                <div class="data-card"><span class="data-label">Intensity</span><span class="data-value" style="color:#facc15">Reduced</span></div>
+              </div>
+            </div>
+
+            <!-- Step 2: Baseline Screen -->
+            <div class="session-step-content" id="sStep2">
+              <h3>Baseline Screen</h3>
+              <p>Standardized passive SLR at 8 lb each side. Objective bilateral comparison.</p>
+              <div class="live-data-grid">
+                <div class="data-card"><span class="data-label">L Ham</span><span class="data-value" style="color:#4ade80">74°</span></div>
+                <div class="data-card"><span class="data-label">R Ham</span><span class="data-value" style="color:#facc15">68°</span></div>
+                <div class="data-card"><span class="data-label">Asymmetry</span><span class="data-value" style="color:#ef4444">8.1%</span></div>
+              </div>
+            </div>
+
+            <!-- Step 3: Protocol Set -->
+            <div class="session-step-content" id="sStep3">
+              <h3>Protocol Set</h3>
+              <p>R Hamstring SLR with PNF overlay. 3 sets, 30s hold, 8 lb peak.</p>
+              <div class="live-data-grid">
+                <div class="data-card"><span class="data-label">Target</span><span class="data-value">R Hamstring</span></div>
+                <div class="data-card"><span class="data-label">Sets</span><span class="data-value">3 × 30s</span></div>
+                <div class="data-card"><span class="data-label">Peak Force</span><span class="data-value">8.0 lb</span></div>
+              </div>
+            </div>
+
+            <!-- Step 4: Stretch Execute -->
+            <div class="session-step-content" id="sStep4">
+              <h3>Stretch Execute</h3>
+              <p>Cable tension ramps. PID loop maintains constant force as tissue yields.</p>
+              <div class="live-data-grid">
+                <div class="data-card"><span class="data-label">Force</span><span class="data-value" id="s-force" style="color:#4ade80">0.0 lb</span></div>
+                <div class="data-card"><span class="data-label">ROM</span><span class="data-value" id="s-rom" style="color:#facc15">0°</span></div>
+                <div class="data-card"><span class="data-label">Hold</span><span class="data-value" id="s-hold">0s</span></div>
+              </div>
+              <div class="session-gauge">
+                <div class="gauge-label">Cable Tension</div>
+                <div class="gauge-track"><div class="gauge-fill" id="s-gauge-fill"></div></div>
+                <div class="gauge-scale"><span>0 lb</span><span>4 lb</span><span>8 lb</span></div>
+              </div>
+            </div>
+
+            <!-- Step 5: Response Monitor -->
+            <div class="session-step-content" id="sStep5">
+              <h3>Response Monitor</h3>
+              <p>Compensation detection active. Force variability tracked. Tissue tolerance assessed.</p>
+              <div class="live-data-grid">
+                <div class="data-card"><span class="data-label">Force</span><span class="data-value" style="color:#4ade80"><span class="pulse-indicator"></span>8.2 lb</span></div>
+                <div class="data-card"><span class="data-label">ROM</span><span class="data-value" style="color:#facc15"><span class="pulse-indicator warning"></span>42°</span></div>
+                <div class="data-card"><span class="data-label">Pelvis</span><span class="data-value" style="color:#4ade80"><span class="pulse-indicator"></span>Stable</span></div>
+              </div>
+            </div>
+
+            <!-- Step 6: Progress / Regress -->
+            <div class="session-step-content" id="sStep6">
+              <h3>Progress / Regress</h3>
+              <p>System recommends: advance to PNF contract-relax for sets 2–3.</p>
+              <div class="live-data-grid">
+                <div class="data-card"><span class="data-label">Decision</span><span class="data-value" style="color:#4ade80">Progress</span></div>
+                <div class="data-card"><span class="data-label">Next</span><span class="data-value">PNF Overlay</span></div>
+                <div class="data-card"><span class="data-label">Expected</span><span class="data-value">+2.5°</span></div>
+              </div>
+            </div>
+
+            <!-- Step 7: Session Summary -->
+            <div class="session-step-content" id="sStep7">
+              <h3>Session Summary</h3>
+              <p>Full session logged. Bilateral comparison updated. Trend analysis ready for staff review.</p>
+              <div class="live-data-grid">
+                <div class="data-card"><span class="data-label">ROM Gain</span><span class="data-value" style="color:#4ade80">+5° acute</span></div>
+                <div class="data-card"><span class="data-label">Asymmetry</span><span class="data-value" style="color:#4ade80">8.1% → 3.2%</span></div>
+                <div class="data-card"><span class="data-label">Duration</span><span class="data-value">8m 42s</span></div>
+              </div>
+            </div>
+
+            <!-- Session navigation -->
+            <div class="session-nav">
+              <button class="btn btn-secondary" id="sPrev" disabled>Back</button>
+              <button class="btn btn-primary" id="sNext">Start Session</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </div><!-- .demo-immersive -->
+    </div>
+  </section>
+  <!-- WHAT IT MEASURES -->
+  <section class="section section-dark" id="measures">
+    <div class="container">
+      <p class="section-tag">What It Measures</p>
+      <h2>Nine variables. Measured, not estimated.</h2>
+      <div class="advantages">
+        <div class="advantage">
+          <h3>Joint Angle Tracking</h3>
+          <p>Peak passive ROM at standardized force thresholds via depth camera + cable geometry. Accurate to ±2°. Comparable across sessions, testers, and athletes.</p>
+        </div>
+        <div class="advantage">
+          <h3>Cable Force Monitoring</h3>
+          <p>Inline load cell at 100Hz. Logs progressive tension ramp, peak force at end-range, and force variability during hold. Indicates tissue stiffness, not just range.</p>
+        </div>
+        <div class="advantage">
+          <h3>Side-to-Side Asymmetry</h3>
+          <p>Left vs. right comparison at matched force thresholds. Flags differences exceeding 10%. Tracks asymmetry resolution across sessions — documented, not eyeballed.</p>
+        </div>
+        <div class="advantage">
+          <h3>End-Range Hold Time</h3>
+          <p>Duration the athlete sustains peak ROM without retreating. A neuromuscular tolerance metric — measures relaxation response and stretch acceptance under constant load.</p>
+        </div>
+        <div class="advantage">
+          <h3>Compensation Detection</h3>
+          <p>12-point skeletal tracking identifies pelvic rotation, trunk lateral flexion, and knee bend during stretch. Compensation events logged with timestamp, type, and magnitude.</p>
+        </div>
+        <div class="advantage">
+          <h3>Tolerance Threshold</h3>
+          <p>The force at which ROM stops increasing — the athlete's neuromuscular limit for that session. Tracked longitudinally. A rising threshold means the tissue is adapting.</p>
+        </div>
+        <div class="advantage">
+          <h3>Pain / Discomfort Response</h3>
+          <p>Athlete tap-out, verbal cue, or system-detected guarding behavior (sudden force spike + ROM reversal). Logged per rep. Used to auto-regress protocol intensity.</p>
+        </div>
+        <div class="advantage">
+          <h3>Progressive Tension Ramp</h3>
+          <p>The force-time curve from slack to end-range. Characterizes how the tissue takes up load. A steep ramp with early plateau suggests stiffness; a gradual ramp suggests compliance.</p>
+        </div>
+        <div class="advantage">
+          <h3>Session-to-Session ROM Change</h3>
+          <p>Rolling 4-week and 8-week averages at matched force. Separates acute stretch response from chronic tissue adaptation. The number that tells you if the program is working.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TRAINERS ASK -->
+  <section class="section" id="trainers">
+    <div class="container">
+      <p class="section-tag">Built for the Questions You Ask Every Day</p>
+      <h2>The seven questions a performance room runs on.</h2>
+      <p class="section-sub">These are the decisions your staff makes every morning. Vitruvian gives them measured answers instead of clinical guesses.</p>
+      <div class="trainer-questions">
+        <div class="trainer-q">
+          <div class="q-mark">?</div>
+          <div class="q-body">
+            <h3>Is left vs. right symmetrical?</h3>
+            <p>Bilateral ROM comparison at matched force thresholds. Flags differences > 10%. Tracks resolution week over week. You see the number, not a therapist's impression.</p>
+          </div>
+        </div>
+        <div class="trainer-q">
+          <div class="q-mark">?</div>
+          <div class="q-body">
+            <h3>Did hamstring tolerance improve?</h3>
+            <p>Force at end-range compared to last session. If the athlete tolerates 8.4 lb today at 72° vs. 7.6 lb at 70° last week, tolerance is up. That's tissue adaptation, not just acute stretch.</p>
+          </div>
+        </div>
+        <div class="trainer-q">
+          <div class="q-mark">?</div>
+          <div class="q-body">
+            <h3>Is adductor ROM restricted today?</h3>
+            <p>Baseline assessment compares today's passive abduction ROM to the athlete's own rolling 4-week average. A drop of 4°+ triggers a flag before training begins.</p>
+          </div>
+        </div>
+        <div class="trainer-q">
+          <div class="q-mark">?</div>
+          <div class="q-body">
+            <h3>Is this athlete ready for sprint exposure?</h3>
+            <p>Hamstring SLR ROM within 5° of their own baseline. Bilateral asymmetry under 10%. No protective guarding events in today's assessment. No abort triggers. If all four pass, the system shows green.</p>
+          </div>
+        </div>
+        <div class="trainer-q">
+          <div class="q-mark">?</div>
+          <div class="q-body">
+            <h3>Are they guarding?</h3>
+            <p>Protective guarding = sudden force spike + simultaneous ROM reversal. The system detects it per rep, logs frequency, and compares to previous sessions. Rising guarding frequency is a warning signal — even if ROM looks fine.</p>
+          </div>
+        </div>
+        <div class="trainer-q">
+          <div class="q-mark">?</div>
+          <div class="q-body">
+            <h3>Is the pelvis compensating?</h3>
+            <p>Depth camera tracks pelvic rotation, anterior tilt, and lateral shift during every stretch. Compensation events logged with magnitude. If the pelvis moves more than 5° during SLR, the reported ROM is adjusted — or the rep is flagged as compromised.</p>
+          </div>
+        </div>
+        <div class="trainer-q">
+          <div class="q-mark">?</div>
+          <div class="q-body">
+            <h3>Are we seeing useful change — or just chasing end range?</h3>
+            <p>The system separates acute stretch response (today's session gain) from chronic adaptation (4-week rolling average). If ROM gains aren't holding session to session, the protocol isn't working — and the data shows it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SESSION REPORT -->
+  <section class="section section-dark" id="report">
+    <div class="container">
+      <p class="section-tag">Session Report</p>
+      <h2>What the coach sees after every session.</h2>
+      <p class="section-sub">This is the output. Not a graph wall — the specific numbers that drive today's training decisions.</p>
+      <div class="report-mock">
+        <div class="report-header">
+          <div class="report-athlete">
+            <span class="report-name">Marcus Williams</span>
+            <span class="report-meta">CB · R Hamstring Focus · Post-Training Recovery</span>
+          </div>
+          <span class="report-date">Session #14 · Apr 7, 2026</span>
+        </div>
+        <div class="report-grid">
+          <div class="report-item">
+            <span class="report-label">Passive SLR Delta</span>
+            <span class="report-value green">+4° (R) / +1° (L)</span>
+            <span class="report-note">R hamstring responding to protocol. L stable.</span>
+          </div>
+          <div class="report-item">
+            <span class="report-label">Hip IR/ER Symmetry</span>
+            <span class="report-value yellow">IR: 38°/42° · ER: 44°/44°</span>
+            <span class="report-note">Internal rotation asymmetry 10.5% — at threshold.</span>
+          </div>
+          <div class="report-item">
+            <span class="report-label">Ankle Dorsiflexion</span>
+            <span class="report-value green">R: 14° · L: 15°</span>
+            <span class="report-note">Within normal. No restriction detected.</span>
+          </div>
+          <div class="report-item">
+            <span class="report-label">Adductor Tolerance</span>
+            <span class="report-value yellow">R: 6.8 lb at 34° · L: 7.4 lb at 36°</span>
+            <span class="report-note">R adductor 2° below 4-week avg. Monitor.</span>
+          </div>
+          <div class="report-item">
+            <span class="report-label">Force at End-Range</span>
+            <span class="report-value green">8.4 lb (up from 7.6 lb last session)</span>
+            <span class="report-note">Tolerance threshold rising. Tissue adapting.</span>
+          </div>
+          <div class="report-item">
+            <span class="report-label">End-Range Hold Time</span>
+            <span class="report-value green">28s avg (up from 22s)</span>
+            <span class="report-note">Sustained hold improving. Neuromuscular acceptance.</span>
+          </div>
+          <div class="report-item">
+            <span class="report-label">Protective Guarding Events</span>
+            <span class="report-value green">1 event (R hamstring, rep 3)</span>
+            <span class="report-note">Down from 4 events in session #10. Trend positive.</span>
+          </div>
+          <div class="report-item">
+            <span class="report-label">Abort / Regress Triggers</span>
+            <span class="report-value green">0 aborts · 0 auto-regress</span>
+            <span class="report-note">Full protocol completed without intervention.</span>
+          </div>
+          <div class="report-item">
+            <span class="report-label">Compensation Events</span>
+            <span class="report-value yellow">2 pelvic rotations (reps 5, 7)</span>
+            <span class="report-note">Below threshold. ROM not adjusted. Logged for trend.</span>
+          </div>
+          <div class="report-item report-item-wide">
+            <span class="report-label">Recommended Next Protocol</span>
+            <span class="report-value neutral">Progress R hamstring to PNF (tolerance supports it). Maintain L hamstring current protocol. Add R hip IR stretch — asymmetry approaching threshold. Re-screen adductors next session.</span>
+          </div>
+        </div>
+        <div class="report-readiness">
+          <span class="readiness-label">Sprint Readiness</span>
+          <span class="readiness-status green">CLEARED</span>
+          <span class="readiness-detail">SLR within 3° of baseline · Asymmetry 5.3% · 0 guarding flags · 0 aborts</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- V1 PROTOCOL LIBRARY -->
+  <section class="section" id="protocols">
+    <div class="container">
+      <p class="section-tag">V1 Stretch Library</p>
+      <h2>Start with what's most controllable. Build from there.</h2>
+      <p class="section-sub">V1 covers the patterns where a single cable, a stabilized bench, and a depth camera can deliver repeatable, instrumented stretch with high confidence. These are the stretches that matter most and are hardest to standardize by hand.</p>
+
+      <div class="protocol-tiers">
+        <div class="tier">
+          <div class="tier-label">V1 — Ship with launch</div>
+          <div class="tier-items">
+            <div class="tier-item">
+              <h4>Hamstring — Passive SLR</h4>
+              <p>Supine. Ankle cuff. Single cable lifts leg. Pelvis braced. The gold-standard hamstring assessment and stretch — and the hardest to keep consistent across 20 athletes by hand.</p>
+              <div class="tier-tags"><span>Supine</span><span>Single cable</span><span>Pelvis stabilized</span></div>
+            </div>
+            <div class="tier-item">
+              <h4>Adductor — Passive Abduction</h4>
+              <p>Supine. Ankle cuff abducts leg. Contralateral leg anchored. Pelvis braced laterally. Clean single-plane movement with reliable compensation detection.</p>
+              <div class="tier-tags"><span>Supine</span><span>Single cable</span><span>Bilateral anchor</span></div>
+            </div>
+            <div class="tier-item">
+              <h4>Hip Flexor / Quad — Passive Extension</h4>
+              <p>Side-lying. Thigh cuff extends hip. Pelvis braced anteriorly. Single-plane hip extension — controllable, repeatable, and directly relevant to sprint mechanics.</p>
+              <div class="tier-tags"><span>Side-lying</span><span>Thigh cuff</span><span>Anterior brace</span></div>
+            </div>
+            <div class="tier-item">
+              <h4>PNF Contract-Relax Overlay</h4>
+              <p>Available on all V1 patterns. 5s isometric against cable, load cell confirms contraction quality, 30s passive advance. 3 cycles per group. Exploits post-isometric relaxation for chronic ROM gains.</p>
+              <div class="tier-tags"><span>All patterns</span><span>Force-verified</span><span>3 cycles</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tier tier-future">
+          <div class="tier-label">V2 — Post-launch development</div>
+          <div class="tier-items">
+            <div class="tier-item">
+              <h4>Hip IR/ER — Rotation Assessment</h4>
+              <p>Supine, knee flexed 90°. Requires rotational cable routing and controlled rotation tracking. High clinical value — hip rotation asymmetry is one of the strongest predictors of lower extremity injury.</p>
+              <div class="tier-tags"><span>Rotational</span><span>Multi-axis</span><span>High priority</span></div>
+            </div>
+            <div class="tier-item">
+              <h4>Ankle Dorsiflexion</h4>
+              <p>Requires foot plate attachment and dorsiflexion-specific cable geometry. Critical for squat depth, landing mechanics, and Achilles load management. Standardized knee-to-wall equivalent.</p>
+              <div class="tier-tags"><span>Foot plate</span><span>Specialized</span><span>Weight-bearing option</span></div>
+            </div>
+            <div class="tier-item">
+              <h4>Thoracic Rotation</h4>
+              <p>Seated or side-lying. Requires trunk harness and rotation tracking through depth camera. High value for throwing athletes, rotational sport athletes, and desk-worker populations.</p>
+              <div class="tier-tags"><span>Trunk harness</span><span>Rotational</span><span>Multi-segment</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scope-note">
+        <strong>Why not everything at once?</strong> Hip rotation requires multi-axis cable routing. Ankle DF needs a foot plate. Thoracic rotation needs trunk fixation. These are solvable — but V1 ships with the patterns where a single cable and stabilized bench deliver the highest-confidence measurement. The platform is built to add patterns as hardware accessories ship.</div>
+    </div>
+  </section>
+
+  <!-- STAFF DASHBOARD -->
+  <section class="section section-dark" id="staff">
+    <div class="container">
+      <p class="section-tag">Staff Dashboard</p>
+      <h2>The queries your performance staff actually runs.</h2>
+      <div class="specs-grid">
+        <div class="spec">
+          <h4>Who has the worst asymmetry today?</h4>
+          <p>All athletes sorted by bilateral ROM difference. Filter by muscle group, position group, or injury status. The names at the top of the list get attention first.</p>
+        </div>
+        <div class="spec">
+          <h4>Who regressed this week?</h4>
+          <p>Athletes whose rolling 4-week ROM average dropped 3°+ in any tested pattern. Automatic flag. You see it before the athlete reports tightness.</p>
+        </div>
+        <div class="spec">
+          <h4>Is this athlete cleared for sprint exposure?</h4>
+          <p>Hamstring SLR within 5° of baseline. Asymmetry under 10%. Zero guarding events in today's screen. Zero abort triggers. Green / yellow / red — one glance.</p>
+        </div>
+        <div class="spec">
+          <h4>Who's guarding more than last week?</h4>
+          <p>Protective guarding events per session, trended over time. A rising count — even with stable ROM — means the athlete is working harder to tolerate the same stretch. That's a signal.</p>
+        </div>
+        <div class="spec">
+          <h4>Is the program working?</h4>
+          <p>Chronic ROM change (rolling 8-week) vs. acute session gain. If session gains aren't consolidating into chronic change, the protocol isn't producing adaptation. The data shows it plainly.</p>
+        </div>
+        <div class="spec">
+          <h4>Return-to-play: where are they?</h4>
+          <p>Involved vs. uninvolved limb ROM at matched force. Progress as percentage of pre-injury baseline. Objective documentation for the physician who has to sign the clearance form.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAITLIST -->
+  <section class="section section-cta" id="waitlist">
+    <div class="container">
+      <h2>Request early access.</h2>
+      <p class="cta-sub">Vitruvian is in prototype development. We're partnering with performance staffs for beta testing. If you run a collegiate, professional, or Olympic training room — let's talk.</p>
+      <form class="waitlist-form" onsubmit="handleSubmit(event)">
+        <input type="email" placeholder="Your work email" required>
+        <button type="submit" class="btn btn-primary">Request Demo</button>
+      </form>
+      <p class="form-note">For performance directors, head ATs, and sports medicine staff.</p>
+    </div>
+  </section>
+
+  <!-- SITEMAP -->
+  <section class="section" style="background:#111; color:#fff; padding:48px 0;">
+    <div class="container">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:40px;">
+        <div>
+          <h4 style="font-size:11px; text-transform:uppercase; letter-spacing:0.14em; color:#888; margin-bottom:14px;">Site</h4>
+          <ul style="list-style:none; font-size:14px; line-height:2;">
+            <li><a href="hub.html" style="color:#fff;">Data Room</a></li>
+            <li><a href="pitch.html" style="color:#fff;">Deck</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size:11px; text-transform:uppercase; letter-spacing:0.14em; color:#888; margin-bottom:14px;">Briefs</h4>
+          <ul style="list-style:none; font-size:14px; line-height:2;">
+            <li><a href="briefs/athlete-brief.html" style="color:#fff;">Athlete</a></li>
+            <li><a href="briefs/coach-brief.html" style="color:#fff;">Coach</a></li>
+            <li><a href="feedback.html" style="color:#fff;">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size:11px; text-transform:uppercase; letter-spacing:0.14em; color:#888; margin-bottom:14px;">Patent</h4>
+          <ul style="list-style:none; font-size:14px; line-height:2;">
+            <li><a href="patent.html" style="color:#fff;">Filing</a></li>
+            <li><a href="drawings.html" style="color:#fff;">Drawings</a></li>
+            <li><a href="figures/" style="color:#fff;">Figures</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size:11px; text-transform:uppercase; letter-spacing:0.14em; color:#888; margin-bottom:14px;">Docs</h4>
+          <ul style="list-style:none; font-size:14px; line-height:2;">
+            <li><a href="docs/" style="color:#fff;">Design docs</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="Vitruvian" width="28" height="28">
+        <span>VITRUVIAN</span>
+      </div>
+      <p class="copyright">2026 Vitruvian. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      var input = e.target.querySelector('input');
+      var btn = e.target.querySelector('button');
+      btn.textContent = "We'll be in touch.";
+      btn.style.background = '#22c55e';
+      input.disabled = true;
+      btn.disabled = true;
+    }
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(function(q) {
+      q.addEventListener('click', function() {
+        this.parentElement.classList.toggle('open');
+      });
+    });
+  </script>
+  <script src="demo-immersive.js"></script>
+</body>
+</html>
