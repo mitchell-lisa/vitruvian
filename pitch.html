@@ -6,7 +6,7 @@
   <link rel="icon" type="image/svg+xml" href="modulor-logo.png">
   <title>Modulor — Actuarial infrastructure for musculoskeletal injury risk</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Inter', sans-serif; background: #0D1012; color: #e0e0e0; }
@@ -43,14 +43,14 @@
       color: #2E6F73;
       margin-bottom: 16px;
     }
-    h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(40px, 5vw, 72px); font-weight: 800; letter-spacing: -0.01em; line-height: 1.05; color: #ede8e0; margin-bottom: 24px; }
-    h2 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(30px, 4vw, 54px); font-weight: 700; letter-spacing: -0.01em; line-height: 1.1; color: #ede8e0; margin-bottom: 20px; }
+    h1 { font-family: 'Inter Tight', sans-serif; font-size: clamp(40px, 5vw, 72px); font-weight: 800; letter-spacing: -0.01em; line-height: 1.05; color: #F3F0E8; margin-bottom: 24px; }
+    h2 { font-family: 'Inter Tight', sans-serif; font-size: clamp(30px, 4vw, 54px); font-weight: 700; letter-spacing: -0.01em; line-height: 1.1; color: #F3F0E8; margin-bottom: 20px; }
     h3 { font-size: 20px; font-weight: 600; color: #d8d4cc; margin-bottom: 8px; }
     p { font-size: 17px; line-height: 1.7; color: #8898b0; max-width: 680px; }
     p.large { font-size: 20px; line-height: 1.65; }
     .accent { color: #2E6F73; }
     .warn { color: #5A7FA3; }
-    .danger { color: #ef4444; }
+    .danger { color: #A94A3B; }
 
     /* Layout helpers */
     .split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
@@ -470,7 +470,7 @@
       border-color: rgba(46,111,115,0.5);
     }
     .nda-field input.error {
-      border-color: #ef4444;
+      border-color: #A94A3B;
     }
     @media (max-width: 520px) {
       .nda-fields { grid-template-columns: 1fr; }
@@ -738,8 +738,8 @@
           <rect x="444" y="106" width="42" height="50" rx="2" fill="rgba(46,111,115,0.04)" stroke="rgba(46,111,115,0.2)" stroke-width="0.5"/>
           <line x1="440" y1="170" x2="440" y2="270" stroke="#666" stroke-width="1"/>
           <!-- E-stop button -->
-          <circle cx="465" cy="180" r="8" fill="rgba(239,68,68,0.15)" stroke="#ef4444" stroke-width="1.5"/>
-          <text x="465" y="183" text-anchor="middle" fill="#ef4444" font-size="6" font-weight="700" font-family="Inter,sans-serif">E</text>
+          <circle cx="465" cy="180" r="8" fill="rgba(169,74,59,0.15)" stroke="#A94A3B" stroke-width="1.5"/>
+          <text x="465" y="183" text-anchor="middle" fill="#A94A3B" font-size="6" font-weight="700" font-family="Inter,sans-serif">E</text>
           <!-- Reference number labels -->
           <text x="48" y="54" text-anchor="middle" fill="#2E6F73" font-size="10" font-weight="700" font-family="Inter,sans-serif">10</text>
           <text x="48" y="146" text-anchor="middle" fill="#ccc" font-size="10" font-weight="700" font-family="Inter,sans-serif">14</text>
@@ -747,7 +747,7 @@
           <text x="250" y="196" text-anchor="middle" fill="#ccc" font-size="10" font-weight="700" font-family="Inter,sans-serif">18</text>
           <text x="46" y="212" text-anchor="middle" fill="#3b82f6" font-size="10" font-weight="700" font-family="Inter,sans-serif">20</text>
           <text x="465" y="96" text-anchor="middle" fill="#888" font-size="10" font-weight="700" font-family="Inter,sans-serif">22</text>
-          <text x="465" y="200" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="700" font-family="Inter,sans-serif">24</text>
+          <text x="465" y="200" text-anchor="middle" fill="#A94A3B" font-size="10" font-weight="700" font-family="Inter,sans-serif">24</text>
           <text x="48" y="105" text-anchor="middle" fill="#2E6F73" font-size="10" font-weight="700" font-family="Inter,sans-serif">12</text>
           <text x="210" y="275" text-anchor="middle" fill="#666" font-size="10" font-weight="700" font-family="Inter,sans-serif">26</text>
         </svg>
@@ -759,7 +759,7 @@
           <span style="color:#ccc;">18</span> Quick-release cuff &nbsp;
           <span style="color:#3b82f6;">20</span> Depth camera &nbsp;
           <span style="color:#888;">22</span> Touchscreen &nbsp;
-          <span style="color:#ef4444;">24</span> E-stop &nbsp;
+          <span style="color:#A94A3B;">24</span> E-stop &nbsp;
           <span style="color:#666;">26</span> Frame + bench
         </p>
       </div>
@@ -909,9 +909,9 @@
             <text x="175" y="68" text-anchor="middle" fill="#5A7FA3" font-size="7" font-weight="700" font-family="Inter,sans-serif">⊕</text>
             <text x="175" y="38" text-anchor="middle" fill="#5A7FA3" font-size="9" font-weight="700" font-family="Inter,sans-serif">34</text>
             <!-- Slip clutch -->
-            <rect x="198" y="56" width="28" height="18" rx="3" fill="rgba(239,68,68,0.08)" stroke="#ef4444" stroke-width="1"/>
-            <text x="212" y="69" text-anchor="middle" fill="#ef4444" font-size="6" font-weight="600" font-family="Inter,sans-serif">CLUTCH</text>
-            <text x="212" y="50" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="700" font-family="Inter,sans-serif">36</text>
+            <rect x="198" y="56" width="28" height="18" rx="3" fill="rgba(169,74,59,0.08)" stroke="#A94A3B" stroke-width="1"/>
+            <text x="212" y="69" text-anchor="middle" fill="#A94A3B" font-size="6" font-weight="600" font-family="Inter,sans-serif">CLUTCH</text>
+            <text x="212" y="50" text-anchor="middle" fill="#A94A3B" font-size="9" font-weight="700" font-family="Inter,sans-serif">36</text>
             <!-- Cable -->
             <line x1="226" y1="65" x2="330" y2="65" stroke="#5A7FA3" stroke-width="1.5" stroke-dasharray="6,3"/>
             <text x="278" y="58" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">DYNEEMA CABLE</text>
@@ -1033,12 +1033,12 @@
             <text x="68" y="80" fill="#5A7FA3" font-size="8" font-weight="700" font-family="Inter,sans-serif">L3</text>
             <text x="170" y="80" text-anchor="middle" fill="#ccc" font-size="8" font-weight="600" font-family="Inter,sans-serif">SLIP CLUTCH — mechanical torque limit, cable slips at threshold</text>
             <!-- Layer 4: E-stop -->
-            <rect x="70" y="92" width="200" height="24" rx="4" fill="rgba(239,68,68,0.08)" stroke="#ef4444" stroke-width="0.8"/>
-            <text x="88" y="108" fill="#ef4444" font-size="8" font-weight="700" font-family="Inter,sans-serif">L4</text>
+            <rect x="70" y="92" width="200" height="24" rx="4" fill="rgba(169,74,59,0.08)" stroke="#A94A3B" stroke-width="0.8"/>
+            <text x="88" y="108" fill="#A94A3B" font-size="8" font-weight="700" font-family="Inter,sans-serif">L4</text>
             <text x="170" y="108" text-anchor="middle" fill="#ccc" font-size="8" font-weight="600" font-family="Inter,sans-serif">E-STOP — hardwired motor kill, staff or athlete accessible</text>
             <!-- Layer 5: Quick-release -->
-            <rect x="90" y="120" width="160" height="24" rx="4" fill="rgba(239,68,68,0.12)" stroke="#ef4444" stroke-width="1"/>
-            <text x="108" y="136" fill="#ef4444" font-size="8" font-weight="700" font-family="Inter,sans-serif">L5</text>
+            <rect x="90" y="120" width="160" height="24" rx="4" fill="rgba(169,74,59,0.12)" stroke="#A94A3B" stroke-width="1"/>
+            <text x="108" y="136" fill="#A94A3B" font-size="8" font-weight="700" font-family="Inter,sans-serif">L5</text>
             <text x="170" y="136" text-anchor="middle" fill="#ccc" font-size="8" font-weight="600" font-family="Inter,sans-serif">QUICK-RELEASE CUFF — instant mechanical disconnect</text>
             <!-- Response time annotations -->
             <text x="335" y="24" text-anchor="end" fill="#555" font-size="7" font-family="Inter,sans-serif">&lt;10ms</text>
@@ -1588,8 +1588,8 @@
         <text x="626" y="207" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">+ compensation detect</text>
 
         <!-- Compensation feedback to PID — the KEY novel link -->
-        <path d="M564,187 L353,187 L353,149" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#aR1)"/>
-        <text x="460" y="200" text-anchor="middle" fill="#ef4444" font-size="8" font-weight="700" font-family="Inter,sans-serif">COMPENSATION SIGNAL → modifies F_set (NOVEL)</text>
+        <path d="M564,187 L353,187 L353,149" stroke="#A94A3B" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#aR1)"/>
+        <text x="460" y="200" text-anchor="middle" fill="#A94A3B" font-size="8" font-weight="700" font-family="Inter,sans-serif">COMPENSATION SIGNAL → modifies F_set (NOVEL)</text>
 
         <!-- Data Store -->
         <path d="M670,90 L700,90" stroke="#888" stroke-width="1" marker-end="url(#aG1)"/>
@@ -1609,10 +1609,10 @@
         <defs>
           <marker id="aG1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#2E6F73"/></marker>
           <marker id="aY1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#5A7FA3"/></marker>
-          <marker id="aR1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#ef4444"/></marker>
+          <marker id="aR1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#A94A3B"/></marker>
         </defs>
       </svg>
-      <p class="fig-caption">System claim: Elements 200–214 define the complete closed-loop system. The <span style="color:#ef4444;">red dashed path</span> (210 → 204) represents the novel compensation-aware force adjustment — vision-detected compensation modifies the PID setpoint in real time.</p>
+      <p class="fig-caption">System claim: Elements 200–214 define the complete closed-loop system. The <span style="color:#A94A3B;">red dashed path</span> (210 → 204) represents the novel compensation-aware force adjustment — vision-detected compensation modifies the PID setpoint in real time.</p>
     </div>
 
     <!-- FIG. 10 — PID Force-Compliance Control Loop Detail -->
@@ -1628,7 +1628,7 @@
         <circle cx="95" cy="72" r="14" fill="none" stroke="#2E6F73" stroke-width="1.5"/>
         <text x="95" y="76" text-anchor="middle" fill="#2E6F73" font-size="12" font-weight="700" font-family="Inter,sans-serif">Σ</text>
         <text x="84" y="62" fill="#2E6F73" font-size="8" font-family="Inter,sans-serif">+</text>
-        <text x="84" y="88" fill="#ef4444" font-size="8" font-family="Inter,sans-serif">−</text>
+        <text x="84" y="88" fill="#A94A3B" font-size="8" font-family="Inter,sans-serif">−</text>
         <path d="M109,72 L140,72" stroke="#2E6F73" stroke-width="1.2" marker-end="url(#aG10)"/>
 
         <!-- Error signal -->
@@ -1643,10 +1643,10 @@
         <text x="303" y="62" fill="#ccc" font-size="8" font-weight="600" font-family="Inter,sans-serif">u(t)</text>
 
         <!-- Safety clamp -->
-        <rect x="322" y="48" width="80" height="48" rx="6" fill="rgba(239,68,68,0.06)" stroke="#ef4444" stroke-width="1"/>
-        <text x="362" y="68" text-anchor="middle" fill="#ef4444" font-size="8" font-weight="700" font-family="Inter,sans-serif">FORCE CAP</text>
+        <rect x="322" y="48" width="80" height="48" rx="6" fill="rgba(169,74,59,0.06)" stroke="#A94A3B" stroke-width="1"/>
+        <text x="362" y="68" text-anchor="middle" fill="#A94A3B" font-size="8" font-weight="700" font-family="Inter,sans-serif">FORCE CAP</text>
         <text x="362" y="82" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">clamp(u, F_max)</text>
-        <path d="M406,72 L436,72" stroke="#ef4444" stroke-width="1.2" marker-end="url(#aG10)"/>
+        <path d="M406,72 L436,72" stroke="#A94A3B" stroke-width="1.2" marker-end="url(#aG10)"/>
 
         <!-- ODrive / Motor -->
         <rect x="440" y="48" width="90" height="48" rx="6" fill="rgba(90,127,163,0.06)" stroke="#5A7FA3" stroke-width="1.2"/>
@@ -1670,14 +1670,14 @@
         <text x="420" y="160" text-anchor="middle" fill="#5A7FA3" font-size="8" font-weight="600" font-family="Inter,sans-serif">FORCE FEEDBACK PATH — 100Hz sample rate, &lt;10ms loop latency</text>
 
         <!-- Compensation modifier input (from vision) -->
-        <path d="M214,28 L214,38" stroke="#ef4444" stroke-width="1.5" marker-end="url(#aR10)"/>
-        <rect x="150" y="2" width="128" height="24" rx="4" fill="rgba(239,68,68,0.08)" stroke="#ef4444" stroke-width="1"/>
-        <text x="214" y="18" text-anchor="middle" fill="#ef4444" font-size="8" font-weight="700" font-family="Inter,sans-serif">COMP. SIGNAL (from 210)</text>
-        <text x="350" y="18" fill="#ef4444" font-size="7" font-family="Inter,sans-serif">Reduces F_set when compensation detected</text>
+        <path d="M214,28 L214,38" stroke="#A94A3B" stroke-width="1.5" marker-end="url(#aR10)"/>
+        <rect x="150" y="2" width="128" height="24" rx="4" fill="rgba(169,74,59,0.08)" stroke="#A94A3B" stroke-width="1"/>
+        <text x="214" y="18" text-anchor="middle" fill="#A94A3B" font-size="8" font-weight="700" font-family="Inter,sans-serif">COMP. SIGNAL (from 210)</text>
+        <text x="350" y="18" fill="#A94A3B" font-size="7" font-family="Inter,sans-serif">Reduces F_set when compensation detected</text>
 
         <defs>
           <marker id="aG10" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#2E6F73"/></marker>
-          <marker id="aR10" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#ef4444"/></marker>
+          <marker id="aR10" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#A94A3B"/></marker>
         </defs>
       </svg>
       <p class="fig-caption">Method claim: The PID controller (204) maintains force setpoint while the compensation signal from the vision system (210) dynamically modifies the target, creating a dual-feedback architecture unique to this apparatus.</p>
@@ -1711,10 +1711,10 @@
         <path d="M400,75 L430,75" stroke="#2E6F73" stroke-width="1" marker-end="url(#aG11)"/>
 
         <!-- Compensation classifier -->
-        <rect x="434" y="30" width="140" height="90" rx="8" fill="rgba(239,68,68,0.06)" stroke="#ef4444" stroke-width="1.5"/>
-        <text x="504" y="22" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="700" font-family="Inter,sans-serif">224</text>
-        <text x="504" y="52" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="700" font-family="Inter,sans-serif">COMPENSATION</text>
-        <text x="504" y="66" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="700" font-family="Inter,sans-serif">CLASSIFIER</text>
+        <rect x="434" y="30" width="140" height="90" rx="8" fill="rgba(169,74,59,0.06)" stroke="#A94A3B" stroke-width="1.5"/>
+        <text x="504" y="22" text-anchor="middle" fill="#A94A3B" font-size="9" font-weight="700" font-family="Inter,sans-serif">224</text>
+        <text x="504" y="52" text-anchor="middle" fill="#A94A3B" font-size="9" font-weight="700" font-family="Inter,sans-serif">COMPENSATION</text>
+        <text x="504" y="66" text-anchor="middle" fill="#A94A3B" font-size="9" font-weight="700" font-family="Inter,sans-serif">CLASSIFIER</text>
         <text x="504" y="84" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Pelvic rotation > 5°?</text>
         <text x="504" y="96" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Knee bend > 10°?</text>
         <text x="504" y="108" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Trunk lateral shift > 3cm?</text>
@@ -1727,14 +1727,14 @@
         <text x="684" y="68" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Maintain F_set</text>
 
         <!-- Compensation detected path -->
-        <path d="M578,100 L620,100" stroke="#ef4444" stroke-width="1.5" marker-end="url(#aR11)"/>
-        <rect x="624" y="80" width="120" height="50" rx="5" fill="rgba(239,68,68,0.08)" stroke="#ef4444" stroke-width="1.2"/>
-        <text x="684" y="100" text-anchor="middle" fill="#ef4444" font-size="8" font-weight="700" font-family="Inter,sans-serif">COMP DETECTED</text>
-        <text x="684" y="114" text-anchor="middle" fill="#ef4444" font-size="7" font-weight="600" font-family="Inter,sans-serif">F_set *= (1 − α·severity)</text>
+        <path d="M578,100 L620,100" stroke="#A94A3B" stroke-width="1.5" marker-end="url(#aR11)"/>
+        <rect x="624" y="80" width="120" height="50" rx="5" fill="rgba(169,74,59,0.08)" stroke="#A94A3B" stroke-width="1.2"/>
+        <text x="684" y="100" text-anchor="middle" fill="#A94A3B" font-size="8" font-weight="700" font-family="Inter,sans-serif">COMP DETECTED</text>
+        <text x="684" y="114" text-anchor="middle" fill="#A94A3B" font-size="7" font-weight="600" font-family="Inter,sans-serif">F_set *= (1 − α·severity)</text>
         <text x="684" y="126" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">α = 0.15 per threshold</text>
 
         <!-- Output to PID -->
-        <path d="M748,105 L790,105" stroke="#ef4444" stroke-width="1.5" marker-end="url(#aR11)"/>
+        <path d="M748,105 L790,105" stroke="#A94A3B" stroke-width="1.5" marker-end="url(#aR11)"/>
         <rect x="794" y="80" width="96" height="50" rx="8" fill="rgba(46,111,115,0.06)" stroke="#2E6F73" stroke-width="1.5"/>
         <text x="842" y="100" text-anchor="middle" fill="#2E6F73" font-size="8" font-weight="700" font-family="Inter,sans-serif">→ PID (204)</text>
         <text x="842" y="114" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Modified F_set</text>
@@ -1748,7 +1748,7 @@
         <defs>
           <marker id="aB11" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5" fill="#3b82f6"/></marker>
           <marker id="aG11" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5" fill="#2E6F73"/></marker>
-          <marker id="aR11" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5" fill="#ef4444"/></marker>
+          <marker id="aR11" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5" fill="#A94A3B"/></marker>
         </defs>
       </svg>
       <p class="fig-caption">Method claim: The compensation classifier (224) analyzes pose data to detect pelvic rotation, knee bend, or trunk shift, then proportionally reduces force setpoint — the core novel mechanism that distinguishes Modulor from all existing stretch devices.</p>

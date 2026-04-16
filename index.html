@@ -7,14 +7,14 @@
   <title>Modulor — Actuarial infrastructure for musculoskeletal injury risk</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     /* Investor page overrides */
     .inv-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:48px; }
     .inv-grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
     .inv-grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
     @media (max-width:860px){ .inv-grid-2,.inv-grid-3,.inv-grid-4{ grid-template-columns:1fr; } }
-    .inv-card { background:#2A2F33; border:1px solid rgba(255,255,255,0.08); border-radius:6px; padding:28px; }
+    .inv-card { background:#282C30; border:1px solid rgba(255,255,255,0.08); border-radius:6px; padding:28px; }
     .inv-card h3 { font-size:16px; font-weight:600; margin-bottom:10px; color:#fff; }
     .inv-card p { font-size:14px; line-height:1.55; color:#b8bcc4; margin:0; }
     .inv-label { font-size:11px; text-transform:uppercase; letter-spacing:0.14em; color:#888; margin-bottom:10px; }
@@ -24,8 +24,8 @@
     .inv-bignum { font-size:44px; font-weight:700; color:#fff; line-height:1; margin-bottom:8px; letter-spacing:-0.02em; }
     .inv-bignum-label { font-size:13px; color:#888; }
     .inv-status-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
-    .inv-pill { display:inline-block; font-size:11px; padding:4px 10px; border-radius:3px; background:rgba(46,111,115,0.12); color:#2E6F73; border:1px solid rgba(46,111,115,0.28); text-transform:uppercase; letter-spacing:0.08em; font-weight:600; }
-    .inv-pill.pending { background:rgba(90,127,163,0.12); color:#5A7FA3; border-color:rgba(90,127,163,0.28); }
+    .inv-pill { display:inline-block; font-size:11px; padding:4px 10px; border-radius:3px; background:#113B2C; color:#F3F0E8; border:1px solid rgba(17,59,44,0.8); text-transform:uppercase; letter-spacing:0.08em; font-weight:600; }
+    .inv-pill.pending { background:rgba(94,116,133,0.12); color:#8BA5B8; border-color:rgba(94,116,133,0.28); }
     .inv-pill.neutral { background:rgba(255,255,255,0.06); color:#b8bcc4; border-color:rgba(255,255,255,0.12); }
     .inv-row { border-top:1px solid rgba(255,255,255,0.08); padding:18px 0; display:grid; grid-template-columns:140px 1fr 160px; gap:24px; align-items:center; }
     .inv-row:first-child { border-top:none; }
@@ -36,11 +36,11 @@
     @media (max-width:860px){ .inv-row{ grid-template-columns:1fr; } .inv-phase-target{ text-align:left; } }
     .inv-dr-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
     @media (max-width:860px){ .inv-dr-grid{ grid-template-columns:1fr; } }
-    .inv-dr { display:block; padding:18px 22px; background:#111315; border:1px solid rgba(255,255,255,0.08); border-radius:4px; color:#e0e0e0; text-decoration:none; transition:border-color 0.15s; }
+    .inv-dr { display:block; padding:18px 22px; background:#1A1D20; border:1px solid rgba(255,255,255,0.08); border-radius:4px; color:#e0e0e0; text-decoration:none; transition:border-color 0.15s; }
     .inv-dr:hover { border-color:rgba(255,255,255,0.25); }
     .inv-dr-tag { font-size:10px; text-transform:uppercase; letter-spacing:0.14em; color:#888; margin-bottom:6px; }
     .inv-dr-title { font-size:14px; font-weight:600; color:#fff; }
-    .ask-big { background:#0D1012; border:1px solid rgba(255,255,255,0.12); border-radius:8px; padding:48px; margin-top:24px; }
+    .ask-big { background:#181A1C; border:1px solid rgba(255,255,255,0.12); border-radius:8px; padding:48px; margin-top:24px; }
     .ask-stack { display:grid; grid-template-columns:repeat(4,1fr); gap:32px; margin-bottom:32px; }
     @media (max-width:860px){ .ask-stack{ grid-template-columns:repeat(2,1fr); } }
     .ask-stat .inv-bignum { font-size:32px; }
@@ -97,23 +97,9 @@
           <span class="metric-num">64/040,028</span>
           <span class="metric-label">USPTO provisional filed</span>
         </div>
-        <div class="hero-metrics">
-          <div class="metric-card">
-            <span class="metric-num">$3M</span>
-            <span class="metric-label">Seed — strategic-led</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-num">30 mo</span>
-            <span class="metric-label">Runway to Series A</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-num">64/040,028</span>
-            <span class="metric-label">USPTO provisional filed</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-num">4</span>
-            <span class="metric-label">Buyer categories</span>
-          </div>
+        <div class="metric-card">
+          <span class="metric-num">4</span>
+          <span class="metric-label">Buyer categories</span>
         </div>
       </div>
 
