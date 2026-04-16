@@ -84,8 +84,9 @@ nav {
 }
 
 .logo img {
-  height: 40px;
-  width: auto;
+  width: 130px;
+  height: auto;
+  max-width: none;
   object-fit: contain;
   filter: invert(1);
   mix-blend-mode: screen;
@@ -148,15 +149,16 @@ nav {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
 }
 
 .hero-wordmark {
-  height: 56px;
-  width: auto;
+  width: 260px;
+  height: auto;
+  max-width: none;
   filter: invert(1);
   mix-blend-mode: screen;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 }
 
 /* Hero typography */
@@ -233,13 +235,13 @@ nav {
   letter-spacing: 0.01em;
 }
 
-/* Hero metrics */
+/* Hero metrics — full-width row below split */
 .hero-metrics {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
   width: 100%;
-  max-width: 640px;
+  margin-top: 48px;
 }
 
 .metric-card {
@@ -1785,8 +1787,9 @@ footer {
 }
 
 .footer-logo img {
-  height: 20px;
-  width: auto;
+  width: 100px;
+  height: auto;
+  max-width: none;
   object-fit: contain;
   filter: invert(1);
   mix-blend-mode: screen;
@@ -1816,8 +1819,9 @@ footer {
     gap: 6px;
   }
   .logo img {
-    height: 34px;
-    width: auto;
+    width: 110px;
+    height: auto;
+    max-width: none;
   }
   .nav-links {
     gap: 10px;
@@ -2612,25 +2616,22 @@ footer {
 
 /* Hero split layout */
 .hero-split {
-  display: grid !important;
+  display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;
   align-items: center;
-  text-align: left !important;
+  width: 100%;
 }
 
 .hero-text {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  text-align: left;
 }
 
 .hero-text .hero-ctas {
   justify-content: flex-start;
-}
-
-.hero-text .hero-metrics {
-  max-width: 100%;
 }
 
 /* Le Corbusier sketch — hero background texture */
@@ -2666,11 +2667,10 @@ footer {
 
 .hero-exhibit-img {
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
   height: auto;
-  filter: invert(1) grayscale(1) contrast(1.1);
-  mix-blend-mode: screen;
-  opacity: 0.65;
+  filter: invert(1) grayscale(1) contrast(1.15) brightness(0.85);
+  opacity: 0.72;
 }
 
 .hero-exhibit-caption {
@@ -2747,17 +2747,20 @@ footer {
 /* Mobile — hero split collapses */
 @media (max-width: 860px) {
   .hero-split {
-    grid-template-columns: 1fr !important;
-    text-align: center !important;
+    grid-template-columns: 1fr;
     gap: 40px;
   }
   .hero-text {
     align-items: center;
+    text-align: center;
   }
   .hero-text .hero-ctas {
     justify-content: center;
   }
   .hero-exhibit {
     display: none;
+  }
+  .hero-metrics {
+    margin-top: 32px;
   }
 }
