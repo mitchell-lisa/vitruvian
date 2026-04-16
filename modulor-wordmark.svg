@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 330" role="img" aria-label="Modulor">
+  <title>Modulor</title>
+  <g stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer ring -->
+    <circle cx="140" cy="134" r="122" stroke-width="2.8"/>
+    <!-- Inner ring -->
+    <circle cx="140" cy="134" r="105" stroke-width="1.5"/>
+    <!-- Head -->
+    <circle cx="140" cy="53" r="13" stroke-width="1.8"/>
+    <!-- Torso (neck to hips) -->
+    <line x1="140" y1="66" x2="140" y2="182" stroke-width="1.8"/>
+    <!-- Arms — extend to inner ring boundary at this y -->
+    <line x1="40" y1="102" x2="240" y2="102" stroke-width="1.8"/>
+    <!-- Left leg -->
+    <line x1="140" y1="182" x2="104" y2="232" stroke-width="1.8"/>
+    <!-- Right leg -->
+    <line x1="140" y1="182" x2="176" y2="232" stroke-width="1.8"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="140" y="308"
+        text-anchor="middle"
+        font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-size="27"
+        font-weight="300"
+        letter-spacing="10"
+        fill="currentColor">MODULOR</text>
+</svg>
