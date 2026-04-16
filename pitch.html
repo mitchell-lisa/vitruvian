@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="modulor-icon.png">
+  <link rel="icon" type="image/svg+xml" href="modulor-logo.png">
   <title>Modulor — Actuarial infrastructure for musculoskeletal injury risk</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Inter', sans-serif; background: #0D1012; color: #e0e0e0; }
@@ -37,15 +38,15 @@
     .slide-tag {
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: #2E6F73;
       margin-bottom: 16px;
     }
-    h1 { font-size: clamp(36px, 5vw, 64px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; color: #fafafa; margin-bottom: 24px; }
-    h2 { font-size: clamp(28px, 4vw, 48px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; color: #fafafa; margin-bottom: 20px; }
-    h3 { font-size: 20px; font-weight: 700; color: #e8e8e8; margin-bottom: 8px; }
-    p { font-size: 17px; line-height: 1.7; color: #999; max-width: 680px; }
+    h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(40px, 5vw, 72px); font-weight: 800; letter-spacing: -0.01em; line-height: 1.05; color: #ede8e0; margin-bottom: 24px; }
+    h2 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(30px, 4vw, 54px); font-weight: 700; letter-spacing: -0.01em; line-height: 1.1; color: #ede8e0; margin-bottom: 20px; }
+    h3 { font-size: 20px; font-weight: 600; color: #d8d4cc; margin-bottom: 8px; }
+    p { font-size: 17px; line-height: 1.7; color: #8898b0; max-width: 680px; }
     p.large { font-size: 20px; line-height: 1.65; }
     .accent { color: #2E6F73; }
     .warn { color: #5A7FA3; }
@@ -89,7 +90,7 @@
     .x { color: #444; }
 
     /* Title slide logo */
-    .title-logo { height: 160px; width: auto; margin-bottom: 24px; filter: invert(1); }
+    .title-logo { height: 160px; width: auto; margin-bottom: 24px; }
 
     /* Divider */
     .divider { height: 1px; background: rgba(255,255,255,0.06); margin: 32px 0; }
@@ -332,7 +333,6 @@
       height: 40px;
       width: auto;
       opacity: 0.25;
-      filter: invert(1);
     }
 
     /* CTA */
@@ -554,7 +554,7 @@
 <!-- ==================== NDA GATE ==================== -->
 <div class="nda-gate" id="ndaGate">
   <div class="nda-box">
-    <img src="modulor-icon.png" alt="Modulor">
+    <img src="modulor-logo.png" alt="Modulor">
     <h2>Confidential Material</h2>
     <p style="font-size:15px; color:#888;">This document contains proprietary information about Modulor, including product design, technical specifications, intellectual property, and business strategy. Please identify yourself and accept the terms below before proceeding.</p>
 
@@ -595,13 +595,13 @@
 </div>
 
 <!-- Floating "back to home" on the deck -->
-<a href="index.html" class="deck-home-btn" id="deckHomeBtn" style="display:none;">&larr; Home</a>
+<a href="index.html" class="deck-home-btn" id="deckHomeBtn">&larr; Home</a>
 <div class="audit-ribbon" id="auditRibbon" style="display:none;"></div>
 
 <!-- ==================== SLIDE 1: TITLE ==================== -->
 <div class="slide">
   <div class="slide-inner" style="text-align:center;">
-    <img src="modulor-icon.png" alt="Modulor" class="title-logo">
+    <img src="modulor-logo.png" alt="Modulor" class="title-logo">
     <h1>MODULOR</h1>
     <p class="large" style="margin:0 auto 16px;">Actuarial infrastructure for<br>musculoskeletal injury risk.</p>
     <p style="margin:0 auto 32px; font-size:16px; color:#888;">Powered by autonomous, force-controlled stretching. Built for longitudinal risk intelligence.</p>
@@ -652,7 +652,7 @@
       <p style="font-size:13px; color:#aaa; margin:0; line-height:1.6;">&bull; <strong style="color:#e0e0e0;">Economic impact:</strong> top LaLiga clubs lose <strong style="color:#e0e0e0;">€7M+ annually</strong> to muscle injuries; Premier League teams spent <strong style="color:#e0e0e0;">£266M total</strong> on sidelined players' wages in 2023/24 — <strong style="color:#e0e0e0;">£83M on hamstrings alone</strong>. <span style="color:#555; font-size:11px;">(Melcón-Ballesteros et al., <em>PLOS One</em> 2024; Premier Injuries Ltd. 2024)</span></p>
     </div>
   </div>
-  <img src="modulor-icon.png" alt="" class="slide-logo">
+  <img src="modulor-logo.png" alt="" class="slide-logo">
   <span class="slide-num">2</span>
 </div>
 
@@ -683,7 +683,7 @@
       </li>
     </ul>
   </div>
-  <img src="modulor-icon.png" alt="" class="slide-logo">
+  <img src="modulor-logo.png" alt="" class="slide-logo">
   <span class="slide-num">3</span>
 </div>
 
@@ -780,7 +780,7 @@
       </div>
     </div>
   </div>
-  <img src="modulor-icon.png" alt="" class="slide-logo">
+  <img src="modulor-logo.png" alt="" class="slide-logo">
   <span class="slide-num">4</span>
 </div>
 
@@ -875,7 +875,7 @@
       <p class="fig-caption">Method claim: Steps 100–112 define the complete bilateral assessment and adaptive stretching protocol with longitudinal feedback loop.</p>
     </div>
   </div>
-  <img src="modulor-icon.png" alt="" class="slide-logo">
+  <img src="modulor-logo.png" alt="" class="slide-logo">
   <span class="slide-num">5</span>
 </div>
 
@@ -1056,7 +1056,7 @@
       </div>
     </div>
   </div>
-  <img src="modulor-icon.png" alt="" class="slide-logo">
+  <img src="modulor-logo.png" alt="" class="slide-logo">
   <span class="slide-num">6</span>
 </div>
 
@@ -1183,7 +1183,7 @@
       <div class="card"><h3>Session Δ</h3><p>Acute ROM gain per session. Chronic trend over weeks. The metric that matters most.</p></div>
     </div>
   </div>
-  <img src="modulor-icon.png" alt="" class="slide-logo">
+  <img src="modulor-logo.png" alt="" class="slide-logo">
   <span class="slide-num">7</span>
 </div>
 
@@ -1270,7 +1270,7 @@
       </div>
     </div>
   </div>
-  <img src="modulor-icon.png" alt="" class="slide-logo">
+  <img src="modulor-logo.png" alt="" class="slide-logo">
   <span class="slide-num">8</span>
 </div>
 
@@ -1314,7 +1314,7 @@
       </div>
     </div>
   </div>
-  <img src="modulor-icon.png" alt="" class="slide-logo">
+  <img src="modulor-logo.png" alt="" class="slide-logo">
   <span class="slide-num">9</span>
 </div>
 
@@ -1361,7 +1361,7 @@
       </div>
     </div>
   </div>
-  <img src="modulor-icon.png" alt="" class="slide-logo">
+  <img src="modulor-logo.png" alt="" class="slide-logo">
   <span class="slide-num">9b</span>
 </div>
 
@@ -1512,7 +1512,7 @@
       </div>
     </div>
   </div>
-  <img src="modulor-icon.png" alt="" class="slide-logo">
+  <img src="modulor-logo.png" alt="" class="slide-logo">
   <span class="slide-num">10</span>
 </div>
 
@@ -1772,7 +1772,7 @@
     </div>
     <p style="margin-top:24px; font-size:14px; color:#666;">Figures 1–11 document the complete system. Prior art gap is strong — no existing device combines motorized cable stretching with real-time vision-based compensation detection and adaptive force modification.</p>
   </div>
-  <img src="modulor-icon.png" alt="" class="slide-logo">
+  <img src="modulor-logo.png" alt="" class="slide-logo">
   <span class="slide-num">11</span>
 </div>
 
@@ -1842,7 +1842,7 @@
       </div>
     </div>
   </div>
-  <img src="modulor-icon.png" alt="" class="slide-logo">
+  <img src="modulor-logo.png" alt="" class="slide-logo">
   <span class="slide-num">12</span>
 </div>
 
@@ -1895,7 +1895,7 @@
       </div>
     </div>
   </div>
-  <img src="modulor-icon.png" alt="" class="slide-logo">
+  <img src="modulor-logo.png" alt="" class="slide-logo">
   <span class="slide-num">13</span>
 </div>
 
@@ -1951,7 +1951,7 @@
       </div>
     </div>
   </div>
-  <img src="modulor-icon.png" alt="" class="slide-logo">
+  <img src="modulor-logo.png" alt="" class="slide-logo">
   <span class="slide-num">13b</span>
 </div>
 
@@ -2134,7 +2134,7 @@
 
     <p class="capital-summary">$3M seed gets Modulor through 5–8 pilot deployments, utility patent conversion, first insurance data-licensing LOI, and AFWERX Phase I submission <span style="color:#2E6F73;">→</span> Series A at $2–4M ARR + corpus of 25K+ athlete-months.</p>
   </div>
-  <img src="modulor-icon.png" alt="" class="slide-logo">
+  <img src="modulor-logo.png" alt="" class="slide-logo">
   <span class="slide-num">14</span>
 </div>
 
@@ -2226,14 +2226,14 @@
       <p>Direct: hello@modulor.example · Data room: <a href="hub.html" style="color:#2E6F73;">hub.html</a> · Reply within 48 hours.</p>
     </div>
   </div>
-  <img src="modulor-icon.png" alt="" class="slide-logo">
+  <img src="modulor-logo.png" alt="" class="slide-logo">
   <span class="slide-num">15</span>
 </div>
 
 <!-- ==================== SLIDE 16: CLOSE ==================== -->
 <div class="slide" style="min-height:60vh;">
   <div class="slide-inner" style="text-align:center;">
-    <img src="modulor-icon.png" alt="Modulor" class="title-logo">
+    <img src="modulor-logo.png" alt="Modulor" class="title-logo">
     <h2>MODULOR</h2>
     <p style="margin:0 auto 8px; font-size:17px; color:#888;">Controlled tension. Measured range. Data on every rep.</p>
     <p style="margin:0 auto; font-size:14px; color:#555;">Confidential — 2026</p>
@@ -2241,6 +2241,26 @@
 </div>
 
 <script>
+  // ── Supabase config ──────────────────────────────────────────
+  // 1. Create a table in your Supabase project:
+  //      create table nda_signers (
+  //        id         uuid default gen_random_uuid() primary key,
+  //        name       text not null,
+  //        org        text,
+  //        email      text not null,
+  //        signed_at  timestamptz default now(),
+  //        user_agent text,
+  //        referrer   text,
+  //        timezone   text,
+  //        page       text
+  //      );
+  //      alter table nda_signers enable row level security;
+  //      create policy "insert only" on nda_signers for insert with check (true);
+  // 2. Fill in your project URL and anon key below.
+  var SUPABASE_URL  = 'https://dndlfrlnpzmxcufzwoxx.supabase.co';
+  var SUPABASE_KEY  = 'sb_publishable_Rk00cCRtItBi2xnlMD4r9w_gHyy8V9H';
+  // ─────────────────────────────────────────────────────────────
+
   (function() {
     var gate = document.getElementById('ndaGate');
     var checkbox = document.getElementById('ndaCheckbox');
@@ -2311,15 +2331,26 @@
         localStorage.setItem('modulor.nda.last', JSON.stringify(record));
       } catch (e) {}
 
-      // Optional: POST to a capture endpoint. Configure MODULOR_NDA_ENDPOINT
-      // to a Formspree / Netlify Forms / Zapier webhook URL to receive records.
-      var endpoint = window.MODULOR_NDA_ENDPOINT || '';
-      if (endpoint) {
-        fetch(endpoint, {
+      // POST signer record to Supabase
+      if (SUPABASE_URL && SUPABASE_KEY && !SUPABASE_URL.includes('YOUR_PROJECT')) {
+        fetch(SUPABASE_URL + '/rest/v1/nda_signers', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(record)
-        }).catch(function() { /* non-blocking */ });
+          headers: {
+            'apikey': SUPABASE_KEY,
+            'Authorization': 'Bearer ' + SUPABASE_KEY,
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify({
+            name:       record.name,
+            org:        record.org,
+            email:      record.email,
+            user_agent: record.ua,
+            referrer:   record.ref,
+            timezone:   record.tz,
+            page:       record.page
+          })
+        }).catch(function() { /* non-blocking — gate still opens */ });
       }
 
       showDeck(record);

@@ -81,14 +81,15 @@ nav {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  font-size: 14px;
-  color: #e0e0e0;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.20em;
+  font-size: 15px;
+  color: #ede8e0;
 }
 
 .logo img {
-  height: 32px;
+  height: 30px;
   width: auto;
   object-fit: contain;
   filter: invert(1);
@@ -169,6 +170,7 @@ nav {
   width: auto;
   height: 100%;
   object-fit: contain;
+  filter: invert(1);
   animation: logo-glow 4s ease-in-out infinite alternate;
   transition: transform 0.4s ease, filter 0.4s ease;
 }
@@ -194,8 +196,9 @@ nav {
 }
 
 .hero h1 {
-  font-size: clamp(36px, 6vw, 56px);
-  font-weight: 700;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 800;
   line-height: 1.08;
   letter-spacing: -0.03em;
   margin-bottom: 24px;
@@ -242,10 +245,11 @@ nav {
 
 .stat-num {
   display: block;
-  font-size: 26px;
-  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+  font-size: 24px;
+  font-weight: 400;
   letter-spacing: -0.02em;
-  color: #fafafa;
+  color: #ede8e0;
   margin-bottom: 4px;
 }
 
@@ -275,9 +279,10 @@ nav {
 
 .metric-num {
   display: block;
-  font-size: 22px;
+  font-family: 'Space Mono', monospace;
+  font-size: 20px;
   font-weight: 700;
-  color: #fafafa;
+  color: #ede8e0;
   margin-bottom: 4px;
 }
 
@@ -329,21 +334,22 @@ nav {
 
 /* === 6. SECTION HEADERS === */
 .section-tag {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.10em;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #666;
+  color: #c84030;
   margin-bottom: 16px;
 }
 
 .section h2 {
-  font-size: clamp(28px, 4vw, 44px);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(32px, 4vw, 52px);
   font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
   margin-bottom: 48px;
-  max-width: 620px;
+  max-width: 680px;
 }
 
 /* === 7. TWO-COL LAYOUT === */
@@ -1796,14 +1802,18 @@ footer {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-weight: 600;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.20em;
+  font-size: 12px;
+  color: #888;
   letter-spacing: 0.12em;
   font-size: 12px;
   color: #888;
 }
 
 .footer-logo img {
-  height: 26px;
+  height: 24px;
   width: auto;
   object-fit: contain;
   filter: invert(1);
@@ -2126,7 +2136,7 @@ footer {
   background: rgba(255,255,255,0.10);
   color: #fafafa;
   border-color: rgba(255,255,255,0.14);
-  border-bottom: 2px solid #4ade80;
+  border-bottom: 2px solid #c84030;
 }
 
 /* --- View Panels --- */
@@ -2619,5 +2629,133 @@ footer {
   .playback-btn {
     width: 30px;
     height: 30px;
+  }
+}
+
+/* ============================================================
+   MODULOR DIAGRAM & CORBUSIER TEXTURE — brand imagery system
+   ============================================================ */
+
+/* Hero split layout */
+.hero-split {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  text-align: left !important;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-text .hero-ctas {
+  justify-content: flex-start;
+}
+
+.hero-text .hero-metrics {
+  max-width: 100%;
+}
+
+/* Le Corbusier sketch — hero background texture */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('modulor-man-le-corbusier.webp');
+  background-size: cover;
+  background-position: center 30%;
+  opacity: 0.045;
+  filter: grayscale(1) contrast(1.2);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Diagram exhibit — hero right panel */
+.hero-exhibit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-exhibit-img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 4px;
+  opacity: 0.92;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+.hero-exhibit-caption {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #4a5878;
+  text-align: center;
+}
+
+/* Corbusier sketch strip — section divider */
+.corbusier-strip {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: #040710;
+}
+
+.corbusier-strip-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  opacity: 0.12;
+  filter: grayscale(1) contrast(1.4);
+}
+
+.corbusier-strip-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    #040710 0%,
+    transparent 20%,
+    transparent 80%,
+    #040710 100%
+  );
+}
+
+/* Proportion rule — a subtle horizontal measurement bar */
+.proportion-rule {
+  height: 2px;
+  background: linear-gradient(to right, transparent, rgba(200,64,48,0.4) 30%, rgba(36,88,200,0.4) 70%, transparent);
+  margin: 0;
+}
+
+/* Mobile — hero split collapses */
+@media (max-width: 860px) {
+  .hero-split {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+    gap: 40px;
+  }
+  .hero-text {
+    align-items: center;
+  }
+  .hero-text .hero-ctas {
+    justify-content: center;
+  }
+  .hero-exhibit {
+    display: none;
   }
 }
