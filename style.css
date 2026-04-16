@@ -47,7 +47,7 @@ button {
 }
 
 .section {
-  padding: 100px 0;
+  padding: 130px 0;
 }
 
 .section-dark {
@@ -84,8 +84,8 @@ nav {
 }
 
 .logo img {
-  width: 130px;
-  height: auto;
+  height: 40px;
+  width: auto;
   max-width: none;
   object-fit: contain;
   filter: invert(1);
@@ -138,9 +138,8 @@ nav {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 120px 24px 80px;
+  padding: 140px 24px 100px;
   background: #222426;
-  text-align: center;
 }
 
 .hero-content {
@@ -153,12 +152,12 @@ nav {
 }
 
 .hero-wordmark {
-  width: 260px;
+  width: 100%;
   height: auto;
   max-width: none;
   filter: invert(1);
   mix-blend-mode: screen;
-  margin-bottom: 36px;
+  margin-bottom: 32px;
 }
 
 /* Hero typography */
@@ -1787,8 +1786,8 @@ footer {
 }
 
 .footer-logo img {
-  width: 100px;
-  height: auto;
+  height: 28px;
+  width: auto;
   max-width: none;
   object-fit: contain;
   filter: invert(1);
@@ -1806,7 +1805,7 @@ footer {
 /* Tablet — 768px */
 @media (max-width: 768px) {
   .section {
-    padding: 64px 0;
+    padding: 80px 0;
   }
 
   /* Nav — tighten links so all 5 fit on phones */
@@ -1819,8 +1818,8 @@ footer {
     gap: 6px;
   }
   .logo img {
-    width: 110px;
-    height: auto;
+    height: 34px;
+    width: auto;
     max-width: none;
   }
   .nav-links {
@@ -2662,21 +2661,25 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
+  align-self: center;
+  padding: 28px;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 6px;
 }
 
 .hero-exhibit-img {
   width: 100%;
-  max-width: 420px;
   height: auto;
-  filter: invert(1) grayscale(1) contrast(1.15) brightness(0.85);
-  opacity: 0.72;
+  filter: grayscale(1) contrast(1.2) brightness(0.55);
+  opacity: 0.82;
 }
 
 .hero-exhibit-caption {
   font-size: 11px;
   letter-spacing: 0.08em;
-  color: rgba(243,240,232,0.38);
+  color: rgba(243,240,232,0.35);
   text-align: center;
 }
 
