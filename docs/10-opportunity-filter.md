@@ -6,7 +6,7 @@ Three questions. Reject anything small.
 2. **Is it leverage-driven?**
 3. **Does it build long-term wealth?**
 
-## Vitruvian — tested against the filter
+## Modulor — tested against the filter
 
 | Path | Scale to $1M+? | Leverage-driven? | Long-term wealth? | Verdict |
 |------|----------------|------------------|-------------------|---------|

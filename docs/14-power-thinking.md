@@ -58,7 +58,7 @@ Power thinkers filter every opportunity through one lens: **skew**. They pass on
 4. **Time as the rarest asset.** Every hour on something that doesn't compound (copy polish) is an hour stolen from something that does (capital, contracts, distribution).
 5. **Status vs outcome.** Default = optimize for being seen as smart. Power = optimize for outcome even when it looks dumb for 18 months.
 
-## Applied to Vitruvian — what changes today
+## Applied to Modulor — what changes today
 
 | Decision currently open | Power-thinker resolution | Deadline |
 |---------------------------|---------------------------|-----------|

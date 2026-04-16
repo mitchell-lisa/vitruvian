@@ -1,8 +1,8 @@
-# Vitruvian Product Redesign — Elite Sports Performance Platform
+# Modulor Product Redesign — Elite Sports Performance Platform
 
 ---
 
-## A. What Vitruvian Should Be
+## A. What Modulor Should Be
 
 ### Critique of the Current Concept
 
@@ -24,9 +24,9 @@ The buyer is a Director of Performance, Head AT, or Sports Medicine Director. Th
 
 The current copy doesn't speak this language at all.
 
-### What Vitruvian Actually Is
+### What Modulor Actually Is
 
-**Vitruvian is a clinician-supervised, cable-assisted mobility platform that standardizes stretch delivery, quantifies ROM, and tracks tissue tolerance over time.**
+**Modulor is a clinician-supervised, cable-assisted mobility platform that standardizes stretch delivery, quantifies ROM, and tracks tissue tolerance over time.**
 
 It does NOT replace a physical therapist. It *extends* what a therapist can do by:
 - Delivering repeatable stretch loads that a human cannot standardize
@@ -92,7 +92,7 @@ The MVP should focus exclusively on **lower-extremity assisted stretching** beca
 
 ### Protocol Types and When to Use Each
 
-| Method | Mechanism | Best Use Case | Vitruvian V1 Support |
+| Method | Mechanism | Best Use Case | Modulor V1 Support |
 |--------|-----------|---------------|---------------------|
 | **Static Stretching** | Hold at end-range, 15-60s | Post-training cool-down, flexibility development | YES — primary mode |
 | **Progressive Static** | Incrementally increase ROM across holds | Dedicated flexibility sessions | YES — core differentiator |
@@ -106,27 +106,27 @@ The MVP should focus exclusively on **lower-extremity assisted stretching** beca
 **Pre-Performance (Game Day / Practice):**
 - Dynamic warm-up (athlete does independently, not on machine)
 - Optional: 2x15s light static stretch on identified restrictions only
-- Vitruvian role: Quick ROM screen (30 seconds per side) to flag asymmetries for staff
+- Modulor role: Quick ROM screen (30 seconds per side) to flag asymmetries for staff
 
 **Post-Training:**
 - Static holds: 3x30s per muscle group, moderate tension
 - Focus on muscles loaded during session
-- Vitruvian role: Standardized cool-down protocol with progressive tension
+- Modulor role: Standardized cool-down protocol with progressive tension
 
 **Recovery Day:**
 - Low-load static stretching: 3x45s, minimal tension
 - Focus on tissue blood flow and relaxation, not ROM gain
-- Vitruvian role: Recovery protocol with 40-60% of normal tension
+- Modulor role: Recovery protocol with 40-60% of normal tension
 
 **Dedicated Flexibility Session:**
 - Progressive static: 4x30s with 5-10% tension increase per set
 - PNF contract-relax: 5s isometric contraction, 30s passive stretch, 3 cycles
-- Vitruvian role: This is where the machine is most valuable — repeatable, progressive, tracked
+- Modulor role: This is where the machine is most valuable — repeatable, progressive, tracked
 
 **Return-to-Play:**
 - Bilateral ROM comparison (involved vs. uninvolved limb)
 - Threshold: within 90% of contralateral limb or pre-injury baseline
-- Vitruvian role: Objective assessment tool — quantifies readiness, documents for medical clearance
+- Modulor role: Objective assessment tool — quantifies readiness, documents for medical clearance
 
 ---
 
@@ -243,7 +243,7 @@ The MVP should focus exclusively on **lower-extremity assisted stretching** beca
 
 ### The Strongest Product Direction
 
-**Vitruvian should be positioned as:**
+**Modulor should be positioned as:**
 
 > "The first mobility platform that measures what it does."
 
@@ -251,7 +251,7 @@ The MVP should focus exclusively on **lower-extremity assisted stretching** beca
 
 **The MVP pitch to a Director of Performance:**
 
-"Your staff spends 45 minutes a day doing manual assisted stretching on athletes. The quality varies by who's doing it, there's no standardization, and you have zero objective data on who's actually getting more flexible. Vitruvian gives your staff a tool that delivers repeatable stretch protocols at controlled loads, measures ROM to within 2 degrees, flags bilateral asymmetries automatically, and pushes a summary to your AMS after every session. Your therapists still supervise. They just stop being the bottleneck."
+"Your staff spends 45 minutes a day doing manual assisted stretching on athletes. The quality varies by who's doing it, there's no standardization, and you have zero objective data on who's actually getting more flexible. Modulor gives your staff a tool that delivers repeatable stretch protocols at controlled loads, measures ROM to within 2 degrees, flags bilateral asymmetries automatically, and pushes a summary to your AMS after every session. Your therapists still supervise. They just stop being the bottleneck."
 
 **What makes it better than everything else:**
 
@@ -261,9 +261,9 @@ The MVP should focus exclusively on **lower-extremity assisted stretching** beca
 | Stretch cages | Passive self-stretch frames | Zero assistance, zero measurement, zero progression logic |
 | Isokinetic dynamometers (Biodex) | Measure force and ROM | Don't deliver stretch protocols. $40K+. Require trained operator. |
 | Manual goniometry | Measure joint angles | 5-10° measurement error. Time-consuming. No longitudinal tracking. |
-| **Vitruvian** | **Delivers AND measures in one system** | **That's the entire point.** |
+| **Modulor** | **Delivers AND measures in one system** | **That's the entire point.** |
 
-**The single most important thing that makes Vitruvian real:**
+**The single most important thing that makes Modulor real:**
 
 It's not a robot that replaces people. It's an instrument that makes people better at their jobs and gives them data they've never had.
 

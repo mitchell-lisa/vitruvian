@@ -1,5 +1,5 @@
 /* ============================================================
-   VITRUVIAN — Style Sheet
+   MODULOR — Style Sheet
    Clinical, premium, credible. Force-plate precision aesthetic.
    ============================================================ */
 
@@ -88,10 +88,9 @@ nav {
 }
 
 .logo img {
-  width: 36px;
-  height: 36px;
+  height: 32px;
+  width: auto;
   object-fit: contain;
-  border-radius: 8px;
 }
 
 .nav-links {
@@ -154,23 +153,21 @@ nav {
   align-items: center;
 }
 
-/* Hero logo centerpiece */
+/* Hero logo centerpiece — Modulor Man silhouette (1:2 aspect) */
 .hero-logo-wrap {
   position: relative;
-  width: 400px;
-  height: 320px;
+  width: 200px;
+  height: 360px;
   margin-bottom: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 24px;
 }
 
 .hero-logo-img {
-  width: 85%;
-  height: 85%;
+  width: auto;
+  height: 100%;
   object-fit: contain;
-  border-radius: 16px;
   animation: logo-glow 4s ease-in-out infinite alternate;
   transition: transform 0.4s ease, filter 0.4s ease;
 }
@@ -181,8 +178,8 @@ nav {
 }
 
 @keyframes logo-glow {
-  from { filter: drop-shadow(0 0 24px rgba(200,220,240,0.2)) brightness(1.05); }
-  to   { filter: drop-shadow(0 0 50px rgba(200,220,240,0.45)) brightness(1.12); }
+  from { filter: drop-shadow(0 0 24px rgba(200,220,240,0.12)) brightness(1.0); }
+  to   { filter: drop-shadow(0 0 50px rgba(200,220,240,0.30)) brightness(1.08); }
 }
 
 /* Hero typography */
@@ -1805,10 +1802,9 @@ footer {
 }
 
 .footer-logo img {
-  width: 28px;
-  height: 28px;
+  height: 26px;
+  width: auto;
   object-fit: contain;
-  border-radius: 6px;
 }
 
 .copyright {
@@ -1834,8 +1830,8 @@ footer {
     gap: 6px;
   }
   .logo img {
-    width: 28px;
-    height: 28px;
+    height: 26px;
+    width: auto;
   }
   .nav-links {
     gap: 10px;
@@ -1866,8 +1862,8 @@ footer {
   }
 
   .hero-logo-wrap {
-    width: 320px;
-    height: 260px;
+    width: 160px;
+    height: 300px;
   }
 
   .hero-stats {
@@ -1960,7 +1956,7 @@ footer {
 
 /* Mobile — 480px */
 @media (max-width: 480px) {
-  /* Very-narrow nav: hide VITRUVIAN wordmark, keep logo mark only */
+  /* Very-narrow nav: hide MODULOR wordmark, keep logo mark only */
   .logo span {
     display: none;
   }
@@ -2001,8 +1997,8 @@ footer {
   }
 
   .hero-logo-wrap {
-    width: 280px;
-    height: 220px;
+    width: 130px;
+    height: 250px;
     margin-bottom: 32px;
   }
 
