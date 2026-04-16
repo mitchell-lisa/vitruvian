@@ -84,7 +84,7 @@ nav {
 }
 
 .logo img {
-  height: 20px;
+  height: 28px;
   width: auto;
   object-fit: contain;
   filter: invert(1);
@@ -2637,7 +2637,7 @@ footer {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('lc-modulor-1946.jpg');
+  background-image: url('modulor-man-le-corbusier.webp');
   background-size: cover;
   background-position: center 30%;
   opacity: 0.04;
@@ -2697,9 +2697,9 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
-  opacity: 0.18;
-  filter: grayscale(1) contrast(1.6) invert(1);
+  object-position: center 35%;
+  opacity: 0.15;
+  filter: grayscale(1) contrast(1.3);
 }
 
 .corbusier-strip-overlay {

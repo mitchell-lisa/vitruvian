@@ -56,7 +56,7 @@ img { max-width: 100%; display: block; }
   gap: 10px;
   color: var(--ink);
 }
-.ui-logo img { height: 20px; width: auto; object-fit: contain; filter: invert(1); mix-blend-mode: screen; }
+.ui-logo img { height: 28px; width: auto; object-fit: contain; filter: invert(1); mix-blend-mode: screen; }
 .ui-nav-links { display: flex; gap: 22px; align-items: center; }
 .ui-nav-link {
   font-size: 13px;
