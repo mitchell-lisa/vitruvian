@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="modulor-icon.png">
   <title>Modulor — Actuarial infrastructure for musculoskeletal injury risk</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: #0a0c10; color: #e0e0e0; }
+    body { font-family: 'Barlow', sans-serif; background: #060b18; color: #ede8e0; }
 
     /* Slide system */
     .slide {
@@ -37,17 +38,17 @@
     .slide-tag {
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #4ade80;
+      color: #c8102e;
       margin-bottom: 16px;
     }
-    h1 { font-size: clamp(36px, 5vw, 64px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; color: #fafafa; margin-bottom: 24px; }
-    h2 { font-size: clamp(28px, 4vw, 48px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; color: #fafafa; margin-bottom: 20px; }
-    h3 { font-size: 20px; font-weight: 700; color: #e8e8e8; margin-bottom: 8px; }
-    p { font-size: 17px; line-height: 1.7; color: #999; max-width: 680px; }
+    h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(40px, 5vw, 72px); font-weight: 800; letter-spacing: -0.01em; line-height: 1.05; color: #ede8e0; margin-bottom: 24px; }
+    h2 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(30px, 4vw, 54px); font-weight: 700; letter-spacing: -0.01em; line-height: 1.1; color: #ede8e0; margin-bottom: 20px; }
+    h3 { font-size: 20px; font-weight: 600; color: #d8d4cc; margin-bottom: 8px; }
+    p { font-size: 17px; line-height: 1.7; color: #8898b0; max-width: 680px; }
     p.large { font-size: 20px; line-height: 1.65; }
-    .accent { color: #4ade80; }
+    .accent { color: #c8102e; }
     .warn { color: #facc15; }
     .danger { color: #ef4444; }
 
@@ -69,7 +70,7 @@
     .card p { font-size: 14px; line-height: 1.6; color: #888; }
 
     /* Stats */
-    .stat-big { font-size: 48px; font-weight: 800; color: #4ade80; letter-spacing: -0.03em; line-height: 1; }
+    .stat-big { font-family: 'Space Mono', monospace; font-size: 48px; font-weight: 400; color: #c8102e; letter-spacing: -0.02em; line-height: 1; }
     .stat-label { font-size: 13px; color: #666; margin-top: 6px; font-weight: 500; }
 
     /* Images */
@@ -412,8 +413,8 @@
       font-size: 15px;
       font-weight: 700;
       font-family: inherit;
-      background: #4ade80;
-      color: #0a0c10;
+      background: #c8102e;
+      color: #fff;
       border: none;
       border-radius: 8px;
       cursor: pointer;
@@ -426,7 +427,7 @@
       pointer-events: auto;
     }
     .nda-btn.enabled:hover {
-      background: #22c55e;
+      background: #a80d26;
     }
     .nda-back {
       display: inline-block;

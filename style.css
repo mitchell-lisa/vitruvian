@@ -16,9 +16,9 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  color: #e0e0e0;
-  background: #1a1d23;
+  font-family: 'Barlow', -apple-system, sans-serif;
+  color: #ede8e0;
+  background: #080c1e;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -51,8 +51,8 @@ button {
 }
 
 .section-dark {
-  background: #12151a;
-  color: #e0e0e0;
+  background: #060b18;
+  color: #ede8e0;
 }
 
 /* === 3. NAV === */
@@ -62,7 +62,7 @@ nav {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(26, 29, 35, 0.92);
+  background: rgba(8, 12, 30, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -81,10 +81,11 @@ nav {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  font-size: 14px;
-  color: #e0e0e0;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.20em;
+  font-size: 15px;
+  color: #ede8e0;
 }
 
 .logo img {
@@ -141,7 +142,7 @@ nav {
   display: flex;
   align-items: center;
   padding: 120px 24px 80px;
-  background: #1a1d23;
+  background: #060b18;
   text-align: center;
 }
 
@@ -195,8 +196,9 @@ nav {
 }
 
 .hero h1 {
-  font-size: clamp(36px, 6vw, 56px);
-  font-weight: 700;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 800;
   line-height: 1.08;
   letter-spacing: -0.03em;
   margin-bottom: 24px;
@@ -243,10 +245,11 @@ nav {
 
 .stat-num {
   display: block;
-  font-size: 26px;
-  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+  font-size: 24px;
+  font-weight: 400;
   letter-spacing: -0.02em;
-  color: #fafafa;
+  color: #ede8e0;
   margin-bottom: 4px;
 }
 
@@ -276,9 +279,10 @@ nav {
 
 .metric-num {
   display: block;
-  font-size: 22px;
+  font-family: 'Space Mono', monospace;
+  font-size: 20px;
   font-weight: 700;
-  color: #fafafa;
+  color: #ede8e0;
   margin-bottom: 4px;
 }
 
@@ -309,12 +313,12 @@ nav {
 }
 
 .btn-primary {
-  background: #fafafa;
-  color: #1a1d23;
+  background: #c8102e;
+  color: #fff;
 }
 
 .btn-primary:hover:not(:disabled) {
-  background: #e0e0e0;
+  background: #a80d26;
   transform: translateY(-1px);
 }
 
@@ -330,21 +334,22 @@ nav {
 
 /* === 6. SECTION HEADERS === */
 .section-tag {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.10em;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #666;
+  color: #c8102e;
   margin-bottom: 16px;
 }
 
 .section h2 {
-  font-size: clamp(28px, 4vw, 44px);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(32px, 4vw, 52px);
   font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
   margin-bottom: 48px;
-  max-width: 620px;
+  max-width: 680px;
 }
 
 /* === 7. TWO-COL LAYOUT === */
@@ -516,7 +521,7 @@ nav {
 
 .schedule-block-highlight {
   grid-column: 1 / -1;
-  border-color: rgba(74,222,128,0.2);
+  border-color: rgba(200,16,46,0.15);
   background: rgba(74,222,128,0.03);
 }
 
@@ -525,7 +530,7 @@ nav {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #4ade80;
+  color: #c8102e;
   margin-bottom: 12px;
 }
 
@@ -551,7 +556,7 @@ nav {
 
 .schedule-quote {
   font-style: italic;
-  color: #4ade80;
+  color: #c8102e;
   font-size: 16px;
   font-weight: 500;
   margin: 12px 0;
@@ -966,7 +971,7 @@ nav {
 
 .demo-step-dot.current {
   border-color: #fafafa;
-  background: #1a1d23;
+  background: #080c1e;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.12);
 }
 
@@ -1420,7 +1425,7 @@ nav {
 
 /* === SESSION REPORT MOCK === */
 .report-mock {
-  background: #0f1219;
+  background: #090d1e;
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 12px;
   overflow: hidden;
@@ -1466,7 +1471,7 @@ nav {
 
 .report-item {
   padding: 20px 28px;
-  background: #0f1219;
+  background: #090d1e;
 }
 
 .report-item-wide {
@@ -1564,10 +1569,10 @@ nav {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #4ade80;
+  color: #c8102e;
   margin-bottom: 20px;
   padding-bottom: 12px;
-  border-bottom: 2px solid rgba(74,222,128,0.2);
+  border-bottom: 2px solid rgba(200,16,46,0.2);
 }
 
 .tier-future .tier-label {
@@ -1714,8 +1719,8 @@ th.highlight {
 
 /* === 13. WAITLIST / CTA SECTION === */
 .section-cta {
-  background: #12151a;
-  color: #e0e0e0;
+  background: #060b18;
+  color: #ede8e0;
   text-align: center;
   padding: 100px 0;
 }
@@ -1765,12 +1770,12 @@ th.highlight {
 
 .waitlist-form .btn-primary {
   white-space: nowrap;
-  background: #fafafa;
-  color: #1a1d23;
+  background: #c8102e;
+  color: #fff;
 }
 
 .waitlist-form .btn-primary:hover {
-  background: #e0e0e0;
+  background: #a80d26;
 }
 
 .form-note {
@@ -1784,7 +1789,7 @@ th.highlight {
 footer {
   padding: 40px 0;
   border-top: 1px solid rgba(255,255,255,0.06);
-  background: #1a1d23;
+  background: #060b18;
 }
 
 .footer-inner {
@@ -2127,7 +2132,7 @@ footer {
   background: rgba(255,255,255,0.10);
   color: #fafafa;
   border-color: rgba(255,255,255,0.14);
-  border-bottom: 2px solid #4ade80;
+  border-bottom: 2px solid #c8102e;
 }
 
 /* --- View Panels --- */
@@ -2620,5 +2625,133 @@ footer {
   .playback-btn {
     width: 30px;
     height: 30px;
+  }
+}
+
+/* ============================================================
+   MODULOR DIAGRAM & CORBUSIER TEXTURE — brand imagery system
+   ============================================================ */
+
+/* Hero split layout */
+.hero-split {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  text-align: left !important;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-text .hero-ctas {
+  justify-content: flex-start;
+}
+
+.hero-text .hero-metrics {
+  max-width: 100%;
+}
+
+/* Le Corbusier sketch — hero background texture */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('modulor-man-le-corbusier.webp');
+  background-size: cover;
+  background-position: center 30%;
+  opacity: 0.045;
+  filter: grayscale(1) contrast(1.2);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Diagram exhibit — hero right panel */
+.hero-exhibit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-exhibit-img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 4px;
+  opacity: 0.92;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+.hero-exhibit-caption {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #4a5878;
+  text-align: center;
+}
+
+/* Corbusier sketch strip — section divider */
+.corbusier-strip {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: #040710;
+}
+
+.corbusier-strip-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  opacity: 0.12;
+  filter: grayscale(1) contrast(1.4);
+}
+
+.corbusier-strip-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    #040710 0%,
+    transparent 20%,
+    transparent 80%,
+    #040710 100%
+  );
+}
+
+/* Proportion rule — a subtle horizontal measurement bar */
+.proportion-rule {
+  height: 2px;
+  background: linear-gradient(to right, transparent, rgba(200,16,46,0.4) 30%, rgba(36,88,200,0.4) 70%, transparent);
+  margin: 0;
+}
+
+/* Mobile — hero split collapses */
+@media (max-width: 860px) {
+  .hero-split {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+    gap: 40px;
+  }
+  .hero-text {
+    align-items: center;
+  }
+  .hero-text .hero-ctas {
+    justify-content: center;
+  }
+  .hero-exhibit {
+    display: none;
   }
 }
