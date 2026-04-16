@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../modulor-icon.png">
+<title>Modulor — Athlete Brief</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #f3f3f3;
+    color: #111;
+    line-height: 1.5;
+  }
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0.25in auto;
+    padding: 0.6in 0.7in;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    position: relative;
+  }
+  header.brief-header {
+    border-bottom: 3px solid #111;
+    padding-bottom: 14px;
+    margin-bottom: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .brand { font-size: 22pt; font-weight: 800; letter-spacing: -0.02em; }
+  .doc-tag {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #555;
+  }
+  h1 {
+    font-size: 18pt;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+  .lede {
+    font-size: 11pt;
+    color: #333;
+    margin-bottom: 22px;
+    max-width: 6.5in;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 22px;
+    margin-bottom: 18px;
+  }
+  .block { padding: 0; }
+  .block h3 {
+    font-size: 9pt;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #6b6b6b;
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+  .block p { font-size: 10.5pt; line-height: 1.45; }
+  .block ul { font-size: 10.5pt; padding-left: 16px; line-height: 1.5; }
+  .block ul li { margin-bottom: 3px; }
+
+  .what-it-feels-like {
+    background: #f8f8f8;
+    border-left: 3px solid #111;
+    padding: 12px 16px;
+    margin: 16px 0;
+    font-size: 10.5pt;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin: 14px 0 22px;
+  }
+  .stat {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  .stat .num {
+    font-size: 16pt;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat .lbl {
+    font-size: 8.5pt;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .ask-box {
+    border: 2px solid #111;
+    padding: 14px 16px;
+    margin: 18px 0 14px;
+  }
+  .ask-box h3 {
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 8px;
+  }
+  .ask-box p { font-size: 11pt; line-height: 1.5; }
+
+  .why-you {
+    font-size: 10pt;
+    background: #111;
+    color: #fff;
+    padding: 12px 16px;
+    margin-bottom: 18px;
+  }
+
+  footer.brief-footer {
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    font-size: 8.5pt;
+    color: #777;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; }
+    @page { size: 8.5in 11in; margin: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="brief-header">
+    <div class="brand">MODULOR</div>
+    <div class="doc-tag">Athlete Brief &middot; v1.0</div>
+  </header>
+
+  <h1>Built for athletes who are tired of guessing whether they're getting tighter or looser.</h1>
+  <p class="lede">
+    Modulor is a cable-driven stretching platform that pulls your limb through a controlled stretch, measures exactly how far you went, exactly how much force it took, and shows you whether your left and right sides match. Every session is a measurement. No therapist guessing pressure. No goniometer. No "how does that feel?"
+  </p>
+
+  <div class="why-you">
+    <strong>Why we're sending this to you:</strong> you're an athlete whose career depends on staying available. We're building this for people like you and we want your honest reaction before we ship.
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="num">100Hz</div><div class="lbl">Force tracking</div></div>
+    <div class="stat"><div class="num">±2&deg;</div><div class="lbl">Range of motion</div></div>
+    <div class="stat"><div class="num">L vs R</div><div class="lbl">Asymmetry</div></div>
+    <div class="stat"><div class="num">7</div><div class="lbl">Stretch patterns</div></div>
+  </div>
+
+  <div class="grid">
+    <div class="block">
+      <h3>What it does in plain English</h3>
+      <p>You lie or sit on a padded platform. A motorized cable attaches to a soft cuff on your ankle, wrist, or whichever segment is being stretched. The machine pulls slowly &mdash; you control how hard, in pounds, on a touchscreen &mdash; while a depth camera watches your body. It stretches you to your <em>actual</em> end-range. The moment your pelvis or trunk starts compensating, the force backs off automatically. You finish, you see your numbers, you go.</p>
+    </div>
+
+    <div class="block">
+      <h3>What it actually measures</h3>
+      <ul>
+        <li>Range of motion at a fixed force (your real flexibility)</li>
+        <li>End-range stiffness (how hard the tissue resists)</li>
+        <li>Left-vs-right asymmetry (the #1 hamstring re-injury predictor)</li>
+        <li>Whether you're trending up or down session-over-session</li>
+        <li>Composite injury-risk score</li>
+      </ul>
+    </div>
+
+    <div class="block">
+      <h3>Why it matters for your sport</h3>
+      <p>Hamstring strains are 24% of all injuries in pro football and have <em>doubled</em> over 21 years. ACL risk tracks ankle dorsiflexion. Adductor strains in basketball and lacrosse follow groin asymmetry. Today, performance staffs measure none of that with any precision &mdash; they use a hand-held protractor and their eyes. We measure all of it, every session.</p>
+    </div>
+
+    <div class="block">
+      <h3>Time per session</h3>
+      <p>Bilateral baseline + assisted stretch + report = <strong>under 8 minutes</strong>. Setup &lt;45 seconds. Designed to fit between weights and practice, not replace anything in your routine.</p>
+    </div>
+  </div>
+
+  <div class="what-it-feels-like">
+    <strong>What it feels like:</strong> Imagine a manual stretching session with a therapist who has perfect, repeatable hands, never gets tired, and shows you exactly how much further you went than last week. The machine yields the instant you start cheating. It will not push you past where your body is willing to go &mdash; that's the point.
+  </div>
+
+  <div class="ask-box">
+    <h3>What I'm asking from you</h3>
+    <p>20 minutes of your honest reaction. Read this, look at the website (link below), and tell me: <em>would you use this</em> &mdash; and if not, what would have to be different? If yes, would you let us put a unit in your team's facility for a 6-week pilot at no cost? You'd be the first athlete in your sport on the platform and you'd shape what we build next.</p>
+  </div>
+
+  <footer class="brief-footer">
+    <div>modulor &middot; <a href="#" style="color:#777;">[domain].com</a> &middot; built for athletes who measure</div>
+    <div>Confidential &mdash; please don't forward without checking</div>
+  </footer>
+
+</div>
+</body>
+</html>

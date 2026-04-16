@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../modulor-icon.png">
+<title>Modulor — Doc</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../ui.css">
+<style>
+  .doc { font-size: 15px; line-height: 1.7; color: var(--ink); }
+  .doc h1 { font-size: 32px; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink-bright); margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--rule); }
+  .doc h2 { font-size: 20px; font-weight: 600; color: var(--ink-bright); margin: 36px 0 12px; }
+  .doc h3 { font-size: 15px; font-weight: 600; color: var(--ink-bright); margin: 24px 0 8px; }
+  .doc h4 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.10em; color: var(--ink-dim); font-weight: 600; margin: 20px 0 6px; }
+  .doc p { margin-bottom: 14px; }
+  .doc ul, .doc ol { margin: 0 0 14px 22px; }
+  .doc li { margin-bottom: 4px; }
+  .doc strong { color: var(--ink-bright); }
+  .doc em { color: var(--ink); font-style: italic; }
+  .doc a { color: var(--ink-bright); border-bottom: 1px solid var(--rule-bright); }
+  .doc a:hover { border-color: var(--ink-bright); }
+  .doc code { font-family: 'SF Mono', Menlo, monospace; font-size: 13px; background: var(--bg-card); padding: 2px 6px; border-radius: 3px; color: var(--ink-bright); }
+  .doc pre { background: #000; padding: 16px; overflow-x: auto; margin: 14px 0; font-size: 13px; border-radius: 4px; border: 1px solid var(--rule); }
+  .doc pre code { background: transparent; padding: 0; }
+  .doc blockquote { border-left: 2px solid var(--rule-bright); padding-left: 18px; margin: 16px 0; color: var(--ink-dim); }
+  .doc table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+  .doc th, .doc td { border: 1px solid var(--rule); padding: 8px 12px; text-align: left; }
+  .doc th { background: var(--bg-card); font-weight: 600; color: var(--ink-bright); }
+  .doc hr { border: none; border-top: 1px solid var(--rule); margin: 28px 0; }
+  .loading { color: var(--ink-dim); font-style: italic; }
+  .error { color: var(--danger); padding: 20px; background: var(--bg-card); border: 1px solid var(--danger); border-radius: 4px; }
+  .foot-nav { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; font-size: 12px; }
+  .foot-nav a { color: var(--ink-dim); }
+  .foot-nav a:hover { color: var(--ink-bright); }
+</style>
+</head>
+<body>
+
+<nav class="ui-nav">
+  <div class="ui-nav-inner">
+    <a href="../index.html" class="ui-logo">
+      <img src="../modulor-icon.png" alt="">
+      <span>MODULOR</span>
+    </a>
+    <div class="ui-nav-links">
+      <a href="../index.html" class="ui-nav-link">Home</a>
+      <a href="../pitch.html" class="ui-nav-link">Deck</a>
+      <a href="../hub.html" class="ui-nav-link">Data Room</a>
+      <a href="index.html" class="ui-nav-link">Docs</a>
+    </div>
+  </div>
+</nav>
+
+<main class="ui-page ui-narrow">
+  <div class="doc" id="doc"><p class="loading">Loading…</p></div>
+  <div class="foot-nav">
+    <a href="index.html">&larr; all docs</a>
+    <a id="raw-link" href="#">raw .md &rarr;</a>
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+(function() {
+  var params = new URLSearchParams(location.search);
+  var doc = params.get('doc');
+  var el = document.getElementById('doc');
+  var rawLink = document.getElementById('raw-link');
+
+  if (!doc || !/^[A-Za-z0-9_\-]+\.md$/.test(doc)) {
+    el.innerHTML = '<div class="error">No doc specified. <a href="index.html">Back to docs</a>.</div>';
+    return;
+  }
+
+  rawLink.href = doc;
+
+  fetch(doc)
+    .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
+    .then(function(md) {
+      marked.setOptions({ breaks: false, gfm: true });
+      el.innerHTML = marked.parse(md);
+      var h1 = el.querySelector('h1');
+      if (h1) document.title = 'Modulor — ' + h1.textContent;
+    })
+    .catch(function(err) {
+      el.innerHTML = '<div class="error">Couldn\'t load <code>' + doc + '</code>: ' + err.message + '</div>';
+    });
+})();
+</script>
+
+</body>
+</html>

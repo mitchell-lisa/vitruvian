@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../modulor-icon.png">
+<title>Modulor — Design Docs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../ui.css">
+<style>
+  .doclist { list-style: none; counter-reset: step; }
+  .doclist li { counter-increment: step; position: relative; margin-bottom: 10px; }
+  .doclist a { display: block; background: var(--bg-card); border: 1px solid var(--rule); padding: 18px 24px 18px 64px; border-radius: 4px; transition: border-color 0.15s, background 0.15s; }
+  .doclist a:hover { border-color: var(--rule-bright); background: var(--bg-elev); }
+  .doclist a::before { content: counter(step, decimal-leading-zero); position: absolute; left: 24px; top: 18px; font-family: 'SF Mono', Menlo, monospace; font-size: 13px; color: var(--ink-faint); font-weight: 600; }
+  .doc-title { font-size: 14px; font-weight: 600; color: var(--ink-bright); margin-bottom: 2px; }
+  .doc-desc { font-size: 12px; color: var(--ink-dim); }
+</style>
+</head>
+<body>
+
+<nav class="ui-nav">
+  <div class="ui-nav-inner">
+    <a href="../index.html" class="ui-logo">
+      <img src="../modulor-icon.png" alt="">
+      <span>MODULOR</span>
+    </a>
+    <div class="ui-nav-links">
+      <a href="../index.html" class="ui-nav-link">Home</a>
+      <a href="../pitch.html" class="ui-nav-link">Deck</a>
+      <a href="../hub.html" class="ui-nav-link">Data Room</a>
+      <a href="../feedback.html" class="ui-nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main class="ui-page ui-narrow">
+
+  <div class="ui-eyebrow">Design Docs</div>
+  <h1 class="ui-h1">How we built it.</h1>
+  <p class="ui-sub">Short docs. Read in order or jump in.</p>
+
+  <ol class="doclist" style="margin-top:32px;">
+    <li><a href="view.html?doc=01-product-definition.md">
+      <div class="doc-title">Product Definition</div>
+      <div class="doc-desc">What it is. Who it's for.</div>
+    </a></li>
+    <li><a href="view.html?doc=02-mvp-design.md">
+      <div class="doc-title">MVP Design</div>
+      <div class="doc-desc">What ships v1.</div>
+    </a></li>
+    <li><a href="view.html?doc=03-mechanical-system.md">
+      <div class="doc-title">Mechanical System</div>
+      <div class="doc-desc">Cable, motor, frame.</div>
+    </a></li>
+    <li><a href="view.html?doc=04-sensor-ai-system.md">
+      <div class="doc-title">Sensors &amp; AI</div>
+      <div class="doc-desc">Load cell, depth camera, compensation.</div>
+    </a></li>
+    <li><a href="view.html?doc=05-user-experience-flow.md">
+      <div class="doc-title">User Flow</div>
+      <div class="doc-desc">Badge-in to report.</div>
+    </a></li>
+    <li><a href="view.html?doc=06-prototype-build-plan.md">
+      <div class="doc-title">Build Plan</div>
+      <div class="doc-desc">BOM. Order. Milestones.</div>
+    </a></li>
+    <li><a href="view.html?doc=07-what-to-cut.md">
+      <div class="doc-title">What to Cut</div>
+      <div class="doc-desc">Scope discipline.</div>
+    </a></li>
+    <li><a href="view.html?doc=08-what-makes-this-special.md">
+      <div class="doc-title">What's Special</div>
+      <div class="doc-desc">Our edge.</div>
+    </a></li>
+    <li><a href="view.html?doc=PRODUCT_REDESIGN.md">
+      <div class="doc-title">Redesign Notes</div>
+      <div class="doc-desc">What changed.</div>
+    </a></li>
+    <li><a href="view.html?doc=09-billionaire-lens.md">
+      <div class="doc-title">Billionaire Lens</div>
+      <div class="doc-desc">Where we're thinking too small.</div>
+    </a></li>
+    <li><a href="view.html?doc=10-opportunity-filter.md">
+      <div class="doc-title">Opportunity Filter</div>
+      <div class="doc-desc">Scale. Leverage. Wealth.</div>
+    </a></li>
+    <li><a href="view.html?doc=11-wealth-blueprint.md">
+      <div class="doc-title">Wealth Blueprint</div>
+      <div class="doc-desc">$100K → $1M/month roadmap.</div>
+    </a></li>
+    <li><a href="view.html?doc=12-wealth-psychology.md">
+      <div class="doc-title">Wealth Psychology</div>
+      <div class="doc-desc">What's actually capping the number.</div>
+    </a></li>
+    <li><a href="view.html?doc=13-real-money-game.md">
+      <div class="doc-title">Real Money Game</div>
+      <div class="doc-desc">Who owns distribution. Where profit lives.</div>
+    </a></li>
+    <li><a href="view.html?doc=14-power-thinking.md">
+      <div class="doc-title">Power Thinking</div>
+      <div class="doc-desc">Speed. Risk. Skew.</div>
+    </a></li>
+    <li><a href="view.html?doc=15-leverage-system.md">
+      <div class="doc-title">Leverage System</div>
+      <div class="doc-desc">Capital. People. Tech. Media.</div>
+    </a></li>
+    <li><a href="view.html?doc=16-unfair-advantage.md">
+      <div class="doc-title">Unfair Advantage</div>
+      <div class="doc-desc">Skills. Distribution. Network. Positioning.</div>
+    </a></li>
+    <li><a href="view.html?doc=17-future-projection.md">
+      <div class="doc-title">Future Projection</div>
+      <div class="doc-desc">Where this goes in 3 years.</div>
+    </a></li>
+    <li><a href="view.html?doc=18-elite-decision-model.md">
+      <div class="doc-title">Elite Decision Model</div>
+      <div class="doc-desc">Move fast. Say no. Minimize risk.</div>
+    </a></li>
+    <li><a href="view.html?doc=19-military-gtm.md">
+      <div class="doc-title">Military GTM</div>
+      <div class="doc-desc">AFWERX. SOFWERX. DIU. Non-dilutive.</div>
+    </a></li>
+    <li><a href="view.html?doc=20-integration-roadmap.md">
+      <div class="doc-title">Integration Roadmap</div>
+      <div class="doc-desc">Smartabase. Kitman. TeamBuildr. Catapult.</div>
+    </a></li>
+  </ol>
+
+</main>
+
+<footer class="ui-footer">
+  <span>Modulor · Docs</span>
+  <a href="../hub.html">Data Room</a>
+</footer>
+
+</body>
+</html>

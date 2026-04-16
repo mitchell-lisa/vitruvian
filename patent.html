@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="modulor-icon.png">
+  <title>Provisional Patent Application — Modulor Stretching Apparatus</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      background: #ffffff;
+      color: #111;
+      line-height: 2.0;
+      font-size: 12pt;
+      padding: 0;
+    }
+    .doc-wrap {
+      max-width: 8.5in;
+      margin: 0 auto;
+      padding: 1in 1in 1in 1.25in;
+      background: #fff;
+    }
+    .header-block {
+      text-align: center;
+      margin-bottom: 36pt;
+      border-bottom: 1px solid #000;
+      padding-bottom: 18pt;
+    }
+    .header-block .docket {
+      font-size: 10pt;
+      text-align: right;
+      margin-bottom: 18pt;
+      font-family: 'Courier New', monospace;
+    }
+    .header-block h1 {
+      font-size: 14pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      line-height: 1.4;
+      margin-bottom: 12pt;
+    }
+    .header-block .subtitle {
+      font-size: 11pt;
+      font-style: italic;
+      color: #333;
+    }
+
+    .section-heading {
+      font-size: 12pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+      margin: 36pt 0 18pt;
+      letter-spacing: 0.03em;
+    }
+    .subsection-heading {
+      font-size: 12pt;
+      font-weight: 700;
+      margin: 24pt 0 12pt;
+      text-decoration: underline;
+    }
+    p.para {
+      text-indent: 0.5in;
+      margin-bottom: 12pt;
+      text-align: justify;
+    }
+    p.para .pnum {
+      font-weight: 400;
+      margin-right: 6pt;
+    }
+    p.para.no-indent { text-indent: 0; }
+    .ref { font-weight: 700; }
+    .claim-list {
+      list-style: none;
+      counter-reset: claim-counter;
+      padding-left: 0;
+    }
+    .claim-list > li {
+      counter-increment: claim-counter;
+      margin-bottom: 18pt;
+      text-indent: 0.5in;
+      text-align: justify;
+    }
+    .claim-list > li::before {
+      content: counter(claim-counter) ". ";
+      font-weight: 700;
+    }
+    .claim-list > li.dep {
+      margin-left: 0.25in;
+    }
+    .fig-block {
+      margin: 24pt 0;
+      page-break-inside: avoid;
+      text-align: center;
+      border: 1px solid #000;
+      padding: 16pt;
+      background: #fafafa;
+    }
+    .fig-block svg {
+      width: 100%;
+      max-width: 6.5in;
+      height: auto;
+      background: #fff;
+    }
+    .fig-block .fig-title {
+      font-size: 11pt;
+      font-weight: 700;
+      text-align: center;
+      margin-top: 10pt;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .fig-block .fig-caption {
+      font-size: 10pt;
+      font-style: italic;
+      margin-top: 6pt;
+      color: #333;
+      line-height: 1.5;
+    }
+    .ref-table {
+      width: 100%;
+      margin: 18pt 0;
+      border-collapse: collapse;
+      font-size: 11pt;
+    }
+    .ref-table th, .ref-table td {
+      border: 1px solid #000;
+      padding: 6pt 10pt;
+      text-align: left;
+      vertical-align: top;
+    }
+    .ref-table th {
+      background: #f0f0f0;
+      font-weight: 700;
+    }
+    .ref-table td:first-child {
+      font-weight: 700;
+      width: 80pt;
+      text-align: center;
+    }
+    .abstract-box {
+      border: 1px solid #000;
+      padding: 18pt;
+      margin: 18pt 0;
+      background: #fafafa;
+    }
+    .toc {
+      margin: 24pt 0;
+      padding: 18pt;
+      border: 1px solid #000;
+      background: #f8f8f8;
+    }
+    .toc h3 {
+      font-size: 12pt;
+      font-weight: 700;
+      margin-bottom: 10pt;
+      text-align: center;
+    }
+    .toc ol {
+      list-style: decimal;
+      padding-left: 30pt;
+      line-height: 1.8;
+    }
+    .toc a {
+      color: #000;
+      text-decoration: none;
+    }
+    .toc a:hover { text-decoration: underline; }
+
+    /* ============================================================
+       FILING BANNER (screen only — workflow instructions)
+       ============================================================ */
+    .filing-banner {
+      max-width: 8.5in;
+      margin: 24pt auto 0;
+      padding: 18pt 22pt;
+      background: #f2f7ff;
+      border: 1px solid #2b5fd9;
+      border-left: 4px solid #2b5fd9;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: #0f1e3d;
+    }
+    .filing-banner h4 {
+      font-size: 12pt;
+      font-weight: 700;
+      margin-bottom: 8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .filing-banner ol {
+      padding-left: 22pt;
+      margin: 6pt 0 10pt;
+    }
+    .filing-banner ol li { margin-bottom: 4pt; }
+    .filing-banner .btn-row { margin-top: 12pt; display: flex; gap: 10pt; flex-wrap: wrap; }
+    .filing-banner button {
+      font-family: inherit;
+      font-size: 11pt;
+      font-weight: 600;
+      padding: 8pt 16pt;
+      background: #2b5fd9;
+      color: #fff;
+      border: none;
+      border-radius: 3pt;
+      cursor: pointer;
+    }
+    .filing-banner button.alt {
+      background: #fff;
+      color: #2b5fd9;
+      border: 1px solid #2b5fd9;
+    }
+    .filing-banner button:hover { opacity: 0.88; }
+    .filing-banner code {
+      font-family: 'SF Mono', Menlo, monospace;
+      background: #e1ecff;
+      padding: 1pt 5pt;
+      border-radius: 2pt;
+      font-size: 10pt;
+    }
+
+    @media print {
+      @page { size: 8.5in 11in; margin: 1in 1in 1in 1.25in; }
+      body { font-size: 12pt; line-height: 2.0; background: #fff; }
+      .doc-wrap { padding: 0; max-width: 100%; }
+      h2.section-heading { page-break-before: always; page-break-after: avoid; }
+      h2.section-heading:first-of-type { page-break-before: auto; }
+      h3.subsection-heading { page-break-after: avoid; }
+      .fig-block { page-break-inside: avoid; background: #fff; border: 1px solid #000; }
+      .fig-block svg { max-width: 6in; }
+      .claim-list > li { page-break-inside: avoid; }
+      .ref-table { page-break-inside: avoid; }
+      .toc, .no-print, .filing-banner { display: none; }
+      .abstract-box { background: #fff; }
+      p.para { orphans: 3; widows: 3; }
+      a { color: #000; text-decoration: none; }
+
+      /* Filing mode — hide items that Patent Center collects via forms
+         or that belong in the separate Drawings PDF.
+         Default: always hide in print (recommended for provisional filing). */
+      .filing-hide { display: none !important; }
+      .fig-block { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     FILED BANNER — confirms the provisional is on record with USPTO
+     ============================================================ -->
+<div class="filing-banner no-print" style="background:#eafbef; border-color:#1f8f4c; border-left-color:#1f8f4c; color:#0b3d1f;">
+  <h4 style="color:#0b3d1f;">&#10003; Filed &middot; USPTO Provisional Application 64/040,028</h4>
+  <p style="color:#0b3d1f;">This specification was filed with the United States Patent and Trademark Office on <strong>April 15, 2026</strong> as a provisional patent application under 35 U.S.C. &sect; 111(b). The invention is legally <strong>patent pending</strong> as of the filing date.</p>
+  <table style="width:100%; margin-top:10pt; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-size:11pt; border-collapse:collapse;">
+    <tr><td style="padding:4pt 12pt 4pt 0; color:#0b3d1f; font-weight:600; width:180pt;">Application Number</td><td style="padding:4pt 0;"><code style="background:#d3f3dd; padding:1pt 6pt; border-radius:2pt;">64/040,028</code></td></tr>
+    <tr><td style="padding:4pt 12pt 4pt 0; color:#0b3d1f; font-weight:600;">Filing Date</td><td style="padding:4pt 0;">April 15, 2026</td></tr>
+    <tr><td style="padding:4pt 12pt 4pt 0; color:#0b3d1f; font-weight:600;">Attorney Docket</td><td style="padding:4pt 0;"><code style="background:#d3f3dd; padding:1pt 6pt; border-radius:2pt;">VITR-001-PROV</code></td></tr>
+    <tr><td style="padding:4pt 12pt 4pt 0; color:#0b3d1f; font-weight:600;">Application Type</td><td style="padding:4pt 0;">Utility &mdash; Provisional under 35 U.S.C. &sect; 111(b)</td></tr>
+    <tr><td style="padding:4pt 12pt 4pt 0; color:#0b3d1f; font-weight:600;">Inventor</td><td style="padding:4pt 0;">Mitchell Lisa</td></tr>
+    <tr><td style="padding:4pt 12pt 4pt 0; color:#0b3d1f; font-weight:600;">Applicant / Assignee</td><td style="padding:4pt 0;">MJL Collective LLC (New Jersey)</td></tr>
+    <tr><td style="padding:4pt 12pt 4pt 0; color:#0b3d1f; font-weight:600;">Entity Status</td><td style="padding:4pt 0;">Small Entity</td></tr>
+    <tr><td style="padding:4pt 12pt 4pt 0; color:#0b3d1f; font-weight:600;">Nonprovisional Conversion Deadline</td><td style="padding:4pt 0;"><strong>April 15, 2027</strong></td></tr>
+  </table>
+  <p style="margin-top:14pt; font-size:10pt; color:#1f633a;">Downloads: <a href="VITR-001-PROV-Specification.pdf" style="color:#0b6b33;">Specification (as filed)</a> &middot; <a href="VITR-001-PROV-Drawings.pdf" style="color:#0b6b33;">Drawings (as filed)</a> &middot; <a href="drawings.html" style="color:#0b6b33;">Drawings (on-screen)</a></p>
+</div>
+
+<div class="doc-wrap">
+
+  <!-- ============================================================
+       HEADER BLOCK
+       ============================================================ -->
+  <div class="header-block">
+    <p class="docket">Attorney Docket No. VITR-001-PROV<br>Provisional Patent Application under 35 U.S.C. &sect; 111(b)</p>
+    <h1>Force-Controlled Cable-Driven Stretching Apparatus with<br>
+        Vision-Based Compensation Detection and<br>
+        Adaptive Longitudinal Protocol</h1>
+    <p class="subtitle">Specification &mdash; Provisional Application under 35 U.S.C. &sect; 111(b)</p>
+  </div>
+
+  <!-- ============================================================
+       COVER SHEET (PTO/SB/16 equivalent) — hidden on print.
+       Patent Center collects this information via its online form.
+       Retained here on-screen for reference while preparing the filing.
+       ============================================================ -->
+  <table class="ref-table filing-hide" style="margin-bottom:18pt;">
+    <tr>
+      <th style="width:180pt;">Title of Invention</th>
+      <td>Force-Controlled Cable-Driven Stretching Apparatus with Vision-Based Compensation Detection and Adaptive Longitudinal Protocol</td>
+    </tr>
+    <tr>
+      <th>Inventor</th>
+      <td>
+        Mitchell Lisa &mdash; Residence: Moorestown, New Jersey, United States &mdash; Citizenship: United States
+      </td>
+    </tr>
+    <tr>
+      <th>Applicant / Assignee</th>
+      <td>MJL Collective LLC &mdash; New Jersey limited liability company &mdash; 236 Route 38 West, Suite 130, Moorestown, NJ 08057</td>
+    </tr>
+    <tr>
+      <th>Correspondence Address</th>
+      <td>Mitchell Lisa<br>705 Yorktown Lane<br>Moorestown, NJ 08057<br>Telephone: (609) 760-1238 &nbsp;&nbsp;&nbsp; Email: mitchelljordanlisa@gmail.com</td>
+    </tr>
+    <tr>
+      <th>Attorney Docket No.</th>
+      <td>VITR-001-PROV</td>
+    </tr>
+    <tr>
+      <th>Entity Status</th>
+      <td>[ ] Regular &nbsp;&nbsp; [X] Small Entity (37 CFR 1.27) &nbsp;&nbsp; [ ] Micro Entity (37 CFR 1.29)</td>
+    </tr>
+    <tr>
+      <th>Filing Date</th>
+      <td>______________________ <span style="font-style:italic;">(to be completed at filing)</span></td>
+    </tr>
+    <tr>
+      <th>Enclosures</th>
+      <td>[X] Specification (pages) &nbsp;&nbsp; [X] Drawings (FIG. 1&ndash;11) &nbsp;&nbsp; [X] Claims (provisional &mdash; optional) &nbsp;&nbsp; [X] Abstract &nbsp;&nbsp; [ ] Fee transmittal (PTO/SB/17) &nbsp;&nbsp; [ ] Application Data Sheet (PTO/AIA/14)</td>
+    </tr>
+  </table>
+
+  <!-- ============================================================
+       TABLE OF CONTENTS (aid for prosecution)
+       ============================================================ -->
+  <div class="toc no-print">
+    <h3>Table of Contents</h3>
+    <ol>
+      <li><a href="#xref">Cross-Reference to Related Applications</a></li>
+      <li><a href="#field">Field of the Invention</a></li>
+      <li><a href="#background">Background of the Invention</a></li>
+      <li><a href="#summary">Brief Summary of the Invention</a></li>
+      <li><a href="#drawings">Brief Description of the Drawings</a></li>
+      <li><a href="#detailed">Detailed Description of Preferred Embodiments</a></li>
+      <li><a href="#claims">What Is Claimed</a></li>
+      <li><a href="#abstract">Abstract of the Disclosure</a></li>
+    </ol>
+  </div>
+
+  <!-- ============================================================
+       CROSS-REFERENCE
+       ============================================================ -->
+  <h2 class="section-heading" id="xref">Cross-Reference to Related Applications</h2>
+  <p class="para"><span class="pnum">[0001]</span>
+    This is a provisional patent application filed under 35 U.S.C. &sect; 111(b). No related applications are cross-referenced at the time of this filing.
+  </p>
+
+  <h2 class="section-heading">Statement Regarding Federally Sponsored Research or Development</h2>
+  <p class="para"><span class="pnum">[0002]</span>
+    Not applicable. This invention was not made with United States Government support.
+  </p>
+
+  <h2 class="section-heading">Reference to Sequence Listing, Table, or Computer Program Listing Compact Disc Appendix</h2>
+  <p class="para"><span class="pnum">[0003]</span>
+    Not applicable.
+  </p>
+
+  <!-- ============================================================
+       FIELD OF THE INVENTION
+       ============================================================ -->
+  <h2 class="section-heading" id="field">Field of the Invention</h2>
+  <p class="para"><span class="pnum">[0004]</span>
+    The present invention relates generally to athletic training, rehabilitation, and assisted stretching devices. More particularly, the invention relates to a motorized, cable-driven apparatus that applies controlled tensile force to a limb of a human subject while concurrently measuring biomechanical parameters including joint range of motion, cable force, and movement compensation, and that adjusts applied force in real time based on vision-detected compensatory motion. The invention further relates to methods of bilateral assessment, longitudinal flexibility tracking, injury risk scoring, and adaptive protocol modification using the data acquired during such stretching sessions.
+  </p>
+
+  <!-- ============================================================
+       BACKGROUND OF THE INVENTION
+       ============================================================ -->
+  <h2 class="section-heading" id="background">Background of the Invention</h2>
+
+  <h3 class="subsection-heading">A. The Clinical Problem</h3>
+  <p class="para"><span class="pnum">[0005]</span>
+    Soft-tissue injuries, and in particular muscle strains affecting the hamstrings, adductors, quadriceps, hip flexors, and calves, are among the most prevalent and costly injuries in professional and collegiate athletics. Longitudinal epidemiological data from the Union of European Football Associations (UEFA) Elite Club Injury Study documents that hamstring injuries alone have doubled as a percentage of total injuries over a twenty-one year observation period, rising from approximately twelve percent (12%) to twenty-four percent (24%) of all recorded injuries, with training-incurred injuries rising approximately 6.7% annually despite advances in strength and conditioning science.
+  </p>
+  <p class="para"><span class="pnum">[0006]</span>
+    Similar trends have been documented across other elite sports. A twelve-year review of 2,101 hamstring injuries in the National Football League reported that approximately twenty-five percent (25%) of players sustain at least one lower-extremity strain per season, with re-injury rates exceeding thirty percent (30%). In professional association football, approximately twenty-one percent (21%) of players suffer a groin or adductor injury per season, of which sixty-eight percent (68%) are adductor-related. Systematic reviews further establish that restricted hip internal rotation and restricted ankle dorsiflexion are independent biomechanical risk factors for anterior cruciate ligament (ACL) injury.
+  </p>
+  <p class="para"><span class="pnum">[0007]</span>
+    The economic consequences are substantial. Top tier association football clubs report losses exceeding seven million Euros (&euro;7M) per annum attributable to muscle injuries. In the English Premier League during the 2023-2024 season, aggregate player wages paid to sidelined athletes exceeded two hundred sixty-six million pounds (&pound;266M), of which eighty-three million pounds (&pound;83M) was attributable to hamstring injuries alone.
+  </p>
+
+  <h3 class="subsection-heading">B. Limitations of the Prior Art</h3>
+  <p class="para"><span class="pnum">[0008]</span>
+    Despite the documented clinical and economic significance of soft-tissue injury, the assessment and treatment of joint flexibility and muscle extensibility in elite athletic settings remain substantially unchanged since the adoption of clinical goniometry in the mid-twentieth century. The prior art devices and methods suffer from several fundamental limitations that the present invention addresses.
+  </p>
+  <p class="para"><span class="pnum">[0009]</span>
+    <em>Manual goniometry.</em> Conventional joint angle measurement is performed using a manual goniometer operated by a clinician. Published inter-rater reliability studies demonstrate errors of five to ten degrees (5&deg;&ndash;10&deg;) depending on joint, clinician experience, and soft tissue palpability. Measurements are recorded on paper or entered manually into an athlete management system, introducing transcription error and preventing real-time comparison. No standardized applied force is used, so the joint angle measured represents end-range tolerance for that clinician&rsquo;s specific applied pressure, which varies between sessions and clinicians.
+  </p>
+  <p class="para"><span class="pnum">[0010]</span>
+    <em>Manual assisted stretching.</em> Assisted stretching performed by a clinician or partner lacks force standardization, creates clinician fatigue over multi-hour sessions affecting large rosters, and produces no quantitative record of applied force, range of motion, or compensation. Compensatory motion by the athlete (pelvic rotation, knee flexion, trunk shift) is judged by eye and frequently missed.
+  </p>
+  <p class="para"><span class="pnum">[0011]</span>
+    <em>Isokinetic dynamometers (e.g., Biodex, Cybex).</em> Clinical isokinetic devices measure torque and angular velocity but are designed for strength assessment under concentric and eccentric loading, not for sustained static stretching. They are expensive (frequently exceeding one hundred thousand United States dollars, $100,000), lack integrated vision-based compensation detection, and do not implement force-controlled passive stretching protocols suitable for pre-practice or recovery use.
+  </p>
+  <p class="para"><span class="pnum">[0012]</span>
+    <em>Pneumatic compression devices (e.g., Normatec).</em> Compression devices provide passive recovery modalities but do not apply a directed tensile stretch, do not measure joint range of motion, and do not generate biomechanical data relevant to flexibility assessment.
+  </p>
+  <p class="para"><span class="pnum">[0013]</span>
+    <em>Manual stretching services (e.g., StretchLab).</em> Franchise-based manual stretching services provide one-to-one assisted stretching but produce no objective measurement, no protocol consistency across providers, and no longitudinal record suitable for trend analysis or injury risk assessment.
+  </p>
+  <p class="para"><span class="pnum">[0014]</span>
+    <em>Computer vision goniometry applications.</em> Mobile-device applications exist that estimate joint angles from two-dimensional video. Such applications suffer from substantial parallax error inherent to monocular two-dimensional capture, lack a standardized force input, are not integrated with a motorized stretching apparatus, and do not close a feedback loop between measured compensation and applied force.
+  </p>
+  <p class="para"><span class="pnum">[0015]</span>
+    <em>Cable-drive fitness devices.</em> Motorized cable-drive resistance training devices exist in the prior art for strength training (for example, devices marketed under the name "Modulor Trainer" and "Tonal"). Such devices apply resistance against concentric muscle action for strength training. They do not apply passive directed tensile force for stretching, do not implement vision-based compensation detection, and do not integrate joint-angle measurement with force application for flexibility assessment.
+  </p>
+  <p class="para"><span class="pnum">[0016]</span>
+    Accordingly, there exists a need in the art for an apparatus and associated methods that (a) apply controlled, standardized tensile force to a limb of a human subject for the purpose of assisted stretching, (b) concurrently measure joint range of motion and movement compensation in real time, (c) close a feedback loop between detected compensation and applied force to prevent unsafe or biomechanically invalid stretching, (d) generate a standardized, exportable quantitative record of each session, and (e) use longitudinal session data to produce individualized injury risk scoring and adaptive protocol modification. The present invention satisfies these needs.
+  </p>
+
+  <!-- ============================================================
+       BRIEF SUMMARY OF THE INVENTION
+       ============================================================ -->
+  <h2 class="section-heading" id="summary">Brief Summary of the Invention</h2>
+  <p class="para"><span class="pnum">[0017]</span>
+    The present invention provides an apparatus, system, and method for force-controlled assisted stretching with vision-based compensation detection and adaptive longitudinal protocol modification. In one embodiment, the apparatus comprises a support frame, a brushless direct-current (BLDC) motor coupled through a planetary gearbox to a cable spool, a flexible cable wound on the spool and terminating in a quick-release cuff adapted to engage a limb of a human subject, an inline force sensor arranged along the cable, a depth-sensing camera arranged to observe the subject, a motor controller configured to execute a proportional-integral-derivative (PID) force control loop, and a computing system configured to process depth data from the camera to extract a skeletal model of the subject and detect compensatory motion.
+  </p>
+  <p class="para"><span class="pnum">[0018]</span>
+    In a principal aspect of the invention, the computing system is configured to classify compensatory motion and to transmit a compensation signal to the motor controller that modifies the force setpoint of the PID loop in real time, such that the applied cable tension is automatically reduced when compensation is detected. This closed-loop coupling between vision-based compensation detection and force control constitutes a significant and non-obvious improvement over the prior art.
+  </p>
+  <p class="para"><span class="pnum">[0019]</span>
+    In a further aspect, the apparatus implements a five-layer independent safety cascade comprising: (1) a software force cap, (2) a PID compliance loop with anti-windup, (3) a mechanical slip clutch between the gearbox output and the spool, (4) a hardwired emergency stop circuit, and (5) a quick-release cuff mechanically detachable from the cable. Each layer operates independently and may halt the stretch without reliance on any other layer.
+  </p>
+  <p class="para"><span class="pnum">[0020]</span>
+    In a further aspect, the apparatus is reconfigurable to perform a plurality of stretch patterns from a single drive system without modification of the motor, gearbox, cable, or spool. In a first version configuration, the apparatus serves four stretch patterns through athlete repositioning relative to a fixed pulley. In a second version configuration, the apparatus additionally serves three further stretch patterns through engagement of an adjustable pulley mounted on a sliding track.
+  </p>
+  <p class="para"><span class="pnum">[0021]</span>
+    In a further aspect, the method of the invention comprises a bilateral assessment protocol in which a standardized passive stretch is applied to a first limb at a standardized force, a peak joint angle is measured, the same standardized stretch is applied to the contralateral limb, a bilateral asymmetry is calculated as the absolute difference between the two peak angles, and an asymmetry flag is raised when the difference exceeds a threshold. The method further comprises the storage of nine measurement variables per repetition including peak joint angle, cable force, bilateral asymmetry, hold time, compensation flags, tolerance threshold, pain response, tension ramp rate, and session delta, and the generation of a longitudinal injury risk score based on time-series analysis of said variables.
+  </p>
+  <p class="para"><span class="pnum">[0022]</span>
+    In a further aspect, the system implements an adaptive protocol engine that uses longitudinal session data to modify protocol parameters (force setpoint, hold time, number of repetitions, pattern selection) for subsequent sessions of the same subject, such that the protocol individualizes to the subject&rsquo;s biomechanical profile over time.
+  </p>
+  <p class="para"><span class="pnum">[0023]</span>
+    The foregoing is a non-limiting summary. Additional features, aspects, and advantages of the invention will become apparent from the following detailed description and the appended claims, taken in conjunction with the accompanying drawings.
+  </p>
+
+  <!-- ============================================================
+       BRIEF DESCRIPTION OF THE DRAWINGS
+       ============================================================ -->
+  <h2 class="section-heading" id="drawings">Brief Description of the Drawings</h2>
+  <p class="para"><span class="pnum">[0024]</span>
+    The accompanying drawings are incorporated into and form a part of this specification. The drawings illustrate embodiments of the invention and, together with the description, serve to explain the principles of the invention. The drawings are not drawn to scale unless specifically noted.
+  </p>
+  <p class="para no-indent"><span class="pnum">[0025]</span>
+    <strong>FIG. 1</strong> is a system-level block diagram illustrating the principal functional elements of the apparatus and their signal interconnections, including the novel compensation feedback path from the vision system to the PID controller.
+  </p>
+  <p class="para no-indent"><span class="pnum">[0026]</span>
+    <strong>FIG. 2</strong> is a side-elevation schematic of one embodiment of the apparatus, showing the arrangement of the motor, gearbox, cable spool, load cell, cuff, depth camera, touchscreen, emergency stop, and support frame.
+  </p>
+  <p class="para no-indent"><span class="pnum">[0027]</span>
+    <strong>FIG. 3</strong> is a flow diagram illustrating one embodiment of the bilateral assessment method, including the steps of subject identification, bilateral baseline measurement, asymmetry calculation, stretch protocol execution with closed-loop control, data logging, report generation, and longitudinal feedback.
+  </p>
+  <p class="para no-indent"><span class="pnum">[0028]</span>
+    <strong>FIG. 4</strong> is a detail schematic of the cable drive assembly, showing the BLDC motor, planetary gearbox, cable spool, mechanical slip clutch, flexible cable, and ODrive field-oriented control (FOC) motor controller.
+  </p>
+  <p class="para no-indent"><span class="pnum">[0029]</span>
+    <strong>FIG. 5</strong> is a schematic of the sensor array and data paths, showing the depth camera, inline load cell, edge compute module, touchscreen interface, and cloud storage link.
+  </p>
+  <p class="para no-indent"><span class="pnum">[0030]</span>
+    <strong>FIG. 6</strong> is a schematic of the control interface architecture, showing the session user interface, live display, trend view, and local data bus.
+  </p>
+  <p class="para no-indent"><span class="pnum">[0031]</span>
+    <strong>FIG. 7</strong> is a schematic of the five-layer safety cascade, showing each independent safety layer with characteristic response time.
+  </p>
+  <p class="para no-indent"><span class="pnum">[0032]</span>
+    <strong>FIG. 8</strong> is a schematic of the measurement extraction pipeline, showing the three raw sensor inputs, the sensor fusion stage, the nine derived measurement variables, and the longitudinal risk score engine.
+  </p>
+  <p class="para no-indent"><span class="pnum">[0033]</span>
+    <strong>FIG. 9</strong> is a schematic of the multi-pattern reconfigurable platform, showing four V1 stretch patterns served by a fixed pulley and three V2 stretch patterns served by an adjustable pulley on a sliding track.
+  </p>
+  <p class="para no-indent"><span class="pnum">[0034]</span>
+    <strong>FIG. 10</strong> is a detail block diagram of the PID force-compliance control loop, showing the summing junction, PID controller, force cap, motor drive, plant, load cell feedback path, and compensation signal input.
+  </p>
+  <p class="para no-indent"><span class="pnum">[0035]</span>
+    <strong>FIG. 11</strong> is a detail flow diagram of the compensation detection and adaptive force response algorithm, showing the depth frame input, pose model, joint angle calculation, compensation classifier, and force setpoint modification output.
+  </p>
+
+  <!-- ============================================================
+       DETAILED DESCRIPTION
+       ============================================================ -->
+  <h2 class="section-heading" id="detailed">Detailed Description of Preferred Embodiments</h2>
+  <p class="para"><span class="pnum">[0036]</span>
+    Reference will now be made in detail to preferred embodiments of the invention, examples of which are illustrated in the accompanying drawings. While the invention will be described in conjunction with these preferred embodiments, it will be understood that they are not intended to limit the invention to these embodiments. On the contrary, the invention is intended to cover alternatives, modifications, and equivalents that may be included within the spirit and scope of the invention as defined by the appended claims.
+  </p>
+  <p class="para"><span class="pnum">[0037]</span>
+    In the following description, numerous specific details are set forth in order to provide a thorough understanding of the invention. The invention may be practiced without some or all of these specific details. In other instances, well-known structures, devices, protocols, and data formats have not been described in detail in order to avoid unnecessarily obscuring aspects of the invention. Where the term "preferred" is used, the invention is not limited to the preferred example.
+  </p>
+  <p class="para"><span class="pnum">[0038]</span>
+    As used in this specification and the appended claims, the singular forms "a," "an," and "the" include plural reference unless the context clearly dictates otherwise. The word "or" is used in the inclusive sense except where the context indicates otherwise. The term "comprising" and its grammatical equivalents are used in the open-ended sense, as are "including," "containing," "having," and "characterized by." All numerical ranges are inclusive of their endpoints unless specifically noted.
+  </p>
+
+  <h3 class="subsection-heading">1. Reference Numeral Index</h3>
+  <p class="para"><span class="pnum">[0039]</span>
+    The following table provides an index of reference numerals used throughout the drawings and the detailed description. Reference numerals are assigned using even integers consistent with United States Patent and Trademark Office drafting conventions.
+  </p>
+  <table class="ref-table">
+    <thead>
+      <tr><th>Numeral</th><th>Element</th><th>Principal Figures</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>10</td><td>Brushless direct-current (BLDC) motor</td><td>FIG. 2, FIG. 4</td></tr>
+      <tr><td>12</td><td>Planetary gearbox (20:1 reduction)</td><td>FIG. 2, FIG. 4</td></tr>
+      <tr><td>14</td><td>Cable spool</td><td>FIG. 2, FIG. 4</td></tr>
+      <tr><td>16</td><td>Inline load cell (force sensor)</td><td>FIG. 2, FIG. 4, FIG. 10</td></tr>
+      <tr><td>18</td><td>Quick-release cuff</td><td>FIG. 2, FIG. 7</td></tr>
+      <tr><td>20</td><td>Depth-sensing camera</td><td>FIG. 2, FIG. 5</td></tr>
+      <tr><td>22</td><td>Touchscreen display</td><td>FIG. 2, FIG. 6</td></tr>
+      <tr><td>24</td><td>Emergency stop switch</td><td>FIG. 2, FIG. 7</td></tr>
+      <tr><td>26</td><td>Support frame and bench</td><td>FIG. 2</td></tr>
+      <tr><td>30</td><td>Motor power stage</td><td>FIG. 4</td></tr>
+      <tr><td>32</td><td>Gearbox output shaft</td><td>FIG. 4</td></tr>
+      <tr><td>34</td><td>Cable spool (drive-side detail)</td><td>FIG. 4, FIG. 9</td></tr>
+      <tr><td>36</td><td>Mechanical slip clutch</td><td>FIG. 4, FIG. 7</td></tr>
+      <tr><td>38</td><td>Flexible cable</td><td>FIG. 4, FIG. 9</td></tr>
+      <tr><td>40</td><td>Depth camera (sensor-detail)</td><td>FIG. 5, FIG. 9</td></tr>
+      <tr><td>42</td><td>Load cell (sensor-detail)</td><td>FIG. 5</td></tr>
+      <tr><td>44</td><td>Edge compute module (Jetson-class)</td><td>FIG. 5</td></tr>
+      <tr><td>46</td><td>Touchscreen (sensor-detail)</td><td>FIG. 5</td></tr>
+      <tr><td>48</td><td>Cloud storage link</td><td>FIG. 5</td></tr>
+      <tr><td>50</td><td>Session user interface module</td><td>FIG. 6</td></tr>
+      <tr><td>52</td><td>Live display module</td><td>FIG. 6</td></tr>
+      <tr><td>54</td><td>Trend view module</td><td>FIG. 6</td></tr>
+      <tr><td>60</td><td>Sensor fusion engine</td><td>FIG. 8</td></tr>
+      <tr><td>62</td><td>Longitudinal risk score engine</td><td>FIG. 8</td></tr>
+      <tr><td>100&ndash;112</td><td>Method steps (bilateral assessment)</td><td>FIG. 3</td></tr>
+      <tr><td>200</td><td>Athlete identification module</td><td>FIG. 1</td></tr>
+      <tr><td>202</td><td>Protocol engine</td><td>FIG. 1</td></tr>
+      <tr><td>204</td><td>PID force controller</td><td>FIG. 1, FIG. 10</td></tr>
+      <tr><td>206</td><td>Cable drive subsystem</td><td>FIG. 1</td></tr>
+      <tr><td>208</td><td>Athlete (subject)</td><td>FIG. 1</td></tr>
+      <tr><td>210</td><td>Vision system</td><td>FIG. 1, FIG. 11</td></tr>
+      <tr><td>212</td><td>Data engine</td><td>FIG. 1</td></tr>
+      <tr><td>214</td><td>Adaptive feedback path</td><td>FIG. 1</td></tr>
+      <tr><td>220</td><td>Pose estimation model</td><td>FIG. 11</td></tr>
+      <tr><td>222</td><td>Joint angle calculation module</td><td>FIG. 11</td></tr>
+      <tr><td>224</td><td>Compensation classifier</td><td>FIG. 11</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="subsection-heading">2. System Overview (FIG. 1)</h3>
+  <p class="para"><span class="pnum">[0040]</span>
+    Referring now to FIG. 1, a system-level block diagram of an apparatus according to a preferred embodiment of the invention is shown. The apparatus is organized into eight principal functional modules interconnected as illustrated. A subject is first identified at the athlete identification module <span class="ref">(200)</span>, which receives input from a badge reader, fingerprint sensor, or other unique identifier, and retrieves from a database the subject&rsquo;s profile, prior session history, and current training context. The subject profile is passed to a protocol engine <span class="ref">(202)</span>, which determines the stretch pattern to be applied and the initial force setpoint F<sub>set</sub> based on the subject&rsquo;s profile and the selected session type.
+  </p>
+  <p class="para"><span class="pnum">[0041]</span>
+    The force setpoint is transmitted from the protocol engine <span class="ref">(202)</span> to the PID force controller <span class="ref">(204)</span>. The PID force controller drives the cable drive subsystem <span class="ref">(206)</span>, which applies tensile force to the subject <span class="ref">(208)</span>. The cable drive subsystem is instrumented with an inline load cell providing a measured force value F<sub>meas</sub>, which is transmitted back to the PID force controller <span class="ref">(204)</span> at a sample rate of one hundred Hertz (100 Hz) to close the force control loop.
+  </p>
+  <p class="para"><span class="pnum">[0042]</span>
+    Concurrently, the vision system <span class="ref">(210)</span>, comprising a depth-sensing camera and associated computer vision software, observes the subject <span class="ref">(208)</span>. The vision system extracts a skeletal model of the subject, computes joint angles from the skeletal model, and applies a compensation classifier to detect compensatory motion. When compensation is detected, the vision system <span class="ref">(210)</span> transmits a compensation signal to the PID force controller <span class="ref">(204)</span> that modifies the force setpoint. This closed-loop coupling between vision-detected compensation and force control, illustrated in FIG. 1 as the path from <span class="ref">(210)</span> to <span class="ref">(204)</span>, constitutes a principal novel aspect of the invention.
+  </p>
+  <p class="para"><span class="pnum">[0043]</span>
+    Measurement outputs from the PID force controller <span class="ref">(204)</span>, cable drive subsystem <span class="ref">(206)</span>, and vision system <span class="ref">(210)</span> are aggregated at the data engine <span class="ref">(212)</span>, which stores the measurement variables described in greater detail in the discussion of FIG. 8 herein below, computes longitudinal trends, and produces an injury risk score. An adaptive feedback path <span class="ref">(214)</span> connects the data engine <span class="ref">(212)</span> back to the protocol engine <span class="ref">(202)</span>, such that the historical data for the subject modifies the protocol parameters used in subsequent sessions.
+  </p>
+
+  <div class="fig-block">
+    <svg viewBox="0 0 960 290" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arrK1" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#000"/></marker>
+      </defs>
+      <rect x="10" y="60" width="100" height="60" rx="8" fill="#ffffff" stroke="#000" stroke-width="1.2"/>
+      <text x="60" y="52" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">200</text>
+      <text x="60" y="84" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">ATHLETE ID</text>
+      <text x="60" y="98" text-anchor="middle" fill="#333" font-size="8" font-family="Times,serif">Badge + profile</text>
+      <text x="60" y="110" text-anchor="middle" fill="#333" font-size="8" font-family="Times,serif">+ session history</text>
+      <path d="M114,90 L140,90" fill="none" stroke="#000" stroke-width="1.2" marker-end="url(#arrK1)"/>
+      <rect x="144" y="50" width="110" height="80" rx="8" fill="#ffffff" stroke="#000" stroke-width="1.2"/>
+      <text x="199" y="42" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">202</text>
+      <text x="199" y="74" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">PROTOCOL</text>
+      <text x="199" y="88" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">ENGINE</text>
+      <text x="199" y="104" text-anchor="middle" fill="#333" font-size="8" font-family="Times,serif">Pattern select</text>
+      <text x="199" y="116" text-anchor="middle" fill="#333" font-size="8" font-family="Times,serif">Force target F_set</text>
+      <path d="M258,90 L284,90" fill="none" stroke="#000" stroke-width="1.2" marker-end="url(#arrK1)"/>
+      <rect x="288" y="35" width="130" height="110" rx="8" fill="#ffffff" stroke="#000" stroke-width="2.5"/>
+      <text x="353" y="27" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">204</text>
+      <text x="353" y="58" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">PID FORCE</text>
+      <text x="353" y="72" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">CONTROLLER</text>
+      <text x="353" y="92" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">e(t) = F_set &minus; F_meas</text>
+      <text x="353" y="106" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">u(t) = PID[e(t)]</text>
+      <text x="353" y="120" text-anchor="middle" fill="#333" font-size="8" font-family="Times,serif">&rarr; motor PWM</text>
+      <text x="353" y="134" text-anchor="middle" fill="#333" font-size="8" font-family="Times,serif">100 Hz update</text>
+      <path d="M422,90 L448,90" fill="none" stroke="#000" stroke-width="1.5" marker-end="url(#arrK1)"/>
+      <rect x="452" y="55" width="100" height="70" rx="8" fill="#ffffff" stroke="#000" stroke-width="1.2"/>
+      <text x="502" y="47" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">206</text>
+      <text x="502" y="78" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">CABLE DRIVE</text>
+      <text x="502" y="92" text-anchor="middle" fill="#333" font-size="8" font-family="Times,serif">BLDC + gearbox</text>
+      <text x="502" y="104" text-anchor="middle" fill="#333" font-size="8" font-family="Times,serif">+ spool + cable</text>
+      <text x="502" y="116" text-anchor="middle" fill="#333" font-size="8" font-family="Times,serif">+ slip clutch</text>
+      <path d="M502,129 L502,168 L353,168 L353,149" fill="none" stroke="#000" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#arrK1)"/>
+      <text x="428" y="162" text-anchor="middle" fill="#000" font-size="8" font-weight="600" font-family="Times,serif">F_meas (load cell, 100 Hz)</text>
+      <path d="M556,90 L582,90" fill="none" stroke="#000" stroke-width="1.2" marker-end="url(#arrK1)"/>
+      <rect x="586" y="55" width="80" height="70" rx="8" fill="#ffffff" stroke="#000" stroke-width="1.2"/>
+      <text x="626" y="47" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">208</text>
+      <text x="626" y="80" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">SUBJECT</text>
+      <text x="626" y="96" text-anchor="middle" fill="#333" font-size="8" font-family="Times,serif">On platform</text>
+      <text x="626" y="108" text-anchor="middle" fill="#333" font-size="8" font-family="Times,serif">Limb stretched</text>
+      <path d="M670,90 L700,90" fill="none" stroke="#000" stroke-width="1" marker-end="url(#arrK1)"/>
+      <rect x="704" y="40" width="110" height="100" rx="8" fill="#ffffff" stroke="#000" stroke-width="1.2"/>
+      <text x="759" y="32" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">212</text>
+      <text x="759" y="68" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">DATA ENGINE</text>
+      <text x="759" y="84" text-anchor="middle" fill="#333" font-size="8" font-family="Times,serif">9 variables / rep</text>
+      <text x="759" y="96" text-anchor="middle" fill="#333" font-size="8" font-family="Times,serif">Longitudinal trends</text>
+      <text x="759" y="108" text-anchor="middle" fill="#333" font-size="8" font-family="Times,serif">Asymmetry alerts</text>
+      <text x="759" y="120" text-anchor="middle" fill="#333" font-size="8" font-family="Times,serif">Risk score (62)</text>
+      <path d="M626,129 L626,202" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="3,2"/>
+      <text x="632" y="185" text-anchor="start" fill="#000" font-size="8" font-style="italic" font-family="Times,serif">observes</text>
+      <rect x="568" y="202" width="116" height="52" rx="8" fill="#ffffff" stroke="#000" stroke-width="2"/>
+      <text x="574" y="198" text-anchor="start" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">210</text>
+      <text x="626" y="220" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">VISION SYSTEM</text>
+      <text x="626" y="234" text-anchor="middle" fill="#333" font-size="8" font-family="Times,serif">Skeleton + joint angles</text>
+      <text x="626" y="246" text-anchor="middle" fill="#333" font-size="8" font-family="Times,serif">+ compensation detect</text>
+      <path d="M564,228 L353,228 L353,149" fill="none" stroke="#000" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrK1)"/>
+      <text x="458" y="222" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">COMPENSATION SIGNAL &rarr; modifies F_set [NOVEL]</text>
+      <path d="M759,144 L759,273 L199,273 L199,134" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="6,3"/>
+      <polygon points="199,134 194,144 204,144" fill="#000"/>
+      <text x="480" y="268" text-anchor="middle" fill="#000" font-size="9" font-weight="600" font-family="Times,serif">214 &mdash; ADAPTIVE FEEDBACK: historical data modifies next session's protocol</text>
+    </svg>
+    <p class="fig-title">FIG. 1 &mdash; System Block Diagram</p>
+    <p class="fig-caption">Functional block diagram of the force-controlled stretching apparatus, illustrating the novel compensation feedback path (210&rarr;204, double-weighted) and the adaptive longitudinal feedback path (212&rarr;202, element 214).</p>
+  </div>
+
+  <h3 class="subsection-heading">3. Apparatus Configuration (FIG. 2)</h3>
+  <p class="para"><span class="pnum">[0044]</span>
+    Referring now to FIG. 2, a side-elevation schematic of one embodiment of the apparatus is shown. The apparatus comprises a support frame and bench assembly <span class="ref">(26)</span>, which provides structural support for the drive assembly and a planar surface on which the subject may lie in a supine, prone, or lateral position. In the illustrated embodiment, the support frame comprises a vertical upright coupled to a horizontal base, with the bench surface arranged substantially parallel to and spaced above the base.
+  </p>
+  <p class="para"><span class="pnum">[0045]</span>
+    Mounted at the upper end of the vertical upright is the BLDC motor <span class="ref">(10)</span>, having a nominal continuous power rating of two hundred Watts (200 W). The motor output shaft is coupled to the input of a planetary gearbox <span class="ref">(12)</span> having a reduction ratio of twenty to one (20:1). The output shaft of the gearbox is coupled to a cable spool <span class="ref">(14)</span> on which a flexible cable is wound. In a preferred embodiment, the cable comprises ultra-high-molecular-weight polyethylene fiber (commonly sold under the designation "Dyneema") having a minimum breaking strength of at least two thousand pounds-force (2,000 lbf) and a diameter in the range of two to four millimeters (2&ndash;4 mm).
+  </p>
+  <p class="para"><span class="pnum">[0046]</span>
+    The cable extends from the spool, is routed over one or more pulleys as described in further detail in connection with FIG. 9 herein below, passes through an inline load cell <span class="ref">(16)</span>, and terminates in a quick-release cuff <span class="ref">(18)</span> adapted to engage a limb of the subject. The load cell is a strain-gauge transducer calibrated to output an electrical signal proportional to tensile force applied to the cable, with a sample rate of one hundred Hertz (100 Hz) and a full-scale range selected to cover zero to fifty pounds-force (0&ndash;50 lbf).
+  </p>
+  <p class="para"><span class="pnum">[0047]</span>
+    The quick-release cuff <span class="ref">(18)</span> comprises a padded neoprene or equivalent compliant body, an adjustable strap with hook-and-loop closure, and a quick-release connection to the cable terminus. In a preferred embodiment, the quick-release connection is a carabiner or a spring-loaded clevis that can be disengaged with a single hand in less than one second. The cuff is dimensioned to distribute cable tension across a minimum contact area of fifty square centimeters (50 cm&sup2;) to avoid localized tissue pressure.
+  </p>
+  <p class="para"><span class="pnum">[0048]</span>
+    The depth-sensing camera <span class="ref">(20)</span> is mounted on the vertical upright at a height and angle selected such that the field of view of the camera encompasses the subject&rsquo;s body from pelvis to the distal end of the stretched limb. In a preferred embodiment, the camera is an Intel RealSense D435 stereoscopic depth camera, or functional equivalent, having a depth image resolution of at least 640 by 480 pixels at a frame rate of at least thirty frames per second (30 fps), a depth range of 0.3 to 3.0 meters, and a horizontal field of view of at least 85 degrees.
+  </p>
+  <p class="para"><span class="pnum">[0049]</span>
+    A touchscreen display <span class="ref">(22)</span> is mounted to the frame at a location readily visible and accessible to the subject, staff operator, or both. The touchscreen comprises a capacitive or resistive touch-sensitive panel overlaying a liquid-crystal or organic light-emitting-diode display of at least 15-inch (38.1 cm) diagonal dimension. The touchscreen displays the session user interface, live force and range-of-motion values, and longitudinal trend data as further described in connection with FIG. 6.
+  </p>
+  <p class="para"><span class="pnum">[0050]</span>
+    An emergency stop switch <span class="ref">(24)</span> is mounted at a prominent location accessible to both the subject and the staff operator. The emergency stop comprises a mushroom-head push button of the normally-closed, mechanically-latching type. Activation of the emergency stop directly interrupts electrical power to the motor power stage by hardwired circuit, independent of any software.
+  </p>
+
+  <div class="fig-block">
+    <svg viewBox="0 0 520 340" xmlns="http://www.w3.org/2000/svg">
+      <rect x="40" y="60" width="16" height="220" rx="3" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <rect x="40" y="270" width="400" height="12" rx="3" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <rect x="100" y="220" width="320" height="14" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <line x1="100" y1="234" x2="120" y2="270" stroke="#000" stroke-width="1"/>
+      <line x1="400" y1="234" x2="380" y2="270" stroke="#000" stroke-width="1"/>
+      <rect x="20" y="60" width="56" height="44" rx="6" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="48" y="86" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">BLDC</text>
+      <rect x="24" y="108" width="48" height="28" rx="4" fill="#ffffff" stroke="#000" stroke-width="1"/>
+      <text x="48" y="126" text-anchor="middle" fill="#000" font-size="8" font-weight="600" font-family="Times,serif">20:1</text>
+      <circle cx="48" cy="156" r="14" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <circle cx="48" cy="156" r="4" fill="#000"/>
+      <path d="M62,156 Q120,156 160,195 Q180,210 240,210" fill="none" stroke="#000" stroke-width="1.5" stroke-dasharray="6,3"/>
+      <rect x="140" y="188" width="36" height="14" rx="3" fill="#ffffff" stroke="#000" stroke-width="1"/>
+      <text x="158" y="198" text-anchor="middle" fill="#000" font-size="7" font-weight="600" font-family="Times,serif">LOAD</text>
+      <path d="M240,203 Q250,195 260,203 L260,217 Q250,225 240,217 Z" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <line x1="260" y1="210" x2="380" y2="140" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+      <line x1="380" y1="140" x2="420" y2="210" stroke="#000" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="380" cy="140" r="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <line x1="270" y1="210" x2="420" y2="210" stroke="#000" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+      <rect x="22" y="178" width="48" height="24" rx="5" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <circle cx="36" cy="190" r="5" fill="#ffffff" stroke="#000" stroke-width="1"/>
+      <circle cx="58" cy="190" r="3" fill="#ffffff" stroke="#000" stroke-width="1"/>
+      <path d="M70,190 L380,120 L420,220 Z" fill="none" stroke="#000" stroke-width="0.5" stroke-dasharray="4,4"/>
+      <path d="M355,160 A30,30 0 0,1 380,140" fill="none" stroke="#000" stroke-width="1.5"/>
+      <text x="345" y="155" fill="#000" font-size="11" font-weight="600" font-family="Times,serif">&theta;</text>
+      <rect x="440" y="100" width="50" height="70" rx="4" fill="#ffffff" stroke="#000" stroke-width="1"/>
+      <rect x="444" y="106" width="42" height="50" rx="2" fill="#ffffff" stroke="#000" stroke-width="0.5"/>
+      <line x1="440" y1="170" x2="440" y2="270" stroke="#000" stroke-width="1"/>
+      <circle cx="465" cy="180" r="8" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="465" y="183" text-anchor="middle" fill="#000" font-size="6" font-weight="700" font-family="Times,serif">E</text>
+      <text x="48" y="54" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">10</text>
+      <text x="48" y="146" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">14</text>
+      <text x="158" y="184" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">16</text>
+      <text x="250" y="196" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">18</text>
+      <text x="46" y="212" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">20</text>
+      <text x="465" y="96" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">22</text>
+      <text x="465" y="200" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">24</text>
+      <text x="48" y="105" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">12</text>
+      <text x="210" y="275" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">26</text>
+    </svg>
+    <p class="fig-title">FIG. 2 &mdash; Apparatus Side-Elevation Schematic</p>
+    <p class="fig-caption">Preferred embodiment showing the support frame (26), BLDC motor (10), planetary gearbox (12), cable spool (14), inline load cell (16), quick-release cuff (18), depth-sensing camera (20) with field of view, touchscreen display (22), and emergency stop switch (24).</p>
+  </div>
+
+  <h3 class="subsection-heading">4. Bilateral Assessment Method (FIG. 3)</h3>
+
+  <p class="para"><span class="pnum">[0051]</span>
+    FIG. 3 illustrates a preferred method of operation of the apparatus for bilateral longitudinal assessment of a subject. The method comprises, in sequence, a subject identification step <span class="ref">(100)</span>, a left-limb baseline measurement step <span class="ref">(102)</span>, a right-limb baseline measurement step <span class="ref">(104)</span>, an inter-limb asymmetry calculation step <span class="ref">(106)</span>, an assisted stretch protocol step <span class="ref">(108)</span>, a data logging step <span class="ref">(110)</span>, and a longitudinal feedback step <span class="ref">(112)</span>.
+  </p>
+  <p class="para"><span class="pnum">[0052]</span>
+    In the subject identification step <span class="ref">(100)</span>, the subject is identified to the system by one or more of: (i) presentation of a radio-frequency identification (RFID) token; (ii) entry of a numeric or alphanumeric identifier on the touchscreen <span class="ref">(22)</span>; (iii) biometric identification via fingerprint, facial recognition from the depth camera <span class="ref">(20)</span>, or equivalent; or (iv) selection from a roster of enrolled subjects. Upon successful identification, the system retrieves the subject&rsquo;s longitudinal measurement record from a non-transitory data store.
+  </p>
+  <p class="para"><span class="pnum">[0053]</span>
+    In the left-limb baseline measurement step <span class="ref">(102)</span>, the apparatus commands a controlled low-force traction of the left limb along a predetermined pattern while the depth camera <span class="ref">(20)</span> captures the joint trajectory and the load cell <span class="ref">(16)</span> captures the applied force. The baseline range-of-motion terminus is defined as the joint angle at which the subject&rsquo;s self-reported perceived tension reaches a predetermined level, or at which an involuntary compensatory motion is first detected, whichever occurs first. The baseline measurement is performed at a controlled reference force, in a preferred embodiment between twelve (12) and eighteen (18) pounds-force, to ensure reproducibility across sessions.
+  </p>
+  <p class="para"><span class="pnum">[0054]</span>
+    The right-limb baseline measurement step <span class="ref">(104)</span> is performed immediately subsequent to the left-limb baseline, using identical protocol parameters and the identical reference force. The temporal separation between left and right baseline measurements is preferably less than three (3) minutes in order to minimize the confounding effects of neuromuscular fatigue and thermoregulatory drift on the comparative measurement.
+  </p>
+  <p class="para"><span class="pnum">[0055]</span>
+    In the asymmetry calculation step <span class="ref">(106)</span>, the system computes a bilateral asymmetry index defined as the absolute difference between the left and right baseline range-of-motion values, expressed as a percentage of the greater of the two values. An asymmetry exceeding a predetermined threshold, in a preferred embodiment ten percent (10%), triggers an injury-risk flag that is displayed to the operator and written to the subject&rsquo;s longitudinal record. This step produces, as a further output, a recommended modification to the subsequent stretch protocol such that the deficit limb receives extended or higher-intensity loading relative to the surplus limb.
+  </p>
+  <p class="para"><span class="pnum">[0056]</span>
+    In the assisted stretch protocol step <span class="ref">(108)</span>, the apparatus executes a force-controlled stretch cycle in accordance with the method of FIG. 10 (described below) and the pattern selection described in connection with FIG. 9. During the stretch protocol, compensation-aware force adjustment is performed in real time in accordance with the method of FIG. 11 (described below). The stretch protocol terminates upon reaching one of: (i) a prescribed target force; (ii) a prescribed target joint angle; (iii) a prescribed hold duration; (iv) operator termination via the touchscreen <span class="ref">(22)</span>; or (v) activation of any layer of the safety cascade of FIG. 7.
+  </p>
+  <p class="para"><span class="pnum">[0057]</span>
+    In the data logging step <span class="ref">(110)</span>, the system writes a complete session record to the non-transitory data store. The session record comprises, at minimum: (a) subject identifier; (b) session timestamp with sub-second resolution; (c) pattern selection; (d) prescribed and actual force time series sampled at not less than 100 Hz; (e) joint angle time series sampled at not less than 30 Hz; (f) computed compensation signal time series; (g) measured bilateral asymmetry index; (h) derived measurement variables V1 through V9 as defined in connection with FIG. 8; and (i) operator identifier and any exception or safety events.
+  </p>
+  <p class="para"><span class="pnum">[0058]</span>
+    In the longitudinal feedback step <span class="ref">(112)</span>, the system compares the session record to the subject&rsquo;s historical session records and computes one or more longitudinal trend outputs, including without limitation: (i) session-over-session change in range-of-motion at matched reference force; (ii) trend in bilateral asymmetry index; (iii) trend in tissue stiffness derived from the force-displacement slope; and (iv) a composite injury-risk score as further described in connection with FIG. 8. The longitudinal outputs are displayed to the subject and operator and are exported via application-programming-interface (API) endpoint to one or more external athlete-management systems.
+  </p>
+
+  <div class="fig-block">
+    <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0,0 L10,5 L0,10 z" fill="#000"/>
+        </marker>
+      </defs>
+      <rect x="16" y="120" width="80" height="60" rx="6" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="56" y="148" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">ID /</text>
+      <text x="56" y="162" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">BADGE</text>
+      <text x="56" y="112" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">100</text>
+      <rect x="116" y="60" width="80" height="50" rx="6" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="156" y="82" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">BASELINE</text>
+      <text x="156" y="96" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">LEFT</text>
+      <text x="156" y="52" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">102</text>
+      <rect x="116" y="190" width="80" height="50" rx="6" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="156" y="212" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">BASELINE</text>
+      <text x="156" y="226" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">RIGHT</text>
+      <text x="156" y="254" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">104</text>
+      <rect x="216" y="120" width="90" height="60" rx="6" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="261" y="146" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">ASYMMETRY</text>
+      <text x="261" y="160" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">|L &minus; R|</text>
+      <text x="261" y="112" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">106</text>
+      <rect x="326" y="120" width="90" height="60" rx="6" fill="#ffffff" stroke="#000" stroke-width="2"/>
+      <text x="371" y="146" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">STRETCH</text>
+      <text x="371" y="160" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">PROTOCOL</text>
+      <text x="371" y="112" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">108</text>
+      <rect x="436" y="120" width="80" height="60" rx="6" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="476" y="146" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">LOG</text>
+      <text x="476" y="160" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">SESSION</text>
+      <text x="476" y="112" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">110</text>
+      <rect x="536" y="120" width="88" height="60" rx="6" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="580" y="146" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">TREND /</text>
+      <text x="580" y="160" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">FEEDBACK</text>
+      <text x="580" y="112" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">112</text>
+      <line x1="96" y1="140" x2="116" y2="95" stroke="#000" stroke-width="1.2" marker-end="url(#arr3)"/>
+      <line x1="96" y1="160" x2="116" y2="210" stroke="#000" stroke-width="1.2" marker-end="url(#arr3)"/>
+      <line x1="196" y1="95" x2="226" y2="135" stroke="#000" stroke-width="1.2" marker-end="url(#arr3)"/>
+      <line x1="196" y1="210" x2="226" y2="165" stroke="#000" stroke-width="1.2" marker-end="url(#arr3)"/>
+      <line x1="306" y1="150" x2="326" y2="150" stroke="#000" stroke-width="1.2" marker-end="url(#arr3)"/>
+      <line x1="416" y1="150" x2="436" y2="150" stroke="#000" stroke-width="1.2" marker-end="url(#arr3)"/>
+      <line x1="516" y1="150" x2="536" y2="150" stroke="#000" stroke-width="1.2" marker-end="url(#arr3)"/>
+      <path d="M580,180 Q580,270 371,270 Q300,270 261,180" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arr3)"/>
+      <text x="430" y="285" text-anchor="middle" fill="#000" font-size="8" font-style="italic" font-family="Times,serif">longitudinal feedback loop</text>
+    </svg>
+    <p class="fig-title">FIG. 3 &mdash; Method of Bilateral Longitudinal Assessment</p>
+    <p class="fig-caption">Sequential steps of a preferred session: identification (100), left baseline (102), right baseline (104), asymmetry calculation (106), stretch protocol (108), data logging (110), and longitudinal feedback (112).</p>
+  </div>
+
+  <h3 class="subsection-heading">5. Cable Drive Assembly (FIG. 4)</h3>
+
+  <p class="para"><span class="pnum">[0059]</span>
+    FIG. 4 depicts the cable drive assembly in greater detail. The cable drive assembly comprises the BLDC motor <span class="ref">(10)</span>, a field-oriented-control (FOC) motor controller <span class="ref">(30)</span>, the planetary reduction gearbox <span class="ref">(12)</span>, the cable spool <span class="ref">(14)</span>, a low-friction cable guide pulley <span class="ref">(32)</span>, the Dyneema synthetic cable <span class="ref">(34)</span>, the inline load cell <span class="ref">(16)</span>, a torque-limiting slip clutch <span class="ref">(36)</span> interposed between the gearbox output and the cable spool, and a manual quick-release mechanism <span class="ref">(38)</span> coupling the cable terminus to the cuff <span class="ref">(18)</span>.
+  </p>
+  <p class="para"><span class="pnum">[0060]</span>
+    The FOC motor controller <span class="ref">(30)</span> is a three-phase sinusoidal commutation controller implementing field-oriented vector control, in a preferred embodiment an ODrive Robotics S1 controller or functional equivalent. The controller receives a commanded torque set-point from the control processor and drives the motor <span class="ref">(10)</span> such that the instantaneous output torque matches the set-point to within five percent (5%) over the operating range. The controller samples the motor-phase currents at not less than eight thousand times per second (8 kHz) and closes an inner current loop at a bandwidth sufficient to maintain commanded torque during transient events.
+  </p>
+  <p class="para"><span class="pnum">[0061]</span>
+    The slip clutch <span class="ref">(36)</span> is a mechanical friction coupling preset to release at a predetermined torque corresponding to a cable tension not exceeding one hundred twenty percent (120%) of the maximum operational force. The slip clutch constitutes a purely mechanical safety layer, operative independent of electrical power or control software, and therefore provides a fail-safe behavior in the event of complete failure of the controller, the control processor, or the electrical supply.
+  </p>
+  <p class="para"><span class="pnum">[0062]</span>
+    The cable <span class="ref">(34)</span>, in a preferred embodiment, is a twelve-strand single-braid ultra-high-molecular-weight polyethylene rope having a diameter in the range of two to four millimeters (2&ndash;4 mm) and a minimum breaking strength of not less than two thousand pounds-force (2,000 lbf), thereby providing a safety factor exceeding forty (40) times the maximum operational force. The cable is routed from the spool <span class="ref">(14)</span>, over the cable guide pulley <span class="ref">(32)</span>, through the inline load cell <span class="ref">(16)</span>, and terminates at the quick-release mechanism <span class="ref">(38)</span>.
+  </p>
+  <p class="para"><span class="pnum">[0063]</span>
+    The quick-release mechanism <span class="ref">(38)</span> comprises a spring-loaded cam or clevis configured to disengage under a single-handed actuation force of less than twenty pounds-force (20 lbf) exerted by the subject or operator. Upon disengagement, the cuff <span class="ref">(18)</span> separates from the cable terminus in less than one (1) second, releasing the subject from the apparatus independent of any electrical or software system.
+  </p>
+
+  <div class="fig-block">
+    <svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0,0 L10,5 L0,10 z" fill="#000"/>
+        </marker>
+      </defs>
+      <rect x="20" y="100" width="70" height="50" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="55" y="124" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">FOC</text>
+      <text x="55" y="138" text-anchor="middle" fill="#000" font-size="8" font-weight="600" font-family="Times,serif">DRIVE</text>
+      <text x="55" y="94" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">30</text>
+      <rect x="110" y="100" width="60" height="50" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="140" y="124" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">BLDC</text>
+      <text x="140" y="138" text-anchor="middle" fill="#000" font-size="8" font-weight="600" font-family="Times,serif">200W</text>
+      <text x="140" y="94" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">10</text>
+      <rect x="190" y="100" width="60" height="50" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="220" y="124" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">20:1</text>
+      <text x="220" y="138" text-anchor="middle" fill="#000" font-size="8" font-weight="600" font-family="Times,serif">GEAR</text>
+      <text x="220" y="94" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">12</text>
+      <rect x="270" y="100" width="56" height="50" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="298" y="124" text-anchor="middle" fill="#000" font-size="8" font-weight="700" font-family="Times,serif">SLIP</text>
+      <text x="298" y="138" text-anchor="middle" fill="#000" font-size="8" font-weight="600" font-family="Times,serif">CLUTCH</text>
+      <text x="298" y="94" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">36</text>
+      <circle cx="360" cy="125" r="22" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <circle cx="360" cy="125" r="6" fill="#000"/>
+      <text x="360" y="94" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">14</text>
+      <circle cx="430" cy="100" r="10" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <circle cx="430" cy="100" r="3" fill="#000"/>
+      <text x="430" y="86" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">32</text>
+      <path d="M382,125 Q400,105 430,100 L480,130 L530,145" fill="none" stroke="#000" stroke-width="2"/>
+      <text x="495" y="120" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">34</text>
+      <rect x="520" y="138" width="36" height="16" rx="3" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="538" y="150" text-anchor="middle" fill="#000" font-size="7" font-weight="700" font-family="Times,serif">LOAD</text>
+      <text x="538" y="170" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">16</text>
+      <path d="M556,146 L585,160" stroke="#000" stroke-width="1.5"/>
+      <path d="M585,152 Q592,160 585,168 L572,174 Q560,168 565,156 Z" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="580" y="140" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">38</text>
+      <rect x="595" y="160" width="28" height="30" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.2"/>
+      <text x="609" y="178" text-anchor="middle" fill="#000" font-size="7" font-weight="700" font-family="Times,serif">CUFF</text>
+      <text x="609" y="200" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">18</text>
+      <line x1="90" y1="125" x2="110" y2="125" stroke="#000" stroke-width="1.2" marker-end="url(#arr4)"/>
+      <line x1="170" y1="125" x2="190" y2="125" stroke="#000" stroke-width="1.2"/>
+      <line x1="250" y1="125" x2="270" y2="125" stroke="#000" stroke-width="1.2"/>
+      <line x1="326" y1="125" x2="338" y2="125" stroke="#000" stroke-width="1.2"/>
+      <line x1="55" y1="100" x2="55" y2="70" stroke="#000" stroke-width="0.8" stroke-dasharray="3,2"/>
+      <text x="55" y="62" text-anchor="middle" fill="#000" font-size="7" font-style="italic" font-family="Times,serif">&tau;* set-point</text>
+      <line x1="538" y1="138" x2="538" y2="200" stroke="#000" stroke-width="0.8" stroke-dasharray="3,2"/>
+      <line x1="538" y1="200" x2="55" y2="200" stroke="#000" stroke-width="0.8" stroke-dasharray="3,2"/>
+      <line x1="55" y1="200" x2="55" y2="150" stroke="#000" stroke-width="0.8" stroke-dasharray="3,2" marker-end="url(#arr4)"/>
+      <text x="300" y="215" text-anchor="middle" fill="#000" font-size="8" font-style="italic" font-family="Times,serif">measured force feedback (100 Hz)</text>
+    </svg>
+    <p class="fig-title">FIG. 4 &mdash; Cable Drive Assembly Detail</p>
+    <p class="fig-caption">FOC motor controller (30) commands torque to BLDC motor (10); output passes through planetary gearbox (12) and torque-limited slip clutch (36) to cable spool (14); cable (34) routes over guide pulley (32) through inline load cell (16) and quick-release mechanism (38) to cuff (18).</p>
+  </div>
+
+  <h3 class="subsection-heading">6. Sensor Array and Data Acquisition (FIG. 5)</h3>
+
+  <p class="para"><span class="pnum">[0064]</span>
+    FIG. 5 depicts the sensor array and associated data acquisition paths. The sensor array comprises the inline load cell <span class="ref">(16)</span> sampled by a first analog-to-digital converter <span class="ref">(40)</span>; the depth-sensing camera <span class="ref">(20)</span> communicating with a vision processing module <span class="ref">(42)</span>; a motor rotary encoder <span class="ref">(44)</span> integral to the motor <span class="ref">(10)</span>; a cable-drum rotary encoder <span class="ref">(46)</span> on the output side of the slip clutch <span class="ref">(36)</span>; and an optional surface electromyography (sEMG) electrode array <span class="ref">(48)</span> adapted to be adhered to selected muscles of the subject.
+  </p>
+  <p class="para"><span class="pnum">[0065]</span>
+    The load cell <span class="ref">(16)</span> comprises a strain-gauge bridge connected to a twenty-four-bit (24-bit) sigma-delta analog-to-digital converter <span class="ref">(40)</span>, preferably a Texas Instruments HX711 or equivalent, configured to sample cable tension at a rate of not less than one hundred samples per second (100 Hz). The load cell is calibrated in a range of zero to fifty pounds-force (0&ndash;50 lbf) with a resolution of 0.1 lbf.
+  </p>
+  <p class="para"><span class="pnum">[0066]</span>
+    The vision processing module <span class="ref">(42)</span> comprises executable software instructions running on the control processor that receive depth image frames and color image frames from the camera <span class="ref">(20)</span> at a rate of not less than thirty frames per second (30 fps) and extract therefrom a time-varying skeletal model of the subject. The skeletal model preferably comprises not less than twelve (12) joint centers including, without limitation, pelvis, hips (left and right), knees (left and right), ankles (left and right), shoulders (left and right), elbows (left and right), and wrists (left and right). From the skeletal model, the vision processing module computes a primary joint angle of interest, which, for a hamstring stretch pattern, is the hip-flexion angle &theta; computed as the two-argument arctangent of the vertical and horizontal offsets between the pelvis joint center and the ankle joint center.
+  </p>
+  <p class="para"><span class="pnum">[0067]</span>
+    The motor encoder <span class="ref">(44)</span> is a magnetic or optical incremental encoder having a resolution of not less than four thousand counts per revolution (4,000 CPR) and providing motor shaft position and velocity to the FOC controller <span class="ref">(30)</span> and to the control processor. The cable-drum encoder <span class="ref">(46)</span> is a second rotary encoder mechanically coupled to the output shaft downstream of the slip clutch <span class="ref">(36)</span>. Comparison of the motor encoder <span class="ref">(44)</span> position and the cable-drum encoder <span class="ref">(46)</span> position after reduction by the gearbox ratio provides an independent measurement by which slip of the clutch <span class="ref">(36)</span> is detectable in real time.
+  </p>
+  <p class="para"><span class="pnum">[0068]</span>
+    The optional sEMG electrode array <span class="ref">(48)</span>, when present, comprises wireless sEMG sensors applied to selected muscles (for a hamstring pattern: biceps femoris, gluteus maximus, and contralateral quadriceps) and sampled at not less than one thousand samples per second (1 kHz). The sEMG signal is band-pass filtered (preferably 20&ndash;450 Hz), rectified, and low-pass filtered to produce a muscle activation envelope used as an additional input to the compensation detection method of FIG. 11.
+  </p>
+  <p class="para"><span class="pnum">[0069]</span>
+    All sensor streams are time-stamped by a common monotonic clock maintained by the control processor to a precision of not less than one millisecond (1 ms) and are synchronized by a software synchronization service before being passed to the measurement extraction pipeline of FIG. 8.
+  </p>
+
+  <div class="fig-block">
+    <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0,0 L10,5 L0,10 z" fill="#000"/>
+        </marker>
+      </defs>
+      <rect x="20" y="30" width="100" height="40" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="70" y="54" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">LOAD CELL</text>
+      <text x="70" y="24" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">16</text>
+      <rect x="140" y="30" width="80" height="40" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="180" y="50" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">24-bit</text>
+      <text x="180" y="62" text-anchor="middle" fill="#000" font-size="8" font-weight="600" font-family="Times,serif">ADC 100Hz</text>
+      <text x="180" y="24" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">40</text>
+      <rect x="20" y="90" width="100" height="40" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="70" y="108" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">DEPTH CAM</text>
+      <text x="70" y="122" text-anchor="middle" fill="#000" font-size="8" font-weight="600" font-family="Times,serif">D435 30fps</text>
+      <text x="70" y="84" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">20</text>
+      <rect x="140" y="90" width="80" height="40" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="180" y="108" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">VISION</text>
+      <text x="180" y="122" text-anchor="middle" fill="#000" font-size="8" font-weight="600" font-family="Times,serif">SKELETON</text>
+      <text x="180" y="84" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">42</text>
+      <rect x="20" y="150" width="100" height="40" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="70" y="168" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">MOTOR ENC</text>
+      <text x="70" y="182" text-anchor="middle" fill="#000" font-size="8" font-weight="600" font-family="Times,serif">4,000 CPR</text>
+      <text x="70" y="144" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">44</text>
+      <rect x="20" y="210" width="100" height="40" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="70" y="228" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">DRUM ENC</text>
+      <text x="70" y="242" text-anchor="middle" fill="#000" font-size="8" font-weight="600" font-family="Times,serif">post-clutch</text>
+      <text x="70" y="204" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">46</text>
+      <rect x="20" y="255" width="100" height="34" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.2" stroke-dasharray="4,3"/>
+      <text x="70" y="272" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">sEMG (opt.)</text>
+      <text x="70" y="284" text-anchor="middle" fill="#000" font-size="8" font-weight="600" font-family="Times,serif">1 kHz</text>
+      <text x="134" y="268" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">48</text>
+      <rect x="280" y="90" width="150" height="100" rx="8" fill="#ffffff" stroke="#000" stroke-width="2"/>
+      <text x="355" y="130" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">TIME-SYNC</text>
+      <text x="355" y="148" text-anchor="middle" fill="#000" font-size="10" font-weight="600" font-family="Times,serif">DATA BUS</text>
+      <text x="355" y="166" text-anchor="middle" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">1 ms precision</text>
+      <rect x="480" y="90" width="140" height="100" rx="8" fill="#ffffff" stroke="#000" stroke-width="2"/>
+      <text x="550" y="128" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">MEASUREMENT</text>
+      <text x="550" y="146" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">PIPELINE</text>
+      <text x="550" y="164" text-anchor="middle" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">(FIG. 8)</text>
+      <line x1="120" y1="50" x2="140" y2="50" stroke="#000" stroke-width="1.2" marker-end="url(#arr5)"/>
+      <line x1="120" y1="110" x2="140" y2="110" stroke="#000" stroke-width="1.2" marker-end="url(#arr5)"/>
+      <line x1="220" y1="50" x2="280" y2="110" stroke="#000" stroke-width="1.2" marker-end="url(#arr5)"/>
+      <line x1="220" y1="110" x2="280" y2="130" stroke="#000" stroke-width="1.2" marker-end="url(#arr5)"/>
+      <line x1="120" y1="170" x2="280" y2="150" stroke="#000" stroke-width="1.2" marker-end="url(#arr5)"/>
+      <line x1="120" y1="230" x2="280" y2="170" stroke="#000" stroke-width="1.2" marker-end="url(#arr5)"/>
+      <line x1="120" y1="270" x2="280" y2="185" stroke="#000" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arr5)"/>
+      <line x1="430" y1="140" x2="480" y2="140" stroke="#000" stroke-width="1.5" marker-end="url(#arr5)"/>
+    </svg>
+    <p class="fig-title">FIG. 5 &mdash; Sensor Array and Data Paths</p>
+    <p class="fig-caption">Load cell (16) via ADC (40); depth camera (20) via vision module (42); motor encoder (44); cable-drum encoder (46); and optional sEMG array (48) feed a time-synchronized data bus, which delivers synchronized streams to the measurement pipeline of FIG. 8.</p>
+  </div>
+
+  <h3 class="subsection-heading">7. Control Interface Architecture (FIG. 6)</h3>
+
+  <p class="para"><span class="pnum">[0070]</span>
+    FIG. 6 depicts the architecture of the control and user-interface subsystem. The subsystem comprises a control processor <span class="ref">(50)</span> embodied as a single-board computer; a local non-transitory data store <span class="ref">(52)</span> embodied as a solid-state storage device; a network interface <span class="ref">(54)</span>; the touchscreen display <span class="ref">(22)</span>; the FOC motor controller <span class="ref">(30)</span>; and the time-synchronized sensor bus described in connection with FIG. 5.
+  </p>
+  <p class="para"><span class="pnum">[0071]</span>
+    The control processor <span class="ref">(50)</span> is preferably a multi-core ARM64 or x86-64 single-board computer, such as an NVIDIA Jetson Orin Nano, a Raspberry Pi 5, or functional equivalent, executing a real-time or preemptive-scheduled operating system. The control processor is programmed with three principal software layers: (a) a real-time control layer that executes the closed-loop force control method of FIG. 10 at not less than one hundred iterations per second (100 Hz); (b) a vision and sensor-fusion layer that executes the method of FIG. 11 at the frame rate of the camera <span class="ref">(20)</span>; and (c) a session and user-interface layer that drives the touchscreen <span class="ref">(22)</span> and manages the session flow of FIG. 3.
+  </p>
+  <p class="para"><span class="pnum">[0072]</span>
+    The data store <span class="ref">(52)</span> retains all session records locally in an encrypted form, using a symmetric cipher of not less than 256-bit key length, such that the absence of network connectivity does not impair session execution or data logging. The data store has sufficient capacity to retain not less than twelve (12) months of daily sessions for a roster of not less than one hundred (100) enrolled subjects.
+  </p>
+  <p class="para"><span class="pnum">[0073]</span>
+    The network interface <span class="ref">(54)</span> provides wired and wireless connectivity to a remote server and to third-party athlete-management systems. The network interface transmits session records by an authenticated, encrypted transport (preferably Transport Layer Security version 1.3 or higher) to one or more application-programming-interface (API) endpoints. In preferred embodiments, the network interface supports integration with externally administered athlete-management platforms, including without limitation Smartabase, Kitman Labs, and Catapult Vector, by way of configurable REST or GraphQL adapters executed on the control processor.
+  </p>
+  <p class="para"><span class="pnum">[0074]</span>
+    The touchscreen display <span class="ref">(22)</span> presents a graphical user interface comprising at least: (i) a subject-facing mode displaying real-time force, range-of-motion, and remaining protocol time; (ii) an operator-facing mode displaying bilateral comparison plots, compensation indicators, and protocol configuration; and (iii) a longitudinal review mode displaying session-over-session trends of the variables of FIG. 8. The user interface is rendered as a web application served locally by the control processor <span class="ref">(50)</span> and displayed on a browser engine running on the touchscreen.
+  </p>
+
+  <div class="fig-block">
+    <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0,0 L10,5 L0,10 z" fill="#000"/>
+        </marker>
+      </defs>
+      <rect x="220" y="100" width="200" height="110" rx="8" fill="#ffffff" stroke="#000" stroke-width="2"/>
+      <text x="320" y="128" text-anchor="middle" fill="#000" font-size="12" font-weight="700" font-family="Times,serif">CONTROL PROCESSOR</text>
+      <line x1="232" y1="138" x2="408" y2="138" stroke="#000" stroke-width="0.6"/>
+      <text x="320" y="155" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">(a) real-time control @100Hz</text>
+      <text x="320" y="170" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">(b) vision / sensor fusion @30Hz</text>
+      <text x="320" y="185" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">(c) session + UI layer</text>
+      <text x="320" y="202" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">50</text>
+      <rect x="40" y="40" width="120" height="50" rx="6" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="100" y="60" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">TOUCHSCREEN</text>
+      <text x="100" y="75" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">subject + operator UI</text>
+      <text x="100" y="34" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">22</text>
+      <rect x="40" y="220" width="120" height="50" rx="6" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="100" y="240" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">SENSOR BUS</text>
+      <text x="100" y="255" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">(FIG. 5)</text>
+      <rect x="480" y="40" width="120" height="50" rx="6" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="540" y="60" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">DATA STORE</text>
+      <text x="540" y="75" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">AES-256 encrypted</text>
+      <text x="540" y="34" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">52</text>
+      <rect x="480" y="220" width="120" height="50" rx="6" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="540" y="240" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">NETWORK I/F</text>
+      <text x="540" y="255" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">TLS 1.3 REST/GraphQL</text>
+      <text x="540" y="285" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">54</text>
+      <rect x="220" y="240" width="200" height="40" rx="6" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="320" y="258" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">FOC CONTROLLER</text>
+      <text x="320" y="272" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">(30) &tau;* set-point</text>
+      <line x1="160" y1="65" x2="220" y2="110" stroke="#000" stroke-width="1.2" marker-end="url(#arr6)"/>
+      <line x1="220" y1="120" x2="160" y2="75" stroke="#000" stroke-width="1.2" marker-end="url(#arr6)"/>
+      <line x1="160" y1="245" x2="220" y2="185" stroke="#000" stroke-width="1.2" marker-end="url(#arr6)"/>
+      <line x1="420" y1="130" x2="480" y2="75" stroke="#000" stroke-width="1.2" marker-end="url(#arr6)"/>
+      <line x1="480" y1="75" x2="420" y2="120" stroke="#000" stroke-width="1.2" marker-end="url(#arr6)"/>
+      <line x1="420" y1="180" x2="480" y2="240" stroke="#000" stroke-width="1.2" marker-end="url(#arr6)"/>
+      <line x1="320" y1="210" x2="320" y2="240" stroke="#000" stroke-width="1.2" marker-end="url(#arr6)"/>
+    </svg>
+    <p class="fig-title">FIG. 6 &mdash; Control and User Interface Architecture</p>
+    <p class="fig-caption">Control processor (50) runs three cooperating layers; interfaces with touchscreen (22), sensor bus of FIG. 5, encrypted data store (52), network interface (54) for external athlete-management systems, and the FOC controller (30).</p>
+  </div>
+
+  <h3 class="subsection-heading">8. Five-Layer Safety Cascade (FIG. 7)</h3>
+
+  <p class="para"><span class="pnum">[0075]</span>
+    FIG. 7 depicts a five-layer safety cascade implemented by the apparatus. The cascade comprises, in order of first-to-act: (L1) a software maximum-force ceiling enforced within the real-time control layer of the control processor <span class="ref">(50)</span>; (L2) a proportional-integral-derivative (PID) compliance response triggered by detection of compensatory motion or force spikes, described in connection with FIG. 10 and FIG. 11; (L3) the mechanical slip clutch <span class="ref">(36)</span> of FIG. 4, set to release at one hundred twenty percent (120%) of maximum operational force; (L4) the hardwired emergency stop switch <span class="ref">(24)</span> of FIG. 2 cutting power directly to the motor power stage; and (L5) the manual quick-release mechanism <span class="ref">(38)</span> of FIG. 4 permitting the subject or operator to detach the cuff <span class="ref">(18)</span> from the cable within one second.
+  </p>
+  <p class="para"><span class="pnum">[0076]</span>
+    Each layer is independent of the layer below it in both cause and mechanism. Layer L1 executes in software at not less than 100 Hz and intervenes within ten milliseconds (10 ms) of a force-cap violation. Layer L2 executes in software at not less than 30 Hz and reduces commanded force within fifty milliseconds (50 ms) of a compensation detection or anomalous load-cell reading. Layer L3 is mechanical and slips whenever the through-torque exceeds its pre-set release torque, irrespective of software state. Layer L4, when activated, removes electrical energy from the motor power stage through a normally-closed mechanical contactor, without any involvement of the controller, processor, or software. Layer L5 is purely mechanical and hand-operable.
+  </p>
+  <p class="para"><span class="pnum">[0077]</span>
+    The five-layer cascade is characterized in that failure of any one layer does not compromise the effectiveness of any subsequent layer. In a preferred embodiment, the control processor <span class="ref">(50)</span> periodically self-tests layers L1 and L2 at session startup by injecting synthetic boundary conditions and verifying correct response; layers L3, L4, and L5 are verified by scheduled operator inspection at intervals not exceeding thirty (30) days.
+  </p>
+
+  <div class="fig-block">
+    <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0,0 L10,5 L0,10 z" fill="#000"/>
+        </marker>
+      </defs>
+      <rect x="40" y="30" width="560" height="40" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="60" y="54" text-anchor="start" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">L1 &nbsp;</text>
+      <text x="110" y="54" text-anchor="start" fill="#000" font-size="10" font-family="Times,serif">Software force ceiling &mdash; 100Hz, &lt;10ms response</text>
+      <text x="580" y="54" text-anchor="end" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">software</text>
+      <rect x="40" y="80" width="560" height="40" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="60" y="104" text-anchor="start" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">L2 &nbsp;</text>
+      <text x="110" y="104" text-anchor="start" fill="#000" font-size="10" font-family="Times,serif">PID compliance on compensation / force spike &mdash; &lt;50ms</text>
+      <text x="580" y="104" text-anchor="end" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">software</text>
+      <rect x="40" y="130" width="560" height="40" rx="4" fill="#ffffff" stroke="#000" stroke-width="2"/>
+      <text x="60" y="154" text-anchor="start" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">L3 &nbsp;</text>
+      <text x="110" y="154" text-anchor="start" fill="#000" font-size="10" font-family="Times,serif">Slip clutch (36) &mdash; mechanical release at 120% F<tspan font-size="7" baseline-shift="sub">max</tspan></text>
+      <text x="580" y="154" text-anchor="end" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">mechanical</text>
+      <rect x="40" y="180" width="560" height="40" rx="4" fill="#ffffff" stroke="#000" stroke-width="2"/>
+      <text x="60" y="204" text-anchor="start" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">L4 &nbsp;</text>
+      <text x="110" y="204" text-anchor="start" fill="#000" font-size="10" font-family="Times,serif">E-stop (24) &mdash; hardwired NC contactor, cuts motor power</text>
+      <text x="580" y="204" text-anchor="end" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">electrical</text>
+      <rect x="40" y="230" width="560" height="40" rx="4" fill="#ffffff" stroke="#000" stroke-width="2"/>
+      <text x="60" y="254" text-anchor="start" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">L5 &nbsp;</text>
+      <text x="110" y="254" text-anchor="start" fill="#000" font-size="10" font-family="Times,serif">Manual quick-release (38) &mdash; single-hand, &lt;1s disengage</text>
+      <text x="580" y="254" text-anchor="end" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">mechanical</text>
+      <line x1="320" y1="70" x2="320" y2="80" stroke="#000" stroke-width="1" marker-end="url(#arr7)"/>
+      <line x1="320" y1="120" x2="320" y2="130" stroke="#000" stroke-width="1" marker-end="url(#arr7)"/>
+      <line x1="320" y1="170" x2="320" y2="180" stroke="#000" stroke-width="1" marker-end="url(#arr7)"/>
+      <line x1="320" y1="220" x2="320" y2="230" stroke="#000" stroke-width="1" marker-end="url(#arr7)"/>
+      <text x="320" y="300" text-anchor="middle" fill="#000" font-size="10" font-style="italic" font-family="Times,serif">Five independent layers &mdash; failure of one does not compromise the rest.</text>
+    </svg>
+    <p class="fig-title">FIG. 7 &mdash; Five-Layer Safety Cascade</p>
+    <p class="fig-caption">Independent layers of progressively slower but progressively more robust protection: software ceiling (L1), PID compliance (L2), slip clutch (L3), hardwired E-stop (L4), and manual quick-release (L5).</p>
+  </div>
+
+  <h3 class="subsection-heading">9. Measurement Extraction Pipeline (FIG. 8)</h3>
+
+  <p class="para"><span class="pnum">[0078]</span>
+    FIG. 8 depicts the measurement extraction pipeline that transforms raw synchronized sensor streams into a set of clinically-meaningful measurement variables and a composite injury-risk score. The pipeline comprises a sensor-fusion module <span class="ref">(60)</span> and a risk-scoring engine <span class="ref">(62)</span>, each embodied as software executing on the control processor <span class="ref">(50)</span>.
+  </p>
+  <p class="para"><span class="pnum">[0079]</span>
+    The sensor-fusion module <span class="ref">(60)</span> accepts the time-synchronized sensor streams (force, joint trajectory, motor and drum encoder positions, and optionally sEMG) and computes, for each session, a set of nine (9) primary measurement variables, designated V1 through V9 and defined as follows:
+  </p>
+  <p class="para"><span class="pnum">[0080]</span>
+    <b>V1 &mdash; Range of motion at reference force.</b> Joint angle &theta; attained when the measured cable tension first reaches a predetermined reference force (in a preferred embodiment, 15 lbf), reported separately for left and right limbs.
+  </p>
+  <p class="para"><span class="pnum">[0081]</span>
+    <b>V2 &mdash; End-range stiffness.</b> The slope, d<i>F</i>/d&theta;, of the force-angle curve evaluated over the final ten percent (10%) of the attained range of motion, expressed in pounds-force per degree.
+  </p>
+  <p class="para"><span class="pnum">[0082]</span>
+    <b>V3 &mdash; Bilateral asymmetry index.</b> Absolute difference between left and right V1, expressed as a percentage of the greater side, as further described in connection with step <span class="ref">(106)</span> of FIG. 3.
+  </p>
+  <p class="para"><span class="pnum">[0083]</span>
+    <b>V4 &mdash; Tissue yielding rate.</b> The time constant of the reduction in measured force when held at constant commanded joint displacement, characterizing viscoelastic creep of the tissue under load.
+  </p>
+  <p class="para"><span class="pnum">[0084]</span>
+    <b>V5 &mdash; Compensation index.</b> A scalar aggregating the magnitudes of detected compensatory movements of the pelvis, contralateral limb, and trunk during the stretch, normalized by the primary joint displacement.
+  </p>
+  <p class="para"><span class="pnum">[0085]</span>
+    <b>V6 &mdash; Neuromuscular co-activation.</b> When the optional sEMG array <span class="ref">(48)</span> is present, the ratio of antagonist to agonist muscle activation integrated over the stretch hold; a high value indicates guarding or protective contraction that limits passive range of motion.
+  </p>
+  <p class="para"><span class="pnum">[0086]</span>
+    <b>V7 &mdash; Session-over-session trend.</b> The slope of V1 across the last <i>n</i> sessions (preferably <i>n</i>=8), indicating whether tissue extensibility is improving, stable, or regressing.
+  </p>
+  <p class="para"><span class="pnum">[0087]</span>
+    <b>V8 &mdash; Asymmetry persistence.</b> The number of consecutive recent sessions in which V3 has exceeded the asymmetry threshold of step <span class="ref">(106)</span>.
+  </p>
+  <p class="para"><span class="pnum">[0088]</span>
+    <b>V9 &mdash; Adherence score.</b> The ratio of completed to scheduled sessions over a rolling window, used to attenuate the weight accorded to longitudinal trends when insufficient sessions are available.
+  </p>
+  <p class="para"><span class="pnum">[0089]</span>
+    The risk-scoring engine <span class="ref">(62)</span> computes a composite injury-risk score <i>R</i> as a weighted non-linear combination of variables V1 through V9, the weights being calibrated against a reference population dataset and revised, by scheduled software update, as additional longitudinal data are accumulated. In a preferred embodiment, <i>R</i> takes values in a normalized range of zero (0) to one hundred (100), with higher values indicating greater short-term injury risk. The risk score is displayed in the operator interface of FIG. 6 and written to the session record of step <span class="ref">(110)</span> of FIG. 3.
+  </p>
+
+  <div class="fig-block">
+    <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0,0 L10,5 L0,10 z" fill="#000"/>
+        </marker>
+      </defs>
+      <rect x="20" y="30" width="110" height="34" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="75" y="52" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">FORCE (16)</text>
+      <rect x="20" y="76" width="110" height="34" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="75" y="98" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">ANGLE &theta; (20)</text>
+      <rect x="20" y="122" width="110" height="34" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="75" y="144" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">ENC (44,46)</text>
+      <rect x="20" y="168" width="110" height="34" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.2" stroke-dasharray="4,3"/>
+      <text x="75" y="190" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">sEMG (48)</text>
+      <rect x="180" y="70" width="140" height="110" rx="8" fill="#ffffff" stroke="#000" stroke-width="2"/>
+      <text x="250" y="110" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">SENSOR</text>
+      <text x="250" y="128" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">FUSION</text>
+      <text x="250" y="150" text-anchor="middle" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">time-aligned</text>
+      <text x="250" y="172" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">60</text>
+      <rect x="370" y="30" width="170" height="220" rx="6" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="455" y="52" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">VARIABLES V1&ndash;V9</text>
+      <text x="385" y="74" fill="#000" font-size="9" font-family="Times,serif">V1 &mdash; ROM @ ref force</text>
+      <text x="385" y="92" fill="#000" font-size="9" font-family="Times,serif">V2 &mdash; end-range stiffness</text>
+      <text x="385" y="110" fill="#000" font-size="9" font-family="Times,serif">V3 &mdash; bilateral asymmetry</text>
+      <text x="385" y="128" fill="#000" font-size="9" font-family="Times,serif">V4 &mdash; yielding rate</text>
+      <text x="385" y="146" fill="#000" font-size="9" font-family="Times,serif">V5 &mdash; compensation index</text>
+      <text x="385" y="164" fill="#000" font-size="9" font-family="Times,serif">V6 &mdash; co-activation (sEMG)</text>
+      <text x="385" y="182" fill="#000" font-size="9" font-family="Times,serif">V7 &mdash; session trend</text>
+      <text x="385" y="200" fill="#000" font-size="9" font-family="Times,serif">V8 &mdash; asym. persistence</text>
+      <text x="385" y="218" fill="#000" font-size="9" font-family="Times,serif">V9 &mdash; adherence</text>
+      <rect x="560" y="110" width="70" height="80" rx="8" fill="#ffffff" stroke="#000" stroke-width="2"/>
+      <text x="595" y="138" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">RISK</text>
+      <text x="595" y="154" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">ENGINE</text>
+      <text x="595" y="172" text-anchor="middle" fill="#000" font-size="16" font-weight="700" font-family="Times,serif">R</text>
+      <text x="595" y="202" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">62</text>
+      <line x1="130" y1="47" x2="180" y2="100" stroke="#000" stroke-width="1.2" marker-end="url(#arr8)"/>
+      <line x1="130" y1="93" x2="180" y2="120" stroke="#000" stroke-width="1.2" marker-end="url(#arr8)"/>
+      <line x1="130" y1="139" x2="180" y2="140" stroke="#000" stroke-width="1.2" marker-end="url(#arr8)"/>
+      <line x1="130" y1="185" x2="180" y2="160" stroke="#000" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arr8)"/>
+      <line x1="320" y1="125" x2="370" y2="125" stroke="#000" stroke-width="1.5" marker-end="url(#arr8)"/>
+      <line x1="540" y1="140" x2="560" y2="150" stroke="#000" stroke-width="1.5" marker-end="url(#arr8)"/>
+      <line x1="595" y1="190" x2="595" y2="260" stroke="#000" stroke-width="1.2" marker-end="url(#arr8)"/>
+      <text x="595" y="280" text-anchor="middle" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">report &amp;</text>
+      <text x="595" y="294" text-anchor="middle" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">session log</text>
+    </svg>
+    <p class="fig-title">FIG. 8 &mdash; Measurement Extraction Pipeline</p>
+    <p class="fig-caption">Synchronized sensor streams feed sensor fusion (60), which emits nine measurement variables V1&ndash;V9; the risk-scoring engine (62) computes a composite injury-risk score R that is displayed and logged.</p>
+  </div>
+
+  <h3 class="subsection-heading">10. Multi-Pattern Reconfigurable Platform (FIG. 9)</h3>
+
+  <p class="para"><span class="pnum">[0090]</span>
+    FIG. 9 depicts the geometry by which the apparatus supports a plurality of distinct stretch patterns on a single reconfigurable platform, without requiring tool-assisted modification. The platform comprises the support frame <span class="ref">(26)</span>, a first pulley station <span class="ref">(P1)</span> at a fixed reference position, and a second pulley station <span class="ref">(P2)</span> translatable along a linear track <span class="ref">(200)</span> mounted on the frame and lockable by a toolless clamp <span class="ref">(202)</span> at any of a plurality of discrete positions spaced by not more than five centimeters (5 cm).
+  </p>
+  <p class="para"><span class="pnum">[0091]</span>
+    In a first configuration (designated V1 patterns), the cable is routed through pulley station <span class="ref">(P1)</span> alone. In this configuration, the apparatus supports at least four (4) distinct stretch patterns comprising (i) a supine hamstring pattern, (ii) an adductor pattern, (iii) a hip-flexor pattern, and (iv) an ankle dorsiflexion pattern, each selected by a subject position on a padded platform and by a corresponding pattern selection on the touchscreen <span class="ref">(22)</span>.
+  </p>
+  <p class="para"><span class="pnum">[0092]</span>
+    In a second configuration (designated V2 patterns), the cable is routed from the spool <span class="ref">(14)</span>, over pulley station <span class="ref">(P1)</span>, and thence through the translatable pulley station <span class="ref">(P2)</span> to the cuff <span class="ref">(18)</span>. In this configuration, the apparatus supports at least three (3) additional stretch patterns comprising (v) a shoulder capsular pattern, (vi) a thoracic rotation pattern, and (vii) a seated spinal extension pattern. The translatable pulley station <span class="ref">(P2)</span>, together with the fixed station <span class="ref">(P1)</span>, defines a line of action of cable tension that can be configured to address the particular joint under assessment.
+  </p>
+  <p class="para"><span class="pnum">[0093]</span>
+    The platform therefore achieves, in a single apparatus of a footprint not exceeding four (4) square meters, seven (7) or more distinct stretch patterns that, in prior art assisted-stretching devices, would require a plurality of separate machines. The configuration for each pattern is selected by the operator via the touchscreen <span class="ref">(22)</span>, which thereupon displays graphical instructions for pulley repositioning, cable routing, cuff placement, and subject positioning.
+  </p>
+
+  <div class="fig-block">
+    <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg">
+      <rect x="60" y="240" width="520" height="14" rx="3" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="320" y="275" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">26</text>
+      <text x="320" y="290" text-anchor="middle" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">platform frame</text>
+      <rect x="60" y="210" width="520" height="18" rx="3" fill="#ffffff" stroke="#000" stroke-width="1.2" stroke-dasharray="3,3"/>
+      <text x="70" y="224" text-anchor="start" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">200</text>
+      <text x="180" y="205" text-anchor="middle" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">(linear track for P2)</text>
+      <circle cx="120" cy="100" r="16" fill="#ffffff" stroke="#000" stroke-width="2"/>
+      <circle cx="120" cy="100" r="5" fill="#000"/>
+      <text x="120" y="82" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">P1</text>
+      <text x="120" y="134" text-anchor="middle" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">fixed</text>
+      <circle cx="380" cy="150" r="14" fill="#ffffff" stroke="#000" stroke-width="2"/>
+      <circle cx="380" cy="150" r="4" fill="#000"/>
+      <text x="380" y="134" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">P2</text>
+      <line x1="380" y1="164" x2="380" y2="210" stroke="#000" stroke-width="1.2"/>
+      <rect x="368" y="178" width="24" height="18" rx="3" fill="#ffffff" stroke="#000" stroke-width="1"/>
+      <text x="396" y="194" text-anchor="start" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">202</text>
+      <path d="M300,150 Q360,150 380,150" fill="none" stroke="#000" stroke-width="0.6" stroke-dasharray="2,2"/>
+      <path d="M480,150 Q440,150 394,150" fill="none" stroke="#000" stroke-width="0.6" stroke-dasharray="2,2"/>
+      <text x="440" y="142" text-anchor="middle" fill="#000" font-size="8" font-style="italic" font-family="Times,serif">slides &amp; locks</text>
+      <path d="M40,240 L70,230 L100,230 L120,116" fill="none" stroke="#000" stroke-width="2"/>
+      <path d="M120,116 L180,200 L280,230" fill="none" stroke="#000" stroke-width="2"/>
+      <text x="140" y="180" text-anchor="start" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">V1 path (4 patterns)</text>
+      <path d="M120,116 L380,134" fill="none" stroke="#000" stroke-width="1.4" stroke-dasharray="6,3"/>
+      <path d="M380,164 L440,220" fill="none" stroke="#000" stroke-width="1.4" stroke-dasharray="6,3"/>
+      <text x="260" y="118" text-anchor="start" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">V2 path (3 patterns)</text>
+      <rect x="20" y="50" width="200" height="30" rx="4" fill="#ffffff" stroke="#000" stroke-width="1"/>
+      <text x="120" y="70" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">V1: hamstring, adductor,</text>
+      <rect x="20" y="34" width="200" height="18" rx="2" fill="none" stroke="none"/>
+      <text x="120" y="46" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">(supine / seated on frame 26)</text>
+      <text x="120" y="84" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">hip-flexor, ankle (4)</text>
+      <rect x="420" y="50" width="200" height="46" rx="4" fill="#ffffff" stroke="#000" stroke-width="1"/>
+      <text x="520" y="68" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">V2: shoulder capsular,</text>
+      <text x="520" y="82" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">thoracic rotation,</text>
+      <text x="520" y="94" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">seated spinal ext. (3)</text>
+    </svg>
+    <p class="fig-title">FIG. 9 &mdash; Multi-Pattern Reconfigurable Platform Geometry</p>
+    <p class="fig-caption">Fixed pulley station P1 supports four V1 patterns; translatable pulley station P2, sliding on track (200) and locked by toolless clamp (202), enables three additional V2 patterns &mdash; seven total on a single frame (26).</p>
+  </div>
+
+  <h3 class="subsection-heading">11. PID Force-Compliance Control Loop (FIG. 10)</h3>
+
+  <p class="para"><span class="pnum">[0094]</span>
+    FIG. 10 depicts the closed-loop force-compliance control law implemented by the real-time control layer of the control processor <span class="ref">(50)</span>. The loop operates at a sampling rate of not less than one hundred iterations per second (100 Hz) and maintains the measured cable tension <i>F</i><sub>m</sub> at a commanded set-point <i>F</i><sub>*</sub> while preserving a compliance response that yields immediately upon detection of a compensation event, as described in connection with FIG. 11.
+  </p>
+  <p class="para"><span class="pnum">[0095]</span>
+    At each iteration <i>k</i>, the control processor receives the measured cable tension from the load cell <span class="ref">(16)</span> and the current compensation signal <i>c</i>[<i>k</i>] from the vision-based compensation detector of FIG. 11. The commanded set-point is adjusted in accordance with an adaptive law:
+    <span style="display:block; text-align:center; font-style:italic; margin:8pt 0;">F<sub>*</sub>[k] = F<sub>target</sub> &minus; g(c[k])</span>
+    wherein <i>F</i><sub>target</sub> is the prescribed reference force and <i>g</i>(&middot;) is a monotonically non-decreasing reduction function bounded on the interval [0, <i>F</i><sub>target</sub>].
+  </p>
+  <p class="para"><span class="pnum">[0096]</span>
+    The instantaneous error <i>e</i>[<i>k</i>] = <i>F</i><sub>*</sub>[<i>k</i>] &minus; <i>F</i><sub>m</sub>[<i>k</i>] is processed by a proportional-integral-derivative compensator having parameters <i>K</i><sub>p</sub>, <i>K</i><sub>i</sub>, and <i>K</i><sub>d</sub>. In a preferred embodiment, <i>K</i><sub>p</sub> = 2.4, <i>K</i><sub>i</sub> = 0.8 per second, and <i>K</i><sub>d</sub> = 0.15 second. The compensator output is clipped to a global maximum torque corresponding to the software force ceiling (layer L1 of FIG. 7), and the integrator is subject to anti-windup clamping whenever the output saturates.
+  </p>
+  <p class="para"><span class="pnum">[0097]</span>
+    The compensator output is transmitted as a torque set-point to the FOC motor controller <span class="ref">(30)</span> of FIG. 4, which enforces the set-point at the motor <span class="ref">(10)</span>. The resulting cable tension is measured by the load cell <span class="ref">(16)</span> and returned as <i>F</i><sub>m</sub>[<i>k</i>+1], closing the loop. The loop bandwidth is selected such that a step change in <i>F</i><sub>*</sub> is tracked within two hundred milliseconds (200 ms) with less than ten percent (10%) overshoot.
+  </p>
+  <p class="para"><span class="pnum">[0098]</span>
+    In combination with the adaptive set-point law of paragraph [0095], the loop thereby exhibits the novel behavior that, upon detection of compensation, the commanded force is reduced in real time, the PID loop then tracks the reduced set-point, and the subject experiences an immediate and proportionate yielding of cable tension. This behavior is unattainable by simple position-controlled or constant-torque devices of the prior art.
+  </p>
+
+  <div class="fig-block">
+    <svg viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr10" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0,0 L10,5 L0,10 z" fill="#000"/>
+        </marker>
+      </defs>
+      <rect x="16" y="110" width="90" height="40" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="61" y="128" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">F<tspan font-size="7" baseline-shift="sub">target</tspan></text>
+      <text x="61" y="142" text-anchor="middle" fill="#000" font-size="8" font-family="Times,serif">prescribed</text>
+      <rect x="16" y="40" width="90" height="40" rx="4" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="61" y="58" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">c[k]</text>
+      <text x="61" y="72" text-anchor="middle" fill="#000" font-size="8" font-family="Times,serif">compensation</text>
+      <circle cx="160" cy="130" r="18" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="160" y="134" text-anchor="middle" fill="#000" font-size="14" font-weight="700" font-family="Times,serif">&minus;</text>
+      <text x="160" y="100" text-anchor="middle" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">adaptive F<tspan font-size="7" baseline-shift="sub">*</tspan></text>
+      <circle cx="260" cy="130" r="18" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="260" y="134" text-anchor="middle" fill="#000" font-size="14" font-weight="700" font-family="Times,serif">&sum;</text>
+      <text x="260" y="100" text-anchor="middle" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">e[k]</text>
+      <rect x="300" y="100" width="130" height="60" rx="6" fill="#ffffff" stroke="#000" stroke-width="2"/>
+      <text x="365" y="122" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">PID</text>
+      <text x="365" y="138" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">K<tspan font-size="7" baseline-shift="sub">p</tspan>=2.4  K<tspan font-size="7" baseline-shift="sub">i</tspan>=0.8</text>
+      <text x="365" y="152" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">K<tspan font-size="7" baseline-shift="sub">d</tspan>=0.15  &micro; anti-windup</text>
+      <rect x="455" y="100" width="80" height="60" rx="6" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="495" y="124" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">FOC / Motor</text>
+      <text x="495" y="138" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">&tau; &rarr; F<tspan font-size="7" baseline-shift="sub">m</tspan></text>
+      <text x="495" y="152" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">(30, 10)</text>
+      <rect x="555" y="100" width="70" height="60" rx="6" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="590" y="128" text-anchor="middle" fill="#000" font-size="9" font-weight="700" font-family="Times,serif">Load Cell</text>
+      <text x="590" y="142" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">(16) 100Hz</text>
+      <line x1="106" y1="130" x2="142" y2="130" stroke="#000" stroke-width="1.2" marker-end="url(#arr10)"/>
+      <line x1="61" y1="80" x2="61" y2="96" stroke="#000" stroke-width="1.2"/>
+      <line x1="61" y1="96" x2="150" y2="118" stroke="#000" stroke-width="1.2" marker-end="url(#arr10)"/>
+      <line x1="178" y1="130" x2="242" y2="130" stroke="#000" stroke-width="1.2" marker-end="url(#arr10)"/>
+      <line x1="278" y1="130" x2="300" y2="130" stroke="#000" stroke-width="1.2" marker-end="url(#arr10)"/>
+      <line x1="430" y1="130" x2="455" y2="130" stroke="#000" stroke-width="1.2" marker-end="url(#arr10)"/>
+      <line x1="535" y1="130" x2="555" y2="130" stroke="#000" stroke-width="1.2" marker-end="url(#arr10)"/>
+      <line x1="625" y1="130" x2="625" y2="220" stroke="#000" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="625" y1="220" x2="260" y2="220" stroke="#000" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="260" y1="220" x2="260" y2="148" stroke="#000" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arr10)"/>
+      <text x="440" y="235" text-anchor="middle" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">F<tspan font-size="7" baseline-shift="sub">m</tspan>[k] measured feedback</text>
+      <text x="365" y="90" text-anchor="middle" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">u[k] torque set-point &tau;*</text>
+    </svg>
+    <p class="fig-title">FIG. 10 &mdash; Closed-Loop Force-Compliance Controller</p>
+    <p class="fig-caption">Commanded set-point F<sub>*</sub>[k] = F<sub>target</sub> &minus; g(c[k]) is compared to measured tension F<sub>m</sub>[k]; the PID compensator with anti-windup drives the FOC motor controller (30), and the load cell (16) closes the loop at 100 Hz.</p>
+  </div>
+
+  <h3 class="subsection-heading">12. Vision-Based Compensation Detection (FIG. 11)</h3>
+
+  <p class="para"><span class="pnum">[0099]</span>
+    FIG. 11 depicts the compensation detection algorithm executed by the vision and sensor-fusion layer of the control processor <span class="ref">(50)</span>. The algorithm identifies, in real time, compensatory motion by the subject, the onset of such motion being indicative that the subject has reached the passive limit of the targeted tissue and is recruiting secondary body segments to yield additional apparent range of motion. Continued application of force beyond this limit is a principal cause of injury in manual assisted-stretching practice.
+  </p>
+  <p class="para"><span class="pnum">[0100]</span>
+    The algorithm receives from the vision processing module <span class="ref">(42)</span> a time series of skeletal joint positions at not less than thirty frames per second (30 fps). At each frame <i>t</i>, the algorithm computes:
+  </p>
+  <p class="para"><span class="pnum">[0101]</span>
+    (i) a primary joint angle time series &theta;<sub>primary</sub>(<i>t</i>), defined in accordance with the selected stretch pattern (for a hamstring pattern, the hip-flexion angle as described in paragraph [0066]); and
+  </p>
+  <p class="para"><span class="pnum">[0102]</span>
+    (ii) a compensation-segment displacement vector <span class="ref">(220)</span> <b>d</b><sub>comp</sub>(<i>t</i>) comprising, in a preferred embodiment, (a) pelvic tilt angle about the medial-lateral axis, (b) contralateral hip abduction angle, (c) lumbar flexion angle, and (d) trunk rotation angle, each referenced to the subject&rsquo;s configuration at the start of the stretch hold.
+  </p>
+  <p class="para"><span class="pnum">[0103]</span>
+    A compensation signal generator <span class="ref">(222)</span> computes the scalar compensation signal <i>c</i>(<i>t</i>) as a non-negative weighted norm of the compensation-segment displacement vector, in a preferred embodiment:
+    <span style="display:block; text-align:center; font-style:italic; margin:8pt 0;">c(t) = &radic;(&sum;<sub>i</sub> w<sub>i</sub> &middot; (d<sub>i</sub>(t) &minus; d<sub>i,0</sub>)<sup>2</sup>)</span>
+    wherein <i>w</i><sub>i</sub> are pattern-specific weights calibrated such that <i>c</i>(<i>t</i>) takes the value zero under pure-primary motion and increases monotonically with the magnitude of compensation. The signal is smoothed by a first-order low-pass filter with cutoff selected to attenuate camera noise without appreciable delay (preferably 5 Hz).
+  </p>
+  <p class="para"><span class="pnum">[0104]</span>
+    A force reduction mapper <span class="ref">(224)</span> transforms the compensation signal <i>c</i>(<i>t</i>) into the reduction quantity <i>g</i>(<i>c</i>) used by the adaptive set-point law of paragraph [0095]. In a preferred embodiment, <i>g</i>(<i>c</i>) is zero for <i>c</i> below a dead-band threshold <i>c</i><sub>0</sub>, increases linearly with a slope <i>m</i> for <i>c</i> in the interval (<i>c</i><sub>0</sub>, <i>c</i><sub>0</sub> + <i>F</i><sub>target</sub>/<i>m</i>), and saturates at <i>F</i><sub>target</sub> thereafter. The dead-band threshold <i>c</i><sub>0</sub> is chosen to reject postural micro-movements that are not indicative of true compensation, and the slope <i>m</i> is chosen to produce substantially full force relief within two hundred milliseconds (200 ms) of the onset of a clinically significant compensation event.
+  </p>
+  <p class="para"><span class="pnum">[0105]</span>
+    When the optional sEMG array <span class="ref">(48)</span> is present, the co-activation variable V6 of paragraph [0085] is used as an additional input to the compensation signal generator <span class="ref">(222)</span>, whereby antagonistic muscle guarding is detected as a form of compensation even in the absence of external kinematic deviation. In such embodiments, a single multi-modal compensation signal is produced by weighted fusion of the kinematic and electromyographic contributions.
+  </p>
+  <p class="para"><span class="pnum">[0106]</span>
+    The compensation detection of FIG. 11, acting through the adaptive set-point law of FIG. 10, produces the characteristic "assist-up, yield-down" behavior that distinguishes the apparatus from prior-art passive cable machines, constant-torque winches, and stiffness-mat systems. In particular, the apparatus applies increasing force to carry the targeted joint through its true passive range of motion and immediately yields when the subject begins to recruit secondary segments, thereby protecting the targeted tissue from supra-physiologic loading.
+  </p>
+
+  <div class="fig-block">
+    <svg viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr11" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0,0 L10,5 L0,10 z" fill="#000"/>
+        </marker>
+      </defs>
+      <rect x="20" y="30" width="140" height="50" rx="6" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="90" y="50" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">DEPTH CAMERA</text>
+      <text x="90" y="66" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">skeleton (42) @30fps</text>
+      <rect x="20" y="120" width="140" height="50" rx="6" fill="#ffffff" stroke="#000" stroke-width="1.5"/>
+      <text x="90" y="140" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">DISPLACEMENT</text>
+      <text x="90" y="156" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">d<tspan font-size="7" baseline-shift="sub">comp</tspan>(t): pelvis, hip, lumbar</text>
+      <text x="90" y="110" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">220</text>
+      <rect x="20" y="210" width="140" height="50" rx="6" fill="#ffffff" stroke="#000" stroke-width="1.2" stroke-dasharray="4,3"/>
+      <text x="90" y="230" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">sEMG (opt.)</text>
+      <text x="90" y="246" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">co-activation V6</text>
+      <rect x="230" y="90" width="180" height="110" rx="8" fill="#ffffff" stroke="#000" stroke-width="2"/>
+      <text x="320" y="120" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">SIGNAL GENERATOR</text>
+      <text x="320" y="142" text-anchor="middle" fill="#000" font-size="10" font-style="italic" font-family="Times,serif">c(t) = &radic;&sum; w<tspan font-size="7" baseline-shift="sub">i</tspan> (d<tspan font-size="7" baseline-shift="sub">i</tspan>&minus;d<tspan font-size="7" baseline-shift="sub">i,0</tspan>)&sup2;</text>
+      <text x="320" y="162" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">LPF 5 Hz, dead-band c<tspan font-size="7" baseline-shift="sub">0</tspan></text>
+      <text x="320" y="182" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">222</text>
+      <rect x="460" y="110" width="160" height="70" rx="8" fill="#ffffff" stroke="#000" stroke-width="2"/>
+      <text x="540" y="134" text-anchor="middle" fill="#000" font-size="11" font-weight="700" font-family="Times,serif">FORCE REDUCTION</text>
+      <text x="540" y="150" text-anchor="middle" fill="#000" font-size="10" font-style="italic" font-family="Times,serif">g(c) &rarr; F<tspan font-size="7" baseline-shift="sub">*</tspan></text>
+      <text x="540" y="164" text-anchor="middle" fill="#000" font-size="9" font-family="Times,serif">dead-band + saturating</text>
+      <text x="540" y="182" text-anchor="middle" fill="#000" font-size="10" font-weight="700" font-family="Times,serif">224</text>
+      <line x1="160" y1="55" x2="230" y2="110" stroke="#000" stroke-width="1.2" marker-end="url(#arr11)"/>
+      <line x1="160" y1="145" x2="230" y2="145" stroke="#000" stroke-width="1.2" marker-end="url(#arr11)"/>
+      <line x1="160" y1="235" x2="230" y2="180" stroke="#000" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arr11)"/>
+      <line x1="410" y1="145" x2="460" y2="145" stroke="#000" stroke-width="1.5" marker-end="url(#arr11)"/>
+      <line x1="540" y1="180" x2="540" y2="225" stroke="#000" stroke-width="1.2" marker-end="url(#arr11)"/>
+      <text x="540" y="245" text-anchor="middle" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">to adaptive set-point</text>
+      <text x="540" y="258" text-anchor="middle" fill="#000" font-size="9" font-style="italic" font-family="Times,serif">of FIG. 10</text>
+    </svg>
+    <p class="fig-title">FIG. 11 &mdash; Vision-Based Compensation Detection and Force Reduction</p>
+    <p class="fig-caption">Skeletal displacement vector d<sub>comp</sub> (220) and optional sEMG drive signal generator (222), which computes the scalar compensation signal c(t); force reduction mapper (224) derives g(c) consumed by the adaptive set-point of FIG. 10.</p>
+  </div>
+
+  <h2 class="section-heading">What Is Claimed Is</h2>
+
+  <ol class="claim-list">
+    <li>
+      A method for force-controlled assisted stretching of a human subject, the method comprising:
+      providing an apparatus comprising a motor-driven cable having a distal terminus adapted to couple to a limb of the subject, a load cell configured to measure cable tension, a depth-sensing camera configured to observe the subject, and a control processor;
+      by the control processor, commanding a torque set-point to the motor such that the cable applies a commanded force <i>F</i><sub>target</sub> to the limb;
+      by the depth-sensing camera and the control processor, computing in real time a compensation signal <i>c</i>(<i>t</i>) representative of compensatory motion of one or more body segments of the subject other than the limb;
+      adjusting the commanded force in real time in accordance with an adaptive set-point law <i>F</i><sub>*</sub>(<i>t</i>) = <i>F</i><sub>target</sub> &minus; <i>g</i>(<i>c</i>(<i>t</i>)), wherein <i>g</i>(&middot;) is a monotonically non-decreasing function; and
+      closing a force-feedback control loop sampled at not less than one hundred hertz (100 Hz) that drives the measured cable tension toward the adjusted commanded force.
+    </li>
+    <li class="dep">
+      The method of claim 1, wherein <i>g</i>(&middot;) comprises a dead-band interval in which <i>g</i>(<i>c</i>) is zero, a linear interval in which <i>g</i>(<i>c</i>) increases monotonically with <i>c</i>, and a saturation interval in which <i>g</i>(<i>c</i>) is held equal to <i>F</i><sub>target</sub>.
+    </li>
+    <li class="dep">
+      The method of claim 1, wherein the compensation signal <i>c</i>(<i>t</i>) is computed as a weighted norm of displacements, relative to a configuration measured at the start of the stretch hold, of at least two of: pelvic tilt, contralateral hip abduction, lumbar flexion, and trunk rotation.
+    </li>
+    <li class="dep">
+      The method of claim 1, wherein the force-feedback control loop comprises a proportional-integral-derivative compensator with anti-windup clamping, the output of which is bounded by a software force ceiling less than a mechanical slip-release torque.
+    </li>
+    <li class="dep">
+      The method of claim 1, further comprising: prior to adjusting the commanded force, measuring a left-limb baseline and a right-limb baseline of the subject at a common reference force, and computing a bilateral asymmetry index as a percentage difference between the left and right baselines.
+    </li>
+    <li class="dep">
+      The method of claim 5, further comprising triggering an injury-risk flag and modifying a subsequent stretch protocol when the bilateral asymmetry index exceeds a predetermined threshold.
+    </li>
+    <li class="dep">
+      The method of claim 1, further comprising computing a plurality of measurement variables comprising at least: a range of motion at a reference force, an end-range stiffness, a tissue yielding rate, a compensation index, and a session-over-session trend, and logging the variables to a non-transitory data store.
+    </li>
+    <li class="dep">
+      The method of claim 7, further comprising computing a composite injury-risk score <i>R</i> as a weighted non-linear combination of the measurement variables, and outputting the composite injury-risk score to an operator-facing display and to a remote athlete-management system over an authenticated encrypted transport.
+    </li>
+    <li class="dep">
+      The method of claim 1, further comprising receiving a signal from a surface electromyography array applied to the subject, computing an antagonist-to-agonist co-activation ratio from the signal, and incorporating the co-activation ratio as an additional input to the compensation signal <i>c</i>(<i>t</i>).
+    </li>
+    <li class="dep">
+      The method of claim 1, wherein the force-feedback control loop tracks a step change in the commanded force within two hundred milliseconds (200 ms) with less than ten percent (10%) overshoot, and wherein a clinically significant increase in <i>c</i>(<i>t</i>) produces substantially full reduction of the commanded force within two hundred milliseconds (200 ms).
+    </li>
+
+    <li>
+      An apparatus for force-controlled assisted stretching of a human subject, the apparatus comprising:
+      a support frame;
+      a brushless direct-current motor mounted to the frame;
+      a reduction gearbox coupled to an output shaft of the motor;
+      a torque-limiting slip clutch coupled to an output of the reduction gearbox;
+      a cable spool coupled to an output of the slip clutch;
+      a synthetic ultra-high-molecular-weight polyethylene cable wound on the cable spool and having a distal end;
+      an inline load cell disposed along the cable between the cable spool and the distal end, the load cell configured to measure cable tension at a sampling rate of not less than one hundred hertz (100 Hz);
+      a quick-release coupling at the distal end of the cable, the quick-release coupling being hand-operable to disengage the distal end of the cable from a limb-engaging cuff in less than one second;
+      a depth-sensing camera mounted to the frame and arranged to observe the subject;
+      a hardwired emergency stop switch operatively coupled to cut electrical power to a motor power stage independent of software; and
+      a control processor operatively coupled to the motor, the load cell, the depth-sensing camera, and the emergency stop switch, and programmed to execute the method of claim 1.
+    </li>
+    <li class="dep">
+      The apparatus of claim 11, wherein the slip clutch is pre-set to release at a through-torque corresponding to a cable tension not exceeding one hundred twenty percent (120%) of a maximum operational force of the apparatus.
+    </li>
+    <li class="dep">
+      The apparatus of claim 11, wherein the cable has a minimum breaking strength of not less than two thousand pounds-force (2,000 lbf), thereby providing a cable safety factor of not less than forty (40) times the maximum operational force.
+    </li>
+    <li class="dep">
+      The apparatus of claim 11, further comprising a field-oriented-control motor controller configured to sample motor-phase currents at not less than eight thousand hertz (8 kHz) and to enforce a commanded torque at the motor to within five percent (5%) over an operating range.
+    </li>
+    <li class="dep">
+      The apparatus of claim 11, further comprising a first rotary encoder coupled to a shaft of the motor and a second rotary encoder coupled to an output shaft of the slip clutch, wherein the control processor is programmed to compare positions of the first and second rotary encoders, after compensation for a ratio of the reduction gearbox, to detect slip of the slip clutch in real time.
+    </li>
+    <li class="dep">
+      The apparatus of claim 11, further comprising a first pulley station in a fixed position on the frame and a second pulley station translatable along a linear track on the frame and lockable by a toolless clamp, the first and second pulley stations cooperating to support a plurality of at least seven distinct stretch patterns on a single apparatus.
+    </li>
+    <li class="dep">
+      The apparatus of claim 11, wherein the control processor is further programmed to retain a session record in an encrypted non-transitory data store using a symmetric cipher of not less than 256-bit key length, such that absence of network connectivity does not impair session execution or data logging.
+    </li>
+    <li class="dep">
+      The apparatus of claim 11, comprising five independent safety layers, the five safety layers comprising: (i) a software maximum-force ceiling; (ii) a compensation-triggered compliance reduction implemented by the control processor; (iii) the slip clutch; (iv) the hardwired emergency stop switch; and (v) the quick-release coupling, wherein failure of any one safety layer does not compromise effectiveness of any other safety layer.
+    </li>
+
+    <li>
+      A system for longitudinal soft-tissue assessment and injury risk monitoring of an athletic population, the system comprising:
+      a plurality of apparatuses each according to claim 11;
+      a remote server in network communication with each of the plurality of apparatuses over an authenticated encrypted transport; and
+      software instructions executable by the remote server to aggregate session records received from the plurality of apparatuses, compute for each enrolled subject a composite injury-risk score as a weighted non-linear combination of a range of motion at a reference force, an end-range stiffness, a bilateral asymmetry index, a compensation index, and a session-over-session trend, and to transmit the composite injury-risk score by application-programming-interface endpoint to at least one external athlete-management system.
+    </li>
+    <li class="dep">
+      The system of claim 19, wherein the software instructions are further executable to revise the weights of the composite injury-risk score, by scheduled update, as additional session records are accumulated across the plurality of apparatuses.
+    </li>
+    <li class="dep">
+      The system of claim 19, wherein the external athlete-management system is one of Smartabase, Kitman Labs, and Catapult Vector, and wherein the application-programming-interface endpoint is one of a REST endpoint and a GraphQL endpoint.
+    </li>
+  </ol>
+
+  <h2 class="section-heading">Abstract of the Disclosure</h2>
+
+  <div class="abstract-box">
+    <p class="para no-indent">
+      A cable-driven assisted-stretching apparatus, method, and system apply controlled, measured tension to a limb of a human subject and yield compliantly in real time upon detection of compensatory motion. A brushless motor, reduction gearbox, torque-limiting slip clutch, inline load cell, and quick-release cuff cooperate with a depth-sensing camera and a control processor running a closed-loop force controller at 100 Hz and a vision-based compensation detector at 30 Hz. An adaptive set-point law reduces commanded force as a monotonic function of a compensation signal computed from pelvic, contralateral hip, lumbar, and trunk displacement. A five-layer safety cascade (software ceiling, PID compliance, slip clutch, hardwired emergency stop, manual quick-release) protects the subject. Nine measurement variables and a composite injury-risk score are logged per session and exported to athlete-management systems, enabling bilateral longitudinal assessment on a single reconfigurable seven-pattern platform.
+    </p>
+  </div>
+
+  <!-- ============================================================
+       INVENTOR DECLARATION (on-screen reference only).
+       Hidden when printing the spec: Patent Center's ADS / inventor
+       oath workflow handles inventorship declarations directly. A
+       declaration is not required at the provisional stage (it's
+       required when the nonprovisional is filed), so retaining it
+       only in the on-screen version is correct.
+       ============================================================ -->
+  <div class="filing-hide">
+    <h2 class="section-heading">Declaration of Inventorship</h2>
+
+    <p class="para">
+      Each undersigned inventor hereby declares that: (i) the above-identified application was made or authorized to be made by the inventor; (ii) the inventor believes himself or herself to be the original inventor or an original joint inventor of a claimed invention in the application; and (iii) the inventor acknowledges the duty to disclose to the United States Patent and Trademark Office all information known to be material to patentability as defined in 37 CFR 1.56. The inventor further declares that all statements made herein of the inventor's own knowledge are true, that all statements made herein on information and belief are believed to be true, and that these statements were made with the knowledge that willful false statements and the like are punishable by fine or imprisonment, or both, under 18 U.S.C. 1001.
+    </p>
+
+    <table class="ref-table" style="margin-top:24pt;">
+      <tr>
+        <th style="width:40%;">Inventor Name (print)</th>
+        <th style="width:35%;">Signature</th>
+        <th>Date</th>
+      </tr>
+      <tr>
+        <td style="height:42pt; text-align:left; font-weight:400;">_______________________________</td>
+        <td style="text-align:left;">_______________________________</td>
+        <td style="text-align:left;">_______________</td>
+      </tr>
+      <tr>
+        <td style="height:42pt; text-align:left; font-weight:400;">_______________________________</td>
+        <td style="text-align:left;">_______________________________</td>
+        <td style="text-align:left;">_______________</td>
+      </tr>
+    </table>
+  </div>
+
+  <p class="para" style="margin-top:24pt; font-style:italic; font-size:10pt; text-align:center;">
+    &mdash; End of Provisional Patent Application Specification &mdash;<br>
+    Attorney Docket No. VITR-001-PROV
+  </p>
+
+</div>
+</body>
+</html>

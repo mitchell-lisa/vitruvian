@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="modulor-icon.png">
+  <title>Modulor — Actuarial infrastructure for musculoskeletal injury risk</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+  <style>
+    /* Investor page overrides */
+    .inv-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:48px; }
+    .inv-grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .inv-grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+    @media (max-width:860px){ .inv-grid-2,.inv-grid-3,.inv-grid-4{ grid-template-columns:1fr; } }
+    .inv-card { background:#22262e; border:1px solid rgba(255,255,255,0.08); border-radius:6px; padding:28px; }
+    .inv-card h3 { font-size:16px; font-weight:600; margin-bottom:10px; color:#fff; }
+    .inv-card p { font-size:14px; line-height:1.55; color:#b8bcc4; margin:0; }
+    .inv-label { font-size:11px; text-transform:uppercase; letter-spacing:0.14em; color:#888; margin-bottom:10px; }
+    .inv-kv { display:grid; grid-template-columns:160px 1fr; gap:16px 32px; font-size:14px; line-height:1.6; }
+    .inv-kv dt { color:#888; font-weight:500; }
+    .inv-kv dd { color:#e0e0e0; margin:0; }
+    .inv-bignum { font-size:44px; font-weight:700; color:#fff; line-height:1; margin-bottom:8px; letter-spacing:-0.02em; }
+    .inv-bignum-label { font-size:13px; color:#888; }
+    .inv-status-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+    .inv-pill { display:inline-block; font-size:11px; padding:4px 10px; border-radius:3px; background:rgba(34,197,94,0.12); color:#22c55e; border:1px solid rgba(34,197,94,0.25); text-transform:uppercase; letter-spacing:0.08em; font-weight:600; }
+    .inv-pill.pending { background:rgba(234,179,8,0.12); color:#eab308; border-color:rgba(234,179,8,0.25); }
+    .inv-pill.neutral { background:rgba(255,255,255,0.06); color:#b8bcc4; border-color:rgba(255,255,255,0.12); }
+    .inv-row { border-top:1px solid rgba(255,255,255,0.08); padding:18px 0; display:grid; grid-template-columns:140px 1fr 160px; gap:24px; align-items:center; }
+    .inv-row:first-child { border-top:none; }
+    .inv-phase { font-size:11px; text-transform:uppercase; letter-spacing:0.14em; color:#888; font-weight:600; }
+    .inv-phase-body h4 { font-size:15px; font-weight:600; color:#fff; margin-bottom:4px; }
+    .inv-phase-body p { font-size:13px; color:#b8bcc4; margin:0; line-height:1.5; }
+    .inv-phase-target { font-size:13px; color:#888; text-align:right; }
+    @media (max-width:860px){ .inv-row{ grid-template-columns:1fr; } .inv-phase-target{ text-align:left; } }
+    .inv-dr-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    @media (max-width:860px){ .inv-dr-grid{ grid-template-columns:1fr; } }
+    .inv-dr { display:block; padding:18px 22px; background:#1a1d23; border:1px solid rgba(255,255,255,0.08); border-radius:4px; color:#e0e0e0; text-decoration:none; transition:border-color 0.15s; }
+    .inv-dr:hover { border-color:rgba(255,255,255,0.25); }
+    .inv-dr-tag { font-size:10px; text-transform:uppercase; letter-spacing:0.14em; color:#888; margin-bottom:6px; }
+    .inv-dr-title { font-size:14px; font-weight:600; color:#fff; }
+    .ask-big { background:#0f1115; border:1px solid rgba(255,255,255,0.12); border-radius:8px; padding:48px; margin-top:24px; }
+    .ask-stack { display:grid; grid-template-columns:repeat(4,1fr); gap:32px; margin-bottom:32px; }
+    @media (max-width:860px){ .ask-stack{ grid-template-columns:repeat(2,1fr); } }
+    .ask-stat .inv-bignum { font-size:32px; }
+    .use-of-funds { display:grid; grid-template-columns:1fr; gap:10px; }
+    .use-row { display:grid; grid-template-columns:70px 1fr 160px; gap:20px; align-items:center; padding:12px 0; border-top:1px solid rgba(255,255,255,0.08); font-size:14px; }
+    .use-row:first-child { border-top:none; }
+    .use-pct { color:#fff; font-weight:700; font-family:'SF Mono',Menlo,monospace; }
+    .use-label { color:#e0e0e0; }
+    .use-detail { color:#888; font-size:13px; text-align:right; }
+    @media (max-width:860px){ .use-row{ grid-template-columns:1fr; } .use-detail{ text-align:left; } }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">
+        <img src="modulor-icon.png" alt="Modulor" width="36" height="36">
+        <span>MODULOR</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="pitch.html" class="nav-link">Deck</a>
+        <a href="product.html" class="nav-link">Product</a>
+        <a href="hub.html" class="nav-link">Data Room</a>
+        <a href="feedback.html" class="nav-cta">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content hero-split">
+
+      <div class="hero-text">
+        <h1>Actuarial infrastructure for musculoskeletal injury risk.</h1>
+        <p class="subtitle">A force-controlled cable platform with vision-based compensation detection captures range, load, and asymmetry on every rep. The hardware is the wedge. The data is the business.</p>
+        <div class="hero-ctas">
+          <a href="pitch.html" class="btn btn-primary">View Deck</a>
+          <a href="hub.html" class="btn btn-secondary">Enter Data Room</a>
+        </div>
+        <div class="hero-metrics">
+          <div class="metric-card">
+            <span class="metric-num">$3M</span>
+            <span class="metric-label">Seed — strategic-led</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-num">30 mo</span>
+            <span class="metric-label">Runway to Series A</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-num">64/040,028</span>
+            <span class="metric-label">USPTO provisional filed</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-num">4</span>
+            <span class="metric-label">Buyer categories</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-exhibit">
+        <img src="modulor man diagram.png" alt="Modulor proportional system" class="hero-exhibit-img">
+        <p class="hero-exhibit-caption">Le Corbusier, <em>Le Modulor</em>, 1945</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- THESIS -->
+  <section class="section section-dark" id="thesis">
+    <div class="container">
+      <p class="section-tag">Thesis</p>
+      <h2>The one variable every performance program tracks by eye.</h2>
+      <div class="two-col">
+        <div class="col">
+          <p>Pro sport spends over <strong>$1.2B/yr</strong> on guaranteed contracts lost to soft-tissue injury. Insurers write musculoskeletal disability policies on 30-year-old actuarial tables. Neither has a structured, longitudinal record of mobility, asymmetry, or compensation at matched load.</p>
+          <p>Force plates measure power. GPS measures output. HRV measures recovery. Nothing measures the tissue that actually tears.</p>
+        </div>
+        <div class="col">
+          <p><strong>Our wedge is hardware.</strong> A single-cable, force-controlled stretching platform that sits in the training room and does two things no human can: apply identical load every rep, and measure what the body does in response at 100Hz + 30fps.</p>
+          <p><strong>Our business is data.</strong> Every session is a structured record. Rolled up, those records price risk — for teams, insurers, leagues, and acquirers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARKET -->
+  <section class="section" id="market">
+    <div class="container">
+      <p class="section-tag">Market</p>
+      <h2>Four buyers. One data asset.</h2>
+      <div class="benefit-tiers">
+        <div class="benefit-tier">
+          <div class="benefit-priority high">Teams</div>
+          <h3>Pro &amp; collegiate programs</h3>
+          <p>Lease hardware. Consume reports. Protect guaranteed contracts. ~800 addressable programs in NA + EU. Target $60K/yr/station.</p>
+        </div>
+        <div class="benefit-tier">
+          <div class="benefit-priority high">Insurers</div>
+          <h3>Workers' comp &amp; disability</h3>
+          <p>License risk signals. Price MSK premiums on evidence. $70B+ US market; MSK is ~40% of claims. Data licensing, not hardware sales.</p>
+        </div>
+        <div class="benefit-tier">
+          <div class="benefit-priority med">Leagues</div>
+          <h3>League offices &amp; PAs</h3>
+          <p>Roster-level availability models. Standardized injury reporting. CBA-aligned. Long sales cycle, enterprise scale.</p>
+        </div>
+        <div class="benefit-tier">
+          <div class="benefit-priority med">Strategics</div>
+          <h3>Distribution &amp; acquirers</h3>
+          <p>Hyperice, Therabody, Catapult, Nike, Peloton. Data moat + patent are the asset. Acquisition-optimized.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT -->
+  <section class="section section-dark" id="product">
+    <div class="container">
+      <p class="section-tag">Product</p>
+      <h2>A cable, a bench, and good sensors.</h2>
+      <div class="inv-grid-3">
+        <div class="inv-card">
+          <div class="inv-label">Hardware</div>
+          <h3>Force-controlled cable platform</h3>
+          <p>200W brushless motor. Inline load cell, ±0.1 lb at 100Hz. Backdriveable compliance loop. Five independent safety layers. Commercial parts, field-serviceable.</p>
+        </div>
+        <div class="inv-card">
+          <div class="inv-label">Sensing</div>
+          <h3>Vision-based compensation detection</h3>
+          <p>Depth camera tracks 12 skeletal landmarks at 30fps. ±2° joint angle. Detects pelvic rotation, trunk shift, knee bend in real time — the core patent claim.</p>
+        </div>
+        <div class="inv-card">
+          <div class="inv-label">Data</div>
+          <h3>Structured session records</h3>
+          <p>Range, force, asymmetry, compensation, tolerance — per rep, per athlete, per session. REST API to AMS. Longitudinal on our side. That's the moat.</p>
+        </div>
+      </div>
+      <p style="margin-top:28px; font-size:14px; color:#888;">Full product breakdown: <a href="product.html" style="color:#fff; text-decoration:underline;">product.html</a> · Patent: <a href="patent.html" style="color:#fff; text-decoration:underline;">USPTO 64/040,028</a> · Drawings: <a href="drawings.html" style="color:#fff; text-decoration:underline;">11 figures</a></p>
+    </div>
+  </section>
+
+  <!-- MOAT -->
+  <section class="section" id="moat">
+    <div class="container">
+      <p class="section-tag">Moat</p>
+      <h2>Three reinforcing assets.</h2>
+      <div class="value-list">
+        <div class="value-item">
+          <div class="value-num">1</div>
+          <div class="value-body">
+            <h3>Patent — vision-fused compensation detection under closed-loop force control.</h3>
+            <p>USPTO provisional filed April 15, 2026 (App. No. 64/040,028). Non-obvious combination of force-following cable drive + depth-camera skeletal tracking used to modulate tension in real time. Utility conversion scheduled within the 12-month window.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-num">2</div>
+          <div class="value-body">
+            <h3>Data rights — contract at point of lease.</h3>
+            <p>Every hardware deployment ships with a data-sharing addendum. De-identified session records license to us in perpetuity. Teams get the reports; we get the corpus. This is the insurance play.</p>
+          </div>
+        </div>
+        <div class="value-item">
+          <div class="value-num">3</div>
+          <div class="value-body">
+            <h3>Installed base — physical switching cost.</h3>
+            <p>A cable platform in a training room is not replaced casually. Every station deployed compounds the corpus and raises the cost of any competing entrant catching up.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="proportion-rule"></div>
+  <div class="corbusier-strip">
+    <img src="modulor-man-le-corbusier.webp" alt="" class="corbusier-strip-img">
+    <div class="corbusier-strip-overlay"></div>
+  </div>
+  <div class="proportion-rule"></div>
+
+  <!-- TRACTION -->
+  <section class="section section-dark" id="traction">
+    <div class="container">
+      <p class="section-tag">Status</p>
+      <h2>Where we are.</h2>
+      <dl class="inv-kv">
+        <dt>IP</dt>
+        <dd>USPTO provisional <strong>64/040,028</strong> filed Apr 15, 2026. <span class="inv-pill">Patent pending</span></dd>
+        <dt>Prototype</dt>
+        <dd>Mechanical + electrical BOM finalized. Build Q2–Q3. <span class="inv-pill pending">In build</span></dd>
+        <dt>Pilots</dt>
+        <dd>6-week lease pilot open. Collegiate + pro conversations active. <span class="inv-pill pending">In conversation</span></dd>
+        <dt>Partnerships</dt>
+        <dd>AMS integration targets identified (Smartabase, Kitman, Catapult). <span class="inv-pill neutral">Scoped</span></dd>
+        <dt>Military pathway</dt>
+        <dd>AFWERX / SOFWERX / DIU SBIR Phase I scoped for non-dilutive capital. <span class="inv-pill neutral">Scoped</span></dd>
+        <dt>Team</dt>
+        <dd>Founder + scoped hire plan (1 ME, 1 firmware, 1 CV/ML). <span class="inv-pill neutral">Hiring at close</span></dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- GTM -->
+  <section class="section" id="gtm">
+    <div class="container">
+      <p class="section-tag">Go-to-Market</p>
+      <h2>Three phases. Clear exits at each.</h2>
+      <div class="inv-row">
+        <div class="inv-phase">Phase 1 · 0–12 mo</div>
+        <div class="inv-phase-body">
+          <h4>Design partners — flagship programs</h4>
+          <p>3–5 lighthouse pilots. Free-to-paid conversion. Data corpus starts. Validate the measurement.</p>
+        </div>
+        <div class="inv-phase-target">$0–$300K ARR</div>
+      </div>
+      <div class="inv-row">
+        <div class="inv-phase">Phase 2 · 12–30 mo</div>
+        <div class="inv-phase-body">
+          <h4>Commercial roll-out — teams + first insurer LOI</h4>
+          <p>30–60 stations leased. First insurance data-licensing pilot. Series A raise on traction + corpus size.</p>
+        </div>
+        <div class="inv-phase-target">$2–4M ARR</div>
+      </div>
+      <div class="inv-row">
+        <div class="inv-phase">Phase 3 · 30+ mo</div>
+        <div class="inv-phase-body">
+          <h4>Platform scale — insurer contracts + strategic exit path</h4>
+          <p>League-level adoption. Insurance licensing at scale. Strategic optionality (Hyperice / Catapult / Nike).</p>
+        </div>
+        <div class="inv-phase-target">$15M+ ARR · exit optionality</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE ASK -->
+  <section class="section section-dark" id="ask">
+    <div class="container">
+      <p class="section-tag">The Ask</p>
+      <h2>$3M seed. Strategic-led preferred.</h2>
+      <div class="ask-big">
+        <div class="ask-stack">
+          <div class="ask-stat">
+            <div class="inv-bignum">$3M</div>
+            <div class="inv-bignum-label">Round size</div>
+          </div>
+          <div class="ask-stat">
+            <div class="inv-bignum">30 mo</div>
+            <div class="inv-bignum-label">Runway</div>
+          </div>
+          <div class="ask-stat">
+            <div class="inv-bignum">5–8</div>
+            <div class="inv-bignum-label">Pilot stations deployed</div>
+          </div>
+          <div class="ask-stat">
+            <div class="inv-bignum">Series A</div>
+            <div class="inv-bignum-label">Target milestone</div>
+          </div>
+        </div>
+        <div class="use-of-funds">
+          <div class="use-row"><div class="use-pct">40%</div><div class="use-label">Hardware — prototype, pilot stations, tooling</div><div class="use-detail">$1.2M</div></div>
+          <div class="use-row"><div class="use-pct">30%</div><div class="use-label">Engineering — firmware, CV/ML, full-stack</div><div class="use-detail">$900K</div></div>
+          <div class="use-row"><div class="use-pct">15%</div><div class="use-label">GTM — pilot ops, clinical validation, partnerships</div><div class="use-detail">$450K</div></div>
+          <div class="use-row"><div class="use-pct">10%</div><div class="use-label">IP — utility conversion, PCT, continuations</div><div class="use-detail">$300K</div></div>
+          <div class="use-row"><div class="use-pct">5%</div><div class="use-label">Reserve — legal, ops, contingency</div><div class="use-detail">$150K</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATA ROOM -->
+  <section class="section" id="dataroom">
+    <div class="container">
+      <p class="section-tag">Data Room</p>
+      <h2>Everything for diligence.</h2>
+      <p style="max-width:620px; color:#888; font-size:15px; margin-bottom:32px;">Full index at <a href="hub.html" style="color:#fff; text-decoration:underline;">hub.html</a>. Direct links below.</p>
+      <div class="inv-dr-grid">
+        <a class="inv-dr" href="pitch.html"><div class="inv-dr-tag">Deck</div><div class="inv-dr-title">Partner pitch →</div></a>
+        <a class="inv-dr" href="patent.html"><div class="inv-dr-tag">IP · Filed</div><div class="inv-dr-title">USPTO 64/040,028 →</div></a>
+        <a class="inv-dr" href="drawings.html"><div class="inv-dr-tag">IP</div><div class="inv-dr-title">Patent drawings →</div></a>
+        <a class="inv-dr" href="product.html"><div class="inv-dr-tag">Product</div><div class="inv-dr-title">Full product spec →</div></a>
+        <a class="inv-dr" href="docs/"><div class="inv-dr-tag">Strategy</div><div class="inv-dr-title">Design docs (19) →</div></a>
+        <a class="inv-dr" href="figures/"><div class="inv-dr-tag">IP</div><div class="inv-dr-title">Patent figures →</div></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section-cta" id="contact">
+    <div class="container">
+      <h2>Let's talk.</h2>
+      <p class="cta-sub">For investors, strategics, pilot partners, and insurers. Reply within 48 hours.</p>
+      <a href="feedback.html" class="btn btn-primary" style="margin-top:24px;">Partner Inquiry →</a>
+      <p class="form-note">Direct: hello@modulor.example</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <img src="modulor-icon.png" alt="Modulor" width="28" height="28">
+        <span>MODULOR</span>
+      </div>
+      <p class="copyright">2026 Modulor. Actuarial infrastructure for musculoskeletal injury risk.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

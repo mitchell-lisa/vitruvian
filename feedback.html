@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="modulor-icon.png">
+<title>Modulor — Partner Inquiry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ui.css">
+</head>
+<body>
+
+<nav class="ui-nav">
+  <div class="ui-nav-inner">
+    <a href="index.html" class="ui-logo">
+      <img src="modulor-icon.png" alt="">
+      <span>MODULOR</span>
+    </a>
+    <div class="ui-nav-links">
+      <a href="index.html" class="ui-nav-link">Home</a>
+      <a href="pitch.html" class="ui-nav-link">Deck</a>
+      <a href="hub.html" class="ui-nav-link">Data Room</a>
+    </div>
+  </div>
+</nav>
+
+<main class="ui-page ui-narrow">
+
+  <div class="ui-eyebrow">Partner Inquiry</div>
+  <h1 class="ui-h1">Let's talk.</h1>
+  <p class="ui-sub">Investors, strategics, pilot partners, insurers. Reply within 48 hours.</p>
+
+  <form action="mailto:hello@modulor.example" method="post" enctype="text/plain" style="margin-top:36px;">
+
+    <div class="ui-row">
+      <div class="ui-field">
+        <label class="ui-label" for="name">Name<span class="req">*</span></label>
+        <input class="ui-input" type="text" id="name" name="name" required>
+      </div>
+      <div class="ui-field">
+        <label class="ui-label" for="firm">Firm / Organization<span class="req">*</span></label>
+        <input class="ui-input" type="text" id="firm" name="firm" required>
+      </div>
+    </div>
+
+    <div class="ui-field">
+      <label class="ui-label">I'm reaching out as a<span class="req">*</span></label>
+      <div class="ui-radio-group">
+        <label><input type="radio" name="capacity" value="investor" required>Investor</label>
+        <label><input type="radio" name="capacity" value="strategic">Strategic / Corporate</label>
+        <label><input type="radio" name="capacity" value="insurer">Insurer</label>
+        <label><input type="radio" name="capacity" value="team">Team / Pilot partner</label>
+        <label><input type="radio" name="capacity" value="league">League / PA</label>
+        <label><input type="radio" name="capacity" value="other">Other</label>
+      </div>
+    </div>
+
+    <div class="ui-row">
+      <div class="ui-field">
+        <label class="ui-label" for="role">Role / Title<span class="req">*</span></label>
+        <input class="ui-input" type="text" id="role" name="role" required>
+      </div>
+      <div class="ui-field">
+        <label class="ui-label" for="check">Check size / Partnership scope</label>
+        <input class="ui-input" type="text" id="check" name="check" placeholder="optional — e.g. $500K–$1M lead, or pilot LOI">
+      </div>
+    </div>
+
+    <div class="ui-field">
+      <label class="ui-label" for="interest">What interests you about Modulor?<span class="req">*</span></label>
+      <textarea class="ui-textarea" id="interest" name="interest" required placeholder="Thesis fit, pilot scope, data-licensing interest, strategic overlap, etc."></textarea>
+    </div>
+
+    <div class="ui-field">
+      <label class="ui-label">Timeline<span class="req">*</span></label>
+      <div class="ui-radio-group">
+        <label><input type="radio" name="timeline" value="now" required>Active now</label>
+        <label><input type="radio" name="timeline" value="quarter">Within the quarter</label>
+        <label><input type="radio" name="timeline" value="tracking">Tracking — not active</label>
+      </div>
+    </div>
+
+    <div class="ui-row">
+      <div class="ui-field">
+        <label class="ui-label" for="email">Email<span class="req">*</span></label>
+        <input class="ui-input" type="email" id="email" name="email" required>
+      </div>
+      <div class="ui-field">
+        <label class="ui-label" for="phone">Phone</label>
+        <input class="ui-input" type="tel" id="phone" name="phone" placeholder="optional">
+      </div>
+    </div>
+
+    <button type="submit" class="ui-btn ui-btn-primary" style="margin-top:8px;">Send</button>
+
+  </form>
+
+</main>
+
+<footer class="ui-footer">
+  <span>Modulor · Partner Inquiry</span>
+  <a href="hub.html">Data Room</a>
+</footer>
+
+</body>
+</html>

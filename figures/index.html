@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../modulor-icon.png">
+<title>Modulor — Figures</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../ui.css">
+<style>
+  .fig-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+  .fig { background: var(--bg-card); border: 1px solid var(--rule); border-radius: 4px; padding: 14px; transition: border-color 0.15s, background 0.15s; }
+  .fig:hover { border-color: var(--rule-bright); background: var(--bg-elev); }
+  .fig-thumb { aspect-ratio: 4/3; background: #fff; border-radius: 2px; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 10px; }
+  .fig-thumb object { width: 100%; height: 100%; pointer-events: none; }
+  .fig-num { font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-dim); margin-bottom: 2px; }
+  .fig-title { font-size: 13px; font-weight: 500; color: var(--ink-bright); line-height: 1.35; margin-bottom: 10px; }
+  .fig-links { display: flex; gap: 14px; font-size: 11px; }
+  .fig-links a { color: var(--ink-dim); }
+  .fig-links a:hover { color: var(--ink-bright); }
+</style>
+</head>
+<body>
+
+<nav class="ui-nav">
+  <div class="ui-nav-inner">
+    <a href="../index.html" class="ui-logo">
+      <img src="../modulor-icon.png" alt="">
+      <span>MODULOR</span>
+    </a>
+    <div class="ui-nav-links">
+      <a href="../index.html" class="ui-nav-link">Home</a>
+      <a href="../pitch.html" class="ui-nav-link">Deck</a>
+      <a href="../hub.html" class="ui-nav-link">Data Room</a>
+      <a href="../feedback.html" class="ui-nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main class="ui-page ui-wide">
+
+  <div class="ui-eyebrow">Patent Figures</div>
+  <h1 class="ui-h1">11 figures.</h1>
+  <p class="ui-sub">Click to open. Right-click to download.</p>
+
+  <div class="fig-grid" style="margin-top:32px;">
+
+    <div class="fig">
+      <a href="FIG-01.svg"><div class="fig-thumb"><object data="FIG-01.svg" type="image/svg+xml"></object></div></a>
+      <div class="fig-num">FIG. 1</div>
+      <div class="fig-title">System overview</div>
+      <div class="fig-links"><a href="FIG-01.svg">Open</a><a href="FIG-01.svg" download>Download</a></div>
+    </div>
+
+    <div class="fig">
+      <a href="FIG-02.svg"><div class="fig-thumb"><object data="FIG-02.svg" type="image/svg+xml"></object></div></a>
+      <div class="fig-num">FIG. 2</div>
+      <div class="fig-title">Control loop</div>
+      <div class="fig-links"><a href="FIG-02.svg">Open</a><a href="FIG-02.svg" download>Download</a></div>
+    </div>
+
+    <div class="fig">
+      <a href="FIG-03.svg"><div class="fig-thumb"><object data="FIG-03.svg" type="image/svg+xml"></object></div></a>
+      <div class="fig-num">FIG. 3</div>
+      <div class="fig-title">Hamstring stretch</div>
+      <div class="fig-links"><a href="FIG-03.svg">Open</a><a href="FIG-03.svg" download>Download</a></div>
+    </div>
+
+    <div class="fig">
+      <a href="FIG-04.svg"><div class="fig-thumb"><object data="FIG-04.svg" type="image/svg+xml"></object></div></a>
+      <div class="fig-num">FIG. 4</div>
+      <div class="fig-title">Joint tracking</div>
+      <div class="fig-links"><a href="FIG-04.svg">Open</a><a href="FIG-04.svg" download>Download</a></div>
+    </div>
+
+    <div class="fig">
+      <a href="FIG-05.svg"><div class="fig-thumb"><object data="FIG-05.svg" type="image/svg+xml"></object></div></a>
+      <div class="fig-num">FIG. 5</div>
+      <div class="fig-title">Safety cascade</div>
+      <div class="fig-links"><a href="FIG-05.svg">Open</a><a href="FIG-05.svg" download>Download</a></div>
+    </div>
+
+    <div class="fig">
+      <a href="FIG-06.svg"><div class="fig-thumb"><object data="FIG-06.svg" type="image/svg+xml"></object></div></a>
+      <div class="fig-num">FIG. 6</div>
+      <div class="fig-title">Force vs. angle</div>
+      <div class="fig-links"><a href="FIG-06.svg">Open</a><a href="FIG-06.svg" download>Download</a></div>
+    </div>
+
+    <div class="fig">
+      <a href="FIG-07.svg"><div class="fig-thumb"><object data="FIG-07.svg" type="image/svg+xml"></object></div></a>
+      <div class="fig-num">FIG. 7</div>
+      <div class="fig-title">Asymmetry + trend</div>
+      <div class="fig-links"><a href="FIG-07.svg">Open</a><a href="FIG-07.svg" download>Download</a></div>
+    </div>
+
+    <div class="fig">
+      <a href="FIG-08.svg"><div class="fig-thumb"><object data="FIG-08.svg" type="image/svg+xml"></object></div></a>
+      <div class="fig-num">FIG. 8</div>
+      <div class="fig-title">Cuff detail</div>
+      <div class="fig-links"><a href="FIG-08.svg">Open</a><a href="FIG-08.svg" download>Download</a></div>
+    </div>
+
+    <div class="fig">
+      <a href="FIG-09.svg"><div class="fig-thumb"><object data="FIG-09.svg" type="image/svg+xml"></object></div></a>
+      <div class="fig-num">FIG. 9</div>
+      <div class="fig-title">Session flow</div>
+      <div class="fig-links"><a href="FIG-09.svg">Open</a><a href="FIG-09.svg" download>Download</a></div>
+    </div>
+
+    <div class="fig">
+      <a href="FIG-10.svg"><div class="fig-thumb"><object data="FIG-10.svg" type="image/svg+xml"></object></div></a>
+      <div class="fig-num">FIG. 10</div>
+      <div class="fig-title">Risk score</div>
+      <div class="fig-links"><a href="FIG-10.svg">Open</a><a href="FIG-10.svg" download>Download</a></div>
+    </div>
+
+    <div class="fig">
+      <a href="FIG-11.svg"><div class="fig-thumb"><object data="FIG-11.svg" type="image/svg+xml"></object></div></a>
+      <div class="fig-num">FIG. 11</div>
+      <div class="fig-title">Data export</div>
+      <div class="fig-links"><a href="FIG-11.svg">Open</a><a href="FIG-11.svg" download>Download</a></div>
+    </div>
+
+  </div>
+
+</main>
+
+<footer class="ui-footer">
+  <span>Modulor · Figures</span>
+  <a href="../hub.html">Data Room</a>
+</footer>
+
+</body>
+</html>
