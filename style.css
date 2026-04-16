@@ -313,7 +313,7 @@ nav {
 }
 
 .btn-primary {
-  background: #c8102e;
+  background: #c84030;
   color: #fff;
 }
 
@@ -338,7 +338,7 @@ nav {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #c8102e;
+  color: #c84030;
   margin-bottom: 16px;
 }
 
@@ -530,7 +530,7 @@ nav {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #c8102e;
+  color: #c84030;
   margin-bottom: 12px;
 }
 
@@ -556,7 +556,7 @@ nav {
 
 .schedule-quote {
   font-style: italic;
-  color: #c8102e;
+  color: #c84030;
   font-size: 16px;
   font-weight: 500;
   margin: 12px 0;
@@ -1569,7 +1569,7 @@ nav {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #c8102e;
+  color: #c84030;
   margin-bottom: 20px;
   padding-bottom: 12px;
   border-bottom: 2px solid rgba(200,16,46,0.2);
@@ -1770,7 +1770,7 @@ th.highlight {
 
 .waitlist-form .btn-primary {
   white-space: nowrap;
-  background: #c8102e;
+  background: #c84030;
   color: #fff;
 }
 
@@ -2132,7 +2132,7 @@ footer {
   background: rgba(255,255,255,0.10);
   color: #fafafa;
   border-color: rgba(255,255,255,0.14);
-  border-bottom: 2px solid #c8102e;
+  border-bottom: 2px solid #c84030;
 }
 
 /* --- View Panels --- */
@@ -2734,7 +2734,7 @@ footer {
 /* Proportion rule — a subtle horizontal measurement bar */
 .proportion-rule {
   height: 2px;
-  background: linear-gradient(to right, transparent, rgba(200,16,46,0.4) 30%, rgba(36,88,200,0.4) 70%, transparent);
+  background: linear-gradient(to right, transparent, rgba(200,64,48,0.4) 30%, rgba(36,88,200,0.4) 70%, transparent);
   margin: 0;
 }
 
