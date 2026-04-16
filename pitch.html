@@ -427,6 +427,96 @@
     .nda-btn.enabled:hover {
       background: #22c55e;
     }
+    .nda-back {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 13px;
+      color: #666;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nda-back:hover { color: #aaa; }
+
+    /* NDA identity fields */
+    .nda-fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+    .nda-fields .full { grid-column: 1 / -1; }
+    .nda-field label {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888;
+      margin-bottom: 6px;
+    }
+    .nda-field input {
+      width: 100%;
+      padding: 10px 12px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 6px;
+      color: #fafafa;
+      font-size: 14px;
+      font-family: inherit;
+      transition: border-color 0.15s;
+    }
+    .nda-field input:focus {
+      outline: none;
+      border-color: rgba(74,222,128,0.5);
+    }
+    .nda-field input.error {
+      border-color: #ef4444;
+    }
+    @media (max-width: 520px) {
+      .nda-fields { grid-template-columns: 1fr; }
+    }
+
+    /* Floating "back to home" button on the deck itself */
+    .deck-home-btn {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      z-index: 100;
+      padding: 8px 14px;
+      background: rgba(26,29,35,0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 6px;
+      color: #e0e0e0;
+      font-size: 12px;
+      font-weight: 500;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .deck-home-btn:hover {
+      background: rgba(42,46,55,0.95);
+      border-color: rgba(255,255,255,0.25);
+    }
+
+    /* Signed-in audit ribbon */
+    .audit-ribbon {
+      position: fixed;
+      bottom: 12px;
+      right: 12px;
+      z-index: 100;
+      padding: 6px 10px;
+      background: rgba(26,29,35,0.9);
+      border: 1px solid rgba(74,222,128,0.25);
+      border-radius: 4px;
+      font-size: 10px;
+      color: #888;
+      font-family: 'SF Mono', Menlo, monospace;
+      letter-spacing: 0.02em;
+      max-width: 280px;
+    }
+    .audit-ribbon strong { color: #4ade80; }
 
     /* Print */
     @media print {
@@ -466,7 +556,23 @@
   <div class="nda-box">
     <img src="03d2414f-fd4c-4106-a882-4548fa9c567e.png" alt="Vitruvian">
     <h2>Confidential Material</h2>
-    <p style="font-size:15px; color:#888;">This document contains proprietary information about Vitruvian, including product design, technical specifications, intellectual property, and business strategy. Please review and accept the terms below before proceeding.</p>
+    <p style="font-size:15px; color:#888;">This document contains proprietary information about Vitruvian, including product design, technical specifications, intellectual property, and business strategy. Please identify yourself and accept the terms below before proceeding.</p>
+
+    <div class="nda-fields">
+      <div class="nda-field">
+        <label for="ndaName">Full name</label>
+        <input type="text" id="ndaName" autocomplete="name" placeholder="Jane Doe">
+      </div>
+      <div class="nda-field">
+        <label for="ndaOrg">Organization</label>
+        <input type="text" id="ndaOrg" autocomplete="organization" placeholder="Firm / team">
+      </div>
+      <div class="nda-field full">
+        <label for="ndaEmail">Work email</label>
+        <input type="email" id="ndaEmail" autocomplete="email" placeholder="jane@firm.com">
+      </div>
+    </div>
+
     <div class="nda-text">
       <strong>Non-Disclosure Agreement</strong><br><br>
       By accessing this document, you ("Recipient") agree to the following terms:<br><br>
@@ -484,8 +590,13 @@
       <label for="ndaCheckbox">I have read and agree to the Non-Disclosure Agreement</label>
     </div>
     <button class="nda-btn" id="ndaBtn">View Pitch Deck</button>
+    <div><a href="index.html" class="nda-back">&larr; Back to home (decline)</a></div>
   </div>
 </div>
+
+<!-- Floating "back to home" on the deck -->
+<a href="index.html" class="deck-home-btn" id="deckHomeBtn" style="display:none;">&larr; Home</a>
+<div class="audit-ribbon" id="auditRibbon" style="display:none;"></div>
 
 <!-- ==================== SLIDE 1: TITLE ==================== -->
 <div class="slide">
@@ -2134,20 +2245,97 @@
     var gate = document.getElementById('ndaGate');
     var checkbox = document.getElementById('ndaCheckbox');
     var btn = document.getElementById('ndaBtn');
+    var nameF = document.getElementById('ndaName');
+    var orgF = document.getElementById('ndaOrg');
+    var emailF = document.getElementById('ndaEmail');
+    var homeBtn = document.getElementById('deckHomeBtn');
+    var ribbon = document.getElementById('auditRibbon');
 
-    checkbox.addEventListener('change', function() {
-      btn.classList.toggle('enabled', checkbox.checked);
+    function emailOk(v) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v || '').trim());
+    }
+    function formComplete() {
+      return (
+        checkbox.checked &&
+        nameF.value.trim().length >= 2 &&
+        orgF.value.trim().length >= 2 &&
+        emailOk(emailF.value)
+      );
+    }
+    function refresh() {
+      btn.classList.toggle('enabled', formComplete());
+      [nameF, orgF, emailF].forEach(function(el) {
+        el.classList.remove('error');
+      });
+    }
+    [checkbox, nameF, orgF, emailF].forEach(function(el) {
+      el.addEventListener('input', refresh);
+      el.addEventListener('change', refresh);
     });
 
-    btn.addEventListener('click', function() {
-      if (!checkbox.checked) return;
+    function showDeck(record) {
       gate.classList.add('dismissed');
       document.body.style.overflow = '';
       setTimeout(function() { gate.style.display = 'none'; }, 600);
+      homeBtn.style.display = 'inline-block';
+      ribbon.style.display = 'block';
+      ribbon.innerHTML =
+        '<strong>Access logged</strong><br>' +
+        record.name + ' &middot; ' + record.org + '<br>' +
+        record.email + '<br>' +
+        new Date(record.ts).toISOString();
+    }
+
+    btn.addEventListener('click', function() {
+      if (!formComplete()) {
+        if (!nameF.value.trim()) nameF.classList.add('error');
+        if (!orgF.value.trim()) orgF.classList.add('error');
+        if (!emailOk(emailF.value)) emailF.classList.add('error');
+        return;
+      }
+      var record = {
+        name: nameF.value.trim(),
+        org: orgF.value.trim(),
+        email: emailF.value.trim(),
+        ts: Date.now(),
+        ua: navigator.userAgent,
+        ref: document.referrer || 'direct',
+        tz: Intl.DateTimeFormat().resolvedOptions().timeZone || '',
+        page: location.pathname
+      };
+      // Persist locally so the viewer has a visible record of their agreement
+      try {
+        var log = JSON.parse(localStorage.getItem('vitruvian.nda.log') || '[]');
+        log.push(record);
+        localStorage.setItem('vitruvian.nda.log', JSON.stringify(log));
+        localStorage.setItem('vitruvian.nda.last', JSON.stringify(record));
+      } catch (e) {}
+
+      // Optional: POST to a capture endpoint. Configure VITRUVIAN_NDA_ENDPOINT
+      // to a Formspree / Netlify Forms / Zapier webhook URL to receive records.
+      var endpoint = window.VITRUVIAN_NDA_ENDPOINT || '';
+      if (endpoint) {
+        fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(record)
+        }).catch(function() { /* non-blocking */ });
+      }
+
+      showDeck(record);
     });
 
-    // Prevent scrolling while NDA is showing
-    document.body.style.overflow = 'hidden';
+    // If the viewer has already signed in this browser, auto-admit
+    try {
+      var last = JSON.parse(localStorage.getItem('vitruvian.nda.last') || 'null');
+      if (last && last.email && last.ts && Date.now() - last.ts < 1000 * 60 * 60 * 24 * 7) {
+        showDeck(last);
+      } else {
+        document.body.style.overflow = 'hidden';
+      }
+    } catch (e) {
+      document.body.style.overflow = 'hidden';
+    }
   })();
 </script>
 </body>
