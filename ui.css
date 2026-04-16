@@ -53,14 +53,8 @@ img { max-width: 100%; display: block; }
 .ui-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.20em;
-  font-size: 15px;
-  color: var(--ink);
 }
-.ui-logo img { width: 32px; height: 32px; border-radius: 6px; object-fit: contain; }
+.ui-logo img { height: 48px; width: auto; background: #fff; border-radius: 6px; padding: 4px 10px; object-fit: contain; }
 .ui-nav-links { display: flex; gap: 22px; align-items: center; }
 .ui-nav-link {
   font-size: 13px;
