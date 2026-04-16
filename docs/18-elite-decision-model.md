@@ -1,6 +1,6 @@
 # 18. ELITE DECISION MODEL
 
-How top founders decide. Applied to Vitruvian, today.
+How top founders decide. Applied to Modulor, today.
 
 ## The decision hierarchy
 
@@ -91,7 +91,7 @@ Note: "Should I build feature X?" is not on this list. Features are reversible. 
 
 Before any big decision: "It's 12 months from now. This went badly. What killed it?" Write 5 causes. Address the top 2.
 
-Applied to Vitruvian's seed raise:
+Applied to Modulor's seed raise:
 - *What kills it?* (1) Wrong cap-table partners, (2) valuation set too high, forcing a down round, (3) no strategic on the cap table, (4) data rights given up in side letters, (5) 24-month runway instead of 30.
 - *Address:* (1) Only strategics + sports-specific funds. (2) Raise at $15–20M pre, not $30M. (3) One strategic check mandatory. (4) Counsel reviews every side letter. (5) Raise 30-month runway minimum.
 
@@ -140,7 +140,7 @@ Top founders replace "let me think about it" with "let me test it for a day." Da
 | Whether the name lands | A/B test the landing page this week |
 | Whether the market is ready | Book 5 discovery calls this week |
 
-## Applied to Vitruvian — the decision matrix, right now
+## Applied to Modulor — the decision matrix, right now
 
 | Decision currently open in this repo | Class | Target window | Default move |
 |--------------------------------------|-------|----------------|---------------|

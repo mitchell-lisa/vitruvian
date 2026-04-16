@@ -76,7 +76,7 @@ The third framing sounds unsexy. It's worth 20x the first two because:
 - It justifies a health-tech / medtech valuation multiple (8–12x rev) vs consumer fitness (2–4x rev)
 - Incumbents don't compete in this category — they'd have to reposition their entire brand
 
-**Say it out loud:** "Vitruvian is actuarial infrastructure for musculoskeletal injury risk — the hardware is the data-acquisition layer."
+**Say it out loud:** "Modulor is actuarial infrastructure for musculoskeletal injury risk — the hardware is the data-acquisition layer."
 
 ## How to combine the four into one compounding engine
 

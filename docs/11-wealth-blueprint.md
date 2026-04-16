@@ -10,7 +10,7 @@ Leverage + speed. No side quests.
 | SaaS per athlete | $50 / athlete / month | 80%+ | Scales with roster, not machines |
 | Data licensing | Injury-risk models to insurers, leagues, workers' comp | 90%+ | The real business |
 | Marketplace | 30% take on third-party protocols (PTs publish) | 95%+ | Platform flywheel |
-| API / embed | Hyperice, Therabody, Catapult pay to show Vitruvian analytics in their tools | 95%+ | Distribution without sales |
+| API / embed | Hyperice, Therabody, Catapult pay to show Modulor analytics in their tools | 95%+ | Distribution without sales |
 
 ## Revenue stack — priority order
 

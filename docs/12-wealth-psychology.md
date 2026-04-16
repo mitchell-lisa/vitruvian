@@ -13,7 +13,7 @@ Not guesses — your actual behavior in this repo.
 | Building a custom feedback form instead of texting 5 PTs | "Professional" | Process as armor |
 | "Pilot" framing six months in | "Being careful" | Low-stakes identity that doesn't require asking for money |
 | Asking "what do you think of my cousin's suggestion?" | "Getting input" | Outsourcing confidence. Seeking permission. |
-| Calling it Vitruvian (ideal proportions) | Beautiful brand | Perfection orientation — aesthetic over economics |
+| Calling it Modulor (ideal proportions) | Beautiful brand | Perfection orientation — aesthetic over economics |
 | Solo-building hardware | "Founder" | Picking the hardest path to prove worthiness |
 | Polishing UI copy nobody has seen | "Brand consistency" | Controlling the small thing because the big thing feels unsafe |
 

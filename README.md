@@ -1,4 +1,4 @@
-# Vitruvian
+# Modulor
 
 Cable-driven, instrumented stretching platform for pro and college athletes.
 Controlled tension, measured range of motion, bilateral asymmetry on every rep.

@@ -62,7 +62,7 @@ Ranked by who captures the most value per dollar of end-user spend:
 
 ## Who captures the most value — and how
 
-| Player | How they capture | Lesson for Vitruvian |
+| Player | How they capture | Lesson for Modulor |
 |--------|-------------------|----------------------|
 | Ballmer (Clippers) | Bought for $2B in 2014, now worth $5B+ | Equity > operating income |
 | Nike | Pays athletes → consumers buy shoes → owns performance narrative | Endorsement is distribution |
@@ -85,7 +85,7 @@ Beneath the visible "sell machines to teams" layer, there are four invisible mon
 
 Right now your pitch enters none of these rivers. It enters the shallowest one — vendor to a team budget.
 
-## Where Vitruvian actually stands (honest map)
+## Where Modulor actually stands (honest map)
 
 ```
         DATA → INSURERS ──────────── $$$$$$$$$$  (untouched)

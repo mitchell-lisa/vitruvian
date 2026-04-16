@@ -25,7 +25,7 @@ These exist on day-1 of the first pilot. A team saying "we use Smartabase" canno
 | **Train Heroic** | #1 coach-programmed delivery app — tactical + CrossFit | REST API — mobility check as pre-workout gate | 1 wk |
 | **CSV export** | Universal fallback | Download every session record | Day 1 |
 
-Deliverable: A team using any of the above can import Vitruvian data within 15 minutes of a session ending. No copy-paste. No manual export.
+Deliverable: A team using any of the above can import Modulor data within 15 minutes of a session ending. No copy-paste. No manual export.
 
 ## Tier 2 — ship within 6 months (expand the wedge)
 

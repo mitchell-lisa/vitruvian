@@ -75,7 +75,7 @@ This is the one you are completely ignoring — and it's the cheapest, fastest, 
 | Published injury-risk white paper | 2 weeks | Insurance conversations open themselves |
 | Founder podcast circuit — Sapan Shah, Pablo Torre, Shane Parrish, Logan Bartlett | 1 hr/wk | Builds the "credible authority" narrative |
 | LinkedIn daily post — technical depth, opinionated | 15 min/day | Top-of-funnel for hires, pilots, capital |
-| "Vitruvian-branded" research published under your name | Leverage existing docs | Authorship = moat |
+| "Modulor-branded" research published under your name | Leverage existing docs | Authorship = moat |
 
 **Rule:** Every doc you've written in this repo should exist publicly with your name on it. The 13 internal strategy docs are wasted leverage. Some should be blog posts.
 

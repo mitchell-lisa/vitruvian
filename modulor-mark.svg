@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400" role="img" aria-label="Modulor">
+  <title>Modulor</title>
+  <g fill="#fafafa">
+    <!-- Raised arm + hand -->
+    <path d="M 118 24 Q 118 12 130 12 Q 142 12 142 24 L 142 172 L 118 172 Z"/>
+    <!-- Head -->
+    <circle cx="100" cy="168" r="26"/>
+    <!-- Neck -->
+    <rect x="92" y="190" width="16" height="12"/>
+    <!-- Torso — trapezoidal, tapered to waist -->
+    <path d="M 60 204 L 140 204 L 132 292 L 68 292 Z"/>
+    <!-- Hanging arm + hand -->
+    <path d="M 40 208 Q 40 202 48 202 L 60 202 L 60 292 Q 60 304 48 304 Q 40 304 40 292 Z"/>
+    <!-- Hips -->
+    <path d="M 64 290 L 136 290 L 140 316 L 60 316 Z"/>
+    <!-- Legs -->
+    <path d="M 66 316 L 98 316 L 96 386 L 68 386 Z"/>
+    <path d="M 102 316 L 134 316 L 132 386 L 104 386 Z"/>
+    <!-- Feet -->
+    <path d="M 60 386 L 104 386 L 100 396 L 60 396 Z"/>
+    <path d="M 96 386 L 140 386 L 140 396 L 100 396 Z"/>
+  </g>
+</svg>
