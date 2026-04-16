@@ -84,7 +84,7 @@ nav {
 }
 
 .logo img {
-  height: 28px;
+  height: 40px;
   width: auto;
   object-fit: contain;
   filter: invert(1);
@@ -152,11 +152,11 @@ nav {
 }
 
 .hero-wordmark {
-  width: 240px;
-  height: auto;
+  height: 56px;
+  width: auto;
   filter: invert(1);
   mix-blend-mode: screen;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
 }
 
 /* Hero typography */
@@ -1785,7 +1785,7 @@ footer {
 }
 
 .footer-logo img {
-  height: 14px;
+  height: 20px;
   width: auto;
   object-fit: contain;
   filter: invert(1);
@@ -1816,7 +1816,7 @@ footer {
     gap: 6px;
   }
   .logo img {
-    height: 26px;
+    height: 34px;
     width: auto;
   }
   .nav-links {
@@ -2666,17 +2666,17 @@ footer {
 
 .hero-exhibit-img {
   width: 100%;
-  max-width: 420px;
+  max-width: 400px;
   height: auto;
-  border-radius: 4px;
-  opacity: 0.92;
-  box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05);
+  filter: invert(1) grayscale(1) contrast(1.1);
+  mix-blend-mode: screen;
+  opacity: 0.65;
 }
 
 .hero-exhibit-caption {
   font-size: 11px;
   letter-spacing: 0.08em;
-  color: #4a5878;
+  color: rgba(243,240,232,0.38);
   text-align: center;
 }
 
