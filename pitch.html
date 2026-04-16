@@ -2243,6 +2243,26 @@
 </div>
 
 <script>
+  // ── Supabase config ──────────────────────────────────────────
+  // 1. Create a table in your Supabase project:
+  //      create table nda_signers (
+  //        id         uuid default gen_random_uuid() primary key,
+  //        name       text not null,
+  //        org        text,
+  //        email      text not null,
+  //        signed_at  timestamptz default now(),
+  //        user_agent text,
+  //        referrer   text,
+  //        timezone   text,
+  //        page       text
+  //      );
+  //      alter table nda_signers enable row level security;
+  //      create policy "insert only" on nda_signers for insert with check (true);
+  // 2. Fill in your project URL and anon key below.
+  var SUPABASE_URL  = 'https://YOUR_PROJECT_REF.supabase.co';
+  var SUPABASE_KEY  = 'YOUR_ANON_KEY';
+  // ─────────────────────────────────────────────────────────────
+
   (function() {
     var gate = document.getElementById('ndaGate');
     var checkbox = document.getElementById('ndaCheckbox');
@@ -2313,15 +2333,26 @@
         localStorage.setItem('modulor.nda.last', JSON.stringify(record));
       } catch (e) {}
 
-      // Optional: POST to a capture endpoint. Configure MODULOR_NDA_ENDPOINT
-      // to a Formspree / Netlify Forms / Zapier webhook URL to receive records.
-      var endpoint = window.MODULOR_NDA_ENDPOINT || '';
-      if (endpoint) {
-        fetch(endpoint, {
+      // POST signer record to Supabase
+      if (SUPABASE_URL && SUPABASE_KEY && !SUPABASE_URL.includes('YOUR_PROJECT')) {
+        fetch(SUPABASE_URL + '/rest/v1/nda_signers', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(record)
-        }).catch(function() { /* non-blocking */ });
+          headers: {
+            'apikey': SUPABASE_KEY,
+            'Authorization': 'Bearer ' + SUPABASE_KEY,
+            'Content-Type': 'application/json',
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify({
+            name:       record.name,
+            org:        record.org,
+            email:      record.email,
+            user_agent: record.ua,
+            referrer:   record.ref,
+            timezone:   record.tz,
+            page:       record.page
+          })
+        }).catch(function() { /* non-blocking — gate still opens */ });
       }
 
       showDeck(record);
