@@ -151,24 +151,12 @@ nav {
   align-items: center;
 }
 
-/* Hero mark — kinetic SVG, inline */
-.hero-logo-wrap {
-  margin-bottom: 32px;
-}
-
-.hero-mark {
-  width: 120px;
-  height: auto;
-  color: rgba(243, 240, 232, 0.72);
-  display: block;
-}
-
 .hero-wordmark {
-  width: 200px;
+  width: 240px;
   height: auto;
   filter: invert(1);
   mix-blend-mode: screen;
-  margin-bottom: 40px;
+  margin-bottom: 48px;
 }
 
 /* Hero typography */
