@@ -68,6 +68,9 @@
         <a href="hub.html" class="nav-link">Data Room</a>
         <a href="feedback.html" class="nav-cta">Contact</a>
       </div>
+      <button class="nav-hamburger" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
@@ -351,5 +354,25 @@
     </div>
   </footer>
 
+
+<script>
+(function(){
+  var btn = document.getElementById('navToggle');
+  if (!btn) return;
+  function close() {
+    document.body.classList.remove('nav-open');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'Open menu');
+  }
+  btn.addEventListener('click', function() {
+    var open = document.body.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  document.querySelectorAll('.nav-links .nav-link, .nav-links .nav-cta').forEach(function(el) {
+    el.addEventListener('click', close);
+  });
+})();
+</script>
 </body>
 </html>

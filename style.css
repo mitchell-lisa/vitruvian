@@ -2769,3 +2769,245 @@ footer {
     margin-top: 32px;
   }
 }
+
+
+/* ============================================================
+   MOBILE OPTIMIZATIONS
+   Hamburger nav, iOS fixes, overflow, touch targets, spacing.
+   ============================================================ */
+
+/* Prevent horizontal scroll site-wide */
+html { overflow-x: hidden; }
+body { overflow-x: hidden; }
+
+/* iOS Safari: address-bar-aware viewport height */
+@supports (min-height: 100svh) {
+  .hero { min-height: 100svh; }
+}
+
+/* ── Hamburger button (hidden above 640px) ── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 9px;
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 101;
+  flex-shrink: 0;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #b0b0b0;
+  border-radius: 2px;
+  transition: transform 0.28s ease, opacity 0.22s ease;
+  pointer-events: none;
+}
+
+/* ── 640px: hamburger takes over from inline nav ── */
+@media (max-width: 640px) {
+  .nav-hamburger {
+    display: flex;
+  }
+
+  /* Full-screen overlay */
+  .nav-links {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    background: rgba(20, 22, 24, 0.97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.28s ease;
+  }
+
+  body.nav-open .nav-links {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  body.nav-open {
+    overflow: hidden;
+  }
+
+  /* Large tap targets inside overlay */
+  .nav-links .nav-link {
+    font-size: 22px !important;
+    font-weight: 500 !important;
+    color: #999 !important;
+    letter-spacing: 0 !important;
+    padding: 10px 8px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-links .nav-link:hover,
+  .nav-links .nav-link.active {
+    color: #fafafa !important;
+  }
+
+  .nav-links .nav-cta {
+    font-size: 16px !important;
+    padding: 13px 36px !important;
+    margin-top: 8px;
+    min-height: 44px;
+  }
+
+  /* Hamburger → X */
+  body.nav-open .nav-hamburger span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  body.nav-open .nav-hamburger span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  body.nav-open .nav-hamburger span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Nav bar itself: just logo + hamburger */
+  .nav-inner {
+    padding: 12px 16px !important;
+    gap: 0;
+  }
+
+  /* Keep logo readable now that hamburger replaces crowded inline links */
+  .logo span {
+    display: inline !important;
+  }
+
+  /* Tighter container */
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Section spacing */
+  .section {
+    padding: 64px 0;
+  }
+
+  .section-cta {
+    padding: 72px 0;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 80px 16px 48px;
+  }
+}
+
+/* ── Fix inv-kv (Traction section): stack to single column ── */
+@media (max-width: 640px) {
+  .inv-kv {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .inv-kv dt {
+    padding-top: 16px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    color: #555;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .inv-kv dt:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .inv-kv dd {
+    padding-bottom: 14px;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 4px 0 0;
+  }
+}
+
+/* ── Fix ask-big: reduce padding on mobile ── */
+@media (max-width: 640px) {
+  .ask-big {
+    padding: 28px 20px;
+  }
+}
+
+/* ── Corbusier strip: shorter on mobile ── */
+@media (max-width: 640px) {
+  .corbusier-strip {
+    height: 140px;
+  }
+}
+
+/* ── Demo + view tabs: horizontally scrollable ── */
+@media (max-width: 640px) {
+  .demo-tabs,
+  .view-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .demo-tabs::-webkit-scrollbar,
+  .view-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .demo-tab,
+  .view-tab {
+    flex-shrink: 0;
+  }
+}
+
+/* ── Touch targets: 44px minimum height ── */
+@media (max-width: 768px) {
+  .btn {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-cta {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .faq-q {
+    min-height: 56px;
+  }
+
+  .demo-btn .btn {
+    min-height: 44px;
+  }
+}
+
+/* ── Prevent section overflow on small screens ── */
+@media (max-width: 640px) {
+  .section,
+  .section-dark,
+  .section-cta {
+    overflow-x: hidden;
+  }
+}
