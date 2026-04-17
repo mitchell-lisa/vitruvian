@@ -1535,7 +1535,7 @@
     <!-- FIG. 1 — Enhanced System Block Diagram -->
     <div class="patent-fig" style="margin-top:24px;">
       <p class="fig-title">FIG. 1 — System Block Diagram (Force-Controlled Stretch with Compensation-Aware Adjustment)</p>
-      <svg viewBox="0 0 960 220" xmlns="http://www.w3.org/2000/svg" style="max-width:960px; margin:0 auto;">
+      <svg viewBox="0 0 960 285" xmlns="http://www.w3.org/2000/svg" style="max-width:960px; margin:0 auto;">
         <!-- Athlete Input -->
         <rect x="10" y="60" width="100" height="60" rx="8" fill="rgba(255,255,255,0.03)" stroke="#666" stroke-width="1.2"/>
         <text x="60" y="52" text-anchor="middle" fill="#666" font-size="9" font-weight="700" font-family="Inter,sans-serif">200</text>
@@ -1573,8 +1573,8 @@
         <text x="502" y="116" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">+ slip clutch</text>
 
         <!-- Load cell feedback -->
-        <path d="M502,129 L502,170 L353,170 L353,149" fill="none" stroke="#5E7485" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#aY1)"/>
-        <text x="430" y="186" text-anchor="middle" fill="#5E7485" font-size="8" font-weight="600" font-family="Inter,sans-serif">F_meas (load cell @ 100Hz)</text>
+        <path d="M502,129 L502,160 L353,160 L353,149" fill="none" stroke="#5E7485" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#aY1)"/>
+        <text x="430" y="175" text-anchor="middle" fill="#5E7485" font-size="8" font-weight="600" font-family="Inter,sans-serif">F_meas (load cell @ 100Hz)</text>
 
         <!-- Force arrow to athlete -->
         <path d="M556,90 L582,90" stroke="#5E7485" stroke-width="1.2" marker-end="url(#aG1)"/>
@@ -1587,19 +1587,19 @@
         <text x="626" y="108" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Limb stretched</text>
 
         <!-- Vision System — highlighted (novel) -->
-        <path d="M626,129 L626,158" stroke="#3b82f6" stroke-width="1" stroke-dasharray="3,2"/>
-        <text x="626" y="154" text-anchor="middle" fill="#3b82f6" font-size="7" font-family="Inter,sans-serif">observes</text>
+        <path d="M626,129 L626,169" stroke="#3b82f6" stroke-width="1" stroke-dasharray="3,2"/>
+        <text x="638" y="150" text-anchor="start" fill="#3b82f6" font-size="7" font-family="Inter,sans-serif">observes</text>
 
         <!-- Vision processing -->
-        <rect x="568" y="162" width="116" height="50" rx="8" fill="rgba(59,130,246,0.08)" stroke="#3b82f6" stroke-width="1.5"/>
-        <text x="626" y="155" text-anchor="middle" fill="#3b82f6" font-size="9" font-weight="700" font-family="Inter,sans-serif">210</text>
-        <text x="626" y="182" text-anchor="middle" fill="#3b82f6" font-size="9" font-weight="700" font-family="Inter,sans-serif">VISION SYSTEM</text>
-        <text x="626" y="196" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Skeleton + joint angles</text>
-        <text x="626" y="207" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">+ compensation detect</text>
+        <rect x="568" y="173" width="116" height="65" rx="8" fill="rgba(59,130,246,0.08)" stroke="#3b82f6" stroke-width="1.5"/>
+        <text x="626" y="168" text-anchor="middle" fill="#3b82f6" font-size="9" font-weight="700" font-family="Inter,sans-serif">210</text>
+        <text x="626" y="193" text-anchor="middle" fill="#3b82f6" font-size="9" font-weight="700" font-family="Inter,sans-serif">VISION SYSTEM</text>
+        <text x="626" y="207" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Skeleton + joint angles</text>
+        <text x="626" y="220" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">+ compensation detect</text>
 
         <!-- Compensation feedback to PID — the KEY novel link -->
-        <path d="M564,187 L353,187 L353,149" fill="none" stroke="#A94A3B" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#aR1)"/>
-        <text x="460" y="200" text-anchor="middle" fill="#A94A3B" font-size="8" font-weight="700" font-family="Inter,sans-serif">COMPENSATION SIGNAL → modifies F_set (NOVEL)</text>
+        <path d="M568,200 L353,200 L353,149" fill="none" stroke="#A94A3B" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#aR1)"/>
+        <text x="460" y="248" text-anchor="middle" fill="#A94A3B" font-size="8" font-weight="700" font-family="Inter,sans-serif">COMPENSATION SIGNAL → modifies F_set (NOVEL)</text>
 
         <!-- Data Store -->
         <path d="M670,90 L700,90" stroke="#888" stroke-width="1" marker-end="url(#aG1)"/>
@@ -1612,8 +1612,8 @@
         <text x="759" y="120" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Injury risk score (62)</text>
 
         <!-- Adaptive feedback from data to protocol -->
-        <path d="M759,144 L759,210 L199,210 L199,134" fill="none" stroke="#555" stroke-width="1" stroke-dasharray="6,3"/>
-        <text x="480" y="208" text-anchor="middle" fill="#555" font-size="8" font-weight="600" font-family="Inter,sans-serif">214 — ADAPTIVE FEEDBACK: Historical data modifies next session's protocol parameters</text>
+        <path d="M759,144 L759,260 L199,260 L199,134" fill="none" stroke="#555" stroke-width="1" stroke-dasharray="6,3"/>
+        <text x="480" y="272" text-anchor="middle" fill="#555" font-size="8" font-weight="600" font-family="Inter,sans-serif">214 — ADAPTIVE FEEDBACK: Historical data modifies next session's protocol parameters</text>
         <polygon points="199,134 194,144 204,144" fill="#555"/>
 
         <defs>
