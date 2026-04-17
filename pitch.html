@@ -966,7 +966,7 @@
             <text x="294" y="82" text-anchor="middle" fill="#888" font-size="7" font-family="Inter,sans-serif">15" TOUCH</text>
             <text x="294" y="18" text-anchor="middle" fill="#888" font-size="9" font-weight="700" font-family="Inter,sans-serif">46</text>
             <!-- Cloud path -->
-            <path d="M180,84 L180,120 L280,120" stroke="#555" stroke-width="0.8" stroke-dasharray="4,3"/>
+            <path d="M180,84 L180,120 L280,120" fill="none" stroke="#555" stroke-width="0.8" stroke-dasharray="4,3"/>
             <rect x="280" y="110" width="50" height="24" rx="4" fill="rgba(255,255,255,0.02)" stroke="#555" stroke-width="0.8"/>
             <text x="305" y="126" text-anchor="middle" fill="#555" font-size="7" font-weight="600" font-family="Inter,sans-serif">CLOUD</text>
             <text x="305" y="106" text-anchor="middle" fill="#555" font-size="9" font-weight="700" font-family="Inter,sans-serif">48</text>
@@ -1164,7 +1164,7 @@
         <text x="626" y="84" fill="#ccc" font-size="8" font-weight="600" font-family="Inter,sans-serif">Session Δ (acute+chronic)</text>
 
         <!-- Longitudinal output -->
-        <path d="M675,98 L675,130 L820,130" stroke="#3D7A5A" stroke-width="1" stroke-dasharray="4,3"/>
+        <path d="M675,98 L675,130 L820,130" fill="none" stroke="#3D7A5A" stroke-width="1" stroke-dasharray="4,3"/>
         <rect x="780" y="110" width="150" height="50" rx="8" fill="rgba(61,122,90,0.06)" stroke="#3D7A5A" stroke-width="1.2"/>
         <text x="855" y="132" text-anchor="middle" fill="#3D7A5A" font-size="9" font-weight="700" font-family="Inter,sans-serif">RISK SCORE</text>
         <text x="855" y="146" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Longitudinal trend</text>
@@ -1573,7 +1573,7 @@
         <text x="502" y="116" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">+ slip clutch</text>
 
         <!-- Load cell feedback -->
-        <path d="M502,129 L502,170 L353,170 L353,149" stroke="#5E7485" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#aY1)"/>
+        <path d="M502,129 L502,170 L353,170 L353,149" fill="none" stroke="#5E7485" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#aY1)"/>
         <text x="430" y="186" text-anchor="middle" fill="#5E7485" font-size="8" font-weight="600" font-family="Inter,sans-serif">F_meas (load cell @ 100Hz)</text>
 
         <!-- Force arrow to athlete -->
@@ -1598,7 +1598,7 @@
         <text x="626" y="207" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">+ compensation detect</text>
 
         <!-- Compensation feedback to PID — the KEY novel link -->
-        <path d="M564,187 L353,187 L353,149" stroke="#A94A3B" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#aR1)"/>
+        <path d="M564,187 L353,187 L353,149" fill="none" stroke="#A94A3B" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#aR1)"/>
         <text x="460" y="200" text-anchor="middle" fill="#A94A3B" font-size="8" font-weight="700" font-family="Inter,sans-serif">COMPENSATION SIGNAL → modifies F_set (NOVEL)</text>
 
         <!-- Data Store -->
@@ -1612,7 +1612,7 @@
         <text x="759" y="120" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Injury risk score (62)</text>
 
         <!-- Adaptive feedback from data to protocol -->
-        <path d="M759,144 L759,210 L199,210 L199,134" stroke="#555" stroke-width="1" stroke-dasharray="6,3"/>
+        <path d="M759,144 L759,210 L199,210 L199,134" fill="none" stroke="#555" stroke-width="1" stroke-dasharray="6,3"/>
         <text x="480" y="208" text-anchor="middle" fill="#555" font-size="8" font-weight="600" font-family="Inter,sans-serif">214 — ADAPTIVE FEEDBACK: Historical data modifies next session's protocol parameters</text>
         <polygon points="199,134 194,144 204,144" fill="#555"/>
 
@@ -1676,7 +1676,7 @@
         <text x="750" y="82" fill="#777" font-size="7" font-family="Inter,sans-serif">(load cell)</text>
 
         <!-- Feedback path -->
-        <path d="M750,90 L750,145 L95,145 L95,90" stroke="#5E7485" stroke-width="1.2" stroke-dasharray="5,3"/>
+        <path d="M750,90 L750,145 L95,145 L95,90" fill="none" stroke="#5E7485" stroke-width="1.2" stroke-dasharray="5,3"/>
         <text x="420" y="160" text-anchor="middle" fill="#5E7485" font-size="8" font-weight="600" font-family="Inter,sans-serif">FORCE FEEDBACK PATH — 100Hz sample rate, &lt;10ms loop latency</text>
 
         <!-- Compensation modifier input (from vision) -->
@@ -1751,7 +1751,7 @@
         <text x="842" y="126" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">sent to motor</text>
 
         <!-- Data logging branch -->
-        <path d="M504,124 L504,160 L750,160" stroke="#888" stroke-width="0.8" stroke-dasharray="4,3"/>
+        <path d="M504,124 L504,160 L750,160" fill="none" stroke="#888" stroke-width="0.8" stroke-dasharray="4,3"/>
         <rect x="754" y="148" width="130" height="30" rx="4" fill="rgba(255,255,255,0.02)" stroke="#555" stroke-width="0.8"/>
         <text x="819" y="167" text-anchor="middle" fill="#555" font-size="7" font-weight="600" font-family="Inter,sans-serif">LOG: comp type, severity, timestamp</text>
 
