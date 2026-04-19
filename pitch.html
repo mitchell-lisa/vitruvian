@@ -96,7 +96,7 @@
     .x { color: #444; }
 
     /* Title slide logo */
-    .title-logo { display: block; margin: 0 auto 32px; height: 72px; width: auto; max-width: none; filter: invert(1); }
+    .title-logo { display: block; margin: 0 auto 32px; height: clamp(40px, 9vw, 72px); width: auto; max-width: 88%; filter: invert(1); }
 
     /* Divider */
     .divider { height: 1px; background: rgba(255,255,255,0.06); margin: 32px 0; }
@@ -515,23 +515,75 @@
     }
 
     @media (max-width: 768px) {
-      .split, .split-60, .grid-3 { grid-template-columns: 1fr; }
-      .grid-2 { grid-template-columns: 1fr; }
-      .slide { padding: 40px 24px; }
+      .split, .split-60, .grid-3 { grid-template-columns: 1fr; gap: 24px; }
+      .grid-2 { grid-template-columns: 1fr; gap: 16px; }
+      .slide { padding: 48px 20px; }
+      .slide:first-of-type { padding-top: 88px; }
       .stat-big { font-size: 36px; }
-      .nda-box { padding: 32px 24px; }
-      .flow-diagram { gap: 0; padding: 20px 12px; }
-      .flow-node { min-width: 100px; max-width: 120px; padding: 10px 8px; }
+      .nda-box { padding: 32px 20px; }
+      .nda-box h2 { font-size: 20px; }
+      .nda-text { padding: 18px; font-size: 12px; max-height: 200px; }
+      .flow-diagram { gap: 0; padding: 16px 10px; }
+      .flow-node { min-width: 92px; max-width: 118px; padding: 10px 8px; }
       .flow-node h4 { font-size: 10px; }
       .flow-node p { font-size: 9px; }
       .flow-arrow { font-size: 14px; padding: 0 2px; }
       .quadrant-wrap { max-width: 100%; }
       .donut-wrap { gap: 32px; }
-      .arrow-list li { font-size: 15px; }
-      .flywheel-layout { grid-template-columns: 1fr; }
-      .capital-layout { grid-template-columns: 1fr; }
+      .arrow-list li { font-size: 14px; line-height: 1.6; }
+      .flywheel-layout { grid-template-columns: 1fr; gap: 24px; }
+      .capital-layout { grid-template-columns: 1fr; gap: 24px; }
       .capital-detail > div { grid-template-columns: 1fr !important; }
-      .bar-chart-wrap { gap: 16px; }
+      .bar-chart-wrap { gap: 12px; }
+      .patent-fig { padding: 16px 10px 10px; }
+      .cta-box { padding: 22px 18px; }
+      .cta-box h3 { font-size: 17px; }
+      h1 { margin-bottom: 16px; }
+      h2 { margin-bottom: 14px; }
+      h3 { font-size: 18px; }
+      p { font-size: 15px; line-height: 1.6; }
+      p.large { font-size: 16px; line-height: 1.55; }
+      .slide-num { bottom: 16px; font-size: 11px; }
+      .slide-logo { bottom: 14px; right: 16px; height: 14px; }
+      .audit-ribbon {
+        bottom: 8px;
+        right: 8px;
+        left: 8px;
+        max-width: none;
+        font-size: 9px;
+        padding: 5px 8px;
+        line-height: 1.45;
+      }
+      .inv-kv { grid-template-columns: 1fr; gap: 4px 0; }
+      .inv-kv dt { padding-top: 14px; font-size: 11px; }
+      .inv-kv dd { padding-bottom: 12px; font-size: 14px; }
+      .inv-kv dt:first-child { padding-top: 0; }
+      .inv-row { grid-template-columns: 1fr; gap: 8px; }
+      .inv-phase-target { text-align: left; }
+      .ask-stack { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .use-row { grid-template-columns: 1fr; gap: 4px; }
+      .use-detail { text-align: left; }
+      .donut-col { min-width: 0; }
+      .donut-svg { width: 170px; height: 170px; }
+      .fig-caption { font-size: 10px; line-height: 1.55; }
+      .fig-title { font-size: 11px; }
+    }
+    @media (max-width: 480px) {
+      .slide { padding: 40px 16px; }
+      .slide:first-of-type { padding-top: 80px; }
+      h1 { font-size: clamp(30px, 8vw, 40px); }
+      h2 { font-size: clamp(24px, 6.5vw, 30px); }
+      p { font-size: 14px; }
+      p.large { font-size: 15px; }
+      .arrow-list li { font-size: 13px; padding: 12px 0; }
+      .arrow-list .arrow-label,
+      .arrow-list .transform-from,
+      .arrow-list .transform-to { display: block; margin-bottom: 2px; }
+      .arrow-list .arrow { display: none; }
+      .card { padding: 20px 18px; }
+      .flow-diagram { padding: 14px 8px; }
+      .donut-wrap { flex-direction: column; align-items: center; gap: 24px; }
+      .slide-logo { display: none; }
     }
   </style>
 </head>
@@ -556,7 +608,7 @@
 <!-- ==================== NDA GATE ==================== -->
 <div class="nda-gate" id="ndaGate">
   <div class="nda-box">
-    <img src="modulor-wordmark.png" alt="Modulor" style="height:40px; width:auto; max-width:none; margin-bottom:20px; filter:invert(1); mix-blend-mode:screen;">
+    <img src="modulor-wordmark.png" alt="Modulor" style="height:clamp(28px,7vw,40px); width:auto; max-width:80%; margin-bottom:20px; filter:invert(1); mix-blend-mode:screen;">
     <h2>Confidential Material</h2>
     <p style="font-size:15px; color:#888;">This document contains proprietary information about Modulor, including product design, technical specifications, intellectual property, and business strategy. Please identify yourself and accept the terms below before proceeding.</p>
 

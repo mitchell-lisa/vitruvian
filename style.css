@@ -86,7 +86,7 @@ nav {
 .logo img {
   height: 36px;
   width: auto;
-  max-width: none;
+  max-width: 180px;
   object-fit: contain;
   filter: invert(1);
   mix-blend-mode: screen;
@@ -1788,7 +1788,7 @@ footer {
 .footer-logo img {
   height: 22px;
   width: auto;
-  max-width: none;
+  max-width: 160px;
   object-fit: contain;
   filter: invert(1);
   mix-blend-mode: screen;
@@ -1818,9 +1818,9 @@ footer {
     gap: 6px;
   }
   .logo img {
-    height: 30px;
+    height: 28px;
     width: auto;
-    max-width: none;
+    max-width: 140px;
   }
   .nav-links {
     gap: 10px;

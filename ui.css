@@ -56,7 +56,10 @@ img { max-width: 100%; display: block; }
   gap: 10px;
   color: var(--ink);
 }
-.ui-logo img { height: 36px; width: auto; max-width: none; object-fit: contain; filter: invert(1); mix-blend-mode: screen; }
+.ui-logo img { height: 32px; width: auto; max-width: 170px; object-fit: contain; filter: invert(1); mix-blend-mode: screen; }
+@media (max-width: 520px) {
+  .ui-logo img { height: 24px; max-width: 130px; }
+}
 .ui-nav-links { display: flex; gap: 22px; align-items: center; }
 .ui-nav-link {
   font-size: 13px;
