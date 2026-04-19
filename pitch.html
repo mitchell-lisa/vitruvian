@@ -98,6 +98,12 @@
     /* Title slide logo */
     .title-logo { display: block; margin: 0 auto 32px; height: clamp(40px, 9vw, 72px); width: auto; max-width: 88%; filter: invert(1); }
 
+    /* Team slide layout */
+    .team-grid { display: grid; grid-template-columns: 1fr 1fr 280px; gap: 20px; align-items: start; margin-top: 24px; }
+    .team-person { display: flex; gap: 16px; align-items: flex-start; padding: 20px; }
+    .team-photo { width: 72px; height: 72px; border-radius: 4px; object-fit: cover; object-position: top; flex-shrink: 0; }
+    .team-family img { width: 100%; border-radius: 5px; display: block; }
+
     /* Divider */
     .divider { height: 1px; background: rgba(255,255,255,0.06); margin: 32px 0; }
 
@@ -567,6 +573,10 @@
       .donut-svg { width: 170px; height: 170px; }
       .fig-caption { font-size: 10px; line-height: 1.55; }
       .fig-title { font-size: 11px; }
+      .team-grid { grid-template-columns: 1fr; gap: 16px; }
+      .team-person { padding: 16px; gap: 14px; }
+      .team-photo { width: 64px; height: 64px; }
+      .team-family { max-width: 420px; margin: 0 auto; }
     }
     @media (max-width: 480px) {
       .slide { padding: 40px 16px; }
@@ -2250,10 +2260,10 @@
     <p class="slide-tag">The Team</p>
     <h2>A product founder and a warfighter engineer.</h2>
 
-    <div style="display:grid; grid-template-columns:1fr 1fr 280px; gap:20px; align-items:start; margin-top:24px;">
+    <div class="team-grid">
 
-      <div class="inv-card" style="display:flex; gap:16px; align-items:flex-start; padding:20px;">
-        <img src="Mitchell Lisa.jpeg" alt="Mitchell Lisa" style="width:72px; height:72px; border-radius:4px; object-fit:cover; object-position:top; flex-shrink:0; filter:grayscale(20%);">
+      <div class="inv-card team-person">
+        <img src="Mitchell Lisa.jpeg" alt="Mitchell Lisa" class="team-photo" style="filter:grayscale(20%);">
         <div>
           <div class="inv-label">Founder &amp; CEO</div>
           <h3 style="margin-bottom:2px; font-size:15px;">Mitchell Lisa</h3>
@@ -2267,8 +2277,8 @@
         </div>
       </div>
 
-      <div class="inv-card" style="display:flex; gap:16px; align-items:flex-start; padding:20px;">
-        <img src="Matthew 'Luke' Lisa.png" alt="Matthew Luke Lisa" style="width:72px; height:72px; border-radius:4px; object-fit:cover; object-position:top; flex-shrink:0; filter:grayscale(20%);">
+      <div class="inv-card team-person">
+        <img src="Matthew 'Luke' Lisa.png" alt="Matthew Luke Lisa" class="team-photo" style="filter:grayscale(20%);">
         <div>
           <div class="inv-label">Co-Founder · Military &amp; DoD</div>
           <h3 style="margin-bottom:2px; font-size:15px;">Matthew "Luke" Lisa</h3>
@@ -2283,7 +2293,7 @@
       </div>
 
       <!-- Family photo column -->
-      <div>
+      <div class="team-family">
         <div class="inv-label" style="margin-bottom:8px;">The Family</div>
         <div style="position:relative; display:block; width:100%;">
           <img src="fam.png" alt="The Lisa family" style="width:100%; border-radius:5px; display:block; filter:grayscale(15%);">
