@@ -99,10 +99,9 @@
     .title-logo { display: block; margin: 0 auto 32px; height: clamp(40px, 9vw, 72px); width: auto; max-width: 88%; filter: invert(1); }
 
     /* Team slide layout */
-    .team-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 260px; gap: 18px; align-items: start; margin-top: 24px; }
+    .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; margin-top: 24px; }
     .team-person { display: flex; gap: 16px; align-items: flex-start; padding: 20px; }
     .team-photo { width: 72px; height: 72px; border-radius: 4px; object-fit: cover; object-position: top; flex-shrink: 0; }
-    .team-family img { width: 100%; border-radius: 5px; display: block; }
 
     /* Divider */
     .divider { height: 1px; background: rgba(255,255,255,0.06); margin: 32px 0; }
@@ -576,7 +575,6 @@
       .team-grid { grid-template-columns: 1fr; gap: 16px; }
       .team-person { padding: 16px; gap: 14px; }
       .team-photo { width: 64px; height: 64px; }
-      .team-family { max-width: 420px; margin: 0 auto; }
     }
     @media (max-width: 480px) {
       .slide { padding: 40px 16px; }
@@ -1233,7 +1231,7 @@
         <rect x="780" y="110" width="150" height="50" rx="8" fill="rgba(61,122,90,0.06)" stroke="#3D7A5A" stroke-width="1.2"/>
         <text x="855" y="132" text-anchor="middle" fill="#3D7A5A" font-size="9" font-weight="700" font-family="Inter,sans-serif">RISK SCORE</text>
         <text x="855" y="146" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">Longitudinal trend</text>
-        <text x="855" y="156" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">analysis → injury prediction</text>
+        <text x="855" y="156" text-anchor="middle" fill="#777" font-size="7" font-family="Inter,sans-serif">analysis &rarr; MSK injury risk</text>
         <text x="855" y="104" text-anchor="middle" fill="#3D7A5A" font-size="10" font-weight="700" font-family="Inter,sans-serif">62</text>
 
         <defs>
@@ -1267,7 +1265,7 @@
     <div class="split-60">
       <div>
         <p class="slide-tag">Competitive Landscape</p>
-        <h2>Modulor is the only platform that combines motorized stretching with real-time measurement.</h2>
+        <h2>Motorized stretching, real-time measurement, longitudinal data. Three capabilities. No integrated platform.</h2>
         <div class="quadrant-wrap" style="margin-top:40px;">
           <div class="quadrant-grid">
             <span class="q-label q-label-top">Data-Rich / Measured</span>
@@ -1321,7 +1319,7 @@
       </div>
       <div>
         <div class="card" style="border-color:rgba(61,122,90,0.15); margin-bottom:20px;">
-          <p style="font-size:15px; color:#ccc; line-height:1.7;">Modulor is the <strong style="color:#3D7A5A;">only platform</strong> that occupies the upper-right quadrant — combining motorized, force-controlled stretching with real-time biomechanical measurement and longitudinal data tracking.</p>
+          <p style="font-size:15px; color:#ccc; line-height:1.7;">VALD, Tracer, and Hyperice each own a slice. <strong style="color:#3D7A5A;">Modulor integrates all three</strong> — motorized, force-controlled stretching, real-time biomechanical measurement, and longitudinal data tracking — in one workflow.</p>
         </div>
         <div class="stack" style="gap:12px;">
           <div class="card">
@@ -1352,8 +1350,8 @@
 <div class="slide">
   <div class="slide-inner">
     <p class="slide-tag">Market Opportunity</p>
-    <h2>Five buyers. One data asset.</h2>
-    <p class="large" style="margin-bottom:32px;">Stretching is the wedge. The product is a measurement + risk-pricing layer. Five independent buyers monetize the same underlying corpus.</p>
+    <h2>Five buyers. One data asset. Sequenced, not simultaneous.</h2>
+    <p class="large" style="margin-bottom:32px;">Stretching is the wedge. The product is a measurement + risk-pricing layer. Five independent buyers monetize the same underlying corpus &mdash; <strong>seed-stage focus is Teams + DoD</strong>; Insurance, Leagues, and Strategic unlock as the data corpus compounds.</p>
     <div class="grid-3" style="margin-top:8px; gap:16px; margin-bottom:16px;">
       <div class="card" style="border-color:rgba(61,122,90,0.2);">
         <p class="slide-tag" style="margin-bottom:8px;">Buyer 1 · Hardware lease</p>
@@ -1398,7 +1396,7 @@
   <div class="slide-inner">
     <p class="slide-tag">Defensibility</p>
     <h2>The device is the collection mechanism. The moat is everything it builds.</h2>
-    <p class="large" style="margin-bottom:32px;">A competitor can build a cable machine. They cannot replicate three years of elite athlete flexibility data, a peer-reviewed injury prediction study, and a workflow embedded in every major AMS.</p>
+    <p class="large" style="margin-bottom:32px;">A competitor can build a cable machine. They cannot replicate three years of elite athlete flexibility data, a peer-reviewed MSK injury risk study, and a workflow embedded in every major AMS.</p>
 
     <div class="inv-grid-2" style="gap:24px;">
       <div class="inv-card">
@@ -1409,7 +1407,7 @@
       <div class="inv-card">
         <div class="inv-label">Layer 2 · Evidence</div>
         <h3>Peer-reviewed clinical validation</h3>
-        <p>A published study showing Modulor ROM data predicts soft-tissue injury 4–6 weeks out becomes the permanent evidence standard. Competitors must produce their own equivalent study. That's 2–3 years of lag minimum — and we set the reference the whole field cites.</p>
+        <p>A published study — hazard-ratio curves linking ROM / asymmetry deltas to downstream MSK injury risk — becomes the permanent evidence standard. We don't pre-claim the predictive window; the dataset tells us where it lands. Competitors must produce their own equivalent study. That's 2–3 years of lag minimum — and we set the reference the whole field cites.</p>
       </div>
       <div class="inv-card">
         <div class="inv-label">Layer 3 · Workflow</div>
@@ -1460,7 +1458,7 @@
       <div class="card" style="border-color:rgba(94,116,133,0.2);">
         <p class="slide-tag" style="color:#5E7485; margin-bottom:8px;">Pathway 4 · Validation</p>
         <h3 style="font-size:18px;">DHA · CHAMP clinical</h3>
-        <p style="font-size:13px; margin-top:8px;">Peer-reviewed ROM/asymmetry → MSK injury prediction paper. Unlocks insurance licensing narrative. 6–24 mo, $500K–$10M R&D.</p>
+        <p style="font-size:13px; margin-top:8px;">Peer-reviewed ROM/asymmetry &rarr; MSK injury risk paper. Unlocks insurance licensing narrative. 6–24 mo, $500K–$10M R&D.</p>
       </div>
     </div>
 
@@ -2258,7 +2256,7 @@
 <div class="slide">
   <div class="slide-inner">
     <p class="slide-tag">The Team</p>
-    <h2>A product founder, a warfighter engineer, and a Wharton finance lead.</h2>
+    <h2>A product founder, a warfighter engineer, a Wharton finance lead &mdash; and a DoD-tested advisor.</h2>
 
     <div class="team-grid">
 
@@ -2307,30 +2305,19 @@
         </div>
       </div>
 
-      <!-- Family photo column -->
-      <div class="team-family">
-        <div class="inv-label" style="margin-bottom:8px;">The Family</div>
-        <div style="position:relative; display:block; width:100%;">
-          <img src="fam.png" alt="The Lisa family" style="width:100%; border-radius:5px; display:block; filter:grayscale(15%);">
-          <svg viewBox="0 0 100 75" style="position:absolute; top:0; left:0; width:100%; height:100%;" xmlns="http://www.w3.org/2000/svg">
-            <!-- Luke: back row, tall guy in red "1st BN" shirt, 2nd from left -->
-            <circle cx="26" cy="10" r="6" fill="none" stroke="#3D7A5A" stroke-width="1.5" stroke-dasharray="3,2"/>
-            <line x1="26" y1="4" x2="26" y2="1" stroke="#3D7A5A" stroke-width="0.8"/>
-            <rect x="19" y="-1" width="14" height="5" rx="1" fill="rgba(0,0,0,0.75)"/>
-            <text x="26" y="3" text-anchor="middle" fill="#3D7A5A" font-size="3.2" font-weight="700" font-family="Inter,sans-serif">Luke</text>
-            <!-- Mitchell: white shirt kid, middle row, center-left -->
-            <circle cx="43" cy="35" r="6" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.9"/>
-            <line x1="43" y1="41" x2="43" y2="44" stroke="rgba(255,255,255,0.7)" stroke-width="0.8"/>
-            <rect x="35" y="44" width="16" height="5" rx="1" fill="rgba(0,0,0,0.75)"/>
-            <text x="43" y="47.5" text-anchor="middle" fill="#fff" font-size="3.2" font-weight="700" font-family="Inter,sans-serif">Mitchell</text>
-            <!-- Andrew: front row, red "East of the East" shirt, bottom-left -->
-            <circle cx="21" cy="55" r="6" fill="none" stroke="#3D7A5A" stroke-width="1.5" stroke-dasharray="3,2"/>
-            <line x1="21" y1="61" x2="21" y2="65" stroke="#3D7A5A" stroke-width="0.8"/>
-            <rect x="12" y="65" width="18" height="5" rx="1" fill="rgba(0,0,0,0.75)"/>
-            <text x="21" y="68.5" text-anchor="middle" fill="#3D7A5A" font-size="3.2" font-weight="700" font-family="Inter,sans-serif">Andrew</text>
-          </svg>
+      <div class="inv-card team-person" style="border-color:rgba(94,116,133,0.25);">
+        <img src="adam evans.avif" alt="Adam H. Evans" class="team-photo" style="filter:grayscale(20%);">
+        <div>
+          <div class="inv-label" style="color:#5E7485;">Strategic Advisor &middot; SOF + DoD</div>
+          <h3 style="margin-bottom:2px; font-size:15px;">Adam H. Evans, PhD</h3>
+          <p style="font-size:11px; color:#888; margin-bottom:10px;">LMT &middot; CSCS &middot; Colorado Springs</p>
+          <div style="font-size:12px; color:#b8bcc4; line-height:1.9;">
+            <div>&rarr; Former Chair of Entrepreneurship, University of Kentucky &mdash; reviewed 10K+ business plans</div>
+            <div>&rarr; 8 yrs Chief Strategy Officer at a DoD-serving mil-tech startup</div>
+            <div>&rarr; AFWERX/SOFWERX judge &middot; National Board, FSMTB-MBLEX (writes the licensing exam)</div>
+            <div>&rarr; Founder, Special O.P.S. Massage &mdash; elite recovery for SOF, police, firefighters</div>
+          </div>
         </div>
-        <p style="font-size:11px; color:#666; margin-top:8px; line-height:1.5;">Gen Z founder. 18-year Air Force veteran. Wharton finance lead. One family.</p>
       </div>
 
     </div>

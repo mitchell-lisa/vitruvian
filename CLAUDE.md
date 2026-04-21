@@ -29,7 +29,7 @@ Move the company forward at maximum velocity. Identify the highest-leverage acti
 ## Priorities (rank order, update quarterly)
 
 1. **Close $3M seed by Q3 2026.** Use of funds: 40% hardware prototyping, 30% engineering, 15% GTM, 10% IP, 5% legal.
-2. **Finish formation legals.** Luke RSPA + 83(b); Adam FAST Gold; EIN from IRS; Mercury bank; USPTO trademark (Classes 9, 10, 41); D&O insurance before first investor check.
+2. **Finish formation legals.** Luke RSPA + 83(b); Andrew RSPA + 83(b); Adam FAST Platinum; EIN from IRS; Mercury bank; USPTO trademark (Classes 9, 10, 41); D&O insurance before first investor check.
 3. **Convert VITR-001 provisional → non-provisional patent.** Hard deadline — 12 months from provisional filing. Do not miss.
 4. **Build first hardware prototype.** Sensor platform + companion app, demo-able by early summer 2026.
 5. **Lock 3 LOIs** — one per market (pro team, D1 program, SOF unit).
@@ -42,7 +42,7 @@ Move the company forward at maximum velocity. Identify the highest-leverage acti
 - **Mitchell Lisa** — founder/CEO. 88% common (→83% post-Luke RSPA →78% post-Andrew RSPA). Based NJ.
 - **Matthew "Luke" Lisa** — co-founder, Head of Engineering Operations. 5% common, 4-yr vest, 1-yr cliff. USAF 18+ years. Owns DoD/SOF access and engineering ops. Mitchell's cousin.
 - **Andrew Lisa** — co-founder, Head of Finance (CFO track). 5% common, 4-yr vest, 1-yr cliff. UBS Executive Director, Real Estate Finance (9 years). UPenn Wharton Economics '16. Mitchell's brother. LinkedIn: https://www.linkedin.com/in/andrew-lisa-11072098/
-- **Adam H. Evans** — advisor (FAST Gold 0.5% pending). Special Ops Massage founder. SOF community intros. Call scheduled — role/equity TBD post-call.
+- **Adam H. Evans, PhD** — Strategic Advisor · SOF + DoD. **1.0% common stock options (FAST Platinum), 2-yr vest, no cliff — verbally accepted Apr 22 2026.** Former Chair of Entrepreneurship, U Kentucky; 8 yrs Chief Strategy Officer at a DoD-serving mil-tech startup; AFWERX/SOFWERX judge; FSMTB-MBLEX EDC (writes the national massage therapy licensing exam); Founder, Special O.P.S. Massage (Colorado Springs). LinkedIn: https://www.linkedin.com/in/adamhevans/ · https://www.specialopsmassage.com/about2
 
 ### Ideas only (no urgency, park until team capacity forces a decision)
 - **Adam Lisa** — Luke's brother. Potential: manufacturing ops (source, contact, track prototyping/parts vendors). Tentative on his availability.
@@ -143,11 +143,16 @@ When drafting emails on his behalf: short paragraphs, plain language, no corpora
 
 ### Team
 - **Luke:** On board. Text summary of role memo sent Apr 21 2026; Luke replied with feedback Apr 21. Agreed on 4-yr vest, 1-yr cliff; 83(b) explained. **Scope refined: Luke's military access = advisor/strategy/contacts only while active duty — direct customer negotiations and contracting led by Mitchell.** Correct venues: **711 HPW (AFRL), Special Warfare training wings, operator squadrons** (not AFWERX/SOFWERX as personal access channels — those remain valid GTM pathways). SBIR grant workstream added (Luke prior AFRL administrator). Luke checking with military-side lawyers this week on permitted founder activities while active duty. Official RSPA issues once EIN arrives (expected EOW). **Needs `luke@modulor.bio` email provisioned in Google Workspace.**
-- **Adam Evans:** Call scheduled **Tue Apr 22 2026 @ 2:30 PM EST**. Role/equity TBD post-call. FAST Gold 0.5% is the default if advisor path confirmed.
+- **Adam Evans:** **Call completed Tue Apr 22 2026 @ 2:30 PM EST. Advisor role verbally accepted.** Upgraded from FAST Gold (0.5%) to **FAST Platinum (1.0% common options, 2-yr vest, no cliff)** on strength of call: PhD, 25 yrs teaching entrepreneurship (U Kentucky Chair), 8 yrs Chief Strategy Officer at DoD-serving mil-tech startup, AFWERX/SOFWERX judge, FSMTB-MBLEX EDC national board seat. Role memo drafted (`private/adam-role-memo.md`). Photo + bullets live on pitch.html team slide. FAST Platinum + NDA to send post-EIN. Adam gave substantive deck feedback (see below). **Flagged Luke-as-advisor-vs-co-founder strategic question** based on his 8 yrs of mil-tech experience — needs separate conversation with Luke.
 - **Andrew Lisa:** Co-Founder · Head of Finance (CFO track). **5% common, 4-yr vest, 1-yr cliff — verbally accepted Apr 21 2026.** Role memo drafted (`private/andrew-role-memo.md`). Official RSPA issues once EIN arrives EOW. Photo + bullets live on pitch.html team slide.
 
+### Adam's deck feedback — all applied Apr 22 2026
+1. Killed "injury prediction 4–6 weeks out" claim → reframed as "MSK injury risk" with dataset-driven hazard-ratio language (no pre-claimed predictive window).
+2. Softened "Modulor is the only platform that combines motorized stretching with real-time measurement" → positioned against VALD, Tracer, Hyperice; claim is now integration of all three, not monopoly.
+3. Reframed 5-buyer market slide as sequenced optionality: "seed-stage focus is Teams + DoD; Insurance/Leagues/Strategic unlock as corpus compounds." No longer reads as 5 simultaneous sales motions.
+
 ### Fundraise
-- **Deck:** Live at `modulor.bio/pitch`. Team slide has Mitchell + Luke. **Missing:** Andrew (photo ready in repo, not yet added to slide). Needs final review + distribution.
+- **Deck:** Live at `modulor.bio/pitch`. Team slide: Mitchell + Luke + Andrew + Adam (advisor). Family photo removed. Adam's deck fixes applied. Needs final review + distribution.
 - **Investor outreach:** Not yet started in earnest. Outreach playbook in `private/outreach.md`.
 
 ### Infrastructure & ops

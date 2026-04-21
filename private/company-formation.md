@@ -59,7 +59,7 @@ Use this on every public-facing document: bank account, pitch deck footer, contr
 |---|---|---|---|---|
 | Matthew "Luke" Lisa | Co-founder common (RSPA) | 500,000 | 5.0% | From Mitchell's 88% → Mitchell becomes 83% |
 | Andrew Lisa | Co-founder common (RSPA) | 500,000 | 5.0% | From Mitchell's 83% → Mitchell becomes 78% |
-| Adam H. Evans | Advisor options (FAST Gold) | ~50,000 | 0.5% | From 12% pool |
+| Adam H. Evans | Advisor options (FAST Platinum) | 100,000 | 1.0% | From 12% pool |
 
 ### Fully-diluted cap table (post-planned grants)
 
@@ -68,8 +68,8 @@ Use this on every public-facing document: bank account, pitch deck footer, contr
 | Mitchell Lisa | 7,800,000 | 78.0% |
 | Matthew "Luke" Lisa | 500,000 | 5.0% |
 | Andrew Lisa | 500,000 | 5.0% |
-| Adam H. Evans (options) | 50,000 | 0.5% |
-| Equity pool remaining | 1,150,000 | 11.5% |
+| Adam H. Evans (options) | 100,000 | 1.0% |
+| Equity pool remaining | 1,100,000 | 11.0% |
 | **Total** | **10,000,000** | **100%** |
 
 ## Vesting Terms (all founder common stock)
@@ -132,7 +132,7 @@ Store these in `private/formation-docs/` (gitignored):
 - [ ] Andrew countersigns role memo → issue 500,000 RSPA shares within 30 days
 - [ ] Andrew files his 83(b) within 30 days of grant
 - [ ] Add Luke (and consider Andrew) as additional Director(s) via unanimous written consent
-- [ ] Send Adam FAST Gold advisor agreement (0.5% from pool)
+- [ ] Send Adam FAST Platinum advisor agreement (1.0% options from pool, 2-yr vest, no cliff)
 - [ ] File Delaware franchise tax (annual, due March 1 — first filing March 2027)
 - [ ] Foreign qualification in NJ if operating from there
 - [ ] Trademark search + filing on "Modulor" (USPTO Class 9, 10, 41)
