@@ -144,7 +144,7 @@ When drafting emails on his behalf: short paragraphs, plain language, no corpora
 ### Team
 - **Luke:** On board. Text summary of role memo sent Apr 21 2026 ahead of official RSPA. Official RSPA issues once EIN arrives (expected EOW). Luke invited to flag edits before final draft. **Needs `luke@modulor.bio` email provisioned in Google Workspace.**
 - **Adam Evans:** Call scheduled **Tue Apr 22 2026 @ 2:30 PM EST**. Role/equity TBD post-call. FAST Gold 0.5% is the default if advisor path confirmed.
-- **Andrew Lisa:** Co-Founder · Head of Finance (CFO track). 5% common, terms parallel to Luke. Role memo drafted (`private/andrew-role-memo.md`); text summary going to Andrew tonight. Official RSPA issues once EIN arrives EOW. Photo + bullets live on pitch.html team slide.
+- **Andrew Lisa:** Co-Founder · Head of Finance (CFO track). **5% common, 4-yr vest, 1-yr cliff — verbally accepted Apr 21 2026.** Role memo drafted (`private/andrew-role-memo.md`). Official RSPA issues once EIN arrives EOW. Photo + bullets live on pitch.html team slide.
 
 ### Fundraise
 - **Deck:** Live at `modulor.bio/pitch`. Team slide has Mitchell + Luke. **Missing:** Andrew (photo ready in repo, not yet added to slide). Needs final review + distribution.
