@@ -1,4 +1,4 @@
-# Memo: Strategic Advisor — Adam H. Evans, PhD
+# Memo: Strategic Advisor — Adam H. Evans, PhD, LMT, CPCT
 
 **To:** Dr. Adam H. Evans
 **From:** Mitchell Lisa
@@ -59,8 +59,10 @@ O.P.S. Massage schedule and your research cadence, not on top of it.
 Standard FAST Gold is the default for seed-stage advisors at ~4 hrs/mo with
 generalist help. You are not that. What you bring:
 
-1. **8 years DoD contracting** as CSO of a mil-tech startup — operator of
-   the exact pathway (AFWERX/SOFWERX/DIU/SBIR) we are raising capital to run
+1. **CSO, InstantHandz (Phoenix, 2020–2021)** — built a mil-tech services
+   business to $1M valuation and $250K+ revenue serving Armed Forces
+   families. Operator of the exact DoD pathway (AFWERX/SOFWERX/DIU/SBIR) we
+   are raising capital to run
 2. **AFWERX/SOFWERX judge** — you have read decks from the other side of the
    table we are about to walk up to
 3. **FSMTB-MBLEX EDC seat** — national-board regulatory access on massage /
