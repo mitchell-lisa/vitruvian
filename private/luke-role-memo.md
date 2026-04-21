@@ -37,8 +37,17 @@ hardware:
 - Leverage your network — including your father's manufacturing-ops
   experience and the East Coast machine-shop contacts — as advisors and
   vendor options
-- Serve as the military / DoD face for AFWERX, SOFWERX, and special warfare
-  training command conversations
+- Serve as Modulor's military/DoD strategic advisor — contacts, intros,
+  partnership strategy — with relationships across 711 Human Performance
+  Wing (AFRL), Special Warfare training wings, and operator squadrons.
+  **While you remain on active duty, direct customer negotiations and
+  contracting are led by Mitchell / the Modulor team.** Your contribution
+  is strategy, relationships, and positioning — not direct sales or
+  contracting decisions.
+- Evaluate SBIR (Small Business Innovation Research) grant opportunities —
+  you have prior experience administering SBIRs at AFRL, and DoD dual-use
+  awards (Phase I: $150–300K non-dilutive; Phase II: $1M+) are a potential
+  runway extender alongside the seed round
 
 **Commitment.** Part-time while you complete your Air Force service. We both
 expect that to run ~4–5 more years. Capacity ramps when your military
@@ -89,6 +98,12 @@ From you, before end of April:
 2. Short list of 2–3 East Coast design / prototyping firms worth calling
 3. Your read on Delaware vs. Wyoming for the parent entity
 4. Confirmation that your father is open to an informal advisor conversation
+5. **Military legal review** — check with military-side lawyers on the
+   scope of permitted founder activities while active duty: board service,
+   public team-slide listing, disclosure requirements to your command,
+   SBIR grant eligibility with you as a founder, and any specific
+   situations you cannot participate in (e.g., customer meetings where
+   contracting is discussed)
 
 From me:
 
