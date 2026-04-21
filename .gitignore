@@ -7,6 +7,11 @@ private/google-credentials.json
 private/google-token.json
 private/*credentials*.json
 private/*token*.json
+
+# Local data (ledger, logs) — stays on your machine
+private/ledger.csv
+private/*.log
+.venv/
 *.pem
 *.key
 .env
