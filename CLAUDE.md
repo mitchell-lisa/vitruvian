@@ -38,9 +38,15 @@ Move the company forward at maximum velocity. Identify the highest-leverage acti
 
 ## Team
 
+### Confirmed
 - **Mitchell Lisa** — founder/CEO. 88% common (→83% after Luke RSPA). Based NJ.
-- **Matthew "Luke" Lisa** — co-founder, Head of Engineering Operations. 5% common, 4-yr vest, 1-yr cliff. USAF 18+ years. Owns DoD/SOF access and engineering ops.
-- **Adam H. Evans** — advisor (FAST Gold 0.5% pending). Special Ops Massage founder. SOF community intros.
+- **Matthew "Luke" Lisa** — co-founder, Head of Engineering Operations. 5% common, 4-yr vest, 1-yr cliff. USAF 18+ years. Owns DoD/SOF access and engineering ops. Mitchell's cousin.
+- **Andrew Lisa** — Head of Finance (title TBD, CFO track). Mitchell's brother. UPenn Wharton BA Economics 2016 (Management + Entrepreneurship concentration); UPenn Football. Equity TBD — draft role memo after first working session. LinkedIn: https://www.linkedin.com/in/andrew-lisa-11072098/
+- **Adam H. Evans** — advisor (FAST Gold 0.5% pending). Special Ops Massage founder. SOF community intros. Call scheduled — role/equity TBD post-call.
+
+### Ideas only (no urgency, park until team capacity forces a decision)
+- **Adam Lisa** — Luke's brother. Potential: manufacturing ops (source, contact, track prototyping/parts vendors). Tentative on his availability.
+- **Natalia Lisa** — Luke's wife. Potential: project management / app dev. Scrum experience (ran PM for Shell pre-US); currently taking Google UX course.
 
 ---
 
@@ -126,15 +132,45 @@ When drafting emails on his behalf: short paragraphs, plain language, no corpora
 
 ## Current state snapshot (update weekly)
 
-- **Formation:** Complete via Stripe Atlas Apr 20, 2026. EIN pending (1–2 biz days). 83(b) mailed by Atlas within 30 days.
-- **Spend to date:** $1,088 on founder Amex Gold ($500 Atlas + $588 Stable virtual address). Both ✅ paid.
-- **Bank:** Mercury / Brex not yet opened — blocking reimbursements and clean accounting.
-- **Luke:** Role memo drafted, not yet countersigned. RSPA must issue within 30 days of countersign.
-- **Adam:** Text intro made via Luke Apr 21, 2026. Call pending. FAST Gold agreement not yet sent.
+### Formation & legal
+- **C-corp:** Filed via Stripe Atlas Apr 20, 2026. EIN pending (1–2 biz days). 83(b) mailed by Atlas within 30 days.
+- **Bank:** Mercury / Brex — blocked on EIN. Open immediately once EIN arrives.
+- **Patent:** VITR-001 provisional filed. 12-month non-provisional conversion clock running. **Must reassign from Mitchell to Modulor, Inc. once EIN is live** (before taking investor money).
+- **NDA:** Not drafted. Needed for investor conversations and vendor/contractor relationships. **TODO.**
 - **Trademark:** Not filed. USPTO Classes 9, 10, 41. ~$700–1,050 self-file.
-- **Patent:** VITR-001 provisional filed. 12-month conversion clock running.
-- **Pitch deck:** Live at `modulor.bio/pitch`. Team slide updated with Luke. Ready for investor meetings.
+- **D&O insurance:** Not purchased. Required before first investor check. ~$1.5–3K year 1.
+
+### Team
+- **Luke:** On board. Role memo drafted (`private/luke-role-memo.md`), not yet countersigned. **Needs `luke@modulor.bio` email provisioned in Google Workspace.** RSPA must issue within 30 days of countersign.
+- **Adam Evans:** Call scheduled (tomorrow, Apr 22 2026). Role/equity TBD post-call. FAST Gold 0.5% is the default if advisor path confirmed.
+- **Andrew Lisa:** Joining as Head of Finance. Needs role memo + equity decision + photo on team slide.
+
+### Fundraise
+- **Deck:** Live at `modulor.bio/pitch`. Team slide has Mitchell + Luke. **Missing:** Andrew. Needs final review + distribution.
+- **Investor outreach:** Not yet started in earnest. Outreach playbook in `private/outreach.md`.
+
+### Infrastructure & ops
+- **Spend to date:** $1,088 on founder Amex Gold ($500 Atlas + $588 Stable). Both ✅ paid. Reimburse from Modulor bank after Mercury opens.
 - **Website:** `modulor.bio` on Vercel. Google Workspace + DNS configured.
 - **Google Cloud:** `modulor-ops` project created under `modulor.bio` org. Gmail/Calendar/Drive APIs enabled. OAuth credentials saved locally (gitignored).
+- **Slack:** Not yet set up. Defer until 3+ confirmed team members active (likely after Luke + Andrew countersign).
 
 Update this section after every material change.
+
+---
+
+## How Mitchell updates this brief
+
+State changes fast. Any Claude session in this repo can update CLAUDE.md on demand. Patterns Mitchell uses:
+
+| He says | Claude does |
+|---|---|
+| `update: EIN arrived, it's XX-XXXXXXX` | Append to state snapshot, commit |
+| `done: Luke countersigned` | Move item from pending to complete |
+| `add person: [name, role, background]` | Add to Team section, offer to draft role memo |
+| `log expense: $X for Y on [date]` | Append to `private/finances.md` + `private/ledger.csv` |
+| `new priority: [...]` | Update Priorities section, re-rank |
+| `what's slipping?` | Cross-reference state snapshot vs. dates, return drifting items |
+| `brief me` | Top 3 actions + waiting-on + deadlines + drafts |
+
+When in doubt, just type the update in plain English. Claude will reconcile the right files.
