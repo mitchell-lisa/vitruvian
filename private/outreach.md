@@ -6,6 +6,40 @@
 
 ---
 
+## 0. Context rundown — Mitchell → Mom + Dad (send BEFORE the Pederson/Papale forwards)
+
+Primes the parents with the full picture so they can answer basic questions if Doug or Vince responds directly.
+
+> Hey Mom and Dad,
+>
+> Quick rundown so you have the full picture before sending the Doug and Vince texts.
+>
+> **What I'm building:** A machine that stretches athletes at a controlled force and measures exactly what's happening — range of motion, left vs right differences, how hard they're pushing, whether they're compensating. Soft-tissue injuries (hamstrings, groins, hips) are the #1 reason athletes lose games, and nobody currently measures the thing that predicts them. That's what we fix. Site is modulor.bio.
+>
+> **Company status:** Modulor, Inc. Delaware C-corp, incorporated April 20. Patent provisional already filed. EIN landing any day now. Business address is our Delaware registered agent — not our home.
+>
+> **Who's involved:**
+> - **Me** — founder & CEO.
+> - **Andrew** (my brother) — finance lead, CFO track. Still at UBS for now; transitions as the raise closes. 5% of the company.
+> - **Luke** (my cousin) — engineering lead + military connector. Still on active-duty USAF, 18 years in. 5% of the company.
+> - **Adam Evans** — strategic advisor, just came on board this week. Not family — independent voice. PhD, 25 years teaching entrepreneurship at the university level, 8 years Chief Strategy Officer at a military-tech startup. 1% options.
+>
+> **Where I'm at:** Raising a $3M seed round. First investor contacts got the deck yesterday. Richard Xie at KAS Venture Partners (old friend) opened it within hours, asked for a meeting in May, said he'll send written questions first — real engagement. Second contact is Andrew Berg at Companyon Ventures for the Series B relationship. Need a couple more warm intros to close the round.
+>
+> **Why Doug and Vince:** I don't want them to buy anything. I want their read — does this clear the bar for a real NFL performance staff? A yes from Doug gets me an intro to a named Head of Performance somewhere. A yes from Vince gets me an Eagles alumni bridge and a public voice when we launch. Either one is worth more than 20 cold investor emails.
+>
+> **What I need from you:**
+> - Forward the texts I sent exactly as they are — don't rewrite.
+> - If either one responds directly to you, text me right away. I'll jump on it.
+> - If they want to call me direct, my number is (609) 760-1238. I'm available zero notice.
+>
+> This is one of the highest-leverage things you can do for me right now. Appreciate you guys.
+>
+> Love you.
+> — Mitch
+
+---
+
 ## 1. Doug Pederson — ex-Eagles HC, Super Bowl champion
 
 **Channel:** email or whatever direct line you have. He gets pitched constantly; respect his time.
