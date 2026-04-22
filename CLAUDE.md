@@ -158,7 +158,7 @@ When drafting emails on his behalf: short paragraphs, plain language, no corpora
 ### Infrastructure & ops
 - **Spend to date:** $1,088 on founder Amex Gold ($500 Atlas + $588 Stable). Both ✅ paid. Reimburse from Modulor bank after Mercury opens.
 - **Website:** `modulor.bio` on Vercel. Google Workspace + DNS configured.
-- **Email:** `mitchell@modulor.bio` alias live on Mitchell's account (primary of record remains `mitchell.lisa@modulor.bio` — don't touch). `hello@modulor.bio` Google Group live for public inbound (investors/partners/press). `luke@`, `andrew@` TBD when their users are provisioned. Deck + feedback form point at `mitchell@modulor.bio`.
+- **Email:** `mitchell@modulor.bio` alias live on Mitchell's account (primary of record remains `mitchell.lisa@modulor.bio` — don't touch). `hello@modulor.bio` Google Group live for public inbound (investors/partners/press) — this is the deck/feedback-form address. `mitchell@` reserved for warm intros and one-to-one relationships. `luke@`, `andrew@` TBD when their users are provisioned.
 - **Google Cloud:** `modulor-ops` project created under `modulor.bio` org. Gmail/Calendar/Drive APIs enabled. OAuth credentials saved locally (gitignored).
 - **Slack:** Not yet set up. Defer until 3+ confirmed team members active (likely after Luke + Andrew countersign).
 
