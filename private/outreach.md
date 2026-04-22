@@ -177,11 +177,29 @@ First sends went out **Tue Apr 22 2026.** Both contacts are warm (existing relat
 - **Warm channel:** personal iMessage. Not a firm contact form. Protect relationship quality over process.
 - **Positioning sent:** "had ai organize my thoughts above" + `modulor.bio` link. Richard knows the deck is Mitchell's thinking, AI-structured. Good — sets expectation that Mitchell has a viewpoint, not boilerplate.
 - **What he sees:** NDA gate first (name/org/email capture via Supabase), then full deck v2.1.
-- **Bump plan Tue Apr 28 AM** (one-line, friendly, no ask repeat): *"Hey Richard — bumping as offered. No rush if still slammed. Happy to jump on a call when it's easier."*
-- **What each outcome unlocks:**
-  - *Interested →* 30-min call. Goal: qualify check size + timing, surface diligence requirements.
-  - *Pass with feedback →* gold. Feed into deck v2.2 + ask for 1–2 intros to better-fit funds.
-  - *Pass with silence →* one more nudge at 14 days, then let it rest.
+
+### Timeline
+
+| Time | Event |
+|---|---|
+| Apr 22, ~3:55 PM | Deck link sent + positioning note |
+| Apr 22, ~4:00 PM | Richard: heart emoji + "will look in the next few days, a little slammed. Bump me by top of next week." |
+| Apr 22, ~6:00 PM | Richard opened the deck (clocked Andrew's face on team slide → messaged "your co-founder is your brother?"). Asked "family biz?" Offered a **meeting over phone or beer** once he's read + sent questions. Noted wheelhouse uncertainty candidly. |
+| Apr 22, ~6:05 PM | Mitchell: "phone works — been out of the city, not sure when back." ⚠️ Understates availability. |
+
+### Current status
+**Meeting teed up, not scheduled.** Richard drives the cadence: read → questions → call. Original "bump Apr 28" trigger is now obsolete; follow-up is responsive, not proactive. Watch for his questions in next 24–72 hours.
+
+### Flag: "family biz?" question
+Richard already flagged the family concentration. Two brothers + one cousin on cap table. Prep a practiced 3-beat answer for the live call:
+1. **Each earned the seat on merit.** Andrew = UBS Executive Director, 9 yrs real estate finance, Wharton econ '16. Luke = 18 yrs USAF, former Lead Engineer for Warfighter Training Systems, ex-Pentagon Integrated Warfare Division. Domain hires who happen to be family.
+2. **Vesting IS the fire mechanism.** 4-yr vest, 1-yr cliff, standard company repurchase on unvested shares. Same terms any outside co-founder would get. Mitchell retains 78% post-grants.
+3. **Independent governance already seeded.** Adam Evans — advisor, 1% FAST Platinum, 25 yrs teaching entrepreneurship (U Kentucky Chair), 8 yrs CSO at DoD-serving mil-tech startup. First board seat post-seed goes to lead investor.
+
+### Availability reset (optional, send only if natural)
+> *"Actually — phone works zero-notice whenever you've read through. Don't let travel pace it. Bring the questions whenever."*
+
+Short, owns availability, reframes the "not sure when I'll be back" beat. Skip if it reads try-hard; reset the frame the moment his questions arrive instead.
 
 ## Companyon — context & handling
 
