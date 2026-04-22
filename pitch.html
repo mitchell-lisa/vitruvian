@@ -164,8 +164,9 @@
     }
     .q-label-top { top: -28px; left: 50%; transform: translateX(-50%); }
     .q-label-bottom { bottom: -28px; left: 50%; transform: translateX(-50%); }
-    .q-label-left { left: -12px; top: 50%; transform: translateY(-50%) rotate(-90deg); white-space: nowrap; }
-    .q-label-right { right: -12px; top: 50%; transform: translateY(-50%) rotate(90deg); white-space: nowrap; }
+    .q-label-left { left: -12px; top: 50%; transform: translateY(-50%) rotate(-90deg); transform-origin: center; white-space: nowrap; }
+    .q-label-right { right: -12px; top: 50%; transform: translateY(-50%) rotate(90deg); transform-origin: center; white-space: nowrap; }
+    .q-axis-mobile { display: none; }
     .q-dot {
       position: absolute;
       transform: translate(-50%, -50%);
@@ -257,7 +258,7 @@
     .flywheel-booster strong { color: #5E7485; }
 
     /* Bar chart */
-    .bar-chart-wrap { display: flex; align-items: flex-end; gap: 24px; justify-content: center; height: 220px; margin-top: 20px; }
+    .bar-chart-wrap { display: flex; align-items: flex-end; gap: 24px; justify-content: center; min-height: 220px; margin-top: 20px; padding-top: 28px; }
     .bar-group { display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1; max-width: 80px; }
     .bar-stack { width: 100%; display: flex; flex-direction: column; justify-content: flex-end; height: 200px; }
     .bar-seg {
@@ -534,12 +535,17 @@
       .flow-node p { font-size: 9px; }
       .flow-arrow { font-size: 14px; padding: 0 2px; }
       .quadrant-wrap { max-width: 100%; }
+      .q-label-side { display: none; }
+      .q-axis-mobile { display: flex; justify-content: space-between; margin-top: 16px; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #555; padding: 0 4px; }
       .donut-wrap { gap: 32px; }
       .arrow-list li { font-size: 14px; line-height: 1.6; }
       .flywheel-layout { grid-template-columns: 1fr; gap: 24px; }
       .capital-layout { grid-template-columns: 1fr; gap: 24px; }
       .capital-detail > div { grid-template-columns: 1fr !important; }
-      .bar-chart-wrap { gap: 12px; }
+      .bar-chart-wrap { gap: 12px; padding-top: 24px; min-height: 180px; }
+      .bar-chart-wrap .bar-stack { height: 160px; }
+      .bar-chart-legend { margin-top: 8px; margin-bottom: 4px; flex-wrap: wrap; gap: 10px 16px; }
+      .bar-value { font-size: 10px; }
       .patent-fig { padding: 16px 10px 10px; }
       .cta-box { padding: 22px 18px; }
       .cta-box h3 { font-size: 17px; }
@@ -1272,8 +1278,8 @@
           <div class="quadrant-grid">
             <span class="q-label q-label-top">Data-Rich / Measured</span>
             <span class="q-label q-label-bottom">No Data / Manual</span>
-            <span class="q-label q-label-left">Passive / Manual</span>
-            <span class="q-label q-label-right">Active / Motorized</span>
+            <span class="q-label q-label-left q-label-side">Passive / Manual</span>
+            <span class="q-label q-label-right q-label-side">Active / Motorized</span>
 
             <!-- Modulor: top-right quadrant (motorized + data-rich) -->
             <div class="q-dot" style="top:12%; right:10%; left:auto;">
@@ -1316,6 +1322,10 @@
               <div class="q-dot-circle"></div>
               <div class="q-dot-name">Goniometer</div>
             </div>
+          </div>
+          <div class="q-axis-mobile">
+            <span>&larr; Passive / Manual</span>
+            <span>Active / Motorized &rarr;</span>
           </div>
         </div>
       </div>
@@ -1970,17 +1980,17 @@
     <div class="flywheel-layout">
       <div class="flywheel-wrap">
         <svg class="flywheel-svg" viewBox="0 0 450 385" xmlns="http://www.w3.org/2000/svg">
-          <!-- Outer ring segments (circle center 225,185, radius 120) -->
-          <!-- Segment 1: Athletes (top-right, green) -->
-          <path d="M225,65 A120,120 0 0,1 328.9,125" fill="none" stroke="#3D7A5A" stroke-width="28" stroke-linecap="round"/>
-          <!-- Segment 2: Facilities (bottom, grey) -->
-          <path d="M340,165 A120,120 0 0,1 175,300" fill="none" stroke="#888" stroke-width="28" stroke-linecap="round"/>
-          <!-- Segment 3: Data (left, dark) -->
-          <path d="M135,270 A120,120 0 0,1 195,70" fill="none" stroke="#555" stroke-width="28" stroke-linecap="round"/>
-          <!-- Flow arrows at segment ends -->
-          <polygon points="328,119 345,135 323,135" fill="#3D7A5A"/>
-          <polygon points="170,297 160,277 183,285" fill="#888"/>
-          <polygon points="199,70 189,90 210,85" fill="#555"/>
+          <!-- Outer ring segments (circle center 225,185, radius 120, 3 arcs of 120° each with 6° gaps) -->
+          <!-- Segment 1: Athletes (top → lower-right, green) : -87° to +27° -->
+          <path d="M231.28,65.16 A120,120 0 0,1 331.92,239.46" fill="none" stroke="#3D7A5A" stroke-width="28" stroke-linecap="butt"/>
+          <!-- Segment 2: Facilities (lower-right → lower-left, grey) : +33° to +147° -->
+          <path d="M325.65,250.35 A120,120 0 0,1 124.35,250.35" fill="none" stroke="#888" stroke-width="28" stroke-linecap="butt"/>
+          <!-- Segment 3: Data (lower-left → top, dark) : +153° to +267° -->
+          <path d="M118.08,239.46 A120,120 0 0,1 218.72,65.16" fill="none" stroke="#555" stroke-width="28" stroke-linecap="butt"/>
+          <!-- Flow arrows at segment-end transitions (point toward next segment start) -->
+          <polygon points="325.65,250.35 336.25,241.96 327.59,236.96" fill="#3D7A5A"/>
+          <polygon points="124.35,250.35 122.41,236.96 113.75,241.96" fill="#888"/>
+          <polygon points="231.28,65.16 218.72,59.00 218.72,71.32" fill="#555"/>
           <!-- Center label -->
           <text x="225" y="190" text-anchor="middle" fill="#fafafa" font-size="14" font-weight="700" font-family="Inter, sans-serif">MODULOR</text>
           <!-- Athletes label — top right -->
