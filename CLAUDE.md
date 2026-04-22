@@ -124,6 +124,7 @@ When drafting emails on his behalf: short paragraphs, plain language, no corpora
 | `private/luke-role-memo.md` | Luke's title, equity, vesting |
 | `private/andrew-role-memo.md` | Andrew's title, equity, vesting |
 | `private/outreach.md` | Investor/partner outreach playbook |
+| `private/investor-qa-packet.md` | Practice-ready answers to diligence questions (family-biz, unit econ, pilot path, Luke's scope, use-of-funds, IP, exit) |
 | `private/atlas-ip-share-consideration.md` | IP-at-formation record |
 | `private/.founder-private.md` | PII (gitignored, never read into outputs) |
 | `docs/` | Product definition through integration roadmap |
@@ -165,7 +166,7 @@ When drafting emails on his behalf: short paragraphs, plain language, no corpora
 - **Deck:** Live at `modulor.bio/pitch`. Team slide: Mitchell + Luke + Andrew + Adam (advisor). Family photo removed. Adam's deck fixes applied.
 - **Investor outreach — first sends out Apr 22 2026:**
   - **KAS Venture Partners — Richard Xie** (warm iMessage, ~3:55 PM Apr 22). First-seed-check target. Same evening Richard opened the deck, asked "family biz?" (see outreach.md for practiced 3-beat response), and **offered a meeting: beer in May, questions inbound ahead of time.** Mitchell reset availability cleanly with "phone works zero notice always of course too." **Next action: respond inside an hour the moment written questions arrive.** kasventurepartners.com.
-  - **Companyon Ventures** (director contact — name TBD) — Series A–focused (Boston/NY/LA, software + AI). Positioned for **feedback + relationship-building, target engagement for Series B**. companyon.vc.
+  - **Companyon Ventures — Andrew Berg (Director)**. Series A–focused (Boston/NY/LA, software + AI). Positioned for **feedback + relationship-building, target engagement for Series B**. Bump Tue Apr 29 if silent. companyon.vc.
 - Full VC log + handling notes in `private/outreach.md` (new "VC Outreach Log — Seed" section).
 
 ### Infrastructure & ops

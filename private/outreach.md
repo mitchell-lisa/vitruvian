@@ -30,6 +30,24 @@
 >
 > &mdash; [your name]
 
+### Parent-forwarded version (text/email, in Mom + Dad's voice)
+
+Copy-paste exactly. Parents send to Pederson directly.
+
+> Doug — hope you and the family are well.
+>
+> Writing about our son Mitchell. He's been heads-down on a piece of equipment for pro performance staffs — a cable-driven stretching machine that measures every rep (range of motion, force, side-to-side asymmetry, compensation). Soft-tissue injury is his core thesis, and his read is that nobody is measuring the thing that actually predicts it.
+>
+> He's raising a seed round. The read he wants most is from someone who ran an NFL staff at the highest level — especially on what would make a head coach trust the data vs. roll his eyes.
+>
+> 30 minutes of your time in the next few weeks would mean a lot. No sales pitch, just feedback.
+>
+> One-pager and site at modulor.bio/pitch. He's at (609) 760-1238 if it's easier to connect direct.
+>
+> Thanks Coach. Always rooting for you and the family.
+>
+> — [Mom and Dad]
+
 ---
 
 ## 2. Josh Pearcy — CFL
@@ -139,6 +157,22 @@
 >
 > &mdash; [your name]
 
+### Parent-forwarded version (text/email, in Mom + Dad's voice)
+
+Copy-paste exactly. Parents send to Papale directly.
+
+> Vince — hope you're doing well.
+>
+> Wanted to tell you what our son Mitchell is building. He's made a stretching machine for elite programs that measures every rep in real time — range of motion, force, side-to-side asymmetry. His thesis is that soft-tissue injuries are the #1 reason athletes lose games, and nobody is measuring the thing that actually predicts them.
+>
+> He's raising a seed round. The read he wants from you isn't as a buyer — it's whether the mission resonates at the level you know. And if it does, a single sentence from you to the right Eagles performance person would go further than any cold call he could ever make.
+>
+> modulor.bio/pitch if you want to take a look. He's at (609) 760-1238 anytime.
+>
+> Appreciate you Vince. Always a fan.
+>
+> — [Mom and Dad]
+
 ---
 
 # After You Send
@@ -170,7 +204,7 @@ First sends went out **Tue Apr 22 2026.** Both contacts are warm (existing relat
 | Firm | Contact | Role | Channel | Sent | Status | Bump trigger | Positioning |
 |---|---|---|---|---|---|---|---|
 | **KAS Venture Partners** | **Richard Xie** | (role TBD) | iMessage | Apr 22, ~3:55 PM | Acknowledged; "will look thru in the next few days, a little slammed" | **Tue Apr 28 AM** — Richard explicitly invited a bump "by top of next week" if he hasn't replied | First-seed-check target. Most aligned for initial investment. |
-| **Companyon Ventures** | (director — name TBD) | Director | (channel TBD) | Apr 22 | Sent | +7 days if silent | Series A–focused (Boston/NY/LA, software+AI). Target engagement: feedback + relationship-building for Series B. |
+| **Companyon Ventures** | **Andrew Berg** | Director | (channel TBD) | Apr 22 | Sent | +7 days if silent → Tue Apr 29 | Series A–focused (Boston/NY/LA, software+AI). Target engagement: feedback + relationship-building for Series B. |
 
 ## Richard Xie · KAS — context & handling
 
@@ -206,8 +240,10 @@ Richard already flagged the family concentration. Two brothers + one cousin on c
 ### Availability reset — ✅ handled live
 Mitchell snuck "phone works zero notice always of course too" into the personal-catch-up reply at 6:08 PM. Clean recovery. No further reset needed.
 
-## Companyon — context & handling
+## Andrew Berg · Companyon — context & handling
 
+- **Director at Companyon Ventures.** Focus: Series A software + AI across Boston / NY / LA. companyon.vc.
 - **Goal is NOT a check now.** Companyon writes Series A; we're in the feedback + relationship phase for Series B.
 - **Frame the follow-up as:** "Not asking for a Series A check — asking for the read from someone who'll see us at Series B, so I can build toward your bar."
-- **Bump plan +7 days** if silent.
+- **Bump plan Tue Apr 29** (7 days post-send) if silent. Short, relationship-oriented nudge — not a sales follow-up.
+- **What a good outcome looks like:** 30-min intro call by mid-May. Exchange: Andrew gives early-read feedback, Mitchell gets a Series A-caliber reference point for the v2.x deck. Relationship warms over 12–18 months into the Series B conversation.
