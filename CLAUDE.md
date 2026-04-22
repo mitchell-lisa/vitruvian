@@ -164,7 +164,7 @@ When drafting emails on his behalf: short paragraphs, plain language, no corpora
 ### Fundraise
 - **Deck:** Live at `modulor.bio/pitch`. Team slide: Mitchell + Luke + Andrew + Adam (advisor). Family photo removed. Adam's deck fixes applied.
 - **Investor outreach — first sends out Apr 22 2026:**
-  - **KAS Venture Partners — Richard Xie** (warm iMessage, ~3:55 PM Apr 22). First-seed-check target. Richard acknowledged same afternoon: "will look thru in the next few days, a little slammed." Explicitly invited a bump "by top of next week." **Bump trigger: Tue Apr 28 AM.** kasventurepartners.com.
+  - **KAS Venture Partners — Richard Xie** (warm iMessage, ~3:55 PM Apr 22). First-seed-check target. Same evening ~6:00 PM Richard **opened the deck and offered a live meeting** (phone or beer) once he's read + sent questions. Flagged wheelhouse uncertainty candidly + asked "family biz?" (see outreach.md for practiced 3-beat response on family-concentration). **Original Apr 28 bump trigger is obsolete — Richard now drives cadence; respond fast when his questions land.** kasventurepartners.com.
   - **Companyon Ventures** (director contact — name TBD) — Series A–focused (Boston/NY/LA, software + AI). Positioned for **feedback + relationship-building, target engagement for Series B**. companyon.vc.
 - Full VC log + handling notes in `private/outreach.md` (new "VC Outreach Log — Seed" section).
 
