@@ -92,12 +92,27 @@ path. Rationale:
 
 ## Follow-up actions
 
-- [ ] Download executed RSPA and any IP assignment language from Atlas;
-      save to `private/formation/` after signing
-- [ ] Confirm Atlas files the **83(b) election via certified mail** within
-      30 days of grant — verify on the 83(b) Election step
-- [ ] Once Luke countersigns his role memo, add him as second founder via
-      Atlas's "add co-founder within 30 days of formation" flow; his 5%
-      comes from Mitchell's 88%, leaving Mitchell at 83%
-- [ ] Issue Adam Evans a Gold-tier FAST advisor agreement (0.50% from the
-      pool) after company is formed and operational
+> This section reflects status as of April 23, 2026 (updated from the
+> original April 20 formation-day checklist). The decision record above
+> is preserved as-written.
+
+- [x] Atlas default IP-as-consideration accepted; no separate IP assignment
+      executed. Decision is final as documented above.
+- [x] 83(b) handling confirmed with Atlas (Apr 23): Atlas mails via USPS
+      Certified within 30 days of each grant. Mitchell's founder 83(b)
+      postmark by May 6. Luke + Andrew RSPA 83(b) elections auto-filed by
+      Atlas post-EIN as part of the RSPA issuance flow — no separate
+      action required by each founder.
+- [ ] Download executed RSPA + IP assignment language from Atlas once
+      delivered; save to `private/formation-docs/` after signing (gitignored).
+- [ ] Luke's RSPA — 500,000 common (5%, from Mitchell's 88% → 83%).
+      Verbally accepted Apr 21, 2026. Executes post-EIN.
+- [ ] Andrew's RSPA — 500,000 common (5%, from Mitchell's 83% → 78%).
+      Verbally accepted Apr 21, 2026. Executes post-EIN.
+- [ ] Adam Evans — 100,000 NQSOs (1.0%, FAST Platinum, from pool → 11%
+      remaining). Verbally accepted Apr 22, 2026. Executes post-EIN.
+      (Upgraded from FAST Gold 0.5% on strength of the verbal-acceptance
+      call — PhD, 25 yrs teaching entrepreneurship, 8 yrs CSO at DoD-
+      serving mil-tech startup, AFWERX/SOFWERX judge.)
+- [ ] Patent reassignment Mitchell → Modulor, Inc. — executes post-EIN
+      before first investor check.
