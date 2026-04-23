@@ -12,7 +12,9 @@
 | Structure | Delaware C Corporation |
 | State of incorporation | Delaware |
 | Formation date | April 20, 2026 |
-| EIN | *(pending — expected 1–2 business days post-filing)* |
+| Delaware file number | 10592524 |
+| EIN | 42-2107337 *(issued by IRS, confirmed via Stripe Atlas Apr 23, 2026)* |
+| Registered agent | Legalinc Corporate Services Inc., 131 Continental Dr, Suite 305, Newark, DE 19713 *(active through Apr 20, 2027; auto-renews 28 days before incorporation anniversary)* |
 
 ## Business Contact
 
@@ -95,6 +97,8 @@ Use this on every public-facing document: bank account, pitch deck footer, contr
 ## 83(b) Election
 
 Filed by Stripe Atlas via certified mail within 30 days of formation. Critical — do not miss this window. Keep the postal receipt with company records.
+
+**Status (Apr 23, 2026):** Stripe Atlas confirmed filing is queued — expected postmark **May 4, 2026** (Atlas dashboard shows buffer to May 6). 30-day window from formation (Apr 20) closes **May 20, 2026**. Save the stamped copy + USPS tracking receipt to `private/formation-docs/` once returned.
 
 ## Intellectual Property Contributed at Formation
 
