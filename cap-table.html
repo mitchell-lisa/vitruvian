@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="modulor-icon.png">
+<title>Modulor — Capitalization</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="ui.css">
+<script src="nda-gate.js" defer></script>
+<style>
+  main.ui-page { padding-top: 110px; }
+
+  .ct-meta-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin:24px 0 48px; }
+  .ct-meta { padding:14px 16px; background:var(--bg-card); border:1px solid var(--rule); border-radius:6px; }
+  .ct-meta-label { font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:var(--ink-dim); font-family:'SF Mono',Menlo,monospace; margin-bottom:6px; }
+  .ct-meta-value { font-size:14px; color:var(--ink-bright); font-weight:500; }
+  .ct-meta-value .pending { color:var(--blue); font-weight:400; }
+
+  .ct-section { margin-top: 56px; }
+  .ct-section h2 { font-size:12px; text-transform:uppercase; letter-spacing:0.14em; color:var(--ink-bright); font-weight:600; margin-bottom:6px; }
+  .ct-section-sub { font-size:13px; color:var(--ink-dim); margin-bottom:18px; }
+
+  .ct-bar { display:flex; width:100%; height:28px; border-radius:4px; overflow:hidden; margin-bottom:16px; border:1px solid var(--rule); }
+  .ct-bar-seg { display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:600; color:#0a0a0a; }
+  .ct-bar-seg-mitchell { background:#3D7A5A; }
+  .ct-bar-seg-luke     { background:#5E7485; }
+  .ct-bar-seg-andrew   { background:#7B9AB5; }
+  .ct-bar-seg-adam     { background:#A78BFA; }
+  .ct-bar-seg-pool     { background:#444; color:var(--ink); }
+
+  table.ct-table { width:100%; border-collapse:collapse; margin-top:8px; }
+  .ct-table th, .ct-table td { padding:12px 14px; text-align:left; border-bottom:1px solid var(--rule); font-size:13px; }
+  .ct-table th { font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:var(--ink-dim); font-weight:600; font-family:'SF Mono',Menlo,monospace; background:transparent; }
+  .ct-table td.num { font-family:'SF Mono',Menlo,monospace; text-align:right; color:var(--ink-bright); }
+  .ct-table td.pct { font-family:'SF Mono',Menlo,monospace; text-align:right; color:var(--ink-bright); font-weight:600; }
+  .ct-table tfoot td { font-weight:600; color:var(--ink-bright); border-top:1px solid var(--rule-bright); border-bottom:none; }
+  .ct-swatch { display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:8px; vertical-align:middle; }
+
+  .ct-note { margin-top:16px; padding:14px 18px; background:rgba(94,116,133,0.08); border:1px solid rgba(94,116,133,0.2); border-radius:5px; font-size:13px; color:var(--ink); line-height:1.7; }
+  .ct-note strong { color:var(--ink-bright); }
+
+  .ct-terms { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; margin-top:12px; }
+  .ct-term { padding:14px 16px; background:var(--bg-card); border:1px solid var(--rule); border-radius:5px; }
+  .ct-term-label { font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:var(--ink-dim); margin-bottom:6px; font-family:'SF Mono',Menlo,monospace; }
+  .ct-term-value { font-size:14px; color:var(--ink); line-height:1.5; }
+
+  .ct-status-row { display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px solid var(--rule); font-size:13px; }
+  .ct-status-row:last-child { border-bottom:none; }
+  .ct-status-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+  .ct-status-dot.pending { background:var(--blue); }
+  .ct-status-dot.done { background:var(--teal); }
+  .ct-status-label { flex:1; color:var(--ink); }
+  .ct-status-state { font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-dim); font-family:'SF Mono',Menlo,monospace; }
+
+  @media (max-width: 640px) {
+    .ct-table th, .ct-table td { padding:10px 8px; font-size:12px; }
+    .ct-bar { height:24px; }
+    .ct-bar-seg { font-size:10px; }
+  }
+</style>
+</head>
+<body data-nda-cta="View Capitalization">
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo">
+      <img src="modulor-wordmark.png" alt="Modulor">
+    </div>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="pitch.html" class="nav-link">Deck</a>
+      <a href="product.html" class="nav-link">Product</a>
+      <a href="hub.html" class="nav-link">Data Room</a>
+      <a href="feedback.html" class="nav-cta">Contact</a>
+    </div>
+    <button class="nav-hamburger" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<main class="ui-page">
+
+  <div class="ui-eyebrow">Capitalization</div>
+  <h1 class="ui-h1">Cap Table — at formation, post planned grants.</h1>
+  <p class="ui-sub">Pre-investment snapshot. Figures reflect Mitchell's founder stock plus Luke, Andrew, and Adam grants approved at formation. Subject to final execution pending EIN issuance.</p>
+
+  <!-- ENTITY META -->
+  <div class="ct-meta-grid">
+    <div class="ct-meta">
+      <div class="ct-meta-label">Entity</div>
+      <div class="ct-meta-value">Modulor, Inc.</div>
+    </div>
+    <div class="ct-meta">
+      <div class="ct-meta-label">Structure</div>
+      <div class="ct-meta-value">Delaware C-Corporation</div>
+    </div>
+    <div class="ct-meta">
+      <div class="ct-meta-label">Filing Date</div>
+      <div class="ct-meta-value">April 20, 2026 <span class="pending">(via Stripe Atlas)</span></div>
+    </div>
+    <div class="ct-meta">
+      <div class="ct-meta-label">Incorporation</div>
+      <div class="ct-meta-value"><span class="pending">Pending DE Secretary of State</span></div>
+    </div>
+    <div class="ct-meta">
+      <div class="ct-meta-label">EIN</div>
+      <div class="ct-meta-value"><span class="pending">Pending IRS</span></div>
+    </div>
+    <div class="ct-meta">
+      <div class="ct-meta-label">Authorized Shares</div>
+      <div class="ct-meta-value">10,000,000 common · $0.00001 par</div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: AT FORMATION -->
+  <div class="ct-section">
+    <h2>01 · At formation</h2>
+    <p class="ct-section-sub">Founder stock + initial equity pool. Documented in the Delaware filing.</p>
+
+    <div class="ct-bar">
+      <div class="ct-bar-seg ct-bar-seg-mitchell" style="width:88%;">Mitchell · 88%</div>
+      <div class="ct-bar-seg ct-bar-seg-pool" style="width:12%;">Pool · 12%</div>
+    </div>
+
+    <table class="ct-table">
+      <thead>
+        <tr><th>Holder</th><th>Instrument</th><th style="text-align:right;">Shares</th><th style="text-align:right;">%</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="ct-swatch" style="background:#3D7A5A;"></span>Mitchell Lisa <span style="color:var(--ink-dim); font-size:12px;">(founder)</span></td>
+          <td>Common</td>
+          <td class="num">8,800,000</td>
+          <td class="pct">88.0%</td>
+        </tr>
+        <tr>
+          <td><span class="ct-swatch" style="background:#444;"></span>Equity Pool <span style="color:var(--ink-dim); font-size:12px;">(unissued)</span></td>
+          <td>Common reserved</td>
+          <td class="num">1,200,000</td>
+          <td class="pct">12.0%</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr><td>Total</td><td></td><td class="num">10,000,000</td><td class="pct">100.0%</td></tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <!-- SECTION 2: POST PLANNED GRANTS -->
+  <div class="ct-section">
+    <h2>02 · Post planned grants (fully diluted)</h2>
+    <p class="ct-section-sub">Co-founder RSPAs (Luke, Andrew) issued from founder stock. Adam advisor options granted from pool.</p>
+
+    <div class="ct-bar">
+      <div class="ct-bar-seg ct-bar-seg-mitchell" style="width:78%;">Mitchell · 78%</div>
+      <div class="ct-bar-seg ct-bar-seg-luke" style="width:5%;">Luke · 5%</div>
+      <div class="ct-bar-seg ct-bar-seg-andrew" style="width:5%;">Andrew · 5%</div>
+      <div class="ct-bar-seg ct-bar-seg-adam" style="width:1%;"></div>
+      <div class="ct-bar-seg ct-bar-seg-pool" style="width:11%;">Pool · 11%</div>
+    </div>
+
+    <table class="ct-table">
+      <thead>
+        <tr><th>Holder</th><th>Instrument</th><th style="text-align:right;">Shares</th><th style="text-align:right;">%</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="ct-swatch" style="background:#3D7A5A;"></span>Mitchell Lisa <span style="color:var(--ink-dim); font-size:12px;">(founder, CEO)</span></td>
+          <td>Common</td>
+          <td class="num">7,800,000</td>
+          <td class="pct">78.0%</td>
+        </tr>
+        <tr>
+          <td><span class="ct-swatch" style="background:#5E7485;"></span>Matthew "Luke" Lisa <span style="color:var(--ink-dim); font-size:12px;">(co-founder, CTO)</span></td>
+          <td>Common RSPA</td>
+          <td class="num">500,000</td>
+          <td class="pct">5.0%</td>
+        </tr>
+        <tr>
+          <td><span class="ct-swatch" style="background:#7B9AB5;"></span>Andrew Lisa <span style="color:var(--ink-dim); font-size:12px;">(co-founder, CFO)</span></td>
+          <td>Common RSPA</td>
+          <td class="num">500,000</td>
+          <td class="pct">5.0%</td>
+        </tr>
+        <tr>
+          <td><span class="ct-swatch" style="background:#A78BFA;"></span>Adam H. Evans, PhD <span style="color:var(--ink-dim); font-size:12px;">(advisor · FAST Platinum)</span></td>
+          <td>Common options</td>
+          <td class="num">100,000</td>
+          <td class="pct">1.0%</td>
+        </tr>
+        <tr>
+          <td><span class="ct-swatch" style="background:#444;"></span>Equity Pool <span style="color:var(--ink-dim); font-size:12px;">(remaining)</span></td>
+          <td>Common reserved</td>
+          <td class="num">1,100,000</td>
+          <td class="pct">11.0%</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr><td>Fully diluted</td><td></td><td class="num">10,000,000</td><td class="pct">100.0%</td></tr>
+      </tfoot>
+    </table>
+
+    <div class="ct-note"><strong>Voting + control.</strong> Mitchell retains 78% of common post-grants, which preserves voting majority through Series A at minimum. Sole director at formation. First additional board seat goes to the lead investor in the seed round.</div>
+  </div>
+
+  <!-- SECTION 3: VESTING + TERMS -->
+  <div class="ct-section">
+    <h2>03 · Vesting &amp; terms</h2>
+    <p class="ct-section-sub">All founder common and advisor options on standard Silicon Valley structure.</p>
+
+    <div class="ct-terms">
+      <div class="ct-term">
+        <div class="ct-term-label">Founder vesting</div>
+        <div class="ct-term-value">4-year schedule, 1-year cliff (25% at month 12, then monthly). Applies to Mitchell, Luke, Andrew.</div>
+      </div>
+      <div class="ct-term">
+        <div class="ct-term-label">Advisor vesting</div>
+        <div class="ct-term-value">2-year monthly schedule, no cliff. Applies to Adam (FAST Platinum).</div>
+      </div>
+      <div class="ct-term">
+        <div class="ct-term-label">Vesting start</div>
+        <div class="ct-term-value">Date of incorporation for founders. Grant date for Adam's options.</div>
+      </div>
+      <div class="ct-term">
+        <div class="ct-term-label">Acceleration</div>
+        <div class="ct-term-value">Double trigger — acquisition plus involuntary termination within 12 months.</div>
+      </div>
+      <div class="ct-term">
+        <div class="ct-term-label">Share consideration</div>
+        <div class="ct-term-value">Intellectual property contributed at formation (Atlas default). Clean chain of title.</div>
+      </div>
+      <div class="ct-term">
+        <div class="ct-term-label">83(b) elections</div>
+        <div class="ct-term-value">Filed by Atlas within 30 days of each RSPA execution. Critical window tracked.</div>
+      </div>
+      <div class="ct-term">
+        <div class="ct-term-label">Options strike</div>
+        <div class="ct-term-value">409A fair market value at grant date. Non-qualified stock options for Adam.</div>
+      </div>
+      <div class="ct-term">
+        <div class="ct-term-label">Termination</div>
+        <div class="ct-term-value">Advisor: 30 days' notice either party; unvested ceases. Founder: repurchase at par on unvested shares.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: EXECUTION STATUS -->
+  <div class="ct-section">
+    <h2>04 · Execution status</h2>
+    <p class="ct-section-sub">What is filed, verbally accepted, or pending final paperwork.</p>
+
+    <div>
+      <div class="ct-status-row">
+        <div class="ct-status-dot done"></div>
+        <div class="ct-status-label">Mitchell founder common (8,800,000 shares)</div>
+        <div class="ct-status-state">Filed in DE via Atlas</div>
+      </div>
+      <div class="ct-status-row">
+        <div class="ct-status-dot done"></div>
+        <div class="ct-status-label">Luke — co-founder terms verbally accepted Apr 21, 2026</div>
+        <div class="ct-status-state">Verbal · RSPA pending EIN</div>
+      </div>
+      <div class="ct-status-row">
+        <div class="ct-status-dot done"></div>
+        <div class="ct-status-label">Andrew — co-founder terms verbally accepted Apr 21, 2026</div>
+        <div class="ct-status-state">Verbal · RSPA pending EIN</div>
+      </div>
+      <div class="ct-status-row">
+        <div class="ct-status-dot done"></div>
+        <div class="ct-status-label">Adam — advisor terms verbally accepted Apr 22, 2026</div>
+        <div class="ct-status-state">Verbal · FAST Platinum pending EIN</div>
+      </div>
+      <div class="ct-status-row">
+        <div class="ct-status-dot pending"></div>
+        <div class="ct-status-label">Delaware Certificate of Incorporation</div>
+        <div class="ct-status-state">Pending issuance</div>
+      </div>
+      <div class="ct-status-row">
+        <div class="ct-status-dot pending"></div>
+        <div class="ct-status-label">IRS Employer Identification Number</div>
+        <div class="ct-status-state">Pending (filed Apr 20)</div>
+      </div>
+      <div class="ct-status-row">
+        <div class="ct-status-dot pending"></div>
+        <div class="ct-status-label">Luke + Andrew RSPAs + 83(b) elections</div>
+        <div class="ct-status-state">Drafted · executes on EIN</div>
+      </div>
+      <div class="ct-status-row">
+        <div class="ct-status-dot pending"></div>
+        <div class="ct-status-label">Adam FAST Platinum option agreement</div>
+        <div class="ct-status-state">Drafts ready · executes on EIN</div>
+      </div>
+      <div class="ct-status-row">
+        <div class="ct-status-dot pending"></div>
+        <div class="ct-status-label">Patent reassignment Mitchell → Modulor, Inc.</div>
+        <div class="ct-status-state">Executes on EIN</div>
+      </div>
+    </div>
+
+    <div class="ct-note" style="margin-top:24px;"><strong>Timing.</strong> Delaware filing and EIN issuance are expected within the current week. All grants execute in sequence once EIN lands. Full formation paperwork (Certificate of Incorporation, Bylaws, Board Consent, Stockholder Consent, RSPAs, 83(b) stamped copies, EIN letter) will be added to this data room upon receipt.</div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-logo">
+      <img src="modulor-wordmark.png" alt="Modulor">
+    </div>
+    <p class="copyright">2026 Modulor. Actuarial infrastructure for musculoskeletal injury risk.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn = document.getElementById('navToggle');
+  if (!btn) return;
+  function close() {
+    document.body.classList.remove('nav-open');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'Open menu');
+  }
+  btn.addEventListener('click', function() {
+    var open = document.body.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  document.querySelectorAll('.nav-links .nav-link, .nav-links .nav-cta').forEach(function(el) {
+    el.addEventListener('click', close);
+  });
+})();
+</script>
+</body>
+</html>
