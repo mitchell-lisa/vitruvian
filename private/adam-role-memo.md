@@ -15,12 +15,14 @@ starting point, not a position.
 
 ## Role
 
-**Title:** Strategic Advisor · SOF + DoD
+**Title:** Strategic Advisor · DoD + Mil-Tech
 
 **Scope.**
 
-- SOF community intros and credibility — warm access into training cadres,
-  operator squadrons, and the strategic-advisor circles around USSOCOM
+- DoD-adjacent community intros — via your 6+ yrs Intel & Comms in Air
+  Force / Space Forces, your Pentagon-era network, and your current
+  manual-therapy professional network (which touches SOF operators,
+  Veterans, first responders, and US Olympic athletes as patients)
 - DoD pathway gut-check — AFWERX/SOFWERX, DIU, SBIR Phase I/II — based on
   your 8 yrs as Chief Strategy Officer running exactly this motion
 - Regulatory/clinical positioning — your seat on the FSMTB-MBLEX EDC is
@@ -89,8 +91,8 @@ you're below the hours target, we renegotiate. If you're above, we talk.
 
 ## First 30 days — what we'd like from you
 
-1. Two specific SOF-community intros you'd make in the next 30 days
-   (names, units)
+1. Two specific DoD / mil-adjacent community intros you'd make in the
+   next 30 days (names, units, or professional-network contacts)
 2. Review the investor deck end-to-end once more, red-flag any remaining
    claims on injury prediction timelines or medical positioning
 3. Name the 2 most viable pilot sites near NSCA / Colorado Springs that

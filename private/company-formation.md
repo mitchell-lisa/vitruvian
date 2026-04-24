@@ -15,6 +15,7 @@
 | Delaware file number | 10592524 |
 | EIN | 42-2107337 *(issued by IRS, confirmed via Stripe Atlas Apr 23, 2026)* |
 | Registered agent | Legalinc Corporate Services Inc., 131 Continental Dr, Suite 305, Newark, DE 19713 *(active through Apr 20, 2027; auto-renews 28 days before incorporation anniversary)* |
+| 83(b) (Mitchell founder stock) | Atlas mailing via USPS Certified; expected postmark May 4 (buffer to May 6) |
 
 ## Business Contact
 
