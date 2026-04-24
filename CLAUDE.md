@@ -121,7 +121,7 @@ When drafting emails on his behalf: short paragraphs, plain language, no corpora
 | `README.md` | Public site map |
 | `private/company-formation.md` | Entity, cap table, officer roles, legal checklist |
 | `private/execution-tracker.md` | Who's on paper vs. not — RSPA/83(b)/NDA/SAFE execution state + T-minus deadlines |
-| `private/legal-templates/README.md` | Source-of-truth index for RSPA/FAST/NDA/SAFE templates (Clerky, YC, FI) |
+| `private/legal-templates/README.md` | Source-of-truth index for RSPA/FAST/NDA/SAFE — counsel vs. free-template options |
 | `private/finances.md` | Formation costs, recurring, $3M seed budget, burn |
 | `private/luke-role-memo.md` | Luke's title, equity, vesting |
 | `private/andrew-role-memo.md` | Andrew's title, equity, vesting |
@@ -143,7 +143,7 @@ When drafting emails on his behalf: short paragraphs, plain language, no corpora
 - **Bank:** Mercury / Brex — **UNBLOCKED.** Mercury application submitted Apr 24. Reimburse $1,088 Amex once account funded.
 - **Patent:** VITR-001 provisional filed. 12-month non-provisional conversion clock running. **Assignment from Mitchell → Modulor, Inc. now unblocked — execute before first investor check.**
 - **NDA:** Click-wrap live on `/pitch` (one-way). **Mutual NDA template pending** for vendors, Adam pre-FAST disclosure, and 1:1 investor diligence — source from YC docs or Atlas Plus.
-- **RSPAs (Luke, Andrew):** **Atlas does not have a post-formation founder-addition flow** (confirmed Apr 24 2026 — Atlas dashboard shows RSPA for Mitchell only, $88 for 8.8M shares at par). Path: Clerky (~$500/RSPA) or Atlas Plus partner firm ($2–5K). Mechanism = company repurchase of 1M shares from Mitchell at par + contemporaneous reissuance with vesting to Luke (500K) + Andrew (500K). Preserves Mitchell QSBS clock; fresh clocks for Luke + Andrew. See `private/execution-tracker.md`.
+- **RSPAs (Luke, Andrew):** **No self-serve platform works** — Atlas self-serve is single-founder-at-formation only; Clerky won't onboard Atlas-formed entities (they only manage equity for companies they incorporated). Confirmed Apr 24 2026. **Outside counsel is the only path.** Ranked: (1) ask Richard Xie for KAS portfolio counsel rec before the May beer meeting, (2) Atlas Plus ($500/yr) → Cooley/Orrick/Gunderson partner firm, $2–5K, (3) Lowenstein Sandler (NJ-local), (4) Founders Legal (remote fixed-fee). Mechanism = company repurchase of 1M shares from Mitchell at par + contemporaneous reissuance with vesting to Luke (500K) + Andrew (500K). Preserves Mitchell QSBS clock; fresh clocks for Luke + Andrew. See `private/execution-tracker.md` and `private/legal-templates/README.md`.
 - **Advisor agreement (Adam):** FAST Platinum template from `fi.co/fast`. Strike at par/de minimis pre-409A; document board good-faith determination. Sequence: mutual NDA first, FAST Platinum second, board consent third.
 - **Investor agreements:** YC post-money SAFE from `ycombinator.com/documents`. Andrew (CFO) red-lines every instance before Mitchell signs.
 - **Trademark:** Not filed. USPTO Classes 9, 10, 41. ~$700–1,050 self-file. Now fileable under Modulor, Inc. / EIN.

@@ -6,11 +6,15 @@ Index of where each standard document comes from. **Downloaded templates themsel
 
 ## RSPAs (Luke, Andrew)
 
-**Primary recommendation: Clerky — `clerky.com`.** ~$500 per RSPA issuance. Template-driven, lawyer-drafted, handles the full package: board consent authorizing repurchase + reissuance, new RSPA with vesting terms, 83(b) form + mailing instructions, stock ledger update.
+**No self-serve platform works here.** Both Atlas and Clerky gate equity management to companies they incorporated. Atlas was the formation vehicle — so Clerky won't onboard us, and Atlas's own RSPA flow is single-founder-at-formation only. The only path is outside counsel.
 
-**Alt: Stripe Atlas Plus partner firms.** $500/yr Atlas Plus subscription unlocks discounted rates (30–50% off) at Cooley, Orrick, Gunderson. Post-formation founder add runs $2–5K through partners. Overkill unless retaining counsel anyway.
+### Ranked options
 
-**Atlas self-serve does NOT cover this.** Atlas's RSPA flow is single-founder-at-formation only.
+1. **Ask Richard Xie (KAS) for portfolio counsel rec.** Free, warm referral. KAS portfolio firms default to Cooley / Orrick / Gunderson tier. Doubles as a concrete touch before the May beer meeting. Suggested text in `CLAUDE.md` state snapshot.
+2. **Stripe Atlas Plus** — $500/yr unlocks 30–50% partner-firm discount at Cooley, Orrick, Gunderson. Post-formation founder-add runs $2–5K. 1–2 week turnaround. Safe + vetted.
+3. **Lowenstein Sandler (Roseland NJ)** — NJ-local startup practice. Direct fixed-fee quote. $1.5–3K range. Good if Mitchell wants local-NJ counsel relationship.
+4. **Founders Legal (Atlanta, fully remote)** — transparent fixed-fee packages, seed-stage focused. Fastest if Richard's rec doesn't land.
+5. **NOT recommended: DIY from Cooley GO (`cooleygo.com/documents`) or Orrick Total Access (`orrick.com/totalaccess`).** Free form libraries exist but equity issuances + vesting + 83(b) + board consents touching founder stock are too consequential for DIY. Cheap to get right with counsel; expensive to fix later.
 
 ### Terms to plug into the template
 
@@ -32,7 +36,7 @@ Pulled from `private/luke-role-memo.md` and `private/andrew-role-memo.md`:
 
 ## 83(b) Election
 
-**Source:** IRS fillable PDF (search "83(b) election form" — the 1-pager) OR included in Clerky/Atlas RSPA package.
+**Source:** IRS fillable PDF (search "83(b) election form" — the 1-pager). Counsel will provide + mailing instructions as part of the RSPA package.
 
 Each recipient mails their own via **USPS Certified Mail** within 30 days of grant. Keep the green card + stamped copy. Save to `private/formation-docs/` when stamped copy returns.
 

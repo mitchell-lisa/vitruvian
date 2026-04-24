@@ -11,14 +11,18 @@ Single source of truth for who's on paper vs. who's not. Cross-reference with `c
 | Holder | Role | Equity | Memo | Legal instrument | Grant date | 83(b) deadline | 83(b) filed | Stamped copy |
 |---|---|---|---|---|---|---|---|---|
 | Mitchell Lisa | CEO · Director | 88% common (→78% post-issuances) | n/a | ✅ RSPA (Atlas) | Apr 20, 2026 | **May 20, 2026** | ⏳ Atlas queued, postmark May 4 (buffer May 6) | ⏳ Awaiting return from Atlas |
-| Andrew Lisa | Co-Founder · CFO | 5% common (RSPA from Mitchell) | ✅ Verbal accept Apr 21 | ❌ Pending — Clerky/Atlas Plus flow | TBD (target this week) | Grant + 30 days | — | — |
-| Matthew Lucas Lisa ("Luke") | Co-Founder · CTO | 5% common (RSPA from Mitchell) | ✅ Verbal accept Apr 21 | ❌ Pending — blocked on Colonel signature | TBD (Wed Apr 29 earliest) | Grant + 30 days | — | — |
+| Andrew Lisa | Co-Founder · CFO | 5% common (RSPA from Mitchell) | ✅ Verbal accept Apr 21 | ❌ Pending — **needs outside counsel** (Atlas + Clerky both post-formation gated) | TBD | Grant + 30 days | — | — |
+| Matthew Lucas Lisa ("Luke") | Co-Founder · CTO | 5% common (RSPA from Mitchell) | ✅ Verbal accept Apr 21 | ❌ Pending — outside counsel + Colonel signature | TBD (Wed Apr 29 earliest) | Grant + 30 days | — | — |
 | Adam H. Evans | Strategic Advisor — DoD + Mil-Tech | 1% common options (FAST Platinum) | ✅ Verbal accept Apr 22 | ❌ Pending — FAST Platinum template + mutual NDA first | TBD (target week of May 4) | n/a (options) | n/a | n/a |
 
 ### Mechanism notes
 
 - **Luke + Andrew RSPAs = founder-to-founder transfer.** Company repurchases 1M shares from Mitchell at par ($10), reissues as two 500K RSPAs with vesting. Preserves Mitchell's QSBS on remaining 7.8M (clock from Apr 20, 2026). Luke + Andrew get fresh QSBS clocks from grant date.
-- **Atlas does NOT have a founder-addition flow.** Execute via Clerky (~$500/RSPA) or Atlas Plus partner firm (Cooley/Orrick/Gunderson, $2–5K).
+- **No self-serve path exists.** Atlas self-serve is single-founder-at-formation only. **Clerky won't onboard Atlas-formed entities** (they only manage equity for companies they incorporated). The only path is outside counsel. Ranked options:
+  1. **Ask Richard Xie for KAS portfolio counsel rec** — doubles as a warm touch before May beer meeting
+  2. **Atlas Plus ($500/yr) → partner firm** (Cooley / Orrick / Gunderson), $2–5K, 1–2 week turnaround
+  3. **Direct outside startup counsel** — Lowenstein Sandler (NJ-local) or Founders Legal (remote, fixed-fee) — $1.5–3K
+  4. **NOT recommended: DIY from Cooley GO / Orrick Total Access forms** — cheap to get right with counsel, expensive to fix later
 - **Adam = options from the 12% pool.** No 83(b). Strike = FMV at grant; pre-409A the board documents a good-faith determination at par or de minimis. Re-up with 409A before first priced round.
 
 ### Luke's legal name (for all paper)
