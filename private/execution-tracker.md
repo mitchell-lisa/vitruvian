@@ -20,9 +20,9 @@ Single source of truth for who's on paper vs. who's not. Cross-reference with `c
 - **Luke + Andrew RSPAs = founder-to-founder transfer.** Company repurchases 1M shares from Mitchell at par ($10), reissues as two 500K RSPAs with vesting. Preserves Mitchell's QSBS on remaining 7.8M (clock from Apr 20, 2026). Luke + Andrew get fresh QSBS clocks from grant date.
 - **No self-serve path exists.** Atlas self-serve is single-founder-at-formation only. **Clerky won't onboard Atlas-formed entities** (they only manage equity for companies they incorporated). The only path is outside counsel. Ranked options (Apr 24):
   1. ~~Richard Xie / KAS portfolio counsel~~ — **dead path**. Confirmed Apr 24: KAS is hands-off, no portfolio counsel referrals.
-  2. **Dad's lawyer (IF corporate/startup/securities practice).** Gate: confirm practice area first. If yes → engage. If no → skip.
-  3. **Atlas Plus ($500/yr) → partner firm** (Cooley / Orrick / Gunderson), $2–5K, 1–2 week turnaround. Default fallback.
-  4. **Direct outside startup counsel** — Lowenstein Sandler (NJ-local) or Founders Legal (remote, fixed-fee) — $1.5–3K. Only if 2 + 3 both fail.
+  2. ~~Dad's lawyer (Kirk Pavoni, D'Elia Law Firm LLC)~~ — **dead path**. Confirmed Apr 24: D'Elia is general civil / real estate / commercial litigation / land use / municipal court — South Jersey practice. Not corporate/securities. Wrong tool for Delaware C-corp founder equity issuances.
+  3. **Atlas Plus ($500/yr) → partner firm** (Cooley / Orrick / Gunderson), $2–5K, 1–2 week turnaround. **Default path — execute Monday Apr 27 AM.**
+  4. **Direct outside startup counsel** — Lowenstein Sandler (NJ-local) or Founders Legal (remote, fixed-fee) — $1.5–3K. Only if Atlas Plus partners decline or quote above budget.
   5. **NOT recommended: DIY from Cooley GO / Orrick Total Access forms** — cheap to get right with counsel, expensive to fix later (QSBS + 83(b) + securities compliance).
 - **Adam = options from the 12% pool.** No 83(b). Strike = FMV at grant; pre-409A the board documents a good-faith determination at par or de minimis. Re-up with 409A before first priced round.
 

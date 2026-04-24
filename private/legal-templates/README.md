@@ -10,11 +10,11 @@ Index of where each standard document comes from. **Downloaded templates themsel
 
 ### Ranked options (Apr 24)
 
-1. ~~Richard Xie / KAS portfolio counsel rec~~ — **dead path.** Confirmed Apr 24: KAS is hands-off, no portfolio counsel referrals, doesn't tell founders what to do. Path closed.
-2. **Dad's lawyer (IF corporate/startup/securities practice).** Pre-gate: confirm name/firm/practice area. If corporate/startup → engage for self-draft + review ($1–2K) or full-draft ($3–5K). If not corporate → skip.
-3. **Stripe Atlas Plus — default fallback.** $500/yr unlocks 30–50% partner-firm discount at Cooley, Orrick, Gunderson. Post-formation founder-add runs $2–5K. 1–2 week turnaround. Safe + vetted.
-4. **Lowenstein Sandler (Roseland NJ)** — NJ-local startup practice. Only if 2 + 3 both fail.
-5. **Founders Legal (Atlanta, fully remote)** — transparent fixed-fee packages, seed-stage focused. Only if 2 + 3 both fail.
+1. ~~Richard Xie / KAS portfolio counsel rec~~ — **dead path.** Confirmed Apr 24: KAS is hands-off, no portfolio counsel referrals.
+2. ~~Dad's lawyer (Kirk Pavoni, D'Elia Law Firm LLC)~~ — **dead path.** Confirmed Apr 24: D'Elia is general civil / real estate / commercial litigation / land use / municipal court — South Jersey practice. Not corporate/securities.
+3. **Stripe Atlas Plus — active path.** $500/yr unlocks 30–50% partner-firm discount at Cooley, Orrick, Gunderson. Post-formation founder-add runs $2–5K. 1–2 week turnaround. **Execute Monday Apr 27 AM.**
+4. **Lowenstein Sandler (Roseland NJ)** — NJ-local startup practice. Only if Atlas Plus partners decline or quote above budget.
+5. **Founders Legal (Atlanta, fully remote)** — transparent fixed-fee packages, seed-stage focused. Same condition.
 6. **NOT recommended: DIY from Cooley GO (`cooleygo.com/documents`) or Orrick Total Access (`orrick.com/totalaccess`).** Free form libraries exist but equity issuances + vesting + 83(b) + board consents touching founder stock are too consequential for DIY. Cheap to get right with counsel; expensive to fix later.
 
 ### Terms to plug into the template
