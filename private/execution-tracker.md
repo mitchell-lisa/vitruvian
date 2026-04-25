@@ -47,7 +47,7 @@ Single source of truth for who's on paper vs. who's not. Cross-reference with `c
 | Party | Purpose | NDA type | Status |
 |---|---|---|---|
 | Anyone hitting `/pitch` | Deck preview | Click-wrap (one-way) | ✅ Live, Supabase-logged |
-| Adam Evans | Advisor — pre-hardware/IP disclosure | Mutual | 🟡 Drafted Apr 25 (`private/legal-templates/drafts/Adam-Evans-Mutual-NDA.{md,docx,pdf}`); ready to send via DocuSign |
+| Adam Evans | Advisor — pre-hardware/IP disclosure | Mutual | 🟡 Drafted Apr 25 (`private/legal-templates/drafts/Adam-Evans-Mutual-NDA.{md,docx,pdf}`); upload to DocuSign + send |
 | Design/CNC/prototyping vendors (TBD) | Contractor engagements | Mutual | ❌ Template needed |
 | Investor diligence 1:1 (Richard Xie + beyond) | Term-sheet-stage diligence | Mutual | ❌ Send when requested |
 

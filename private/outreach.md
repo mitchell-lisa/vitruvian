@@ -332,8 +332,8 @@ Tracks warm-channel contacts who feed the **3-LOI priority** (one pro team, one 
 |---|---|---|---|---|---|
 | Doug Pederson | Ex-Eagles HC, SB winner | Coach-side validator + Eagles intros | Parent-forward (Mom/Dad) | Drafted, not yet sent | Trigger Mom/Dad forward |
 | Vince Papale | Eagles alum, "Invincible" | Story amplifier + Eagles alumni bridge | Parent-forward (Mom/Dad) | Drafted, not yet sent | Trigger Mom/Dad forward |
-| **Dave Klemic** | Founder, Klemic Performance Method | **Pilot-site candidate + advisor candidate** + NFL Alumni / ISA Football network | **Mitchell direct** (former trainer) | Draft ready (section 7) | Send when Mitchell has the bandwidth for a 20-min call follow-up |
-| **Dave Dudeck** | Bears Southwest Area Scout | **Internal Bears bridge** to Performance Director | **Mitchell direct** (former trainer) | Draft ready (section 8) | Send when Mitchell has the bandwidth for a 20-min call follow-up |
+| **Dave Klemic** | Founder, Klemic Performance Method | **Pilot-site candidate + advisor candidate** + NFL Alumni / ISA Football network | **Mitchell direct** (former trainer) | ✅ Sent Sat Apr 25 2026 | Watch for reply; respond within an hour when it lands |
+| **Dave Dudeck** | Bears Southwest Area Scout | **Internal Bears bridge** to Performance Director | **Mitchell direct** (former trainer) | Draft ready (section 8) | Hold until Klemic engagement plays out + prototype maturity advances (Mitchell decision Apr 25) |
 | Josh Pearcy | CFL | Active player | Direct (existing relationship) | Drafted | TBD |
 | Brevin Jordan | NFL TE, UMiami | Active player + collegiate ties | Direct (existing relationship) | Drafted | TBD |
 | Harrison Rieger | Pro hoops | Cross-sport read | Direct (existing relationship) | Drafted | TBD |
