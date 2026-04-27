@@ -8,21 +8,24 @@ Practice-ready answers to the diligence questions Richard Xie (and future invest
 
 ## 1. "Family biz?" — governance & cap-table concentration
 
+> **Apr 25 2026 update:** Andrew Lisa stepped out of the founding team before any paper executed (verbal-only acceptance Apr 21; verbal withdrawal Apr 25 — `private/andrew-exit-2026-04-25.md`). The cap table no longer reflects two brothers; it's Mitchell + Luke (cousin). The answer below is rewritten for the post-exit reality. Previous version preserved in commit history.
+
 **3-beat, practiced out loud in under 60 seconds:**
 
-1. **Each seat is a merit hire who happens to be family.**
-   - Andrew Lisa (brother, CFO track): UBS Executive Director, 9 years real estate finance. Wharton Economics '16. He'd have gotten the finance seat at any Delaware C-corp I founded. The fact that he's my brother is a trust bonus, not the qualification.
-   - Matthew "Luke" Lisa (cousin, CTO track): 18 years USAF. Former Lead Engineer, Warfighter Training Systems. Former Deputy Chief, Pentagon Integrated Warfare Division. He literally built training hardware for the end-user we're selling to. No outside hire with that profile exists in our network.
+1. **The one family seat is a merit hire who happens to be a cousin.**
+   - Matthew "Luke" Lisa (cousin, CTO): 18 years USAF. Former Lead Engineer, Warfighter Training Systems. Former Deputy Chief, Pentagon Integrated Warfare Division. He literally built training hardware for the end-user we're selling to. No outside hire with that profile exists in our network. He's the founder I'd want on the cap table whether we shared a last name or not.
+   - We had a second family seat tentatively scoped (my brother Andrew, finance lead) — he stepped out before any paper executed when the operational ask got concrete. I'd rather know now than carry someone who isn't going to do the work, and the cap table is cleaner for it. He may participate as a passive investor in the seed round on standard SAFE terms; nothing else implied.
 
 2. **Vesting is the fire mechanism.**
-   - All three of us are on 4-year vest, 1-year cliff, standard company repurchase on unvested shares. Same terms any outside co-founder would get.
-   - I hold 78% post-grants. I control board and voting through Series A minimum. If the business needs someone to go, the mechanism exists and it cuts family the same as anyone.
+   - Both founders on 4-year vest, 1-year cliff, standard company repurchase on unvested shares. Same terms any outside co-founder would get.
+   - I hold 83% post-Luke RSPA — supermajority voting control through Series A and beyond. If the business needs someone to go, the mechanism exists and it cuts family the same as anyone. Andrew's exit is the proof: scope got concrete, fit wasn't there, we parted clean before paper.
 
 3. **Independent governance is already seeded.**
    - Adam H. Evans, PhD — Strategic Advisor. 1.0% FAST Platinum options, 2-year vest. No family relationship. 25 years teaching entrepreneurship (U Kentucky Chair), 8 years CSO at a DoD-serving mil-tech startup. He's the outside voice in every strategic decision today.
+   - Finance discipline runs on outside counsel + Pulley/Carta + a fractional CFO post-close (Burkland / Pilot CFO / Kruze tier) — not on a family-seated CFO. Lower cost, higher signal.
    - First board seat post-seed goes to the lead investor. That's the standard and I'm ready for it.
 
-**Next step forward:** happy to walk through the vesting docs, RSPAs, and Adam's advisor agreement as part of diligence. Full cap table in the data room.
+**Next step forward:** happy to walk through the vesting docs, Luke's RSPA, Adam's advisor agreement, and the post-exit cap table as part of diligence. Full data room available.
 
 ---
 

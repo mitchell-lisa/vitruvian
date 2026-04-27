@@ -4,7 +4,9 @@ Index of where each standard document comes from. **Downloaded templates themsel
 
 ---
 
-## RSPAs (Luke, Andrew)
+## RSPA (Luke)
+
+> **Apr 25 2026 update:** Andrew Lisa stepped out of the founding team before any paper executed. The two-grant Luke + Andrew RSPA plan is now a **single-grant Luke RSPA** (500K shares from Mitchell at par). Mitchell's post-grant ownership goes to 83% (was 78% under the two-grant plan). Andrew's row removed below. See `private/andrew-exit-2026-04-25.md`.
 
 **No self-serve platform works here.** Both Atlas and Clerky gate equity management to companies they incorporated. Atlas was the formation vehicle — so Clerky won't onboard us, and Atlas's own RSPA flow is single-founder-at-formation only. The only path is outside counsel.
 
@@ -19,19 +21,18 @@ Index of where each standard document comes from. **Downloaded templates themsel
 
 ### Terms to plug into the template
 
-Pulled from `private/luke-role-memo.md` and `private/andrew-role-memo.md`:
+Pulled from `private/luke-role-memo.md`:
 
-- Shares: 500,000 common each
-- Purchase price: $0.00001 par × 500,000 = **$5.00 per founder**
+- Shares: 500,000 common (Luke only)
+- Purchase price: $0.00001 par × 500,000 = **$5.00**
 - Vesting: 4-year monthly, 1-year cliff (25% at month 12)
 - Acceleration: double-trigger (change of control + involuntary termination w/in 12 months)
-- Source: company repurchase from Mitchell (1M shares at $10 par), contemporaneous reissuance
-- 83(b): each files own within 30 days of grant date
+- Source: company repurchase from Mitchell (500K shares at $5 par), contemporaneous reissuance to Luke
+- 83(b): Luke files own within 30 days of grant date
 
 ### Parties
 
 - Luke: **Matthew Lucas Lisa** (legal name per ID)
-- Andrew: **Andrew Lisa**
 
 ---
 
@@ -92,7 +93,7 @@ Use for: Adam (pre-FAST), vendor/contractor engagements, any 1:1 investor dilige
 - **Discount:** typical 15–25%; skip if cap is priced right
 - **MFN clause:** optional; protects early investors if later SAFEs get better terms
 
-**Process:** Andrew (CFO) red-lines every SAFE before Mitchell signs. No SAFE goes out without his eyes on it first.
+**Process:** Outside counsel red-lines every SAFE before Mitchell signs (was Andrew's lane pre-Apr 25 exit; reverted to counsel — Atlas Plus partner firm or Lowenstein/Founders Legal). No SAFE goes out without counsel review first.
 
 ---
 

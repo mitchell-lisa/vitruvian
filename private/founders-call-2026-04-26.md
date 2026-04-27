@@ -1,14 +1,16 @@
 # Founders Call — Sun Apr 26, 2026 · 3:00 PM EST
 
-**Attendees:** Mitchell Lisa (CEO) · Matthew "Luke" Lisa (CTO) · Andrew Lisa (CFO)
-**Format:** Phone, target 60–75 min
+**Attendees:** Mitchell Lisa (CEO) · Matthew "Luke" Lisa (CTO)
+**Format:** Phone, target 60 min *(was 60–75 min when Andrew was on the call; trim to ~60 with two)*
 **Owner of agenda:** Mitchell
+
+> **⚠️ Apr 25 update — Andrew Lisa stepped out before paper.** Andrew withdrew via iMessage Apr 25 1:34 PM after Mitchell asked him to start eyeballing Mercury weekly + join this call. Mitchell accepted clean. **Andrew is NOT on this call. Cap table is Mitchell + Luke + Adam (advisor) only.** All Andrew-tagged action items, RSPAs, and finance-lead deliverables are dropped or reverted to Mitchell. See `private/andrew-exit-2026-04-25.md`. The agenda below has been left mostly intact for Luke's read-through, but treat any "Andrew" mention as removed; the **Mitchell + Luke** item in each section is what's live.
 
 ---
 
 ## Pre-call context — read before joining
 
-First strategic alignment call as the three of us on paper. Not a status meeting; foundational. Push back on anything; nothing is final until both/all sign.
+First strategic alignment call as the two of us on paper post-Andrew exit. Not a status meeting; foundational. Push back on anything; nothing is final until both sign.
 
 ### State changes since we last all talked
 
@@ -16,7 +18,7 @@ First strategic alignment call as the three of us on paper. Not a status meeting
 - **Adam Evans onboarded** as Strategic Advisor — DoD + Mil-Tech (FAST Platinum 1.0%, verbal Apr 22). Deck blessed by him after 3 rounds of feedback applied
 - **RSPA execution path:** Atlas + Clerky both confirmed dead (post-formation gating). **Atlas Plus partner firm route (Cooley/Orrick/Gunderson) executes Monday Apr 27 AM** — $2–5K, 1–2 wk turnaround
 - **Cap table platform: Pulley** (free <25 stakeholders, accepts Atlas entities). Mitchell onboarding the company over the weekend
-- **Investor outreach started Apr 22:** Richard Xie / KAS — beer meeting in May, written questions inbound; Andrew Berg / Companyon — Apr 29 bump if silent
+- **Investor outreach started Apr 22:** Richard Xie / KAS — beer meeting in May, written questions inbound; Andrew Berg / Companyon (the Companyon Director, *not* Mitchell's brother) — Apr 29 bump if silent
 - **Luke's USAF off-duty form:** supervisor + JAG verbal cleared Apr 23. **Colonel signature target: Wed Apr 29**
 - **Adam mutual NDA drafted Apr 25**, ready for DocuSign send
 - **Klemic warm outreach sent Apr 25** — pilot-site + NFL alumni network candidate. Dudeck (Bears scout) on hold
@@ -41,14 +43,14 @@ First strategic alignment call as the three of us on paper. Not a status meeting
 - Mil/DoD strategic advisor: 711 HPW (AFRL), Special Warfare wings, operator squadrons — relationships only while active duty
 - SBIR Phase I/II workstream (prior AFRL administrator)
 
-**Andrew — CFO**
-- $3M use-of-funds model (v1 by end of April)
-- Cap table on Pulley (admin once RSPA executes)
-- Mercury operations, monthly burn, runway forecasting
-- SAFE red-line on every investor instrument before Mitchell signs
-- 5–10 hrs/wk capacity, ramps post-seed close
+**Finance / CFO seat — open (was Andrew, stepped out Apr 25)**
+- $3M use-of-funds model (v1 by end of April) — Mitchell carries
+- Cap table on Pulley — Mitchell carries (admin via Pulley + outside counsel)
+- Mercury operations, monthly burn, runway forecasting — Mitchell carries weekly
+- SAFE red-line on every investor instrument — outside counsel (Atlas Plus partner firm)
+- Fractional CFO consideration post-seed close (Burkland / Pilot CFO / Kruze / Graphite) — defer hire to Series A prep
 
-**Decision needed:** any gaps or overlaps? Andrew specifically — anything missing from his role memo that he wants to own?
+**Decision needed (Mitchell + Luke):** confirm "carry it on Mitchell + counsel + Pulley through seed close, fractional CFO at Series A prep" — or argue for replacing the seat sooner. Mitchell's read is do not refill the co-founder slot; Luke's gut check?
 
 ---
 
@@ -69,8 +71,7 @@ First strategic alignment call as the three of us on paper. Not a status meeting
 
 ### 3 · RSPA + 83(b) execution (10 min)
 
-- **Mon Apr 27 AM:** Mitchell upgrades Atlas Plus, requests partner firm. Submits founder-add brief
-- **This week:** Andrew's RSPA prepped (no mil gating)
+- **Mon Apr 27 AM:** Mitchell upgrades Atlas Plus, requests partner firm. Submits founder-add brief — **single-grant Luke RSPA** (was two-grant Luke + Andrew before Apr 25 exit)
 - **Wed Apr 29:** Luke's Colonel signature target → Luke's RSPA executes same day or next
 - **83(b) clock starts at grant date** — each files own, USPS Certified Mail, 30 days
 - **Mitchell's 83(b) hard close: May 20** (Atlas-handled, separate)
@@ -93,7 +94,7 @@ First strategic alignment call as the three of us on paper. Not a status meeting
 | Vince Papale | Eagles alumni; story amplifier | Parent-forward queued |
 | Pearcy / Jordan / Rieger / Knobloch | Pro athletes; cross-sport reads | Drafted, staggered |
 | Richard Xie / KAS | First seed check target | May beer meeting; questions inbound |
-| Andrew Berg / Companyon | Series A relationship for Series B | Apr 29 bump if silent |
+| Andrew Berg / Companyon *(Companyon Director — not Mitchell's brother)* | Series A relationship for Series B | Apr 29 bump if silent |
 
 **Luke's warm channels (DoD + family):**
 
@@ -119,7 +120,7 @@ First strategic alignment call as the three of us on paper. Not a status meeting
 - Hardware prototype build: target demo-ready early summer
 - Engineering hire #1: when, how, who? Likely contracted at first via design firm
 - Adam's first 30-day deliverables (intros, deck red-flag, pilot-site nominations, SBIR gut-check)
-- Andrew's $3M use-of-funds v1 (end of April), data-room skeleton (mid-May)
+- $3M use-of-funds v1 (end of April), data-room skeleton (mid-May) — Mitchell-owned post Andrew exit
 - Luke's deliverables: bio, 2–3 East Coast design/prototyping firms shortlist, DE vs WY read, dad-as-advisor conversation
 - Mitchell's deliverables: continue VC pipeline build (target 5+ warm conversations), trademark filing, D&O quote
 - Patent assignment Mitchell → Modulor, Inc. (execute before first investor check)
@@ -143,12 +144,13 @@ Anything either of you wants to raise that isn't above. No restrictions. Topics 
 1. **Scope split feels right** — yes / no / where to adjust
 2. **Luke = co-founder, not advisor** — confirmed (or pivot)
 3. **Apr 29 Wed RSPA target** — confirmed (or new date)
-4. **Handoff protocol** — Mitchell on customer-buyer convos; Luke on DoD relationships; Andrew on instrument review
+4. **Handoff protocol** — Mitchell on customer-buyer convos; Luke on DoD relationships; Mitchell + outside counsel on instrument review (was Andrew's lane pre-Apr 25 exit)
 5. **90-day priority list** — agreed, or which items move
+6. **Finance-seat decision** — confirm "no replacement co-founder; Mitchell + counsel + Pulley through seed close, fractional CFO at Series A prep" or argue for an alternative
 
 ## Out of scope (handle async after the call)
 
-- Adam's deck v2.1 changes — already live at modulor.bio/pitch; both Luke + Andrew should review independently
+- Adam's deck v2.1 changes — already live at modulor.bio/pitch; Luke should review independently. **Note: Slide 14B team layout collapsed from 4 → 3 cards Apr 25 after Andrew's exit**
 - Patent VITR-001 non-provisional conversion — 12-mo window, executes via counsel
 - Trademark filing — no urgency this week
 - D&O insurance — quote post-RSPA, before first investor check
@@ -165,8 +167,8 @@ Anything either of you wants to raise that isn't above. No restrictions. Topics 
 ## Pre-call reading list (optional but useful)
 
 - `private/luke-role-memo.md` — Luke's current scope on paper
-- `private/andrew-role-memo.md` — Andrew's current scope on paper
-- `private/adam-role-memo.md` — Adam's scope (so both Luke + Andrew know what Adam owns)
+- `private/adam-role-memo.md` — Adam's scope (so Luke knows what Adam owns)
+- `private/andrew-exit-2026-04-25.md` — what happened with Andrew + decisions taken (`private/andrew-role-memo.md` is now historical / TERMINATED)
 - `private/execution-tracker.md` — single-page state of every paper artifact
 - `private/outreach.md` Sections 7 + 8 — Klemic + Dudeck framing
 - `modulor.bio/pitch` — current deck v2.1 (NDA gate, both already provisioned)

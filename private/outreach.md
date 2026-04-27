@@ -20,11 +20,12 @@ Primes the parents with the full picture so they can answer basic questions if D
 >
 > **Who's involved:**
 > - **Me** — founder & CEO.
-> - **Andrew** (my brother) — finance lead, CFO track. Still at UBS for now; transitions as the raise closes. 5% of the company.
 > - **Luke** (my cousin) — engineering lead + military connector. Still on active-duty USAF, 18 years in. 5% of the company.
 > - **Adam Evans** — strategic advisor, just came on board this week. Not family — independent voice. PhD, 25 years teaching entrepreneurship at the university level, 8 years Chief Strategy Officer at a military-tech startup. 1% options.
 >
 > **Where I'm at:** Raising a $3M seed round. First investor contacts got the deck yesterday. Richard Xie at KAS Venture Partners (old friend) opened it within hours, asked for a meeting in May, said he'll send written questions first — real engagement. Second contact is Andrew Berg at Companyon Ventures for the Series B relationship. Need a couple more warm intros to close the round.
+
+*(Apr 25 2026 update: any future re-send of this brief should drop the Andrew Lisa / CFO line entirely — Andrew stepped out before any paper. The Apr 22 version sent to my parents listed him; if Doug or Vince ask, the answer is "Andrew was on the finance side but stepped back before formation paperwork; the team is Mitchell + Luke + Adam." See `private/andrew-exit-2026-04-25.md`.)*
 >
 > **Why Doug and Vince:** I don't want them to buy anything. I want their read — does this clear the bar for a real NFL performance staff? A yes from Doug gets me an intro to a named Head of Performance somewhere. A yes from Vince gets me an Eagles alumni bridge and a public voice when we launch. Either one is worth more than 20 cold investor emails.
 >
@@ -386,11 +387,14 @@ First sends went out **Tue Apr 22 2026.** Both contacts are warm (existing relat
 - **Family-biz answer must be practice-ready** (see below). Richard may fold it into the written questions; if not, it lands in the live call.
 - **Protect the friend-channel.** iMessage is not the VC pipeline, it's the personal thread. Once questions move to email (which they likely will), keep iMessage for the personal beat.
 
-### Flag: "family biz?" question
-Richard already flagged the family concentration. Two brothers + one cousin on cap table. Prep a practiced 3-beat answer for the live call:
-1. **Each earned the seat on merit.** Andrew = UBS Executive Director, 9 yrs real estate finance, Wharton econ '16. Luke = 18 yrs USAF, former Lead Engineer for Warfighter Training Systems, ex-Pentagon Integrated Warfare Division. Domain hires who happen to be family.
-2. **Vesting IS the fire mechanism.** 4-yr vest, 1-yr cliff, standard company repurchase on unvested shares. Same terms any outside co-founder would get. Mitchell retains 78% post-grants.
-3. **Independent governance already seeded.** Adam Evans — advisor, 1% FAST Platinum, 25 yrs teaching entrepreneurship (U Kentucky Chair), 8 yrs CSO at DoD-serving mil-tech startup. First board seat post-seed goes to lead investor.
+### Flag: "family biz?" question — REVISED Apr 25
+Richard already flagged the family concentration when he saw the deck Apr 22 (Andrew's face was on the team slide at the time). **As of Apr 25, Andrew Lisa stepped out before any paper.** The cap table is now Mitchell + Luke (cousin) + Adam (advisor, no family relationship). Re-prep the 3-beat answer:
+
+1. **The one family seat is a merit hire who happens to be a cousin.** Luke = 18 yrs USAF, former Lead Engineer for Warfighter Training Systems, ex-Pentagon Integrated Warfare Division. He literally built training hardware for the end-user we're selling to. Domain hire who happens to be a cousin. *(Andrew was tentatively scoped on the finance side; he stepped out before paper executed once the operational ask got concrete. Cleaner cap table for it.)*
+2. **Vesting IS the fire mechanism.** 4-yr vest, 1-yr cliff, standard company repurchase on unvested shares. Same terms any outside co-founder would get. **Mitchell retains 83% post-Luke RSPA** — supermajority through Series A and beyond.
+3. **Independent governance already seeded.** Adam Evans — advisor, 1% FAST Platinum, 25 yrs teaching entrepreneurship (U Kentucky Chair), 8 yrs CSO at DoD-serving mil-tech startup. First board seat post-seed goes to lead investor. Finance discipline runs on outside counsel + Pulley + a fractional CFO post-close, not on a family-seated CFO.
+
+**Bridge if Richard asks specifically about Andrew:** "Andrew was on the finance side and stepped back before any paperwork executed when the operational time commitment got concrete. I'd rather know that early than carry someone who isn't going to do the work, and the cap table is cleaner for it. He may participate as a passive investor in the seed round on standard SAFE terms — nothing more implied." Don't volunteer it; if he asks, this is the answer. See `private/andrew-exit-2026-04-25.md`.
 
 ### Availability reset — ✅ handled live
 Mitchell snuck "phone works zero notice always of course too" into the personal-catch-up reply at 6:08 PM. Clean recovery. No further reset needed.
