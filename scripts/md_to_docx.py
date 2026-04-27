@@ -59,6 +59,15 @@ def convert(src: Path, dest: Path) -> None:
     doc.save(str(dest))
 
 
+def _display_path(p: Path) -> str:
+    """Render a path as repo-relative when possible, else absolute."""
+    abs_p = p.resolve()
+    try:
+        return str(abs_p.relative_to(REPO_ROOT))
+    except ValueError:
+        return str(abs_p)
+
+
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("inputs", nargs="*", type=Path,
@@ -77,8 +86,8 @@ def main() -> None:
             src = REPO_ROOT / src_rel
             dest = out / dest_name
             convert(src, dest)
-            print(f"  {src.relative_to(REPO_ROOT)}  →  {dest.relative_to(REPO_ROOT)}")
-        print(f"\n{len(PRODUCT_FILES)} files written to {out.relative_to(REPO_ROOT)}/")
+            print(f"  {_display_path(src)}  →  {_display_path(dest)}")
+        print(f"\n{len(PRODUCT_FILES)} files written to {_display_path(out)}/")
         return
 
     if not args.inputs:
