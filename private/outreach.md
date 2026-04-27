@@ -20,11 +20,12 @@ Primes the parents with the full picture so they can answer basic questions if D
 >
 > **Who's involved:**
 > - **Me** — founder & CEO.
-> - **Andrew** (my brother) — finance lead, CFO track. Still at UBS for now; transitions as the raise closes. 5% of the company.
 > - **Luke** (my cousin) — engineering lead + military connector. Still on active-duty USAF, 18 years in. 5% of the company.
 > - **Adam Evans** — strategic advisor, just came on board this week. Not family — independent voice. PhD, 25 years teaching entrepreneurship at the university level, 8 years Chief Strategy Officer at a military-tech startup. 1% options.
 >
 > **Where I'm at:** Raising a $3M seed round. First investor contacts got the deck yesterday. Richard Xie at KAS Venture Partners (old friend) opened it within hours, asked for a meeting in May, said he'll send written questions first — real engagement. Second contact is Andrew Berg at Companyon Ventures for the Series B relationship. Need a couple more warm intros to close the round.
+
+*(Apr 25 2026 update: any future re-send of this brief should drop the Andrew Lisa / CFO line entirely — Andrew stepped out before any paper. The Apr 22 version sent to my parents listed him; if Doug or Vince ask, the answer is "Andrew was on the finance side but stepped back before formation paperwork; the team is Mitchell + Luke + Adam." See `private/andrew-exit-2026-04-25.md`.)*
 >
 > **Why Doug and Vince:** I don't want them to buy anything. I want their read — does this clear the bar for a real NFL performance staff? A yes from Doug gets me an intro to a named Head of Performance somewhere. A yes from Vince gets me an Eagles alumni bridge and a public voice when we launch. Either one is worth more than 20 cold investor emails.
 >
@@ -209,6 +210,99 @@ Copy-paste exactly. Parents send to Papale directly.
 
 ---
 
+## 7. Dave Klemic &mdash; Klemic Performance Method (former trainer)
+
+**Channel:** direct text or call. Mitchell's former speed/performance trainer growing up &mdash; warm personal channel, no intermediary needed.
+**Ask:** 20-min call. Read on whether this clears the bar for a serious performance practice. Pilot-site conversation if he leans in. NFL Alumni / ISA Football network warm intros where natural.
+**Attachment:** `modulor.bio/pitch` (NDA-gated deck) + 1-page brief printed to PDF.
+
+### Why he matters
+
+- **Personal warm relationship** — trained Mitchell as a youth athlete. He has direct embodied knowledge of what Modulor measures.
+- **Owns/operates a performance facility** &mdash; klemicperformancemethod.com. Real candidate for a VITR-001 prototype pilot deployment.
+- **NFL Alumni Association + International Sports Advisors (ISA Football) affiliations** &mdash; agent-side / network access.
+- **Vince Papale connection already public** &mdash; Vince's son trained with Klemic; the testimonial sits on Klemic's homepage. Reinforces the Papale outreach already in motion via Mom/Dad.
+
+### Strategic value
+
+- One of the most direct paths to a **collegiate or pro performance pilot site** (priority #5 LOI).
+- Compressed sales cycle from existing trust.
+- Network effect: each pro/college performance contact via Klemic = candidate deck send.
+
+### Potential role (do NOT lead with — let him see the product first)
+
+- **Strategic Advisor &mdash; Performance & Pilot Site** if formal scope emerges
+  - Tier: FAST Gold (0.5% common options, 2-yr vest, no cliff) &mdash; revisit Platinum only if engagement > Adam-level
+  - Scope: monthly call, ad-hoc red-flag calls, 3 specific intros in first 6 months, facility hosts VITR-001 prototype demo for partner conversations
+  - Sequence: see the deck → react → conversation → if ongoing value emerges, advisor offer
+- Equity is NOT in the opening message. It's the second or third conversation, only if he engages substantively.
+
+### Draft message (text)
+
+> Coach Klemic &mdash;
+>
+> Mitchell Lisa, your old trainee. Hope all good with the family.
+>
+> Quick context: I started a company called Modulor &mdash; designing measurement hardware + ML for performance staffs. Short version: every soft-tissue injury (hamstrings, hips, groins) traces back to range-of-motion + asymmetry data nobody currently captures. We capture it. Pro teams + collegiate programs are the wedge buyer.
+>
+> Three reasons I'm reaching out:
+> 1. Want your read on whether what we're building clears the bar for a serious performance practice &mdash; yours, or anyone you'd refer.
+> 2. Your facility is exactly the kind of place this prototype belongs in once we have hardware. Open to a pilot conversation when we're there.
+> 3. Saw Vince Papale's testimonial on your site &mdash; small world, my parents are about to forward him a deck. Wanted you to hear it from me first.
+>
+> 20 min whenever's good. Phone works zero notice.
+>
+> modulor.bio &middot; (609) 760-1238
+>
+> &mdash; Mitch
+
+---
+
+## 8. Dave Dudeck &mdash; Chicago Bears, Southwest Area Scout (former trainer)
+
+**Channel:** direct text or call. Mitchell's former trainer before he went NFL front office &mdash; warm personal channel.
+**Ask:** 20-min call. Read on whether this clears the bar for a serious performance staff. If yes &mdash; warm intro to whoever runs Performance / Athletic Training at the Bears.
+**Attachment:** `modulor.bio/pitch` (NDA-gated deck) + 1-page brief.
+
+### Why he matters
+
+- **Personal warm relationship** &mdash; trained Mitchell as a youth athlete.
+- **Currently NFL front office** (Bears, Southwest Area Scout) &mdash; internal credibility, internal connections.
+- **Scouting ≠ Performance** (different department), but a warm internal intro to the Bears' Performance Director is high-leverage and effectively impossible cold.
+- Bears = active **priority #1 buyer** (NFL pro team, GTM segment 1).
+
+### Strategic value
+
+- **Direct warm path to Bears Performance Director** &mdash; one of the three required LOIs (priority #5).
+- Industry pulse &mdash; even though scouts don't buy equipment, he hears what evaluation gaps GMs feel.
+- Personal trust = compressed channel.
+
+### Potential role (NOT equity-track at start)
+
+- **Likely just a key relationship + warm intro source.** Bears employment likely has conflict-of-interest restrictions on advising private companies; even if not, his role doesn't translate to ongoing advisory scope.
+- Mutual back-scratching: Mitchell texts him relevant news; Dudeck makes intros when right opportunities arise.
+- IF he ends up making 2+ substantive intros and engages on a regular cadence: revisit FAST Gold (0.5%) conversation. Default is "no equity, but a real relationship."
+
+### Draft message (text)
+
+> Coach Dudeck &mdash;
+>
+> Mitchell Lisa &mdash; long time. Hope Chicago is treating you well.
+>
+> Quick context, then a small ask. I started a company called Modulor &mdash; building measurement hardware + ML for NFL/college performance staffs. Pro teams are the wedge market for us. Hamstring strains alone have doubled in the NFL over twenty years; nobody is measuring the things that actually predict them. We do.
+>
+> Two asks if you've got 20 min:
+> 1. Your read &mdash; is what we're building real, and would the Bears performance staff care?
+> 2. If yes, would you make an intro to whoever runs performance for you guys?
+>
+> Not asking you to sell anything. Asking for your read and one warm intro if it clears the bar.
+>
+> modulor.bio &middot; (609) 760-1238
+>
+> &mdash; Mitch
+
+---
+
 # After You Send
 
 Track responses in a simple sheet. Suggested columns:
@@ -228,6 +322,33 @@ Don't follow up sooner than 7 days. If no reply at 14 days, send a one-line nudg
 - **Papale yes** → Eagles alumni side-door to Pederson + a quotable public voice when we launch. Not a pilot &mdash; a narrative and network asset.
 
 A single yes from any of them is worth more than a cold-pitched buyer call. Six for six gets you a multi-sport, multi-league validation story *and* a Philly-football story arc before you've sold a unit.
+
+---
+
+# Pro Team / Performance Pilot Pipeline
+
+Tracks warm-channel contacts who feed the **3-LOI priority** (one pro team, one D1 program, one SOF unit per CLAUDE.md priority #5). Personal/warm relationships only — cold pipeline tracked separately when it exists.
+
+| Contact | Role today | Modulor angle | Channel | Status | Next action |
+|---|---|---|---|---|---|
+| Doug Pederson | Ex-Eagles HC, SB winner | Coach-side validator + Eagles intros | Parent-forward (Mom/Dad) | Drafted, not yet sent | Trigger Mom/Dad forward |
+| Vince Papale | Eagles alum, "Invincible" | Story amplifier + Eagles alumni bridge | Parent-forward (Mom/Dad) | Drafted, not yet sent | Trigger Mom/Dad forward |
+| **Dave Klemic** | Founder, Klemic Performance Method | **Pilot-site candidate + advisor candidate** + NFL Alumni / ISA Football network | **Mitchell direct** (former trainer) | ✅ Sent Sat Apr 25 2026 | Watch for reply; respond within an hour when it lands |
+| **Dave Dudeck** | Bears Southwest Area Scout | **Internal Bears bridge** to Performance Director | **Mitchell direct** (former trainer) | Draft ready (section 8) | Hold until Klemic engagement plays out + prototype maturity advances (Mitchell decision Apr 25) |
+| Josh Pearcy | CFL | Active player | Direct (existing relationship) | Drafted | TBD |
+| Brevin Jordan | NFL TE, UMiami | Active player + collegiate ties | Direct (existing relationship) | Drafted | TBD |
+| Harrison Rieger | Pro hoops | Cross-sport read | Direct (existing relationship) | Drafted | TBD |
+| Shane Knobloch | Pro lacrosse | Cross-sport read | Direct (existing relationship) | Drafted | TBD |
+
+## Sequencing
+
+**Don't fire all eight at once.** Order by leverage + relationship density:
+
+1. **Klemic + Dudeck first** — direct warm channel, no parent intermediary, both feed pro/college LOI track immediately. Send same week.
+2. **Pederson + Papale second** — parent-forward; trigger after Mitchell has an investor-side update worth pairing with the ask (e.g., a Richard-type yes-or-no).
+3. **Pearcy / Jordan / Rieger / Knobloch** — staggered as the prototype gets closer to demo-able.
+
+Avoid: cluster-firing all eight in one week and getting overwhelmed when 3+ respond at once. Pacing is a feature.
 
 ---
 
@@ -255,6 +376,7 @@ First sends went out **Tue Apr 22 2026.** Both contacts are warm (existing relat
 | Apr 22, ~6:00 PM | Richard opened the deck (clocked Andrew's face on team slide). Asked "family biz?" Offered a **meeting over phone or beer** once he's read + sent questions. Candidly flagged wheelhouse uncertainty. |
 | Apr 22, ~6:08 PM | Richard: beer meeting pushes to **May** (busy next two weekends). **Questions coming ahead of time.** Personal add: "we should go out next time you're back lmao." |
 | Apr 22, ~6:08 PM | Mitchell reset availability cleanly: "phone works zero notice always of course too." |
+| Apr 24, ~3:20 PM | Mitchell asked Richard for KAS portfolio counsel rec for post-incorp founder-add RSPAs. Richard: **"our founders usually have their own lawyers. We're pretty hands off. Don't have an ops team or anything and generally don't tell our founders what to do."** Mitchell closed clean: "appreciate that — will def just go to my own lawyers then — thank you sir." |
 
 ### Current status
 **Meeting: May (beer). Questions: inbound ahead of meeting.** Cadence is Richard-driven. No proactive outreach until questions arrive. Original Apr 28 bump trigger obsolete.
@@ -265,14 +387,23 @@ First sends went out **Tue Apr 22 2026.** Both contacts are warm (existing relat
 - **Family-biz answer must be practice-ready** (see below). Richard may fold it into the written questions; if not, it lands in the live call.
 - **Protect the friend-channel.** iMessage is not the VC pipeline, it's the personal thread. Once questions move to email (which they likely will), keep iMessage for the personal beat.
 
-### Flag: "family biz?" question
-Richard already flagged the family concentration. Two brothers + one cousin on cap table. Prep a practiced 3-beat answer for the live call:
-1. **Each earned the seat on merit.** Andrew = UBS Executive Director, 9 yrs real estate finance, Wharton econ '16. Luke = 18 yrs USAF, former Lead Engineer for Warfighter Training Systems, ex-Pentagon Integrated Warfare Division. Domain hires who happen to be family.
-2. **Vesting IS the fire mechanism.** 4-yr vest, 1-yr cliff, standard company repurchase on unvested shares. Same terms any outside co-founder would get. Mitchell retains 78% post-grants.
-3. **Independent governance already seeded.** Adam Evans — advisor, 1% FAST Platinum, 25 yrs teaching entrepreneurship (U Kentucky Chair), 8 yrs CSO at DoD-serving mil-tech startup. First board seat post-seed goes to lead investor.
+### Flag: "family biz?" question — REVISED Apr 25
+Richard already flagged the family concentration when he saw the deck Apr 22 (Andrew's face was on the team slide at the time). **As of Apr 25, Andrew Lisa stepped out before any paper.** The cap table is now Mitchell + Luke (cousin) + Adam (advisor, no family relationship). Re-prep the 3-beat answer:
+
+1. **The one family seat is a merit hire who happens to be a cousin.** Luke = 18 yrs USAF, former Lead Engineer for Warfighter Training Systems, ex-Pentagon Integrated Warfare Division. He literally built training hardware for the end-user we're selling to. Domain hire who happens to be a cousin. *(Andrew was tentatively scoped on the finance side; he stepped out before paper executed once the operational ask got concrete. Cleaner cap table for it.)*
+2. **Vesting IS the fire mechanism.** 4-yr vest, 1-yr cliff, standard company repurchase on unvested shares. Same terms any outside co-founder would get. **Mitchell retains 83% post-Luke RSPA** — supermajority through Series A and beyond.
+3. **Independent governance already seeded.** Adam Evans — advisor, 1% FAST Platinum, 25 yrs teaching entrepreneurship (U Kentucky Chair), 8 yrs CSO at DoD-serving mil-tech startup. First board seat post-seed goes to lead investor. Finance discipline runs on outside counsel + Pulley + a fractional CFO post-close, not on a family-seated CFO.
+
+**Bridge if Richard asks specifically about Andrew:** "Andrew was on the finance side and stepped back before any paperwork executed when the operational time commitment got concrete. I'd rather know that early than carry someone who isn't going to do the work, and the cap table is cleaner for it. He may participate as a passive investor in the seed round on standard SAFE terms — nothing more implied." Don't volunteer it; if he asks, this is the answer. See `private/andrew-exit-2026-04-25.md`.
 
 ### Availability reset — ✅ handled live
 Mitchell snuck "phone works zero notice always of course too" into the personal-catch-up reply at 6:08 PM. Clean recovery. No further reset needed.
+
+### Investor-style read (Apr 24)
+Richard confirmed on Apr 24 that KAS is hands-off: **no ops team, no portfolio counsel, doesn't tell founders what to do.** Useful color for diligence + what a KAS check unlocks:
+- **Pros:** autonomy-respecting, won't micromanage, won't try to steer product or team decisions
+- **Implication:** can't lean on KAS for operational scaffolding (no vendor intros, no shared counsel, no backchannel to other portfolio co's). Money + occasional gut-check, not an ops team.
+- **Board expectation:** if Richard takes a board seat or observer role, expect low-frequency high-leverage engagement — not weekly touchpoints.
 
 ## Andrew Berg · Companyon — context & handling
 

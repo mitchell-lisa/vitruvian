@@ -58,19 +58,19 @@ Use this on every public-facing document: bank account, pitch deck footer, contr
 
 ### Planned near-term grants (not yet issued)
 
+*Updated Apr 25, 2026: Andrew Lisa stepped out of the founding team before any paper executed. His 500,000-share RSPA is dropped from the plan. See `private/andrew-exit-2026-04-25.md`.*
+
 | Holder | Type | Shares | % | Source |
 |---|---|---|---|---|
 | Matthew "Luke" Lisa | Co-founder common (RSPA) | 500,000 | 5.0% | From Mitchell's 88% → Mitchell becomes 83% |
-| Andrew Lisa | Co-founder common (RSPA) | 500,000 | 5.0% | From Mitchell's 83% → Mitchell becomes 78% |
 | Adam H. Evans | Advisor options (FAST Platinum) | 100,000 | 1.0% | From 12% pool |
 
 ### Fully-diluted cap table (post-planned grants)
 
 | Holder | Shares | % |
 |---|---|---|
-| Mitchell Lisa | 7,800,000 | 78.0% |
+| Mitchell Lisa | 8,300,000 | 83.0% |
 | Matthew "Luke" Lisa | 500,000 | 5.0% |
-| Andrew Lisa | 500,000 | 5.0% |
 | Adam H. Evans (options) | 100,000 | 1.0% |
 | Equity pool remaining | 1,100,000 | 11.0% |
 | **Total** | **10,000,000** | **100%** |
@@ -134,9 +134,8 @@ Store these in `private/formation-docs/` (gitignored):
 - [ ] Set up QuickBooks / accounting
 - [ ] Luke countersigns role memo → issue 500,000 RSPA shares within 30 days
 - [ ] Luke files his 83(b) within 30 days of grant
-- [ ] Andrew countersigns role memo → issue 500,000 RSPA shares within 30 days
-- [ ] Andrew files his 83(b) within 30 days of grant
-- [ ] Add Luke (and consider Andrew) as additional Director(s) via unanimous written consent
+- [ ] Add Luke as additional Director via unanimous written consent
+- [x] ~~Andrew RSPA + 83(b) + Director seat~~ — Andrew stepped out Apr 25 2026, no paper signed
 - [ ] Send Adam FAST Platinum advisor agreement (1.0% options from pool, 2-yr vest, no cliff)
 - [ ] File Delaware franchise tax (annual, due March 1 — first filing March 2027)
 - [ ] Foreign qualification in NJ if operating from there

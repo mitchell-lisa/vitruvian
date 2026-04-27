@@ -2,6 +2,12 @@
 private/.founder-private.md
 private/formation-docs/
 
+# Legal template drafts (downloaded + filled-in instruments) — NEVER commit
+private/legal-templates/*.docx
+private/legal-templates/*.pdf
+private/legal-templates/*.doc
+private/legal-templates/drafts/
+
 # OAuth / API credentials — NEVER commit
 private/google-credentials.json
 private/google-token.json

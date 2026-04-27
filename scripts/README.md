@@ -66,3 +66,27 @@ crontab -e
 - Access token in `private/google-token.json` (gitignored via `*token*.json`)
 - Anthropic API key in `.env.local` at repo root (gitignored via `.env*`)
 - Revoke OAuth at https://myaccount.google.com/permissions anytime
+
+## render_legal_doc.py
+
+Renders structured legal documents (NDAs, role memos, advisor agreements) to MD + DOCX + PDF. Source files live in `private/legal-templates/drafts/` (gitignored); rendered outputs live alongside (also gitignored — these get filled in via DocuSign and stored locally only).
+
+### Usage
+
+```bash
+python scripts/render_legal_doc.py \
+  private/legal-templates/drafts/_adam_evans_mnda_source.py \
+  --out-dir private/legal-templates/drafts/
+```
+
+### Source format
+
+A Python module exposing `TITLE`, `OUT_BASENAME`, and `BLOCKS` (list of `(kind, content)` tuples). Block kinds: `h1`, `h2`, `p`, `party`, `sig`, `spacer`. See `_adam_evans_mnda_source.py` for a full example.
+
+### Outputs
+
+- `<basename>.md` — diffable plain-text source
+- `<basename>.docx` — Word format for editing/redlining
+- `<basename>.pdf` — final format for DocuSign upload
+
+All outputs go to `private/legal-templates/drafts/` and are gitignored.

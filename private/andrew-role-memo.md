@@ -1,9 +1,15 @@
 # Memo: Co-Founder Role & Equity — Andrew Lisa
 
-**To:** Andrew Lisa
-**From:** Mitchell Lisa
-**Re:** Formalizing your role, equity, and scope at Modulor
-**Date:** April 21, 2026
+> **STATUS: TERMINATED — Andrew stepped out Apr 25 2026.**
+>
+> No paper was ever signed. Verbal acceptance Apr 21; verbal withdrawal Apr 25 1:34 PM via iMessage to Mitchell ("I don't think I'm the right person for this endeavor… happy to give you money as an investor but I know I'm not going to do any of that realistically… wouldn't be fair to you if you are serious and I'm not giving my full effort"). Mitchell accepted ("rather know now"). RSPA never executed → no 83(b) clock, no QSBS implications, no cap-table unwind. Andrew is no longer a co-founder, officer, or equityholder of Modulor, Inc. He may participate as a passive seed-round investor on standard SAFE terms; nothing else implied.
+>
+> **This memo is preserved as a historical record of what was offered.** Do not treat the terms below as live. Source-of-truth files updated Apr 25:
+> - `CLAUDE.md` — Team / Departed section + state snapshot
+> - `private/company-formation.md` — cap table reverts to Mitchell 88% / Pool 12% (→ Mitchell 83% / Luke 5% / Adam 1% / Pool 11% post-Luke RSPA + Adam options)
+> - `private/execution-tracker.md` — Andrew row dropped
+> - `cap-table.html` + `pitch.html` — Andrew removed from data room and team slide
+> - `private/andrew-exit-2026-04-25.md` — exit log (text transcript + decisions taken)
 
 ---
 
