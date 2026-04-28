@@ -77,7 +77,9 @@ UPLOADS = [
     ("private/outreach.md",                    "06_Outreach"),
 
     # 07_Legal
-    ("private/nda-click-wrap.md",              "07_Legal"),
+    ("private/nda-click-wrap.md",                                  "07_Legal"),
+    ("build/drive-upload/07_Legal/Adam-Evans-Mutual-NDA.docx",     "07_Legal"),
+    ("build/drive-upload/07_Legal/Adam-Evans-Mutual-NDA.pdf",      "07_Legal"),
 
     # 08_DoD
     ("docs/19-military-gtm.md",                "08_DoD"),

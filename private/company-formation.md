@@ -15,7 +15,7 @@
 | Delaware file number | 10592524 |
 | EIN | 42-2107337 *(issued by IRS, confirmed via Stripe Atlas Apr 23, 2026)* |
 | Registered agent | Legalinc Corporate Services Inc., 131 Continental Dr, Suite 305, Newark, DE 19713 *(active through Apr 20, 2027; auto-renews 28 days before incorporation anniversary)* |
-| 83(b) (Mitchell founder stock) | Atlas mailing via USPS Certified; expected postmark May 4 (buffer to May 6) |
+| 83(b) (Mitchell founder stock) | ✅ Filed Apr 28, 2026 by Stripe Atlas via USPS Certified Mail. Tracking `9207190235890900003893​8966`. Signed copy + proof of filing in Atlas Documents tab. |
 
 ## Business Contact
 
@@ -99,7 +99,9 @@ Use this on every public-facing document: bank account, pitch deck footer, contr
 
 Filed by Stripe Atlas via certified mail within 30 days of formation. Critical — do not miss this window. Keep the postal receipt with company records.
 
-**Status (Apr 23, 2026):** Stripe Atlas confirmed filing is queued — expected postmark **May 4, 2026** (Atlas dashboard shows buffer to May 6). 30-day window from formation (Apr 20) closes **May 20, 2026**. Save the stamped copy + USPS tracking receipt to `private/formation-docs/` once returned.
+**Status (Apr 28, 2026):** ✅ **FILED.** Stripe Atlas confirmed via email — postmarked **April 28, 2026**, well inside the 30-day window. USPS tracking number `9207190235890900003893​6​8966`. Stripe-calc deadline reference: May 23, 2026 (5-day buffer beyond our Apr-20-formation + 30-day = May 20). Signed 83(b) and proof of filing live in the Stripe Atlas Documents tab.
+
+**Action remaining:** download (a) signed 83(b) election PDF and (b) USPS tracking screenshot showing "Accepted at USPS Regional Origin Facility" status → save both to `private/formation-docs/` (gitignored, local-only). Tax experts recommend retaining the USPS screenshot as additional proof.
 
 ## Intellectual Property Contributed at Formation
 
@@ -129,7 +131,7 @@ Store these in `private/formation-docs/` (gitignored):
 
 ## Near-Term Legal Checklist
 
-- [ ] Download all formation docs from Atlas → save to `private/formation-docs/` (local only)
+- [ ] Download all formation docs from Atlas → save to `private/formation-docs/` (local only) — including signed 83(b) + USPS "Accepted" screenshot (filed Apr 28, 2026)
 - [ ] Open business bank account (Mercury or Brex — Atlas integrates with Mercury)
 - [ ] Set up QuickBooks / accounting
 - [ ] Luke countersigns role memo → issue 500,000 RSPA shares within 30 days
