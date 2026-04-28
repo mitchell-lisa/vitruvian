@@ -74,8 +74,13 @@ Pulled from `private/adam-role-memo.md`:
 
 1. **Stripe Atlas — included templates library** (if Atlas Plus) — Delaware-governed, mutual, 2-year term
 2. **YC — `ycombinator.com/documents`** (free) — "NDA" template, lawyer-vetted, industry standard
+3. **In-repo template** — DE law, 2-yr, mutual. Source: `scripts/legal_sources/adam_evans_mutual_nda.py` (12 sections — confidentiality, permitted use, exclusions, compelled disclosure, return/destruction, governing law, etc.). Render via `python scripts/render_legal_doc.py scripts/legal_sources/adam_evans_mutual_nda.py --out-dir build/drive-upload/07_Legal` to produce md / docx / pdf.
 
 Use for: Adam (pre-FAST), vendor/contractor engagements, any 1:1 investor diligence that graduates past the `/pitch` click-wrap.
+
+### Currently active drafts
+
+- **Adam H. Evans** — `build/drive-upload/07_Legal/Adam-Evans-Mutual-NDA.{md,docx,pdf}` (Apr 28, 2026). Ready for DocuSign upload.
 
 ---
 

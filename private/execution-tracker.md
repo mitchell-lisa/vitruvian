@@ -2,7 +2,7 @@
 
 Single source of truth for who's on paper vs. who's not. Cross-reference with `company-formation.md` (terms) and `CLAUDE.md` state snapshot (narrative).
 
-**Last updated:** Apr 25, 2026 *(Andrew Lisa stepped out — row dropped, mechanism revised to single-grant Luke RSPA)*
+**Last updated:** Apr 28, 2026 *(Mitchell 83(b) filed by Atlas — postmark Apr 28, USPS tracking confirmed)*
 
 ## Cap table platform decision
 
@@ -19,7 +19,7 @@ Single source of truth for who's on paper vs. who's not. Cross-reference with `c
 
 | Holder | Role | Equity | Memo | Legal instrument | Grant date | 83(b) deadline | 83(b) filed | Stamped copy |
 |---|---|---|---|---|---|---|---|---|
-| Mitchell Lisa | CEO · Director | 88% common (→83% post-Luke RSPA) | n/a | ✅ RSPA (Atlas) | Apr 20, 2026 | **May 20, 2026** | ⏳ Atlas queued, postmark May 4 (buffer May 6) | ⏳ Awaiting return from Atlas |
+| Mitchell Lisa | CEO · Director | 88% common (→83% post-Luke RSPA) | n/a | ✅ RSPA (Atlas) | Apr 20, 2026 | **May 20, 2026** | ✅ Filed Apr 28, 2026 — USPS tracking `9207190235890900003893​8966` | ⏳ Download from Atlas Documents tab → `private/formation-docs/` |
 | Matthew Lucas Lisa ("Luke") | Co-Founder · CTO | 5% common (RSPA from Mitchell) | ✅ Verbal accept Apr 21 | ❌ Pending — outside counsel + Colonel signature | TBD (Wed Apr 29 earliest) | Grant + 30 days | — | — |
 | Adam H. Evans | Strategic Advisor — DoD + Mil-Tech | 1% common options (FAST Platinum) | ✅ Verbal accept Apr 22 | ❌ Pending — FAST Platinum template + mutual NDA first | TBD (target week of May 4) | n/a (options) | n/a | n/a |
 | ~~Andrew Lisa~~ | ~~Co-Founder · CFO~~ | ~~5% common (RSPA from Mitchell)~~ | ✅ Verbal accept Apr 21 → ❌ Verbal withdraw Apr 25 | **TERMINATED — no paper executed** (`private/andrew-exit-2026-04-25.md`) | — | — | — | — |
@@ -47,7 +47,7 @@ Single source of truth for who's on paper vs. who's not. Cross-reference with `c
 | Party | Purpose | NDA type | Status |
 |---|---|---|---|
 | Anyone hitting `/pitch` | Deck preview | Click-wrap (one-way) | ✅ Live, Supabase-logged |
-| Adam Evans | Advisor — pre-hardware/IP disclosure | Mutual | 🟡 Drafted Apr 25 (`private/legal-templates/drafts/Adam-Evans-Mutual-NDA.{md,docx,pdf}`); upload to DocuSign + send |
+| Adam Evans | Advisor — pre-hardware/IP disclosure | Mutual | 🟡 Drafted Apr 28 (`build/drive-upload/07_Legal/Adam-Evans-Mutual-NDA.{md,docx,pdf}` — source: `scripts/legal_sources/adam_evans_mutual_nda.py`); upload PDF to DocuSign and send to Adam |
 | Design/CNC/prototyping vendors (TBD) | Contractor engagements | Mutual | ❌ Template needed |
 | Investor diligence 1:1 (Richard Xie + beyond) | Term-sheet-stage diligence | Mutual | ❌ Send when requested |
 
@@ -61,18 +61,19 @@ Single source of truth for who's on paper vs. who's not. Cross-reference with `c
 
 ---
 
-## Deadlines (T-minus from today Apr 24, 2026)
+## Deadlines (T-minus from today Apr 28, 2026)
 
 | Event | Date | T-minus | Reminder cadence |
 |---|---|---|---|
-| Atlas postmark Mitchell 83(b) | May 4, 2026 | T-10 | Daily watch once T-5 |
-| Mitchell 83(b) window hard close | **May 20, 2026** | **T-26** | T-14, T-7, T-1 |
-| Luke mil-side Colonel signature (target) | Apr 29, 2026 | T-5 | Daily |
-| Luke RSPA executed (target) | Apr 29–30, 2026 | T-5–6 | Daily |
+| ~~Atlas postmark Mitchell 83(b)~~ | ~~May 4, 2026~~ | ✅ Done | Filed Apr 28, postmarked same day |
+| ~~Mitchell 83(b) window hard close~~ | ~~May 20, 2026~~ | ✅ Done | Mitchell 83(b) filed inside window |
+| Luke mil-side Colonel signature (target) | Apr 29, 2026 | T-1 | Daily |
+| Luke RSPA executed (target) | Apr 29–30, 2026 | T-1–2 | Daily |
 | Luke 83(b) window | Grant + 30 days | Set once grant issues | T-14, T-7, T-1 |
-| Adam FAST Platinum + mutual NDA | Week of May 4 | T-10 | Weekly |
-| Delaware franchise tax (first filing) | Mar 1, 2027 | T-311 | Monthly starting Oct 2026 |
-| VITR-001 non-provisional conversion | Apr 15, 2027 | T-356 | Monthly starting Jan 2027 |
+| Adam mutual NDA sent (DocuSign) | Apr 28, 2026 | T-0 | Send today |
+| Adam FAST Platinum (counsel-reviewed) | Week of May 4 | T-6 | Weekly |
+| Delaware franchise tax (first filing) | Mar 1, 2027 | T-307 | Monthly starting Oct 2026 |
+| VITR-001 non-provisional conversion | Apr 15, 2027 | T-352 | Monthly starting Jan 2027 |
 
 ---
 
