@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../modulor-icon.png">
+  <title>Modulor — Patent Figures</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #ECE7DC;
+      --paper-3: #948B73;
+      --ink: #1A1A1A;
+      --ink-2: #3D3A33;
+      --graphite: #6B6558;
+      --red: #A94A3B;
+      --rule: rgba(26,26,26,0.18);
+      --rule-strong: rgba(26,26,26,0.45);
+      --serif: 'Fraunces', Georgia, serif;
+      --mono: 'JetBrains Mono', ui-monospace, monospace;
+      --sans: 'Inter', system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    body::before {
+      content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background-image:
+        linear-gradient(rgba(26,26,26,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26,26,26,0.025) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    .meta-bar {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      padding: 32px 56px 0;
+      font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--paper-3);
+    }
+    .meta-bar .c { text-align: center; }
+    .meta-bar .r { text-align: right; }
+    .meta-bar a:hover { color: var(--ink); }
+
+    main { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 56px 56px 64px; }
+    .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+    h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(48px, 6vw, 80px); line-height: 1.0; letter-spacing: -0.02em; }
+    .sub { font-family: var(--serif); font-style: italic; font-size: 19px; color: var(--ink-2); margin-top: 16px; }
+
+    .fig-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; margin-top: 40px; }
+    .fig { background: rgba(255,255,255,0.4); border: 1px solid var(--rule); padding: 16px; transition: border-color 0.15s, background 0.15s; display: flex; flex-direction: column; }
+    .fig:hover { border-color: var(--rule-strong); background: rgba(255,255,255,0.6); }
+    .fig-thumb { aspect-ratio: 4/3; background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 12px; border: 1px solid var(--rule); }
+    .fig-thumb object { width: 100%; height: 100%; pointer-events: none; }
+    .fig-num { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--red); margin-bottom: 4px; }
+    .fig-title { font-family: var(--serif); font-size: 17px; color: var(--ink); line-height: 1.3; margin-bottom: 12px; flex: 1; }
+    .fig-links { display: flex; gap: 16px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
+    .fig-links a { color: var(--graphite); transition: color 0.15s; }
+    .fig-links a:hover { color: var(--red); }
+
+    .foot {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr auto 1fr;
+      padding: 0 56px 28px;
+      font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--paper-3);
+    }
+    .foot .c { text-align: center; color: var(--graphite); }
+    .foot .r { text-align: right; }
+
+    @media (max-width: 720px) {
+      .meta-bar, .foot { padding-left: 28px; padding-right: 28px; grid-template-columns: 1fr; gap: 6px; }
+      .meta-bar .c, .meta-bar .r, .foot .c, .foot .r { text-align: left; }
+      main { padding: 36px 24px 48px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="meta-bar">
+  <span class="l"><a href="../index.html">← Modulor</a></span>
+  <span class="c">— Patent Figures · 2026 —</span>
+  <span class="r">Confidential</span>
+</div>
+
+<main>
+  <div class="eyebrow">Patent Figures</div>
+  <h1>11 figures.</h1>
+  <p class="sub">Click to open. Right-click to download.</p>
+
+  <div class="fig-grid">
+    <div class="fig"><a href="FIG-01.svg"><div class="fig-thumb"><object data="FIG-01.svg" type="image/svg+xml"></object></div></a><div class="fig-num">FIG. 1</div><div class="fig-title">System overview</div><div class="fig-links"><a href="FIG-01.svg">Open</a><a href="FIG-01.svg" download>Download</a></div></div>
+    <div class="fig"><a href="FIG-02.svg"><div class="fig-thumb"><object data="FIG-02.svg" type="image/svg+xml"></object></div></a><div class="fig-num">FIG. 2</div><div class="fig-title">Apparatus schematic</div><div class="fig-links"><a href="FIG-02.svg">Open</a><a href="FIG-02.svg" download>Download</a></div></div>
+    <div class="fig"><a href="FIG-03.svg"><div class="fig-thumb"><object data="FIG-03.svg" type="image/svg+xml"></object></div></a><div class="fig-num">FIG. 3</div><div class="fig-title">Stretch session method</div><div class="fig-links"><a href="FIG-03.svg">Open</a><a href="FIG-03.svg" download>Download</a></div></div>
+    <div class="fig"><a href="FIG-04.svg"><div class="fig-thumb"><object data="FIG-04.svg" type="image/svg+xml"></object></div></a><div class="fig-num">FIG. 4</div><div class="fig-title">Joint tracking</div><div class="fig-links"><a href="FIG-04.svg">Open</a><a href="FIG-04.svg" download>Download</a></div></div>
+    <div class="fig"><a href="FIG-05.svg"><div class="fig-thumb"><object data="FIG-05.svg" type="image/svg+xml"></object></div></a><div class="fig-num">FIG. 5</div><div class="fig-title">Safety cascade</div><div class="fig-links"><a href="FIG-05.svg">Open</a><a href="FIG-05.svg" download>Download</a></div></div>
+    <div class="fig"><a href="FIG-06.svg"><div class="fig-thumb"><object data="FIG-06.svg" type="image/svg+xml"></object></div></a><div class="fig-num">FIG. 6</div><div class="fig-title">Force vs. angle</div><div class="fig-links"><a href="FIG-06.svg">Open</a><a href="FIG-06.svg" download>Download</a></div></div>
+    <div class="fig"><a href="FIG-07.svg"><div class="fig-thumb"><object data="FIG-07.svg" type="image/svg+xml"></object></div></a><div class="fig-num">FIG. 7</div><div class="fig-title">Asymmetry + trend</div><div class="fig-links"><a href="FIG-07.svg">Open</a><a href="FIG-07.svg" download>Download</a></div></div>
+    <div class="fig"><a href="FIG-08.svg"><div class="fig-thumb"><object data="FIG-08.svg" type="image/svg+xml"></object></div></a><div class="fig-num">FIG. 8</div><div class="fig-title">Measurement pipeline</div><div class="fig-links"><a href="FIG-08.svg">Open</a><a href="FIG-08.svg" download>Download</a></div></div>
+    <div class="fig"><a href="FIG-09.svg"><div class="fig-thumb"><object data="FIG-09.svg" type="image/svg+xml"></object></div></a><div class="fig-num">FIG. 9</div><div class="fig-title">Session flow</div><div class="fig-links"><a href="FIG-09.svg">Open</a><a href="FIG-09.svg" download>Download</a></div></div>
+    <div class="fig"><a href="FIG-10.svg"><div class="fig-thumb"><object data="FIG-10.svg" type="image/svg+xml"></object></div></a><div class="fig-num">FIG. 10</div><div class="fig-title">Risk score</div><div class="fig-links"><a href="FIG-10.svg">Open</a><a href="FIG-10.svg" download>Download</a></div></div>
+    <div class="fig"><a href="FIG-11.svg"><div class="fig-thumb"><object data="FIG-11.svg" type="image/svg+xml"></object></div></a><div class="fig-num">FIG. 11</div><div class="fig-title">Data export</div><div class="fig-links"><a href="FIG-11.svg">Open</a><a href="FIG-11.svg" download>Download</a></div></div>
+  </div>
+</main>
+
+<div class="foot">
+  <span class="l">Modulor, Inc. · 2026</span>
+  <span class="c">Confidential — Patent Figures</span>
+  <span class="r"><a href="mailto:hello@modulor.bio">hello@modulor.bio</a></span>
+</div>
+
+</body>
+</html>

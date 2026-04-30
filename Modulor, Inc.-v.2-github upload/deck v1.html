@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modulor — Investor Deck</title>
+  <link rel="icon" type="image/png" href="modulor-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..700,30..100,0..1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="deck-stage.js"></script>
+  <style>
+    :root {
+      --paper: #E5DECF; --paper-2: #D9D2C2; --paper-3: #CCC4B3;
+      --ink: #14110D; --ink-2: #2C2722;
+      --graphite: #5A544B; --graphite-2: #837C70;
+      --rule: rgba(20,17,13,0.12); --rule-strong: rgba(20,17,13,0.28);
+      --red: #C77B7B;
+      --serif: "Fraunces", Georgia, serif;
+      --display: "Instrument Serif", "Fraunces", Georgia, serif;
+      --mono:  "JetBrains Mono", ui-monospace, Menlo, monospace;
+      --sans:  "Inter Tight", "Inter", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--sans); background: #1a1815; color: var(--ink); }
+
+    deck-stage section {
+      width: 1920px; height: 1080px;
+      background: var(--paper);
+      color: var(--ink);
+      position: relative;
+      overflow: hidden;
+      padding: 96px 120px;
+      display: flex;
+      flex-direction: column;
+    }
+    deck-stage section.dark { background: var(--ink); color: var(--paper); }
+    deck-stage section.dark .meta-l, deck-stage section.dark .meta-r,
+    deck-stage section.dark .num, deck-stage section.dark .foot,
+    deck-stage section.dark .foot-r { color: var(--paper-3); }
+
+    /* paper grain */
+    deck-stage section::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.07  0 0 0 0 0.06  0 0 0 0 0.05  0 0 0 0.10 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+      opacity: 0.40; mix-blend-mode: multiply; z-index: 0;
+    }
+    deck-stage section.dark::before { mix-blend-mode: screen; opacity: 0.18; }
+    deck-stage section > * { position: relative; z-index: 1; }
+
+    /* slide chrome */
+    .meta { display: flex; justify-content: space-between; align-items: flex-start;
+      font-family: var(--mono); font-size: 16px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--graphite); }
+    .meta .center { color: var(--graphite-2); }
+    .num { font-family: var(--mono); font-size: 16px; letter-spacing: 0.20em;
+      text-transform: uppercase; color: var(--graphite); margin-top: 48px; margin-bottom: 40px;
+      display: flex; align-items: center; gap: 14px; }
+    .num .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--red); display: inline-block; }
+    .foot { position: absolute; bottom: 56px; left: 120px; right: 120px;
+      display: flex; justify-content: space-between; font-family: var(--mono);
+      font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--graphite); z-index: 2; }
+
+    h1 { font-family: var(--display); font-weight: 400; font-size: 132px; line-height: 0.98;
+      letter-spacing: -0.025em; margin: 0; }
+    h2 { font-family: var(--display); font-weight: 400; font-size: 96px; line-height: 1.02;
+      letter-spacing: -0.02em; margin: 0; }
+    h3 { font-family: var(--display); font-weight: 400; font-size: 56px; line-height: 1.1;
+      letter-spacing: -0.015em; margin: 0; }
+    p { margin: 0; font-family: var(--serif); font-size: 28px; line-height: 1.45; color: var(--ink-2); }
+    .dark p { color: var(--paper-2); }
+    em { font-style: italic; color: var(--red); }
+    .lede { font-family: var(--serif); font-size: 36px; line-height: 1.4; max-width: 28ch; color: var(--ink-2); }
+    .dark .lede { color: var(--paper-2); }
+
+    /* ───── slide 01 — title ───── */
+    .s-title { justify-content: space-between; }
+    .s-title .center-block { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .s-title .wordmark {
+      font-family: var(--display); font-size: 360px; line-height: 0.9;
+      letter-spacing: -0.045em; color: var(--ink);
+      position: relative;
+    }
+    .s-title .wordmark .o-1, .s-title .wordmark .o-2 {
+      display: inline-block; position: relative;
+    }
+    .s-title .wordmark .o-1::before, .s-title .wordmark .o-2::before {
+      content: ""; position: absolute; inset: 8% 4% 12% 4%;
+      border: 2px solid var(--red); border-radius: 50%;
+      pointer-events: none;
+    }
+    .s-title .tagline {
+      font-family: var(--serif); font-style: italic; font-size: 44px;
+      color: var(--graphite); letter-spacing: -0.005em;
+      margin-top: 28px; max-width: 36ch;
+    }
+
+    /* ───── two-column layout ───── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; flex: 1; align-items: start; }
+    .two-col.center { align-items: center; }
+    .col-stack > * + * { margin-top: 32px; }
+
+    /* ───── pull quote / thesis ───── */
+    .pull {
+      font-family: var(--display); font-weight: 400;
+      font-size: 124px; line-height: 1.04; letter-spacing: -0.025em;
+      max-width: 22ch; color: var(--ink);
+    }
+    .dark .pull { color: var(--paper); }
+    .pull em { color: var(--red); }
+
+    /* ───── stat grid ───── */
+    /* slide 02 specific — give stat grid room above the foot */
+    section[data-screen-label="02 Thesis"] .stat-grid { margin-bottom: 80px; }
+    .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+      border-top: 1px solid var(--rule); margin-top: auto; }
+    .dark .stat-grid { border-top-color: rgba(236,231,220,0.18); }
+    .stat-cell { padding: 32px 32px 0 0; border-right: 1px solid var(--rule); }
+    .dark .stat-cell { border-right-color: rgba(236,231,220,0.18); }
+    .stat-cell:last-child { border-right: none; }
+    .stat-cell .big { font-family: var(--display); font-size: 96px; line-height: 1;
+      letter-spacing: -0.025em; }
+    .stat-cell .lab { font-family: var(--mono); font-size: 14px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--graphite); margin-top: 14px; }
+    .stat-cell .desc { font-family: var(--serif); margin-top: 12px;
+      font-size: 19px; line-height: 1.4; color: var(--ink-2); max-width: 28ch; }
+    .dark .stat-cell .desc { color: var(--paper-2); }
+    .dark .stat-cell .lab { color: var(--paper-3); }
+
+    /* ───── 3-card row ───── */
+    .three-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; flex: 1; }
+    .card {
+      border: 1px solid var(--rule);
+      padding: 40px 36px;
+      display: flex; flex-direction: column;
+      background: rgba(255,255,255,0.4);
+    }
+    .card .tag { font-family: var(--mono); font-size: 14px; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--graphite); }
+    .card h3 { margin: 16px 0 8px; }
+    .card .sub { font-family: var(--mono); font-size: 16px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--graphite); margin-bottom: 24px; }
+    .card p { font-size: 22px; line-height: 1.45; color: var(--ink-2); }
+    .card ul { list-style: none; padding: 0; margin: 24px 0 0;
+      font-family: var(--mono); font-size: 16px; letter-spacing: 0.10em;
+      text-transform: uppercase; color: var(--graphite); }
+    .card ul li { padding: 10px 0; border-top: 1px dashed var(--rule); }
+    .card ul li:first-child { border-top: none; }
+
+    /* ───── how-it-works grid ───── */
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+      flex: 1; border-left: 1px solid var(--rule); }
+    .step { border-right: 1px solid var(--rule); border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule); padding: 40px 32px;
+      display: flex; flex-direction: column; }
+    .step .step-n { font-family: var(--mono); font-size: 16px; letter-spacing: 0.18em;
+      color: var(--graphite); }
+    .step h3 { margin: 24px 0 16px; font-size: 44px; }
+    .step p { font-size: 20px; line-height: 1.45; }
+    .step .icon { width: 96px; height: 96px; margin-bottom: 28px; color: var(--ink); }
+
+    /* ───── machine spec grid ───── */
+    .spec-grid { display: grid; grid-template-columns: 220px 1fr 220px 1fr;
+      gap: 0 48px; row-gap: 18px; align-content: start; }
+    .spec-grid dt { font-family: var(--mono); font-size: 14px;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--graphite);
+      padding-top: 8px; border-top: 1px solid var(--rule); }
+    .dark .spec-grid dt { color: var(--paper-3); border-top-color: rgba(236,231,220,0.18); }
+    .spec-grid dd { font-family: var(--serif); font-size: 22px; margin: 0;
+      padding-top: 8px; border-top: 1px solid var(--rule); color: var(--ink); }
+    .dark .spec-grid dd { color: var(--paper); border-top-color: rgba(236,231,220,0.18); }
+
+    /* ───── ask/use-of-funds ───── */
+    .ask-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 96px; flex: 1; }
+    .ask-headline { font-family: var(--display); font-size: 144px; line-height: 1;
+      letter-spacing: -0.025em; }
+    .ask-headline em { color: var(--red); }
+    .uof { font-family: var(--mono); }
+    .uof-row { display: grid; grid-template-columns: 80px 1fr 120px;
+      gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--rule);
+      align-items: center; font-size: 18px; letter-spacing: 0.06em; }
+    .dark .uof-row { border-bottom-color: rgba(236,231,220,0.18); }
+    .uof-row .pct { font-family: var(--display); font-size: 44px; color: var(--ink); letter-spacing: -0.01em; }
+    .dark .uof-row .pct { color: var(--paper); }
+    .uof-row .lbl { font-family: var(--serif); font-size: 24px; color: var(--ink-2); }
+    .dark .uof-row .lbl { color: var(--paper-2); }
+    .uof-row .amt { text-align: right; color: var(--graphite); letter-spacing: 0.14em; text-transform: uppercase; }
+    .uof-row .bar { grid-column: 1 / -1; height: 4px; background: var(--rule); position: relative; margin-top: 8px; }
+    .uof-row .bar::before { content: ""; position: absolute; inset: 0 var(--rest, 70%) 0 0; background: var(--red); }
+
+    /* ───── status table ───── */
+    .status-table { width: 100%; border-collapse: collapse; font-family: var(--mono);
+      font-size: 22px; flex: 1; align-self: stretch; }
+    .status-table tr { border-top: 1px solid rgba(236,231,220,0.18); }
+    .status-table th, .status-table td { text-align: left; padding: 28px 16px;
+      vertical-align: middle; }
+    .status-table th { font-weight: 500; color: var(--paper-3); width: 220px;
+      letter-spacing: 0.16em; text-transform: uppercase; font-size: 18px; }
+    .status-table td { color: var(--paper); font-family: var(--serif); font-size: 28px; }
+    .pill { display: inline-block; font-family: var(--mono); font-size: 14px;
+      letter-spacing: 0.18em; text-transform: uppercase; padding: 6px 14px;
+      border-radius: 999px; border: 1px solid rgba(236,231,220,0.4);
+      color: var(--paper); margin-left: 16px; vertical-align: middle; }
+    .pill.live { border-color: var(--red); color: var(--red); }
+
+    /* ───── team ───── */
+    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; flex: 1; }
+    .team-card { padding: 36px 0 0; border-top: 1px solid var(--rule); display: flex; flex-direction: column; gap: 12px; }
+    .dark .team-card { border-top-color: rgba(236,231,220,0.18); }
+    .team-card .name { font-family: var(--display); font-size: 56px; line-height: 1; letter-spacing: -0.015em; }
+    .team-card .role { font-family: var(--mono); font-size: 16px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--graphite); }
+    .dark .team-card .role { color: var(--paper-3); }
+    .team-card .bio { font-family: var(--serif); font-size: 22px; line-height: 1.45; color: var(--ink-2); margin-top: 8px; }
+    .dark .team-card .bio { color: var(--paper-2); }
+
+    /* ───── closing slide ───── */
+    .closing { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+    .closing .quote { font-family: var(--display); font-size: 168px; line-height: 0.98; letter-spacing: -0.025em; max-width: 18ch; }
+    .closing .quote em { color: var(--red); }
+    .closing .sig { margin-top: 64px; font-family: var(--mono); font-size: 18px;
+      letter-spacing: 0.20em; text-transform: uppercase; color: var(--graphite-2); }
+
+    /* ───── why modulor (the name) ───── */
+    .why-fig {
+      background: var(--paper); padding: 48px;
+      display: flex; align-items: center; justify-content: center;
+      height: 100%;
+    }
+    .why-fig img { max-width: 100%; max-height: 760px; mix-blend-mode: multiply; }
+    .fig-cap { font-family: var(--mono); font-size: 14px; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--graphite); margin-top: 18px; }
+
+    /* ───── traction / pipeline ───── */
+    .pipeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+      border-top: 1px solid rgba(236,231,220,0.18); margin-top: auto; }
+    .pipe-cell { padding: 40px 32px 0 0; border-right: 1px solid rgba(236,231,220,0.18); }
+    .pipe-cell:last-child { border-right: none; }
+    .pipe-cell .pn { font-family: var(--mono); font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--paper-3); }
+    .pipe-cell .pt { font-family: var(--display); font-size: 64px; line-height: 1.05; margin-top: 16px; color: var(--paper); }
+    .pipe-cell .pd { font-family: var(--serif); font-size: 22px; line-height: 1.45; color: var(--paper-2); margin-top: 16px; }
+    .pipe-cell .pc { font-family: var(--mono); font-size: 14px; letter-spacing: 0.14em; color: var(--red); text-transform: uppercase; margin-top: 18px; }
+  </style>
+</head>
+<body>
+  <deck-stage>
+
+    <!-- 01 — TITLE -->
+    <section class="s-title" data-screen-label="01 Title">
+      <div class="meta">
+        <span class="meta-l">Modulor, Inc. · Confidential · 2026</span>
+        <span class="center">— Investor Materials · Sheet 01 / 12 —</span>
+        <span class="meta-r">Subject to NDA</span>
+      </div>
+      <div class="center-block">
+        <div class="wordmark">M<span class="o-1">o</span>dul<span class="o-2">o</span>r</div>
+        <div class="tagline">A measure, taken from the body, given back to the body.</div>
+      </div>
+      <div class="meta">
+        <span class="meta-l">Seed · Pre-revenue</span>
+        <span class="meta-r">Mitchell Lisa · founder@modulor.bio</span>
+      </div>
+    </section>
+
+    <!-- 02 — THESIS -->
+    <section data-screen-label="02 Thesis">
+      <div class="meta"><span>§01 / Thesis</span><span></span><span>02 / 12</span></div>
+      <div class="num"><span class="dot"></span>The thesis</div>
+      <div class="pull">
+        Performance medicine measures power, output, recovery — and <em>nothing</em> about the tissue that actually tears.
+      </div>
+      <div class="stat-grid">
+        <div class="stat-cell">
+          <div class="big">#1</div>
+          <div class="lab">Cause of lost time</div>
+          <div class="desc">Soft-tissue injury leads lost time across elite sport and special-operations units.</div>
+        </div>
+        <div class="stat-cell">
+          <div class="big">∅</div>
+          <div class="lab">Existing dataset</div>
+          <div class="desc">No structured longitudinal corpus of soft-tissue range under matched load. Yet.</div>
+        </div>
+        <div class="stat-cell">
+          <div class="big">100<span style="font-size:0.5em">%</span></div>
+          <div class="lab">Compliance, supervised</div>
+          <div class="desc">Home-PT compliance ≈ 0%. Clinician present, ≈ 100%. The machine is the present clinician.</div>
+        </div>
+      </div>
+      <div class="foot"><span>Modulor, Inc. · 2026</span><span>02</span></div>
+    </section>
+
+    <!-- 03 — PROBLEM -->
+    <section data-screen-label="03 Problem">
+      <div class="meta"><span>§02 / Problem</span><span></span><span>03 / 12</span></div>
+      <div class="num"><span class="dot"></span>What's missing</div>
+      <div class="two-col" style="margin-top: 24px;">
+        <h2>Force plates measure power. GPS measures output. HRV measures recovery.<br/><em>Nothing measures muscle.</em></h2>
+        <div class="col-stack">
+          <p>Strength &amp; conditioning has spent fifteen years instrumenting outputs — watts, velocities, heart-rate variability, sprint splits.</p>
+          <p>The tissue that actually tears — hamstrings, adductors, quads, calves — is still measured by hand, by feel, by clinician estimate.</p>
+          <p>Two athletes can present with the same goniometer reading and have radically different injury risk. There is no instrument, no unit, no record.</p>
+        </div>
+      </div>
+      <div class="foot"><span>Modulor, Inc. · 2026</span><span>03</span></div>
+    </section>
+
+    <!-- 04 — PRODUCT -->
+    <section data-screen-label="04 Product">
+      <div class="meta"><span>§03 / Product</span><span></span><span>04 / 12</span></div>
+      <div class="num"><span class="dot"></span>The Machine — VITR</div>
+      <h2 style="max-width: 22ch;">An autonomous stretching platform that <em>measures</em> what it does.</h2>
+      <div class="steps" style="margin-top: 56px;">
+        <div class="step">
+          <div class="step-n">Step 01</div>
+          <svg class="icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="10" y="14" width="44" height="36" rx="2"/><line x1="10" y1="32" x2="54" y2="32"/><circle cx="22" cy="22" r="3" fill="currentColor"/><circle cx="42" cy="22" r="3" fill="currentColor"/><circle cx="22" cy="42" r="3" fill="currentColor"/><circle cx="42" cy="42" r="3" fill="currentColor"/></svg>
+          <h3>Strap In</h3>
+          <p>Athlete steps onto the platform. Quick-release cuffs. Clinician selects the protocol. Under a minute.</p>
+        </div>
+        <div class="step">
+          <div class="step-n">Step 02</div>
+          <svg class="icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="14" cy="20" r="6"/><circle cx="50" cy="44" r="6"/><path d="M 14 26 Q 32 32 50 38" stroke-dasharray="3 4"/><line x1="14" y1="14" x2="14" y2="6"/><line x1="50" y1="50" x2="50" y2="58"/></svg>
+          <h3>Stretch</h3>
+          <p>Motor-controlled cables ramp force at 0.5 lb/sec, hard-capped at 30 lb. PID compliance backs off the moment the athlete resists.</p>
+        </div>
+        <div class="step">
+          <div class="step-n">Step 03</div>
+          <svg class="icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="6" y1="36" x2="14" y2="36"/><path d="M 14 36 L 22 36 L 26 24 L 32 48 L 38 28 L 42 36 L 50 36"/><line x1="50" y1="36" x2="58" y2="36"/></svg>
+          <h3>Measure</h3>
+          <p>Inline load cells at 100 Hz. Rotary encoders track exact extension. Joint angle to ±2°, asymmetry to ±1.4%.</p>
+        </div>
+        <div class="step">
+          <div class="step-n">Step 04</div>
+          <svg class="icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="32" cy="32" r="20"/><circle cx="32" cy="32" r="10"/><circle cx="32" cy="32" r="3" fill="currentColor"/></svg>
+          <h3>Detect</h3>
+          <p>Overhead depth camera reads skeleton pose. Pelvis rotation, trunk shift, knee bend — flagged in real time, logged.</p>
+        </div>
+      </div>
+      <div class="foot"><span>Modulor, Inc. · 2026</span><span>04</span></div>
+    </section>
+
+    <!-- 05 — SPECIFICATIONS -->
+    <section class="dark" data-screen-label="05 Specifications">
+      <div class="meta"><span>§04 / Specifications</span><span></span><span>05 / 12</span></div>
+      <div class="num"><span class="dot"></span>VITR · V1 specifications</div>
+      <h2 style="color: var(--paper); margin-bottom: 64px;">The hardware.</h2>
+      <dl class="spec-grid">
+        <dt>Footprint</dt><dd>1525 × 1220 mm (5 × 4 ft)</dd>
+        <dt>Cable force</dt><dd>0–30 lb · 0.5 lb/sec ramp</dd>
+
+        <dt>Height</dt><dd>2130 mm (7 ft)</dd>
+        <dt>Compliance loop</dt><dd>PID, 100 Hz, ±0.2 lb</dd>
+
+        <dt>Mass</dt><dd>≈ 145 kg / 320 lb frame</dd>
+        <dt>Pose tracking</dt><dd>RealSense D455 · 33 pts @ 30 Hz</dd>
+
+        <dt>Power</dt><dd>120/240 V auto-sensing, 6 A nominal</dd>
+        <dt>E-stop</dt><dd>IEC 60947-5-5 · slack-out &lt; 1 sec</dd>
+
+        <dt>Network</dt><dd>Wi-Fi 6 + Gigabit Ethernet · TLS</dd>
+        <dt>Cuffs</dt><dd>Ankle / thigh / wrist · neoprene-lined</dd>
+      </dl>
+      <div class="foot"><span class="foot-r">Modulor, Inc. · 2026</span><span class="foot-r">05</span></div>
+    </section>
+
+    <!-- 06 — WHY MODULOR -->
+    <section data-screen-label="06 Why Modulor">
+      <div class="meta"><span>§05 / The Name</span><span></span><span>06 / 12</span></div>
+      <div class="num"><span class="dot"></span>Why "Modulor"</div>
+      <div class="two-col center" style="margin-top: 24px;">
+        <div class="col-stack">
+          <p style="font-size: 30px;">In 1945, Le Corbusier published <em>Le Modulor</em> — a system of proportions derived from the human body and tuned to the golden section.</p>
+          <p style="font-size: 30px;">He used it to design buildings that fit people: at the scale of a hand on a banister and an arm raised overhead.</p>
+          <div class="pull" style="font-size: 80px; max-width: 18ch; margin-top: 16px;">A measure, taken from the body, given back to the body.</div>
+          <p style="font-size: 26px; color: var(--graphite);">Modulor is the measurement system for the tissue performance medicine still estimates by eye.</p>
+        </div>
+        <div class="why-fig">
+          <div style="display:flex; flex-direction:column; align-items:center;">
+            <img src="modulor-man-le-corbusier.webp" alt="Le Corbusier — Le Modulor, 1945"/>
+            <div class="fig-cap">Fig. 02 — Le Corbusier · Le Modulor (1945)</div>
+          </div>
+        </div>
+      </div>
+      <div class="foot"><span>Modulor, Inc. · 2026</span><span>06</span></div>
+    </section>
+
+    <!-- 07 — MARKETS / CUSTOMERS -->
+    <section data-screen-label="07 Markets">
+      <div class="meta"><span>§06 / Markets</span><span></span><span>07 / 12</span></div>
+      <div class="num"><span class="dot"></span>Three markets, one platform</div>
+      <h2 style="margin-bottom: 56px; max-width: 24ch;">Where the platform sells.</h2>
+      <div class="three-cards">
+        <div class="card">
+          <div class="tag">Buyer 01</div>
+          <h3>Pro Sports</h3>
+          <div class="sub">NFL · NBA · MLS · Premier League</div>
+          <p>Performance and recovery staff who already buy force plates, GPS, HRV — and have nothing comparable for tissue.</p>
+          <ul>
+            <li>— First-pilot wedge</li>
+            <li>— Capex + SaaS sale</li>
+            <li>— $50–250k ACV</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="tag">Buyer 02</div>
+          <h3>Collegiate</h3>
+          <div class="sub">D1 strength · sports medicine</div>
+          <p>Programs running 800+ athletes through one S&amp;C department. The volume site for pilot data.</p>
+          <ul>
+            <li>— Highest data volume</li>
+            <li>— Conference rollout</li>
+            <li>— Athlete-month corpus</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="tag">Buyer 03</div>
+          <h3>Military SOF</h3>
+          <div class="sub">USSOCOM · 711 HPW · SWCS</div>
+          <p>Tactical training partners. Non-dilutive capital channel via SBIR/AFWERX, not the first-pilot source.</p>
+          <ul>
+            <li>— Strategic moat</li>
+            <li>— SBIR / AFWERX path</li>
+            <li>— Tactical readiness</li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot"><span>Modulor, Inc. · 2026</span><span>07</span></div>
+    </section>
+
+    <!-- 08 — BUSINESS MODEL -->
+    <section data-screen-label="08 Business Model">
+      <div class="meta"><span>§07 / Model</span><span></span><span>08 / 12</span></div>
+      <div class="num"><span class="dot"></span>How we get paid</div>
+      <div class="two-col" style="margin-top: 24px;">
+        <h2 style="max-width: 14ch;">Hardware to land. <em>Data</em> to keep.</h2>
+        <div class="col-stack">
+          <p><strong style="font-family: var(--mono); font-size: 18px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--graphite);">01 · Capex</strong><br/>$45–80k machine. Site install. Standard medical-device terms.</p>
+          <p><strong style="font-family: var(--mono); font-size: 18px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--graphite);">02 · SaaS</strong><br/>$1,500–4,000 / month per machine. AMS integration, longitudinal records, compensation flags.</p>
+          <p><strong style="font-family: var(--mono); font-size: 18px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--graphite);">03 · Data product</strong><br/>Aggregate, de-identified corpus licensed to insurers, leagues, clinical research. The eventual moat.</p>
+          <p style="margin-top: 24px; color: var(--graphite); font-size: 22px; font-style: italic;">Year-one ACV $50–80k blended. Gross margin: 45% on hardware, 80%+ on software.</p>
+        </div>
+      </div>
+      <div class="foot"><span>Modulor, Inc. · 2026</span><span>08</span></div>
+    </section>
+
+    <!-- 09 — TRACTION / STATUS -->
+    <section class="dark" data-screen-label="09 Status">
+      <div class="meta"><span>§08 / Status</span><span></span><span>09 / 12</span></div>
+      <div class="num"><span class="dot"></span>Where we are</div>
+      <h2 style="color: var(--paper); margin-bottom: 56px;">Status, end Q2 2026.</h2>
+      <table class="status-table">
+        <tbody>
+          <tr><th>IP</th><td>USPTO provisional filed Apr 15, 2026.<span class="pill live">Patent pending</span></td></tr>
+          <tr><th>Prototype</th><td>Mechanical + electrical BOM finalized. V1 build underway.<span class="pill">In build</span></td></tr>
+          <tr><th>Pilots</th><td>Design-partner conversations active across pro sport and performance medicine.<span class="pill">In conversation</span></td></tr>
+          <tr><th>Stage</th><td>Pre-revenue. Raising seed round with strategic co-investors.<span class="pill">Seed</span></td></tr>
+          <tr><th>Team</th><td>3 today · Founder/CEO · CTO · Strategic Advisor (PhD).<span class="pill">3</span></td></tr>
+        </tbody>
+      </table>
+      <div class="foot"><span class="foot-r">Modulor, Inc. · 2026</span><span class="foot-r">09</span></div>
+    </section>
+
+    <!-- 10 — TEAM -->
+    <section data-screen-label="10 Team">
+      <div class="meta"><span>§09 / Team</span><span></span><span>10 / 12</span></div>
+      <div class="num"><span class="dot"></span>Who's building this</div>
+      <h2 style="margin-bottom: 56px;">The team.</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="role">Founder · CEO</div>
+          <div class="name">Mitchell Lisa</div>
+          <div class="bio">Operator-founder. Background in performance medicine and product. Lives in the gap between clinicians and engineers.</div>
+        </div>
+        <div class="team-card">
+          <div class="role">CTO</div>
+          <div class="name">Matthew Lucas Lisa</div>
+          <div class="bio">Mechatronics &amp; embedded systems. Owns hardware, controls loop, sensor pipeline. Builds the thing that goes on the floor.</div>
+        </div>
+        <div class="team-card">
+          <div class="role">Strategic Advisor</div>
+          <div class="name">Adam H. Evans, PhD</div>
+          <div class="bio">Movement-science researcher. Sets the measurement protocol and validates the corpus against published methods.</div>
+        </div>
+      </div>
+      <div class="foot"><span>Modulor, Inc. · 2026</span><span>10</span></div>
+    </section>
+
+    <!-- 11 — ASK / USE OF FUNDS -->
+    <section data-screen-label="11 Ask">
+      <div class="meta"><span>§10 / Ask</span><span></span><span>11 / 12</span></div>
+      <div class="num"><span class="dot"></span>The ask</div>
+      <div class="ask-grid" style="margin-top: 24px;">
+        <div>
+          <div class="ask-headline">Raising<br/><em>$2.5M</em><br/>seed.</div>
+          <p style="margin-top: 32px; font-size: 26px; max-width: 26ch;">18-month runway. Three V1 machines into pilot sites. Foundational corpus from 200+ athlete-months.</p>
+          <p style="margin-top: 24px; font-size: 18px; font-family: var(--mono); letter-spacing: 0.16em; text-transform: uppercase; color: var(--graphite);">Targeting strategic co-investors</p>
+        </div>
+        <div class="uof">
+          <div class="uof-row" style="--rest: 45%;">
+            <span class="pct">55%</span><span class="lbl">Hardware build · 3 V1 units · pilot install</span><span class="amt">$1.38M</span>
+            <div class="bar"></div>
+          </div>
+          <div class="uof-row" style="--rest: 75%;">
+            <span class="pct">25%</span><span class="lbl">Engineering · firmware · controls · pose pipeline</span><span class="amt">$0.62M</span>
+            <div class="bar"></div>
+          </div>
+          <div class="uof-row" style="--rest: 88%;">
+            <span class="pct">12%</span><span class="lbl">Clinical validation · IRB · publication</span><span class="amt">$0.30M</span>
+            <div class="bar"></div>
+          </div>
+          <div class="uof-row" style="--rest: 92%;">
+            <span class="pct">8%</span><span class="lbl">G&amp;A · IP · pilot operations</span><span class="amt">$0.20M</span>
+            <div class="bar"></div>
+          </div>
+        </div>
+      </div>
+      <div class="foot"><span>Modulor, Inc. · 2026</span><span>11</span></div>
+    </section>
+
+    <!-- 12 — CLOSE -->
+    <section class="dark closing" data-screen-label="12 Close">
+      <div class="meta"><span style="color: var(--paper-3);">§11 / Close</span><span></span><span style="color: var(--paper-3);">12 / 12</span></div>
+      <div class="num" style="color: var(--paper-3);"><span class="dot"></span>Step in</div>
+      <div class="quote">A measure,<br/>taken from the body,<br/><em>given back to the body.</em></div>
+      <div class="sig">Mitchell Lisa &nbsp;·&nbsp; founder@modulor.bio &nbsp;·&nbsp; modulor.bio</div>
+      <div class="foot"><span class="foot-r">Modulor, Inc. · Confidential · 2026</span><span class="foot-r">12 / 12</span></div>
+    </section>
+
+  </deck-stage>
+</body>
+</html>
