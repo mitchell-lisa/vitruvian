@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modulor — Investor Deck</title>
+  <link rel="icon" type="image/png" href="modulor-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..700,30..100,0..1&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="deck-stage.js"></script>
+  <style>
+    :root {
+      --paper: #E5DECF; --paper-2: #D9D2C2; --paper-3: #CCC4B3;
+      --ink: #14110D; --ink-2: #2C2722;
+      --graphite: #5A544B; --graphite-2: #837C70;
+      --rule: rgba(20,17,13,0.12); --rule-strong: rgba(20,17,13,0.28);
+      --red: #C77B7B; --green: #3D7A5A; --slate: #5E7485; --slate-deep: #41566A;
+      --serif: "Fraunces", Georgia, serif;
+      --display: "Instrument Serif", "Fraunces", Georgia, serif;
+      --mono:  "JetBrains Mono", ui-monospace, Menlo, monospace;
+      --sans:  "Inter Tight", "Inter", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--sans); background: #1a1815; color: var(--ink); }
+
+    deck-stage section {
+      width: 1920px; height: 1080px;
+      background: var(--paper);
+      color: var(--ink);
+      position: relative;
+      overflow: hidden;
+      padding: 72px 120px 110px;
+      display: flex;
+      flex-direction: column;
+    }
+    deck-stage section.dark { background: var(--ink); color: var(--paper); }
+    deck-stage section.dark .meta-l, deck-stage section.dark .meta-r,
+    deck-stage section.dark .num, deck-stage section.dark .foot,
+    deck-stage section.dark .foot-r { color: var(--paper-3); }
+
+    /* paper grain */
+    deck-stage section::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.07  0 0 0 0 0.06  0 0 0 0 0.05  0 0 0 0.10 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+      opacity: 0.40; mix-blend-mode: multiply; z-index: 0;
+    }
+    deck-stage section.dark::before { mix-blend-mode: screen; opacity: 0.18; }
+    deck-stage section > * { position: relative; z-index: 1; }
+
+    /* slide chrome */
+    .meta { display: flex; justify-content: space-between; align-items: flex-start;
+      font-family: var(--mono); font-size: 16px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--graphite); }
+    .meta .center { color: var(--graphite-2); }
+    .num { font-family: var(--mono); font-size: 16px; letter-spacing: 0.20em;
+      text-transform: uppercase; color: var(--graphite); margin-top: 24px; margin-bottom: 20px;
+      display: flex; align-items: center; gap: 14px; }
+    .num .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--red); display: inline-block; }
+    .foot { position: absolute; bottom: 44px; left: 120px; right: 120px;
+      display: flex; justify-content: space-between; font-family: var(--mono);
+      font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--graphite); z-index: 2; }
+
+    h1 { font-family: var(--display); font-weight: 400; font-size: 132px; line-height: 0.98;
+      letter-spacing: -0.025em; margin: 0; }
+    h2 { font-family: var(--display); font-weight: 400; font-size: 76px; line-height: 1.02;
+      letter-spacing: -0.02em; margin: 0; }
+    h3 { font-family: var(--display); font-weight: 400; font-size: 44px; line-height: 1.1;
+      letter-spacing: -0.015em; margin: 0; }
+    p { margin: 0; font-family: var(--serif); font-size: 26px; line-height: 1.45; color: var(--ink-2); }
+    .dark p { color: var(--paper-2); }
+    em { font-style: italic; color: var(--red); }
+    .lede { font-family: var(--serif); font-size: 32px; line-height: 1.4; max-width: 36ch; color: var(--ink-2); }
+    .dark .lede { color: var(--paper-2); }
+    strong { color: var(--ink); font-weight: 600; }
+    .dark strong { color: var(--paper); }
+
+    /* ───── slide 01 — title ───── */
+    .s-title { justify-content: space-between; }
+    .s-title .center-block { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+    .s-title .wordmark-img {
+      width: auto; height: 520px; max-width: 100%; display: block;
+      margin: -60px 0 -40px;
+      object-fit: contain; object-position: center;
+    }
+    .s-title .tagline {
+      font-family: var(--display); font-style: italic; font-size: 56px;
+      color: var(--ink-2); letter-spacing: -0.005em; line-height: 1.15;
+      margin-top: 36px; max-width: 28ch;
+    }
+    .s-title .sub {
+      font-family: var(--serif); font-size: 28px; color: var(--graphite);
+      margin-top: 24px; max-width: 50ch; font-style: italic;
+    }
+
+    /* ───── two-column layout ───── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; flex: 1; align-items: start; }
+    .two-col.center { align-items: center; }
+    .two-col.lopsided { grid-template-columns: 1.1fr 0.9fr; }
+    .col-stack > * + * { margin-top: 24px; }
+
+    /* ───── pull quote / thesis ───── */
+    .pull {
+      font-family: var(--display); font-weight: 400;
+      font-size: 116px; line-height: 1.04; letter-spacing: -0.025em;
+      max-width: 22ch; color: var(--ink);
+    }
+    .dark .pull { color: var(--paper); }
+    .pull em { color: var(--red); }
+
+    /* ───── arrow list (problem / solution) ───── */
+    .arrow-list { list-style: none; padding: 0; margin: 24px 0 0; display: flex; flex-direction: column; gap: 24px; }
+    .arrow-list li {
+      display: grid; grid-template-columns: 260px 32px 1fr; gap: 20px;
+      align-items: baseline; padding: 16px 0;
+      border-top: 1px solid var(--rule);
+    }
+    .arrow-list li:last-child { border-bottom: 1px solid var(--rule); }
+    .arrow-list .lab { font-family: var(--mono); font-size: 16px; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--red); font-weight: 500; }
+    .arrow-list .arrow { font-family: var(--display); font-size: 32px; color: var(--graphite); text-align: center; }
+    .arrow-list .body { font-family: var(--serif); font-size: 22px; line-height: 1.4; color: var(--ink-2); }
+    .arrow-list .cite { font-family: var(--mono); font-size: 13px; color: var(--graphite); letter-spacing: 0.04em; display: block; margin-top: 6px; font-style: normal; }
+
+    /* ───── stat row ───── */
+    .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+      border-top: 1px solid var(--rule); margin-top: auto; }
+    .dark .stat-row { border-top-color: rgba(236,231,220,0.18); }
+    .stat-cell { padding: 18px 24px 0 0; border-right: 1px solid var(--rule); }
+    .dark .stat-cell { border-right-color: rgba(236,231,220,0.18); }
+    .stat-cell:last-child { border-right: none; padding-right: 0; }
+    .stat-cell .big { font-family: var(--display); font-size: 88px; line-height: 1; letter-spacing: -0.025em; }
+    .stat-cell .lab { font-family: var(--mono); font-size: 14px; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--graphite); margin-top: 14px; }
+    .dark .stat-cell .lab { color: var(--paper-3); }
+    .stat-cell .desc { font-family: var(--serif); margin-top: 12px;
+      font-size: 19px; line-height: 1.4; color: var(--ink-2); max-width: 32ch; }
+    .dark .stat-cell .desc { color: var(--paper-2); }
+    .stat-cell .cite { font-family: var(--mono); font-size: 12px; color: var(--graphite); letter-spacing: 0.04em; margin-top: 10px; display: block; }
+
+    /* ───── 3-card row ───── */
+    .three-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .four-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .two-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .card {
+      border: 1px solid var(--rule);
+      padding: 22px 22px;
+      display: flex; flex-direction: column;
+      background: rgba(255,255,255,0.4);
+    }
+    .dark .card { border-color: rgba(236,231,220,0.18); background: rgba(236,231,220,0.03); }
+    .card.accent { border-color: var(--red); }
+    .card .tag { font-family: var(--mono); font-size: 13px; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--red); margin-bottom: 12px; font-weight: 500; }
+    .card .tag.alt { color: var(--slate-deep); }
+    .card .tag.green { color: var(--green); }
+    .card h3 { font-size: 26px; margin: 0 0 6px; }
+    .card .sub { font-family: var(--mono); font-size: 13px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--graphite); margin-bottom: 18px; }
+    .card p { font-size: 16px; line-height: 1.45; color: var(--ink-2); }
+    .dark .card p { color: var(--paper-2); }
+    .card ul { list-style: none; padding: 0; margin: 16px 0 0;
+      font-family: var(--serif); font-size: 17px; line-height: 1.5; color: var(--ink-2); }
+    .dark .card ul { color: var(--paper-2); }
+    .card ul li { padding: 8px 0; border-top: 1px dashed var(--rule); }
+    .dark .card ul li { border-top-color: rgba(236,231,220,0.18); }
+    .card ul li:first-child { border-top: none; }
+
+    /* ───── team ───── */
+    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; flex: 1; }
+    .team-card { padding: 0; display: flex; flex-direction: column; }
+    .team-card .photo {
+      width: 100%; height: 260px; object-fit: contain; object-position: center;
+      background: var(--paper-2);
+      filter: grayscale(35%) contrast(0.95);
+      border: 1px solid var(--rule);
+    }
+    .team-card .role { font-family: var(--mono); font-size: 13px; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--red); margin-top: 18px; }
+    .team-card .name { font-family: var(--display); font-size: 40px; line-height: 1; letter-spacing: -0.015em; margin-top: 6px; color: var(--ink); }
+    .team-card .school { font-family: var(--mono); font-size: 12px; letter-spacing: 0.10em;
+      text-transform: uppercase; color: var(--graphite); margin-top: 8px; }
+    .team-card ul { list-style: none; padding: 0; margin: 12px 0 0;
+      font-family: var(--serif); font-size: 15px; line-height: 1.4; color: var(--ink-2); }
+    .team-card ul li { padding: 6px 0; border-top: 1px solid var(--rule); display: flex; gap: 10px; }
+    .team-card ul li::before { content: "→"; color: var(--red); flex-shrink: 0; font-family: var(--mono); }
+
+    /* ───── technical figures (patent-style) ───── */
+    .tech-fig {
+      background: rgba(255,255,255,0.45); border: 1px solid var(--rule);
+      padding: 18px 22px 12px; display: flex; flex-direction: column;
+    }
+    .tech-fig .fig-title {
+      font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--graphite); margin-bottom: 8px;
+    }
+    .tech-fig img, .tech-fig svg, .tech-fig object {
+      width: 100%; height: auto; display: block;
+      mix-blend-mode: multiply; max-height: 100%;
+    }
+    .tech-fig .fig-note {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.10em;
+      text-transform: uppercase; color: var(--graphite-2); margin-top: 8px;
+    }
+    .dark .tech-fig {
+      background: rgba(236,231,220,0.94); border-color: rgba(236,231,220,0.20);
+    }
+
+    /* ───── why modulor (the name) ───── */
+    .why-fig {
+      background: var(--paper); padding: 32px;
+      display: flex; align-items: center; justify-content: center;
+      height: 100%;
+    }
+    .why-fig img { max-width: 100%; max-height: 700px; mix-blend-mode: multiply; }
+    .fig-cap { font-family: var(--mono); font-size: 13px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--graphite); margin-top: 16px; }
+
+    /* ───── capital — donut + table ───── */
+    .capital-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 64px; flex: 1; align-items: start; }
+    .donut-wrap { display: flex; flex-direction: column; align-items: center; }
+    .donut-svg { width: 280px; height: 280px; }
+    .donut-legend { list-style: none; padding: 0; margin: 20px 0 0; width: 100%;
+      font-family: var(--serif); font-size: 15px; line-height: 1.5; color: var(--ink-2); }
+    .donut-legend li { display: grid; grid-template-columns: 18px 1fr auto; gap: 12px; align-items: center;
+      padding: 8px 0; border-top: 1px solid var(--rule); }
+    .donut-legend li:last-child { border-bottom: 1px solid var(--rule); }
+    .swatch { width: 14px; height: 14px; border-radius: 2px; }
+    .donut-legend .pct { font-family: var(--mono); font-size: 14px; color: var(--graphite); letter-spacing: 0.06em; }
+
+    .capital-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .cap-cat { padding: 14px 18px; border: 1px solid var(--rule); background: rgba(255,255,255,0.3); }
+    .cap-cat-head { display: flex; justify-content: space-between; align-items: baseline;
+      padding-bottom: 8px; border-bottom: 1px solid var(--rule); margin-bottom: 8px; }
+    .cap-cat-head h4 { font-family: var(--display); font-size: 24px; margin: 0; display: flex; align-items: center; gap: 10px; }
+    .cap-cat-head .amt { font-family: var(--mono); font-size: 18px; color: var(--ink); letter-spacing: 0.04em; font-weight: 500; }
+    .cap-cat ul { list-style: none; padding: 0; margin: 0; font-family: var(--serif); font-size: 14px; color: var(--ink-2); }
+    .cap-cat ul li { display: flex; justify-content: space-between; gap: 12px; padding: 4px 0; font-size: 13px; }
+    .cap-cat ul li .c { font-family: var(--mono); font-size: 13px; color: var(--graphite); letter-spacing: 0.04em; flex-shrink: 0; }
+
+    /* ───── ask — three seats ───── */
+    .seat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-content: start; }
+    .seat { padding: 20px 22px; border: 1px solid var(--rule); background: rgba(255,255,255,0.4); display: flex; flex-direction: column; }
+    .seat.anchor { border-color: var(--red); }
+    .seat .seat-tag { font-family: var(--mono); font-size: 13px; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--red); margin-bottom: 16px; }
+    .seat.partner .seat-tag { color: var(--graphite); }
+    .seat.signal .seat-tag { color: var(--graphite-2); }
+    .seat h3 { font-size: 26px; margin: 0 0 6px; }
+    .seat .body { font-family: var(--serif); font-size: 15px; line-height: 1.4; color: var(--ink-2); flex: 1; }
+    .seat .check { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--rule); }
+    .seat .check-lab { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--graphite); margin-bottom: 10px; }
+    .seat .check ul { list-style: none; padding: 0; margin: 0; font-family: var(--serif); font-size: 15px; line-height: 1.4; color: var(--ink-2); }
+    .seat .check ul li { padding: 4px 0; }
+    .seat .check ul li::before { content: "·  "; color: var(--graphite); }
+
+    /* ───── what / why / what's done columns ───── */
+    .triad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--rule); }
+    .triad-col h4 { font-family: var(--display); font-size: 22px; margin: 0 0 10px; }
+    .triad-col ul { list-style: none; padding: 0; margin: 0;
+      font-family: var(--serif); font-size: 15px; line-height: 1.4; color: var(--ink-2); }
+    .triad-col ul li { padding: 5px 0; border-top: 1px dashed var(--rule); }
+    .triad-col ul li:first-child { border-top: none; }
+    .triad-col .num-mark { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--red); margin-bottom: 10px; display: block; }
+
+    /* ───── how-it-works steps ───── */
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+      flex: 1; border-left: 1px solid var(--rule); }
+    .step { border-right: 1px solid var(--rule); border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule); padding: 36px 28px;
+      display: flex; flex-direction: column; }
+    .step .step-n { font-family: var(--mono); font-size: 14px; letter-spacing: 0.18em;
+      color: var(--red); }
+    .step h3 { margin: 18px 0 12px; font-size: 36px; }
+    .step p { font-size: 18px; line-height: 1.45; }
+    .step .icon { width: 80px; height: 80px; margin-bottom: 20px; color: var(--ink); }
+
+    /* ───── 9 measure variables ───── */
+    .var-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; flex: 1; }
+    .var { padding: 12px 16px; border: 1px solid var(--rule); background: rgba(255,255,255,0.3); display: flex; flex-direction: column; }
+    .var .v-n { font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; color: var(--red); }
+    .var h4 { font-family: var(--display); font-size: 22px; margin: 2px 0 4px; }
+    .var p { font-size: 14px; line-height: 1.35; }
+
+    /* ───── stack of buyer cards (markets) ───── */
+    .market-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .market-grid.row2 { grid-template-columns: repeat(2, 1fr); margin-top: 16px; }
+
+    /* ───── close ───── */
+    .closing { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+    .closing .quote { font-family: var(--display); font-size: 152px; line-height: 0.98; letter-spacing: -0.025em; max-width: 18ch; }
+    .closing .quote em { color: var(--red); }
+    .closing .sig { margin-top: 56px; font-family: var(--mono); font-size: 18px;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--paper-3); }
+
+    /* ───── full-bleed quote (problem flag) ───── */
+    .flag {
+      background: rgba(199,123,123,0.12); border-left: 4px solid var(--red);
+      padding: 24px 28px; margin-top: 24px;
+      font-family: var(--serif); font-size: 22px; line-height: 1.5; color: var(--ink-2);
+    }
+    .dark .flag { background: rgba(199,123,123,0.10); color: var(--paper-2); }
+    .flag strong { color: var(--ink); font-weight: 500; }
+    .dark .flag strong { color: var(--paper); }
+
+    /* ───── quadrant for competitive landscape ───── */
+    .quad-outer { position: relative; width: 100%; max-width: 560px; padding: 28px 32px 32px 32px; }
+    .quad { position: relative; aspect-ratio: 1; width: 100%;
+      border: 1px solid var(--rule-strong); background: rgba(255,255,255,0.25); }
+    .quad::before, .quad::after { content: ""; position: absolute; background: var(--rule-strong); }
+    .quad::before { left: 50%; top: 0; bottom: 0; width: 1px; }
+    .quad::after { top: 50%; left: 0; right: 0; height: 1px; }
+    .qax { position: absolute; font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--slate-deep); font-weight: 600; white-space: nowrap; }
+    .qax.t { top: -22px; left: 50%; transform: translateX(-50%); }
+    .qax.b { bottom: -22px; left: 50%; transform: translateX(-50%); }
+    .qax.l { left: -8px; top: 50%; transform: translate(-100%, -50%) rotate(-90deg); transform-origin: 100% 50%; }
+    .qax.r { right: -8px; top: 50%; transform: translate(100%, -50%) rotate(90deg); transform-origin: 0 50%; }
+    .qdot { position: absolute; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .qdot .d { width: 11px; height: 11px; border-radius: 50%; background: var(--slate); border: 2px solid var(--paper); box-shadow: 0 0 0 1px var(--slate); }
+    .qdot.us .d { width: 22px; height: 22px; background: var(--red); border: 4px solid var(--paper); box-shadow: 0 0 0 1px var(--red); }
+    .qdot .lbl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.10em; text-transform: uppercase; color: var(--ink-2); white-space: nowrap; background: rgba(229,222,207,0.85); padding: 2px 6px; }
+    .qdot.us .lbl { color: var(--red); font-weight: 700; font-size: 13px; background: var(--paper); }
+  </style>
+</head>
+<body>
+  <deck-stage>
+
+    <!-- 01 — TITLE -->
+    <section class="s-title" data-screen-label="01 Title">
+      <div class="meta">
+        <span class="meta-l">Modulor, Inc. · Confidential</span>
+        <span class="center">— Investor Materials · 2026 —</span>
+        <span class="meta-r">For potential partners only</span>
+      </div>
+      <div class="center-block">
+        <img src="modulor-construction-wordmark.png" alt="Modulor" class="wordmark-img"/>
+        <div class="tagline">Actuarial infrastructure for<br/>musculoskeletal injury risk.</div>
+        <div class="sub">Powered by autonomous, force-controlled stretching. Built for longitudinal risk intelligence.</div>
+      </div>
+      <div class="meta">
+        <span class="meta-l">Seed · Pre-revenue</span>
+        <span class="meta-r">hello@modulor.bio &nbsp;·&nbsp; modulor.bio/pitch</span>
+      </div>
+    </section>
+
+    <!-- 02 — THE PROBLEM -->
+    <section data-screen-label="02 Problem">
+      <div class="meta"><span>§01 / The Problem</span><span></span><span>02 / 17</span></div>
+      <div class="num"><span class="dot"></span>The Problem</div>
+      <h2 style="max-width: 30ch;">Soft-tissue injuries are the #1 cause of lost games in elite sport — and they are <em>getting worse</em>.</h2>
+      <p class="lede" style="margin-top: 20px; max-width: 64ch; font-size: 26px;">Strength has force plates. Speed has timing gates. Recovery has Normatec. Flexibility and joint mobility — the biggest levers for injury prevention — are still estimated by eye and documented on paper.</p>
+      <ul class="arrow-list" style="margin-top: 20px;">
+        <li><span class="lab">No measurement</span><span class="arrow">→</span><span class="body">Manual goniometry has 5–10° error; tight hamstrings, hip asymmetries, ankle restrictions go undetected until an athlete pulls up. <span class="cite">Norkin &amp; White, <em>Measurement of Joint Motion</em>, 5th ed., 2016</span></span></li>
+        <li><span class="lab">No consistency</span><span class="arrow">→</span><span class="body">No standardized force, no protocol control — 30% of hamstring &amp; adductor injuries re-occur despite modern S&amp;C. <span class="cite">Ekstrand et al., <em>Br J Sports Med</em>, 2023</span></span></li>
+        <li><span class="lab">No longitudinal data</span><span class="arrow">→</span><span class="body">When an athlete tears a muscle, there is no flexibility trend data to analyze — the warning signs were never captured.</span></li>
+        <li><span class="lab">No readiness data</span><span class="arrow">→</span><span class="body">For SOF and high-performance military units, MSK injury is a readiness event. Every down day is a capability gap you cannot fill.</span></li>
+      </ul>
+      <div class="foot"><span>Modulor, Inc. · 2026</span><span>02</span></div>
+    </section>
+
+    <!-- 03 — PROBLEM (data) -->
+    <section data-screen-label="03 Scale">
+      <div class="meta"><span>§01 / The Problem · cont.</span><span></span><span>03 / 17</span></div>
+      <div class="num"><span class="dot"></span>The scale of the gap</div>
+      <h2 style="max-width: 22ch;">The numbers, on the record.</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-top: 56px; flex: 1; align-content: start;">
+        <div class="col-stack">
+          <p style="font-size: 24px;"><strong>25% of NFL players</strong> suffer a lower-extremity strain every season. 33% re-injury rate.<br/><span style="font-family: var(--mono); font-size: 14px; color: var(--graphite); letter-spacing: 0.04em;">Jenkins et al., 12-yr review of 2,101 NFL hamstring injuries, <em>Orthop J Sports Med</em>, 2024</span></p>
+          <p style="font-size: 24px;"><strong>21% of pro footballers</strong> suffer a groin/adductor injury every season; 68% adductor-related.<br/><span style="font-family: var(--mono); font-size: 14px; color: var(--graphite); letter-spacing: 0.04em;">Werner et al., 17-club / 606-player UEFA prospective study, <em>Br J Sports Med</em></span></p>
+          <p style="font-size: 24px;"><strong>Hamstring injuries doubled</strong> from 12% to 24% of all injuries in men's pro football over 21 years.<br/><span style="font-family: var(--mono); font-size: 14px; color: var(--graphite); letter-spacing: 0.04em;">Ekstrand et al., UEFA Elite Club Injury Study, <em>Br J Sports Med</em>, 2023</span></p>
+        </div>
+        <div class="col-stack">
+          <p style="font-size: 24px;"><strong>Restricted hip internal rotation and ankle dorsiflexion</strong> are independent risk factors for ACL injury — 83% of studies in a 2,819-athlete review confirmed the link.<br/><span style="font-family: var(--mono); font-size: 14px; color: var(--graphite); letter-spacing: 0.04em;">Belkhelladi, Cierson &amp; Martineau, <em>Orthop J Sports Med</em>, 2025</span></p>
+          <p style="font-size: 24px;"><strong>Top LaLiga clubs lose €7M+ annually</strong> to muscle injuries. Premier League teams spent <strong>£266M total</strong> on sidelined players' wages in 2023/24 — <strong>£83M on hamstrings alone</strong>.<br/><span style="font-family: var(--mono); font-size: 14px; color: var(--graphite); letter-spacing: 0.04em;">Melcón-Ballesteros et al., <em>PLOS One</em> 2024 · Premier Injuries Ltd. 2024</span></p>
+          <div class="flag" style="margin-top: 8px;"><strong>Muscle strains are the largest single injury category</strong> in elite football: hamstrings 42%, adductors 25%, quads 19%, calves 14%. Re-injury: adductors 29%, hamstrings 30%.</div>
+        </div>
+      </div>
+      <div class="foot"><span>Modulor, Inc. · 2026</span><span>03</span></div>
+    </section>
+
+    <!-- 04 — SOLUTION -->
+    <section data-screen-label="04 Solution">
+      <div class="meta"><span>§02 / The Solution</span><span></span><span>04 / 17</span></div>
+      <div class="num"><span class="dot"></span>The Solution</div>
+      <h2 style="max-width: 24ch;">Keep athletes on the field. Extend their careers. <em>Sharpen their edge.</em></h2>
+      <p class="lede" style="margin-top: 28px; max-width: 64ch;">The athlete straps in. A motorized cable stretches them at calibrated force. Onboard sensors feel exactly where tissue yields. A depth camera catches the compensations that mask true range. Every session, a structured record of what was actually found.</p>
+      <ul class="arrow-list" style="margin-top: 40px;">
+        <li><span class="lab">From guesswork</span><span class="arrow">→</span><span class="body"><strong>To precision:</strong> motorized cable tension at constant force, joint angle measured to ±2° by depth camera.</span></li>
+        <li><span class="lab">From reactive care</span><span class="arrow">→</span><span class="body"><strong>To proactive prevention:</strong> longitudinal ROM trends and asymmetry alerts quantify mobility loss and side-to-side drift, session over session.</span></li>
+        <li><span class="lab">From missed games</span><span class="arrow">→</span><span class="body"><strong>To more starts:</strong> athletes recover faster, move better, and stay on the field — the metric that matters most.</span></li>
+      </ul>
+      <div class="foot"><span>Modulor, Inc. · 2026</span><span>04</span></div>
+    </section>
+
+    <!-- 05 — PRODUCT -->
+    <section data-screen-label="05 Product">
+      <div class="meta"><span>§03 / The Product</span><span></span><span>05 / 17</span></div>
+      <div class="num"><span class="dot"></span>The Product</div>
+      <h2 style="max-width: 22ch;">Strap in. Get stretched. <em>Get measured.</em></h2>
+      <div class="two-col center" style="margin-top: 40px; gap: 64px;">
+        <div class="tech-fig" style="padding: 24px 28px 16px;">
+          <div class="fig-title">Fig. 2 — Apparatus side-elevation schematic</div>
+          <object type="image/svg+xml" data="figures/FIG-02.svg" style="width:100%; height:auto;"></object>
+          <div class="fig-note">10 BLDC motor · 12 Planetary gearbox · 14 Cable spool · 16 Inline load cell · 18 Quick-release cuff · 20 Depth camera · 22 Touchscreen · 24 &amp; stop · 26 Frame &amp; latch</div>
+        </div>
+        <div class="col-stack">
+          <p style="font-size: 22px;">The athlete straps in, attaches a quick-release cuff, and the machine does the rest — no clinician, no partner required.</p>
+          <ul class="arrow-list" style="margin-top: 16px;">
+            <li><span class="lab">Strap in</span><span class="arrow">→</span><span class="body">Guided position, quick-release cuff. Under a minute.</span></li>
+            <li><span class="lab">Machine stretches</span><span class="arrow">→</span><span class="body">Force-controlled cable. Identical calibrated load every rep. Backdriveable and safe.</span></li>
+            <li><span class="lab">Feels the tension</span><span class="arrow">→</span><span class="body">Inline load cell reads resistance and end-range tolerance continuously.</span></li>
+            <li><span class="lab">Detects deficiencies</span><span class="arrow">→</span><span class="body">Depth camera flags pelvic rotation, trunk shift, knee bend — compensations on the record.</span></li>
+          </ul>
+          <div class="flag" style="margin-top: 16px; font-size: 16px; padding: 16px 20px;"><strong>Compliance by design.</strong> Athletes do ~0% of unsupervised home mobility work and ~100% of what a clinician walks them through. The machine is the present clinician — every rep compounds the corpus.</div>
+        </div>
+      </div>
+      <div class="foot"><span>Modulor, Inc. · 2026</span><span>05</span></div>
+    </section>
+
+    <!-- 06 — HOW IT WORKS / METHOD -->
+    <section class="dark" data-screen-label="06 How It Works">
+      <div class="meta"><span>§04 / How It Works</span><span></span><span>06 / 17</span></div>
+      <div class="num"><span class="dot"></span>How it works</div>
+      <h2 style="color: var(--paper); max-width: 22ch;">Eight minutes. Nine variables. <em>Zero guesswork.</em></h2>
+      <div class="tech-fig" style="margin-top: 36px; padding: 24px 28px 16px;">
+        <div class="fig-title">Fig. 3 — Stretch session method (bilateral assessment protocol)</div>
+        <object type="image/svg+xml" data="figures/FIG-03.svg" style="width:100%; height:auto; max-height:520px;"></object>
+        <div class="fig-note">Step 100 → 110. Steps 102 a/b run in parallel. 112 closes the longitudinal loop into the next session's baseline.</div>
+      </div>
+      <p style="font-family: var(--mono); font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--paper-3); margin-top: 24px; border-top: 1px solid rgba(236,231,220,0.18); padding-top: 16px;">Method claim: steps 100–112 define the complete closed-loop control system with longitudinal feedback. <span style="color: var(--red);">↻ closed loop.</span></p>
+      <div class="foot"><span class="foot-r">Modulor, Inc. · 2026</span><span class="foot-r">06</span></div>
+    </section>
+
+    <!-- 07 — WHY MODULOR (the name) -->
+    <section data-screen-label="07 Why Modulor">
+      <div class="meta"><span>§05 / The Name</span><span></span><span>07 / 17</span></div>
+      <div class="num"><span class="dot"></span>Why "Modulor"</div>
+      <div class="two-col center" style="margin-top: 16px;">
+        <div class="col-stack">
+          <p style="font-size: 28px;">In 1945, Le Corbusier published <em>Le Modulor</em> — a system of proportions derived from the human body and tuned to the golden section.</p>
+          <p style="font-size: 28px;">He used it to design buildings that fit people: at the scale of a hand on a banister, an arm raised overhead.</p>
+          <div class="pull" style="font-size: 80px; max-width: 18ch; margin-top: 16px;">A measure, taken from the body, given back to the body.</div>
+          <p style="font-size: 22px; color: var(--graphite); font-style: italic;">Modulor is the measurement system for the tissue performance medicine still estimates by eye.</p>
+        </div>
+        <div class="why-fig">
+          <div style="display:flex; flex-direction:column; align-items:center;">
+            <img src="modulor-man-le-corbusier.webp" alt="Le Corbusier — Le Modulor, 1945"/>
+            <div class="fig-cap">Fig. 02 — Le Corbusier · Le Modulor (1945)</div>
+          </div>
+        </div>
+      </div>
+      <div class="foot"><span>Modulor, Inc. · 2026</span><span>07</span></div>
+    </section>
+
+    <!-- 08 — WHAT IT MEASURES -->
+    <section data-screen-label="08 What It Measures">
+      <div class="meta"><span>§06 / What It Measures</span><span></span><span>08 / 17</span></div>
+      <div class="num"><span class="dot"></span>What it measures</div>
+      <h2 style="max-width: 22ch;">Nine variables. <em>Measured, not estimated.</em></h2>
+      <p class="lede" style="margin-top: 16px; max-width: 70ch; font-size: 20px;">Three independent sensor inputs — depth camera, inline load cell, motor encoder — fused at 100 Hz. Nine derived variables. One longitudinal risk score.</p>
+      <div class="tech-fig" style="margin-top: 16px; padding: 14px 20px 8px;">
+        <div class="fig-title">Fig. 8 — Measurement extraction pipeline (raw sensor → derived variables)</div>
+        <object type="image/svg+xml" data="figures/FIG-08.svg" style="width:100%; height:auto; max-height:200px;"></object>
+      </div>
+      <div class="var-grid" style="margin-top: 14px; gap: 10px;">
+        <div class="var"><div class="v-n">V1</div><h4>Joint Angle</h4><p>Peak passive ROM at standardized force. ±2° accuracy. Comparable across sessions.</p></div>
+        <div class="var"><div class="v-n">V2</div><h4>Cable Force</h4><p>Inline load cell at 100 Hz. Logs tension ramp, peak force, variability during hold.</p></div>
+        <div class="var"><div class="v-n">V3</div><h4>Asymmetry</h4><p>Left vs. right at matched force. Flags differences &gt; 10%. Tracks resolution over time.</p></div>
+        <div class="var"><div class="v-n">V4</div><h4>Hold Time</h4><p>Duration at end-range without retreating. A neuromuscular tolerance metric.</p></div>
+        <div class="var"><div class="v-n">V5</div><h4>Compensation</h4><p>Camera detects pelvic rotation, knee bend, trunk shift. Quantified, not eyeballed.</p></div>
+        <div class="var"><div class="v-n">V6</div><h4>Tolerance</h4><p>Force level where the athlete first reports discomfort or resists. Tracked over weeks.</p></div>
+        <div class="var"><div class="v-n">V7</div><h4>Pain Response</h4><p>Binary flag per rep. Correlated with force and ROM to build a tissue-response profile.</p></div>
+        <div class="var"><div class="v-n">V8</div><h4>Tension Ramp</h4><p>Rate of force acceptance during initial stretch. Indicates tissue readiness and stiffness.</p></div>
+        <div class="var"><div class="v-n">V9</div><h4>Session Δ</h4><p>Acute ROM gain per session. Chronic trend over weeks. The metric that matters most.</p></div>
+      </div>
+      <div class="foot"><span>Modulor, Inc. · 2026</span><span>08</span></div>
+    </section>
+
+    <!-- 09 — COMPETITIVE LANDSCAPE -->
+    <section data-screen-label="09 Competitive">
+      <div class="meta"><span>§07 / Competitive Landscape</span><span></span><span>09 / 17</span></div>
+      <div class="num"><span class="dot"></span>Competitive landscape</div>
+      <h2 style="max-width: 26ch;">Motorized stretching, real-time measurement, longitudinal data. <em>No integrated platform.</em></h2>
+      <div class="two-col" style="margin-top: 20px; grid-template-columns: 0.85fr 1.15fr; align-items: start; gap: 56px;">
+        <div>
+          <div class="quad-outer">
+            <div class="quad">
+              <span class="qax t">Data-rich · Measured</span>
+              <span class="qax b">No data · Manual</span>
+              <span class="qax l">Passive · Manual</span>
+              <span class="qax r">Active · Motorized</span>
+              <div class="qdot us" style="left: 78%; top: 18%;"><div class="d"></div><div class="lbl">Modulor</div></div>
+              <div class="qdot" style="left: 72%; top: 42%;"><div class="d"></div><div class="lbl">Biodex / Cybex</div></div>
+              <div class="qdot" style="left: 70%; top: 68%;"><div class="d"></div><div class="lbl">Normatec</div></div>
+              <div class="qdot" style="left: 28%; top: 75%;"><div class="d"></div><div class="lbl">StretchLab</div></div>
+              <div class="qdot" style="left: 22%; top: 55%;"><div class="d"></div><div class="lbl">Manual PT</div></div>
+              <div class="qdot" style="left: 50%; top: 88%;"><div class="d"></div><div class="lbl">Foam rollers</div></div>
+              <div class="qdot" style="left: 18%; top: 28%;"><div class="d"></div><div class="lbl">Goniometer</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-stack">
+          <p style="font-size: 22px;">The real competitive set is the <strong>full injury-risk measurement ecosystem</strong> — force plates (VALD, Hawkin), motion capture (Theia, Sparta), and stretch-focused hardware (StretchLab, Normatec, Hyperice). Each owns a slice. Modulor integrates motorized, force-controlled stretching with real-time biomechanical measurement and longitudinal data — <em>the only intervention surface that also generates the measurement corpus</em>.</p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
+            <div class="card" style="padding: 18px 20px;"><h3 style="font-size: 22px;">Force plates</h3><p style="font-size: 16px;">VALD, Hawkin. Jump/squat output. Adjacent budget. No ROM, no stretch.</p></div>
+            <div class="card" style="padding: 18px 20px;"><h3 style="font-size: 22px;">Motion capture</h3><p style="font-size: 16px;">Theia, Sparta. Markerless kinematics. No load, no intervention.</p></div>
+            <div class="card" style="padding: 18px 20px;"><h3 style="font-size: 22px;">Biodex / Cybex</h3><p style="font-size: 16px;">Clinical isokinetic. $100K+. Not for stretch protocols. No vision.</p></div>
+            <div class="card" style="padding: 18px 20px;"><h3 style="font-size: 22px;">StretchLab</h3><p style="font-size: 16px;">Manual 1:1 service. $60/session. No measurement, no data.</p></div>
+            <div class="card" style="padding: 18px 20px;"><h3 style="font-size: 22px;">Normatec / Hyperice</h3><p style="font-size: 16px;">Compression + percussion. No active stretch, no ROM.</p></div>
+            <div class="card" style="padding: 18px 20px;"><h3 style="font-size: 22px;">Manual PT</h3><p style="font-size: 16px;">Subjective. No force control. Rarely longitudinal.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="foot"><span>Modulor, Inc. · 2026</span><span>09</span></div>
+    </section>
+
+    <!-- 10 — MARKET / 5 BUYERS -->
+    <section data-screen-label="10 Market">
+      <div class="meta"><span>§08 / Market Opportunity</span><span></span><span>10 / 17</span></div>
+      <div class="num"><span class="dot"></span>Market opportunity</div>
+      <h2 style="max-width: 26ch;">Five buyers. One data asset. <em>Sequenced, not simultaneous.</em></h2>
+      <p class="lede" style="margin-top: 16px; max-width: 90ch; font-size: 24px;">Stretching is the wedge. The product is a measurement + risk-pricing layer. <strong>Seed-stage wedge is pro + collegiate Teams.</strong> DoD is non-dilutive capital, not first-pilot. Insurance, Leagues, Strategic unlock as the corpus compounds.</p>
+      <div class="market-grid" style="margin-top: 20px;">
+        <div class="card accent">
+          <div class="tag">Buyer 1 · Hardware lease</div>
+          <h3>Teams — Pro + Collegiate</h3>
+          <p>~800 addressable programs in NA + EU. Target $60K/yr/station. Every franchise has a training-room budget and an injury-prevention mandate.</p>
+        </div>
+        <div class="card">
+          <div class="tag alt">Buyer 2 · Data licensing · long-term</div>
+          <h3>Insurers — WC + Disability</h3>
+          <p>$70B+ US market. MSK is ~40% of claims. Long-term — unlocks after peer-reviewed validation + 10K+ athlete-months in corpus. Mature target: $250K–$1M/carrier/yr. <em>Not a seed-stage revenue claim.</em></p>
+        </div>
+        <div class="card">
+          <div class="tag">Buyer 3 · Non-dilutive + hardware</div>
+          <h3>DoD / Special Operations</h3>
+          <p>~800K MSK injuries/yr active-duty — 100× pro sport. SOFWERX, AFWERX, DIU are funded pilot rails. Same hardware; subscription fits training-hub budgets.</p>
+        </div>
+      </div>
+      <div class="market-grid row2" style="margin-top: 16px;">
+        <div class="card">
+          <div class="tag alt">Buyer 4 · Enterprise</div>
+          <h3>Leagues + Players' Associations</h3>
+          <p>Roster-level availability models. Standardized injury reporting aligned to CBAs. Long sales cycle — large check.</p>
+        </div>
+        <div class="card">
+          <div class="tag alt">Buyer 5 · Strategic exit</div>
+          <h3>Hyperice · Catapult · Nike</h3>
+          <p>Patent + data corpus are the asset. Acquisition-optimized. Adjacent distribution already owns the consumer surface.</p>
+        </div>
+      </div>
+      <div class="flag" style="margin-top: 20px; padding: 16px 22px; font-size: 19px;"><strong>Hardware is the wedge.</strong> Lease-only model. Every install compounds the data corpus. Physical switching cost protects the moat once deployed.</div>
+      <div class="foot"><span>Modulor, Inc. · 2026</span><span>10</span></div>
+    </section>
+
+    <!-- 11 — DEFENSIBILITY -->
+    <section class="dark" data-screen-label="11 Defensibility">
+      <div class="meta"><span>§09 / Defensibility</span><span></span><span>11 / 17</span></div>
+      <div class="num"><span class="dot"></span>Defensibility · Patent pending</div>
+      <h2 style="color: var(--paper); max-width: 28ch;">The device is the collection mechanism. <em>The moat is everything it builds.</em></h2>
+      <p class="lede" style="margin-top: 18px; max-width: 80ch; font-size: 22px;">USPTO Provisional <strong style="color: var(--paper);">64/040,028</strong> · filed Apr 15, 2026 · 35 U.S.C. §111(b). A competitor can build a cable machine. They cannot replicate three years of elite-athlete flexibility data, a peer-reviewed MSK injury-risk study, and a workflow embedded in every major AMS.</p>
+      <div class="tech-fig" style="margin-top: 20px; padding: 16px 22px 10px;">
+        <div class="fig-title">Fig. 1 — System block diagram (force-controlled stretch with compensation-aware adjustment)</div>
+        <object type="image/svg+xml" data="figures/FIG-01.svg" style="width:100%; height:auto; max-height:240px;"></object>
+        <div class="fig-note">System claim: elements 200–214 define the complete closed-loop system. The dashed path (210→206) represents the novel compensation-aware force adjustment — vision-detected compensation modifies the PID setpoint in real time.</div>
+      </div>
+      <div class="four-cards" style="margin-top: 20px;">
+        <div class="card">
+          <div class="tag">Layer 1 · Data</div>
+          <h3>Normative database</h3>
+          <p>ROM norms for NFL linemen, Army Rangers, D-I athletes — by position, by load, by season. 3–5 years to replicate.</p>
+        </div>
+        <div class="card">
+          <div class="tag">Layer 2 · Evidence</div>
+          <h3>Clinical validation</h3>
+          <p>Peer-reviewed hazard-ratio curves linking ROM / asymmetry deltas to MSK injury — becomes the citation standard.</p>
+        </div>
+        <div class="card">
+          <div class="tag">Layer 3 · Workflow</div>
+          <h3>AMS + switching cost</h3>
+          <p>Once Modulor ROM Δ is the return-to-play criterion and data flows into Smartabase / Catapult, switching loses the longitudinal record.</p>
+        </div>
+        <div class="card">
+          <div class="tag">Layer 4 · Regulatory</div>
+          <h3>FDA 510(k) blocker</h3>
+          <p>Clearance for the injury-risk scoring output puts any clinical-space competitor 12–24 months behind us in queue.</p>
+        </div>
+      </div>
+      <div class="foot"><span class="foot-r">Modulor, Inc. · 2026</span><span class="foot-r">11</span></div>
+    </section>
+
+    <!-- 12 — DoD PATHWAY -->
+    <section data-screen-label="12 DoD">
+      <div class="meta"><span>§10 / Military / DoD Pathway</span><span></span><span>12 / 17</span></div>
+      <div class="num"><span class="dot"></span>Military / DoD pathway</div>
+      <h2 style="max-width: 26ch;">100× the injury volume. <em>Non-dilutive capital. Parallel track.</em></h2>
+      <p class="lede" style="margin-top: 24px; max-width: 80ch;">MSK injury is the #1 cause of lost duty days across every service branch. ~800K/yr active-duty MSK injuries; $3.7B annual cost. We pursue this in parallel — funded by the government, not the seed.</p>
+      <div class="flag" style="margin-top: 24px;"><strong>Why we have access:</strong> Co-founder Luke Lisa is an 18-year USAF veteran — JTAC officer, former Lead Engineer for Warfighter Training Systems, and Deputy Chief of the Pentagon's Integrated Warfare Division. He is both the target user and the person who built training hardware for this exact population. Direct relationships across 711 HPW (AFRL), Special Warfare training wings, and operator squadrons.</div>
+      <div class="four-cards" style="margin-top: 32px;">
+        <div class="card">
+          <div class="tag">Pathway 1 · 90-day yes</div>
+          <h3>AFWERX · Air Force SBIR</h3>
+          <p>Open Topic quarterly. <strong>$75K Phase I (3 mo) → $1.7M Phase II (9 mo) → $15M STRATFI.</strong> Target sponsor: PJ / combat controller / pilot training units.</p>
+        </div>
+        <div class="card">
+          <div class="tag">Pathway 2 · Best-paying pilot</div>
+          <h3>SOFWERX · USSOCOM</h3>
+          <p>Tier-1 operators = closest analog to pro athletes. CRADA + funded pilot via Tech Experimentation event. <strong>$250K–$3M, 90–180 days.</strong></p>
+        </div>
+        <div class="card">
+          <div class="tag alt">Pathway 3 · Biggest check</div>
+          <h3>DIU · Prototype OTA</h3>
+          <p>Dual-use commercial-first. <strong>$1–20M prototype awards.</strong> Unlocked after first commercial pilot revenue. Target: Year 2.</p>
+        </div>
+        <div class="card">
+          <div class="tag alt">Pathway 4 · Validation</div>
+          <h3>DHA · CHAMP clinical</h3>
+          <p>Peer-reviewed ROM/asymmetry → MSK injury-risk paper. Unlocks the insurance licensing narrative. <strong>6–24 mo, $500K–$10M R&amp;D.</strong></p>
+        </div>
+      </div>
+      <div class="foot"><span>Modulor, Inc. · 2026</span><span>12</span></div>
+    </section>
+
+    <!-- 13 — REVENUE MODEL -->
+    <section data-screen-label="13 Revenue">
+      <div class="meta"><span>§11 / Revenue Model</span><span></span><span>13 / 17</span></div>
+      <div class="num"><span class="dot"></span>Revenue model</div>
+      <h2 style="max-width: 22ch;">Multiple revenue streams. <em>Hardware-led foundation.</em></h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 20px; flex: 1; align-items: start;">
+        <div>
+          <p style="font-family: var(--mono); font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--graphite); margin-bottom: 12px;">2026–2027 · Launch</p>
+          <svg viewBox="0 0 42 42" style="width: 180px; height: 180px; display: block; margin: 0 auto;">
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="rgba(20,17,13,0.06)" stroke-width="6"/>
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="#C77B7B" stroke-width="6" stroke-dasharray="70 30" stroke-dashoffset="25" stroke-linecap="butt"/>
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="#5A544B" stroke-width="6" stroke-dasharray="15 85" stroke-dashoffset="55" stroke-linecap="butt"/>
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="#837C70" stroke-width="6" stroke-dasharray="15 85" stroke-dashoffset="70" stroke-linecap="butt"/>
+          </svg>
+          <ul class="donut-legend" style="max-width: 440px; margin: 16px auto 0;">
+            <li><span class="swatch" style="background: #C77B7B;"></span><span>Hardware sales</span><span class="pct">70%</span></li>
+            <li><span class="swatch" style="background: #5A544B;"></span><span>SaaS subscriptions</span><span class="pct">15%</span></li>
+            <li><span class="swatch" style="background: #837C70;"></span><span>Service / install</span><span class="pct">15%</span></li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-family: var(--mono); font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--graphite); margin-bottom: 12px;">2028+ · Scale</p>
+          <svg viewBox="0 0 42 42" style="width: 180px; height: 180px; display: block; margin: 0 auto;">
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="rgba(20,17,13,0.06)" stroke-width="6"/>
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="#C77B7B" stroke-width="6" stroke-dasharray="45 55" stroke-dashoffset="25" stroke-linecap="butt"/>
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="#5A544B" stroke-width="6" stroke-dasharray="30 70" stroke-dashoffset="80" stroke-linecap="butt"/>
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="#837C70" stroke-width="6" stroke-dasharray="15 85" stroke-dashoffset="50" stroke-linecap="butt"/>
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="#CCC4B3" stroke-width="6" stroke-dasharray="10 90" stroke-dashoffset="35" stroke-linecap="butt"/>
+          </svg>
+          <ul class="donut-legend" style="max-width: 440px; margin: 16px auto 0;">
+            <li><span class="swatch" style="background: #C77B7B;"></span><span>SaaS subscriptions</span><span class="pct">45%</span></li>
+            <li><span class="swatch" style="background: #5A544B;"></span><span>Hardware sales</span><span class="pct">30%</span></li>
+            <li><span class="swatch" style="background: #837C70;"></span><span>Data + insights</span><span class="pct">15%</span></li>
+            <li><span class="swatch" style="background: #CCC4B3;"></span><span>Service / install</span><span class="pct">10%</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="stat-row" style="margin-top: 20px; margin-bottom: 0;">
+        <div class="stat-cell"><div class="big" style="font-size: 64px;">$15–25K</div><div class="lab">Per unit hardware</div></div>
+        <div class="stat-cell"><div class="big" style="font-size: 64px;">$500/mo</div><div class="lab">SaaS per machine</div></div>
+        <div class="stat-cell"><div class="big" style="font-size: 64px;">85<span style="font-size: 0.6em">%+</span></div><div class="lab">Gross margin on SaaS</div></div>
+      </div>
+      <div class="foot"><span>Modulor, Inc. · 2026</span><span>13</span></div>
+    </section>
+
+    <!-- 14 — CAPITAL REQUIREMENTS -->
+    <section class="dark" data-screen-label="14 Capital">
+      <div class="meta"><span>§12 / Capital Requirements</span><span></span><span>14 / 17</span></div>
+      <div class="num"><span class="dot"></span>Capital requirements</div>
+      <h2 style="color: var(--paper);">Raising <em>$3M Seed</em> — strategic-led preferred.</h2>
+      <p class="lede" style="margin-top: 12px; max-width: 80ch; font-size: 26px;">30-month runway. 5–8 pilot stations deployed. Patent utility conversion. Path to Series A on $2–4M ARR + insurance LOI.</p>
+      <div class="capital-grid" style="margin-top: 24px;">
+        <div class="donut-wrap">
+          <svg viewBox="0 0 42 42" class="donut-svg">
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="rgba(236,231,220,0.06)" stroke-width="6"/>
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="#C77B7B" stroke-width="6" stroke-dasharray="40 60" stroke-dashoffset="25" stroke-linecap="butt"/>
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="#D9C9A8" stroke-width="6" stroke-dasharray="30 70" stroke-dashoffset="85" stroke-linecap="butt"/>
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="#A8B5A0" stroke-width="6" stroke-dasharray="15 85" stroke-dashoffset="55" stroke-linecap="butt"/>
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="#8A8A95" stroke-width="6" stroke-dasharray="10 90" stroke-dashoffset="40" stroke-linecap="butt"/>
+            <circle cx="21" cy="21" r="15.915" fill="none" stroke="#5A544B" stroke-width="6" stroke-dasharray="5 95" stroke-dashoffset="30" stroke-linecap="butt"/>
+          </svg>
+          <ul class="donut-legend" style="border-color: rgba(236,231,220,0.18); color: var(--paper-2);">
+            <li style="border-top-color: rgba(236,231,220,0.18);"><span class="swatch" style="background: #C77B7B;"></span><span>Hardware — prototype, pilot stations, tooling</span><span class="pct" style="color: var(--paper-3);">40% · $1.2M</span></li>
+            <li style="border-top-color: rgba(236,231,220,0.18);"><span class="swatch" style="background: #D9C9A8;"></span><span>Engineering — firmware, CV/ML, full-stack</span><span class="pct" style="color: var(--paper-3);">30% · $900K</span></li>
+            <li style="border-top-color: rgba(236,231,220,0.18);"><span class="swatch" style="background: #A8B5A0;"></span><span>GTM — pilot ops, clinical, partnerships</span><span class="pct" style="color: var(--paper-3);">15% · $450K</span></li>
+            <li style="border-top-color: rgba(236,231,220,0.18);"><span class="swatch" style="background: #8A8A95;"></span><span>IP — utility conversion, PCT, continuations</span><span class="pct" style="color: var(--paper-3);">10% · $300K</span></li>
+            <li style="border-top-color: rgba(236,231,220,0.18); border-bottom-color: rgba(236,231,220,0.18);"><span class="swatch" style="background: #5A544B;"></span><span>Reserve — legal, ops, contingency</span><span class="pct" style="color: var(--paper-3);">5% · $150K</span></li>
+          </ul>
+        </div>
+        <div>
+          <div class="capital-detail">
+            <div class="cap-cat">
+              <div class="cap-cat-head"><h4><span style="color: #C77B7B;">●</span> Hardware</h4><span class="amt">$1.2M</span></div>
+              <ul>
+                <li><span>Mechanical, CAD, frame fab</span><span class="c">$250K</span></li>
+                <li><span>Motor + gearbox × 8 stations</span><span class="c">$320K</span></li>
+                <li><span>Camera, load cell, compute × 8</span><span class="c">$180K</span></li>
+                <li><span>Tooling + small-run setup</span><span class="c">$200K</span></li>
+                <li><span>v1.5 + PNF firmware iteration</span><span class="c">$150K</span></li>
+                <li><span>Shop, assembly, QA</span><span class="c">$100K</span></li>
+              </ul>
+            </div>
+            <div class="cap-cat">
+              <div class="cap-cat-head"><h4><span style="color: #D9C9A8;">●</span> Engineering</h4><span class="amt">$900K</span></div>
+              <ul>
+                <li><span>Firmware — PID, PNF, safety</span><span class="c">$220K</span></li>
+                <li><span>CV/ML — comp detect, fusion</span><span class="c">$260K</span></li>
+                <li><span>Full-stack — API, AMS, dash</span><span class="c">$200K</span></li>
+                <li><span>Mech / EE fractional</span><span class="c">$150K</span></li>
+                <li><span>Cloud, data, security</span><span class="c">$70K</span></li>
+              </ul>
+            </div>
+            <div class="cap-cat">
+              <div class="cap-cat-head"><h4><span style="color: #A8B5A0;">●</span> GTM</h4><span class="amt">$450K</span></div>
+              <ul>
+                <li><span>Pilot ops × 5–8 sites</span><span class="c">$150K</span></li>
+                <li><span>Clinical validation study</span><span class="c">$120K</span></li>
+                <li><span>DoD SBIR consultant + travel</span><span class="c">$60K</span></li>
+                <li><span>Fractional VP Sales</span><span class="c">$80K</span></li>
+                <li><span>Case studies, conferences</span><span class="c">$40K</span></li>
+              </ul>
+            </div>
+            <div class="cap-cat">
+              <div class="cap-cat-head"><h4><span style="color: #8A8A95;">●</span> IP</h4><span class="amt">$300K</span></div>
+              <ul>
+                <li><span>Utility patent conversion (3 claims)</span><span class="c">$45K</span></li>
+                <li><span>PCT — international protection</span><span class="c">$60K</span></li>
+                <li><span>Continuations</span><span class="c">$90K</span></li>
+                <li><span>Data-rights counsel</span><span class="c">$60K</span></li>
+                <li><span>Trademark, prior art, strategy</span><span class="c">$45K</span></li>
+              </ul>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 20px; padding: 16px 24px; border: 1px solid rgba(236,231,220,0.4); background: rgba(199,123,123,0.08);">
+            <span style="font-family: var(--mono); font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--paper);">Total raise</span>
+            <span style="font-family: var(--display); font-size: 64px; color: var(--paper); letter-spacing: -0.02em;">$3,000,000</span>
+          </div>
+        </div>
+      </div>
+      <div class="foot"><span class="foot-r">Modulor, Inc. · 2026</span><span class="foot-r">14</span></div>
+    </section>
+
+    <!-- 15 — TEAM -->
+    <section data-screen-label="15 Team">
+      <div class="meta"><span>§13 / The Team</span><span></span><span>15 / 17</span></div>
+      <div class="num"><span class="dot"></span>The team</div>
+      <h2 style="max-width: 30ch;">A product founder, a warfighter engineer, and a <em>DoD-tested advisor.</em></h2>
+      <div class="team-grid" style="margin-top: 28px;">
+        <div class="team-card">
+          <img src="Mitchell Lisa.jpeg" alt="Mitchell Lisa" class="photo"/>
+          <div class="role">Founder · CEO</div>
+          <div class="name">Mitchell Lisa</div>
+          <div class="school">University of Miami · Business Administration</div>
+          <ul>
+            <li>Corner Of (iOS) — Blind Tiger, Bleecker Street Bar, Little Ways, Blue Haven, The Flower Shop &amp; more; $25K pre-seed, 500+ waitlist</li>
+            <li>Dexian — $1.3M sales revenue across finance, banking &amp; insurance</li>
+            <li>Led AI pilot that cut manual data entry 80%</li>
+            <li>Walk-on UM Football — the athlete's perspective, built in</li>
+          </ul>
+        </div>
+        <div class="team-card">
+          <img src="luke-civilian.jpg" alt="Matthew &quot;Luke&quot; Lisa" class="photo"/>
+          <div class="role">Co-Founder · CTO</div>
+          <div class="name">Matthew "Luke" Lisa</div>
+          <div class="school">USAF · 18+ yrs · Virginia Tech Engineering</div>
+          <ul>
+            <li>Lead Engineer, Warfighter Training Systems — built DoD training hardware</li>
+            <li>JTAC — the exact operator this machine is built to protect</li>
+            <li>Deputy Chief, Integrated Warfare Division, Pentagon</li>
+            <li>711 HPW (AFRL), Special Warfare wings, operator squadrons</li>
+          </ul>
+        </div>
+        <div class="team-card">
+          <img src="adam evans.avif" alt="Adam H. Evans, PhD" class="photo"/>
+          <div class="role">Strategic Advisor · DoD + Mil-Tech</div>
+          <div class="name">Adam H. Evans, PhD</div>
+          <div class="school">Capella PhD · Case Western MBA · Colorado Springs</div>
+          <ul>
+            <li>Former Chair of Entrepreneurship, U. of Kentucky (2018–2022) — built the MBA Entrepreneurship concentration</li>
+            <li>CSO, InstantHandz — $1M valuation, $250K+ revenue serving Armed Forces families</li>
+            <li>AFWERX/SOFWERX judge · Harvard NPLI fellow · USAF Master Resilience Trainer</li>
+            <li>Founder, Special O.P.S. Inc. · FSMTB national board (writes the licensing exam)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot"><span>Modulor, Inc. · 2026</span><span>15</span></div>
+    </section>
+
+    <!-- 16 — THE ASK -->
+    <section data-screen-label="16 Ask">
+      <div class="meta"><span>§14 / The Ask</span><span></span><span>16 / 17</span></div>
+      <div class="num"><span class="dot"></span>The ask</div>
+      <h2 style="max-width: 26ch;">$3M seed — strategic-led. <em>Three seats on the cap table.</em></h2>
+      <p class="lede" style="margin-top: 12px; max-width: 90ch; font-size: 24px;">The thesis is defined. The IP is filed. The product is scoped. We are raising the smallest round that buys 30 months and the right partners on the cap table.</p>
+      <div class="seat-grid" style="margin-top: 16px;">
+        <div class="seat anchor">
+          <div class="seat-tag">Seat 1 · Anchor</div>
+          <h3>Strategic Investor</h3>
+          <div class="body">One strategic who unlocks distribution, a data-licensing pathway, or a DoD program-budget channel. Hyperice, Therabody, Catapult, Nike, a major insurance carrier, or a defense-aligned strategic (Lockheed Martin Ventures, Shield Capital, In-Q-Tel) with 711 HPW / USSOCOM access.</div>
+          <div class="check">
+            <div class="check-lab">Check size</div>
+            <ul><li>$1–1.5M lead</li><li>Distribution, data-licensing, or DoD pilot-budget intent letter</li><li>Board observer seat</li></ul>
+          </div>
+        </div>
+        <div class="seat partner">
+          <div class="seat-tag">Seat 2 · Partner</div>
+          <h3>Sports-Specific Fund</h3>
+          <div class="body">A fund with explicit sports/health thesis and warm intros to pro + collegiate training rooms. Will lead or co-lead. Brings deal flow on future strategics.</div>
+          <div class="check">
+            <div class="check-lab">Check size</div>
+            <ul><li>$500K–$1M</li><li>3–5 warm intros to flagship pilot programs</li><li>Governance seat or observer</li></ul>
+          </div>
+        </div>
+        <div class="seat signal">
+          <div class="seat-tag">Seat 3 · Signal</div>
+          <h3>Athlete / Operator Syndicate</h3>
+          <div class="body">Active and retired pro athletes + performance directors who take small positions and become public advocates. Signaling asset worth more than the check.</div>
+          <div class="check">
+            <div class="check-lab">Check size</div>
+            <ul><li>$25K–$250K per participant</li><li>3–5 named advocates at close</li><li>No board seat</li></ul>
+          </div>
+        </div>
+      </div>
+      <div class="triad" style="margin-top: 12px; padding-top: 12px;">
+        <div class="triad-col">
+          <span class="num-mark">What's done</span>
+          <ul>
+            <li>USPTO provisional <strong>64/040,028</strong> filed Apr 15, 2026</li>
+            <li>Full product scope + BOM</li>
+            <li>Data-rights contract template</li>
+            <li>Pilot conversations active</li>
+            <li>Design docs public (19)</li>
+          </ul>
+        </div>
+        <div class="triad-col">
+          <span class="num-mark">What $3M delivers</span>
+          <ul>
+            <li>5–8 pilot stations deployed</li>
+            <li>Utility patent + PCT</li>
+            <li>PNF at V1.5 — clinical parity</li>
+            <li>AFWERX Phase I submission</li>
+            <li>First insurance LOI</li>
+          </ul>
+        </div>
+        <div class="triad-col">
+          <span class="num-mark">Milestones to Series A</span>
+          <ul>
+            <li>$2–4M ARR</li>
+            <li>25K+ athlete-months in corpus</li>
+            <li>1 insurer data-licensing pilot</li>
+            <li>3+ AMS integrations live</li>
+            <li>DoD non-dilutive awarded</li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot"><span>Modulor, Inc. · 2026</span><span>16</span></div>
+    </section>
+
+    <!-- 17 — CLOSE -->
+    <section class="dark closing" data-screen-label="17 Close">
+      <div class="meta"><span style="color: var(--paper-3);">§15 / Close</span><span></span><span style="color: var(--paper-3);">17 / 17</span></div>
+      <div class="num" style="color: var(--paper-3);"><span class="dot"></span>Step in</div>
+      <div class="quote">Controlled tension.<br/>Measured range.<br/><em>Data on every rep.</em></div>
+      <div class="sig">hello@modulor.bio &nbsp;·&nbsp; modulor.bio/pitch &nbsp;·&nbsp; reply within 48 hours</div>
+      <div class="foot"><span class="foot-r">Modulor, Inc. · Confidential · 2026</span><span class="foot-r">17 / 17</span></div>
+    </section>
+
+  </deck-stage>
+</body>
+</html>
