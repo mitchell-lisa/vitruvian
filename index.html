@@ -5,210 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="modulor-icon.png">
   <title>Modulor — Actuarial infrastructure for musculoskeletal injury risk</title>
-  <link rel="stylesheet" href="style.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* Investor page overrides */
-    .inv-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:48px; }
-    .inv-grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-    .inv-grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
-    @media (max-width:860px){ .inv-grid-2,.inv-grid-3,.inv-grid-4{ grid-template-columns:1fr; } }
-    .inv-card { background:#282C30; border:1px solid rgba(255,255,255,0.08); border-radius:6px; padding:28px; }
-    .inv-card h3 { font-size:16px; font-weight:600; margin-bottom:10px; color:#fff; }
-    .inv-card p { font-size:14px; line-height:1.55; color:#b8bcc4; margin:0; }
-    .inv-label { font-size:11px; text-transform:uppercase; letter-spacing:0.14em; color:#888; margin-bottom:10px; }
-    .inv-kv { display:grid; grid-template-columns:160px 1fr; gap:16px 32px; font-size:14px; line-height:1.6; }
-    .inv-kv dt { color:#888; font-weight:500; }
-    .inv-kv dd { color:#e0e0e0; margin:0; }
-    .inv-bignum { font-size:44px; font-weight:700; color:#fff; line-height:1; margin-bottom:8px; letter-spacing:-0.02em; }
-    .inv-bignum-label { font-size:13px; color:#888; }
-    .inv-status-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
-    .inv-pill { display:inline-block; font-size:11px; padding:4px 10px; border-radius:3px; background:#113B2C; color:#F3F0E8; border:1px solid rgba(17,59,44,0.8); text-transform:uppercase; letter-spacing:0.08em; font-weight:600; }
-    .inv-pill.pending { background:rgba(94,116,133,0.12); color:#8BA5B8; border-color:rgba(94,116,133,0.28); }
-    .inv-pill.neutral { background:rgba(255,255,255,0.06); color:#b8bcc4; border-color:rgba(255,255,255,0.12); }
-    .inv-row { border-top:1px solid rgba(255,255,255,0.08); padding:18px 0; display:grid; grid-template-columns:140px 1fr 160px; gap:24px; align-items:center; }
-    .inv-row:first-child { border-top:none; }
-    .inv-phase { font-size:11px; text-transform:uppercase; letter-spacing:0.14em; color:#888; font-weight:600; }
-    .inv-phase-body h4 { font-size:15px; font-weight:600; color:#fff; margin-bottom:4px; }
-    .inv-phase-body p { font-size:13px; color:#b8bcc4; margin:0; line-height:1.5; }
-    .inv-phase-target { font-size:13px; color:#888; text-align:right; }
-    @media (max-width:860px){ .inv-row{ grid-template-columns:1fr; } .inv-phase-target{ text-align:left; } }
-    .inv-dr-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
-    @media (max-width:860px){ .inv-dr-grid{ grid-template-columns:1fr; } }
-    .inv-dr { display:block; padding:18px 22px; background:#1A1D20; border:1px solid rgba(255,255,255,0.08); border-radius:4px; color:#e0e0e0; text-decoration:none; transition:border-color 0.15s; }
-    .inv-dr:hover { border-color:rgba(255,255,255,0.25); }
-    .inv-dr-tag { font-size:10px; text-transform:uppercase; letter-spacing:0.14em; color:#888; margin-bottom:6px; }
-    .inv-dr-title { font-size:14px; font-weight:600; color:#fff; }
-    .ask-big { background:#181A1C; border:1px solid rgba(255,255,255,0.12); border-radius:8px; padding:48px; margin-top:24px; }
-    .ask-stack { display:grid; grid-template-columns:repeat(4,1fr); gap:32px; margin-bottom:32px; }
-    @media (max-width:860px){ .ask-stack{ grid-template-columns:repeat(2,1fr); } }
-    .ask-stat .inv-bignum { font-size:32px; }
-    .use-of-funds { display:grid; grid-template-columns:1fr; gap:10px; }
-    .use-row { display:grid; grid-template-columns:70px 1fr 160px; gap:20px; align-items:center; padding:12px 0; border-top:1px solid rgba(255,255,255,0.08); font-size:14px; }
-    .use-row:first-child { border-top:none; }
-    .use-pct { color:#fff; font-weight:700; font-family:'SF Mono',Menlo,monospace; }
-    .use-label { color:#e0e0e0; }
-    .use-detail { color:#888; font-size:13px; text-align:right; }
-    @media (max-width:860px){ .use-row{ grid-template-columns:1fr; } .use-detail{ text-align:left; } }
-  </style>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="nav-inner">
-      <div class="logo">
-        <img src="modulor-wordmark.png" alt="Modulor">
-      </div>
-      <div class="nav-links">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="pitch.html" class="nav-link">Deck</a>
-        <a href="product.html" class="nav-link">Product</a>
-        <a href="hub.html" class="nav-link">Data Room</a>
-        <a href="feedback.html" class="nav-cta">Contact</a>
-      </div>
-      <button class="nav-hamburger" id="navToggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+<div id="root"></div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-split">
-        <div class="hero-text">
-          <p class="section-tag" style="margin-bottom:18px;">Modulor</p>
-          <h1>An autonomous stretching machine that measures injury risk.</h1>
-          <p class="subtitle">The athlete straps in. The machine stretches them, feels the tension, and surfaces the deficiencies that drive re-injury — every session, a structured record.</p>
-          <div class="hero-ctas">
-            <a href="pitch.html" class="btn btn-primary">Request Deck →</a>
-            <a href="feedback.html" class="btn btn-secondary">Get in Touch</a>
-          </div>
-        </div>
-        <div class="hero-exhibit">
-          <img src="modulor man diagram.png" alt="Modulor proportional system" class="hero-exhibit-img">
-          <p class="hero-exhibit-caption">Le Corbusier, <em>Le Modulor</em>, 1945</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- React + Babel -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
-  <!-- THESIS -->
-  <section class="section section-dark" id="thesis">
-    <div class="container">
-      <p class="section-tag">The Problem</p>
-      <h2>Flexibility is the one variable performance medicine still estimates by eye.</h2>
-      <div class="two-col">
-        <div class="col">
-          <p>Force plates measure power. GPS measures output. HRV measures recovery. Nothing measures the tissue that actually tears — not at matched load, not longitudinally, not at scale.</p>
-        </div>
-        <div class="col">
-          <p>Soft-tissue injury remains the leading cause of lost time across elite sport and high-performance military units alike. The data to predict and prevent it has never been collected.</p>
-        </div>
-      </div>
-      <div class="modulor-diagram">
-        <img src="images-1.jpg" alt="Modulor proportional system — 108 · 175 · 216" class="modulor-diagram-img">
-      </div>
-    </div>
-  </section>
+<!-- Three.js for 3D machine model -->
+<script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
 
-  <!-- PRODUCT -->
-  <section class="section" id="product">
-    <div class="container">
-      <p class="section-tag">The Machine</p>
-      <h2>Strap in. Get stretched. Get measured.</h2>
-      <div class="inv-grid-4">
-        <div class="inv-card">
-          <div class="inv-label">Step 01</div>
-          <h3>Strap in</h3>
-          <p>The athlete anchors into a guided position — no clinician, no partner required. Setup takes under a minute.</p>
-        </div>
-        <div class="inv-card">
-          <div class="inv-label">Step 02</div>
-          <h3>The machine stretches</h3>
-          <p>A force-controlled cable takes the athlete through calibrated range. Identical, repeatable load every rep. Backdriveable and safe by design.</p>
-        </div>
-        <div class="inv-card">
-          <div class="inv-label">Step 03</div>
-          <h3>It feels the tension</h3>
-          <p>Onboard sensors read resistance, end-range tolerance, and the exact point tissue begins to yield — continuously, through the whole movement.</p>
-        </div>
-        <div class="inv-card">
-          <div class="inv-label">Step 04</div>
-          <h3>It detects deficiencies</h3>
-          <p>Vision tracking catches the pelvic rotation, trunk shift, and asymmetry that mask true range — surfacing the compensations that drive re-injury.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- Modulor components -->
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="wordmark.jsx"></script>
+<script type="text/babel" src="machine-3d.jsx"></script>
+<script type="text/babel" src="nda-gate.jsx"></script>
+<script type="text/babel" src="app.jsx"></script>
 
-  <div class="proportion-rule"></div>
-  <div class="corbusier-strip">
-    <img src="modulor-man-le-corbusier.webp" alt="" class="corbusier-strip-img">
-    <div class="corbusier-strip-overlay"></div>
-    <p class="corbusier-caption">Le Corbusier, <em>Le Modulor</em>, 1945</p>
-  </div>
-  <div class="proportion-rule"></div>
-
-  <!-- STATUS -->
-  <section class="section section-dark" id="traction">
-    <div class="container">
-      <p class="section-tag">Status</p>
-      <h2>Where we are.</h2>
-      <dl class="inv-kv">
-        <dt>IP</dt>
-        <dd>USPTO provisional filed Apr 15, 2026. <span class="inv-pill">Patent pending</span></dd>
-        <dt>Prototype</dt>
-        <dd>Mechanical + electrical BOM finalized. Build underway. <span class="inv-pill pending">In build</span></dd>
-        <dt>Pilots</dt>
-        <dd>Design partner conversations active across sport and performance medicine. <span class="inv-pill pending">In conversation</span></dd>
-        <dt>Stage</dt>
-        <dd>Pre-revenue. Raising a seed round with strategic co-investors. <span class="inv-pill neutral">Seed</span></dd>
-      </dl>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section section-cta" id="contact">
-    <div class="container">
-      <h2>Let's talk.</h2>
-      <p class="cta-sub">For potential partners, co-investors, and pilot programs.<br>The full deck is available under NDA — reach out to request access.</p>
-      <a href="pitch.html" class="btn btn-primary" style="margin-top:24px;">Request Deck →</a>
-      <a href="feedback.html" class="btn btn-secondary" style="margin-top:24px; margin-left:12px;">Contact</a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container footer-inner">
-      <div class="footer-logo">
-        <img src="modulor-wordmark.png" alt="Modulor">
-      </div>
-      <p class="copyright">2026 Modulor. Actuarial infrastructure for musculoskeletal injury risk.</p>
-    </div>
-  </footer>
-
-
-<script>
-(function(){
-  var btn = document.getElementById('navToggle');
-  if (!btn) return;
-  function close() {
-    document.body.classList.remove('nav-open');
-    btn.setAttribute('aria-expanded', 'false');
-    btn.setAttribute('aria-label', 'Open menu');
-  }
-  btn.addEventListener('click', function() {
-    var open = document.body.classList.toggle('nav-open');
-    btn.setAttribute('aria-expanded', String(open));
-    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-  });
-  document.querySelectorAll('.nav-links .nav-link, .nav-links .nav-cta').forEach(function(el) {
-    el.addEventListener('click', close);
-  });
-})();
-</script>
 </body>
 </html>
