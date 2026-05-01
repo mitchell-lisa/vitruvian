@@ -40,16 +40,6 @@ function Hero({ showGuides, motion }) {
   return (
     <section className="hero" id="top">
       <div className="container">
-        <div className="hero-meta">
-          <div className="left">
-            ▲ Modulor, Inc. · Delaware C-Corp · Est. 2026
-          </div>
-          <div className="center">— Patent Pending · USPTO 63/—— —</div>
-          <div className="right">
-            Sheet 01 / Wordmark · Construction
-          </div>
-        </div>
-
         <HeroWordmark showGuides={showGuides} motionLevel={motion} />
 
         <div className="hero-sub">
