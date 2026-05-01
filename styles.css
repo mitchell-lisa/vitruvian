@@ -135,6 +135,15 @@ a { color: inherit; }
 }
 .nav-links a.cta:hover { background: var(--ink); color: var(--paper); }
 
+@media (max-width: 760px) {
+  .nav { padding: 12px 0; }
+  .nav-inner { gap: 12px; }
+  .nav-links { gap: 14px; font-size: 11px; letter-spacing: 0.1em; }
+  /* Drop section anchors on narrow screens — keep brand + CTA only */
+  .nav-links a:not(.cta):not(.nda-success) { display: none; }
+  .nav-links a.cta { padding: 6px 10px; }
+}
+
 /* hero ------------------------------------------------------- */
 .hero {
   position: relative;
@@ -341,6 +350,32 @@ a { color: inherit; }
 @media (max-width: 760px) {
   .machine-legend { position: static; max-width: none; margin: 12px; }
   .machine-callout { position: static; margin: 12px; max-width: none; }
+
+  /* 3D widget overlays: stop overlapping in the cramped 16:9 mobile canvas. */
+  .machine-3d-widget {
+    aspect-ratio: 3 / 4 !important;
+  }
+  .machine-3d-legend {
+    top: 10px !important;
+    left: 10px !important;
+    right: 10px !important;
+    max-width: none !important;
+    padding: 10px 12px !important;
+    font-size: 10px !important;
+  }
+  .machine-3d-figbtn {
+    top: auto !important;
+    bottom: 10px !important;
+    left: 10px !important;
+    right: 10px !important;
+    justify-content: center;
+    padding: 12px 14px !important;
+    font-size: 11px !important;
+  }
+  /* Live demo HUD has too much detail for the small canvas — hide it. */
+  .machine-3d-hud { display: none !important; }
+  /* Detail panel takes the full widget when a part is selected. */
+  .machine-3d-detail.is-open { width: 100% !important; }
 }
 
 /* the machine ------------------------------------------------ */

@@ -1061,7 +1061,7 @@ function MachineModel() {
   const hov = !active && hovered ? PARTS.find((p) => p.id === hovered) : null;
 
   return (
-    <div style={{
+    <div className="machine-3d-widget" style={{
       position: "relative", width: "100%", aspectRatio: "16 / 9",
       border: "1px solid var(--rule)",
       background: "linear-gradient(180deg, var(--paper-2), var(--paper))",
@@ -1072,7 +1072,7 @@ function MachineModel() {
       }} />
 
       {/* Part legend */}
-      <div style={{
+      <div className="machine-3d-legend" style={{
         position: "absolute", top: 18, left: 18,
         background: "rgba(229,222,207,0.92)",
         backdropFilter: "blur(4px)",
@@ -1124,7 +1124,7 @@ function MachineModel() {
 
       {/* Live demo HUD — bottom-right when no part selected */}
       {!active && (
-        <div style={{
+        <div className="machine-3d-hud" style={{
           position: "absolute", bottom: 18, right: 18,
           background: "rgba(20,17,13,0.92)", color: "var(--paper)",
           padding: "14px 18px",
@@ -1182,7 +1182,7 @@ function MachineModel() {
       )}
 
       {/* Detail panel */}
-      <div style={{
+      <div className={"machine-3d-detail" + (active ? " is-open" : "")} style={{
         position: "absolute", top: 0, right: 0, bottom: 0,
         width: active ? "min(420px, 45%)" : 0,
         background: "var(--ink)", color: "var(--paper)",
@@ -1305,6 +1305,7 @@ function MachineModel() {
 
       {/* Global "Patent figures" button — top-right, always visible */}
       <button
+        className="machine-3d-figbtn"
         onClick={() => setFigOpen(figOpen ? null : "FIG-01")}
         style={{
           position: "absolute", top: 18, right: active ? "calc(min(420px, 45%) + 18px)" : 18,
