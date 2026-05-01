@@ -1067,7 +1067,7 @@ function MachineModel() {
       background: "linear-gradient(180deg, var(--paper-2), var(--paper))",
       overflow: "hidden",
     }}>
-      <div ref={mountRef} style={{
+      <div ref={mountRef} className="machine-3d-canvas-mount" style={{
         position: "absolute", inset: 0, cursor: active ? "default" : "grab",
       }} />
 

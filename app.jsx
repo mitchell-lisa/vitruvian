@@ -24,6 +24,8 @@ function Nav({ ndaSigned }) {
           <a href="#why">Modulor</a>
           <a href="#who">Customers</a>
           <a href="#status">Status</a>
+        </div>
+        <div className="nav-cta">
           {ndaSigned ? (
             <span className="nda-success" title="NDA on file"><span className="dot"/>Access</span>
           ) : null}

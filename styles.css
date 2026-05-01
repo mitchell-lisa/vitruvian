@@ -112,36 +112,48 @@ a { color: inherit; }
   color: var(--ink);
 }
 .nav-mark svg { width: 18px; height: 27px; }
-.nav-links {
+.nav-links, .nav-cta {
   display: flex;
   gap: 28px;
   font-family: var(--mono);
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  align-items: center;
 }
-.nav-links a {
+.nav-cta { gap: 14px; }
+.nav-links a, .nav-cta a {
   text-decoration: none;
   color: var(--graphite);
   transition: color 0.15s;
   position: relative;
 }
-.nav-links a:hover { color: var(--ink); }
-.nav-links a.cta {
+.nav-links a:hover, .nav-cta a:hover { color: var(--ink); }
+.nav-cta a.cta {
   color: var(--ink);
   border: 1px solid var(--ink);
   padding: 6px 12px;
   border-radius: 999px;
 }
-.nav-links a.cta:hover { background: var(--ink); color: var(--paper); }
+.nav-cta a.cta:hover { background: var(--ink); color: var(--paper); }
 
 @media (max-width: 760px) {
-  .nav { padding: 12px 0; }
-  .nav-inner { gap: 12px; }
-  .nav-links { gap: 14px; font-size: 11px; letter-spacing: 0.1em; }
-  /* Drop section anchors on narrow screens — keep brand + CTA only */
-  .nav-links a:not(.cta):not(.nda-success) { display: none; }
-  .nav-links a.cta { padding: 6px 10px; }
+  .nav { padding: 10px 0 0; }
+  .nav-inner { flex-wrap: wrap; gap: 10px; row-gap: 6px; }
+  .nav-mark { order: 1; }
+  .nav-cta  { order: 2; }
+  .nav-cta a.cta { padding: 6px 12px; font-size: 11px; }
+  /* Section anchors flow to row 2 as a scrollable strip */
+  .nav-links {
+    order: 3; width: 100%;
+    gap: 22px; font-size: 11px; letter-spacing: 0.12em;
+    overflow-x: auto; flex-wrap: nowrap;
+    padding: 8px 0 10px; margin-top: 2px;
+    border-top: 1px solid var(--rule);
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a { white-space: nowrap; flex-shrink: 0; }
 }
 
 /* hero ------------------------------------------------------- */
@@ -351,31 +363,53 @@ a { color: inherit; }
   .machine-legend { position: static; max-width: none; margin: 12px; }
   .machine-callout { position: static; margin: 12px; max-width: none; }
 
-  /* 3D widget overlays: stop overlapping in the cramped 16:9 mobile canvas. */
+  /* On mobile, stop overlapping the canvas. Stack canvas → legend → figbtn. */
   .machine-3d-widget {
-    aspect-ratio: 3 / 4 !important;
+    aspect-ratio: auto !important;
+    overflow: visible !important;
+    display: flex; flex-direction: column;
+    border: none !important;
+    background: none !important;
+  }
+  /* Canvas takes a fixed portion at the top of the stack. */
+  .machine-3d-canvas-mount {
+    position: relative !important;
+    inset: auto !important;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border: 1px solid var(--rule);
+    background: linear-gradient(180deg, var(--paper-2), var(--paper));
+    overflow: hidden;
   }
   .machine-3d-legend {
-    top: 10px !important;
-    left: 10px !important;
-    right: 10px !important;
+    position: relative !important;
+    top: auto !important; left: auto !important; right: auto !important;
     max-width: none !important;
-    padding: 10px 12px !important;
-    font-size: 10px !important;
+    margin-top: 10px;
+    padding: 14px 16px !important;
+    font-size: 12px !important;
+    background: rgba(229,222,207,0.6) !important;
+    backdrop-filter: none !important;
   }
   .machine-3d-figbtn {
-    top: auto !important;
-    bottom: 10px !important;
-    left: 10px !important;
-    right: 10px !important;
+    position: relative !important;
+    top: auto !important; bottom: auto !important;
+    left: auto !important; right: auto !important;
+    margin-top: 10px;
+    width: 100%;
     justify-content: center;
-    padding: 12px 14px !important;
+    padding: 14px 16px !important;
     font-size: 11px !important;
   }
   /* Live demo HUD has too much detail for the small canvas — hide it. */
   .machine-3d-hud { display: none !important; }
-  /* Detail panel takes the full widget when a part is selected. */
-  .machine-3d-detail.is-open { width: 100% !important; }
+  /* Detail panel covers the canvas area when a part is selected. */
+  .machine-3d-detail.is-open {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100% !important;
+    z-index: 100 !important;
+  }
 }
 
 /* the machine ------------------------------------------------ */
