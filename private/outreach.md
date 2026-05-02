@@ -359,7 +359,7 @@ First sends went out **Tue Apr 22 2026.** Both contacts are warm (existing relat
 | Firm | Contact | Role | Channel | Sent | Status | Bump trigger | Positioning |
 |---|---|---|---|---|---|---|---|
 | **KAS Venture Partners** | **Richard Xie** | (role TBD) | iMessage | Apr 22, ~3:55 PM | Acknowledged; "will look thru in the next few days, a little slammed" | **Tue Apr 28 AM** — Richard explicitly invited a bump "by top of next week" if he hasn't replied | First-seed-check target. Most aligned for initial investment. |
-| **Companyon Ventures** | **Andrew Berg** | Director | (channel TBD) | Apr 22 | Sent | +7 days if silent → Tue Apr 29 | Series A–focused (Boston/NY/LA, software+AI). Target engagement: feedback + relationship-building for Series B. |
+| **Companyon Ventures** | **Andrew Berg** | Director | iMessage | Apr 22 | **Replied May 1, 12:18 PM — soft pass on check ("we don't invest in stuff like this"), offered to help on market pull. Mitchell replied "have to link soon."** | Lock a 30-min call within 7 days (by May 8) | Series A–focused (Boston/NY/LA, software+AI). Target engagement: feedback + relationship-building for Series B. |
 
 ## Richard Xie · KAS — context & handling
 
@@ -412,3 +412,27 @@ Richard confirmed on Apr 24 that KAS is hands-off: **no ops team, no portfolio c
 - **Frame the follow-up as:** "Not asking for a Series A check — asking for the read from someone who'll see us at Series B, so I can build toward your bar."
 - **Bump plan Tue Apr 29** (7 days post-send) if silent. Short, relationship-oriented nudge — not a sales follow-up.
 - **What a good outcome looks like:** 30-min intro call by mid-May. Exchange: Andrew gives early-read feedback, Mitchell gets a Series A-caliber reference point for the v2.x deck. Relationship warms over 12–18 months into the Series B conversation.
+
+### Andrew Berg · May 1 reply — read & next move
+
+**The reply (May 1, 12:18 PM):** Andrew tapped the deck link with a heart, then wrote: *"Looks great, sorry I never got back to you I've been slammed but looks pretty interesting. We don't invest in stuff like this, and idk how much advice I could give besides trying to figure out how much market pull there is."*
+
+Mitchell replied: *"No worries at all! - always value your looks, thank you sir. have to link soon!"*
+
+**What this is:**
+- **Soft pass on the check** — expected, that was never the play.
+- **Honest offer of help on one specific dimension: market pull.** That's the most valuable thing a Series A investor can give a seed-stage hardware founder — pattern-match on whether the buyers are actually leaning in.
+- **"Pretty interesting" + heart on the link** — warm, not polite-cold. He read the deck.
+
+**The risk:** "have to link soon" is a placeholder. If Mitchell doesn't convert it to a calendar invite this week, the thread dies and Andrew's "slammed" returns by default. This is the moment to be concrete — Andrew already self-identified what he can help with.
+
+**The next move (do this week, by May 5):**
+1. Send a calendar invite, not a "want to grab coffee" text. 25-min Zoom. Two slot options.
+2. Frame the agenda exactly the way he framed his offer: *"market pull read — 5 customer convos I want to walk you through, get your gut on whether the buyers are actually leaning in or being polite."*
+3. Bring 5 real artifacts to the call: any pro/college S&C director who replied, any DoD/SOF contact who responded, any pilot LOI nibbles. If we don't have 5, bring 3 + the prospecting list and ask him to red-line who's a real signal vs noise.
+4. End the call with one specific ask he can say yes to in 30 seconds: *"who in your network would tell me I'm wrong about the buyer most directly?"* — that's how the Series B relationship actually compounds.
+
+**Draft text to send (today / tomorrow — strike while the heart is still warm):**
+> Andrew — appreciate the read, that means more than a yes ever would right now. You nailed the one thing I want a sharper read on: market pull. Got 5 buyer convos in motion (pro / D1 / SOF) and I'd love 25 min to walk you through them and get your gut on which are real signal vs noise. Two options — Tue May 5 at 3 PM or Wed May 6 at 11 AM ET, both Zoom. Lock whichever works and I'll send the invite.
+
+**What good looks like 30 days out:** call happened, Andrew gave one or two pointed reads on the buyer convos, optionally pinged a portfolio CEO or two for backchannel input. No commitment beyond that. Filed under "Series B relationship — keep monthly-light touch through summer with new artifacts (LOIs, pilot data) when they land."
