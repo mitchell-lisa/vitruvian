@@ -1199,6 +1199,7 @@ function MachineModel() {
             transition: "opacity 0.4s 0.2s ease",
           }}>
             <button onClick={() => apiRef.current.flyTo(null)}
+              className="machine-3d-back"
               style={{
                 position: "absolute", top: 16, right: 16,
                 background: "transparent", border: "1px solid rgba(236,231,220,0.25)",

@@ -390,6 +390,18 @@ a { color: inherit; }
     inset: 0 !important;
     width: 100% !important;
     z-index: 100 !important;
+    padding-top: env(safe-area-inset-top) !important;
+  }
+  /* Big, obvious Back button — keep it above the iOS chrome and easy to tap. */
+  .machine-3d-back {
+    top: calc(12px + env(safe-area-inset-top)) !important;
+    right: 12px !important;
+    padding: 12px 16px !important;
+    font-size: 12px !important;
+    background: rgba(20,17,13,0.85) !important;
+    border-color: rgba(236,231,220,0.5) !important;
+    color: var(--paper) !important;
+    z-index: 5;
   }
 }
 
@@ -590,15 +602,31 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 24px;
+  overflow-y: auto;
 }
 .nda-modal {
   background: var(--paper);
   max-width: 560px;
   width: 100%;
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   padding: 48px 44px;
   border-radius: 4px;
   position: relative;
   box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+}
+@media (max-width: 760px) {
+  .nda-overlay { padding: 12px; align-items: flex-start; }
+  .nda-modal {
+    padding: 28px 22px;
+    max-height: calc(100dvh - 24px);
+    padding-bottom: calc(28px + env(safe-area-inset-bottom));
+  }
+  .nda-modal h3 { font-size: 24px; }
+  .nda-modal .terms { max-height: 140px; padding: 14px 16px; }
+  .nda-modal .nda-actions { flex-direction: column-reverse; gap: 10px; }
+  .nda-modal .nda-actions .btn { width: 100%; justify-content: center; }
 }
 .nda-modal .nda-mark { font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--graphite); margin-bottom: 16px; }
 .nda-modal h3 { font-family: var(--display); font-size: 32px; margin-bottom: 12px; }
