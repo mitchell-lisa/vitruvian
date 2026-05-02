@@ -220,14 +220,13 @@
       margin: 0 2px;
     }
 
-    /* ── Mobile scroll mode: stack every slide vertically, scaled to
-       viewport width via CSS zoom, no click controls. Toggled by
-       data-scroll-mode on the host (set in JS via matchMedia). ───────── */
+    /* ── Scroll mode: every slide visible, stacked in a single column,
+       scaled together via one canvas-level transform. Toggled by
+       data-scroll-mode on the host (set by _fit()). ─────────────────── */
     :host([data-scroll-mode]) {
       position: relative !important;
       inset: auto !important;
-      height: auto !important;
-      overflow: visible !important;
+      overflow: hidden !important;  /* trim transform overflow */
       background: #1a1815;
     }
     :host([data-scroll-mode]) .stage {
@@ -236,22 +235,27 @@
       display: block;
       height: auto;
     }
+    /* Canvas keeps its authored design width so slide CSS still works at
+       its natural pixel grid. We stack slides vertically, then scale the
+       whole canvas down with transform: scale() in _fit(). */
     :host([data-scroll-mode]) .canvas {
-      width: auto !important;
+      width: var(--deck-design-w-px, 1920px) !important;
       height: auto !important;
-      transform: none !important;
       background: transparent !important;
-      display: block;
+      display: flex !important;
+      flex-direction: column !important;
+      transform-origin: top left !important;
     }
     :host([data-scroll-mode]) ::slotted(*) {
       position: relative !important;
       inset: auto !important;
+      width: 100% !important;
+      height: var(--deck-design-h-px, 1080px) !important;
       opacity: 1 !important;
       visibility: visible !important;
       pointer-events: auto !important;
-      display: block !important;
-      zoom: var(--deck-mobile-zoom, 0.2);
-      margin: 0 auto !important;
+      flex-shrink: 0 !important;
+      margin: 0 !important;
     }
     :host([data-scroll-mode]) .tapzones { display: none !important; }
     /* In scroll mode keep the View toggle reachable; hide the slide nav. */
@@ -601,15 +605,23 @@
       const pref = this._scrollPref();
       const forceScroll = vw <= 760 || pref === 'scroll';
       const forceSlide = pref === 'slide' && vw > 760;
+      // Expose design dims as px for shadow CSS to read.
+      this.style.setProperty('--deck-design-w-px', this.designWidth + 'px');
+      this.style.setProperty('--deck-design-h-px', this.designHeight + 'px');
       if (forceScroll && !forceSlide) {
         if (!this.hasAttribute('data-scroll-mode')) this.setAttribute('data-scroll-mode', '');
-        this._canvas.style.transform = 'none';
-        const zoom = Math.min(vw / this.designWidth, 1);
-        this.style.setProperty('--deck-mobile-zoom', String(zoom));
+        const scale = vw / this.designWidth;
+        this._canvas.style.transform = `scale(${scale})`;
+        // Compensate layout: the canvas is N slides tall in design px; the
+        // visual scaled height is what the host needs to take in document flow.
+        const slidesN = Math.max(this._slides.length || 1, 1);
+        const scaledHeight = this.designHeight * slidesN * scale;
+        this.style.height = scaledHeight + 'px';
         this._updateViewLabel('Scroll');
         return;
       }
       if (this.hasAttribute('data-scroll-mode')) this.removeAttribute('data-scroll-mode');
+      this.style.height = '';  // restore fixed-positioned default
       const s = Math.min(vw / this.designWidth, vh / this.designHeight);
       this._canvas.style.transform = `scale(${s})`;
       this._updateViewLabel('Slide');
