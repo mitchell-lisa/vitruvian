@@ -253,8 +253,19 @@
       zoom: var(--deck-mobile-zoom, 0.2);
       margin: 0 auto !important;
     }
-    :host([data-scroll-mode]) .tapzones,
-    :host([data-scroll-mode]) .overlay { display: none !important; }
+    :host([data-scroll-mode]) .tapzones { display: none !important; }
+    /* In scroll mode keep the View toggle reachable; hide the slide nav. */
+    :host([data-scroll-mode]) .overlay .prev,
+    :host([data-scroll-mode]) .overlay .next,
+    :host([data-scroll-mode]) .overlay .count,
+    :host([data-scroll-mode]) .overlay .reset,
+    :host([data-scroll-mode]) .overlay .divider { display: none !important; }
+    :host([data-scroll-mode]) .overlay {
+      opacity: 1 !important;
+      pointer-events: auto !important;
+      transform: translate(-50%, 0) scale(1) !important;
+      filter: blur(0) !important;
+    }
 
     /* ── Print: one page per slide, no chrome ────────────────────────────
        The screen layout stacks every slide at inset:0 inside a scaled
@@ -408,11 +419,14 @@
         </button>
         <span class="divider"></span>
         <button class="btn reset" type="button" aria-label="Reset to first slide" title="Reset (R)">Reset<span class="kbd">R</span></button>
+        <span class="divider"></span>
+        <button class="btn view-toggle" type="button" aria-label="Toggle scroll mode" title="Toggle scroll/slide view (V)">View<span class="kbd view-kbd">Slide</span></button>
       `;
 
       overlay.querySelector('.prev').addEventListener('click', () => this._go(this._index - 1, 'click'));
       overlay.querySelector('.next').addEventListener('click', () => this._go(this._index + 1, 'click'));
       overlay.querySelector('.reset').addEventListener('click', () => this._go(0, 'click'));
+      overlay.querySelector('.view-toggle').addEventListener('click', () => this._toggleScrollMode());
 
       this._root.append(style, stage, tapzones, overlay);
       this._canvas = canvas;
@@ -560,6 +574,16 @@
       }, OVERLAY_HIDE_MS);
     }
 
+    _scrollPref() {
+      try { return localStorage.getItem('modulor_deck_view'); } catch (e) { return null; }
+    }
+
+    _toggleScrollMode() {
+      const next = this.hasAttribute('data-scroll-mode') ? 'slide' : 'scroll';
+      try { localStorage.setItem('modulor_deck_view', next); } catch (e) {}
+      this._fit();
+    }
+
     _fit() {
       if (!this._canvas) return;
       // PPTX export sets noscale so the DOM capture sees authored-size
@@ -571,18 +595,30 @@
       }
       const vw = window.innerWidth;
       const vh = window.innerHeight;
-      // Mobile: vertical scroll mode. Each slide gets a CSS zoom so it fills
-      // viewport width; click-to-advance chrome is hidden.
-      if (vw <= 760) {
+      // Scroll mode: forced on mobile (<=760px), opt-in on desktop via the
+      // overlay's View toggle (persisted to localStorage). Each slide gets a
+      // CSS zoom so it fills viewport width; click-to-advance chrome hides.
+      const pref = this._scrollPref();
+      const forceScroll = vw <= 760 || pref === 'scroll';
+      const forceSlide = pref === 'slide' && vw > 760;
+      if (forceScroll && !forceSlide) {
         if (!this.hasAttribute('data-scroll-mode')) this.setAttribute('data-scroll-mode', '');
         this._canvas.style.transform = 'none';
-        const zoom = vw / this.designWidth;
+        const zoom = Math.min(vw / this.designWidth, 1);
         this.style.setProperty('--deck-mobile-zoom', String(zoom));
+        this._updateViewLabel('Scroll');
         return;
       }
       if (this.hasAttribute('data-scroll-mode')) this.removeAttribute('data-scroll-mode');
       const s = Math.min(vw / this.designWidth, vh / this.designHeight);
       this._canvas.style.transform = `scale(${s})`;
+      this._updateViewLabel('Slide');
+    }
+
+    _updateViewLabel(mode) {
+      if (!this._overlay) return;
+      const label = this._overlay.querySelector('.view-kbd');
+      if (label) label.textContent = mode;
     }
 
     _onResize() { this._fit(); }
@@ -621,6 +657,8 @@
         this._go(this._slides.length - 1, 'keyboard');
       } else if (key === 'r' || key === 'R') {
         this._go(0, 'keyboard');
+      } else if (key === 'v' || key === 'V') {
+        this._toggleScrollMode();
       } else if (/^[0-9]$/.test(key)) {
         // 1..9 jump to that slide; 0 jumps to 10.
         const n = key === '0' ? 9 : parseInt(key, 10) - 1;

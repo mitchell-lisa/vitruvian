@@ -27,9 +27,10 @@ function Nav({ ndaSigned }) {
         </div>
         <div className="nav-cta">
           {ndaSigned ? (
-            <span className="nda-success" title="NDA on file"><span className="dot"/>Access</span>
-          ) : null}
-          <a href="deck.html" data-nda data-nda-target="deck.html" className="cta">Request Deck</a>
+            <a href="deck.html" className="cta">Open Deck <span className="arrow">→</span></a>
+          ) : (
+            <a href="deck.html" data-nda data-nda-target="deck.html" className="cta">Request Deck</a>
+          )}
         </div>
       </div>
     </nav>
