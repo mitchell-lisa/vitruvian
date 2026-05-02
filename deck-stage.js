@@ -220,6 +220,42 @@
       margin: 0 2px;
     }
 
+    /* ── Mobile scroll mode: stack every slide vertically, scaled to
+       viewport width via CSS zoom, no click controls. Toggled by
+       data-scroll-mode on the host (set in JS via matchMedia). ───────── */
+    :host([data-scroll-mode]) {
+      position: relative !important;
+      inset: auto !important;
+      height: auto !important;
+      overflow: visible !important;
+      background: #1a1815;
+    }
+    :host([data-scroll-mode]) .stage {
+      position: relative;
+      inset: auto;
+      display: block;
+      height: auto;
+    }
+    :host([data-scroll-mode]) .canvas {
+      width: auto !important;
+      height: auto !important;
+      transform: none !important;
+      background: transparent !important;
+      display: block;
+    }
+    :host([data-scroll-mode]) ::slotted(*) {
+      position: relative !important;
+      inset: auto !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+      display: block !important;
+      zoom: var(--deck-mobile-zoom, 0.2);
+      margin: 0 auto !important;
+    }
+    :host([data-scroll-mode]) .tapzones,
+    :host([data-scroll-mode]) .overlay { display: none !important; }
+
     /* ── Print: one page per slide, no chrome ────────────────────────────
        The screen layout stacks every slide at inset:0 inside a scaled
        canvas; for print we want them in document flow at the authored
@@ -535,6 +571,16 @@
       }
       const vw = window.innerWidth;
       const vh = window.innerHeight;
+      // Mobile: vertical scroll mode. Each slide gets a CSS zoom so it fills
+      // viewport width; click-to-advance chrome is hidden.
+      if (vw <= 760) {
+        if (!this.hasAttribute('data-scroll-mode')) this.setAttribute('data-scroll-mode', '');
+        this._canvas.style.transform = 'none';
+        const zoom = vw / this.designWidth;
+        this.style.setProperty('--deck-mobile-zoom', String(zoom));
+        return;
+      }
+      if (this.hasAttribute('data-scroll-mode')) this.removeAttribute('data-scroll-mode');
       const s = Math.min(vw / this.designWidth, vh / this.designHeight);
       this._canvas.style.transform = `scale(${s})`;
     }
