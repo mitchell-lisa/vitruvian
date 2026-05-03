@@ -184,17 +184,17 @@ function WhySection() {
 function WhoSection() {
   const cards = [
     {
-      tag: "Buyer 01", title: "Pro Sports", sub: "NFL · NBA · MLS · Premier League",
+      tag: "Buyer 01", title: "Pro Sports",
       body: "Performance and recovery staff who already buy force plates, GPS, HRV — and have nothing comparable for tissue.",
       list: ["First-pilot wedge", "Capex + SaaS sale", "$50–250k ACV"]
     },
     {
-      tag: "Buyer 02", title: "Collegiate", sub: "D1 strength · sports medicine",
+      tag: "Buyer 02", title: "Collegiate",
       body: "Programs running 800+ athletes through one S&C department. The volume site for pilot data and longitudinal corpus.",
       list: ["Highest data volume", "Conference-level rollout", "Athlete-month corpus"]
     },
     {
-      tag: "Buyer 03", title: "Military SOF", sub: "USSOCOM · 711 HPW · Special Warfare",
+      tag: "Buyer 03", title: "Military SOF",
       body: "Tactical training partners. Non-dilutive capital channel via SBIR/AFWERX, not the first-pilot source.",
       list: ["Strategic moat", "SBIR / AFWERX path", "Tactical readiness"]
     },
@@ -210,7 +210,6 @@ function WhoSection() {
           {cards.map((c) => (
             <div className="who-card" key={c.title}>
               <div className="who-num">{c.tag}</div>
-              <div className="who-sub">{c.sub}</div>
               <h3>{c.title}</h3>
               <p>{c.body}</p>
               <ul className="who-list">
