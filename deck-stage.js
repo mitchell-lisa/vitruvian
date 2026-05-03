@@ -425,12 +425,15 @@
         <button class="btn reset" type="button" aria-label="Reset to first slide" title="Reset (R)">Reset<span class="kbd">R</span></button>
         <span class="divider"></span>
         <button class="btn view-toggle" type="button" aria-label="Toggle scroll mode" title="Toggle scroll/slide view (V)">View<span class="kbd view-kbd">Slide</span></button>
+        <span class="divider"></span>
+        <button class="btn download" type="button" aria-label="Download deck as PDF" title="Download as PDF (P)">PDF</button>
       `;
 
       overlay.querySelector('.prev').addEventListener('click', () => this._go(this._index - 1, 'click'));
       overlay.querySelector('.next').addEventListener('click', () => this._go(this._index + 1, 'click'));
       overlay.querySelector('.reset').addEventListener('click', () => this._go(0, 'click'));
       overlay.querySelector('.view-toggle').addEventListener('click', () => this._toggleScrollMode());
+      overlay.querySelector('.download').addEventListener('click', () => window.print());
 
       this._root.append(style, stage, tapzones, overlay);
       this._canvas = canvas;
@@ -671,6 +674,8 @@
         this._go(0, 'keyboard');
       } else if (key === 'v' || key === 'V') {
         this._toggleScrollMode();
+      } else if (key === 'p' || key === 'P') {
+        window.print();
       } else if (/^[0-9]$/.test(key)) {
         // 1..9 jump to that slide; 0 jumps to 10.
         const n = key === '0' ? 9 : parseInt(key, 10) - 1;
