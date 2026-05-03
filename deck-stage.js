@@ -226,7 +226,7 @@
     :host([data-scroll-mode]) {
       position: relative !important;
       inset: auto !important;
-      overflow: hidden !important;  /* trim transform overflow */
+      overflow: hidden !important;
       background: #1a1815;
     }
     :host([data-scroll-mode]) .stage {
